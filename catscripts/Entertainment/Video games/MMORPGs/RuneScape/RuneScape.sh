@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cat newpages.txt | egrep -i 'RuneScape|Rune scape|rune longsword|rune kite|Lumbridge|Falador|Karamja|Daemonheim|Varrock|Edgeville|Elvarg|strength potion|(Zamorak|Armadyl|Zaros|Saradomin|Guthix|Bandos)|(Zamorak|Armadyl|Zaros|Saradomin|Guthix|Bandos).+godsword|Third Age Arm(or|our)|(abyssal|abby) whip|(addy|rune|dragon) kite|(rune|dragon) (scimitar|scimmy)|zammy|full sara|(obsidian|obby) maul|(king|queen) black dragon|corporeal beast|cockroach (soldier|worker|drone)' >> RuneScape.txt
+
+RUNESCAPE=`stat --print=%s RuneScape.txt`
+
+if [ $RUNESCAPE -ne 0 ];
+then
+./catscripts/Entertainment/Video\ games/MMORPGs/RuneScape/catRuneScape.sh
+fi
+
+rm RuneScape.txt
