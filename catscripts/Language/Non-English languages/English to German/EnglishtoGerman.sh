@@ -10,7 +10,9 @@ ENGLISHTOGERMAN=`stat --print=%s EnglishtoGerman.txt`
 
 if [ $ENGLISHTOGERMAN -ne 0 ];
 then
-    ./catscripts/Language/Non-English\ languages/English\ to\ German/catEnglishtoGerman.sh
+  export CATFILE="EnglishtoGerman.txt"
+  export CATNAME="English to German"
+  ./catscripts/Categorize.sh
 fi
 
 rm EnglishtoGerman.txt
