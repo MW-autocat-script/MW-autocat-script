@@ -11,22 +11,30 @@ Ivysaur=`stat --print=%s Ivysaur.txt`
 
 if [ $Igglybuff -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/I/catIgglybuff.sh
+   export CATFILE="Igglybuff.txt"
+   export CATNAME="Igglybuff"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Illumise -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/I/catIllumise.sh
+   export CATFILE="Illumise.txt"
+   export CATNAME="Illumise"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Infernape -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/I/catInfernape.sh
+   export CATFILE="Infernape.txt"
+   export CATNAME="Infernape"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Ivysaur -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/I/catIvysaur.sh
+   export CATFILE="Ivysaur.txt"
+   export CATNAME="Ivysaur"
+   ./catscripts/Categorize.sh
 fi
 
 rm Igglybuff.txt
