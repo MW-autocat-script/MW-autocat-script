@@ -14,27 +14,37 @@ Microprocessors=`stat --print=%s Microprocessors.txt`
 
 if [ $Motherboards -ne 0 ];
 then
-   ./catscripts/Technology/Computers/Computerhardware/catMotherboards.sh
+   export CATFILE="Motherboards.txt"
+   export CATNAME="Motherboards"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $VideoCards -ne 0 ];
 then
-   ./catscripts/Technology/Computers/Computerhardware/catVideoCards.sh
+   export CATFILE="VideoCards.txt"
+   export CATNAME="Video cards"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $SoundCards -ne 0 ];
 then
-   ./catscripts/Technology/Computers/Computerhardware/catSoundCards.sh
+   export CATFILE="SoundCards.txt"
+   export CATNAME="Sound cards"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Printers -ne 0 ];
 then
-   ./catscripts/Technology/Computers/Computerhardware/catPrinters.sh
+   export CATFILE="Printers.txt"
+   export CATNAME="Printers"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Microprocessors -ne 0 ];
 then
-   ./catscripts/Technology/Computers/Computerhardware/catMicroprocessors.sh
+   export CATFILE="Microprocessors.txt"
+   export CATNAME="Microprocessors"
+   ./catscripts/Categorize.sh
 fi
 
 

@@ -1,5 +1,0 @@
-Motherboards
-VideoCards
-SoundCards
-Printers
-Microprocessors

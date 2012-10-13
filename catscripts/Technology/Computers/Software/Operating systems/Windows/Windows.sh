@@ -21,42 +21,58 @@ Win8=`stat --print=%s Windows8.txt`
 
 if [ $Win98 -ne 0 ];
 then
-  ./catscripts/Technology/Computers/Software/Operating\ systems/Windows/catWindows98.sh
+   export CATFILE="Windows98.txt"
+   export CATNAME="Windows 98"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Win2000 -ne 0 ];
 then
-  ./catscripts/Technology/Computers/Software/Operating\ systems/Windows/catWindows2000.sh
+   export CATFILE="Windows2000.txt"
+   export CATNAME="Windows 2000"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $WinXP -ne 0 ];
 then
-  ./catscripts/Technology/Computers/Software/Operating\ systems/Windows/catWindowsXP.sh
+   export CATFILE="WindowsXP.txt"
+   export CATNAME="Windows XP"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Win2003 -ne 0 ];
 then
-  ./catscripts/Technology/Computers/Software/Operating\ systems/Windows/catWindowsServer2003.sh
+   export CATFILE="WindowsServer2003.txt"
+   export CATNAME="Windows Server 2003"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $WinVista -ne 0 ];
 then
-  ./catscripts/Technology/Computers/Software/Operating\ systems/Windows/catWindowsVista.sh
+   export CATFILE="WindowsVista.txt"
+   export CATNAME="Windows Vista"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Win7 -ne 0 ];
 then
-  ./catscripts/Technology/Computers/Software/Operating\ systems/Windows/catWindows98.sh
+   export CATFILE="Windows7.txt"
+   export CATNAME="Windows 7"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Win2008 -ne 0 ];
 then
-  ./catscripts/Technology/Computers/Software/Operating\ systems/Windows/catWindowsServer2008.sh
+   export CATFILE="WindowsServer2008.txt"
+   export CATNAME="Windows Server 2008"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Win8 -ne 0 ];
 then
-  ./catscripts/Technology/Computers/Software/Operating\ systems/Windows/catWindows8.sh
+   export CATFILE="Windows8.txt"
+   export CATNAME="Windows 8"
+   ./catscripts/Categorize.sh
 fi
 
 rm Windows98.txt

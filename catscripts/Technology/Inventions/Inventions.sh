@@ -8,7 +8,9 @@ INVENTIONS=`stat --print=%s Inventions.txt`
 
 if [ $INVENTIONS -ne 0 ];
 then
-    ./catscripts/Technology/Inventions/catInventions.sh
+  export CATFILE="Inventions.txt"
+  export CATNAME="Inventions"
+  ./catscripts/Categorize.sh
 fi
 
 rm Inventions.txt

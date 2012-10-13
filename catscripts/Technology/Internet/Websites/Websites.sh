@@ -30,42 +30,58 @@ WIKIANSWERS=`stat --print=%s Wikianswers.txt`
 
 if [ $YOUTUBE -ne 0 ];
 then
-  ./catscripts/Technology/Internet/Websites/catYouTube.sh
+   export CATFILE="YouTube.txt"
+   export CATNAME="YouTube"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $TWITTER -ne 0 ];
 then
-  ./catscripts/Technology/Internet/Websites/catTwitter.sh
+   export CATFILE="Twitter.txt"
+   export CATNAME="Twitter"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $FACEBOOK -ne 0 ];
 then
-  ./catscripts/Technology/Internet/Websites/catFacebook.sh
+   export CATFILE="Facebook.txt"
+   export CATNAME="Facebook"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $MYSPACE -ne 0 ];
 then
-  ./catscripts/Technology/Internet/Websites/catMyspace.sh
+   export CATFILE="Myspace.txt"
+   export CATNAME="Myspace"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $GAIAONLINE -ne 0 ];
 then
-  ./catscripts/Technology/Internet/Websites/catGaiaOnline.sh
+   export CATFILE="GaiaOnline.txt"
+   export CATNAME="Gaia Online"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $GOOGLE -ne 0 ];
 then
-  ./catscripts/Technology/Internet/Websites/catGoogle.sh
+   export CATFILE="Google.txt"
+   export CATNAME="Google"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $WIKIA -ne 0 ];
 then
-  ./catscripts/Technology/Internet/Websites/catWikia.sh
+   export CATFILE="Wikia.txt"
+   export CATNAME="Wikia"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $WIKIANSWERS -ne 0 ];
 then
-  ./catscripts/Technology/Internet/Websites/catWikianswers.sh
+   export CATFILE="Wikianswers.txt"
+   export CATNAME="Wikianswers"
+   ./catscripts/Categorize.sh
 fi
 
 rm YouTube.txt
