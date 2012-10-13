@@ -49,117 +49,163 @@ Hypno=`stat --print=%s Hypno.txt`
 
 if [ $Happiny -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHappiny.sh
+   export CATFILE="Happiny.txt"
+   export CATNAME="Happiny"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Hariyama -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHariyama.sh
+   export CATFILE="Hariyama.txt"
+   export CATNAME="Hariyama"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Haunter -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHaunter.sh
+   export CATFILE="Haunter.txt"
+   export CATNAME="Haunter"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Haxorus -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHaxorus.sh
+   export CATFILE="Haxorus.txt"
+   export CATNAME="Haxorus"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Heatmor -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHeatmor.sh
+   export CATFILE="Heatmor.txt"
+   export CATNAME="Heatmor"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Heatran -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHeatran.sh
+   export CATFILE="Heatran.txt"
+   export CATNAME="Heatran"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Heracross -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHeracross.sh
+   export CATFILE="Heracross.txt"
+   export CATNAME="Heracross"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Herdier -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHerdier.sh
+   export CATFILE="Herdier.txt"
+   export CATNAME="Herdier"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Hippopotas -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHippopotas.sh
+   export CATFILE="Hippopotas.txt"
+   export CATNAME="Hippopotas"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Hippowdon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHippowdon.sh
+   export CATFILE="Hippowdon.txt"
+   export CATNAME="Hippowdon"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Hitmonchan -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHitmonchan.sh
+   export CATFILE="Hitmonchan.txt"
+   export CATNAME="Hitmonchan"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Hitmonlee -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHitmonlee.sh
+   export CATFILE="Hitmonlee.txt"
+   export CATNAME="Hitmonlee"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Hitmontop -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHitmontop.sh
+   export CATFILE="Hitmontop.txt"
+   export CATNAME="Hitmontop"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $HoOh -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHo-Oh.sh
+   export CATFILE="Ho-Oh.txt"
+   export CATNAME="Ho-Oh"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Honchkrow -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHonchkrow.sh
+   export CATFILE="Honchkrow.txt"
+   export CATNAME="Honchkrow"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Hoothoot -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHoothoot.sh
+   export CATFILE="Hoothoot.txt"
+   export CATNAME="Hoothoot"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Hoppip -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHoppip.sh
+   export CATFILE="Hoppip.txt"
+   export CATNAME="Hoppip"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Horsea -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHorsea.sh
+   export CATFILE="Horsea.txt"
+   export CATNAME="Horsea"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Houndoom -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHoundoom.sh
+   export CATFILE="Houndoom.txt"
+   export CATNAME="Houndoom"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Houndour -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHoundour.sh
+   export CATFILE="Houndour.txt"
+   export CATNAME="Houndour"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Huntail -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHuntail.sh
+   export CATFILE="Huntail.txt"
+   export CATNAME="Huntail"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Hydreigon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHydreigon.sh
+   export CATFILE="Hydreigon.txt"
+   export CATNAME="Hydreigon"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Hypno -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/catHypno.sh
+   export CATFILE="Hypno.txt"
+   export CATNAME="Hypno"
+   ./catscripts/Categorize.sh
 fi
 
 
