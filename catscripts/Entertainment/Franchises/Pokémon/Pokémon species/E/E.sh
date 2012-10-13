@@ -44,102 +44,142 @@ Exploud=`stat --print=%s Exploud.txt`
 
 if [ $Eelektrik -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catEelektrik.sh
+   export CATFILE="Eelektrik.txt"
+   export CATNAME="Eelektrik"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Eelektross -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catEelektross.sh
+   export CATFILE="Eelektross.txt"
+   export CATNAME="Eelektross"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Eevee -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catEevee.sh
+   export CATFILE="Eevee.txt"
+   export CATNAME="Eevee"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Ekans -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catEkans.sh
+   export CATFILE="Ekans.txt"
+   export CATNAME="Ekans"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Electabuzz -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catElectabuzz.sh
+   export CATFILE="Electabuzz.txt"
+   export CATNAME="Electabuzz"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Electivire -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catElectivire.sh
+   export CATFILE="Electivire.txt"
+   export CATNAME="Electivire"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Electrike -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catElectrike.sh
+   export CATFILE="Electrike.txt"
+   export CATNAME="Electrike"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Electrode -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catElectrode.sh
+   export CATFILE="Electrode.txt"
+   export CATNAME="Electrode"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Elekid -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catElekid.sh
+   export CATFILE="Elekid.txt"
+   export CATNAME="Elekid"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Elgyem -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catElgyem.sh
+   export CATFILE="Elgyem.txt"
+   export CATNAME="Elgyem"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Emboar -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catEmboar.sh
+   export CATFILE="Emboar.txt"
+   export CATNAME="Emboar"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Emolga -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catEmolga.sh
+   export CATFILE="Emolga.txt"
+   export CATNAME="Emolga"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Empoleon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catEmpoleon.sh
+   export CATFILE="Empoleon.txt"
+   export CATNAME="Empoleon"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Entei -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catEntei.sh
+   export CATFILE="Entei.txt"
+   export CATNAME="Entei"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Escavalier -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catEscavalier.sh
+   export CATFILE="Escavalier.txt"
+   export CATNAME="Escavalier"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Espeon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catEspeon.sh
+   export CATFILE="Espeon.txt"
+   export CATNAME="Espeon"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Excadrill -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catExcadrill.sh
+   export CATFILE="Excadrill.txt"
+   export CATNAME="Excadrill"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Exeggcute -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catExeggcute.sh
+   export CATFILE="Exeggcute.txt"
+   export CATNAME="Exeggcute"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Exeggutor -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catExeggutor.sh
+   export CATFILE="Exeggutor.txt"
+   export CATNAME="Exeggutor"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Exploud -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/catExploud.sh
+   export CATFILE="Exploud.txt"
+   export CATNAME="Exploud"
+   ./catscripts/Categorize.sh
 fi
 
 rm Eelektrik.txt
