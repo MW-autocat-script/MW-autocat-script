@@ -75,177 +75,247 @@ Dwebble=`stat --print=%s Dwebble.txt`
 
 if [ $Darkrai -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDarkrai.sh
+   export CATFILE="Darkrai.txt"
+   export CATNAME=""
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Darmanitan -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDarmanitan.sh
+   export CATFILE="Darmanitan.txt"
+   export CATNAME="Darmanitan"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Darumaka -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDarumaka.sh
+   export CATFILE="Darumaka.txt"
+   export CATNAME="Darumaka"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Deerling -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDeerling.sh
+   export CATFILE="Deerling.txt"
+   export CATNAME="Deerling"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Deino -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDeino.sh
+   export CATFILE="Deino.txt"
+   export CATNAME="Deino"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Delcatty -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDelcatty.sh
+   export CATFILE="Delcatty.txt"
+   export CATNAME="Delcatty"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Delibird -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDelibird.sh
+   export CATFILE="Delibird.txt"
+   export CATNAME="Delibird"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Deoxys -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDeoxys.sh
+   export CATFILE="Deoxys.txt"
+   export CATNAME="Deoxys"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Dewgong -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDewgong.sh
+   export CATFILE="Dewgong.txt"
+   export CATNAME="Dewgong"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Dewott -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDewott.sh
+   export CATFILE="Dewott.txt"
+   export CATNAME="Dewott"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Dialga -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDialga.sh
+   export CATFILE="Dialga.txt"
+   export CATNAME="Dialga"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Diglett -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDiglett.sh
+   export CATFILE="Diglett.txt"
+   export CATNAME="Diglett"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Ditto -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDitto.sh
+   export CATFILE="Ditto.txt"
+   export CATNAME="Ditto"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Dodrio -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDodrio.sh
+   export CATFILE="Dodrio.txt"
+   export CATNAME="Dodrio"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Doduo -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDoduo.sh
+   export CATFILE="Doduo.txt"
+   export CATNAME="Doduo"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Donphan -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDonphan.sh
+   export CATFILE="Donphan.txt"
+   export CATNAME="Donphan"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Dragonair -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDragonair.sh
+   export CATFILE="Dragonair.txt"
+   export CATNAME="Dragonair"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Dragonite -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDragonite.sh
+   export CATFILE="Dragonite.txt"
+   export CATNAME="Dragonite"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Drapion -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDrapion.sh
+   export CATFILE="Drapion.txt"
+   export CATNAME="Drapion"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Dratini -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDratini.sh
+   export CATFILE="Dratini.txt"
+   export CATNAME="Dratini"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Drilbur -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDrilbur.sh
+   export CATFILE="Drilbur.txt"
+   export CATNAME="Drilbur"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Drifblim -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDrifblim.sh
+   export CATFILE="Drifblim.txt"
+   export CATNAME="Drifblim"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Drifloon -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDrifloon.sh
+   export CATFILE="Drifloon.txt"
+   export CATNAME="Drifloon"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Drowzee -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDrowzee.sh
+   export CATFILE="Drowzee.txt"
+   export CATNAME="Drowzee"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Druddigon -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDruddigon.sh
+   export CATFILE="Druddigon.txt"
+   export CATNAME="Druddigon"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Ducklett -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDucklett.sh
+   export CATFILE="Ducklett.txt"
+   export CATNAME="Ducklett"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Dugtrio -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDugtrio.sh
+   export CATFILE="Dugtrio.txt"
+   export CATNAME="Dugtrio"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Dunsparce -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDunsparce.sh
+   export CATFILE="Dunsparce.txt"
+   export CATNAME="Dunsparce"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Duosion -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDuosion.sh
+   export CATFILE="Duosion.txt"
+   export CATNAME="Duosion"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Durant -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDurant.sh
+   export CATFILE="Durant.txt"
+   export CATNAME="Durant"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Dusclops -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDusclops.sh
+   export CATFILE="Dusclops.txt"
+   export CATNAME="Dusclops"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Dusknoir -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDusknoir
+   export CATFILE="Dusknoir.txt"
+   export CATNAME="Dusknoir"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Duskull -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDuskull.sh
+   export CATFILE="Duskull.txt"
+   export CATNAME="Duskull"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Dustox -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDustox.sh
+   export CATFILE="Dustox.txt"
+   export CATNAME="Dustox"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Dwebble -ne 0 ];
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/catDwebble.sh
+   export CATFILE="Dwebble.txt"
+   export CATNAME="Dwebble"
+   ./catscripts/Categorize.sh
 fi
 
 rm Darkrai.txt
