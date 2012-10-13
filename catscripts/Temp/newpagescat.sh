@@ -60,42 +60,42 @@ SIZEOFPORNOGRAPHY=`stat --print=%s Pornography.txt`
 
 if [ $POPTROPICA -ne 0 ];
 then
-  ./catscripts/Temp/poptropica.sh
+  ./poptropica.sh
 fi
 
 if [ $STUDYLADDER -ne 0 ];
 then
-  ./catscripts/Temp/studyladder.sh
+  ./studyladder.sh
 fi
 
 if [ $SIZEOFLITERACYPLANET -ne 0 ];
 then
-  ./catscripts/Temp/literacyplanet.sh
+  ./literacyplanet.sh
 fi
 
 if [ $SIZEOFMOSHIMONSTERS -ne 0 ];
 then
-  ./catscripts/Temp/moshimonsters.sh
+  ./moshimonsters.sh
 fi
 
 if [ $SIZEOFWOOZWORLD -ne 0 ];
 then
-  ./catscripts/Temp/woozworld.sh
+  ./woozworld.sh
 fi
 
 if [ $SIZEOFPNPA -ne 0 ];
 then
-  ./catscripts/Temp/pnpa.sh
+  ./pnpa.sh
 fi
 
 if [ $SIZEOF3WNQ -ne 0 ];
 then
-  ./catscripts/Temp/noninterrogative.sh
+  ./noninterrogative.sh
 fi
 
 if [ $SIZEOFPORNOGRAPHY -ne 0 ];
 then
-  ./catscripts/Temp/pornography.sh
+  ./pornography.sh
 fi
 echo "Running subscripts"
 
