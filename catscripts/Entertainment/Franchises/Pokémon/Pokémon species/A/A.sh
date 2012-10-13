@@ -2,59 +2,32 @@
 
 
 cat newpages.txt | egrep -i '\bAbomasnow' >> Abomasnow.txt
-
 cat newpages.txt | egrep -i '\bAbra\b' >> Abra.txt
-
 cat newpages.txt | egrep -i '\bAbsol\b' >> Absol.txt
-
 cat newpages.txt | egrep -i '\bAccelgor' >> Accelgor.txt
-
 cat newpages.txt | egrep -i '\bAerodactyl' >> Aerodactyl.txt
-
 cat newpages.txt | egrep -i '\bAggron' >> Aggron.txt
-
 cat newpages.txt | egrep -i '\bAipom' >> Aipom.txt
-
 cat newpages.txt | egrep -i '\bAlakazam' >> Alakazam.txt
-
 cat newpages.txt | egrep -i '\bAlomomola' >> Alomomola.txt
-
 cat newpages.txt | egrep -i '\bAltaria' >> Altaria.txt
-
 cat newpages.txt | egrep -i '\bAmbipom' >> Ambipom.txt
-
 cat newpages.txt | egrep -i '\bAmoonguss' >> Amoonguss.txt
-
 cat newpages.txt | egrep -i '\bAmpharos' >> Ampharos.txt
-
 cat newpages.txt | egrep -i '\bAnorith' >> Anorith.txt
-
 cat newpages.txt | egrep -i '\bArbok' >> Arbok.txt
-
 cat newpages.txt | egrep -i '\bArcanine' >> Arcanine.txt
-
 cat newpages.txt | egrep -i '\bArceus' >> Arceus.txt
-
 cat newpages.txt | egrep -i '\bArchen\b' >> Archen.txt
-
 cat newpages.txt | egrep -i '\bArcheops' >> Archeops.txt
-
 cat newpages.txt | egrep -i '\bAriados' >> Ariados.txt
-
 cat newpages.txt | egrep -i '\bArmaldo' >> Armaldo.txt
-
 cat newpages.txt | egrep -i '\bAron\b|\bArons\b' >> Aron.txt
-
 cat newpages.txt | egrep -i '\bArticuno' >> Articuno.txt
-
 cat newpages.txt | egrep -i '\bAudino' >> Audino.txt
-
 cat newpages.txt | egrep -i '\bAxew' >> Axew.txt
-
 cat newpages.txt | egrep -i '\bAzelf' >> Azelf.txt
-
 cat newpages.txt | egrep -i '\bAzumarill' >> Azumarill.txt
-
 cat newpages.txt | egrep -i '\bAzurill' >> Azurill.txt
 
 ABOMASNOW=`stat --print=%s Abomasnow.txt`
@@ -89,169 +62,225 @@ AZURILL=`stat --print=%s Azurill.txt`
 
 if [ $ABOMASNOW -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catAbomasnow.sh
+   export CATFILE="Abomasnow.txt"
+   export CATNAME="Abomasnow"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $ABRA -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catAbra.sh
+   export CATFILE="Abra.txt"
+   export CATNAME="Abra"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $ABSOL -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catAbsol.sh
+   export CATFILE="Absol.txt"
+   export CATNAME="Absol"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $ACCELGOR -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catAccelgor.sh
+   export CATFILE="Accelgor.txt"
+   export CATNAME="Accelgor"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $AERODACTYL -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catAerodactyl.sh
+   export CATFILE="Aerodactyl.txt"
+   export CATNAME="Aerodactyl"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $AGGRON -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catAggron.sh
+   export CATFILE="Aggron.txt"
+   export CATNAME="Aggron"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $AIPOM -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catAipom.sh
+   export CATFILE="Aipom.txt"
+   export CATNAME="Aipom"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $ALAKAZAM -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catAlakazam.sh
+   export CATFILE="Alakazam.txt"
+   export CATNAME="Alakazam"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $ALOMOMOLA -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catAlomomola.sh
+   export CATFILE="Alomomola.txt"
+   export CATNAME="Alomomola"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $ALTARIA -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon species/A/catAltaria.sh
+   export CATFILE="Altaria.txt"
+   export CATNAME="Altaria"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $AMBIPOM -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon species/A/catAmbipom.sh
+   export CATFILE="Ambipom.txt"
+   export CATNAME="Ambipom"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $AMOONGUSS -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon species/A/catAmoonguss.sh
+   export CATFILE="Amoonguss.txt"
+   export CATNAME="Amoonguss"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $AMPHAROS -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon species/A/catAmpharos.sh
+   export CATFILE="Ampharos.txt"
+   export CATNAME="Ampharos"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $ANORITH -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon species/A/catAnorith.sh
+   export CATFILE="Anorith.txt"
+   export CATNAME="Anorith"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $ARBOK -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon species/A/catArbok.sh
+   export CATFILE="Arbok.txt"
+   export CATNAME="Arbok"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $ARCANINE -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon species/A/catArcanine.sh
+   export CATFILE="Arcanine.txt"
+   export CATNAME="Arcanine"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $ARCEUS -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catArceus.sh
+   export CATFILE="Arceus.txt"
+   export CATNAME="Arceus"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $ARCHEN -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catArchen.sh
+   export CATFILE="Archen.txt"
+   export CATNAME="Archen"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $ARCHEOPS -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catArcheops.sh
+   export CATFILE="Archeops.txt"
+   export CATNAME="Archeops"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $ARIADOS -ne 0 ]; 
 then
-  ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catAriados.sh
+   export CATFILE="Ariados.txt"
+   export CATNAME="Ariados"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $ARMALDO -ne 0 ]; 
 then
-    ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catArmaldo.sh
+   export CATFILE="Armaldo.txt"
+   export CATNAME="Armaldo"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $ARON -ne 0 ]; 
 then
-    ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catAron.sh
+   export CATFILE="Aron.txt"
+   export CATNAME="Aron"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $ARTICUNO -ne 0 ]; 
 then
-    ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catArticuno.sh
+   export CATFILE="Articuno.txt"
+   export CATNAME="Articuno"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $AUDINO -ne 0 ]; 
 then
-    ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catAudino.sh
+   export CATFILE="Audino.txt"
+   export CATNAME="Audino"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $AXEW -ne 0 ]; 
 then
-    ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catAxew.sh
+   export CATFILE="Axew.txt"
+   export CATNAME="Axew"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $AZELF -ne 0 ]; 
 then
-    ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catAzelf.sh
+   export CATFILE="Azelf.txt"
+   export CATNAME="Azelf"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $AZUMARILL -ne 0 ]; 
 then
-    ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catAzumarill.sh
+   export CATFILE="Azumarill.txt"
+   export CATNAME="Azumarill"
+   ./catscripts/Categorize.sh
 fi
 
 
 if [ $AZURILL -ne 0 ]; 
 then
-    ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/catAzurill.sh
+   export CATFILE="Azurill.txt"
+   export CATNAME="Azurill"
+   ./catscripts/Categorize.sh
 fi
 
 
