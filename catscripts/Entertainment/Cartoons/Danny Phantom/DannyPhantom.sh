@@ -6,7 +6,9 @@ DANNYPHANTOM=`stat --print=%s DannyPhantom.txt`
 
 if [ $DANNYPHANTOM -ne 0 ];
 then
-  ./catscripts/Entertainment/Cartoons/Danny\ Phantom/catDannyPhantom.sh
+  export CATFILE="DannyPhantom.txt"
+  export CATNAME="Danny Phantom"
+  ./catscripts/Categorize.sh
 fi
 
 
