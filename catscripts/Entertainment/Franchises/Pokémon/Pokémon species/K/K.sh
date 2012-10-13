@@ -47,112 +47,156 @@ Kyurem=`stat --print=%s Kyurem.txt`
 
 if [ $Kabuto -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKabuto.sh
+   export CATFILE="Kabuto.txt"
+   export CATNAME="Kabuto"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Kabutops -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKabutops.sh
+   export CATFILE="Kabutops.txt"
+   export CATNAME="Kabutops"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Kadabra -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKadabra.sh
+   export CATFILE="Kadabra.txt"
+   export CATNAME="Kadabra"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Kakuna -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKakuna.sh
+   export CATFILE="Kakuna.txt"
+   export CATNAME="Kakuna"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Kangaskhan -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKangaskhan.sh
+   export CATFILE="Kangaskhan.txt"
+   export CATNAME="Kangaskhan"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Karrablast -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKarrablast.sh
+   export CATFILE="Karrablast.txt"
+   export CATNAME="Karrablast"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Kecleon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKecleon.sh
+   export CATFILE="Kecleon.txt"
+   export CATNAME="Kecleon"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Keldeo -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKeldeo.sh
+   export CATFILE="Keldeo.txt"
+   export CATNAME="Keldeo"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Kingdra -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKingdra.sh
+   export CATFILE="Kingdra.txt"
+   export CATNAME="Kingdra"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Kingler -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKingler.sh
+   export CATFILE="Kingler.txt"
+   export CATNAME="Kingler"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Kirlia -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKirlia.sh
+   export CATFILE="Kirlia.txt"
+   export CATNAME="Kirlia"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Klang -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKlang.sh
+   export CATFILE="Klang.txt"
+   export CATNAME="Klang"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Klink -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKlink.sh
+   export CATFILE="Klink.txt"
+   export CATNAME="Klink"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Klinklang -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKlinklang.sh
+   export CATFILE="Klinklang.txt"
+   export CATNAME="Klinklang"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Koffing -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKoffing.sh
+   export CATFILE="Koffing.txt"
+   export CATNAME="Koffing"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Krabby -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKrabby.sh
+   export CATFILE="Krabby.txt"
+   export CATNAME="Krabby"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Kricketot -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKricketot.sh
+   export CATFILE="Kricketot.txt"
+   export CATNAME="Kricket"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Kricketune -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKricketune.sh
+   export CATFILE="Kricketune.txt"
+   export CATNAME="Kricketune"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Krookodile -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKrookodile.sh
+   export CATFILE="Krookodile.txt"
+   export CATNAME="Krookodile"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Krokorok -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKrokorok.sh
+   export CATFILE="Krokorok.txt"
+   export CATNAME="Krokorok"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Kyogre -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKyogre.sh
+   export CATFILE="Kyogre.txt"
+   export CATNAME="Kyogre"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Kyurem -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/catKyurem.sh
+   export CATFILE="Kyurem.txt"
+   export CATNAME="Kyurem"
+   ./catscripts/Categorize.sh
 fi
 
 
