@@ -9,7 +9,9 @@ ANTONYMS=`stat --print=%s Antonyms.txt`
 
 if [ $ANTONYMS -ne 0 ];
 then
-  ./catscripts/Language/Antonyms/catAntonyms.sh
+  export CATFILE="Antonyms.txt"
+  export CATNAME="Antonyms"
+  ./catscripts/Categorize.sh
 fi
 
 rm Antonyms.txt

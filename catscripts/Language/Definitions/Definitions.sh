@@ -20,7 +20,9 @@ DEFINITIONS=`stat --print=%s Definitions.txt`
 
 if [ $DEFINITIONS -ne 0 ];
 then
-  ./catscripts/Language/Definitions/catDefinitions.sh
+  export CATFILE="Definitions.txt"
+  export CATNAME="Definitions"
+  ./catscripts/Categorize.sh
 fi
 
 rm Definitions.txt
