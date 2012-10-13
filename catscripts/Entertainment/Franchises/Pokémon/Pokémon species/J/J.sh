@@ -17,37 +17,51 @@ Jynx=`stat --print=%s Jynx.txt`
 
 if [ $Jellicent -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/J/catJellicent.sh
+   export CATFILE="Jellicent.txt"
+   export CATNAME="Jellicent"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Jigglypuff -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/J/catJigglypuff.sh
+   export CATFILE="Jigglypuff.txt"
+   export CATNAME="Jigglypuff"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Jirachi -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/J/catJirachi.sh
+   export CATFILE="Jirachi.txt"
+   export CATNAME="Jirachi"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Jolteon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/J/catJolteon.sh
+   export CATFILE="Jolteon.txt"
+   export CATNAME="Jolteon"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Joltik -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/J/catJoltik.sh
+   export CATFILE="Joltik.txt"
+   export CATNAME="Joltik"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Jumpluff -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/J/catJumpluff.sh
+   export CATFILE="Jumpluff.txt"
+   export CATNAME="Jumpluff"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Jynx -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/J/catJynx.sh
+   export CATFILE="Jynx.txt"
+   export CATNAME="Jynx"
+   ./catscripts/Categorize.sh
 fi
 
 rm Jellicent.txt
