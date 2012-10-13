@@ -6,7 +6,9 @@ MLP=`stat --print=%s MLPFIM.txt`
 
 if [ $MLP -ne 0 ];
 then
-  ./catscripts/Entertainment/Cartoons/My\ Little\ Pony\:\ Friendship\ is\ Magic/catMLP.sh
+  export CATFILE="MLPFIM.txt"
+  export CATNAME="My Little Pony: Friendship is Magic"
+  ./catscripts/Categorize.sh
 fi
 
 

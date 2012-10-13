@@ -6,7 +6,9 @@ SPONGEBOB=`stat --print=%s SpongeBobSquarePants.txt`
 
 if [ $SPONGEBOB -ne 0 ];
 then
-  ./catscripts/Entertainment/Cartoons/SpongeBob\ SquarePants/catSpongeBobSquarePants.sh
+  export CATFILE="SpongeBobSquarePants.txt"
+  export CATNAME="SpongeBob SquarePants"
+  ./catscripts/Categorize.sh
 fi
 
 

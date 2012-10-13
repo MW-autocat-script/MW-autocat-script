@@ -6,7 +6,9 @@ SOUTHPARK=`stat --print=%s SouthPark.txt`
 
 if [ $SOUTHPARK -ne 0 ];
 then
-  ./catscripts/Entertainment/Cartoons/South\ park/catSouthPark.sh
+  export CATFILE="SouthPark.txt"
+  export CATNAME="South Park"
+  ./catscripts/Categorize.sh
 fi
 
 
