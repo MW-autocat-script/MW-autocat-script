@@ -5,7 +5,6 @@
 ##NPL is the limit for the page generator
 export GBT=3
 export NPL=60
-
 export PYWIKIPEDIADIR=/home/test/QuestionKitty
 #Fetch new pages
 

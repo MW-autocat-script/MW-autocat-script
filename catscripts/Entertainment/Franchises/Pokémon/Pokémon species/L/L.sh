@@ -69,167 +69,233 @@ Luxray=`stat --print=%s Luxray.txt`
 
 if [ $Lairon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLairon.sh
+   export CATFILE="Lairon.txt"
+   export CATNAME="Lairon"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Lampent -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLampent.sh
+   export CATFILE="Lampent.txt"
+   export CATNAME="Lampent"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Landorus -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLandorus.sh
+   export CATFILE="Landorus.txt"
+   export CATNAME="Landorus"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Lanturn -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLanturn.sh
+   export CATFILE="Lanturn.txt"
+   export CATNAME="Lanturn"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Lapras -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLapras.sh
+   export CATFILE="Lapras.txt"
+   export CATNAME="Lapras"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Larvesta -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLarvesta.sh
+   export CATFILE="Larvesta.txt"
+   export CATNAME="Larvesta"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Larvitar -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLarvitar.sh
+   export CATFILE="Larvitar.txt"
+   export CATNAME="Larvitar"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Latias -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLatias.sh
+   export CATFILE="Latias.txt"
+   export CATNAME="Latias"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Latios -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLatios.sh
+   export CATFILE="Latios.txt"
+   export CATNAME="Latios"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Leafeon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLeafeon.sh
+   export CATFILE="Leafeon.txt"
+   export CATNAME="Leafeon"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Leavanny -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLeavanny.sh
+   export CATFILE="Leavanny.txt"
+   export CATNAME="Leavanny"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Ledian -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLedian.sh
+   export CATFILE="Ledian.txt"
+   export CATNAME="Ledian"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Ledyba -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLedyba.sh
+   export CATFILE="Ledyba.txt"
+   export CATNAME="Ledyba"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Lickilicky -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLickilicky.sh
+   export CATFILE="Lickilicky.txt"
+   export CATNAME="Lickilicky"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Lickitung -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLickitung.sh
+   export CATFILE="Lickitung.txt"
+   export CATNAME="Lickitung"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Liepard -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLiepard.sh
+   export CATFILE="Liepard.txt"
+   export CATNAME="Liepard"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Lileep -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLileep.sh
+   export CATFILE="Lileep.txt"
+   export CATNAME="Lileep"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Lilligant -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLilligant.sh
+   export CATFILE="Lilligant.txt"
+   export CATNAME="Lilligant"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Lillipup -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLillipup.sh
+   export CATFILE="Lillipup.txt"
+   export CATNAME="Lillipup"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Linoone -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLinoone.sh
+   export CATFILE="Linoone.txt"
+   export CATNAME="Linoone"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Litwick -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLitwick.sh
+   export CATFILE="Litwick.txt"
+   export CATNAME="Litwick"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Lombre -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLombre.sh
+   export CATFILE="Lombre.txt"
+   export CATNAME="Lombre"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Lopunny -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLopunny.sh
+   export CATFILE="Lopunny.txt"
+   export CATNAME="Lopunny"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Lotad -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLotad.sh
+   export CATFILE="Lotad.txt"
+   export CATNAME="Lotad"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Loudred -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLoudred.sh
+   export CATFILE="Loudred.txt"
+   export CATNAME="Loudred"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Lucario -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLucario.sh
+   export CATFILE="Lucario.txt"
+   export CATNAME="Lucario"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Ludicolo -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLudicolo.sh
+   export CATFILE="Ludicolo.txt"
+   export CATNAME="Ludicolo"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Lugia -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLugia.sh
+   export CATFILE="Lugia.txt"
+   export CATNAME="Lugia"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Lumineon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLumineon.sh
+   export CATFILE="Lumineon.txt"
+   export CATNAME="Lumineon"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Lunatone -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLunatone.sh
+   export CATFILE="Lunatone.txt"
+   export CATNAME="Lunatone"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Luvdisc -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLuvdisc.sh
+   export CATFILE="Luvdisc.txt"
+   export CATNAME="Luvdisc"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Luxio -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLuxio.sh
+   export CATFILE="Luxio.txt"
+   export CATNAME="Luxio"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Luxray -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/catLuxray.sh
+   export CATFILE="Luxray.txt"
+   export CATNAME="Luxray"
+   ./catscripts/Categorize.sh
 fi
 
 
