@@ -37,87 +37,121 @@ Furret=`stat --print=%s Furret.txt`
 
 if [ $Farfetchd -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catFarfetchd.sh
+   export CATFILE="Farfetchd.txt"
+   export CATNAME="Farfetch'd"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Fearow -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catFearow.sh
+   export CATFILE="Fearow.txt"
+   export CATNAME="Fearow"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Feebas -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catFeebas.sh
+   export CATFILE="Feebas.txt"
+   export CATNAME="Feebas"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Feraligatr -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catFeraligatr.sh
+   export CATFILE="Feraligatr.txt"
+   export CATNAME="Feraligatr"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Ferroseed -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catFerroseed.sh
+   export CATFILE="Ferroseed.txt"
+   export CATNAME="Ferroseed"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Ferrothorn -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catFerrothorn.sh
+   export CATFILE="Ferrothorn.txt"
+   export CATNAME="Ferrothorn"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Finneon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catFinneon.sh
+   export CATFILE="Finneon.txt"
+   export CATNAME="Finneon"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Flaaffy -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catFlaaffy.sh
+   export CATFILE="Flaaffy.txt"
+   export CATNAME="Flaffy"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Flareon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catFlareon.sh
+   export CATFILE="Flareon.txt"
+   export CATNAME="Flareon"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Floatzel -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catFloatzel.sh
+   export CATFILE="Floatzel.txt"
+   export CATNAME="Floatzel"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Flygon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catFlygon.sh
+   export CATFILE="Flygon.txt"
+   export CATNAME="Flygon"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Foongus -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catFoongus.sh
+   export CATFILE="Foongus.txt"
+   export CATNAME="Foongus"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Forretress -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catForretress.sh
+   export CATFILE="Forretress.txt"
+   export CATNAME="Forretress"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Fraxure -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catFraxure.sh
+   export CATFILE="Fraxure.txt"
+   export CATNAME="Fraxure"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Frillish -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catFrillish.sh
+   export CATFILE="Frillish.txt"
+   export CATNAME="Frillish"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Froslass -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catFroslass.sh
+   export CATFILE="Froslass.txt"
+   export CATNAME="Froslass"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Furret -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/catFurret.sh
+   export CATFILE="Furret.txt"
+   export CATNAME="Furret"
+   ./catscripts/Categorize.sh
 fi
 
 
