@@ -90,213 +90,255 @@ Gyarados=`stat --print=%s Gyarados.txt`
 
 if [ $Gabite -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGabite.sh
-fi
+   export CATFILE="Gabite.txt"
+   export CATNAME="Gabite"
+   ./catscripts/Categorize.sh
 
 if [ $Gallade -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGallade.sh
-fi
+   export CATFILE="Gallade.txt"
+   export CATNAME="Gallade"
+   ./catscripts/Categorize.sh
 
 if [ $Garbodor -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGarbodor.sh
-fi
+   export CATFILE="Garbodor.txt"
+   export CATNAME="Garbodor"
+   ./catscripts/Categorize.sh
 
 if [ $Garchomp -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGarchomp.sh
-fi
+   export CATFILE="Garchomp.txt"
+   export CATNAME="Garchomp"
+   ./catscripts/Categorize.sh
 
 if [ $Gardevoir -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGardevoir.sh
-fi
+   export CATFILE="Gardevoir.txt"
+   export CATNAME="Gardevoir"
+   ./catscripts/Categorize.sh
 
 if [ $Gastly -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGastly.sh
-fi
+   export CATFILE="Gastly.txt"
+   export CATNAME="Gastly"
+   ./catscripts/Categorize.sh
 
 if [ $Gastrodon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGastrodon.sh
-fi
+   export CATFILE="Gastrodon.txt"
+   export CATNAME="Gastrodon"
+   ./catscripts/Categorize.sh
 
 if [ $Galvantula -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGalvantula.sh
-fi
+   export CATFILE="Galvantula.txt"
+   export CATNAME="Galvantula"
+   ./catscripts/Categorize.sh
 
 if [ $Genesect -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGenesect.sh
-fi
+   export CATFILE="Genesect.txt"
+   export CATNAME="Genesect"
+   ./catscripts/Categorize.sh
 
 if [ $Gengar -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGengar.sh
-fi
+   export CATFILE="Gengar.txt"
+   export CATNAME="Gengar"
+   ./catscripts/Categorize.sh
 
 if [ $Geodude -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGeodude.sh
-fi
+   export CATFILE="Geodude.txt"
+   export CATNAME="Geodude"
+   ./catscripts/Categorize.sh
 
 if [ $Gible -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGible.sh
-fi
+   export CATFILE="Gible.txt"
+   export CATNAME="Gible"
+   ./catscripts/Categorize.sh
 
 if [ $Gigalith -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGigalith.sh
-fi
+   export CATFILE="Gigalith.txt"
+   export CATNAME="Gigalith"
+   ./catscripts/Categorize.sh
 
 if [ $Girafarig -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGirafarig.sh
-fi
+   export CATFILE="Girafarig.txt"
+   export CATNAME="Girafarig"
+   ./catscripts/Categorize.sh
 
 if [ $Giratina -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGiratina.sh
-fi
+   export CATFILE="Giratina.txt"
+   export CATNAME="Giratina"
+   ./catscripts/Categorize.sh
 
 if [ $Glaceon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGlaceon.sh
-fi
+   export CATFILE="Glaceon.txt"
+   export CATNAME="Glaceon"
+   ./catscripts/Categorize.sh
 
 if [ $Glalie -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGlalie.sh
-fi
+   export CATFILE="Glalie.txt"
+   export CATNAME="Glalie"
+   ./catscripts/Categorize.sh
 
 if [ $Glameow -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGlameow.sh
-fi
+   export CATFILE="Glameow.txt"
+   export CATNAME="Glameow"
+   ./catscripts/Categorize.sh
 
 if [ $Gligar -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGligar.sh
-fi
+   export CATFILE="Gligar.txt"
+   export CATNAME="Gligar"
+   ./catscripts/Categorize.sh
 
 if [ $Gliscor -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGliscor.sh
-fi
+   export CATFILE="Gliscor.txt"
+   export CATNAME="Gliscor"
+   ./catscripts/Categorize.sh
 
 if [ $Gloom -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGloom.sh
-fi
+   export CATFILE="Gloom.txt"
+   export CATNAME="Gloom"
+   ./catscripts/Categorize.sh
 
 if [ $Golbat -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGolbat.sh
-fi
+   export CATFILE="Golbat.txt"
+   export CATNAME="Golbat"
+   ./catscripts/Categorize.sh
 
 if [ $Goldeen -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGoldeen.sh
-fi
+   export CATFILE="Goldeen.txt"
+   export CATNAME="Goldeen"
+   ./catscripts/Categorize.sh
 
 if [ $Golduck -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGolduck.sh
-fi
+   export CATFILE="Golduck.txt"
+   export CATNAME="Golduck"
+   ./catscripts/Categorize.sh
 
 if [ $Golem -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGolem.sh
-fi
+   export CATFILE="Golem.txt"
+   export CATNAME="Golem"
+   ./catscripts/Categorize.sh
 
 if [ $Golett -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGolett.sh
-fi
+   export CATFILE="Golett.txt"
+   export CATNAME="Golett"
+   ./catscripts/Categorize.sh
 
 if [ $Golurk -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGolurk.sh
-fi
+   export CATFILE="Golurk.txt"
+   export CATNAME="Golurk"
+   ./catscripts/Categorize.sh
 
 if [ $Gorebyss -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGorebyss.sh
-fi
+   export CATFILE="Gorebyss.txt"
+   export CATNAME="Gorebyss"
+   ./catscripts/Categorize.sh
 
 if [ $Gothita -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGothita.sh
-fi
+   export CATFILE="Gothita.txt"
+   export CATNAME="Gothita"
+   ./catscripts/Categorize.sh
 
 if [ $Gothitelle -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGothitelle.sh
-fi
+   export CATFILE="Gothitelle.txt"
+   export CATNAME="Gothitelle"
+   ./catscripts/Categorize.sh
 
 if [ $Gothorita -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGothorita.sh
-fi
+   export CATFILE="Gothorita.txt"
+   export CATNAME="Gothorita"
+   ./catscripts/Categorize.sh
 
 if [ $Granbull -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGranbull.sh
-fi
+   export CATFILE="Granbull.txt"
+   export CATNAME="Granbull"
+   ./catscripts/Categorize.sh
 
 if [ $Graveler -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGraveler.sh
-fi
+   export CATFILE="Graveler.txt"
+   export CATNAME="Graveler (Pokémon)"
+   ./catscripts/Categorize.sh
 
 if [ $Grimer -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGrimer.sh
-fi
+   export CATFILE="Grimer.txt"
+   export CATNAME="Grimer"
+   ./catscripts/Categorize.sh
 
 if [ $Grotle -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGrotle.sh
-fi
+   export CATFILE="Grotle.txt"
+   export CATNAME="Grotle"
+   ./catscripts/Categorize.sh
 
 if [ $Groudon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGroudon.sh
-fi
+   export CATFILE="Groudon.txt"
+   export CATNAME="Groudon"
+   ./catscripts/Categorize.sh
 
 if [ $Grovyle -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGrovyle.sh
-fi
+   export CATFILE="Grovyle.txt"
+   export CATNAME="Grovyle"
+   ./catscripts/Categorize.sh
 
 if [ $Growlithe -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGrowlithe.sh
-fi
+   export CATFILE="Growlithe.txt"
+   export CATNAME="Growlithe"
+   ./catscripts/Categorize.sh
 
 if [ $Grumpig -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGrumpig.sh
-fi
+   export CATFILE="Grumpig.txt"
+   export CATNAME="Grumpig"
+   ./catscripts/Categorize.sh
 
 if [ $Gulpin -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGulpin.sh
-fi
+   export CATFILE="Gulpin.txt"
+   export CATNAME="Gulpin"
+   ./catscripts/Categorize.sh
 
 if [ $Gurdurr -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGurdurr.sh
-fi
+   export CATFILE="Gurdurr.txt"
+   export CATNAME="Gurdurr"
+   ./catscripts/Categorize.sh
 
 if [ $Gyarados -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/catGyarados.sh
-fi
+   export CATFILE="Gyarados.txt"
+   export CATNAME="Gyarados"
+   ./catscripts/Categorize.sh
 
 
 rm Gabite.txt
