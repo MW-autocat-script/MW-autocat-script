@@ -42,9 +42,6 @@ cat newpages.txt | egrep -i 'Woozworld|Wooz world' > Woozworld.txt
 cat newpages.txt | egrep -i 'PNPA' > PNPA.txt
 cat newpages.txt | egrep -i '(pnp\b.+neuro|neuro.+pnp)' >> PNPA.txt
 
-cat newpages.txt | egrep -iv "\bwho|\bwhat|where\b|\bwhen\b|\bwhy|how\b|\bdo\b|\shas\b|does\b|did\b|will\b|is\b|are\b|\bwere\b|\bwas\b|\bwhich\b|\bcould|should\b|shouldn't|\bwould|can\b|[0-9]{1,}" >> 3WNQ.txt
-
-cat newpages.txt | egrep -i 'porn|hentai|lolicon|sex.+videos|videos.+sex' >> Pornography.txt
 
 #Size test
 
@@ -54,8 +51,6 @@ SIZEOFLITERACYPLANET=`stat --print=%s LiteracyPlanet.txt`
 SIZEOFMOSHIMONSTERS=`stat --print=%s MoshiMonsters.txt`
 SIZEOFWOOZWORLD=`stat --print=%s Woozworld.txt`
 SIZEOFPNPA=`stat --print=%s PNPA.txt`
-SIZEOF3WNQ=`stat --print=%s 3WNQ.txt`
-SIZEOFPORNOGRAPHY=`stat --print=%s Pornography.txt`
 
 
 if [ $POPTROPICA -ne 0 ];
@@ -88,15 +83,6 @@ then
   ./catscripts/Temp/pnpa.sh
 fi
 
-if [ $SIZEOF3WNQ -ne 0 ];
-then
-  ./catscripts/Temp/noninterrogative.sh
-fi
-
-if [ $SIZEOFPORNOGRAPHY -ne 0 ];
-then
-  ./catscripts/Temp/pornography.sh
-fi
 echo "Running subscripts"
 
 ./catscripts/Language/Language.sh
@@ -105,6 +91,7 @@ echo "Running subscripts"
 ./catscripts/Math/Math.sh
 ./catscripts/Entertainment/Entertainment.sh
 ./catscripts/Science/Science.sh
+./catscripts/Maintenance/Maintenance.sh
 
 #Cleanup
 
@@ -116,6 +103,4 @@ rm LiteracyPlanet.txt
 rm MoshiMonsters.txt
 rm Woozworld.txt
 rm PNPA.txt
-rm 3WNQ.txt
-rm Pornography.txt
 
