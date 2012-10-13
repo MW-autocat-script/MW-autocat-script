@@ -9,7 +9,9 @@ PERCENTAGES=`stat --print=%s Percentages.txt`
 
 if [ $PERCENTAGES -ne 0 ];
 then
-  ./catscripts/Math/Percentages/catPercentages.sh
+  export CATFILE="Percentages.txt"
+  export CATNAME="Percentages"
+  ./catscripts/Categorize.sh
 fi
 
 rm Percentages.txt

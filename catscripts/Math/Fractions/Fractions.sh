@@ -9,5 +9,7 @@ FRACTIONS=`stat --print=%s Fractions.txt`
 
 if [ $FRACTIONS -ne 0 ];
 then
-  ./catscripts/Math/Fractions/catFractions.sh
+  export CATFILE="Fractions.txt"
+  export CATNAME="Fractions"
+  ./catscripts/Categorize.sh
 fi

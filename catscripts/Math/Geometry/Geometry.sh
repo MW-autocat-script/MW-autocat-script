@@ -6,7 +6,9 @@ GEOMETRY=`stat --print=%s Geometry.txt`
 
 if [ $GEOMETRY -ne 0 ];
 then
-  ./catscripts/Math/Geometry/catGeometry.sh
+  export CATFILE="Geometry.txt"
+  export CATNAME="Geometry"
+  ./catscripts/Categorize.sh
 fi
 
 rm Geometry.txt

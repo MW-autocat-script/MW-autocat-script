@@ -8,7 +8,9 @@ MULTIPLICATION=`stat --print=%s Multiplication.txt`
 
 if [ $MULTIPLICATION -ne 0 ];
 then
-  ./catscripts/Math/Multiplication/catMultiplication.sh
+  export CATFILE="Multiplication.txt"
+  export CATNAME="Multiplication"
+  ./catscripts/Categorize.sh
 fi
 
 rm Multiplication.txt

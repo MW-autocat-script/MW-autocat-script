@@ -8,7 +8,9 @@ DIVISION=`stat --print=%s Division.txt`
 
 if [ $DIVISION -ne 0 ];
 then
-  ./catscripts/Math/Division/catDivision.sh
+  export CATFILE="Division.txt"
+  export CATNAME="Division"
+  ./catscripts/Categorize.sh
 fi
 
 rm Division.txt

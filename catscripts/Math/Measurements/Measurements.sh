@@ -6,7 +6,9 @@ CONVERSIONS=`stat --print=%s MeasurementConversions.txt`
 
 if [ $CONVERSIONS -ne 0 ];
 then
-  ./catscripts/Math/Measurements/catMeasurementConversions.sh
+  export CATFILE="MeasurementConversions.txt"
+  export CATNAME="Measurement conversions"
+  ./catscripts/Categorize.sh
 fi
 
 rm MeasurementConversions.txt
