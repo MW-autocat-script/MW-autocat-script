@@ -13,3 +13,5 @@ then
   export CATNAME="Fractions"
   ./catscripts/Categorize.sh
 fi
+
+rm Fractions.txt
