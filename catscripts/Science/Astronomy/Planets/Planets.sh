@@ -20,42 +20,58 @@ Neptune=`stat --print=%s Neptune.txt`
 
 if [ $Mercury -ne 0 ];
 then
-   ./catscripts/Science/Astronomy/Planets/catMercury.sh
+	export CATFILE="Mercury.txt"
+	export CATNAME="Mercury"
+	./catscripts/Categorize.sh
 fi
 
 if [ $Venus -ne 0 ];
 then
-   ./catscripts/Science/Astronomy/Planets/catVenus.sh
+	export CATFILE="Venus.txt"
+	export CATNAME="Venus"
+	./catscripts/Categorize.sh
 fi
 
 if [ $Earth -ne 0 ];
 then
-   ./catscripts/Science/Astronomy/Planets/catEarth.sh
+	export CATFILE="Earth.txt"
+	export CATNAME="Earth"
+	./catscripts/Categorize.sh
 fi
 
 if [ $Mars -ne 0 ];
 then
-   ./catscripts/Science/Astronomy/Planets/catMars.sh
+	export CATFILE="Mars.txt"
+	export CATNAME="Mars"
+	./catscripts/Categorize.sh
 fi
 
 if [ $Jupiter -ne 0 ];
 then
-   ./catscripts/Science/Astronomy/Planets/catJupiter.sh
+	export CATFILE="Jupiter.txt"
+	export CATNAME="Jupiter"
+	./catscripts/Categorize.sh
 fi
 
 if [ $Saturn -ne 0 ];
 then
-   ./catscripts/Science/Astronomy/Planets/catSaturn.sh
+	export CATFILE="Saturn.txt"
+	export CATNAME="Saturn"
+	./catscripts/Categorize.sh
 fi
 
 if [ $Uranus -ne 0 ];
 then
-   ./catscripts/Science/Astronomy/Planets/catUranus.sh
+	export CATFILE="Uranus.txt"
+	export CATNAME="Uranus"
+	./catscripts/Categorize.sh
 fi
 
 if [ $Neptune -ne 0 ];
 then
-   ./catscripts/Science/Astronomy/Planets/catNeptune.sh
+	export CATFILE="Neptune.txt"
+	export CATNAME="Neptune"
+	./catscripts/Categorize.sh
 fi
 
 
