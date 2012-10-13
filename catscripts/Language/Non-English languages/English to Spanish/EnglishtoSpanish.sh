@@ -10,7 +10,9 @@ SIZEOFENGLISHTOSPANISH=`stat --print=%s EnglishtoSpanish.txt`
 
 if [ $SIZEOFENGLISHTOSPANISH -ne 0 ];
 then
-    ./catscripts/Language/Non-English\ languages/English\ to\ Spanish/catEnglishtoSpanish.sh
+  export CATFILE="EnglishtoSpanish.txt"
+  export CATNAME="English to Spanish"
+  ./catscripts/Categorize.sh
 fi
 
 rm EnglishtoSpanish.txt
