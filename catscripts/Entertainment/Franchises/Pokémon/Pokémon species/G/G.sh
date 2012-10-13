@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 cat newpages.txt | egrep -i 'Gabite' >> Gabite.txt
 cat newpages.txt | egrep -i 'Gallade' >> Gallade.txt
 cat newpages.txt | egrep -i 'Garbodor' >> Garbodor.txt
@@ -339,7 +337,7 @@ then
    export CATFILE="Gyarados.txt"
    export CATNAME="Gyarados"
    ./catscripts/Categorize.sh
-
+fi
 
 rm Gabite.txt
 rm Gallade.txt
