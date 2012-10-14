@@ -36,29 +36,37 @@ cat newpages.txt | egrep -i '(pnp\b.+neuro|neuro.+pnp)' >> PNPA.txt
 #Size test
 
 POPTROPICA=`stat --print=%s Poptropica.txt`
-SIZEOFMOSHIMONSTERS=`stat --print=%s MoshiMonsters.txt`
-SIZEOFWOOZWORLD=`stat --print=%s Woozworld.txt`
-SIZEOFPNPA=`stat --print=%s PNPA.txt`
+MOSHIMONSTERS=`stat --print=%s MoshiMonsters.txt`
+WOOZWORLD=`stat --print=%s Woozworld.txt`
+PNPA=`stat --print=%s PNPA.txt`
 
 
 if [ $POPTROPICA -ne 0 ];
 then
-  ./catscripts/Temp/poptropica.sh
+  export CATFILE="Poptropica.txt"
+  export CATNAME="Poptropica"
+  ./catscripts/Categorize.sh
 fi
 
-if [ $SIZEOFMOSHIMONSTERS -ne 0 ];
+if [ $MOSHIMONSTERS -ne 0 ];
 then
-  ./catscripts/Temp/moshimonsters.sh
+  export CATFILE="MoshiMonsters.txt"
+  export CATNAME="Moshi Monsters"
+  ./catscripts/Categorize.sh
 fi
 
-if [ $SIZEOFWOOZWORLD -ne 0 ];
+if [ $WOOZWORLD -ne 0 ];
 then
-  ./catscripts/Temp/woozworld.sh
+  export CATFILE="Woozworld.txt"
+  export CATNAME="Woozworld"
+  ./catscripts/Categorize.sh
 fi
 
-if [ $SIZEOFPNPA -ne 0 ];
+if [ $PNPA -ne 0 ];
 then
-  ./catscripts/Temp/pnpa.sh
+  export CATFILE="PNPA.txt"
+  export CATNAME="PNPA"
+  ./catscripts/Categorize.sh
 fi
 
 echo "Running subscripts"

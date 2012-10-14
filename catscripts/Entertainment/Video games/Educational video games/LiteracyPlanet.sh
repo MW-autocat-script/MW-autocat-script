@@ -10,3 +10,5 @@ then
   export CATNAME="Literacy Planet"
   ./catscripts/Categorize.sh
 fi
+
+rm LiteracyPlanet.txt
