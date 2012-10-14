@@ -15,32 +15,44 @@ Oshawott=`stat --print=%s Oshawott.txt`
 
 if [ $Octillery -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/O/catOctillery.sh
+  export CATFILE="Octillery.txt"
+  export CATNAME="Octillery"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Oddish -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/O/catOddish.sh
+  export CATFILE="Oddish.txt"
+  export CATNAME="Oddish"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Omanyte -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/O/catOmanyte.sh
+  export CATFILE="Omanyte.txt"
+  export CATNAME="Omanyte"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Omastar -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/O/catOmastar.sh
+  export CATFILE="Omastar.txt"
+  export CATNAME="Omastar"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Onix -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/O/catOnix.sh
+  export CATFILE="Onix.txt"
+  export CATNAME="Onix"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Oshawott -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/O/catOshawott.sh
+  export CATFILE="Oshawott.txt"
+  export CATNAME="Oshawott"
+  ./catscripts/Categorize.sh
 fi
 
 
