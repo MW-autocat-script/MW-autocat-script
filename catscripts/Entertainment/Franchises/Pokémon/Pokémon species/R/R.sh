@@ -53,127 +53,177 @@ Rufflet=`stat --print=%s Rufflet.txt`
 
 if [ $Raichu -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRaichu.sh
+  export CATFILE="Raichu.txt"
+  export CATNAME="Raichu"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Raikou -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRaikou.sh
+  export CATFILE="Raikou.txt"
+  export CATNAME="Raikou"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Ralts -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRalts.sh
+  export CATFILE="Ralts.txt"
+  export CATNAME="Ralts"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Rampardos -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRampardos.sh
+  export CATFILE="Rampardos.txt"
+  export CATNAME="Rampardos"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Rapidash -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRapidash.sh
+  export CATFILE="Rapidash.txt"
+  export CATNAME="Rapidash"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Raticate -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRaticate.sh
+  export CATFILE="Raticate.txt"
+  export CATNAME="Raticate"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Rattata -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRattata.sh
+  export CATFILE="Rattata.txt"
+  export CATNAME="Rattata"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Rayquaza -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRayquaza.sh
+  export CATFILE="Rayquaza.txt"
+  export CATNAME="Rayquaza"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Regice -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRegice.sh
+  export CATFILE="Regice.txt"
+  export CATNAME="Regice"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Regigigas -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRegigigas.sh
+  export CATFILE="Regigigas.txt"
+  export CATNAME="Regigigas"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Regirock -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRegirock.sh
+  export CATFILE="Regirock.txt"
+  export CATNAME="Regirock"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Registeel -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRegisteel.sh
+  export CATFILE="Registeel.txt"
+  export CATNAME="Registeel"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Relicanth -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRelicanth.sh
+  export CATFILE="Relicanth.txt"
+  export CATNAME="Relicanth"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Remoraid -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRemoraid.sh
+  export CATFILE="Remoraid.txt"
+  export CATNAME="Remoraid"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Reshiram -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catReshiram.sh
+  export CATFILE="Reshiram.txt"
+  export CATNAME="Reshiram"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Reuniclus -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catReuniclus.sh
+  export CATFILE="Reuniclus.txt"
+  export CATNAME="Reuniclus"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Rhydon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRhydon.sh
+  export CATFILE="Rhydon.txt"
+  export CATNAME="Rhydon"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Rhyhorn -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRhyhorn.sh
+  export CATFILE="Rhyhorn.txt"
+  export CATNAME="Rhyhorn"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Rhyperior -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRhyperior.sh
+  export CATFILE="Rhyperior.txt"
+  export CATNAME="Rhyperior"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Riolu -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRiolu.sh
+  export CATFILE="Riolu.txt"
+  export CATNAME="Riolu"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Roggenrola -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRoggenrola.sh
+  export CATFILE="Roggenrola.txt"
+  export CATNAME="Roggenrola"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Roselia -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRoselia.sh
+  export CATFILE="Roselia.txt"
+  export CATNAME="Roselia"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Roserade -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRoserade.sh
+  export CATFILE="Roserade.txt"
+  export CATNAME="Roserade"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Rotom -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRotom.sh
+  export CATFILE="Rotom.txt"
+  export CATNAME="Rotom"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Rufflet -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/catRufflet.sh
+  export CATFILE="Rufflet.txt"
+  export CATNAME="Rufflet"
+  ./catscripts/Categorize.sh
 fi
 
 
