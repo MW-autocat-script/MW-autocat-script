@@ -67,162 +67,226 @@ Tyrogue=`stat --print=%s Tyrogue.txt`
 
 if [ $Taillow -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTaillow.sh
+  export CATFILE="Taillow.txt"
+  export CATNAME="Taillow"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Tangela -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTangela.sh
+  export CATFILE="Tangela.txt"
+  export CATNAME="Tangela"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Tangrowth -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTangrowth.sh
+  export CATFILE="Tangrowth.txt"
+  export CATNAME="Tangrowth"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Tauros -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTauros.sh
+  export CATFILE="Tauros.txt"
+  export CATNAME="Tauros"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Teddiursa -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTeddiursa.sh
+  export CATFILE="Teddiursa.txt"
+  export CATNAME="Teddiursa"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Tentacool -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTentacool.sh
+  export CATFILE="Tentacool.txt"
+  export CATNAME="Tentacool"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Tentacruel -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTentacruel.sh
+  export CATFILE="Tentacruel.txt"
+  export CATNAME="Tentacruel"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Tepig -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTepig.sh
+  export CATFILE="Tepig.txt"
+  export CATNAME="Tepig"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Throh -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catThroh.sh
+  export CATFILE="Throh.txt"
+  export CATNAME="Throh"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Thundurus -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catThundurus.sh
+  export CATFILE="Thundurus.txt"
+  export CATNAME="Thundurus"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Timburr -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTimburr.sh
+  export CATFILE="Timburr.txt"
+  export CATNAME="Timburr"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Tirtouga -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTirtouga.sh
+  export CATFILE="Tirtouga.txt"
+  export CATNAME="Tirtouga"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Togekiss -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTogekiss.sh
+  export CATFILE="Togekiss.txt"
+  export CATNAME="Togekiss"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Togepi -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTogepi.sh
+  export CATFILE="Togepi.txt"
+  export CATNAME="Togepi"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Togetic -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTogetic.sh
+  export CATFILE="Togetic.txt"
+  export CATNAME="Togetic"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Torchic -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTorchic.sh
+  export CATFILE="Torchic.txt"
+  export CATNAME="Torchic"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Torkoal -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTorkoal.sh
+  export CATFILE="Torkoal.txt"
+  export CATNAME="Torkoal"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Tornadus -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTornadus.sh
+  export CATFILE="Tornadus.txt"
+  export CATNAME="Tornadus"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Torterra -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTorterra.sh
+  export CATFILE="Torterra.txt"
+  export CATNAME="Torterra"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Totodile -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTotodile.sh
+  export CATFILE="Totodile.txt"
+  export CATNAME="Totodile"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Toxicroak -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catToxicroak.sh
+  export CATFILE="Toxicroak.txt"
+  export CATNAME="Toxicroak"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Tranquill -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTranquill.sh
+  export CATFILE="Tranquill.txt"
+  export CATNAME="Tranquill"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Trapinch -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTrapinch.sh
+  export CATFILE="Trapinch.txt"
+  export CATNAME="Trapinch"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Treecko -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTreecko.sh
+  export CATFILE="Treecko.txt"
+  export CATNAME="Treecko"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Tropius -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTropius.sh
+  export CATFILE="Tropius.txt"
+  export CATNAME="Tropius"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Trubbish -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTrubbish.sh
+  export CATFILE="Trubbish.txt"
+  export CATNAME="Trubbish"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Turtwig -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTurtwig.sh
+  export CATFILE="Turtwig.txt"
+  export CATNAME="Turtwig"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Tympole -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTympole.sh
+  export CATFILE="Tympole.txt"
+  export CATNAME="Tympole"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Tynamo -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTynamo.sh
+  export CATFILE="Tynamo.txt"
+  export CATNAME="Tynamo"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Typhlosion -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTyphlosion.sh
+  export CATFILE="Typhlosion.txt"
+  export CATNAME="Typhlosion"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Tyranitar -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTyranitar.sh
+  export CATFILE="Tyranitar.txt"
+  export CATNAME="Tyranitar"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Tyrogue -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/catTyrogue.sh
+  export CATFILE="Tyrogue.txt"
+  export CATNAME="Tyrogue"
+  ./catscripts/Categorize.sh
 fi
 
 
