@@ -1,4 +1,4 @@
-#!/bin/b.txt"
+#!/bin/bash"
 cat newpages.txt | egrep -i 'Natu\b' >> Natu.txt
 cat newpages.txt | egrep -i 'Nidoking' >> Nidoking.txt
 cat newpages.txt | egrep -i 'Nidoqueen' >> Nidoqueen.txt

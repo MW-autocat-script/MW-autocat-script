@@ -1,4 +1,5 @@
 #!/bin/bash
+
 cat newpages.txt | egrep -i 'Pachirisu' >> Pachirisu.txt
 cat newpages.txt | egrep -i 'Palkia' >> Palkia.txt
 cat newpages.txt | egrep -i 'Palpitoad' >> Palpitoad.txt
@@ -87,212 +88,296 @@ Purugly=`stat --print=%s Purugly.txt`
 
 if [ $Pachirisu -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPachirisu.sh
+  export CATFILE="Pachirisu.txt"
+  export CATNAME="Pachirisu"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Palkia -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPalkia.sh
+  export CATFILE="Palkia.txt"
+  export CATNAME="Palkia"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Palpitoad -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPalpitoad.sh
+  export CATFILE="Palpitoad.txt"
+  export CATNAME="Palpitoad"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Panpour -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPanpour.sh
+  export CATFILE="Panpour.txt"
+  export CATNAME="Panpour"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Pansage -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPansage.sh
+  export CATFILE="Pansage.txt"
+  export CATNAME="Pansage"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Pansear -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPansear.sh
+  export CATFILE="Pansear.txt"
+  export CATNAME="Pansear"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Paras -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catParas.sh
+  export CATFILE="Paras.txt"
+  export CATNAME="Paras"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Parasect -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catParasect.sh
+  export CATFILE="Parasect.txt"
+  export CATNAME="Parasect"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Patrat -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPatrat.sh
+  export CATFILE="Patrat.txt"
+  export CATNAME="Patrat"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Pawniard -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPawniard.sh
+  export CATFILE="Pawniard.txt"
+  export CATNAME="Pawniard"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Pelipper -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPelipper.sh
+  export CATFILE="Pelipper.txt"
+  export CATNAME="Pelipper"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Persian -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPersian.sh
+  export CATFILE="Persian.txt"
+  export CATNAME="Persian"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Petilil -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPetilil.sh
+  export CATFILE="Petilil.txt"
+  export CATNAME="Petilil"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Phanpy -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPhanpy.sh
+  export CATFILE="Phanpy.txt"
+  export CATNAME="Phanpy"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Phione -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPhione.sh
+  export CATFILE="Phione.txt"
+  export CATNAME="Phione"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Pichu -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPichu.sh
+  export CATFILE="Pichu.txt"
+  export CATNAME="Pichu"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Pidgeot -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPidgeot.sh
+  export CATFILE="Pidgeot.txt"
+  export CATNAME="Pidgeot"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Pidgeotto -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPidgeotto.sh
+  export CATFILE="Pidgeotto.txt"
+  export CATNAME="Pidgeotto"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Pidgey -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPidgey.sh
+  export CATFILE="Pidgey.txt"
+  export CATNAME="Pidgey"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Pignite -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPignite.sh
+  export CATFILE="Pignite.txt"
+  export CATNAME="Pignite"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Pikachu -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPikachu.sh
+  export CATFILE="Pikachu.txt"
+  export CATNAME="Pikachu"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Piloswine -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPiloswine.sh
+  export CATFILE="Piloswine.txt"
+  export CATNAME="Piloswine"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Pineco -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPineco.sh
+  export CATFILE="Pineco.txt"
+  export CATNAME="Pineco"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Pinsir -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPinsir.sh
+  export CATFILE="Pinsir.txt"
+  export CATNAME="Pinsir"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Piplup -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPiplup.sh
+  export CATFILE="Piplup.txt"
+  export CATNAME="Piplup"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Plusle -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPlusle.sh
+  export CATFILE="Plusle.txt"
+  export CATNAME="Plusle"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Politoed -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPolitoed.sh
+  export CATFILE="Politoed.txt"
+  export CATNAME="Politoed"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Poliwag -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPoliwag.sh
+  export CATFILE="Poliwag.txt"
+  export CATNAME="Poliwag"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Poliwhirl -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPoliwhirl.sh
+  export CATFILE="Poliwhirl.txt"
+  export CATNAME="Poliwhirl"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Poliwrath -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPoliwrath.sh
+  export CATFILE="Poliwrath.txt"
+  export CATNAME="Poliwrath"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Ponyta -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPonyta.sh
+  export CATFILE="Ponyta.txt"
+  export CATNAME="Ponyta"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Poochyena -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPoochyena.sh
+  export CATFILE="Poochyena.txt"
+  export CATNAME="Poochyena"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Porygon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPorygon.sh
+  export CATFILE="Porygon.txt"
+  export CATNAME="Porygon"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $PorygonZ -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPorygon-Z.sh
+  export CATFILE="Porygon-Z.txt"
+  export CATNAME="Porygon-Z"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Porygon2 -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPorygon2.sh
+  export CATFILE="Porygon2.txt"
+  export CATNAME="Porygon2"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Primeape -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPrimeape.sh
+  export CATFILE="Primeape.txt"
+  export CATNAME="Primeape"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Prinplup -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPrinplup.sh
+  export CATFILE="Prinplup.txt"
+  export CATNAME="Prinplup"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Probopass -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catProbopass.sh
+  export CATFILE="Probopass.txt"
+  export CATNAME="Probopass"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Psyduck -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPsyduck.sh
+  export CATFILE="Psyduck.txt"
+  export CATNAME="Psyduck"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Pupitar -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPupitar.sh
+  export CATFILE="Pupitar.txt"
+  export CATNAME="Pupitar"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Purrloin -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPurrloin.sh
+  export CATFILE="Purrloin.txt"
+  export CATNAME="Purrloin"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Purugly -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/catPurugly.sh
+  export CATFILE="Purugly.txt"
+  export CATNAME="Purugly"
+  ./catscripts/Categorize.sh
 fi
 
 
