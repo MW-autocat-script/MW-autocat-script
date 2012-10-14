@@ -24,7 +24,7 @@ JABBA=`stat --print=%s JabbaTheHutt.txt`
 KENOBI=`stat --print=%s Obi-WanKenobi.txt`
 VADER=`stat --print=%s DarthVader.txt`
 LUKE=`stat --print=%s LukeSkywalker.txt`
-MARA=`stat --print=%s MaraJadeSkywalker.txt
+MARA=`stat --print=%s MaraJadeSkywalker.txt`
 ANAKINSOLO=`stat --print=%s AnakinSolo.txt`
 HANSOLO=`stat --print=%s HanSolo.txt`
 JACEN=`stat --print=%s DarthCaedus.txt`
