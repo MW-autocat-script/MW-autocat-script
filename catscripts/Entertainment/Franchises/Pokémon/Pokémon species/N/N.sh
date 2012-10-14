@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/b.txt"
 cat newpages.txt | egrep -i 'Natu\b' >> Natu.txt
 cat newpages.txt | egrep -i 'Nidoking' >> Nidoking.txt
 cat newpages.txt | egrep -i 'Nidoqueen' >> Nidoqueen.txt
@@ -33,72 +33,100 @@ Nuzleaf=`stat --print=%s Nuzleaf.txt`
 
 if [ $Natu -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/N/catNatu.sh
+   export CATFILE="Natu.txt"
+   export CATNAME="Natu"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Nidoking -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/N/catNidoking.sh
+   export CATFILE="Nidoking.txt"
+   export CATNAME="Nidoking"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Nidoqueen -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/N/catNidoqueen.sh
+   export CATFILE="Nidoqueen.txt"
+   export CATNAME="Nidoqueen"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $NidoranFemale -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/N/catNidoran♀.sh
+   export CATFILE="Nidoran♀.txt"
+   export CATNAME="Nidoran (female)"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $NidoranMale -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/N/catNidoran♂.sh
+   export CATFILE="Nidoran♂.txt"
+   export CATNAME="Nidoran (male)"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Nidorina -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/N/catNidorina.sh
+   export CATFILE="Nidorina.txt"
+   export CATNAME="Nidorina"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Nidorino -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/N/catNidorino.sh
+   export CATFILE="Nidorino.txt"
+   export CATNAME="Nidorino"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Nincada -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/N/catNincada.sh
+   export CATFILE="Nincada.txt"
+   export CATNAME="Nincada"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Ninetales -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/N/catNinetales.sh
+   export CATFILE="Ninetales.txt"
+   export CATNAME="Ninetales"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Ninjask -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/N/catNinjask.sh
+   export CATFILE="Ninjask.txt"
+   export CATNAME="Ninjask"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Noctowl -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/N/catNoctowl.sh
+   export CATFILE="Noctowl.txt"
+   export CATNAME="Noctowl"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Nosepass -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/N/catNosepass.sh
+   export CATFILE="Nosepass.txt"
+   export CATNAME="Nosepass"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Numel -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/N/catNumel.sh
+   export CATFILE="Numel.txt"
+   export CATNAME="Numel"
+   ./catscripts/Categorize.sh
 fi
 
 if [ $Nuzleaf -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/N/catNuzleaf.sh
+   export CATFILE="Nuzleaf.txt"
+   export CATNAME="Nuzleaf"
+   ./catscripts/Categorize.sh
 fi
 
 
