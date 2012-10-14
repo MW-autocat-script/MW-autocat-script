@@ -8,6 +8,7 @@ cat newpages.txt | egrep -i 'Jabba the Hutt|\bJabba\b' >> JabbaTheHutt.txt
 cat newpages.txt | egrep -i 'Obi-Wan|Obiwan|Kenobi' >> Obi-WanKenobi.txt
 cat newpages.txt | egrep -i 'Anakin Skywalker|Anakinskywalker|Darth Vader|\bVader\b' >> DarthVader.txt
 cat newpages.txt | egrep -i 'Luke Skywalker|Lukeskywalker' >> LukeSkywalker.txt
+cat newpages.txt | egrep -i 'Mara Jade|Marajade|Mara Skywalker' >> MaraJadeSkywalker.txt
 cat newpages.txt | egrep -i 'Anakin Solo|Anakinsolo' >> AnakinSolo.txt
 cat newpages.txt | egrep -i 'Han Solo|Hansolo' >> HanSolo.txt
 cat newpages.txt | egrep -i 'Jacen Solo|Jacensolo|\bCaedus\b|Darthcaedus' >> DarthCaedus.txt
@@ -23,6 +24,7 @@ JABBA=`stat --print=%s JabbaTheHutt.txt`
 KENOBI=`stat --print=%s Obi-WanKenobi.txt`
 VADER=`stat --print=%s DarthVader.txt`
 LUKE=`stat --print=%s LukeSkywalker.txt`
+MARA=`stat --print=%s MaraJadeSkywalker.txt
 ANAKINSOLO=`stat --print=%s AnakinSolo.txt`
 HANSOLO=`stat --print=%s HanSolo.txt`
 JACEN=`stat --print=%s DarthCaedus.txt`
@@ -86,6 +88,13 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $MARA -ne 0 ];
+then
+  export CATFILE="MaraJadeSkywalker.txt"
+  export CATNAME="Mara Jade Skywalker"
+  ./catscripts/Categorize.sh
+fi
+
 if [ $ANAKINSOLO -ne 0 ];
 then
   export CATFILE="AnakinSolo.txt"
@@ -136,6 +145,7 @@ rm JabbaTheHutt.txt
 rm Obi-WanKenobi.txt
 rm DarthVader.txt
 rm LukeSkywalker.txt
+rm MaraJadeSkywalker.txt
 rm AnakinSolo.txt
 rm HanSolo.txt
 rm DarthCaedus.txt
