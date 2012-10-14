@@ -178,6 +178,7 @@ rm PokémonEmerald.txt
 rm PokémonFireRed.txt
 rm PokémonLeafGreen.txt
 rm RedRescueTeam.txt
+rm BlueRescueTeam.txt
 rm PokémonBlack.txt
 rm PokémonWhite.txt
 rm PokémonDiamond.txt

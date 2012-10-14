@@ -1,4 +1,4 @@
-#!/bin/bash"
+#!/bin/bash
 cat newpages.txt | egrep -i 'Machamp' >> Machamp.txt
 cat newpages.txt | egrep -i 'Machoke' >> Machoke.txt
 cat newpages.txt | egrep -i 'Machop' >> Machop.txt

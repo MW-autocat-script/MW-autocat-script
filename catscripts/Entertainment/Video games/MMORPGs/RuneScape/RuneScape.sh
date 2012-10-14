@@ -6,7 +6,9 @@ RUNESCAPE=`stat --print=%s RuneScape.txt`
 
 if [ $RUNESCAPE -ne 0 ];
 then
-./catscripts/Entertainment/Video\ games/MMORPGs/RuneScape/catRuneScape.sh
+  export CATFILE="RuneScape.txt"
+  export CATNAME="RuneScape"
+  ./catscripts/Categorize.sh
 fi
 
 rm RuneScape.txt

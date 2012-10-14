@@ -18,27 +18,37 @@ BIRTHBYSLEEP=`stat --print=%s BirthBySleep.txt`
 
 if [ $KINGDOMHEARTSSERIES -ne 0 ];
 then
-  ./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/Kingdom\ Hearts\ series/catKingdomHeartsSeries.sh
+  export CATFILE="KingdomHeartsSeries.txt"
+  export CATNAME="Kingdom Hearts series"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $KINGDOMHEARTSII -ne 0 ];
 then
-  ./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/Kingdom\ Hearts\ series/catKingdomHeartsII.sh
+  export CATFILE="KingdomHeartsII.txt"
+  export CATNAME="Kingdom Hearts II"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $KINGDOMHEARTSIII -ne 0 ];
 then
-  ./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/Kingdom\ Hearts\ series/catKingdomHeartsIII.sh
+  export CATFILE="KingdomHeartsIII.txt"
+  export CATNAME="Kingdom Hearts III"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $CHAINOFMEMORIES -ne 0 ];
 then
-  ./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/Kingdom\ Hearts\ series/catChainOfMemories.sh
+  export CATFILE="ChainOfMemories.txt"
+  export CATNAME="Kingdom Hearts: Chain of Memories"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $BIRTHBYSLEEP -ne 0 ];
 then
-  ./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/Kingdom\ Hearts\ series/catBirthBySleep.sh
+  export CATFILE="BirthBySleep.txt"
+  export CATNAME="Kingdom Hearts Birth by Sleep"
+  ./catscripts/Categorize.sh
 fi
 
 rm KingdomHeartsSeries.txt

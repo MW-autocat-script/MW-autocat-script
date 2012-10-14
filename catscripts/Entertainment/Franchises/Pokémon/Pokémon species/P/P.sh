@@ -11,7 +11,7 @@ cat newpages.txt | egrep -i 'Parasect' >> Parasect.txt
 cat newpages.txt | egrep -i 'Patrat' >> Patrat.txt
 cat newpages.txt | egrep -i 'Pawniard' >> Pawniard.txt
 cat newpages.txt | egrep -i 'Pelipper' >> Pelipper.txt
-cat newpages.txt | egrep -i 'Persian\b' | egrep -iv 'empire|language|speak' >> Persian.txt
+cat newpages.txt | egrep -i 'Persian\b' | egrep -iv 'empire|language|speak|cat|kitten' >> Persian.txt
 cat newpages.txt | egrep -i 'Petilil' >> Petilil.txt
 cat newpages.txt | egrep -i 'Phanpy' >> Phanpy.txt
 cat newpages.txt | egrep -i 'Phione' >> Phione.txt

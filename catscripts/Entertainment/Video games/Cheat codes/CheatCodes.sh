@@ -13,12 +13,16 @@ ACTIONREPLAY=`stat --print=%s ActionReplay.txt`
 
 if [ $CHEATCODES -ne 0 ];
 then
-  ./catscripts/Entertainment/Video\ games/Cheat\ codes/catCheatCodes.sh
+  export CATFILE="CheatCodes.txt"
+  export CATNAME="Cheat codes"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $ACTIONREPLAY -ne 0 ];
 then
-  ./catscripts/Entertainment/Video\ games/Cheat\ codes/catActionReplay.sh
+  export CATFILE="ActionReplay.txt"
+  export CATNAME="Action Replay"
+  ./catscripts/Categorize.sh
 fi
 
 rm CheatCodes.txt

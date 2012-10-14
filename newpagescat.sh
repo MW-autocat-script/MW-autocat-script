@@ -19,15 +19,6 @@ python $PYWIKIPEDIADIR/pagegenerators.py -new:$NPL|sed 's|[0-9][0-9][0-9]: |\* \
 
 cat newpages.txt | egrep -i 'poptropica|potropica|poptopica' > Poptropica.txt
 
-##Studyladder
-
-cat newpages.txt | egrep -i 'Studyladder|Study ladder|study lader|studdy ladder|studdyladder' > Studyladder.txt
-
-
-##Literacy Planet
-
-cat newpages.txt | egrep -i 'Literacy Planet|LiteracyPlanet|Litracy planet|intrepica|intreprica|interprica|intripeca' > LiteracyPlanet.txt
-
 ##Moshi Monsters
 
 cat newpages.txt | egrep -i 'Moshi Monsters|moshimonsters|moshling|furnando|furando|meowford|dustbin beaver|dustbinbeaver|dustin beaver|meowford' > MoshiMonsters.txt
@@ -45,8 +36,6 @@ cat newpages.txt | egrep -i '(pnp\b.+neuro|neuro.+pnp)' >> PNPA.txt
 #Size test
 
 POPTROPICA=`stat --print=%s Poptropica.txt`
-STUDYLADDER=`stat --print=%s Studyladder.txt`
-SIZEOFLITERACYPLANET=`stat --print=%s LiteracyPlanet.txt`
 SIZEOFMOSHIMONSTERS=`stat --print=%s MoshiMonsters.txt`
 SIZEOFWOOZWORLD=`stat --print=%s Woozworld.txt`
 SIZEOFPNPA=`stat --print=%s PNPA.txt`
@@ -55,16 +44,6 @@ SIZEOFPNPA=`stat --print=%s PNPA.txt`
 if [ $POPTROPICA -ne 0 ];
 then
   ./catscripts/Temp/poptropica.sh
-fi
-
-if [ $STUDYLADDER -ne 0 ];
-then
-  ./catscripts/Temp/studyladder.sh
-fi
-
-if [ $SIZEOFLITERACYPLANET -ne 0 ];
-then
-  ./catscripts/Temp/literacyplanet.sh
 fi
 
 if [ $SIZEOFMOSHIMONSTERS -ne 0 ];
@@ -97,8 +76,6 @@ echo "Running subscripts"
 echo "Cleanup"
 
 rm Poptropica.txt
-rm Studyladder.txt
-rm LiteracyPlanet.txt
 rm MoshiMonsters.txt
 rm Woozworld.txt
 rm PNPA.txt
