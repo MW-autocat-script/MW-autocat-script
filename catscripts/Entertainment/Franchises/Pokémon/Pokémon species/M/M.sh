@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/b.txt"
 cat newpages.txt | egrep -i 'Machamp' >> Machamp.txt
 cat newpages.txt | egrep -i 'Machoke' >> Machoke.txt
 cat newpages.txt | egrep -i 'Machop' >> Machop.txt
@@ -117,287 +117,401 @@ Musharna=`stat --print=%s Musharna.txt`
 
 if [ $Machamp -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMachamp.sh
+   export CATFILE="Machamp.txt"
+   export CATNAME="Machamp"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Machoke -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMachoke.sh
+   export CATFILE="Machoke.txt"
+   export CATNAME="Machoke"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Machop -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMachop.sh
+   export CATFILE="Machop.txt"
+   export CATNAME="Machop"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Magby -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMagby.sh
+   export CATFILE="Magby.txt"
+   export CATNAME="Magby"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Magcargo -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMagcargo.sh
+   export CATFILE="Magcargo.txt"
+   export CATNAME="Magcargo"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Magikarp -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMagikarp.sh
+   export CATFILE="Magikarp.txt"
+   export CATNAME="Magikarp"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Magmar -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMagmar.sh
+   export CATFILE="Magmar.txt"
+   export CATNAME="Magmar"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Magmortar -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMagmortar.sh
+   export CATFILE="Magmortar.txt"
+   export CATNAME="Magmortar"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Magnemite -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMagnemite.sh
+   export CATFILE="Magnemite.txt"
+   export CATNAME="Magnemite"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Magneton -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMagneton.sh
+   export CATFILE="Magneton.txt"
+   export CATNAME="Magneton"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Magnezone -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMagnezone.sh
+   export CATFILE="Magnezone.txt"
+   export CATNAME="Magnezone"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Makuhita -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMakuhita.sh
+   export CATFILE="Makuhita.txt"
+   export CATNAME="Makuhita"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Mamoswine -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMamoswine.sh
+   export CATFILE="Mamoswine.txt"
+   export CATNAME="Manoswine"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Manaphy -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catManaphy.sh
+   export CATFILE="Manaphy.txt"
+   export CATNAME="Manaphy"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Mandibuzz -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMandibuzz.sh
+   export CATFILE="Mandibuzz.txt"
+   export CATNAME="Mandibuzz"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Manectric -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catManectric.sh
+   export CATFILE="Manectric.txt"
+   export CATNAME="Manectric"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Mankey -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMankey.sh
+   export CATFILE="Mankey.txt"
+   export CATNAME="Mankey"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Mantine -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMantine.sh
+   export CATFILE="Mantine.txt"
+   export CATNAME="Mantine"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Mantyke -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMantyke.sh
+   export CATFILE="Mantyke.txt"
+   export CATNAME="Mantyke"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Maractus -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMaractus.sh
+   export CATFILE="Maractus.txt"
+   export CATNAME="Maractus"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Mareep -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMareep.sh
+   export CATFILE="Mareep.txt"
+   export CATNAME="Mareep"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Marill -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMarill.sh
+   export CATFILE="Marill.txt"
+   export CATNAME="Marill"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Marowak -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMarowak.sh
+   export CATFILE="Marowak.txt"
+   export CATNAME="Marowak"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Marshtomp -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMarshtomp.sh
+   export CATFILE="Marshtomp.txt"
+   export CATNAME="Marshtomp"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Masquerain -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMasquerain.sh
+   export CATFILE="Masquerain.txt"
+   export CATNAME="Masquerain"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Mawile -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMawile.sh
+   export CATFILE="Mawile.txt"
+   export CATNAME="Mawile"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Medicham -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMedicham.sh
+   export CATFILE="Medicham.txt"
+   export CATNAME="Medicham"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Meditite -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMeditite.sh
+   export CATFILE="Meditite.txt"
+   export CATNAME="Meditite"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Meganium -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMeganium.sh
+   export CATFILE="Meganium.txt"
+   export CATNAME="Meganium"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Meloetta -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMeloetta.sh
+   export CATFILE="Meloetta.txt"
+   export CATNAME="Meloetta"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Meowth -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMeowth.sh
+   export CATFILE="Meowth.txt"
+   export CATNAME="Meowth"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Mesprit -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMesprit.sh
+   export CATFILE="Mesprit.txt"
+   export CATNAME="Mesprit"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Metagross -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMetagross.sh
+   export CATFILE="Metagross.txt"
+   export CATNAME="Metagross"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Metang -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMetang.sh
+   export CATFILE="Metang.txt"
+   export CATNAME="Metang"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Metapod -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMetapod.sh
+   export CATFILE="Metapod.txt"
+   export CATNAME="Metapod"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Mew -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMew.sh
+   export CATFILE="Mew.txt"
+   export CATNAME="Mew (Pokémon)"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Mewtwo -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMewtwo.sh
+   export CATFILE="Mewtwo.txt"
+   export CATNAME="Mewtwo"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Mightyena -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMightyena.sh
+   export CATFILE="Mightyena.txt"
+   export CATNAME="Mightyena"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Milotic -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMilotic.sh
+   export CATFILE="Milotic.txt"
+   export CATNAME="Milotic"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Miltank -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMiltank.sh
+   export CATFILE="Miltank.txt"
+   export CATNAME="Miltank"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $MimeJr -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMimeJr.sh
+   export CATFILE="MimeJr.txt"
+   export CATNAME="Mime Jr."
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Minccino -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMinccino.sh
+   export CATFILE="Minccino.txt"
+   export CATNAME="Minccino"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Mienfoo -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMienfoo.sh
+   export CATFILE="Mienfoo.txt"
+   export CATNAME="Mienfoo"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Mienshao -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMienshao.sh
+   export CATFILE="Mienshao.txt"
+   export CATNAME="Mienshao"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Minun -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMinun.sh
+   export CATFILE="Minun.txt"
+   export CATNAME="Minun"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Misdreavus -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMisdreavus.sh
+   export CATFILE="Misdreavus.txt"
+   export CATNAME="Misdreavus"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Mismagius -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMismagius.sh
+   export CATFILE="Mismagius.txt"
+   export CATNAME="Mismagius"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Moltres -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMoltres.sh
+   export CATFILE="Moltres.txt"
+   export CATNAME="Moltres"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Monferno -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMonferno.sh
+   export CATFILE="Monferno.txt"
+   export CATNAME="Monferno"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Mothim -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMothim.sh
+   export CATFILE="Mothim.txt"
+   export CATNAME="Mothim"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $MrMime -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMrMime.sh
+   export CATFILE="MrMime.txt"
+   export CATNAME="Mr. Mime"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Mudkip -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMudkip.sh
+   export CATFILE="Mudkip.txt"
+   export CATNAME="Mudkip"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Muk -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMuk.sh
+   export CATFILE="Muk.txt"
+   export CATNAME="Muk"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Munchlax -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMunchlax.sh
+   export CATFILE="Munchlax.txt"
+   export CATNAME="Munchlax"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Munna -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMunna.sh
+   export CATFILE="Munna.txt"
+   export CATNAME="Munna"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Murkrow -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMurkrow.sh
+   export CATFILE="Murkrow.txt"
+   export CATNAME="Murkrow"
+   ./catscripsts/Categorize.sh
 fi
 
 if [ $Musharna -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/catMusharna.sh
+   export CATFILE="Musharna.txt"
+   export CATNAME="Musharna"
+   ./catscripsts/Categorize.sh
 fi
 
 
