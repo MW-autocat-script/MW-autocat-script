@@ -45,107 +45,149 @@ Wynaut=`stat --print=%s Wynaut.txt`
 
 if [ $Wailmer -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWailmer.sh
+  export CATFILE="Wailmer.txt"
+  export CATNAME="Wailmer"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Wailord -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWailord.sh
+  export CATFILE="Wailord.txt"
+  export CATNAME="Wailord"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Walrein -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWalrein.sh
+  export CATFILE="Walrein.txt"
+  export CATNAME="Walrein"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Wartortle -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWartortle.sh
+  export CATFILE="Wartortle.txt"
+  export CATNAME="Wartortle"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Watchog -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWatchog.sh
+  export CATFILE="Watchog.txt"
+  export CATNAME="Watchog"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Weavile -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWeavile.sh
+  export CATFILE="Weavile.txt"
+  export CATNAME="Weavile"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Weedle -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWeedle.sh
+  export CATFILE="Weedle.txt"
+  export CATNAME="Weedle"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Weepinbell -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWeepinbell.sh
+  export CATFILE="Weepinbell.txt"
+  export CATNAME="Weepinbell"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Weezing -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWeezing.sh
+  export CATFILE="Weezing.txt"
+  export CATNAME="Weezing"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Whimsicott -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWhimsicott.sh
+  export CATFILE="Whimsicott.txt"
+  export CATNAME="Whimsicott"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Whirlipede -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWhirlipede.sh
+  export CATFILE="Whirlipede.txt"
+  export CATNAME="Whirlipede"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Whiscash -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWhiscash.sh
+  export CATFILE="Whiscash.txt"
+  export CATNAME="Whiscash"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Whismur -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWhismur.sh
+  export CATFILE="Whismur.txt"
+  export CATNAME="Whismur"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Wigglytuff -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWigglytuff.sh
+  export CATFILE="Wigglytuff.txt"
+  export CATNAME="Wigglytuff"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Wingull -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWingull.sh
+  export CATFILE="Wingull.txt"
+  export CATNAME="Wingull"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Wobbuffet -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWobbuffet.sh
+  export CATFILE="Wobbuffet.txt"
+  export CATNAME="Wobbuffet"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Woobat -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWoobat.sh
+  export CATFILE="Woobat.txt"
+  export CATNAME="Woobat"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Wooper -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWooper.sh
+  export CATFILE="Wooper.txt"
+  export CATNAME="Wooper"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Wormadam -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWormadam.sh
+  export CATFILE="Wormadam.txt"
+  export CATNAME="Wormadam"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Wurmple -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWurmple.sh
+  export CATFILE="Wurmple.txt"
+  export CATNAME="Wurmple"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Wynaut -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/catWynaut.sh
+  export CATFILE="Wynaut.txt"
+  export CATNAME="Wynaut"
+  ./catscripts/Categorize.sh
 fi
 
 

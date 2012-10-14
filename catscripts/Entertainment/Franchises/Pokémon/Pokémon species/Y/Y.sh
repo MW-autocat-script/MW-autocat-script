@@ -9,17 +9,23 @@ Yanmega=`stat --print=%s Yanmega.txt`
 
 if [ $Yamask -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Y/catYamask.sh
+  export CATFILE="Yamask.txt"
+  export CATNAME="Yamask"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Yanma -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Y/catYanma.sh
+  export CATFILE="Yanma.txt"
+  export CATNAME="Yanma"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Yanmega -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Y/catYanmega.sh
+  export CATFILE="Yanmega.txt"
+  export CATNAME="Yanmega"
+  ./catscripts/Categorize.sh
 fi
 
 

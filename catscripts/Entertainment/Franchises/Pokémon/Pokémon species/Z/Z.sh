@@ -21,47 +21,65 @@ Zubat=`stat --print=%s Zubat.txt`
 
 if [ $Zangoose -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Z/catZangoose.sh
+  export CATFILE="Zangoose.txt"
+  export CATNAME="Zangoose"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Zapdos -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Z/catZapdos.sh
+  export CATFILE="Zapdos.txt"
+  export CATNAME="Zapdos"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Zebstrika -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Z/catZebstrika.sh
+  export CATFILE="Zebstrika.txt"
+  export CATNAME="Zebstrika"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Zekrom -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Z/catZekrom.sh
+  export CATFILE="Zekrom.txt"
+  export CATNAME="Zekrom"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Zigzagoon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Z/catZigzagoon.sh
+  export CATFILE="Zigzagoon.txt"
+  export CATNAME="Zigzagoon"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Zoroark -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Z/catZoroark.sh
+  export CATFILE="Zoroark.txt"
+  export CATNAME="Zoroark"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Zorua -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Z/catZorua.sh
+  export CATFILE="Zorua.txt"
+  export CATNAME="Zorua"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Zweilous -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Z/catZweilous.sh
+  export CATFILE="Zweilous.txt"
+  export CATNAME="Zweilous"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Zubat -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Z/catZubat.sh
+  export CATFILE="Zubat.txt"
+  export CATNAME="Zubat"
+  ./catscripts/Categorize.sh
 fi
 
 

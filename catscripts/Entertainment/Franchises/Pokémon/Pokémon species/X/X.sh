@@ -5,7 +5,9 @@ Xatu=`stat --print=%s Xatu.txt`
 
 if [ $Xatu -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/X/catXatu.sh
+  export CATFILE="Xatu.txt"
+  export CATNAME="Xatu"
+  ./catscripts/Categorize.sh
 fi
 
 rm Xatu.txt
