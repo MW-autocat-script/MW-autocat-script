@@ -13,29 +13,38 @@ Uxie=`stat --print=%s Uxie.txt`
 
 if [ $Umbreon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/U/catUmbreon.sh
+  export CATFILE="Umbreon.txt"
+  export CATNAME="Umbreon"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Unfezant -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/U/catUnfezant.sh
+  export CATFILE="Unfezant.txt"
+  export CATNAME="Unfezant"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Unown -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/U/catUnown.sh
+  export CATFILE="Unown.txt"
+  export CATNAME="Unown"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Ursaring -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/U/catUrsaring.sh
+  export CATFILE="Ursaring.txt"
+  export CATNAME="Ursaring"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Uxie -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/U/catUxie.sh
+  export CATFILE="Uxie.txt"
+  export CATNAME="Uxie"
+  ./catscripts/Categorize.sh
 fi
-
 
 rm Umbreon.txt
 rm Unfezant.txt

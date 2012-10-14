@@ -43,104 +43,143 @@ Vulpix=`stat --print=%s Vulpix.txt`
 
 if [ $Vanillish -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVanillish.sh
+  export CATFILE="Vanillish.txt"
+  export CATNAME="Vanill"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Vanilluxe -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVanilluxe.sh
+  export CATFILE="Vanilluxe.txt"
+  export CATNAME="Vanilluxe"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Vanillite -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVanillite.sh
+  export CATFILE="Vanillite.txt"
+  export CATNAME="Vanillite"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Vaporeon -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVaporeon.sh
+  export CATFILE="Vaporeon.txt"
+  export CATNAME="Vaporeon"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Venipede -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVenipede.sh
+  export CATFILE="Venipede.txt"
+  export CATNAME="Venipede"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Venomoth -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVenomoth.sh
+  export CATFILE="Venomoth.txt"
+  export CATNAME="Venomoth"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Venonat -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVenonat.sh
+  export CATFILE="Venonat.txt"
+  export CATNAME="Venonat"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Venusaur -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVenusaur.sh
+  export CATFILE="Venusaur.txt"
+  export CATNAME="Venusaur"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Vespiquen -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVespiquen.sh
+  export CATFILE="Vespiquen.txt"
+  export CATNAME="Vespiquen"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Vibrava -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVibrava.sh
+  export CATFILE="Vibrava.txt"
+  export CATNAME="Vibrava"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Victini -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVictini.sh
+  export CATFILE="Victini.txt"
+  export CATNAME="Victini"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Victreebel -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVictreebel.sh
+  export CATFILE="Victreebel.txt"
+  export CATNAME="Victreebel"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Vigoroth -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVigoroth.sh
+  export CATFILE="Vigoroth.txt"
+  export CATNAME="Vigoroth"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Vileplume -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVileplume.sh
+  export CATFILE="Vileplume.txt"
+  export CATNAME="Vileplume"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Virizion -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVirizion.sh
+  export CATFILE="Virizion.txt"
+  export CATNAME="Virizion"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Volbeat -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVolbeat.sh
+  export CATFILE="Volbeat.txt"
+  export CATNAME="Volbeat"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Volcarona -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVolcarona.sh
+  export CATFILE="Volcarona.txt"
+  export CATNAME="Volcarona"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Voltorb -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVoltorb.sh
+  export CATFILE="Voltorb.txt"
+  export CATNAME="Voltorb"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Vullaby -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVullaby.sh
+  export CATFILE="Vullaby.txt"
+  export CATNAME="Vullaby"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Vulpix -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/catVulpix.sh
+  export CATFILE="Vulpix.txt"
+  export CATNAME="Vulpix"
+  ./catscripts/Categorize.sh
 fi
-
 
 rm Vanillish.txt
 rm Vanilluxe.txt

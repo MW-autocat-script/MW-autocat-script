@@ -160,7 +160,7 @@ fi
 if [ $Ditto -ne 0 ];
 then
    export CATFILE="Ditto.txt"
-   export CATNAME="Ditto"
+   export CATNAME="Ditto (Pokémon)"
    ./catscripts/Categorize.sh
 fi
 
