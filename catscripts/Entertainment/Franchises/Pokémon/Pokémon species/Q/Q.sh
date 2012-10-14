@@ -9,17 +9,23 @@ Qwilfish=`stat --print=%s Qwilfish.txt`
 
 if [ $Quagsire -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Q/catQuagsire.sh
+  export CATFILE="Quagsire.txt"
+  export CATNAME="Quagsire"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Quilava -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Q/catQuilava.sh
+  export CATFILE="Quilava.txt"
+  export CATNAME="Quilava"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $Qwilfish -ne 0 ];
 then
-   ./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Q/catQwilfish.sh
+  export CATFILE="Qwilfish.txt"
+  export CATNAME="Qwilfish"
+  ./catscripts/Categorize.sh
 fi
 
 
