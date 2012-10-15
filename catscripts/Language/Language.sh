@@ -6,3 +6,4 @@
 ./catscripts/Language/Antonyms/Antonyms.sh
 ./catscripts/Language/Ditloids/Ditloids.sh
 ./catscripts/Language/Initialisms/Initialisms.sh
+./catscripts/Language/Spelling/Spelling.sh
