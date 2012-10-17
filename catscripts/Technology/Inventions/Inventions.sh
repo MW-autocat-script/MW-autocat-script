@@ -3,6 +3,7 @@
 cat newpages.txt | egrep -i '\[\[Who invented [abcdefghijklmnopqrstuvwxyz]{1,}\]\]' >> Inventions.txt
 cat newpages.txt | egrep -i '\[\[Who invented the [abcdefghijklmnopqrstuvwxyz]{1,}\]\]' >> Inventions.txt
 cat newpages.txt | egrep -i '\[\[Who is the inventor of [abcdefghijklmnopqrstuvwxyz]{1,}\]\]' >> Inventions.txt
+cat newpages.txt | egrep -i '\[\[When was the .+ invented\]\]' >> Inventions.txt
 
 INVENTIONS=`stat --print=%s Inventions.txt`
 

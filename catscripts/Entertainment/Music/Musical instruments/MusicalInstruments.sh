@@ -6,7 +6,7 @@ cat newpages.txt | egrep -i '\bDrums' >> Drums.txt
 cat newpages.txt | egrep -i '\bFlute' >> Flute.txt
 cat newpages.txt | egrep -i 'Guitar' | egrep -iv 'hero' >> Guitar.txt
 cat newpages.txt | egrep -i 'Piano' >> Piano.txt
-cat newpages.txt | egrep -i 'on a recorder|for recorder\]\]|notes.+recorder' >> Recorder.txt
+cat newpages.txt | egrep -i 'on a recorder|for recorder\]\]|notes.+recorder|recorder.+notes' >> Recorder.txt
 cat newpages.txt | egrep -i 'Saxophone' >> Saxophone.txt
 cat newpages.txt | egrep -i 'Violin' >> Violin.txt
 
