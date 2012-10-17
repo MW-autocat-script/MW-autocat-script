@@ -1,4 +1,5 @@
 #!/bin/bash
+#Categorization script for the children's cartoon SpongeBob SquarePants
 
 cat newpages.txt | egrep -i 'SpongeBob|sponge bob|SquarePants|Krusty Krab|Patrick Star|Sandy Cheeks|(Eugene|Mr(|\.)) Krabs' >> SpongeBobSquarePants.txt
 

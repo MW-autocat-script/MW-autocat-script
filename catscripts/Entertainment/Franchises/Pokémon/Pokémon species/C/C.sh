@@ -1,4 +1,5 @@
 #!/bin/bash
+#Pokemon species by name, starting with the letter C
 
 cat newpages.txt | egrep -i 'Cacnea' >>  Cacnea.txt
 cat newpages.txt | egrep -i 'Cacturne' >>  Cacturne.txt

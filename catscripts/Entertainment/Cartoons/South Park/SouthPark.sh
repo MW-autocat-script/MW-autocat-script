@@ -1,4 +1,5 @@
 #!/bin/bash
+#Categorization script for the adult cartoon South Park
 
 cat newpages.txt | egrep -i 'south park|southpark|kenny mccormick|eric cartman|kyle broflovski|stan marsh|butters stotch|Mr(|\.) Garrison' >> SouthPark.txt
 

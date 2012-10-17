@@ -1,4 +1,5 @@
 #!/bin/bash
+#Script fot the My Little Pony: Friendship is Magic cartoon
 
 cat newpages.txt | egrep -i 'Friendship is Magic|MLP\:FIM|MLP FIM|brony|Rainbow Dash|Twilight Sparkle|Pinkie Pie|Princess Celestia|Princess Luna|Princess Cadance|Princess Cadence|Queen Chrysalis' >> MLPFIM.txt
 

@@ -1,4 +1,5 @@
 #!/bin/bash 
+#Pokemon species by name, starting with the letter B
 
 cat newpages.txt | egrep -i 'Bagon' >> Bagon.txt
 cat newpages.txt | egrep -i 'Baltoy' >> Baltoy.txt

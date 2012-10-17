@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#Pokemon species by name, starting with the letter A
 
 cat newpages.txt | egrep -i '\bAbomasnow' >> Abomasnow.txt
 cat newpages.txt | egrep -i '\bAbra\b' >> Abra.txt
