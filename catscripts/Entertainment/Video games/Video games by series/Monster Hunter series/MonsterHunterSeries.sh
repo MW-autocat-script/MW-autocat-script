@@ -6,6 +6,7 @@ cat newpages.txt | egrep -i 'Monster Hunter Freedom' | egrep -iv '2|Unite' >> Mo
 cat newpages.txt | egrep -i 'Monster Hunter Freedom Unit.|\bMHFU\b' >> MonsterHunterFreedomUnite.txt #The . instead of an 'e' is intentional
 cat newpages.txt | egrep -i 'Monster Hunter Freedom 2|\bMHF2\b' >> MonsterHunterFreedom2.txt
 cat newpages.txt | egrep -i 'Monster Hunter Frontier' >> MonsterHunterFrontier.txt
+cat newpages.txt | egrep -i 'Monster Hunter (Tri|3)' >> MonsterHunterTri.txt
 
 SERIES=`stat --print=%s MonsterHunterSeries.txt`
 HUNTER=`stat --print=%s MonsterHunter.txt`
@@ -13,6 +14,7 @@ FREEDOM=`stat --print=%s MonsterHunterFreedom.txt`
 MHFU=`stat --print=%s MonsterHunterFreedomUnite.txt`
 MHF2=`stat --print=%s MonsterHunterFreedom2.txt`
 FRONTIER=`stat --print=%s MonsterHunterFrontier.txt`
+TRI=`stat --print=%s MonsterHunterTri.txt`
 
 if [ $SERIES -ne 0 ];
 then
@@ -56,9 +58,17 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $TRI -ne 0 ];
+then
+  export CATFILE="MonsterHunterTri.txt"
+  export CATNAME="Monster Hunter Tri"
+  ./catscripts/Categorize.sh
+fi
+
 rm MonsterHunterSeries.txt
 rm MonsterHunter.txt
 rm MonsterHunterFreedom.txt
 rm MonsterHunterFreedom2.txt
 rm MonsterHunterFreedomUnite.txt
 rm MonsterHunterFrontier.txt
+rm MonsterHunterTri.txt
