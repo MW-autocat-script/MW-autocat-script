@@ -7,7 +7,7 @@ AQW=`stat --print=%s AdventureQuestWorlds.txt`
 if [ $AQW -ne 0 ];
 then
   export CATFILE="AdventureQuestWorlds.txt"
-  export CATNAME="Adventure Quest Worlds"
+  export CATNAME="AdventureQuest Worlds"
   ./catscripts/Categorize.sh
 fi
 

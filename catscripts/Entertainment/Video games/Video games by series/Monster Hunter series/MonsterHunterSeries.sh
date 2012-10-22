@@ -6,7 +6,7 @@ cat newpages.txt | egrep -i 'Monster Hunter Freedom' | egrep -iv '2|Unite' >> Mo
 cat newpages.txt | egrep -i 'Monster Hunter Freedom Unit.|\bMHFU\b' >> MonsterHunterFreedomUnite.txt #The . instead of an 'e' is intentional
 cat newpages.txt | egrep -i 'Monster Hunter Freedom 2|\bMHF2\b' >> MonsterHunterFreedom2.txt
 cat newpages.txt | egrep -i 'Monster Hunter Frontier' >> MonsterHunterFrontier.txt
-cat newpages.txt | egrep -i 'Monster Hunter (Tri|3)' >> MonsterHunterTri.txt
+cat newpages.txt | egrep -i 'Monster Hunter (Tri|3|\bMH3)' >> MonsterHunterTri.txt
 
 SERIES=`stat --print=%s MonsterHunterSeries.txt`
 HUNTER=`stat --print=%s MonsterHunter.txt`

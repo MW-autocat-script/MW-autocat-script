@@ -9,7 +9,7 @@ SYNONYMS=`stat --print=%s Synonyms.txt`
 if [ $SYNONYMS -ne 0 ];
 then
   export CATFILE="Synonyms.txt"
-  export CATNAME="Synonyms.txt"
+  export CATNAME="Synonyms"
   ./catscripts/Categorize.sh
 fi
 
