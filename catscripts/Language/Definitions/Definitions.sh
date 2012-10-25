@@ -14,6 +14,7 @@ cat newpages.txt | egrep -i '\[\[Whats a [abcdefghijklmnopqrstuvwxyz]{1,}\]\]' >
 cat newpages.txt | egrep -i '\[\[Whats an [abcdefghijklmnopqrstuvwxyz]{1,}\]\]' >> Definitions.txt
 cat newpages.txt | egrep -i '\[\[What does [abcdefghijklmnopqrstuvwxyz]{1,} mean\]\]' >> Definitions.txt
 cat newpages.txt | egrep -i '\[\[What is [abcdefghijklmnopqrstuvwxyz]{1,}\]\]' >> Definitions.txt
+cat newpages.txt | egrep -i '\[\[What is [a-z]{6,} [a-z]{6,}\]\]' >> Definitions.txt
 cat newpages.txt | egrep -i 'What does the word [a-z]{1,} mean' >> Definitions.txt
 
 DEFINITIONS=`stat --print=%s Definitions.txt`
