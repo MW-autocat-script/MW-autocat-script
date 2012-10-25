@@ -5,13 +5,18 @@
 ##NPL is the limit for the page generator
 export GBT=3
 export NPL=60
-export PYWIKIPEDIADIR=../
+export PYWIKIPEDIADIR=..
 #Fetch new pages
 
 echo "Generating pages"
 
 python $PYWIKIPEDIADIR/pagegenerators.py -new:$NPL|sed 's|[0-9][0-9][0-9]: |\* \[\[|'| sed 's|[0-9][0-9]: |\* \[\[|' | sed 's|[0-9]: |\* \[\[|' | sed 's:$:]]:' > newpages.txt
+
+#This fetches pages that may be older but have been edited recently; a great way to play catchup
 python $PYWIKIPEDIADIR/pagegenerators.py -recentchanges -ns:0|sed 's|[0-9][0-9][0-9]: |\* \[\[|'| sed 's|[0-9][0-9]: |\* \[\[|' | sed 's|[0-9]: |\* \[\[|' | sed 's:$:]]:' >> newpages.txt
+
+#This fetches a random redirect and checks its target. Inefficient, but better than nothing ATM
+python $PYWIKIPEDIADIR/pagegenerators.py -randomredirect:1 -ns:0|sed 's|[0-9][0-9][0-9]: |\* \[\[|'| sed 's|[0-9][0-9]: |\* \[\[|' | sed 's|[0-9]: |\* \[\[|' | sed 's:$:]]:' >> newpages.txt
  
 #grep keywords from list
 
