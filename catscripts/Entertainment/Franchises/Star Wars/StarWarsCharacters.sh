@@ -19,6 +19,7 @@ cat newpages.txt | egrep -i 'Han Solo|Hansolo' >> HanSolo.txt
 cat newpages.txt | egrep -i 'Jacen Solo|Jacensolo|\bCaedus\b|Darthcaedus' >> DarthCaedus.txt
 cat newpages.txt | egrep -i 'Leia Organa|Leiaorgana|Leia Solo|Leiasolo|Princess Leia|Princessleia' >> LeiaOrganaSolo.txt
 cat newpages.txt | egrep -i 'Ahsoka Tano|Ahsokatano|Asoka Tano|Asokatano|Ashoka Tano|Ashokatano' >> AhsokaTano.txt
+cat newpages.txt | egrep -i '\bWindu\b|Mace Windu' >> MaceWindu.txt
 cat newpages.txt | egrep -i '\bYoda\b' >> Yoda.txt
 
 CADBANE=`stat --print=%s CadBane.txt`
@@ -40,6 +41,7 @@ HANSOLO=`stat --print=%s HanSolo.txt`
 JACEN=`stat --print=%s DarthCaedus.txt`
 LEIA=`stat --print=%s LeiaOrganaSolo.txt`
 AHSOKA=`stat --print=%s AhsokaTano.txt`
+WINDU=`stat --print=%s MaceWindu.txt`
 YODA=`stat --print=%s Yoda.txt`
 
 if [ $CADBANE -ne 0 ];
@@ -175,6 +177,13 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $WINDU -ne 0 ];
+then
+  export CATFILE="MaceWindu.txt"
+  export CATNAME="Mace Windu"
+  ./catscripts/Categorize.sh
+fi
+
 if [ $YODA -ne 0 ];
 then
   export CATFILE="Yoda.txt"
@@ -201,4 +210,5 @@ rm HanSolo.txt
 rm DarthCaedus.txt
 rm LeiaOrganaSolo.txt
 rm AhsokaTano.txt
+rm MaceWindu.txt
 rm Yoda.txt
