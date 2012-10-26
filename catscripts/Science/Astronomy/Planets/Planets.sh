@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Mercury' | egrep -iv 'god|deity|rome|roman|olympus|greece|battery|cell|element|atomic|proton|neutron|electron|metal|in water|pollutant|pollute|freddy|freddie|flower|myth|story|legend|M-series|bobcat|Mercury Comet|Lynx|Tracer|Zephyr|Topaz|Mystique|Mercury Meteor|Mercury Cyclone|Monarch|Marquis|Cougar|Milan|Mercury Eight|Monterey|Montclair|Medlaist|Mercury Custom|Turnpike Cruiser|Marauder|Brougham|Sable|Cougar|LN7|Capri|Mercury Voyager|Commuter|Colony Park|Mountaineer' >> Mercury.txt
+cat newpages.txt | egrep -i 'Mercury' | egrep -iv 'god|deity|rome|roman|olympus|greece|battery|cell|element|magnetic|toxic|atomic|proton|neutron|electron|metal|in water|pollutant|pollute|freddy|freddie|flower|myth|story|legend|M-series|bobcat|Mercury Comet|Lynx|Tracer|Zephyr|Topaz|Mystique|Mercury Meteor|Mercury Cyclone|Monarch|Marquis|Cougar|Milan|Mercury Eight|Monterey|Montclair|Medlaist|Mercury Custom|Turnpike Cruiser|Marauder|Brougham|Sable|Cougar|LN7|Capri|Mercury Voyager|Commuter|Colony Park|Mountaineer' >> Mercury.txt
 cat newpages.txt | egrep -i 'Venus' | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story' >> Venus.txt
 cat newpages.txt | egrep -i 'Earth' | egrep -iv 'earthquake|earth-shaking|earth-moving|earth-mover' >> Earth.txt
 cat newpages.txt | egrep -i 'Mars' | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story' >> Mars.txt
