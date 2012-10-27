@@ -3,7 +3,7 @@
 cat newpages.txt | egrep -i 'Motherboard' >> Motherboards.txt
 cat newpages.txt | egrep -i 'Video card|videocard|graphics card|graphicscard|\bGPU\b' >> VideoCards.txt
 cat newpages.txt | egrep -i 'Sound card|Soundcard|audio card|audiocard|audio device|sound.+computer|computer.+sound' >> SoundCards.txt
-cat newpages.txt | egrep -i 'Printer' >> Printers.txt
+cat newpages.txt | egrep -i '\bPrinter' >> Printers.txt
 cat newpages.txt | egrep -i 'Microprocessor' >> Microprocessors.txt
 
 Motherboards=`stat --print=%s Motherboards.txt`
