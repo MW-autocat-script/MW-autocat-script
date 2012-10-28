@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cat newpages.txt | egrep -i 'Monster Hunter.+series' >> MonsterHunterSeries.txt
-cat newpages.txt | egrep -i 'Monster Hunter' | egrep -iv '2|3|Freedom|Frontier|series|portable' >> MonsterHunter.txt
+cat newpages.txt | egrep -i 'Monster Hunter' | egrep -iv '2|3|Freedom|Frontier|series|portable|Tri' >> MonsterHunter.txt
 cat newpages.txt | egrep -i 'Monster Hunter Freedom' | egrep -iv '2|Unite' >> MonsterHunterFreedom.txt
 cat newpages.txt | egrep -i 'Monster Hunter Freedom Unit.|\bMHFU\b' >> MonsterHunterFreedomUnite.txt #The . instead of an 'e' is intentional
 cat newpages.txt | egrep -i 'Monster Hunter Freedom 2|\bMHF2\b' >> MonsterHunterFreedom2.txt
