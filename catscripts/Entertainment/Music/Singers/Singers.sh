@@ -14,6 +14,7 @@ cat newpages.txt | egrep -i '(Demi|Demetria).+Lovato' >> DemiLovato.txt
 cat newpages.txt | egrep -i 'John Lennon' >> JohnLennon.txt
 cat newpages.txt | egrep -i 'Lady Gaga' >> LadyGaga.txt
 cat newpages.txt | egrep -i '\bMadonna' | egrep -iv 'Lady Madonna' >> Madonna.txt
+cat newpages.txt | egrep -i 'Bob Marley' >> BobMarley.txt
 cat newpages.txt | egrep -i 'Elvis Presley' >> ElvisPresley.txt
 cat newpages.txt | egrep -i 'Josh Ramsay' >> JoshRamsay.txt
 cat newpages.txt | egrep -i 'Rihanna' >> Rihanna.txt
@@ -35,6 +36,7 @@ KNOWLES=`stat --print=%s BeyoncéKnowles.txt`
 LOVATO=`stat --print=%s DemiLovato.txt`
 LENNON=`stat --print=%s JohnLennon.txt`
 GAGA=`stat --print=%s LadyGaga.txt`
+MARLEY=`stat --print=%s BobMarley.txt`
 MADONNA=`stat --print=%s Madonna.txt`
 ELVIS=`stat --print=%s ElvisPresley.txt`
 RAMSAY=`stat --print=%s JoshRamsay.txt`
@@ -142,6 +144,13 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $MARLEY -ne 0 ];
+then
+  export CATFILE="BobMarley.txt"
+  export CATNAME="Bob Marley"
+  ./catscripts/Categorize/sh
+fi
+
 if [ $ELVIS -ne 0 ];
 then
   export CATFILE="ElvisPresley.txt"
@@ -205,6 +214,7 @@ rm DemiLovato.txt
 rm JohnLennon.txt
 rm LadyGaga.txt
 rm Madonna.txt
+rm BobMarley.txt
 rm ElvisPresley.txt
 rm JoshRamsay.txt
 rm Rihanna.txt
