@@ -5,3 +5,4 @@
 ./catscripts/Science/Chemistry/Elements/Group3.sh
 ./catscripts/Science/Chemistry/Elements/Group4.sh
 ./catscripts/Science/Chemistry/Elements/Group5.sh
+./catscripts/Science/Chemistry/Elements/Group6.sh

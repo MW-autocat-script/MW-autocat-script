@@ -35,7 +35,7 @@ if [ $DUBNIUM -ne 0 ];
 then
   export CATFILE="Dubnium.txt"
   export CATNAME="Dubnium"
-  ./catscripts/Categorize/sh
+  ./catscripts/Categorize.sh
 fi
 
 rm Vanadium.txt
