@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 cat newpages.txt | egrep -i 'Scandium' | egrep -iv 'Scandium \b.+(ate|ide|ite)' >> Scandium.txt
-cat newpages.txt | egrep -i 'Yttrium' | gerep -iv 'Yttrium \b.+(ate|ide|ite)' >> Yttrium.txt
+cat newpages.txt | egrep -i 'Yttrium' | egrep -iv 'Yttrium \b.+(ate|ide|ite)' >> Yttrium.txt
 
 SCANDIUM=`stat --print=%s Scandium.txt`
 YTTRIUM=`stat --print=%s Yttrium.txt`
