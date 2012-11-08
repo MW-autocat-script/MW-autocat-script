@@ -9,3 +9,4 @@
 ./catscripts/Science/Chemistry/Elements/Group7.sh
 ./catscripts/Science/Chemistry/Elements/Group8.sh
 ./catscripts/Science/Chemistry/Elements/Group9.sh
+./catscripts/Science/Chemistry/Elements/Group10.sh
