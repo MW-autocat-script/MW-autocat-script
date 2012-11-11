@@ -4,7 +4,7 @@ cat newpages.txt | egrep -i 'roxas|ventus|vanitas|xion|xenahort|sora.+kairi|kair
 
 cat newpages.txt | egrep -i 'Kingdom Hearts (2|II\b)|Kingdom Hearts(2|II\b)|KH(2|II\b)|KH (2|II\b)' >> KingdomHeartsII.txt
 
-cat newpages.txt | egrep -i 'Kingdom Hearts (3|III\b)|Kingdom Hearts(3|III\b)|KH(3|III\b)|KH (3|III\b)' >> KingdomHeartsIII.txt
+cat newpages.txt | egrep -i 'Kingdom Hearts (3\b|III\b)|Kingdom Hearts(3\b|III\b)|KH(3\b|III\b)|KH (3|III\b)' >> KingdomHeartsIII.txt
 
 cat newpages.txt | egrep -i 'Chain of Memories|KH:COM|\bKHCOM\b|\bKH COM\b' >> ChainOfMemories.txt
 

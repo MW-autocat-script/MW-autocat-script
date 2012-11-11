@@ -18,6 +18,8 @@ cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)(white| White)" >> Poké
 cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)((dimond|diamond)| (dimond|Diamond))" >> PokémonDiamond.txt
 cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)((perl|pearl)| (perl|Pearl))" >> PokémonPearl.txt
 cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)((platinum|platnum|platnium)| (Platinum|Platnum|Platnium))" >> PokémonPlatinum.txt
+cat newpages.txt | egrep -i "HeartGold|Heart Gold" >> PokémonHeartGold.txt
+cat newpages.txt | egrep -i "SoulSilver|Soul Silver" >> PokémonSoulSilver.txt
 
 RED=`stat --print=%s PokémonRed.txt`
 BLUE=`stat --print=%s PokémonBlue.txt`
@@ -37,6 +39,9 @@ WHITE=`stat --print=%s PokémonWhite.txt`
 DIAMOND=`stat --print=%s PokémonDiamond.txt`
 PEARL=`stat --print=%s PokémonPearl.txt`
 PLATINUM=`stat --print=%s PokémonPlatinum.txt`
+HEARTGOLD=`stat --print=%s PokémonHeartGold.txt`
+SOULSILVER=`stat --print=%s PokémonSoulSilver.txt`
+
 
 
 
@@ -166,6 +171,20 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $HEARTGOLD -ne 0 ];
+then
+  export CATFILE="PokémonHeartGold.txt"
+  export CATNAME="Pokémon HeartGold"
+  ./catscripts/Categorize.sh
+fi
+
+if [ $SOULSILVER -ne 0 ];
+then
+  export CATFILE="PokémonSoulSilver.txt"
+  export CATNAME="Pokémon SoulSilver"
+  ./catscripts/Categorize.sh
+fi
+
 rm PokémonRed.txt
 rm PokémonBlue.txt
 rm PokémonYellow.txt
@@ -184,3 +203,5 @@ rm PokémonWhite.txt
 rm PokémonDiamond.txt
 rm PokémonPearl.txt
 rm PokémonPlatinum.txt
+rm PokémonHeartGold.txt
+rm PokémonSoulSilver.txt
