@@ -13,3 +13,4 @@
 ./catscripts/Science/Chemistry/Elements/Group11.sh
 ./catscripts/Science/Chemistry/Elements/Group12.sh
 ./catscripts/Science/Chemistry/Elements/Group13.sh
+./catscripts/Science/Chemistry/Elements/Group14.sh
