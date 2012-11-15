@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-cat newpages.txt | egrep -i 'Mercury' | egrep -i 'atom|proton|neutron|electron|\bion|melt|boil|metal|vapor|magnet|element|compound|toxic|molecule|electricity|conduct' >> MercuryElement.txt
+cat newpages.txt | egrep -i 'Mercury' | egrep -i 'atom|proton|neutron|electron|\bion|melt|boil|metal|vapor|magnet|element|compound|toxic|molecule|electricity|conduct' | egrep -iv 'planet Mercury' >> MercuryElement.txt
 cat newpages.txt | egrep -i 'Zinc' >> Zinc.txt
 cat newpages.txt | egrep -i 'Cadmium' >> Cadmium.txt
 cat newpages.txt | egrep -i 'Copernicium' >> Copernicium.txt
