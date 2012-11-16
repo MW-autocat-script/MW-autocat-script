@@ -1,14 +1,14 @@
 #!/bin/bash 
 
 cat newpages.txt | egrep -i '\bNitrogen\b|\bNitrogens\b' | egrep -iv 'Nitrogen \b.+(ate|ide|ite)' >> Nitrogen.txt
-cat newpages.txt | egrep -i 'Phosphorous' | egrep -iv 'Phosphorous \b.+(ate|ide|ite)' >> Phosphorous.txt
+cat newpages.txt | egrep -i 'Phosphorus|Phosphorous' | egrep -iv 'Phosphorus \b.+(ate|ide|ite)' >> Phosphorus.txt
 cat newpages.txt | egrep -i 'Aresenic' | egrep -iv 'Aresenic \b.+(ate|ide|ite)' >> Aresenic.txt
 cat newpages.txt | egrep -i '\bAntimony\b' | egrep -iv 'Antimony \b.+(ate|ide|ite)' >> Antimony.txt
 cat newpages.txt | egrep -i 'Bismuth' >> Bismuth.txt
 cat newpages.txt | egrep -i 'Ununpentium' | egrep -iv 'Ununpentium \b.+(ate|ide|ite)' >> Ununpentium.txt
 
 NITROGEN=`stat --print=%s Nitrogen.txt`
-PHOSPHOROUS=`stat --print=%s Phosphorous.txt`
+PHOSPHORUS=`stat --print=%s Phosphorus.txt`
 ARSENIC=`stat --print=%s Aresenic.txt`
 ANTIMONY=`stat --print=%s Antimony.txt`
 BISMUTH=`stat --print=%s Bismuth.txt`
@@ -21,10 +21,10 @@ then
   ./catscripts/Categorize.sh
 fi
 
-if [ $PHOSPHOROUS -ne 0 ];
+if [ $PHOSPHORUS -ne 0 ];
 then
-  export CATFILE="Phosphorous.txt"
-  export CATNAME="Phosphorous"
+  export CATFILE="Phosphorus.txt"
+  export CATNAME="Phosphorus"
   ./catscripts/Categorize.sh
 fi
 
@@ -57,7 +57,7 @@ then
 fi
 
 rm Nitrogen.txt
-rm Phosphorous.txt
+rm Phosphorus.txt
 rm Aresenic.txt
 rm Antimony.txt
 rm Bismuth.txt
