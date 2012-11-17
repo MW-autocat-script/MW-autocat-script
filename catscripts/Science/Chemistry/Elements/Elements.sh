@@ -19,3 +19,4 @@
 ./catscripts/Science/Chemistry/Elements/Group17.sh
 ./catscripts/Science/Chemistry/Elements/Group18.sh
 ./catscripts/Science/Chemistry/Elements/Lanthanides.sh
+./catscripts/Science/Chemistry/Elements/Actinides.sh
