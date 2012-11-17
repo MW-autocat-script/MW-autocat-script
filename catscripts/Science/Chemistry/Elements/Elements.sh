@@ -18,3 +18,4 @@
 ./catscripts/Science/Chemistry/Elements/Group16.sh
 ./catscripts/Science/Chemistry/Elements/Group17.sh
 ./catscripts/Science/Chemistry/Elements/Group18.sh
+./catscripts/Science/Chemistry/Elements/Lanthanides.sh
