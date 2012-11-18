@@ -83,6 +83,7 @@ echo "Running subscripts"
 ./catscripts/Math/Math.sh
 ./catscripts/Entertainment/Entertainment.sh
 ./catscripts/Science/Science.sh
+./catscripts/Government/Government.sh
 ./catscripts/Maintenance/Maintenance.sh
 
 #Cleanup

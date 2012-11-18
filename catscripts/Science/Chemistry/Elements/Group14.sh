@@ -4,7 +4,7 @@ cat newpages.txt | egrep -i '\bCarbon\b|\bCarbons\b' | egrep -iv 'Carbon \b.+(at
 cat newpages.txt | egrep -i 'Silicon' | egrep -iv 'Silicon \b.+(ate|ide|ite)|Silicon Valley' >> Silicon.txt
 cat newpages.txt | egrep -i 'Germanium' | egrep -iv 'Germanium \b.+(ate|ide|ite)' >> Germanium.txt
 cat newpages.txt | egrep -i '\bTin\b' | egrep -iv 'Tin \b.+(ate|ide|ite)|Tin Man|Tin Tower' >> Tin.txt
-cat newpages.txt | egrep -i 'Lead' | | egrep -i 'atom|proton|neutron|electron|\bion|melt|boil|metal|vapor|magnet|element|compound|toxic|molecule|electricity|conduct|poison|lead weight' >> Lead.txt
+cat newpages.txt | egrep -i 'Lead' | egrep -i 'atom|proton|neutron|electron|\bion|melt|boil|metal|vapor|magnet|element|compound|toxic|molecule|electricity|conduct|poison|lead weight' >> Lead.txt
 cat newpages.txt | egrep -i 'Flerovium' | egrep -iv 'Flerovium \b.+(ate|ide|ite)' >> Flerovium.txt
 
 CARBON=`stat --print=%s Carbon.txt`

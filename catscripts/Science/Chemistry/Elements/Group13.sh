@@ -13,7 +13,7 @@ ALUMINIUM=`stat --print=%s Aluminium.txt`
 GALLIUM=`stat --print=%s Gallium.txt`
 INDIUM=`stat --print=%s Indium.txt`
 THALLIUM=`stat --print=%s Thallium.txt`
-UUT=`stat --print=%s Ununtrium.txt`
+UNUNTRIUM=`stat --print=%s Ununtrium.txt`
 
 if [ $BORON -ne 0 ];
 then
@@ -50,14 +50,7 @@ then
   ./catscripts/Categorize.sh
 fi
 
-if [ $FRANCIUM -ne 0 ];
-then
-  export CATFILE="Francium.txt"
-  export CATNAME="Francium"
-  ./catscripts/Categorize.sh
-fi
-
-if [ $UUT -ne 0 ];
+if [ $UNUNTRIUM -ne 0 ];
 then
   export CATFILE="Ununtrium.txt"
   export CATNAME="Ununtrium"
