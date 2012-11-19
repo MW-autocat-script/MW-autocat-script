@@ -4,7 +4,7 @@
 ##GBT is Throttle (pywikipedia default is 10, and if you need something faster than 1, you should pay somebody to write something better)
 ##NPL is the limit for the page generator
 export GBT=3
-export NPL=60
+export NPL=50
 export PYWIKIPEDIADIR=..
 #Fetch new pages
 
