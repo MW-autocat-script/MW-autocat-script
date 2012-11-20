@@ -1,16 +1,17 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'George Washington' | egrep -iv 'George Washington Carver' >> GeorgeWashington.txt
+cat newpages.txt | egrep -i 'George Washington|President Washington' | egrep -iv 'George Washington Carver' >> GeorgeWashington.txt
 cat newpages.txt | egrep -i 'John Adams' >> JohnAdams.txt
-cat newpages.txt | egrep -i 'Thomas Jefferson' >> ThomasJefferson.txt
-cat newpages.txt | egrep -i 'James Madison' >> JamesMadison.txt
-cat newpages.txt | egrep -i 'James Monroe' >> JamesMonroe.txt
+cat newpages.txt | egrep -i 'Thomas Jefferson|Jefforsonian|Monticello|President Jefferson' >> ThomasJefferson.txt
+cat newpages.txt | egrep -i 'James Madison|President Madison' >> JamesMadison.txt
+cat newpages.txt | egrep -i 'James Monroe|President Monroe' >> JamesMonroe.txt
 cat newpages.txt | egrep -i 'John Q(|\.|uincy) Adams' >> JohnQuincyAdams.txt
-cat newpages.txt | egrep -i 'Andrew Jackson' >> AndrewJackson.txt
-cat newpages.txt | egrep -i 'Martin Van Buren' >> MartinVanBuren.txt
+cat newpages.txt | egrep -i 'Andrew Jackson|President Jackson' >> AndrewJackson.txt
+cat newpages.txt | egrep -i 'Martin Van Buren|President Buren|President Van Buren' >> MartinVanBuren.txt
 cat newpages.txt | egrep -i 'William H(|\.|enry) Harrison' >> WilliamHenryHarrison.txt
-cat newpages.txt | egrep -i 'John Tyler' >> JohnTyler.txt
-cat newpages.txt | egrep -i 'James(| K(|\.|nox)) Polk' >> JamesKPolk.txt
+cat newpages.txt | egrep -i 'John Tyler|President Tyler' >> JohnTyler.txt
+cat newpages.txt | egrep -i 'James(| K(|\.|nox)) Polk|President Polk' >> JamesKPolk.txt
+cat newpages.txt | egrep -i 'Zachary Taylor|President Taylor' >> ZacharyTaylor.txt
 
 WASHINGTON=`stat --print=%s GeorgeWashington.txt`
 JOHNADAMS=`stat --print=%s JohnAdams.txt`
@@ -23,6 +24,7 @@ BUREN=`stat --print=%s MartinVanBuren.txt`
 WHARRISON=`stat --print=%s WilliamHenryHarrison.txt`
 TYLER=`stat --print=%s JohnTyler.txt`
 POLK=`stat --print=%s JamesKPolk.txt`
+TAYLOR=`stat --print=%s ZacharyTaylor.txt`
 
 if [ $WASHINGTON -ne 0 ];
 then
@@ -101,6 +103,13 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $TAYLOR -ne 0 ];
+then
+  export CATFILE="ZacharyTaylor.txt"
+  export CATNAME="Zachary Taylor"
+  ./catscripts/Categorize.sh
+fi
+
 rm GeorgeWashington.txt
 rm JohnAdams.txt
 rm ThomasJefferson.txt
@@ -112,3 +121,4 @@ rm MartinVanBuren.txt
 rm WilliamHenryHarrison.txt
 rm JohnTyler.txt
 rm JamesKPolk.txt
+rm ZacharyTaylor.txt
