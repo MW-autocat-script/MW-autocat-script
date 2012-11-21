@@ -14,7 +14,8 @@ cat newpages.txt | egrep -i 'Gaia Online' >> GaiaOnline.txt
 
 cat newpages.txt | egrep -i 'Google' | egrep -iv 'Google Chrome' >> Google.txt
 
-cat newpages.txt | egrep -i '\bWikia\b' >> Wikia.txt
+cat newpages.txt | egrep -i '\bWikia\b' | egrep -iv 'Wikia Search'  >> Wikia.txt
+cat newpages.txt | egrep -i 'Wikia Search' >> WikiaSearch.txt
 
 cat newpages.txt | egrep -i '\bWikianswers\b|wiki answers' >> Wikianswers.txt
 
@@ -26,6 +27,7 @@ GAIAONLINE=`stat --print=%s GaiaOnline.txt`
 GOOGLE=`stat --print=%s Google.txt`
 WIKIA=`stat --print=%s Wikia.txt`
 WIKIANSWERS=`stat --print=%s Wikianswers.txt`
+WIKIASEARCH=`stat --print=%s WikiaSearch.txt`
 
 
 if [ $YOUTUBE -ne 0 ];
@@ -84,6 +86,13 @@ then
    ./catscripts/Categorize.sh
 fi
 
+if [ $WIKIASEARCH -ne 0 ];
+then
+  export CATFILE="WikiaSearch.txt"
+  export CATNAME="Wikia Search"
+  ./catscripts/Categorize.sh
+fi
+
 rm YouTube.txt
 rm Twitter.txt
 rm Facebook.txt
@@ -92,3 +101,4 @@ rm GaiaOnline.txt
 rm Google.txt
 rm Wikia.txt
 rm Wikianswers.txt
+rm WikiaSearch.txt
