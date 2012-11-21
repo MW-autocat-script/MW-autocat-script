@@ -13,6 +13,7 @@ cat newpages.txt | egrep -i 'John Tyler|President Tyler' >> JohnTyler.txt
 cat newpages.txt | egrep -i 'James(| K(|\.|nox)) Polk|President Polk' >> JamesKPolk.txt
 cat newpages.txt | egrep -i 'Zachary Taylor|President Taylor' >> ZacharyTaylor.txt
 cat newpages.txt | egrep -i 'Fillmore' >> MillardFillmore.txt
+cat newpages.txt | egrep -i 'Franklin Pierce|President Pierce' >> FranklinPierce.txt
 
 WASHINGTON=`stat --print=%s GeorgeWashington.txt`
 JOHNADAMS=`stat --print=%s JohnAdams.txt`
@@ -27,6 +28,7 @@ TYLER=`stat --print=%s JohnTyler.txt`
 POLK=`stat --print=%s JamesKPolk.txt`
 TAYLOR=`stat --print=%s ZacharyTaylor.txt`
 FILLMORE=`stat --print=%s MillardFillmore.txt`
+PIERCE=`stat --print=%s FranklinPierce.txt`
 
 if [ $WASHINGTON -ne 0 ];
 then
@@ -119,6 +121,13 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $PIERCE -ne 0 ];
+then
+  export CATFILE="FranklinPierce.txt"
+  export CATNAME="Franklin Pierce"
+  ./catscripts/Categorize.sh
+fi
+
 rm GeorgeWashington.txt
 rm JohnAdams.txt
 rm ThomasJefferson.txt
@@ -132,3 +141,4 @@ rm JohnTyler.txt
 rm JamesKPolk.txt
 rm ZacharyTaylor.txt
 rm MillardFillmore.txt
+rm FranklinPierce.txt
