@@ -19,7 +19,8 @@ cat newpages.txt | egrep -i '(Abraham|Abe) Lincoln|President Lincoln' >> Abraham
 cat newpages.txt | egrep -i 'Andrew Johnson' >> AndrewJohnson.txt
 cat newpages.txt | egrep -i 'Ulysses(| S(|\.|impson)) Grant|President Grant' >> UlyssesSGrant.txt
 cat newpages.txt | egrep -i 'Rutherford(| B(|\.|irchard)) Hayes|President Hayes' >> RutherfordBHayes.txt
-cat newpages.txt | egrep -i 'James(| A(|\.|bram)) Garfield|President Garfield' >> JamesAGarfield.txt 
+cat newpages.txt | egrep -i 'James(| A(|\.|bram)) Garfield|President Garfield' >> JamesAGarfield.txt
+cat newpages.txt | egrep -i 'Chester(| A(|\.|lan)) Arthur|President Arthur' >> ChesterAArthur.txt 
 
 WASHINGTON=`stat --print=%s GeorgeWashington.txt`
 JOHNADAMS=`stat --print=%s JohnAdams.txt`
@@ -41,7 +42,7 @@ JOHNSON=`stat --print=%s AndrewJohnson.txt`
 GRANT=`stat --print=%s UlyssesSGrant.txt`
 HAYES=`stat --print=%s RutherfordBHayes.txt`
 GARFIELD=`stat --print=%s JamesAGarfield.txt`
-
+ARTHUR=`stat --print=%s ChesterAArthur.txt`
 
 if [ $WASHINGTON -ne 0 ];
 then
@@ -183,6 +184,13 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $ARTHUR -ne 0 ];
+then
+  export CATFILE="ChesterAArthur.txt"
+  export CATNAME="Chester A. Arthur"
+  ./catscripts/Categorize.sh
+fi
+
 rm GeorgeWashington.txt
 rm JohnAdams.txt
 rm ThomasJefferson.txt
@@ -203,3 +211,4 @@ rm AndrewJohnson.txt
 rm UlyssesSGrant.txt
 rm RutherfordBHayes.txt
 rm JamesAGarfield.txt
+rm ChesterAArthur.txt
