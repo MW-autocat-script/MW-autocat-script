@@ -6,7 +6,20 @@
 export GBT=3
 export NPL=50
 export PYWIKIPEDIADIR=..
+export PIDFILE="pidfile.lock"
 #Fetch new pages
+
+
+if [ -e "$PIDFILE" ]; then
+PID=`cat $PIDFILE`
+if kill -0 &>1 > /dev/null $PID; then
+echo "Already running"
+exit 1
+else
+rm $PIDFILE
+fi
+fi
+echo $$ > $PIDFILE
 
 echo "Generating pages"
 
@@ -95,3 +108,4 @@ rm MoshiMonsters.txt
 rm Woozworld.txt
 rm PNPA.txt
 
+rm $PIDFILE

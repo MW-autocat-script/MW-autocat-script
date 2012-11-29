@@ -23,7 +23,9 @@ cat newpages.txt | egrep -i 'James(| A(|\.|bram)) Garfield|President Garfield' >
 cat newpages.txt | egrep -i 'Chester(| A(|\.|lan)) Arthur|President Arthur' >> ChesterAArthur.txt
 cat newpages.txt | egrep -i '(President|Grover) Cleveland' >> GroverCleveland.txt
 cat newpages.txt | egrep -i 'Benjamin Harrison' >> BenjaminHarrison.txt
-cat newpages.txt | egrep -i '(William|President) McKinley' >> WilliamMcKinley.txt 
+cat newpages.txt | egrep -i '(William|President) McKinley' >> WilliamMcKinley.txt
+cat newpages.txt | egrep -i '(Theodore|Teddy) Roosevelt' >> TheodoreRoosevelt.txt
+ 
 
 WASHINGTON=`stat --print=%s GeorgeWashington.txt`
 JOHNADAMS=`stat --print=%s JohnAdams.txt`
@@ -49,6 +51,7 @@ ARTHUR=`stat --print=%s ChesterAArthur.txt`
 CLEVELAND=`stat --print=%s GroverCleveland.txt`
 HARRISON=`stat --print=%s BenjaminHarrison.txt`
 MCKINLEY=`stat --print=%s WilliamMcKinley.txt`
+THEODORE=`stat --print=%s TheodoreRoosevelt.txt`
 
 if [ $WASHINGTON -ne 0 ];
 then
@@ -218,6 +221,13 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $THEODORE -ne 0 ];
+then
+  export CATFILE="TheodoreRoosevelt.txt"
+  export CATNAME="Theodore Roosevelt"
+  ./catscripts/Categorize.sh
+fi
+
 rm GeorgeWashington.txt
 rm JohnAdams.txt
 rm ThomasJefferson.txt
@@ -242,3 +252,4 @@ rm ChesterAArthur.txt
 rm GroverCleveland.txt
 rm BenjaminHarrison.txt
 rm WilliamMcKinley.txt
+rm TheodoreRoosevelt.txt
