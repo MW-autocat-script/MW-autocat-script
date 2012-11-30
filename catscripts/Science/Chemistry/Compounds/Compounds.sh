@@ -19,7 +19,7 @@ if [ $COTWO -ne 0 ];
 then
   export CATFILE="CarbonDioxide.txt"
   export CATNAME="Carbon dioxide"
-  ./catscripts/Categorize/sh
+  ./catscripts/Categorize.sh
 fi
 
 rm CarbonMonoxide.txt

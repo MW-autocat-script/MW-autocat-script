@@ -4,7 +4,7 @@
 ##GBT is Throttle (pywikipedia default is 10, and if you need something faster than 1, you should pay somebody to write something better)
 ##NPL is the limit for the page generator
 export GBT=3
-export NPL=50
+export NPL=200
 export PYWIKIPEDIADIR=..
 export PIDFILE="pidfile.lock"
 #Fetch new pages
@@ -12,8 +12,8 @@ export PIDFILE="pidfile.lock"
 
 if [ -e "$PIDFILE" ]; then
 PID=`cat $PIDFILE`
-if kill -0 &>1 > /dev/null $PID; then
-echo "Already running"
+if kill -0 $PID > /dev/null 2>&1; then
+printf 'Already running\n'
 exit 1
 else
 rm $PIDFILE
@@ -109,3 +109,4 @@ rm Woozworld.txt
 rm PNPA.txt
 
 rm $PIDFILE
+killall -9 python
