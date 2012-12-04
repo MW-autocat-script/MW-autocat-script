@@ -25,6 +25,7 @@ cat newpages.txt | egrep -i '(President|Grover) Cleveland' >> GroverCleveland.tx
 cat newpages.txt | egrep -i 'Benjamin Harrison' >> BenjaminHarrison.txt
 cat newpages.txt | egrep -i '(William|President) McKinley' >> WilliamMcKinley.txt
 cat newpages.txt | egrep -i '(Theodore|Teddy) Roosevelt' >> TheodoreRoosevelt.txt
+cat newpages.txt | egrep -i 'Taft' >> WilliamHowardTaft.txt #Would anything that mentions Taft NOT be about him?
  
 
 WASHINGTON=`stat --print=%s GeorgeWashington.txt`
@@ -52,6 +53,7 @@ CLEVELAND=`stat --print=%s GroverCleveland.txt`
 HARRISON=`stat --print=%s BenjaminHarrison.txt`
 MCKINLEY=`stat --print=%s WilliamMcKinley.txt`
 THEODORE=`stat --print=%s TheodoreRoosevelt.txt`
+TAFT=`stat --print=%s WilliamHowardTaft.txt`
 
 if [ $WASHINGTON -ne 0 ];
 then
@@ -228,6 +230,13 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $TAFT -ne 0 ];
+then
+  export CATFILE="WilliamHowardTaft.txt"
+  export CATNAME="William Howard Taft"
+  ./catscripts/Categorize.sh
+fi
+
 rm GeorgeWashington.txt
 rm JohnAdams.txt
 rm ThomasJefferson.txt
@@ -253,3 +262,4 @@ rm GroverCleveland.txt
 rm BenjaminHarrison.txt
 rm WilliamMcKinley.txt
 rm TheodoreRoosevelt.txt
+rm WilliamHowardTaft.txt
