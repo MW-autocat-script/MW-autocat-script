@@ -1,6 +1,6 @@
 #1/bin/bash
 
-cat newpages.txt | egrep -iv "\bwho|\bwhat|where\b|\bwhen\b|\[\[Whens\b|\bwhy|how\b|\bdo\b|\shas\b|does\b|did\b|will\b|is\b|are\b|\bwere\b|\bwas\b|\bwhich\b|\bcould|should\b|shouldn't|\bwould|can\b|\[\[Has\b|\[\[Hasn't|[0-9]{1,}|\bAm I\b" >> noninterrogative.txt
+cat newpages.txt | egrep -iv "\bwho|\bwhat|where\b|\bwhen\b|\[\[Whens\b|\bwhy|how\b|\bdo\b|\shas\b|does\b|did\b|will\b|is\b|are\b|\bwere\b|\bwas\b|\bwhich\b|\bcould|should\b|shouldn't|\bwould|can\b|\[\[Has\b|\[\[Hasn't|[0-9]{1,}(| )(-|\+|x|/|\*|%|\^)|\bAm I\b" >> noninterrogative.txt
 
 NONINT=`stat --print=%s noninterrogative.txt`
 
