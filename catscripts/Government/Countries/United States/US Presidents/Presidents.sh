@@ -35,6 +35,7 @@ cat newpages.txt | egrep -i 'Harry(| S(|\.)) Truman|President Truman' >> HarryST
 cat newpages.txt | egrep -i 'Eisenhower' >> DwightDEisenhower.txt
 cat newpages.txt | egrep -i 'John(| F(|\.|itzgerald)) Kennedy|\bJFK\b' >> JohnFKennedy.txt
 cat newpages.txt | egrep -i 'Lyndon(| B(|\.|aines)) Johnson|\bLBJ\b' >> LyndonBJohnson.txt
+cat newpages.txt | egrep -i 'Richard(| M(|\.|ilhous)) Nixon|President Nixon|Tricky Dick' >> RichardMNixon.txt
  
 
 WASHINGTON=`stat --print=%s GeorgeWashington.txt`
@@ -72,6 +73,7 @@ TRUMAN=`stat --print=%s HarrySTruman.txt`
 EISENHOWER=`stat --print=%s DwightDEisenhower.txt`
 KENNEDY=`stat --print=%s JohnFKennedy.txt`
 LBJ=`stat --print=%s LyndonBJohnson.txt`
+NIXON=`stat --print=%s RichardMNixon.txt`
 
 if [ $WASHINGTON -ne 0 ];
 then
@@ -318,6 +320,13 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $NIXON -ne 0 ];
+then
+  export CATFILE="RichardMNixon.txt"
+  export CATNAME="Richard Nixon"
+  ./catscripts/Categorize.sh
+fi
+
 rm GeorgeWashington.txt
 rm JohnAdams.txt
 rm ThomasJefferson.txt
@@ -353,3 +362,4 @@ rm HarrySTruman.txt
 rm DwightDEisenhower.txt
 rm JohnFKennedy.txt
 rm LyndonBJohnson.txt
+rm RichardMNixon.txt
