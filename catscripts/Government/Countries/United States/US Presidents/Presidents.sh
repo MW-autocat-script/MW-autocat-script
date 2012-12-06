@@ -40,6 +40,7 @@ cat newpages.txt | egrep -i 'Gerald(| R(|\.|udolph)) Ford|President Ford' >> Ger
 cat newpages.txt | egrep -i '(James|Jimmy|President)(| E(|\.|arl)) Carter' >> JimmyCarter.txt
 cat newpages.txt | egrep -i 'Ronald(| W(|\.|ilson)) Reagan|President Reagan' >> RonaldReagan.txt
 cat newpages.txt | egrep -i 'George H(|\.|erbert) W(|\.|alker) Bush' >> GeorgeHWBush.txt
+cat newpages.txt | egrep -i '(William|Bill)(| Jefferson) Clinton|President Clinton' >> BillClinton.txt
  
 
 WASHINGTON=`stat --print=%s GeorgeWashington.txt`
@@ -82,6 +83,7 @@ FORD=`stat --print=%s GeraldFord.txt`
 CARTER=`stat --print=%s JimmyCarter.txt`
 REAGAN=`stat --print=%s RonaldReagan.txt`
 GHWBUSH=`stat --print=%s GeorgeHWBush.txt`
+CLINTON=`stat --print=%s BillClinton.txt`
 
 if [ $WASHINGTON -ne 0 ];
 then
@@ -363,6 +365,13 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $CLINTON -ne 0 ];
+then
+  export CATFILE="BillClinton.txt"
+  export CATNAME="Bill Clinton"
+  ./catscripts/Categorize.sh
+fi
+
 rm GeorgeWashington.txt
 rm JohnAdams.txt
 rm ThomasJefferson.txt
@@ -403,3 +412,4 @@ rm GeraldFord.txt
 rm JimmyCarter.txt
 rm RonaldReagan.txt
 rm GeorgeHWBush.txt
+rm BillClinton.txt
