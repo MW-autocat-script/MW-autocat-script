@@ -33,6 +33,7 @@ cat newpages.txt | egrep -i 'Herbert(| C(|\.|lark)) Hoover|President Hoover' >> 
 cat newpages.txt | egrep -i 'Franklin(| D(|\.|elano)) Roosevelt|\bFDR\b' >> FranklinDelanoRoosevelt.txt
 cat newpages.txt | egrep -i 'Harry(| S(|\.)) Truman|President Truman' >> HarrySTruman.txt
 cat newpages.txt | egrep -i 'Eisenhower' >> DwightDEisenhower.txt
+cat newpages.txt | egrep -i 'John(| F(|\.|itzgerald)) Kennedy|\bJFK\b' >> JohnFKennedy.txt
  
 
 WASHINGTON=`stat --print=%s GeorgeWashington.txt`
@@ -68,6 +69,7 @@ HOOVER=`stat --print=%s HerbertHoover.txt`
 FDR=`stat --print=%s FranklinDelanoRoosevelt.txt`
 TRUMAN=`stat --print=%s HarrySTruman.txt`
 EISENHOWER=`stat --print=%s DwightDEisenhower.txt`
+KENNEDY=`stat --print=%s JohnFKennedy.txt`
 
 if [ $WASHINGTON -ne 0 ];
 then
@@ -300,6 +302,13 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $KENNEDY -ne 0 ];
+then
+  export CATFILE="JohnFKennedy.txt"
+  export CATFILE="John F. Kennedy"
+  ./catscripts/Categorize.sh
+fi
+
 rm GeorgeWashington.txt
 rm JohnAdams.txt
 rm ThomasJefferson.txt
@@ -333,3 +342,4 @@ rm HerbertHoover.txt
 rm FranklinDelanoRoosevelt.txt
 rm HarrySTruman.txt
 rm DwightDEisenhower.txt
+rm JohnFKennedy.txt
