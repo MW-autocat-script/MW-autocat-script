@@ -29,6 +29,7 @@ cat newpages.txt | egrep -i 'Taft' >> WilliamHowardTaft.txt #Would anything that
 cat newpages.txt | egrep -i 'Woodrow Wilson|President Wilson' >> WoodrowWilson.txt
 cat newpages.txt | egrep -i 'Warren(| G(|\.|amaliel)) Harding|President Harding' >> WarrenGHarding.txt
 cat newpages.txt | egrep -i 'Coolidge' >> CalvinCoolidge.txt
+cat newpages.txt | egrep -i 'Herbert(| C(|\.|lark)) Hoover|President Hoover' >> HerbertHoover.txt
  
 
 WASHINGTON=`stat --print=%s GeorgeWashington.txt`
@@ -60,6 +61,7 @@ TAFT=`stat --print=%s WilliamHowardTaft.txt`
 WILSON=`stat --print=%s WoodrowWilson.txt`
 HARDING=`stat --print=%s WarrenGHarding.txt`
 COOLIDGE=`stat --print=%s CalvinCoolidge.txt`
+HOOVER=`stat --print=%s HerbertHoover.txt`
 
 if [ $WASHINGTON -ne 0 ];
 then
@@ -264,6 +266,13 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $HOOVER -ne 0 ];
+then
+  export CATFILE="HerbertHoover.txt"
+  export CATNAME="Herbert Hoover"
+  ./catscripts/Categorize.sh
+fi
+
 rm GeorgeWashington.txt
 rm JohnAdams.txt
 rm ThomasJefferson.txt
@@ -293,3 +302,4 @@ rm WilliamHowardTaft.txt
 rm WoodrowWilson.txt
 rm WarrenGHarding.txt
 rm CalvinCoolidge.txt
+rm HerbertHoover.txt
