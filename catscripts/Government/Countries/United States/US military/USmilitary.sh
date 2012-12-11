@@ -1,10 +1,10 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i '(US|United States) Marine(|s) (|Corps)|USMC' >> USMC.txt
-cat newpages.txt | egrep -i '(US|United States) Army' >> USArmy.txt
-cat newpages.txt | egrep -i '(US|United States) (|ch)Air Force|USAF' >> USAF.txt
-cat newpages.txt | egrep -i '(US|United States) Navy|\bUSN\b' >> USNavy.txt
-cat newpages.txt | egrep -i '(US|United States) Coast Guard|USCG' >> USCG.txt
+cat newpages.txt | egrep -i '(US|U\.S\.|United States) Marine(|s) (|Corps)|USMC' >> USMC.txt
+cat newpages.txt | egrep -i '(US|U\.S\.|United States) Army' >> USArmy.txt
+cat newpages.txt | egrep -i '(US|U\.S\.|United States) (|ch)Air Force|USAF\b' >> USAF.txt
+cat newpages.txt | egrep -i '(US|U\.S\.|United States) Navy|\bUSN\b' >> USNavy.txt
+cat newpages.txt | egrep -i '(US|U\.S\.|United States) Coast Guard|USCG' >> USCG.txt
 
 USMC=`stat --print=%s USMC.txt`
 USARMY=`stat --print=%s USArmy.txt`
@@ -15,7 +15,7 @@ USCG=`stat --print=%s USCG.txt`
 if [ $USMC -ne 0 ];
 then
   export CATFILE="USMC.txt"
-  export CATNAME="UNited States Marine Corps"
+  export CATNAME="United States Marine Corps"
   ./catscripts/Categorize.sh
 fi
 

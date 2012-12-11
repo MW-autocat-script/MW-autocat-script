@@ -5,3 +5,4 @@
 ./catscripts/Entertainment/Video\ games/Video\ game\ consoles/Consoles.sh
 ./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/VideoGameSeries.sh
 ./catscripts/Entertainment/Video\ games/Educational\ video\ games/EducationalGames.sh
+./catscripts/Entertainment/Video\ games/Role-playing\ video\ games/RolePlayingVideoGames.sh
