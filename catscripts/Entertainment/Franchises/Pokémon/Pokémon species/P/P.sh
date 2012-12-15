@@ -16,7 +16,7 @@ cat newpages.txt | egrep -i 'Petilil' >> Petilil.txt
 cat newpages.txt | egrep -i 'Phanpy' >> Phanpy.txt
 cat newpages.txt | egrep -i 'Phione' >> Phione.txt
 cat newpages.txt | egrep -i 'Pichu' >> Pichu.txt
-cat newpages.txt | egrep -i 'Pidgeot' >> Pidgeot.txt
+cat newpages.txt | egrep -i 'Pidgeot\b' >> Pidgeot.txt
 cat newpages.txt | egrep -i 'Pidgeotto' >> Pidgeotto.txt
 cat newpages.txt | egrep -i 'Pidgey' >> Pidgey.txt
 cat newpages.txt | egrep -i 'Pignite' >> Pignite.txt
