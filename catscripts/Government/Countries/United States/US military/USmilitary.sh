@@ -5,12 +5,14 @@ cat newpages.txt | egrep -i '(US|U\.S\.|United States) Army' >> USArmy.txt
 cat newpages.txt | egrep -i '(US|U\.S\.|United States) (|ch)Air Force|USAF\b' >> USAF.txt
 cat newpages.txt | egrep -i '(US|U\.S\.|United States) Navy|\bUSN\b' >> USNavy.txt
 cat newpages.txt | egrep -i '(US|U\.S\.|United States) Coast Guard|USCG' >> USCG.txt
+cat newpages.txt | egrep -i '\bdod\b|Department of Defense|(US|U\.S(|\.)|United States) military' | egrep -iv 'Lott Dod|Army|Navy|Air Force|Navy|Coast Guard|Marine' >> USMilitary.txt
 
 USMC=`stat --print=%s USMC.txt`
 USARMY=`stat --print=%s USArmy.txt`
 USAF=`stat --print=%s USAF.txt`
 USNAVY=`stat --print=%s USNavy.txt`
 USCG=`stat --print=%s USCG.txt`
+USMILITARY=`stat --print=%s USMilitary.txt`
 
 if [ $USMC -ne 0 ];
 then
@@ -47,8 +49,16 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $USMILITARY -ne 0 ];
+then
+  export CATFILE="USMilitary.txt"
+  export CATNAME="US military"
+  ./catscripts/Categorize.sh
+fi
+
 rm USMC.txt
 rm USArmy.txt
 rm USAF.txt
 rm USNavy.txt
 rm USCG.txt
+rm USMilitary.txt
