@@ -1,21 +1,16 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Linux kernel' >> Linux.txt
+cat newpages.txt | egrep -i 'Linux' | egrep -iv 'Debian|SUSE|Ubuntu|\bco(| )Linux|Fedora|Linux Mint|Android' >> Linux.txt
 
 cat newpages.txt | egrep -i 'Debian' >> Debian.txt 
 
-cat newpages.txt | egrep -i 'OpenSUSE' >> OpenSUSE.txt
-cat newpages.txt | egrep -i 'Open SUSE\b' >> OpenSUSE.txt
+cat newpages.txt | egrep -i 'OpenSUSE|Open SUSE\b' >> OpenSUSE.txt
 
-cat newpages.txt | egrep -i 'in Ubuntu' >> Ubuntu.txt
-cat newpages.txt | egrep -i 'on Ubuntu' >> Ubuntu.txt
-cat newpages.txt | egrep -i 'install Ubuntu' >> Ubuntu.txt
+cat newpages.txt | egrep -i 'Ubuntu' >> Ubuntu.txt
 
-cat newpages.txt | egrep -i 'coLinux' >> CoLinux.txt
-cat newpages.txt | egrep -i '\bco Linux' >> CoLinux.txt
+cat newpages.txt | egrep -i 'coLinux|\bco Linux' >> CoLinux.txt
 
-cat newpages.txt | egrep -i 'Fedora [0-9]{1,}' >> FedoraLinux.txt
-cat newpages.txt | egrep -i '[io]n Fedora' >> FedoraLinux.txt
+cat newpages.txt | egrep -i 'Fedora [0-9]{1,}|[io]n Fedora|Fedora Linux' >> FedoraLinux.txt
 
 cat newpages.txt | egrep -i 'Linux Mint' >> LinuxMint.txt
 
@@ -33,42 +28,58 @@ ANDROID=`stat --print=%s GoogleAndroid.txt`
 
 if [ $LINUX -ne 0 ];
 then
-  ./catscripts/Technology/Computers/Software/Operating\ systems/Linux/catLinux.sh
+  export CATFILE="Linux.txt"
+  export CATNAME="Linux"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $DEBIAN -ne 0 ];
 then
-  ./catscripts/Technology/Computers/Software/Operating\ systems/Linux/catDebian.sh
+  export CATFILE="Debian.txt"
+  export CATNAME="Debian"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $OPENSUSE -ne 0 ];
 then
-  ./catscripts/Technology/Computers/Software/Operating\ systems/Linux/catOpenSUSE.sh
+  export CATFILE="OpenSUSE.txt"
+  export CATNAME="OpenSUSE"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $UBUNTU -ne 0 ];
 then
-  ./catscripts/Technology/Computers/Software/Operating\ systems/Linux/catUbuntu.sh
+  export CATFILE="Ubuntu.txt"
+  export CATNAME="Ubuntu"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $COLINUX -ne 0 ];
 then
-  ./catscripts/Technology/Computers/Software/Operating\ systems/Linux/catCoLinux.sh
+  export CATFILE="coLinux.txt"
+  export CATNAME="coLinux"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $FEDORA -ne 0 ];
 then
-  ./catscripts/Technology/Computers/Software/Operating\ systems/Linux/catFedora.sh
+  export CATFILE="FedoraLinux.txt"
+  export CATNAME="Fedora Linux"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $MINT -ne 0 ];
 then
-  ./catscripts/Technology/Computers/Software/Operating\ systems/Linux/catMint.sh
+  export CATFILE="LinuxMint.txt"
+  export CATNAME="Linux Mint"
+  ./catscripts/Categorize.sh
 fi
 
 if [ $ANDROID -ne 0 ];
 then
-  ./catscripts/Technology/Computers/Software/Operating\ systems/Linux/catAndroid.sh
+  export CATFILE="GoogleAndroid.txt"
+  export CATNAME="Google Android"
+  ./catscripts/Categorize.sh
 fi
 
 rm Linux.txt
