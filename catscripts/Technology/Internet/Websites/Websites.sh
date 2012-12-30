@@ -19,6 +19,8 @@ cat newpages.txt | egrep -i 'Wikia Search' >> WikiaSearch.txt
 
 cat newpages.txt | egrep -i '\bWikianswers\b|wiki answers' >> Wikianswers.txt
 
+cat newpages.txt | egrep -i 'Wikipedia' >> Wikipedia.txt
+
 YOUTUBE=`stat --print=%s YouTube.txt`
 TWITTER=`stat --print=%s Twitter.txt`
 FACEBOOK=`stat --print=%s Facebook.txt`
@@ -28,6 +30,7 @@ GOOGLE=`stat --print=%s Google.txt`
 WIKIA=`stat --print=%s Wikia.txt`
 WIKIANSWERS=`stat --print=%s Wikianswers.txt`
 WIKIASEARCH=`stat --print=%s WikiaSearch.txt`
+WIKIPEDIA=`stat --print=%s Wikipedia.txt`
 
 
 if [ $YOUTUBE -ne 0 ];
@@ -93,6 +96,13 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $WIKIPEDIA -ne 0 ];
+then
+  export CATFILE="Wikipedia.txt"
+  export CATNAME="Wikipedia"
+  ./catscripts/Categorize.sh
+fi
+
 rm YouTube.txt
 rm Twitter.txt
 rm Facebook.txt
@@ -102,3 +112,4 @@ rm Google.txt
 rm Wikia.txt
 rm Wikianswers.txt
 rm WikiaSearch.txt
+rm Wikipedia.txt
