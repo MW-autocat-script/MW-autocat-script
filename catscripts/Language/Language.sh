@@ -5,6 +5,6 @@
 ./catscripts/Language/Synonyms/Synonyms.sh
 ./catscripts/Language/Antonyms/Antonyms.sh
 ./catscripts/Language/Ditloids/Ditloids.sh
-./catscripts/Language/Initialisms/Initialisms.sh
+./catscripts/Language/Acronyms/Acronyms.sh
 ./catscripts/Language/Parts\ of\ speech/PartsOfSpeech.sh
 ./catscripts/Language/Spelling/Spelling.sh
