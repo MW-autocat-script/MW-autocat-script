@@ -20,7 +20,7 @@ cat newpages.txt | egrep -i 'Glalie' >> Glalie.txt
 cat newpages.txt | egrep -i 'Glameow' >> Glameow.txt
 cat newpages.txt | egrep -i 'Gligar' >> Gligar.txt
 cat newpages.txt | egrep -i 'Gliscor' >> Gliscor.txt
-cat newpages.txt | egrep -i 'Gloom' >> Gloom.txt
+cat newpages.txt | egrep -i 'Gloom\b' >> Gloom.txt
 cat newpages.txt | egrep -i 'Golbat' >> Golbat.txt
 cat newpages.txt | egrep -i 'Goldeen' >> Goldeen.txt
 cat newpages.txt | egrep -i 'Golduck' >> Golduck.txt

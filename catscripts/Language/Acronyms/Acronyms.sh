@@ -6,7 +6,7 @@ cat newpages.txt | egrep '\[\[What do the initials [A-Z]{2,} stand for' >> Acron
 
 ACRONYMS=`stat --print=%s Acronyms.txt`
 
-if [ $ACRONYMS 0-ne 0 ];
+if [ $ACRONYMS -ne 0 ];
 then
   export CATFILE="Acronyms.txt"
   export CATNAME="Acronyms"
