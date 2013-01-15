@@ -148,7 +148,7 @@ if [ $MARLEY -ne 0 ];
 then
   export CATFILE="BobMarley.txt"
   export CATNAME="Bob Marley"
-  ./catscripts/Categorize/sh
+  ./catscripts/Categorize.sh
 fi
 
 if [ $ELVIS -ne 0 ];

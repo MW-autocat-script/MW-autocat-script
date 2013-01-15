@@ -6,7 +6,7 @@ cat newpages.txt | egrep -i 'Halo 3' | egrep -iv 'ODST' >> Halo3.txt
 cat newpages.txt | egrep -i 'Halo 3(|\:)(| )ODST' >> ODST.txt
 cat newpages.txt | egrep -i 'Halo 4' >> Halo4.txt
 cat newpages.txt | egrep -i 'Halo Wars' >> HaloWars.txt
-cat newpages.txt | egrep -i 'Halo series|Cortana|(Captain|Miranda) Keyes|John(|-)(| )117|ODST' | egrep -iv 'Halo(|\:) (1|2|3|4|Wars|CE|Combat Evolved|Custom Edition' >> Haloseries.txt
+cat newpages.txt | egrep -i 'Halo series|Cortana|(Captain|Miranda) Keyes|John(|-)(| )117|ODST' | egrep -iv 'Halo(|\:) (1|2|3|4|Wars|CE|Combat Evolved|Custom Edition)' >> Haloseries.txt
 
 HALO1=`stat --print=%s Halo1.txt`
 HALO2=`stat --print=%s Halo2.txt`
@@ -45,3 +45,4 @@ then
 fi
 
 rm Halo*.txt
+rm ODST.txt
