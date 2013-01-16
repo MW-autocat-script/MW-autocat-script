@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cat newpages.txt | egrep -i 'Egypt(|s|ian)' | egrep -iv 'ancient Egypt' >> Egypt.txt
-cat newpages.txt | egrep -i 'ancient Egypt.txt' >> AncientEgypt.txt
+cat newpages.txt | egrep -i 'ancient Egypt' >> AncientEgypt.txt
 
 EGYPT=`stat --print=%s Egypt.txt`
 ANCIENT=`stat --print=%s AncientEgypt.txt`
