@@ -7,7 +7,7 @@ cat newpages.txt | egrep -i 'Zayn(| )Malik' > ZaynMalik.txt
 cat newpages.txt | egrep -i 'Louis(| William) Tomlinson' > LouisTomlinson.txt
 cat newpages.txt | egrep -i 'Liam(| James) Payne' > LiamPayne.txt
 
-cat HarryStyles.txt NiallHoran.txt ZaynMalik.txt LouisTomlinson.txt LiamPayne >> OneDirection.txt
+cat HarryStyles.txt NiallHoran.txt ZaynMalik.txt LouisTomlinson.txt LiamPayne.txt >> OneDirection.txt
 
 ONEDIRECTION=`stat --print=%s OneDirection.txt`
 

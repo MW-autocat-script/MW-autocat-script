@@ -11,6 +11,7 @@ then
   ./catscripts/Categorize.sh
 fi
 
+./catscripts/Technology/Computers/Software/Operating\ systems/FreeBSD/FreeBSD.sh
 ./catscripts/Technology/Computers/Software/Operating\ systems/Linux/Linux.sh
 ./catscripts/Technology/Computers/Software/Operating\ systems/OpenBSD/OpenBSD.sh
 ./catscripts/Technology/Computers/Software/Operating\ systems/Unix/Unix.sh
