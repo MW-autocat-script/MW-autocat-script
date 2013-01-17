@@ -1,4 +1,4 @@
 #!/bin/bash
 
-./catscripts/Technology/Computers/Software/Operating\ systems/OperatingSystems.sh
+./catscripts/Technology/Computers/Software/Operating_systems/OperatingSystems.sh
  

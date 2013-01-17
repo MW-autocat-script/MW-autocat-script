@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./catscripts/Entertainment/Music/Bands/OneDirection.sh
+./catscripts/Entertainment/Music/Bands/One_Direction.sh
