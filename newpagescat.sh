@@ -6,7 +6,7 @@
 #beep
 date > lastrun
 export GBT=3
-export NPL=20000
+export NPL=200
 export PYWIKIPEDIADIR=..
 export PIDFILE="pidfile.lock"
 #Fetch new pages

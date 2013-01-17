@@ -12,6 +12,7 @@ then
 fi
 
 ./catscripts/Technology/Computers/Software/Operating\ systems/Linux/Linux.sh
+./catscripts/Technology/Computers/Software/Operating\ systems/OpenBSD/OpenBSD.sh
 ./catscripts/Technology/Computers/Software/Operating\ systems/Unix/Unix.sh
 ./catscripts/Technology/Computers/Software/Operating\ systems/Windows/Windows.sh
 
