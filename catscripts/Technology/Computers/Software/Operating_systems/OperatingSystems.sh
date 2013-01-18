@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'operating system|\bOS\b' | egrep -iv 'Windows|Unix|Linux|Mac OS|Open(| )BSD|Net(| )BSD|Free(| )BSD|\bDOS\b' >> OperatingSystems.txt
+cat newpages.txt | egrep -i 'operating system|\bOS\b' | egrep -iv 'Windows|Unix|Linux|Mac OS|Open(| )BSD|Net(| )BSD|Free(| )BSD|\bDOS\b|Google Android' >> OperatingSystems.txt
 
 OS=`stat --print=%s OperatingSystems.txt`
 
