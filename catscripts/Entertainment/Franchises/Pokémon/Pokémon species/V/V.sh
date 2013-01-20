@@ -44,7 +44,7 @@ Vulpix=`stat --print=%s Vulpix.txt`
 if [ $Vanillish -ne 0 ];
 then
   export CATFILE="Vanillish.txt"
-  export CATNAME="Vanill"
+  export CATNAME="Vanillish"
   ./catscripts/Categorize.sh
 fi
 
