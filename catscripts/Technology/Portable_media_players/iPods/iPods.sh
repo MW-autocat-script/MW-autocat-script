@@ -6,7 +6,7 @@ cat newpages.txt | egrep -i 'i(| )pod nano' > iPodnano.txt
 cat newpages.txt | egrep -i 'i(| )pod shuffle' >> iPodshuffle.txt
 
 IPODS=`stat --print=%s iPods.txt`
-TOUCH=`stat --print=%s iPodtouch.txt
+TOUCH=`stat --print=%s iPodtouch.txt`
 NANO=`stat --print=%s iPodnano.txt`
 SHUFFLE=`stat --print=%s iPodshuffle.txt`
 

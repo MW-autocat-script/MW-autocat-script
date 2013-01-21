@@ -12,6 +12,7 @@
 ./catscripts/Entertainment/Video\ games/MMORPGs/Dofus/Dofus.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/Eve_Online/EveOnline.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/Fiesta_Online/FiestaOnline.sh
+./catscripts/Entertainment/Video\ games/MMORPGs/Flyff/Flyff.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/RuneScape/RuneScape.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/Wizard101/Wizard101.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/World\ of\ Warcraft/WorldOfWarcraft.sh

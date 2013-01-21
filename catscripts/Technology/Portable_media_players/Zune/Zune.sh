@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Zune' > Zune.txt
+cat newpages.txt | egrep -i '\bZune' > Zune.txt
 
 ZUNE=`stat --print=%s Zune.txt`
 
