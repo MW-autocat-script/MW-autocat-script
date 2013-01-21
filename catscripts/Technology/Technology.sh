@@ -4,3 +4,4 @@
 ./catscripts/Technology/Inventions/Inventions.sh
 ./catscripts/Technology/Computers/Computers.sh
 ./catscripts/Technology/Telephones/Telephones.sh
+./catscripts/Technology/Portable_media_players/PMP.sh
