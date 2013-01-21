@@ -18,5 +18,6 @@
 ./catscripts/Entertainment/Video\ games/MMORPGs/Karos_Online/KarosOnline.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/RuneScape/RuneScape.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/Tales_of_Pirates/TalesofPirates.sh
+./catscripts/Entertainment/Video\ games/MMORPGs/Talisman_Online/TalismanOnline.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/Wizard101/Wizard101.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/World\ of\ Warcraft/WorldOfWarcraft.sh
