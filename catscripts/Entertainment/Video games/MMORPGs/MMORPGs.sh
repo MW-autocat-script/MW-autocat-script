@@ -16,6 +16,7 @@
 ./catscripts/Entertainment/Video\ games/MMORPGs/GhostX/GhostX.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/Guild_Wars/GuildWars.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/Karos_Online/KarosOnline.sh
+./catscripts/Entertainment/Video\ games/MMORPGs/Mafia_Wars/MafiaWars.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/RuneScape/RuneScape.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/Tales_of_Pirates/TalesofPirates.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/Talisman_Online/TalismanOnline.sh
