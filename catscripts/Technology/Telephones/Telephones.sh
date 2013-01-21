@@ -1,5 +1,4 @@
 #!/bin/bash
-
 cat newpages.txt | egrep -i 'telephone|\bphone|caller ID|call waiting|busy signal' | egrep -iv 'cell(|ullar)(| )phone|mobile (|tele)phone|\bi phone' >> Telephones.txt
 cat newpages.txt | egrep -i 'cell(|ular)(| )phone|mobile phone|SIM card|\b(2|3|4)G\b|GPRS' | egrep -iv 'i(| )phone|iPod' >> Cellphones.txt
 cat newpages.txt | egrep -i 'i(| )phone' >> iPhones.txt

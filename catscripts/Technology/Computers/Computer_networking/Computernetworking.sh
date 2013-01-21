@@ -2,7 +2,7 @@
 
 cat newpages.txt | egrep -i 'Computer network|Ethernet|Wi(| |-)fi|wire(d|less) network|(wire(d|less)|Ethernet) router' | egrep -iv 'SSH|Telnet' >> Computernetworking.txt
 cat newpages.txt | egrep -i 'Telnet' >> Telnet.txt
-cat newpages.txt | egrep -i '\bSSH|Secure Shell' >> SSH.txt
+cat newpages.txt | egrep -i '\bSSH|Secure Shell|OpenSSH' >> SSH.txt
 
 NETWORK=`stat --print=%s Computernetworking.txt`
 TELNET=`stat --print=%s Telnet.txt`
