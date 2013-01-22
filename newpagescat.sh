@@ -90,16 +90,16 @@ then
   ./catscripts/Categorize.sh
 fi
 
-echo "Running subscripts"
-
+./catscripts/Entertainment/Entertainment.sh
+./catscripts/Government/Government.sh
 ./catscripts/Language/Language.sh
+./catscripts/Lifestyle/Lifestyle.sh
+./catscripts/Maintenance/Maintenance.sh
+./catscripts/Math/Math.sh
+./catscripts/Science/Science.sh
 ./catscripts/Technology/Technology.sh
 ./catscripts/Transportation/Transportation.sh
-./catscripts/Math/Math.sh
-./catscripts/Entertainment/Entertainment.sh
-./catscripts/Science/Science.sh
-./catscripts/Government/Government.sh
-./catscripts/Maintenance/Maintenance.sh
+
 
 #Cleanup
 
