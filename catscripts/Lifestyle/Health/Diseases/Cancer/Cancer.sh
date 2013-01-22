@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Cancer' newpages.txt | egrep -iv 'Lung(| )cancer|Breast(| )cancer|Tropic of Cancer|Cancer the Crab|Zodiac|Horoscope' > Cancer.txt
+egrep -i 'Cancer' newpages.txt | egrep -iv 'Lung(| )cancer|Breast(| )cancer|leukemia|Tropic of Cancer|Cancer the Crab|Zodiac|Horoscope' > Cancer.txt
 
 CANCER=`stat --print=%s Cancer.txt`
 
@@ -13,5 +13,6 @@ fi
 
 ./catscripts/Lifestyle/Health/Diseases/Cancer/Lung_cancer/Lungcancer.sh
 ./catscripts/Lifestyle/Health/Diseases/Cancer/Breast_cancer/Breastcancer.sh
+./catscripts/Lifestyle/Health/Diseases/Cancer/Leukemia/Leukemia.sh
 
 rm Cancer.txt
