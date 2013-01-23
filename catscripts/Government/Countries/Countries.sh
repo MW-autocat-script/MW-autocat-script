@@ -5,6 +5,8 @@
 ./catscripts/Government/Countries/Cyprus/Cyprus.sh
 ./catscripts/Government/Countries/Egypt/Egypt.sh
 ./catscripts/Government/Countries/Greece/Greece.sh
+./catscripts/Government/Countries/Iceland/Iceland.sh
 ./catscripts/Government/Countries/Norway/Norway.sh 
+./catscripts/Government/Countries/Sweden/Sweden.sh
 ./catscripts/Government/Countries/United\ States/UnitedStates.sh
 
