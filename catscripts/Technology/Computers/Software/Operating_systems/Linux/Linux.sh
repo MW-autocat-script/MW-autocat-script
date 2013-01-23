@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Linux' | egrep -iv 'Debian|SUSE|Ubuntu|\bco(| )Linux|Fedora|Linux Mint|Android' >> Linux.txt
+cat newpages.txt | egrep -i 'Linux|Slackware' | egrep -iv 'Debian|SUSE|Ubuntu|\bco(| )Linux|Fedora|Linux Mint|Android' >> Linux.txt
 
 cat newpages.txt | egrep -i 'Debian' >> Debian.txt 
 

@@ -4,7 +4,7 @@ cat newpages.txt | egrep -i 'Motherboard' >> Motherboards.txt
 cat newpages.txt | egrep -i 'Video card|videocard|graphics card|graphicscard|\bGPU\b' >> VideoCards.txt
 cat newpages.txt | egrep -i 'Sound card|Soundcard|audio card|audiocard|audio device|sound.+computer|computer.+sound' >> SoundCards.txt
 cat newpages.txt | egrep -i '\bPrinter' >> Printers.txt
-cat newpages.txt | egrep -i 'Microprocessor' >> Microprocessors.txt
+cat newpages.txt | egrep -i 'Microprocessor|\bPentium|\bi[357]\b|\bAthlon|Celeron|Sempron|Turion|\b808[568]\b|80286|80386|80586|CPU' >> Microprocessors.txt
 cat newpages.txt | egrep -i 'Hard (disk|drive)' >> Harddrive.txt
 cat newpages.txt | egrep -i 'Device driver|Computer hardware' | egrep -iv '(Video|Graphics) card|Motherboard|(sound|audio) card|\bPrinter|hard (disk|drive)' >> ComputerHardware.txt
 

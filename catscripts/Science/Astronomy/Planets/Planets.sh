@@ -18,7 +18,7 @@ Jupiter=`stat --print=%s Jupiter.txt`
 Saturn=`stat --print=%s Saturn.txt`
 Uranus=`stat --print=%s Uranus.txt`
 Neptune=`stat --print=%s Neptune.txt`
-PLANETS=`stat --print=%s Planet.txt`
+PLANETS=`stat --print=%s Planets.txt`
 
 if [ $Mercury -ne 0 ];
 then
