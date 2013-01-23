@@ -1,13 +1,14 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Mercury' | egrep -iv 'god|deity|rome|roman|olympus|greece|battery|cell|element|compound|magnetic|thermometer|toxic|atomic|proton|neutron|electron|metal|in water|molecule|pollutant|pollute|freddy|freddie|flower|myth|story|legend|M-series|bobcat|Mercury Comet|Lynx|Tracer|Zephyr|Topaz|Mystique|Mercury Meteor|Mercury Cyclone|Monarch|Marquis|Cougar|Milan|Mercury Eight|Monterey|Montclair|Medlaist|Mercury Custom|Turnpike Cruiser|Marauder|Brougham|Sable|Cougar|LN7|Capri|Mercury Voyager|Commuter|Colony Park|Mountaineer' >> Mercury.txt
-cat newpages.txt | egrep -i 'Venus' | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story' >> Venus.txt
-cat newpages.txt | egrep -i '\bEarth\b' | egrep -iv 'earthquake|earth-shaking|earth-moving|earth-mover|earth-two|Fallen Earth' >> Earth.txt
-cat newpages.txt | egrep -i 'Mars\b' | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story' >> Mars.txt
-cat newpages.txt | egrep -i 'Jupiter' | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story'>> Jupiter.txt
-cat newpages.txt | egrep -i 'Saturn' | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story|sega|[0-9]{1,} Saturn|Saturn Aura|Saturn Astra|Saturn Outlook|Saturn Sky|Saturn Relay|Saturn Ion|Saturn Vue|S-series|L-series|EV1'>> Saturn.txt
-cat newpages.txt | egrep -i 'Uranus' | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story'>> Uranus.txt
-cat newpages.txt | egrep -i 'Neptune' | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story'>> Neptune.txt
+egrep -i 'Planet' newpages.txt | egrep -iv 'Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune|Pluto|Dwarf planet|Captain Planet|Krypton' > Planets.txt
+egrep -i 'Mercury' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|battery|cell|element|compound|magnetic|thermometer|toxic|atomic|proton|neutron|electron|metal|in water|molecule|pollutant|pollute|freddy|freddie|flower|myth|story|legend|M-series|bobcat|Mercury Comet|Lynx|Tracer|Zephyr|Topaz|Mystique|Mercury Meteor|Mercury Cyclone|Monarch|Marquis|Cougar|Milan|Mercury Eight|Monterey|Montclair|Medlaist|Mercury Custom|Turnpike Cruiser|Marauder|Brougham|Sable|Cougar|LN7|Capri|Mercury Voyager|Commuter|Colony Park|Mountaineer' >> Mercury.txt
+egrep -i 'Venus' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story' >> Venus.txt
+egrep -i '\bEarth\b' newpages.txt | egrep -iv 'earthquake|earth-shaking|earth-moving|earth-mover|earth-two|Fallen Earth' >> Earth.txt
+egrep -i 'Mars\b' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story' >> Mars.txt
+egrep -i 'Jupiter' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story'>> Jupiter.txt
+egrep -i 'Saturn' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story|sega|[0-9]{1,} Saturn|Saturn Aura|Saturn Astra|Saturn Outlook|Saturn Sky|Saturn Relay|Saturn Ion|Saturn Vue|S-series|L-series|EV1'>> Saturn.txt
+egrep -i 'Uranus' newpagesw.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story'>> Uranus.txt
+egrep -i 'Neptune' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story'>> Neptune.txt
 
 Mercury=`stat --print=%s Mercury.txt`
 Venus=`stat --print=%s Venus.txt`
@@ -17,6 +18,7 @@ Jupiter=`stat --print=%s Jupiter.txt`
 Saturn=`stat --print=%s Saturn.txt`
 Uranus=`stat --print=%s Uranus.txt`
 Neptune=`stat --print=%s Neptune.txt`
+PLANETS=`stat --print=%s Planet.txt`
 
 if [ $Mercury -ne 0 ];
 then
@@ -74,7 +76,12 @@ then
 	./catscripts/Categorize.sh
 fi
 
-
+if [ $PLANETS -ne 0 ];
+then
+  export CATFILE="Planets.txt"
+  export CATNAME="Planets"
+  ./catscripts/Categorize.sh
+fi
 
 rm Mercury.txt
 rm Venus.txt
@@ -84,4 +91,5 @@ rm Jupiter.txt
 rm Saturn.txt
 rm Uranus.txt
 rm Neptune.txt
+rm Planets.txt
 
