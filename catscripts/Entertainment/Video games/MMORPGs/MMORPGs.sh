@@ -13,6 +13,7 @@
 ./catscripts/Entertainment/Video\ games/MMORPGs/Eve_Online/EveOnline.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/Fiesta_Online/FiestaOnline.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/Flyff/Flyff.sh
+./catscripts/Entertainment/Video\ games/MMORPGs/Free_Realms/FreeRealms.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/GhostX/GhostX.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/Guild_Wars/GuildWars.sh
 ./catscripts/Entertainment/Video\ games/MMORPGs/Karos_Online/KarosOnline.sh
