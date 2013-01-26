@@ -2,7 +2,7 @@
 
 egrep -i 'Planet' newpages.txt | egrep -iv 'Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune|Pluto|Dwarf planet|Captain Planet|Krypton|(Literacy|Litracy) planet|Planet of the Symbiotes|BlackPlanet' > Planets.txt
 egrep -i 'Mercury' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|battery|cell|element|compound|magnetic|thermometer|toxic|atomic|proton|neutron|electron|metal|in water|molecule|pollutant|pollute|freddy|freddie|flower|myth|story|legend|M-series|bobcat|Mercury Comet|Lynx|Tracer|Zephyr|Topaz|Mystique|Mercury Meteor|Mercury Cyclone|Monarch|Marquis|Cougar|Milan|Mercury Eight|Monterey|Montclair|Medlaist|Mercury Custom|Turnpike Cruiser|Marauder|Brougham|Sable|Cougar|LN7|Capri|Mercury Voyager|Commuter|Colony Park|Mountaineer' >> Mercury.txt
-egrep -i 'Venus' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story' >> Venus.txt
+egrep -i 'Venus' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story|fly(| )trap' >> Venus.txt
 egrep -i '\bEarth\b' newpages.txt | egrep -iv 'earthquake|earth-shaking|earth-moving|earth-mover|earth-two|Fallen Earth|Earth( |-)(982|928|616)|X-Men|Kitty Pryde|Adam Warlock|Enchantress' >> Earth.txt
 egrep -i 'Mars\b' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story' >> Mars.txt
 egrep -i 'Jupiter' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story'>> Jupiter.txt
