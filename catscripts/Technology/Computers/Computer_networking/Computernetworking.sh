@@ -41,4 +41,4 @@ fi
 rm Computernetworking.txt
 rm Telnet.txt
 rm SSH.txt
-rm FTP
+rm FTP.txt

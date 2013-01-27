@@ -6,8 +6,8 @@ egrep -i 'Venus' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|m
 egrep -i '\bEarth\b' newpages.txt | egrep -iv 'earthquake|earth-shaking|earth-moving|earth-mover|earth-two|Fallen Earth|Earth( |-)(982|928|616)|X-Men|Kitty Pryde|Adam Warlock|Enchantress' >> Earth.txt
 egrep -i 'Mars\b' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story' >> Mars.txt
 egrep -i 'Jupiter' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story'>> Jupiter.txt
-egrep -i 'Saturn' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story|sega|[0-9]{1,} Saturn|Saturn Aura|Saturn Astra|Saturn Outlook|Saturn Sky|Saturn Relay|Saturn Ion|Saturn Vue|S-series|L-series|EV1'>> Saturn.txt
-egrep -i 'Uranus' newpagesw.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story'>> Uranus.txt
+egrep -i 'Saturn' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story|sega|[0-9]{1,} Saturn|Saturn Aura|Saturn Astra|Saturn Outlook|Saturn Sky|Saturn Relay|Saturn Ion|Saturn Vue|S-series|L-series|EV1|LX'>> Saturn.txt
+egrep -i 'Uranus' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story'>> Uranus.txt
 egrep -i 'Neptune' newpages.txt | egrep -iv 'god|deity|rome|roman|olympus|greece|myth|story'>> Neptune.txt
 
 Mercury=`stat --print=%s Mercury.txt`

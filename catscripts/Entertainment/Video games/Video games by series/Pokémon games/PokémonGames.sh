@@ -13,8 +13,10 @@ cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)(firered|fire red| FireR
 cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)(leafgreen|leaf green| LeafGreen| Leaf Green)" >> PokémonLeafGreen.txt
 cat newpages.txt | egrep -i "mystery dungeon.+red|red rescue team" >> RedRescueTeam.txt
 cat newpages.txt | egrep -i "mystery dungeon.+blue|blue rescue team" >> BlueRescueTeam.txt
-cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)(black| Black)" >> PokémonBlack.txt
-cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)(white| White)" >> PokémonWhite.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)(black| Black)" newpages.txt | egrep -iv 'Black(| )2' >> PokémonBlack.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)(white| White)" newpages.txt | egrep -iv 'White(| )2' >> PokémonWhite.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)(black| Black)(| )2" newpages.txt >> PokémonBlack2.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)(white| White)(| )2" newpages.txt >> PokémonWhite2.txt
 cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)((dimond|diamond)| (dimond|Diamond))" >> PokémonDiamond.txt
 cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)((perl|pearl)| (perl|Pearl))" >> PokémonPearl.txt
 cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)((platinum|platnum|platnium)| (Platinum|Platnum|Platnium))" >> PokémonPlatinum.txt
@@ -41,6 +43,8 @@ PEARL=`stat --print=%s PokémonPearl.txt`
 PLATINUM=`stat --print=%s PokémonPlatinum.txt`
 HEARTGOLD=`stat --print=%s PokémonHeartGold.txt`
 SOULSILVER=`stat --print=%s PokémonSoulSilver.txt`
+BLACK2=`stat --print=%s PokémonBlack2.txt`
+WHITE2=`stat --print=%s PokémonWhite2.txt`
 
 
 
@@ -150,6 +154,20 @@ then
   ./catscripts/Categorize.sh
 fi
 
+if [ $BLACK2 -ne 0 ];
+then
+  export CATFILE="PokémonBlack2.txt"
+  export CATNAME="Pokémon Black 2"
+  ./catscripts/Categorize.sh
+fi
+
+if [ $WHITE2 -ne 0 ];
+then
+  export CATFILE="PokémonWhite2.txt"
+  export CATNAME="Pokémon White 2"
+  ./catscripts/Categorize.sh
+fi
+
 if [ $DIAMOND -ne 0 ];
 then
   export CATFILE="PokémonDiamond.txt"
@@ -200,6 +218,8 @@ rm RedRescueTeam.txt
 rm BlueRescueTeam.txt
 rm PokémonBlack.txt
 rm PokémonWhite.txt
+rm PokémonBlack2.txt
+rm PokémonWhite2.txt
 rm PokémonDiamond.txt
 rm PokémonPearl.txt
 rm PokémonPlatinum.txt

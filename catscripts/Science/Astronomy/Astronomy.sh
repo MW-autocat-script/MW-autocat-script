@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ./catscripts/Science/Astronomy/Planets/Planets.sh
+./catscripts/Science/Astronomy/Moon/Moon.sh
 
 cat newpages.txt | egrep -i 'Asteroid' | egrep -iv 'download|game' >> Asteroids.txt
 
