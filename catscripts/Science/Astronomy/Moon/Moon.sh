@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i "\bMoon\b|\bMoon's" newpages.txt | egrep -iv 'Sailor Moon|Type( |-)Moon' >> Moon.txt
+egrep -i "\bMoon\b|\bMoon's" newpages.txt | egrep -iv 'Sailor Moon|Type( |-)Moon|Harvest Moon|moon stone' >> Moon.txt
 
 MOON=`stat --print=%s Moon.txt`
 

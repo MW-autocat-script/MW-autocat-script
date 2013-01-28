@@ -1,9 +1,9 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Cello\b' >> Cello.txt
+egrep -i 'Cello\b' newpages.txt | egrep -iv 'Monticello|Nontecello'  >> Cello.txt
 cat newpages.txt | egrep -i 'Clarinet' >> Clarinet.txt
-cat newpages.txt | egrep -i '\bDrums' >> Drums.txt
-cat newpages.txt | egrep -i '\bFlute' >> Flute.txt
+egrep -i '\bDrums' newpages.txt | egrep -iv 'ear drums|brakes|chicken|turkey' >> Drums.txt
+egrep -i '\bFlute(s|)' newpages.txt | egrep -iv 'azure flute|Pok(e|é)(| )flute|Pokémon|Pokemon|azelf flute' >> Flute.txt
 cat newpages.txt | egrep -i 'Guitar' | egrep -iv 'hero' >> Guitar.txt
 cat newpages.txt | egrep -i 'Piano' >> Piano.txt
 cat newpages.txt | egrep -i 'on a recorder|on the recorder\]\]|for recorder\]\]|notes.+recorder|recorder.+notes' >> Recorder.txt

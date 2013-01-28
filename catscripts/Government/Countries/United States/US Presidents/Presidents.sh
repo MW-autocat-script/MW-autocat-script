@@ -253,7 +253,7 @@ fi
 if [ $MCKINLEY -ne 0 ];
 then
   export CATFILE="WilliamMcKinley.txt"
-  export CATNAME="William McKinley.txt"
+  export CATNAME="William McKinley"
   ./catscripts/Categorize.sh
 fi
 
