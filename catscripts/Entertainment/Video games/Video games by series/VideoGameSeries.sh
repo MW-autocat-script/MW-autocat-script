@@ -9,4 +9,8 @@
 ./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/Pokémon\ games/PokémonGames.sh
 ./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/The\ Sims\ series/TheSimsSeries.sh
 ./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/Halo\ series/Halo.sh
+./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/Battlefield_series/Battlefield.sh
+./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/Grand_Theft_Auto_series/GTA.sh
+./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/LittleBigPlanet_series/LittleBigPlanet.sh
+./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/Burnout_series/Burnout.sh
 

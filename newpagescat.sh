@@ -44,10 +44,6 @@ cat newpages.txt | egrep -i 'poptropica|potropica|poptopica' > Poptropica.txt
 
 cat newpages.txt | egrep -i 'Moshi Monsters|moshimonsters|moshling|furnando|furando|meowford|dustbin beaver|dustbinbeaver|dustin beaver|meowford' > MoshiMonsters.txt
 
-##Woozworld
-
-cat newpages.txt | egrep -i 'Woozworld|Wooz world' > Woozworld.txt
-
 ##PNPA
 
 cat newpages.txt | egrep -i 'PNPA' > PNPA.txt
@@ -58,7 +54,6 @@ cat newpages.txt | egrep -i '(pnp\b.+neuro|neuro.+pnp)' >> PNPA.txt
 
 POPTROPICA=`stat --print=%s Poptropica.txt`
 MOSHIMONSTERS=`stat --print=%s MoshiMonsters.txt`
-WOOZWORLD=`stat --print=%s Woozworld.txt`
 PNPA=`stat --print=%s PNPA.txt`
 
 
@@ -73,13 +68,6 @@ if [ $MOSHIMONSTERS -ne 0 ];
 then
   export CATFILE="MoshiMonsters.txt"
   export CATNAME="Moshi Monsters"
-  ./catscripts/Categorize.sh
-fi
-
-if [ $WOOZWORLD -ne 0 ];
-then
-  export CATFILE="Woozworld.txt"
-  export CATNAME="Woozworld"
   ./catscripts/Categorize.sh
 fi
 
@@ -107,7 +95,6 @@ echo "Cleanup"
 
 rm Poptropica.txt
 rm MoshiMonsters.txt
-rm Woozworld.txt
 rm PNPA.txt
 
 rm $PIDFILE

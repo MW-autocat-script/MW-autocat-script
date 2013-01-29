@@ -113,3 +113,5 @@ rm Wikia.txt
 rm Wikianswers.txt
 rm WikiaSearch.txt
 rm Wikipedia.txt
+
+./catscripts/Technology/Internet/Websites/Social_networking/Socialnetworking.sh
