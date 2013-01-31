@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'original Doom|Doom 1|Doom (II\b|2)|Doom (3|III\b)|Doom (4|IV)|Final Doom|PrBoom' >> Doom.txt
+egrep -i 'original Doom|Doom 1|Doom (II\b|2)|Doom (3|III\b)|Doom (4|IV)|Final Doom|PrBoom' newpages.txt >> Doom.txt
 
 DOOM=`stat --print=%s Doom.txt`
 

@@ -74,4 +74,11 @@ then
   ./catscripts/Categorize.sh
 fi
 
-rm Burnout*.txt
+rm Burnout.txt
+rm Burnout2.txt
+rm Burnout3.txt
+rm BurnoutRevenge.txt
+rm BurnoutLegends.txt
+rm BurnoutDominator.txt
+rm BurnoutParadise.txt
+rm BurnoutCrash.txt

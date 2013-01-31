@@ -14,3 +14,4 @@
 ./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/LittleBigPlanet_series/LittleBigPlanet.sh
 ./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/Burnout_series/Burnout.sh
 ./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/Doom_series/Doom.sh
+./catscripts/Entertainment/Video\ games/Video\ games\ by\ series/Assassins_Creed_series/AssassinsCreed.sh
