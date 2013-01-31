@@ -55,7 +55,7 @@ if [ $RADON -ne 0 ];
 then
   export CATFILE="Radon.txt"
   export CATNAME="Radon"
-  ./catscripts/Categorize/sh
+  ./catscripts/Categorize.sh
 fi
 
 if [ $UNUNOCTIUM -ne 0 ];

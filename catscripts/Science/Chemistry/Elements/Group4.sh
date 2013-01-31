@@ -35,7 +35,7 @@ if [ $RUTHERFORDIUM -ne 0 ];
 then
   export CATFILE="Rutherfordium.txt"
   export CATNAME="Rutherfordium"
-  ./catscripts/Categorize/sh
+  ./catscripts/Categorize.sh
 fi
 
 rm Titanium.txt

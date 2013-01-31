@@ -17,7 +17,7 @@ if [ $YTTRIUM -ne 0 ];
 then
   export CATFILE="Yttrium.txt"
   export CATNAME="Yttrium"
-  ./catscripts/Categorize/sh
+  ./catscripts/Categorize.sh
 fi
 
 rm Scandium.txt
