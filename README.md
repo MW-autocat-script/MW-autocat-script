@@ -20,4 +20,4 @@ The files that are created to contain the category lists are all stored where ne
 Bugs / Errata
 ===================
 
-* Pywikipediabot wasn't really meant to run 24/7/365. One side-effect is that if you lose internet connection for some reason, the throttle will constantly increase, meaning it may take a long time after your connection is restored to resume running. Editing throttle.py and replacing throttle.ctrl with /dev/null _should_ help alleviate this.
+* Pywikipediabot wasn't really meant to run 24/7/365. One side-effect is that if you lose internet connection for some reason, the throttle will constantly increase, meaning it may take a long time after your connection is restored to resume running. Editing throttle.py and replacing throttle.ctrl with /dev/null _should_ help alleviate this. Alternatively, you can try adding _retry_on_fail = False_ to your user-config.py file. This will make the bot stop trying to reconnect until the next iteration.
