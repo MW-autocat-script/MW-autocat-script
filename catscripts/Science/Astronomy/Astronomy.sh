@@ -1,5 +1,6 @@
 #!/bin/bash
 
+./catscripts/Science/Astronomy/Dwarf_planets/Dwarfplanets.sh
 ./catscripts/Science/Astronomy/Planets/Planets.sh
 ./catscripts/Science/Astronomy/Moon/Moon.sh
 

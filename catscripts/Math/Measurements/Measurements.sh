@@ -1,6 +1,7 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i '(yard(|s)|feet|foot|cm|centimeters|centimetres|meters|kilometer(|s)|mile(|s)|gram(|s)|cup(|s)|ml(|\.)|mililiter(|s)|inches) is how many (inches|feet|yards|kilometer(|s)|mile(|s)|gram(|s)|meter(|s)|pound(|s)|lbs(|\.)|cup(|s)|mililiter(|s)|ml(|\.))\]\]' >> MeasurementConversions.txt
+egrep -i '(yard(|s)|feet|foot|cm|centimeters|centimetres|meters|kilometer(|s)|mile(|s)|gram(|s)|cup(|s)|ml(|\.)|mililiter(|s)|inches) is how many (inches|feet|yards|kilometer(|s)|mile(|s)|gram(|s)|meter(|s)|pound(|s)|lbs(|\.)|cup(|s)|mililiter(|s)|ml(|\.))\]\]' newpages.txt >> MeasurementConversions.txt
+egrep -i 'equals how many meters\]\]' newpages.txt >> MeasurementConversions.txt
 
 CONVERSIONS=`stat --print=%s MeasurementConversions.txt`
 

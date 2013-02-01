@@ -1,13 +1,13 @@
 #!/bin/bash
 #Categorization script for composers of music
 
-cat newpages.txt | egrep -i '\bBach\b' >> JohannSebastianBach.txt
+cat newpages.txt | egrep -i '\bBach\b' >> Bach.txt
 cat newpages.txt | egrep -i 'Wolfgang|Amadeus|Mozart' | egrep -iv 'Rock Me|Puck' >> WolfgangAmadeusMozart.txt 
 cat newpages.txt | egrep -i 'Beethoven' | egrep -iv 'Bernard|breed|dog' >> LudwigVanBeethoven.txt
 cat newpages.txt | egrep -i 'Aaron Copland' >> AaronCopland.txt
 cat newpages.txt | egrep -i 'Igor Stravinsky' >> IgorStravinsky.txt
 
-BACH=`stat --print=%s JohannSebastianBach.txt`
+BACH=`stat --print=%s Bach.txt`
 MOZART=`stat --print=%s WolfgangAmadeusMozart.txt`
 BEETHOVEN=`stat --print=%s LudwigVanBeethoven.txt`
 COPLAND=`stat --print=%s AaronCopland.txt`
@@ -15,7 +15,7 @@ STRAVINSKY=`stat --print=%s IgorStravinsky.txt`
 
 if [ $BACH -ne 0 ];
 then
-  export CATFILE="JohannSebatianBach.txt"
+  export CATFILE="Bach.txt"
   export CATNAME="Johann Sebastian Bach"
   ./catscripts/Categorize.sh
 fi
@@ -48,7 +48,7 @@ then
   ./catscripts/Categorize.sh
 fi
 
-rm JohannSebastianBach.txt
+rm Bach.txt
 rm WolfgangAmadeusMozart.txt
 rm LudwigVanBeethoven.txt
 rm AaronCopland.txt

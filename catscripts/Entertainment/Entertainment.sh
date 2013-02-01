@@ -5,3 +5,4 @@
 ./catscripts/Entertainment/Cartoons/Cartoons.sh
 ./catscripts/Entertainment/Music/Music.sh
 ./catscripts/Entertainment/Movies/Movies.sh
+./catscripts/Entertainment/Puzzles/Puzzles.sh
