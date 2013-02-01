@@ -10,7 +10,8 @@
 ./catscripts/Government/Countries/Iran/Iran.sh
 ./catscripts/Government/Countries/Iraq/Iraq.sh
 ./catscripts/Government/Countries/Kenya/Kenya.sh
-./catscripts/Government/Countries/Norway/Norway.sh 
+./catscripts/Government/Countries/Norway/Norway.sh
+./catscripts/Government/Countries/Singapore/Singapore.sh 
 ./catscripts/Government/Countries/Sweden/Sweden.sh
 ./catscripts/Government/Countries/United\ States/UnitedStates.sh
 
