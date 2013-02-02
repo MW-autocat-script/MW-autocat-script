@@ -6,7 +6,7 @@ cat newpages.txt | egrep -i 'Final Fantasy (3|III\b)' >> FinalFantasy3.txt
 cat newpages.txt | egrep -i 'Final Fantasy (4|IV\b)|\bFF(| )IV\b' >> FinalFantasy4.txt
 cat newpages.txt | egrep -i 'Final Fantasy (5|\bV\b)|\bFF(| )V\b' >> FinalFantasy5.txt
 cat newpages.txt | egrep -i 'Final Fantasy (6|\bVI\b)|\bFF(| )VI\b' >> FinalFantasy6.txt
-cat newpages.txt | egrep -i 'Final Fantasy (7|\bVII\b)|\bFF(| )VII\b' | egrep -iv 'Before Crisis|Crisis Core|Dirge of Cerberus' >> FinalFantasy7.txt
+cat newpages.txt | egrep -i 'Final Fantasy (7|\bVII\b)|\bFF(| )VII\b' | egrep -iv 'Before Crisis|Crisis Core|Dirge of Cerberus|Advent Children' >> FinalFantasy7.txt
 cat newpages.txt | egrep -i 'Final Fantasy (8|\bVIII\b)|\bFF(| )VIII\b' >> FinalFantasy8.txt
 cat newpages.txt | egrep -i 'Final Fantasy (9|\bIX\b)|\bFF(| )IX\b' >> FinalFantasy9.txt
 cat newpages.txt | egrep -i 'Final Fantasy (10|\bX\b)|\bFF(| )X\b' | egrep -iv 'Final Fantasy X-2|FF(| )X-2' >> FinalFantasy10.txt
