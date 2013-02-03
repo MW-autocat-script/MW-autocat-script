@@ -5,7 +5,7 @@ egrep -i 'Crossword' newpages.txt >> Crossword.txt
 egrep -i '[0-9]{1,}(|-)letter word for' newpages.txt >> Crossword.txt
 
 SUDOKU=`stat --print=%s Sudoku.txt`
-CROSSWORD=`stat --print=%s Crossword/txt`
+CROSSWORD=`stat --print=%s Crossword.txt`
 
 if [ $SUDOKU -ne 0 ];
 then

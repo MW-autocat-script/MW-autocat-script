@@ -1,0 +1,4 @@
+export GBT=3
+export NPL=500
+export PYWIKIPEDIADIR=..
+export PIDFILE="pidfile.lock"

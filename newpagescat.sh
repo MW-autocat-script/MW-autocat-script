@@ -1,16 +1,15 @@
 #!/bin/bash
 
-#Set global variables
-##GBT is Throttle (pywikipedia default is 10, and if you need something faster than 1, you should pay somebody to write something better)
-##NPL is the limit for the page generator
-#beep
-date > lastrun
-export GBT=3
-export NPL=500
-export PYWIKIPEDIADIR=..
-export PIDFILE="pidfile.lock"
-#Fetch new pages
 
+date > lastrun
+#Export settings. Copy settings.conf.example to settings.conf as a starting point
+
+while read x; do
+  export $x
+done < settings.conf
+
+
+#Fetch new pages
 
 if [ -e "$PIDFILE" ]; then
 PID=`cat $PIDFILE`

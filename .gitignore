@@ -2,3 +2,4 @@
 *.txt
 *.lock
 *.log
+settings.conf
