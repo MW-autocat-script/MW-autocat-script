@@ -2,6 +2,7 @@
 
 egrep -i 'Computer programming' newpages.txt | egrep -iv 'C\+\+|SQL' > Computerprogramming.txt
 egrep -i 'open(|-| )source' newpages.txt | egrep -iv 'C\+\+|SQL' >> Computerprogramming.txt
+egrep -i 'Cygwin|\bMSYS\b' newpages.txt | egrep -iv 'C\+\+|SQL' >> Computerprogramming.txt
 
 PROGRAMMING=`stat --print=%s Computerprogramming.txt`
 
