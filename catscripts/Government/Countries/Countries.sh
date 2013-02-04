@@ -12,6 +12,7 @@
 ./catscripts/Government/Countries/Iraq/Iraq.sh
 ./catscripts/Government/Countries/Jamaica/Jamaica.sh
 ./catscripts/Government/Countries/Kenya/Kenya.sh
+./catscripts/Government/Countries/Libya/Libya.sh
 ./catscripts/Government/Countries/Norway/Norway.sh
 ./catscripts/Government/Countries/Singapore/Singapore.sh 
 ./catscripts/Government/Countries/Sweden/Sweden.sh
