@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Open(| )BSD' >> OpenBSD.txt
+egrep -i 'Open(| )BSD' newpages.txt >> OpenBSD.txt
 
 OPENBSD=`stat --print=%s OpenBSD.txt`
 

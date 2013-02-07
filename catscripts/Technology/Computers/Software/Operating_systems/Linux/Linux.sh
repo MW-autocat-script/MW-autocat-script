@@ -1,21 +1,21 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Linux|Slackware' | egrep -iv 'Debian|SUSE|Ubuntu|\bco(| )Linux|Fedora|Linux Mint|Android' >> Linux.txt
+egrep -i 'Linux|Slackware' newpages.txt | egrep -iv 'Debian|SUSE|Ubuntu|\bco(| )Linux|Fedora|Linux Mint|Android' >> Linux.txt
 
-cat newpages.txt | egrep -i 'Debian' >> Debian.txt 
+egrep -i 'Debian' newpages.txt >> Debian.txt 
 
-cat newpages.txt | egrep -i 'OpenSUSE|Open SUSE\b' >> OpenSUSE.txt
+egrep -i 'OpenSUSE|Open SUSE\b' newpages.txt >> OpenSUSE.txt
 
-cat newpages.txt | egrep -i 'Ubuntu' >> Ubuntu.txt
+egrep -i 'Ubuntu' newpages.txt >> Ubuntu.txt
 
-cat newpages.txt | egrep -i 'coLinux|\bco Linux' >> CoLinux.txt
+egrep -i 'coLinux|\bco Linux' newpages.txt >> CoLinux.txt
 
-cat newpages.txt | egrep -i 'Fedora [0-9]{1,}|[io]n Fedora|Fedora Linux' >> FedoraLinux.txt
+egrep -i 'Fedora [0-9]{1,}|[io]n Fedora|Fedora Linux' newpages.txt >> FedoraLinux.txt
 
-cat newpages.txt | egrep -i 'Linux Mint' >> LinuxMint.txt
+egrep -i 'Linux Mint' newpages.txt >> LinuxMint.txt
 
-cat newpages.txt | egrep -i 'Google Android' >> GoogleAndroid.txt
-cat newpages.txt | egrep 'Ice Cream Sandwich' >> GoogleAndroid.txt
+egrep -i 'Google Android' newpages.txt >> GoogleAndroid.txt
+egrep 'Ice Cream Sandwich' newpages.txt >> GoogleAndroid.txt
 
 LINUX=`stat --print=%s Linux.txt`
 DEBIAN=`stat --print=%s Debian.txt`

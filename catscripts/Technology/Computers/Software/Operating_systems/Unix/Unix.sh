@@ -1,15 +1,16 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i '\bUnix' >> Unix.txt #Begin with word boundary so LUnix is not placed here
-cat newpages.txt | egrep -i 'Xenix' >> Unix.txt #Old-skool Microsoft / AT&T Unix
-cat newpages.txt | egrep -i 'Solaris|SunOS|\bSun OS' >> Unix.txt #Sun Microsystems / Oracle
-cat newpages.txt | egrep -i 'IRIX' >> Unix.txt #SGI
-cat newpages.txt | egrep -i 'AIX' >> Unix.txt #IBM
-cat newpages.txt | egrep -i 'HP( |-)UX' >> Unix.txt #Hewlett-Packard
-cat newpages.txt | egrep -i 'Tru64' >> Unix.txt #DEC (now Hewlett-Packard)
-cat newpages.txt | egrep -i 'OpenServer' >> Unix.txt #SCO Group
+egrep -i '\bUnix' newpages.txt >> Unix.txt #Begin with word boundary so LUnix is not placed here
+egrep -i '\bcron\b|crontab|anacron\b|\binit\b|fsck' newpages.txt | egrep -iv 'Linux|BSD' >> Unix.txt
+egrep -i 'Xenix' newpages.txt >> Unix.txt #Old-skool Microsoft / AT&T Unix
+egrep -i 'Solaris|SunOS|\bSun OS' newpages.txt >> Unix.txt #Sun Microsystems / Oracle
+egrep -i 'IRIX' newpages.txt >> Unix.txt #SGI
+egrep -i 'AIX' newpages.txt >> Unix.txt #IBM
+egrep -i 'HP( |-)UX' newpages.txt >> Unix.txt #Hewlett-Packard
+egrep -i 'Tru64' newpages.txt >> Unix.txt #DEC (now Hewlett-Packard)
+egrep -i 'OpenServer' newpages.txt >> Unix.txt #SCO Group
 #cat newpages.txt | egrep -i 'Mac OS X' >> Unix.txt #Apple Inc. (has it's own category, so not added here)
-cat newpages.txt | egrep -i 'A/UX' >> Unix.txt #Old-skool Apple Unix
+egrep -i 'A/UX' newpages.txt >> Unix.txt #Old-skool Apple Unix
 
 UNIX=`stat --print=%s Unix.txt`
 

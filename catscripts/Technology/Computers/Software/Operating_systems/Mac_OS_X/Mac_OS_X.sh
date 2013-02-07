@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Mac OS' >> MacOSX.txt
+egrep -i 'Mac(| )OS' newpages.txt >> MacOSX.txt
 
 MACOS=`stat --print=%s MacOSX.txt`
 

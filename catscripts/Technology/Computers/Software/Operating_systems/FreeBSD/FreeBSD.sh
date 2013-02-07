@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Free(| )BSD' >> FreeBSD.txt
+egrep -i 'Free(| )BSD' newpages.txt >> FreeBSD.txt
 
 FREEBSD=`stat --print=%s FreeBSD.txt`
 

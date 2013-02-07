@@ -1,13 +1,12 @@
 #!/bin/bash
-
-cat newpages.txt | egrep -i 'Windows 98|Windows98|Win98' >> Windows98.txt
-cat newpages.txt | egrep -i 'Windows 2000|Windows2000|Win2000|W2k\b' >> Windows2000.txt
-cat newpages.txt | egrep -i 'Windows XP|WindowsXP|2000XP|WinXP' >> WindowsXP.txt
-cat newpages.txt | egrep -i 'Windows Server 2003|Windows 2003|Windows2003|Win2003|Win2k3|W2k3' >> WindowsServer2003.txt
-cat newpages.txt | egrep -i 'Windows Vista|Windowsvista|win vista|winvista' >> WindowsVista.txt
-cat newpages.txt | egrep -i 'Windows 7|Windows7|Win7' >> Windows7.txt
-cat newpages.txt | egrep -i 'Windows Server 2008|Windows 2008|Windows2008|Win2008|Win2k8|W2k8' >> WindowsServer2008.txt
-cat newpages.txt | egrep -i 'Windows 8|Windows8|Win8' >> Windows8.txt
+egrep -i 'Windows 98|Windows98|Win98' newpages.txt >> Windows98.txt
+egrep -i 'Windows 2000|Windows2000|Win2000|W2k\b' newpages.txt >> Windows2000.txt
+egrep -i 'Windows XP|WindowsXP|2000XP|WinXP' newpages.txt >> WindowsXP.txt
+egrep -i 'Windows Server 2003|Windows 2003|Windows2003|Win2003|Win2k3|W2k3' newpages.txt >> WindowsServer2003.txt
+egrep -i 'Windows Vista|Windowsvista|win vista|winvista' newpages.txt >> WindowsVista.txt
+egrep -i 'Windows 7|Windows7|Win7' newpages.txt >> Windows7.txt
+egrep -i 'Windows Server 2008|Windows 2008|Windows2008|Win2008|Win2k8|W2k8' newpages.txt >> WindowsServer2008.txt
+egrep -i 'Windows 8|Windows8|Win8' newpages.txt >> Windows8.txt
 
 Win98=`stat --print=%s Windows98.txt`
 Win2000=`stat --print=%s Windows2000.txt`
