@@ -25,4 +25,5 @@
 ./catscripts/Government/Countries/Singapore/Singapore.sh 
 ./catscripts/Government/Countries/Sweden/Sweden.sh
 ./catscripts/Government/Countries/United\ States/UnitedStates.sh
+./catscripts/Government/Countries/Tanzia/Tanzia.sh
 ./catscripts/Government/Countries/Unrecognized_countries/Unrecognized.sh
