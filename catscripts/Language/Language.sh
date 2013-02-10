@@ -8,5 +8,6 @@
 ./catscripts/Language/Etymology/Etymology.sh
 ./catscripts/Language/Acronyms/Acronyms.sh
 ./catscripts/Language/Parts\ of\ speech/PartsOfSpeech.sh
+./catscripts/Language/Rhyming/Rhyming.sh
 ./catscripts/Language/Sign_language/Signlanguage.sh
 ./catscripts/Language/Spelling/Spelling.sh
