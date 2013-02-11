@@ -2,6 +2,7 @@
 
 ./catscripts/Government/Countries/Afghanistan/Afghanistan.sh
 ./catscripts/Government/Countries/Albania/Albania.sh
+./catscripts/Government/Countries/Algeria/Algeria.sh
 ./catscripts/Government/Countries/Argentina/Argentina.sh
 ./catscripts/Government/Countries/Australia/Australia.sh
 ./catscripts/Government/Countries/Bangladesh/Bangladesh.sh
