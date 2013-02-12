@@ -23,7 +23,7 @@ echo $$ > $PIDFILE
 GET http://cfaj.freeshell.org/ipaddr.cgi > address.txt
 
 while read y; do
-  python $PYWIKIPEDIADIR/add_text.py -page:"User:$BOTNAME/IP" -text:$y -except:$y -top -always
+  python $PYWIKIPEDIADIR/add_text.py -page:"User:$BOTNAME" -text:$y -except:$y -always
 done < address.txt  
 
 echo "Generating pages"
