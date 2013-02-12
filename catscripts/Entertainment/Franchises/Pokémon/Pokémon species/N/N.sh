@@ -1,20 +1,20 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Natu\b' >> Natu.txt
-cat newpages.txt | egrep -i 'Nidoking' >> Nidoking.txt
-cat newpages.txt | egrep -i 'Nidoqueen' >> Nidoqueen.txt
-cat newpages.txt | egrep -i 'Nidoran♀|Nidoran ♀|Nidoran (girl|female)|Nidoran \(female\)|(girl|female) Nidoran' >> Nidoran♀.txt
-cat newpages.txt | egrep -i 'Nidoran♂|Nidoran ♂|Nidoran (boy|guy|male)|Nidoran \(male\)|(boy|guy|male) Nidoran' >> Nidoran♂.txt
-cat newpages.txt | egrep -i 'Nidoran' | egrep -iv '♀|♀|girl|female|male|guy|boy' >> Nidoran♀.txt
-cat newpages.txt | egrep -i 'Nidoran' | egrep -iv '♀|♀|girl|female|male|guy|boy' >> Nidoran♂.txt
-cat newpages.txt | egrep -i 'Nidorina' >> Nidorina.txt
-cat newpages.txt | egrep -i 'Nidorino' >> Nidorino.txt
-cat newpages.txt | egrep -i 'Nincada' >> Nincada.txt
-cat newpages.txt | egrep -i 'Ninetales' >> Ninetales.txt
-cat newpages.txt | egrep -i 'Ninjask' >> Ninjask.txt
-cat newpages.txt | egrep -i 'Noctowl' >> Noctowl.txt
-cat newpages.txt | egrep -i 'Nosepass' >> Nosepass.txt
-cat newpages.txt | egrep -i 'Numel' >> Numel.txt
-cat newpages.txt | egrep -i 'Nuzleaf' >> Nuzleaf.txt
+egrep -i 'Natu\b' newpages.txt >> Natu.txt
+egrep -i 'Nidoking' newpages.txt >> Nidoking.txt
+egrep -i 'Nidoqueen' newpages.txt >> Nidoqueen.txt
+egrep -i 'Nidoran♀|Nidoran ♀|Nidoran (girl|female)|Nidoran \(female\)|(girl|female) Nidoran' newpages.txt >> Nidoran♀.txt
+egrep -i 'Nidoran♂|Nidoran ♂|Nidoran (boy|guy|male)|Nidoran \(male\)|(boy|guy|male) Nidoran' newpages.txt >> Nidoran♂.txt
+egrep -i 'Nidoran' newpages.txt| egrep -iv '♀|♀|girl|female|male|guy|boy' >> Nidoran♀.txt
+egrep -i 'Nidoran' | egrep -iv '♀|♀|girl|female|male|guy|boy' >> Nidoran♂.txt
+egrep -i 'Nidorina' newpages.txt >> Nidorina.txt
+egrep -i 'Nidorino' newpages.txt >> Nidorino.txt
+egrep -i 'Nincada' newpages.txt >> Nincada.txt
+egrep -i 'Ninetales' newpages.txt >> Ninetales.txt
+egrep -i 'Ninjask' newpages.txt >> Ninjask.txt
+egrep -i 'Noctowl' newpages.txt >> Noctowl.txt
+egrep -i 'Nosepass' newpages.txt >> Nosepass.txt
+egrep -i 'Numel' newpages.txt >> Numel.txt
+egrep -i 'Nuzleaf' newpages.txt >> Nuzleaf.txt
 
 Natu=`stat --print=%s Natu.txt`
 Nidoking=`stat --print=%s Nidoking.txt`
