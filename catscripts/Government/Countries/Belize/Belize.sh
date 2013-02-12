@@ -11,4 +11,4 @@ then
   ./catscripts/Categorize.sh
 fi
 
-rm Belize.sh
+rm Belize.txt

@@ -11,4 +11,4 @@ then
   ./catscripts/Categorize.sh
 fi
 
-rm Pennnsylvania.txt
+rm Pennsylvania.txt

@@ -13,3 +13,5 @@ fi
 
 ./catscripts/Government/Countries/Australia/Canberra/Canberra.sh
 ./catscripts/Government/Countries/Australia/Sydney/Sydney.sh
+
+rm Australia.txt
