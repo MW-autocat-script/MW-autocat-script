@@ -14,7 +14,7 @@ egrep -i 'Klang' newpages.txt >> Klang.txt
 egrep -i 'Klink' newpages.txt >> Klink.txt
 egrep -i 'Klinklang' newpages.txt >> Klinklang.txt
 egrep -i 'Koffing' newpages.txt >> Koffing.txt
-egrep -i 'Krabby' | egrep -iv 'Krabby patt(y|ies)' newpages.txt >> Krabby.txt
+egrep -i 'Krabby' newpages.txt  | egrep -iv 'Krabby patt(y|ies)' >> Krabby.txt
 egrep -i 'Kricketot' newpages.txt >> Kricketot.txt
 egrep -i 'Kricketune' newpages.txt >> Kricketune.txt
 egrep -i 'Krookodile' newpages.txt >> Krookodile.txt
