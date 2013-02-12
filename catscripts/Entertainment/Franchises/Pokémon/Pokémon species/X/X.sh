@@ -1,5 +1,5 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Xatu' >> Xatu.txt
+egrep -i 'Xatu' newpages.txt >> Xatu.txt
 
 Xatu=`stat --print=%s Xatu.txt`
 

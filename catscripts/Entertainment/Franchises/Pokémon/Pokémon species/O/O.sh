@@ -1,10 +1,10 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Octillery' >> Octillery.txt
-cat newpages.txt | egrep -i 'Oddish' >> Oddish.txt
-cat newpages.txt | egrep -i 'Omanyte' >> Omanyte.txt
-cat newpages.txt | egrep -i 'Omastar' >> Omastar.txt
-cat newpages.txt | egrep -i 'Onix' >> Onix.txt
-cat newpages.txt | egrep -i 'Oshawott' >> Oshawott.txt
+egrep -i 'Octillery' newpages.txt >>  Octillery.txt
+egrep -i 'Oddish' newpages.txt >>  Oddish.txt
+egrep -i 'Omanyte' newpages.txt >>  Omanyte.txt
+egrep -i 'Omastar' newpages.txt >>  Omastar.txt
+egrep -i 'Onix' newpages.txt >>  Onix.txt
+egrep -i 'Oshawott' newpages.txt >>  Oshawott.txt
 
 Octillery=`stat --print=%s Octillery.txt`
 Oddish=`stat --print=%s Oddish.txt`

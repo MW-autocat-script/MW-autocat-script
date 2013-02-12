@@ -1,13 +1,13 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Zangoose' >> Zangoose.txt
-cat newpages.txt | egrep -i 'Zapdos' >> Zapdos.txt
-cat newpages.txt | egrep -i 'Zebstrika' >> Zebstrika.txt
-cat newpages.txt | egrep -i 'Zekrom' >> Zekrom.txt
-cat newpages.txt | egrep -i 'Zigzagoon' >> Zigzagoon.txt
-cat newpages.txt | egrep -i 'Zoroark' >> Zoroark.txt
-cat newpages.txt | egrep -i 'Zorua' >> Zorua.txt
-cat newpages.txt | egrep -i 'Zweilous' >> Zweilous.txt
-cat newpages.txt | egrep -i 'Zubat' >> Zubat.txt
+egrep -i 'Zangoose' newpages.txt >> Zangoose.txt
+egrep -i 'Zapdos' newpages.txt >> Zapdos.txt
+egrep -i 'Zebstrika' newpages.txt >> Zebstrika.txt
+egrep -i 'Zekrom' newpages.txt >> Zekrom.txt
+egrep -i 'Zigzagoon' newpages.txt >> Zigzagoon.txt
+egrep -i 'Zoroark' newpages.txt >> Zoroark.txt
+egrep -i 'Zorua' newpages.txt >> Zorua.txt
+egrep -i 'Zweilous' newpages.txt >> Zweilous.txt
+egrep -i 'Zubat' newpages.txt >> Zubat.txt
 
 Zangoose=`stat --print=%s Zangoose.txt`
 Zapdos=`stat --print=%s Zapdos.txt`

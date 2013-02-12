@@ -1,36 +1,36 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Taillow' >> Taillow.txt
-cat newpages.txt | egrep -i 'Tangela' >> Tangela.txt
-cat newpages.txt | egrep -i 'Tangrowth' >> Tangrowth.txt
-cat newpages.txt | egrep -i 'Tauros' >> Tauros.txt
-cat newpages.txt | egrep -i 'Teddiursa' >> Teddiursa.txt
-cat newpages.txt | egrep -i 'Tentacool' >> Tentacool.txt
-cat newpages.txt | egrep -i 'Tentacruel' >> Tentacruel.txt
-cat newpages.txt | egrep -i 'Tepig' >> Tepig.txt
-cat newpages.txt | egrep -i 'Throh' >> Throh.txt
-cat newpages.txt | egrep -i 'Thundurus' >> Thundurus.txt
-cat newpages.txt | egrep -i 'Timburr' >> Timburr.txt
-cat newpages.txt | egrep -i 'Tirtouga' >> Tirtouga.txt
-cat newpages.txt | egrep -i 'Togekiss' >> Togekiss.txt
-cat newpages.txt | egrep -i 'Togepi' >> Togepi.txt
-cat newpages.txt | egrep -i 'Togetic' >> Togetic.txt
-cat newpages.txt | egrep -i 'Torchic' >> Torchic.txt
-cat newpages.txt | egrep -i 'Torkoal' >> Torkoal.txt
-cat newpages.txt | egrep -i 'Tornadus' >> Tornadus.txt
-cat newpages.txt | egrep -i 'Torterra' >> Torterra.txt
-cat newpages.txt | egrep -i 'Totodile' >> Totodile.txt
-cat newpages.txt | egrep -i 'Toxicroak' >> Toxicroak.txt
-cat newpages.txt | egrep -i 'Tranquill' >> Tranquill.txt
-cat newpages.txt | egrep -i 'Trapinch' >> Trapinch.txt
-cat newpages.txt | egrep -i 'Treecko' >> Treecko.txt
-cat newpages.txt | egrep -i 'Tropius' >> Tropius.txt
-cat newpages.txt | egrep -i 'Trubbish' >> Trubbish.txt
-cat newpages.txt | egrep -i 'Turtwig' >> Turtwig.txt
-cat newpages.txt | egrep -i 'Tympole' >> Tympole.txt
-cat newpages.txt | egrep -i 'Tynamo' >> Tynamo.txt
-cat newpages.txt | egrep -i 'Typhlosion' >> Typhlosion.txt
-cat newpages.txt | egrep -i 'Tyranitar' >> Tyranitar.txt
-cat newpages.txt | egrep -i 'Tyrogue' >> Tyrogue.txt
+egrep -i 'Taillow' newpages.txt >> Taillow.txt
+egrep -i 'Tangela' newpages.txt >> Tangela.txt
+egrep -i 'Tangrowth' newpages.txt >> Tangrowth.txt
+egrep -i 'Tauros' newpages.txt >> Tauros.txt
+egrep -i 'Teddiursa' newpages.txt >> Teddiursa.txt
+egrep -i 'Tentacool' newpages.txt >> Tentacool.txt
+egrep -i 'Tentacruel' newpages.txt >> Tentacruel.txt
+egrep -i 'Tepig' newpages.txt >> Tepig.txt
+egrep -i 'Throh' newpages.txt >> Throh.txt
+egrep -i 'Thundurus' newpages.txt >> Thundurus.txt
+egrep -i 'Timburr' newpages.txt >> Timburr.txt
+egrep -i 'Tirtouga' newpages.txt >> Tirtouga.txt
+egrep -i 'Togekiss' newpages.txt >> Togekiss.txt
+egrep -i 'Togepi' newpages.txt >> Togepi.txt
+egrep -i 'Togetic' newpages.txt >> Togetic.txt
+egrep -i 'Torchic' newpages.txt >> Torchic.txt
+egrep -i 'Torkoal' newpages.txt >> Torkoal.txt
+egrep -i 'Tornadus' newpages.txt >> Tornadus.txt
+egrep -i 'Torterra' newpages.txt >> Torterra.txt
+egrep -i 'Totodile' newpages.txt >> Totodile.txt
+egrep -i 'Toxicroak' newpages.txt >> Toxicroak.txt
+egrep -i 'Tranquill' newpages.txt >> Tranquill.txt
+egrep -i 'Trapinch' newpages.txt >> Trapinch.txt
+egrep -i 'Treecko' newpages.txt >> Treecko.txt
+egrep -i 'Tropius' newpages.txt >> Tropius.txt
+egrep -i 'Trubbish' newpages.txt >> Trubbish.txt
+egrep -i 'Turtwig' newpages.txt >> Turtwig.txt
+egrep -i 'Tympole' newpages.txt >> Tympole.txt
+egrep -i 'Tynamo' newpages.txt >> Tynamo.txt
+egrep -i 'Typhlosion' newpages.txt >> Typhlosion.txt
+egrep -i 'Tyranitar' newpages.txt >> Tyranitar.txt
+egrep -i 'Tyrogue' newpages.txt >> Tyrogue.txt
 
 Taillow=`stat --print=%s Taillow.txt`
 Tangela=`stat --print=%s Tangela.txt`

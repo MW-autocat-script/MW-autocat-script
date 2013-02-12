@@ -1,47 +1,47 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Pachirisu' >> Pachirisu.txt
-cat newpages.txt | egrep -i 'Palkia' >> Palkia.txt
-cat newpages.txt | egrep -i 'Palpitoad' >> Palpitoad.txt
-cat newpages.txt | egrep -i 'Panpour' >> Panpour.txt
-cat newpages.txt | egrep -i 'Pansage' >> Pansage.txt
-cat newpages.txt | egrep -i 'Pansear' >> Pansear.txt
-cat newpages.txt | egrep -i 'Paras\b' >> Paras.txt
-cat newpages.txt | egrep -i 'Parasect' >> Parasect.txt
-cat newpages.txt | egrep -i 'Patrat' >> Patrat.txt
-cat newpages.txt | egrep -i 'Pawniard' >> Pawniard.txt
-cat newpages.txt | egrep -i 'Pelipper' >> Pelipper.txt
-cat newpages.txt | egrep -i 'Persian\b' | egrep -iv 'empire|language|speak|cat|kitten|gulf|language|religion|in Persian\]\]|capital|leader|war|Persian ruler' >> Persian.txt
-cat newpages.txt | egrep -i 'Petilil' >> Petilil.txt
-cat newpages.txt | egrep -i 'Phanpy' >> Phanpy.txt
-cat newpages.txt | egrep -i 'Phione' >> Phione.txt
-cat newpages.txt | egrep -i 'Pichu' >> Pichu.txt
-cat newpages.txt | egrep -i 'Pidgeot\b' >> Pidgeot.txt
-cat newpages.txt | egrep -i 'Pidgeotto' >> Pidgeotto.txt
-cat newpages.txt | egrep -i 'Pidgey' >> Pidgey.txt
-cat newpages.txt | egrep -i 'Pignite' >> Pignite.txt
-cat newpages.txt | egrep -i 'Pikachu' >> Pikachu.txt
-cat newpages.txt | egrep -i 'Piloswine' >> Piloswine.txt
-cat newpages.txt | egrep -i 'Pineco' >> Pineco.txt
-cat newpages.txt | egrep -i 'Pinsir' >> Pinsir.txt
-cat newpages.txt | egrep -i 'Piplup' >> Piplup.txt
-cat newpages.txt | egrep -i 'Plusle' >> Plusle.txt
-cat newpages.txt | egrep -i 'Politoed' >> Politoed.txt
-cat newpages.txt | egrep -i 'Poliwag' >> Poliwag.txt
-cat newpages.txt | egrep -i 'Poliwhirl' >> Poliwhirl.txt
-cat newpages.txt | egrep -i 'Poliwrath' >> Poliwrath.txt
-cat newpages.txt | egrep -i 'Ponyta' >> Ponyta.txt
-cat newpages.txt | egrep -i 'Poochyena' >> Poochyena.txt
-cat newpages.txt | egrep -i 'Porygon' >> Porygon.txt
-cat newpages.txt | egrep -i 'Porygon-Z' >> Porygon-Z.txt
-cat newpages.txt | egrep -i 'Porygon2' >> Porygon2.txt
-cat newpages.txt | egrep -i 'Primeape' >> Primeape.txt
-cat newpages.txt | egrep -i 'Prinplup' >> Prinplup.txt
-cat newpages.txt | egrep -i 'Probopass' >> Probopass.txt
-cat newpages.txt | egrep -i 'Psyduck' >> Psyduck.txt
-cat newpages.txt | egrep -i 'Pupitar' >> Pupitar.txt
-cat newpages.txt | egrep -i 'Purrloin' >> Purrloin.txt
-cat newpages.txt | egrep -i 'Purugly' >> Purugly.txt
+egrep -i 'Pachirisu' newpages.txt >> Pachirisu.txt
+egrep -i 'Palkia' newpages.txt >> Palkia.txt
+egrep -i 'Palpitoad' newpages.txt >> Palpitoad.txt
+egrep -i 'Panpour' newpages.txt >> Panpour.txt
+egrep -i 'Pansage' newpages.txt >> Pansage.txt
+egrep -i 'Pansear' newpages.txt >> Pansear.txt
+egrep -i 'Paras\b' newpages.txt >> Paras.txt
+egrep -i 'Parasect' newpages.txt >> Parasect.txt
+egrep -i 'Patrat' newpages.txt >> Patrat.txt
+egrep -i 'Pawniard' newpages.txt >> Pawniard.txt
+egrep -i 'Pelipper' newpages.txt >> Pelipper.txt
+egrep -i 'Persian\b' newpages.txt | egrep -iv 'empire|language|speak|cat|kitten|gulf|language|religion|in Persian\]\]|capital|leader|war|Persian ruler' >> Persian.txt
+egrep -i 'Petilil' newpages.txt >> Petilil.txt
+egrep -i 'Phanpy' newpages.txt >> Phanpy.txt
+egrep -i 'Phione' newpages.txt >> Phione.txt
+egrep -i 'Pichu' newpages.txt >> Pichu.txt
+egrep -i 'Pidgeot\b' newpages.txt >> Pidgeot.txt
+egrep -i 'Pidgeotto' newpages.txt >> Pidgeotto.txt
+egrep -i 'Pidgey' newpages.txt >> Pidgey.txt
+egrep -i 'Pignite' newpages.txt >> Pignite.txt
+egrep -i 'Pikachu' newpages.txt >> Pikachu.txt
+egrep -i 'Piloswine' newpages.txt >> Piloswine.txt
+egrep -i 'Pineco' newpages.txt >> Pineco.txt
+egrep -i 'Pinsir' newpages.txt >> Pinsir.txt
+egrep -i 'Piplup' newpages.txt >> Piplup.txt
+egrep -i 'Plusle' newpages.txt >> Plusle.txt
+egrep -i 'Politoed' newpages.txt >> Politoed.txt
+egrep -i 'Poliwag' newpages.txt >> Poliwag.txt
+egrep -i 'Poliwhirl' newpages.txt >> Poliwhirl.txt
+egrep -i 'Poliwrath' newpages.txt >> Poliwrath.txt
+egrep -i 'Ponyta' newpages.txt >> Ponyta.txt
+egrep -i 'Poochyena' newpages.txt >> Poochyena.txt
+egrep -i 'Porygon' newpages.txt >> Porygon.txt
+egrep -i 'Porygon-Z' newpages.txt >> Porygon-Z.txt
+egrep -i 'Porygon2' newpages.txt >> Porygon2.txt
+egrep -i 'Primeape' newpages.txt >> Primeape.txt
+egrep -i 'Prinplup' newpages.txt >> Prinplup.txt
+egrep -i 'Probopass' newpages.txt >> Probopass.txt
+egrep -i 'Psyduck' newpages.txt >> Psyduck.txt
+egrep -i 'Pupitar' newpages.txt >> Pupitar.txt
+egrep -i 'Purrloin' newpages.txt >> Purrloin.txt
+egrep -i 'Purugly' newpages.txt >> Purugly.txt
 
 Pachirisu=`stat --print=%s Pachirisu.txt`
 Palkia=`stat --print=%s Palkia.txt`

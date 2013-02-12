@@ -1,24 +1,24 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Vanillish' >> Vanillish.txt
-cat newpages.txt | egrep -i 'Vanilluxe' >> Vanilluxe.txt
-cat newpages.txt | egrep -i 'Vanillite' >> Vanillite.txt
-cat newpages.txt | egrep -i 'Vaporeon' >> Vaporeon.txt
-cat newpages.txt | egrep -i 'Venipede' >> Venipede.txt
-cat newpages.txt | egrep -i 'Venomoth' >> Venomoth.txt
-cat newpages.txt | egrep -i 'Venonat' >> Venonat.txt
-cat newpages.txt | egrep -i 'Venusaur' >> Venusaur.txt
-cat newpages.txt | egrep -i 'Vespiquen' >> Vespiquen.txt
-cat newpages.txt | egrep -i 'Vibrava' >> Vibrava.txt
-cat newpages.txt | egrep -i 'Victini' >> Victini.txt
-cat newpages.txt | egrep -i 'Victreebel' >> Victreebel.txt
-cat newpages.txt | egrep -i 'Vigoroth' >> Vigoroth.txt
-cat newpages.txt | egrep -i 'Vileplume' >> Vileplume.txt
-cat newpages.txt | egrep -i 'Virizion' >> Virizion.txt
-cat newpages.txt | egrep -i 'Volbeat' >> Volbeat.txt
-cat newpages.txt | egrep -i 'Volcarona' >> Volcarona.txt
-cat newpages.txt | egrep -i 'Voltorb' >> Voltorb.txt
-cat newpages.txt | egrep -i 'Vullaby' >> Vullaby.txt
-cat newpages.txt | egrep -i 'Vulpix' >> Vulpix.txt
+egrep -i 'Vanillish' newpages.txt >> Vanillish.txt
+egrep -i 'Vanilluxe' newpages.txt >> Vanilluxe.txt
+egrep -i 'Vanillite' newpages.txt >> Vanillite.txt
+egrep -i 'Vaporeon' newpages.txt >> Vaporeon.txt
+egrep -i 'Venipede' newpages.txt >> Venipede.txt
+egrep -i 'Venomoth' newpages.txt >> Venomoth.txt
+egrep -i 'Venonat' newpages.txt >> Venonat.txt
+egrep -i 'Venusaur' newpages.txt >> Venusaur.txt
+egrep -i 'Vespiquen' newpages.txt >> Vespiquen.txt
+egrep -i 'Vibrava' newpages.txt >> Vibrava.txt
+egrep -i 'Victini' newpages.txt >> Victini.txt
+egrep -i 'Victreebel' newpages.txt >> Victreebel.txt
+egrep -i 'Vigoroth' newpages.txt >> Vigoroth.txt
+egrep -i 'Vileplume' newpages.txt >> Vileplume.txt
+egrep -i 'Virizion' newpages.txt >> Virizion.txt
+egrep -i 'Volbeat' newpages.txt >> Volbeat.txt
+egrep -i 'Volcarona' newpages.txt >> Volcarona.txt
+egrep -i 'Voltorb' newpages.txt >> Voltorb.txt
+egrep -i 'Vullaby' newpages.txt >> Vullaby.txt
+egrep -i 'Vulpix' newpages.txt >> Vulpix.txt
 
 Vanillish=`stat --print=%s Vanillish.txt`
 Vanilluxe=`stat --print=%s Vanilluxe.txt`

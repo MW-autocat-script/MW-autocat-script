@@ -1,25 +1,25 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Wailmer' >> Wailmer.txt
-cat newpages.txt | egrep -i 'Wailord' >> Wailord.txt
-cat newpages.txt | egrep -i 'Walrein' >> Walrein.txt
-cat newpages.txt | egrep -i 'Wartortle' >> Wartortle.txt
-cat newpages.txt | egrep -i 'Watchog' >> Watchog.txt
-cat newpages.txt | egrep -i 'Weavile' >> Weavile.txt
-cat newpages.txt | egrep -i 'Weedle' >> Weedle.txt
-cat newpages.txt | egrep -i 'Weepinbell' >> Weepinbell.txt
-cat newpages.txt | egrep -i 'Weezing' >> Weezing.txt
-cat newpages.txt | egrep -i 'Whimsicott' >> Whimsicott.txt
-cat newpages.txt | egrep -i 'Whirlipede' >> Whirlipede.txt
-cat newpages.txt | egrep -i 'Whiscash' >> Whiscash.txt
-cat newpages.txt | egrep -i 'Whismur' >> Whismur.txt
-cat newpages.txt | egrep -i 'Wigglytuff' >> Wigglytuff.txt
-cat newpages.txt | egrep -i 'Wingull' >> Wingull.txt
-cat newpages.txt | egrep -i 'Wobbuffet' >> Wobbuffet.txt
-cat newpages.txt | egrep -i 'Woobat' >> Woobat.txt
-cat newpages.txt | egrep -i 'Wooper' >> Wooper.txt
-cat newpages.txt | egrep -i 'Wormadam' >> Wormadam.txt
-cat newpages.txt | egrep -i 'Wurmple' >> Wurmple.txt
-cat newpages.txt | egrep -i 'Wynaut' >> Wynaut.txt
+egrep -i 'Wailmer' newpages.txt >> Wailmer.txt
+egrep -i 'Wailord' newpages.txt >> Wailord.txt
+egrep -i 'Walrein' newpages.txt >> Walrein.txt
+egrep -i 'Wartortle' newpages.txt >> Wartortle.txt
+egrep -i 'Watchog' newpages.txt >> Watchog.txt
+egrep -i 'Weavile' newpages.txt >> Weavile.txt
+egrep -i 'Weedle' newpages.txt >> Weedle.txt
+egrep -i 'Weepinbell' newpages.txt >> Weepinbell.txt
+egrep -i 'Weezing' newpages.txt >> Weezing.txt
+egrep -i 'Whimsicott' newpages.txt >> Whimsicott.txt
+egrep -i 'Whirlipede' newpages.txt >> Whirlipede.txt
+egrep -i 'Whiscash' newpages.txt >> Whiscash.txt
+egrep -i 'Whismur' newpages.txt >> Whismur.txt
+egrep -i 'Wigglytuff' newpages.txt >> Wigglytuff.txt
+egrep -i 'Wingull' newpages.txt >> Wingull.txt
+egrep -i 'Wobbuffet' newpages.txt >> Wobbuffet.txt
+egrep -i 'Woobat' newpages.txt >> Woobat.txt
+egrep -i 'Wooper' newpages.txt >> Wooper.txt
+egrep -i 'Wormadam' newpages.txt >> Wormadam.txt
+egrep -i 'Wurmple' newpages.txt >> Wurmple.txt
+egrep -i 'Wynaut' newpages.txt >> Wynaut.txt
 
 Wailmer=`stat --print=%s Wailmer.txt`
 Wailord=`stat --print=%s Wailord.txt`

@@ -1,7 +1,7 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Quagsire' >> Quagsire.txt
-cat newpages.txt | egrep -i 'Quilava' >> Quilava.txt
-cat newpages.txt | egrep -i 'Qwilfish' >> Qwilfish.txt
+egrep -i 'Quagsire' newpages.txt >> Quagsire.txt
+egrep -i 'Quilava' newpages.txt >> Quilava.txt
+egrep -i 'Qwilfish' newpages.txt >> Qwilfish.txt
 
 Quagsire=`stat --print=%s Quagsire.txt`
 Quilava=`stat --print=%s Quilava.txt`

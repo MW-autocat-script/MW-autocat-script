@@ -1,7 +1,7 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Yamask' >> Yamask.txt
-cat newpages.txt | egrep -i '\bYanma\b' >> Yanma.txt
-cat newpages.txt | egrep -i 'Yanmega' >> Yanmega.txt
+egrep -i 'Yamask' newpages.txt >> Yamask.txt
+egrep -i '\bYanma\b' newpages.txt >> Yanma.txt
+egrep -i 'Yanmega' newpages.txt >> Yanmega.txt
 
 Yamask=`stat --print=%s Yamask.txt`
 Yanma=`stat --print=%s Yanma.txt`

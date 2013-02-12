@@ -1,97 +1,97 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Sableye' >> Sableye.txt
-cat newpages.txt | egrep -i 'Salamence' >> Salamence.txt
-cat newpages.txt | egrep -i 'Samurott' >> Samurott.txt
-cat newpages.txt | egrep -i 'Sandile' >> Sandile.txt
-cat newpages.txt | egrep -i 'Sandshrew' >> Sandshrew.txt
-cat newpages.txt | egrep -i 'Sandslash' >> Sandslash.txt
-cat newpages.txt | egrep -i 'Sawk' >> Sawk.txt
-cat newpages.txt | egrep -i 'Sawsbuck' >> Sawsbuck.txt
-cat newpages.txt | egrep -i 'Sceptile' >> Sceptile.txt
-cat newpages.txt | egrep -i 'Scizor' >> Scizor.txt
-cat newpages.txt | egrep -i 'Scolipede' >> Scolipede.txt
-cat newpages.txt | egrep -i 'Scrafty' >> Scrafty.txt
-cat newpages.txt | egrep -i 'Scraggy' >> Scraggy.txt
-cat newpages.txt | egrep -i 'Scyther' >> Scyther.txt
-cat newpages.txt | egrep -i 'Seadra' >> Seadra.txt
-cat newpages.txt | egrep -i 'Seaking' >> Seaking.txt
-cat newpages.txt | egrep -i 'Sealeo' >> Sealeo.txt
-cat newpages.txt | egrep -i 'Seedot' >> Seedot.txt
-cat newpages.txt | egrep -i 'Seel' >> Seel.txt
-cat newpages.txt | egrep -i 'Sentret' >> Sentret.txt
-cat newpages.txt | egrep -i 'Serperior' >> Serperior.txt
-cat newpages.txt | egrep -i 'Servine' >> Servine.txt
-cat newpages.txt | egrep -i 'Seismitoad' >> Seismitoad.txt
-cat newpages.txt | egrep -i 'Seviper' >> Seviper.txt
-cat newpages.txt | egrep -i 'Sewaddle' >> Sewaddle.txt
-cat newpages.txt | egrep -i 'Sharpedo' >> Sharpedo.txt
-cat newpages.txt | egrep -i 'Shedinja' >> Shedinja.txt
-cat newpages.txt | egrep -i 'Shelgon' >> Shelgon.txt
-cat newpages.txt | egrep -i 'Shelmet' >> Shelmet.txt
-cat newpages.txt | egrep -i 'Shellder' >> Shellder.txt
-cat newpages.txt | egrep -i 'Shellos' >> Shellos.txt
-cat newpages.txt | egrep -i 'Shieldon' >> Shieldon.txt
-cat newpages.txt | egrep -i 'Shiftry' >> Shiftry.txt
-cat newpages.txt | egrep -i 'Shinx' >> Shinx.txt
-cat newpages.txt | egrep -i 'Shroomish' >> Shroomish.txt
-cat newpages.txt | egrep -i 'Shuckle' >> Shuckle.txt
-cat newpages.txt | egrep -i 'Shuppet' >> Shuppet.txt
-cat newpages.txt | egrep -i 'Sigilyph' >> Sigilyph.txt
-cat newpages.txt | egrep -i 'Silcoon' >> Silcoon.txt
-cat newpages.txt | egrep -i 'Simipour' >> Simipour.txt
-cat newpages.txt | egrep -i 'Simisage' >> Simisage.txt
-cat newpages.txt | egrep -i 'Simisear' >> Simisear.txt
-cat newpages.txt | egrep -i 'Skarmory' >> Skarmory.txt
-cat newpages.txt | egrep -i 'Skiploom' >> Skiploom.txt
-cat newpages.txt | egrep -i 'Skitty' >> Skitty.txt
-cat newpages.txt | egrep -i 'Skorupi' >> Skorupi.txt
-cat newpages.txt | egrep -i 'Skuntank' >> Skuntank.txt
-cat newpages.txt | egrep -i 'Slaking' >> Slaking.txt
-cat newpages.txt | egrep -i 'Slakoth' >> Slakoth.txt
-cat newpages.txt | egrep -i 'Slowbro' >> Slowbro.txt
-cat newpages.txt | egrep -i 'Slowking' >> Slowking.txt
-cat newpages.txt | egrep -i 'Slowpoke' >> Slowpoke.txt
-cat newpages.txt | egrep -i 'Slugma' >> Slugma.txt
-cat newpages.txt | egrep -i 'Smeargle' >> Smeargle.txt
-cat newpages.txt | egrep -i 'Smoochum' >> Smoochum.txt
-cat newpages.txt | egrep -i 'Sneasel' >> Sneasel.txt
-cat newpages.txt | egrep -i 'Snivy' >> Snivy.txt
-cat newpages.txt | egrep -i 'Snorlax' >> Snorlax.txt
-cat newpages.txt | egrep -i 'Snorunt' >> Snorunt.txt
-cat newpages.txt | egrep -i 'Snover' >> Snover.txt
-cat newpages.txt | egrep -i 'Snubbull' >> Snubbull.txt
-cat newpages.txt | egrep -i 'Solosis' >> Solosis.txt
-cat newpages.txt | egrep -i 'Solrock' >> Solrock.txt
-cat newpages.txt | egrep -i 'Spearow' >> Spearow.txt
-cat newpages.txt | egrep -i 'Spheal' >> Spheal.txt
-cat newpages.txt | egrep -i 'Spinarak' >> Spinarak.txt
-cat newpages.txt | egrep -i 'Spinda' >> Spinda.txt
-cat newpages.txt | egrep -i 'Spiritomb' >> Spiritomb.txt
-cat newpages.txt | egrep -i 'Spoink' >> Spoink.txt
-cat newpages.txt | egrep -i 'Squirtle' >> Squirtle.txt
-cat newpages.txt | egrep -i 'Stantler' >> Stantler.txt
-cat newpages.txt | egrep -i 'Staraptor' >> Staraptor.txt
-cat newpages.txt | egrep -i 'Staravia' >> Staravia.txt
-cat newpages.txt | egrep -i 'Starly' >> Starly.txt
-cat newpages.txt | egrep -i 'Starmie' >> Starmie.txt
-cat newpages.txt | egrep -i 'Staryu' >> Staryu.txt
-cat newpages.txt | egrep -i 'Steelix' >> Steelix.txt
-cat newpages.txt | egrep -i 'Stoutland' >> Stoutland.txt
-cat newpages.txt | egrep -i 'Stunfisk' >> Stunfisk.txt
-cat newpages.txt | egrep -i 'Stunky' >> Stunky.txt
-cat newpages.txt | egrep -i 'Sudowoodo' >> Sudowoodo.txt
-cat newpages.txt | egrep -i 'Suicune' >> Suicune.txt
-cat newpages.txt | egrep -i 'Sunflora' >> Sunflora.txt
-cat newpages.txt | egrep -i 'Sunkern' >> Sunkern.txt
-cat newpages.txt | egrep -i 'Surskit' >> Surskit.txt
-cat newpages.txt | egrep -i 'Swablu' >> Swablu.txt
-cat newpages.txt | egrep -i 'Swadloon' >> Swadloon.txt
-cat newpages.txt | egrep -i 'Swalot' >> Swalot.txt
-cat newpages.txt | egrep -i 'Swampert' >> Swampert.txt
-cat newpages.txt | egrep -i 'Swanna' >> Swanna.txt
-cat newpages.txt | egrep -i 'Swellow' >> Swellow.txt
-cat newpages.txt | egrep -i 'Swinub' >> Swinub.txt
-cat newpages.txt | egrep -i 'Swoobat' >> Swoobat.txt
+egrep -i 'Sableye' newpages.txt >> Sableye.txt
+egrep -i 'Salamence' newpages.txt >> Salamence.txt
+egrep -i 'Samurott' newpages.txt >> Samurott.txt
+egrep -i 'Sandile' newpages.txt >> Sandile.txt
+egrep -i 'Sandshrew' newpages.txt >> Sandshrew.txt
+egrep -i 'Sandslash' newpages.txt >> Sandslash.txt
+egrep -i 'Sawk' newpages.txt >> Sawk.txt
+egrep -i 'Sawsbuck' newpages.txt >> Sawsbuck.txt
+egrep -i 'Sceptile' newpages.txt >> Sceptile.txt
+egrep -i 'Scizor' newpages.txt >> Scizor.txt
+egrep -i 'Scolipede' newpages.txt >> Scolipede.txt
+egrep -i 'Scrafty' newpages.txt >> Scrafty.txt
+egrep -i 'Scraggy' newpages.txt >> Scraggy.txt
+egrep -i 'Scyther' newpages.txt >> Scyther.txt
+egrep -i 'Seadra' newpages.txt >> Seadra.txt
+egrep -i 'Seaking' newpages.txt >> Seaking.txt
+egrep -i 'Sealeo' newpages.txt >> Sealeo.txt
+egrep -i 'Seedot' newpages.txt >> Seedot.txt
+egrep -i 'Seel' newpages.txt >> Seel.txt
+egrep -i 'Sentret' newpages.txt >> Sentret.txt
+egrep -i 'Serperior' newpages.txt >> Serperior.txt
+egrep -i 'Servine' newpages.txt >> Servine.txt
+egrep -i 'Seismitoad' newpages.txt >> Seismitoad.txt
+egrep -i 'Seviper' newpages.txt >> Seviper.txt
+egrep -i 'Sewaddle' newpages.txt >> Sewaddle.txt
+egrep -i 'Sharpedo' newpages.txt >> Sharpedo.txt
+egrep -i 'Shedinja' newpages.txt >> Shedinja.txt
+egrep -i 'Shelgon' newpages.txt >> Shelgon.txt
+egrep -i 'Shelmet' newpages.txt >> Shelmet.txt
+egrep -i 'Shellder' newpages.txt >> Shellder.txt
+egrep -i 'Shellos' newpages.txt >> Shellos.txt
+egrep -i 'Shieldon' newpages.txt >> Shieldon.txt
+egrep -i 'Shiftry' newpages.txt >> Shiftry.txt
+egrep -i 'Shinx' newpages.txt >> Shinx.txt
+egrep -i 'Shroomish' newpages.txt >> Shroomish.txt
+egrep -i 'Shuckle' newpages.txt >> Shuckle.txt
+egrep -i 'Shuppet' newpages.txt >> Shuppet.txt
+egrep -i 'Sigilyph' newpages.txt >> Sigilyph.txt
+egrep -i 'Silcoon' newpages.txt >> Silcoon.txt
+egrep -i 'Simipour' newpages.txt >> Simipour.txt
+egrep -i 'Simisage' newpages.txt >> Simisage.txt
+egrep -i 'Simisear' newpages.txt >> Simisear.txt
+egrep -i 'Skarmory' newpages.txt >> Skarmory.txt
+egrep -i 'Skiploom' newpages.txt >> Skiploom.txt
+egrep -i 'Skitty' newpages.txt >> Skitty.txt
+egrep -i 'Skorupi' newpages.txt >> Skorupi.txt
+egrep -i 'Skuntank' newpages.txt >> Skuntank.txt
+egrep -i 'Slaking' newpages.txt >> Slaking.txt
+egrep -i 'Slakoth' newpages.txt >> Slakoth.txt
+egrep -i 'Slowbro' newpages.txt >> Slowbro.txt
+egrep -i 'Slowking' newpages.txt >> Slowking.txt
+egrep -i 'Slowpoke' newpages.txt >> Slowpoke.txt
+egrep -i 'Slugma' newpages.txt >> Slugma.txt
+egrep -i 'Smeargle' newpages.txt >> Smeargle.txt
+egrep -i 'Smoochum' newpages.txt >> Smoochum.txt
+egrep -i 'Sneasel' newpages.txt >> Sneasel.txt
+egrep -i 'Snivy' newpages.txt >> Snivy.txt
+egrep -i 'Snorlax' newpages.txt >> Snorlax.txt
+egrep -i 'Snorunt' newpages.txt >> Snorunt.txt
+egrep -i 'Snover' newpages.txt >> Snover.txt
+egrep -i 'Snubbull' newpages.txt >> Snubbull.txt
+egrep -i 'Solosis' newpages.txt >> Solosis.txt
+egrep -i 'Solrock' newpages.txt >> Solrock.txt
+egrep -i 'Spearow' newpages.txt >> Spearow.txt
+egrep -i 'Spheal' newpages.txt >> Spheal.txt
+egrep -i 'Spinarak' newpages.txt >> Spinarak.txt
+egrep -i 'Spinda' newpages.txt >> Spinda.txt
+egrep -i 'Spiritomb' newpages.txt >> Spiritomb.txt
+egrep -i 'Spoink' newpages.txt >> Spoink.txt
+egrep -i 'Squirtle' newpages.txt >> Squirtle.txt
+egrep -i 'Stantler' newpages.txt >> Stantler.txt
+egrep -i 'Staraptor' newpages.txt >> Staraptor.txt
+egrep -i 'Staravia' newpages.txt >> Staravia.txt
+egrep -i 'Starly' newpages.txt >> Starly.txt
+egrep -i 'Starmie' newpages.txt >> Starmie.txt
+egrep -i 'Staryu' newpages.txt >> Staryu.txt
+egrep -i 'Steelix' newpages.txt >> Steelix.txt
+egrep -i 'Stoutland' newpages.txt >> Stoutland.txt
+egrep -i 'Stunfisk' newpages.txt >> Stunfisk.txt
+egrep -i 'Stunky' newpages.txt >> Stunky.txt
+egrep -i 'Sudowoodo' newpages.txt >> Sudowoodo.txt
+egrep -i 'Suicune' newpages.txt >> Suicune.txt
+egrep -i 'Sunflora' newpages.txt >> Sunflora.txt
+egrep -i 'Sunkern' newpages.txt >> Sunkern.txt
+egrep -i 'Surskit' newpages.txt >> Surskit.txt
+egrep -i 'Swablu' newpages.txt >> Swablu.txt
+egrep -i 'Swadloon' newpages.txt >> Swadloon.txt
+egrep -i 'Swalot' newpages.txt >> Swalot.txt
+egrep -i 'Swampert' newpages.txt >> Swampert.txt
+egrep -i 'Swanna' newpages.txt >> Swanna.txt
+egrep -i 'Swellow' newpages.txt >> Swellow.txt
+egrep -i 'Swinub' newpages.txt >> Swinub.txt
+egrep -i 'Swoobat' newpages.txt >> Swoobat.txt
 
 Sableye=`stat --print=%s Sableye.txt`
 Salamence=`stat --print=%s Salamence.txt`

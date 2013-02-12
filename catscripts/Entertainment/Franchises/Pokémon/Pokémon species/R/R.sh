@@ -1,29 +1,29 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Raichu' >> Raichu.txt
-cat newpages.txt | egrep -i 'Raikou' >> Raikou.txt
-cat newpages.txt | egrep -i 'Ralts' >> Ralts.txt
-cat newpages.txt | egrep -i 'Rampardos' >> Rampardos.txt
-cat newpages.txt | egrep -i 'Rapidash' >> Rapidash.txt
-cat newpages.txt | egrep -i 'Raticate' >> Raticate.txt
-cat newpages.txt | egrep -i 'Rattata' >> Rattata.txt
-cat newpages.txt | egrep -i 'Rayquaza' >> Rayquaza.txt
-cat newpages.txt | egrep -i 'Regice' >> Regice.txt
-cat newpages.txt | egrep -i 'Regigigas' >> Regigigas.txt
-cat newpages.txt | egrep -i 'Regirock' >> Regirock.txt
-cat newpages.txt | egrep -i 'Registeel' >> Registeel.txt
-cat newpages.txt | egrep -i 'Relicanth' >> Relicanth.txt
-cat newpages.txt | egrep -i 'Remoraid' >> Remoraid.txt
-cat newpages.txt | egrep -i 'Reshiram' >> Reshiram.txt
-cat newpages.txt | egrep -i 'Reuniclus' >> Reuniclus.txt
-cat newpages.txt | egrep -i 'Rhydon' >> Rhydon.txt
-cat newpages.txt | egrep -i 'Rhyhorn' >> Rhyhorn.txt
-cat newpages.txt | egrep -i 'Rhyperior' >> Rhyperior.txt
-cat newpages.txt | egrep -i 'Riolu' >> Riolu.txt
-cat newpages.txt | egrep -i 'Roggenrola' >> Roggenrola.txt
-cat newpages.txt | egrep -i 'Roselia' >> Roselia.txt
-cat newpages.txt | egrep -i 'Roserade' >> Roserade.txt
-cat newpages.txt | egrep -i 'Rotom' >> Rotom.txt
-cat newpages.txt | egrep -i 'Rufflet' >> Rufflet.txt
+egrep -i 'Raichu' newpages.txt >> Raichu.txt
+egrep -i 'Raikou' newpages.txt >> Raikou.txt
+egrep -i 'Ralts' newpages.txt >> Ralts.txt
+egrep -i 'Rampardos' newpages.txt >> Rampardos.txt
+egrep -i 'Rapidash' newpages.txt >> Rapidash.txt
+egrep -i 'Raticate' newpages.txt >> Raticate.txt
+egrep -i 'Rattata' newpages.txt >> Rattata.txt
+egrep -i 'Rayquaza' newpages.txt >> Rayquaza.txt
+egrep -i 'Regice' newpages.txt >> Regice.txt
+egrep -i 'Regigigas' newpages.txt >> Regigigas.txt
+egrep -i 'Regirock' newpages.txt >> Regirock.txt
+egrep -i 'Registeel' newpages.txt >> Registeel.txt
+egrep -i 'Relicanth' newpages.txt >> Relicanth.txt
+egrep -i 'Remoraid' newpages.txt >> Remoraid.txt
+egrep -i 'Reshiram' newpages.txt >> Reshiram.txt
+egrep -i 'Reuniclus' newpages.txt >> Reuniclus.txt
+egrep -i 'Rhydon' newpages.txt >> Rhydon.txt
+egrep -i 'Rhyhorn' newpages.txt >> Rhyhorn.txt
+egrep -i 'Rhyperior' newpages.txt >> Rhyperior.txt
+egrep -i 'Riolu' newpages.txt >> Riolu.txt
+egrep -i 'Roggenrola' newpages.txt >> Roggenrola.txt
+egrep -i 'Roselia' newpages.txt >> Roselia.txt
+egrep -i 'Roserade' newpages.txt >> Roserade.txt
+egrep -i 'Rotom' newpages.txt >> Rotom.txt
+egrep -i 'Rufflet' newpages.txt >> Rufflet.txt
 
 Raichu=`stat --print=%s Raichu.txt`
 Raikou=`stat --print=%s Raikou.txt`

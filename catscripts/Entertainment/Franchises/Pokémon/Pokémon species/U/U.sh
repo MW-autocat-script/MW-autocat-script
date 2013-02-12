@@ -1,9 +1,9 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Umbreon' >> Umbreon.txt
-cat newpages.txt | egrep -i 'Unfezant' >> Unfezant.txt
-cat newpages.txt | egrep -i 'Unown' >> Unown.txt
-cat newpages.txt | egrep -i 'Ursaring' >> Ursaring.txt
-cat newpages.txt | egrep -i 'Uxie' >> Uxie.txt
+egrep -i 'Umbreon' newpages.txt >> Umbreon.txt
+egrep -i 'Unfezant' newpages.txt >> Unfezant.txt
+egrep -i 'Unown' newpages.txt >> Unown.txt
+egrep -i 'Ursaring' newpages.txt >> Ursaring.txt
+egrep -i 'Uxie' newpages.txt >> Uxie.txt
 
 Umbreon=`stat --print=%s Umbreon.txt`
 Unfezant=`stat --print=%s Unfezant.txt`
