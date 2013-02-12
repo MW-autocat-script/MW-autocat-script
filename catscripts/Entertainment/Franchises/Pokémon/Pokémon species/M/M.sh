@@ -1,61 +1,61 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Machamp' >> Machamp.txt
-cat newpages.txt | egrep -i 'Machoke' >> Machoke.txt
-cat newpages.txt | egrep -i 'Machop' >> Machop.txt
-cat newpages.txt | egrep -i 'Magby' >> Magby.txt
-cat newpages.txt | egrep -i 'Magcargo' >> Magcargo.txt
-cat newpages.txt | egrep -i 'Magikarp' >> Magikarp.txt
-cat newpages.txt | egrep -i 'Magmar' >> Magmar.txt
-cat newpages.txt | egrep -i 'Magmortar' >> Magmortar.txt
-cat newpages.txt | egrep -i 'Magnemite' >> Magnemite.txt
-cat newpages.txt | egrep -i 'Magneton' >> Magneton.txt
-cat newpages.txt | egrep -i 'Magnezone' >> Magnezone.txt
-cat newpages.txt | egrep -i 'Makuhita' >> Makuhita.txt
-cat newpages.txt | egrep -i 'Mamoswine' >> Mamoswine.txt
-cat newpages.txt | egrep -i 'Manaphy' >> Manaphy.txt
-cat newpages.txt | egrep -i 'Mandibuzz' >> Mandibuzz.txt
-cat newpages.txt | egrep -i 'Manectric' >> Manectric.txt
-cat newpages.txt | egrep -i 'Mankey' >> Mankey.txt
-cat newpages.txt | egrep -i 'Mantine' >> Mantine.txt
-cat newpages.txt | egrep -i 'Mantyke' >> Mantyke.txt
-cat newpages.txt | egrep -i 'Maractus' >> Maractus.txt
-cat newpages.txt | egrep -i 'Mareep' >> Mareep.txt
-cat newpages.txt | egrep -i 'Marill' >> Marill.txt
-cat newpages.txt | egrep -i 'Marowak' >> Marowak.txt
-cat newpages.txt | egrep -i 'Marshtomp' >> Marshtomp.txt
-cat newpages.txt | egrep -i 'Masquerain' >> Masquerain.txt
-cat newpages.txt | egrep -i 'Mawile' >> Mawile.txt
-cat newpages.txt | egrep -i 'Medicham' >> Medicham.txt
-cat newpages.txt | egrep -i 'Meditite' >> Meditite.txt
-cat newpages.txt | egrep -i 'Meganium' >> Meganium.txt
-cat newpages.txt | egrep -i 'Meloetta' >> Meloetta.txt
-cat newpages.txt | egrep -i 'Meowth' >> Meowth.txt
-cat newpages.txt | egrep -i 'Mesprit' >> Mesprit.txt
-cat newpages.txt | egrep -i 'Metagross' >> Metagross.txt
-cat newpages.txt | egrep -i 'Metang' >> Metang.txt
-cat newpages.txt | egrep -i 'Metapod' >> Metapod.txt
-cat newpages.txt | egrep -i '\bMew\b' >> Mew.txt
-cat newpages.txt | egrep -i 'Mewtwo' >> Mewtwo.txt
-cat newpages.txt | egrep -i 'Mightyena' >> Mightyena.txt
-cat newpages.txt | egrep -i 'Milotic' >> Milotic.txt
-cat newpages.txt | egrep -i 'Miltank' >> Miltank.txt
-cat newpages.txt | egrep -i 'Mime Jr' >> MimeJr.txt
-cat newpages.txt | egrep -i 'Minccino' >> Minccino.txt
-cat newpages.txt | egrep -i 'Mienfoo' >> Mienfoo.txt
-cat newpages.txt | egrep -i 'Mienshao' >> Mienshao.txt
-cat newpages.txt | egrep -i 'Minun' >> Minun.txt
-cat newpages.txt | egrep -i 'Misdreavus' >> Misdreavus.txt
-cat newpages.txt | egrep -i 'Mismagius' >> Mismagius.txt
-cat newpages.txt | egrep -i 'Moltres' >> Moltres.txt
-cat newpages.txt | egrep -i 'Monferno' >> Monferno.txt
-cat newpages.txt | egrep -i 'Mothim' >> Mothim.txt
-cat newpages.txt | egrep -i 'Mr. Mime' >> MrMime.txt
-cat newpages.txt | egrep -i 'Mudkip' >> Mudkip.txt
-cat newpages.txt | egrep -i 'Muk' >> Muk.txt
-cat newpages.txt | egrep -i 'Munchlax' >> Munchlax.txt
-cat newpages.txt | egrep -i 'Munna\b' >> Munna.txt
-cat newpages.txt | egrep -i 'Murkrow' >> Murkrow.txt
-cat newpages.txt | egrep -i 'Musharna' >> Musharna.txt
+egrep -i 'Machamp' newpages.txt >> Machamp.txt
+egrep -i 'Machoke' newpages.txt >> Machoke.txt
+egrep -i 'Machop' newpages.txt >> Machop.txt
+egrep -i 'Magby' newpages.txt >> Magby.txt
+egrep -i 'Magcargo' newpages.txt >> Magcargo.txt
+egrep -i 'Magikarp' newpages.txt >> Magikarp.txt
+egrep -i 'Magmar' newpages.txt >> Magmar.txt
+egrep -i 'Magmortar' newpages.txt >> Magmortar.txt
+egrep -i 'Magnemite' newpages.txt >> Magnemite.txt
+egrep -i 'Magneton' newpages.txt >> Magneton.txt
+egrep -i 'Magnezone' newpages.txt >> Magnezone.txt
+egrep -i 'Makuhita' newpages.txt >> Makuhita.txt
+egrep -i 'Mamoswine' newpages.txt >> Mamoswine.txt
+egrep -i 'Manaphy' newpages.txt >> Manaphy.txt
+egrep -i 'Mandibuzz' newpages.txt >> Mandibuzz.txt
+egrep -i 'Manectric' newpages.txt >> Manectric.txt
+egrep -i 'Mankey' newpages.txt >> Mankey.txt
+egrep -i 'Mantine' newpages.txt >> Mantine.txt
+egrep -i 'Mantyke' newpages.txt >> Mantyke.txt
+egrep -i 'Maractus' newpages.txt >> Maractus.txt
+egrep -i 'Mareep' newpages.txt >> Mareep.txt
+egrep -i 'Marill' newpages.txt >> Marill.txt
+egrep -i 'Marowak' newpages.txt >> Marowak.txt
+egrep -i 'Marshtomp' newpages.txt >> Marshtomp.txt
+egrep -i 'Masquerain' newpages.txt >> Masquerain.txt
+egrep -i 'Mawile' newpages.txt >> Mawile.txt
+egrep -i 'Medicham' newpages.txt >> Medicham.txt
+egrep -i 'Meditite' newpages.txt >> Meditite.txt
+egrep -i 'Meganium' newpages.txt >> Meganium.txt
+egrep -i 'Meloetta' newpages.txt >> Meloetta.txt
+egrep -i 'Meowth' newpages.txt >> Meowth.txt
+egrep -i 'Mesprit' newpages.txt >> Mesprit.txt
+egrep -i 'Metagross' newpages.txt >> Metagross.txt
+egrep -i 'Metang' newpages.txt >> Metang.txt
+egrep -i 'Metapod' newpages.txt >> Metapod.txt
+egrep -i '\bMew\b' newpages.txt >> Mew.txt
+egrep -i 'Mewtwo' newpages.txt >> Mewtwo.txt
+egrep -i 'Mightyena' newpages.txt >> Mightyena.txt
+egrep -i 'Milotic' newpages.txt >> Milotic.txt
+egrep -i 'Miltank' newpages.txt >> Miltank.txt
+egrep -i 'Mime Jr' newpages.txt >> MimeJr.txt
+egrep -i 'Minccino' newpages.txt >> Minccino.txt
+egrep -i 'Mienfoo' newpages.txt >> Mienfoo.txt
+egrep -i 'Mienshao' newpages.txt >> Mienshao.txt
+egrep -i 'Minun' newpages.txt >> Minun.txt
+egrep -i 'Misdreavus' newpages.txt >> Misdreavus.txt
+egrep -i 'Mismagius' newpages.txt >> Mismagius.txt
+egrep -i 'Moltres' newpages.txt >> Moltres.txt
+egrep -i 'Monferno' newpages.txt >> Monferno.txt
+egrep -i 'Mothim' newpages.txt >> Mothim.txt
+egrep -i 'Mr. Mime' newpages.txt >> MrMime.txt
+egrep -i 'Mudkip' newpages.txt >> Mudkip.txt
+egrep -i 'Muk' newpages.txt >> Muk.txt
+egrep -i 'Munchlax' newpages.txt >> Munchlax.txt
+egrep -i 'Munna\b' newpages.txt >> Munna.txt
+egrep -i 'Murkrow' newpages.txt >> Murkrow.txt
+egrep -i 'Musharna' newpages.txt >> Musharna.txt
 
 Machamp=`stat --print=%s Machamp.txt`
 Machoke=`stat --print=%s Machoke.txt`

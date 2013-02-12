@@ -1,26 +1,26 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Kabuto\b' >> Kabuto.txt
-cat newpages.txt | egrep -i 'Kabutops' >> Kabutops.txt
-cat newpages.txt | egrep -i 'Kadabra' >> Kadabra.txt
-cat newpages.txt | egrep -i 'Kakuna' >> Kakuna.txt
-cat newpages.txt | egrep -i 'Kangaskhan' >> Kangaskhan.txt
-cat newpages.txt | egrep -i 'Karrablast' >> Karrablast.txt
-cat newpages.txt | egrep -i 'Kecleon' >> Kecleon.txt
-cat newpages.txt | egrep -i 'Keldeo' >> Keldeo.txt
-cat newpages.txt | egrep -i 'Kingdra' >> Kingdra.txt
-cat newpages.txt | egrep -i 'Kingler' >> Kingler.txt
-cat newpages.txt | egrep -i 'Kirlia' >> Kirlia.txt
-cat newpages.txt | egrep -i 'Klang' >> Klang.txt
-cat newpages.txt | egrep -i 'Klink' >> Klink.txt
-cat newpages.txt | egrep -i 'Klinklang' >> Klinklang.txt
-cat newpages.txt | egrep -i 'Koffing' >> Koffing.txt
-cat newpages.txt | egrep -i 'Krabby' | egrep -iv 'Krabby patt(y|ies)' >> Krabby.txt
-cat newpages.txt | egrep -i 'Kricketot' >> Kricketot.txt
-cat newpages.txt | egrep -i 'Kricketune' >> Kricketune.txt
-cat newpages.txt | egrep -i 'Krookodile' >> Krookodile.txt
-cat newpages.txt | egrep -i 'Krokorok' >> Krokorok.txt
-cat newpages.txt | egrep -i 'Kyogre' >> Kyogre.txt
-cat newpages.txt | egrep -i 'Kyurem' >> Kyurem.txt
+egrep -i 'Kabuto\b' newpages.txt >> Kabuto.txt
+egrep -i 'Kabutops' newpages.txt >> Kabutops.txt
+egrep -i 'Kadabra' newpages.txt >> Kadabra.txt
+egrep -i 'Kakuna' newpages.txt >> Kakuna.txt
+egrep -i 'Kangaskhan' newpages.txt >> Kangaskhan.txt
+egrep -i 'Karrablast' newpages.txt >> Karrablast.txt
+egrep -i 'Kecleon' newpages.txt >> Kecleon.txt
+egrep -i 'Keldeo' newpages.txt >> Keldeo.txt
+egrep -i 'Kingdra' newpages.txt >> Kingdra.txt
+egrep -i 'Kingler' newpages.txt >> Kingler.txt
+egrep -i 'Kirlia' newpages.txt >> Kirlia.txt
+egrep -i 'Klang' newpages.txt >> Klang.txt
+egrep -i 'Klink' newpages.txt >> Klink.txt
+egrep -i 'Klinklang' newpages.txt >> Klinklang.txt
+egrep -i 'Koffing' newpages.txt >> Koffing.txt
+egrep -i 'Krabby' | egrep -iv 'Krabby patt(y|ies)' newpages.txt >> Krabby.txt
+egrep -i 'Kricketot' newpages.txt >> Kricketot.txt
+egrep -i 'Kricketune' newpages.txt >> Kricketune.txt
+egrep -i 'Krookodile' newpages.txt >> Krookodile.txt
+egrep -i 'Krokorok' newpages.txt >> Krokorok.txt
+egrep -i 'Kyogre' newpages.txt >> Kyogre.txt
+egrep -i 'Kyurem' newpages.txt >> Kyurem.txt
 
 Kabuto=`stat --print=%s Kabuto.txt`
 Kabutops=`stat --print=%s Kabutops.txt`

@@ -1,56 +1,56 @@
 #!/bin/bash
 #Pokemon species by name, starting with the letter C
 
-cat newpages.txt | egrep -i 'Cacnea' >>  Cacnea.txt
-cat newpages.txt | egrep -i 'Cacturne' >>  Cacturne.txt
-cat newpages.txt | egrep -i 'Camerupt' >> Camerupt.txt
-cat newpages.txt | egrep -i 'Carnivine' >> Carnivine.txt
-cat newpages.txt | egrep -i 'Carracosta' >> Carracosta.txt
-cat newpages.txt | egrep -i 'Carvanha' >> Carvanha.txt
-cat newpages.txt | egrep -i 'Cascoon' >> Cascoon.txt
-cat newpages.txt | egrep -i 'Castform' >> Castform.txt
-cat newpages.txt | egrep -i 'Caterpie' >> Caterpie.txt
-cat newpages.txt | egrep -i 'Celebi' >> Celebi.txt
-cat newpages.txt | egrep -i 'Chandelure' >> Chandelure.txt
-cat newpages.txt | egrep -i 'Chansey' >> Chansey.txt
-cat newpages.txt | egrep -i 'Charizard' >> Charizard.txt
-cat newpages.txt | egrep -i 'Charmander' >> Charmander.txt
-cat newpages.txt | egrep -i 'Charmeleon' >> Charmeleon.txt
-cat newpages.txt | egrep -i 'Chatot' >> Chatot.txt
-cat newpages.txt | egrep -i 'Cherrim' >> Cherrim.txt
-cat newpages.txt | egrep -i "Cherubi\b|Cherubi's|Cherubis\b" >> Cherubi.txt
-cat newpages.txt | egrep -i 'Chikorita' >> Chikorita.txt
-cat newpages.txt | egrep -i 'Chimchar' >> Chimchar.txt
-cat newpages.txt | egrep -i 'Chimecho' >> Chimecho.txt
-cat newpages.txt | egrep -i 'Chinchou' >> Chinchou.txt
-cat newpages.txt | egrep -i 'Chingling' >> Chingling.txt
-cat newpages.txt | egrep -i 'Cinccino' >> Cinccino.txt
-cat newpages.txt | egrep -i 'Clamperl' >> Clamperl.txt
-cat newpages.txt | egrep -i 'Claydol' >> Claydol.txt
-cat newpages.txt | egrep -i 'Clefable' >> Clefable.txt
-cat newpages.txt | egrep -i 'Clefairy' >> Clefairy.txt
-cat newpages.txt | egrep -i 'Cleffa' >> Cleffa.txt
-cat newpages.txt | egrep -i 'Cloyster' >> Cloyster.txt
-cat newpages.txt | egrep -i 'Cobalion' >> Cobalion.txt
-cat newpages.txt | egrep -i 'Cofagrigus|Confagrigus' >> Cofagrigus.txt
-cat newpages.txt | egrep -i 'Combee' >> Combee.txt
-cat newpages.txt | egrep -i 'Combusken' >> Combusken.txt
-cat newpages.txt | egrep -i 'Conkeldurr' >> Conkeldurr.txt
-cat newpages.txt | egrep -i 'Corphish' >> Corphish.txt
-cat newpages.txt | egrep -i 'Corsola' >> Corsola.txt
-cat newpages.txt | egrep -i 'Cottonee' >> Cottonee.txt
-cat newpages.txt | egrep -i 'Cradily' >> Cradily.txt
-cat newpages.txt | egrep -i 'Cranidos' >> Cranidos.txt
-cat newpages.txt | egrep -i 'Crawdaunt' >> Crawdaunt.txt
-cat newpages.txt | egrep -i 'Cresselia' >> Cresselia.txt
-cat newpages.txt | egrep -i 'Croagunk' >> Croagunk.txt
-cat newpages.txt | egrep -i 'Crobat' >> Crobat.txt
-cat newpages.txt | egrep -i 'Croconaw' >> Croconaw.txt
-cat newpages.txt | egrep -i 'Crustle' >> Crustle.txt
-cat newpages.txt | egrep -i 'Cryogonal' >> Cryogonal.txt
-cat newpages.txt | egrep -i 'Cubchoo' >> Cubchoo.txt
-cat newpages.txt | egrep -i 'Cubone' >> Cubone.txt
-cat newpages.txt | egrep -i 'Cyndaquil' >> Cyndaquil.txt
+egrep -i 'Cacnea' newpages.txt >>  Cacnea.txt
+egrep -i 'Cacturne' newpages.txt >>  Cacturne.txt
+egrep -i 'Camerupt' newpages.txt >> Camerupt.txt
+egrep -i 'Carnivine' newpages.txt >> Carnivine.txt
+egrep -i 'Carracosta' newpages.txt >> Carracosta.txt
+egrep -i 'Carvanha' newpages.txt >> Carvanha.txt
+egrep -i 'Cascoon' newpages.txt >> Cascoon.txt
+egrep -i 'Castform' newpages.txt >> Castform.txt
+egrep -i 'Caterpie' newpages.txt >> Caterpie.txt
+egrep -i 'Celebi' newpages.txt >> Celebi.txt
+egrep -i 'Chandelure' newpages.txt >> Chandelure.txt
+egrep -i 'Chansey' newpages.txt >> Chansey.txt
+egrep -i 'Charizard' newpages.txt >> Charizard.txt
+egrep -i 'Charmander' newpages.txt >> Charmander.txt
+egrep -i 'Charmeleon' newpages.txt >> Charmeleon.txt
+egrep -i 'Chatot' newpages.txt >> Chatot.txt
+egrep -i 'Cherrim' newpages.txt >> Cherrim.txt
+egrep -i "Cherubi\b|Cherubi's|Cherubis\b" >> Cherubi.txt
+egrep -i 'Chikorita' newpages.txt >> Chikorita.txt
+egrep -i 'Chimchar' newpages.txt >> Chimchar.txt
+egrep -i 'Chimecho' newpages.txt >> Chimecho.txt
+egrep -i 'Chinchou' newpages.txt >> Chinchou.txt
+egrep -i 'Chingling' newpages.txt >> Chingling.txt
+egrep -i 'Cinccino' newpages.txt >> Cinccino.txt
+egrep -i 'Clamperl' newpages.txt >> Clamperl.txt
+egrep -i 'Claydol' newpages.txt >> Claydol.txt
+egrep -i 'Clefable' newpages.txt >> Clefable.txt
+egrep -i 'Clefairy' newpages.txt >> Clefairy.txt
+egrep -i 'Cleffa' newpages.txt >> Cleffa.txt
+egrep -i 'Cloyster' newpages.txt >> Cloyster.txt
+egrep -i 'Cobalion' newpages.txt >> Cobalion.txt
+egrep -i 'Cofagrigus|Confagrigus' newpages.txt >> Cofagrigus.txt
+egrep -i 'Combee' newpages.txt >> Combee.txt
+egrep -i 'Combusken' newpages.txt >> Combusken.txt
+egrep -i 'Conkeldurr' newpages.txt >> Conkeldurr.txt
+egrep -i 'Corphish' newpages.txt >> Corphish.txt
+egrep -i 'Corsola' newpages.txt >> Corsola.txt
+egrep -i 'Cottonee' newpages.txt >> Cottonee.txt
+egrep -i 'Cradily' newpages.txt >> Cradily.txt
+egrep -i 'Cranidos' newpages.txt >> Cranidos.txt
+egrep -i 'Crawdaunt' newpages.txt >> Crawdaunt.txt
+egrep -i 'Cresselia' newpages.txt >> Cresselia.txt
+egrep -i 'Croagunk' newpages.txt >> Croagunk.txt
+egrep -i 'Crobat' newpages.txt >> Crobat.txt
+egrep -i 'Croconaw' newpages.txt >> Croconaw.txt
+egrep -i 'Crustle' newpages.txt >> Crustle.txt
+egrep -i 'Cryogonal' newpages.txt >> Cryogonal.txt
+egrep -i 'Cubchoo' newpages.txt >> Cubchoo.txt
+egrep -i 'Cubone' newpages.txt >> Cubone.txt
+egrep -i 'Cyndaquil' newpages.txt >> Cyndaquil.txt
 
 
 CACNEA=`stat --print=%s Cacnea.txt`

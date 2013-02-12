@@ -1,37 +1,37 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Lairon' >> Lairon.txt
-cat newpages.txt | egrep -i 'Lampent' >> Lampent.txt
-cat newpages.txt | egrep -i 'Landorus' >> Landorus.txt
-cat newpages.txt | egrep -i 'Lanturn' >> Lanturn.txt
-cat newpages.txt | egrep -i 'Lapras' >> Lapras.txt
-cat newpages.txt | egrep -i 'Larvesta' >> Larvesta.txt
-cat newpages.txt | egrep -i 'Larvitar' >> Larvitar.txt
-cat newpages.txt | egrep -i 'Latias' >> Latias.txt
-cat newpages.txt | egrep -i 'Latios' >> Latios.txt
-cat newpages.txt | egrep -i 'Leafeon' >> Leafeon.txt
-cat newpages.txt | egrep -i 'Leavanny' >> Leavanny.txt
-cat newpages.txt | egrep -i 'Ledian' >> Ledian.txt
-cat newpages.txt | egrep -i 'Ledyba' >> Ledyba.txt
-cat newpages.txt | egrep -i 'Lickilicky' >> Lickilicky.txt
-cat newpages.txt | egrep -i 'Lickitung' >> Lickitung.txt
-cat newpages.txt | egrep -i 'Liepard' >> Liepard.txt
-cat newpages.txt | egrep -i 'Lileep' >> Lileep.txt
-cat newpages.txt | egrep -i 'Lilligant' >> Lilligant.txt
-cat newpages.txt | egrep -i 'Lillipup' >> Lillipup.txt
-cat newpages.txt | egrep -i 'Linoone' >> Linoone.txt
-cat newpages.txt | egrep -i 'Litwick' >> Litwick.txt
-cat newpages.txt | egrep -i 'Lombre' >> Lombre.txt
-cat newpages.txt | egrep -i 'Lopunny' >> Lopunny.txt
-cat newpages.txt | egrep -i 'Lotad' >> Lotad.txt
-cat newpages.txt | egrep -i 'Loudred' >> Loudred.txt
-cat newpages.txt | egrep -i 'Lucario' >> Lucario.txt
-cat newpages.txt | egrep -i 'Ludicolo' >> Ludicolo.txt
-cat newpages.txt | egrep -i 'Lugia' >> Lugia.txt
-cat newpages.txt | egrep -i 'Lumineon' >> Lumineon.txt
-cat newpages.txt | egrep -i 'Lunatone' >> Lunatone.txt
-cat newpages.txt | egrep -i 'Luvdisc' >> Luvdisc.txt
-cat newpages.txt | egrep -i 'Luxio' >> Luxio.txt
-cat newpages.txt | egrep -i 'Luxray' >> Luxray.txt
+egrep -i 'Lairon' newpages.txt >> Lairon.txt
+egrep -i 'Lampent' newpages.txt >> Lampent.txt
+egrep -i 'Landorus' newpages.txt >> Landorus.txt
+egrep -i 'Lanturn' newpages.txt >> Lanturn.txt
+egrep -i 'Lapras' newpages.txt >> Lapras.txt
+egrep -i 'Larvesta' newpages.txt >> Larvesta.txt
+egrep -i 'Larvitar' newpages.txt >> Larvitar.txt
+egrep -i 'Latias' newpages.txt >> Latias.txt
+egrep -i 'Latios' newpages.txt >> Latios.txt
+egrep -i 'Leafeon' newpages.txt >> Leafeon.txt
+egrep -i 'Leavanny' newpages.txt >> Leavanny.txt
+egrep -i 'Ledian' newpages.txt >> Ledian.txt
+egrep -i 'Ledyba' newpages.txt >> Ledyba.txt
+egrep -i 'Lickilicky' newpages.txt >> Lickilicky.txt
+egrep -i 'Lickitung' newpages.txt >> Lickitung.txt
+egrep -i 'Liepard' newpages.txt >> Liepard.txt
+egrep -i 'Lileep' newpages.txt >> Lileep.txt
+egrep -i 'Lilligant' newpages.txt >> Lilligant.txt
+egrep -i 'Lillipup' newpages.txt >> Lillipup.txt
+egrep -i 'Linoone' newpages.txt >> Linoone.txt
+egrep -i 'Litwick' newpages.txt >> Litwick.txt
+egrep -i 'Lombre' newpages.txt >> Lombre.txt
+egrep -i 'Lopunny' newpages.txt >> Lopunny.txt
+egrep -i 'Lotad' newpages.txt >> Lotad.txt
+egrep -i 'Loudred' newpages.txt >> Loudred.txt
+egrep -i 'Lucario' newpages.txt >> Lucario.txt
+egrep -i 'Ludicolo' newpages.txt >> Ludicolo.txt
+egrep -i 'Lugia' newpages.txt >> Lugia.txt
+egrep -i 'Lumineon' newpages.txt >> Lumineon.txt
+egrep -i 'Lunatone' newpages.txt >> Lunatone.txt
+egrep -i 'Luvdisc' newpages.txt >> Luvdisc.txt
+egrep -i 'Luxio' newpages.txt >> Luxio.txt
+egrep -i 'Luxray' newpages.txt >> Luxray.txt
 
 Lairon=`stat --print=%s Lairon.txt`
 Lampent=`stat --print=%s Lampent.txt`

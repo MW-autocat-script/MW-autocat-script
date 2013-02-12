@@ -1,41 +1,41 @@
 #!/bin/bash 
 #Pokemon species by name, starting with the letter D
 
-cat newpages.txt | egrep -i 'Darkrai' >>  Darkrai.txt
-cat newpages.txt | egrep -i 'Darmanitan' >>  Darmanitan.txt
-cat newpages.txt | egrep -i 'Darumaka' >>  Darumaka.txt
-cat newpages.txt | egrep -i 'Deerling' >>  Deerling.txt
-cat newpages.txt | egrep -i 'Deino' >>  Deino.txt
-cat newpages.txt | egrep -i 'Delcatty' >>  Delcatty.txt
-cat newpages.txt | egrep -i 'Delibird' >>  Delibird.txt
-cat newpages.txt | egrep -i 'Deoxys' >>  Deoxys.txt
-cat newpages.txt | egrep -i 'Dewgong' >>  Dewgong.txt
-cat newpages.txt | egrep -i 'Dewott' >>  Dewott.txt
-cat newpages.txt | egrep -i 'Dialga' >>  Dialga.txt
-cat newpages.txt | egrep -i 'Diglett' >>  Diglett.txt
-cat newpages.txt | egrep -i '(find|catch|evolve|level|stats) (Ditto|Dotto)|(Ditto|Dotto) (find|catch|evolve|level|stats|at)' >>  Ditto.txt
-cat newpages.txt | egrep -i 'Dodrio' >>  Dodrio.txt
-cat newpages.txt | egrep -i 'Doduo' >>  Doduo.txt
-cat newpages.txt | egrep -i 'Donphan' >>  Donphan.txt
-cat newpages.txt | egrep -i 'Dragonair' >>  Dragonair.txt
-cat newpages.txt | egrep -i 'Dragonite' >>  Dragonite.txt
-cat newpages.txt | egrep -i 'Drapion' >>  Drapion.txt
-cat newpages.txt | egrep -i 'Dratini' >>  Dratini.txt
-cat newpages.txt | egrep -i 'Drilbur' >>  Drilbur.txt
-cat newpages.txt | egrep -i 'Drifblim' >>  Drifblim.txt
-cat newpages.txt | egrep -i 'Drifloon' >>  Drifloon.txt
-cat newpages.txt | egrep -i 'Drowzee' >>  Drowzee.txt
-cat newpages.txt | egrep -i 'Druddigon' >>  Druddigon.txt
-cat newpages.txt | egrep -i 'Ducklett' >>  Ducklett.txt
-cat newpages.txt | egrep -i 'Dugtrio' >>  Dugtrio.txt
-cat newpages.txt | egrep -i 'Dunsparce' >>  Dunsparce.txt
-cat newpages.txt | egrep -i 'Duosion' >>  Duosion.txt
-cat newpages.txt | egrep -i 'Durant' >>  Durant.txt
-cat newpages.txt | egrep -i 'Dusclops' >>  Dusclops.txt
-cat newpages.txt | egrep -i 'Dusknoir' >>  Dusknoir.txt
-cat newpages.txt | egrep -i 'Duskull' >>  Duskull.txt
-cat newpages.txt | egrep -i 'Dustox' >>  Dustox.txt
-cat newpages.txt | egrep -i 'Dwebble' >>  Dwebble.txt
+egrep -i 'Darkrai' newpages.txt >>   Darkrai.txt
+egrep -i 'Darmanitan' newpages.txt >>   Darmanitan.txt
+egrep -i 'Darumaka' newpages.txt >>   Darumaka.txt
+egrep -i 'Deerling' newpages.txt >>   Deerling.txt
+egrep -i 'Deino' newpages.txt >>   Deino.txt
+egrep -i 'Delcatty' newpages.txt >>   Delcatty.txt
+egrep -i 'Delibird' newpages.txt >>   Delibird.txt
+egrep -i 'Deoxys' newpages.txt >>   Deoxys.txt
+egrep -i 'Dewgong' newpages.txt >>   Dewgong.txt
+egrep -i 'Dewott' newpages.txt >>   Dewott.txt
+egrep -i 'Dialga' newpages.txt >>   Dialga.txt
+egrep -i 'Diglett' newpages.txt >>   Diglett.txt
+egrep -i '(find|catch|evolve|level|stats) (Ditto|Dotto)|(Ditto|Dotto) (find|catch|evolve|level|stats|at)' newpages.txt >>   Ditto.txt
+egrep -i 'Dodrio' newpages.txt >>   Dodrio.txt
+egrep -i 'Doduo' newpages.txt >>   Doduo.txt
+egrep -i 'Donphan' newpages.txt >>   Donphan.txt
+egrep -i 'Dragonair' newpages.txt >>   Dragonair.txt
+egrep -i 'Dragonite' newpages.txt >>   Dragonite.txt
+egrep -i 'Drapion' newpages.txt >>   Drapion.txt
+egrep -i 'Dratini' newpages.txt >>   Dratini.txt
+egrep -i 'Drilbur' newpages.txt >>   Drilbur.txt
+egrep -i 'Drifblim' newpages.txt >>   Drifblim.txt
+egrep -i 'Drifloon' newpages.txt >>   Drifloon.txt
+egrep -i 'Drowzee' newpages.txt >>   Drowzee.txt
+egrep -i 'Druddigon' newpages.txt >>   Druddigon.txt
+egrep -i 'Ducklett' newpages.txt >>   Ducklett.txt
+egrep -i 'Dugtrio' newpages.txt >>   Dugtrio.txt
+egrep -i 'Dunsparce' newpages.txt >>   Dunsparce.txt
+egrep -i 'Duosion' newpages.txt >>   Duosion.txt
+egrep -i 'Durant' newpages.txt >>   Durant.txt
+egrep -i 'Dusclops' newpages.txt >>   Dusclops.txt
+egrep -i 'Dusknoir' newpages.txt >>   Dusknoir.txt
+egrep -i 'Duskull' newpages.txt >>   Duskull.txt
+egrep -i 'Dustox' newpages.txt >>   Dustox.txt
+egrep -i 'Dwebble' newpages.txt >>   Dwebble.txt
 
 Darkrai=`stat --print=%s Darkrai.txt`
 Darmanitan=`stat --print=%s Darmanitan.txt`

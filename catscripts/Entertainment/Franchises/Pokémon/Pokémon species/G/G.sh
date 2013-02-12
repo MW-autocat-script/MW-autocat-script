@@ -1,47 +1,47 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Gabite' >> Gabite.txt
-cat newpages.txt | egrep -i 'Gallade' >> Gallade.txt
-cat newpages.txt | egrep -i 'Garbodor' >> Garbodor.txt
-cat newpages.txt | egrep -i 'Garchomp' >> Garchomp.txt
-cat newpages.txt | egrep -i 'Gardevoir' >> Gardevoir.txt
-cat newpages.txt | egrep -i 'Gastly' >> Gastly.txt
-cat newpages.txt | egrep -i 'Gastrodon' >> Gastrodon.txt
-cat newpages.txt | egrep -i 'Galvantula' >> Galvantula.txt
-cat newpages.txt | egrep -i 'Genesect' >> Genesect.txt
-cat newpages.txt | egrep -i 'Gengar' >> Gengar.txt
-cat newpages.txt | egrep -i 'Geodude' >> Geodude.txt
-cat newpages.txt | egrep -i '\bGible' >> Gible.txt
-cat newpages.txt | egrep -i 'Gigalith' >> Gigalith.txt
-cat newpages.txt | egrep -i 'Girafarig' >> Girafarig.txt
-cat newpages.txt | egrep -i 'Giratina' >> Giratina.txt
-cat newpages.txt | egrep -i 'Glaceon' >> Glaceon.txt
-cat newpages.txt | egrep -i 'Glalie' >> Glalie.txt
-cat newpages.txt | egrep -i 'Glameow' >> Glameow.txt
-cat newpages.txt | egrep -i 'Gligar' >> Gligar.txt
-cat newpages.txt | egrep -i 'Gliscor' >> Gliscor.txt
-cat newpages.txt | egrep -i 'Gloom\b' >> Gloom.txt
-cat newpages.txt | egrep -i 'Golbat' >> Golbat.txt
-cat newpages.txt | egrep -i 'Goldeen' >> Goldeen.txt
-cat newpages.txt | egrep -i 'Golduck' >> Golduck.txt
-cat newpages.txt | egrep -i 'Golem' >> Golem.txt
-cat newpages.txt | egrep -i 'Golett' >> Golett.txt
-cat newpages.txt | egrep -i 'Golurk' >> Golurk.txt
-cat newpages.txt | egrep -i 'Gorebyss' >> Gorebyss.txt
-cat newpages.txt | egrep -i 'Gothita' >> Gothita.txt
-cat newpages.txt | egrep -i 'Gothitelle' >> Gothitelle.txt
-cat newpages.txt | egrep -i 'Gothorita' >> Gothorita.txt
-cat newpages.txt | egrep -i 'Granbull' >> Granbull.txt
-cat newpages.txt | egrep -i 'Graveler' >> Graveler.txt
-cat newpages.txt | egrep -i 'Grimer' >> Grimer.txt
-cat newpages.txt | egrep -i 'Grotle' >> Grotle.txt
-cat newpages.txt | egrep -i 'Groudon' >> Groudon.txt
-cat newpages.txt | egrep -i 'Grovyle' >> Grovyle.txt
-cat newpages.txt | egrep -i 'Growlithe' >> Growlithe.txt
-cat newpages.txt | egrep -i 'Grumpig' >> Grumpig.txt
-cat newpages.txt | egrep -i 'Gulpin' >> Gulpin.txt
-cat newpages.txt | egrep -i 'Gurdurr' >> Gurdurr.txt
-cat newpages.txt | egrep -i 'Gyarados' >> Gyarados.txt
+egrep -i 'Gabite' newpages.txt >> Gabite.txt
+egrep -i 'Gallade' newpages.txt >> Gallade.txt
+egrep -i 'Garbodor' newpages.txt >> Garbodor.txt
+egrep -i 'Garchomp' newpages.txt >> Garchomp.txt
+egrep -i 'Gardevoir' newpages.txt >> Gardevoir.txt
+egrep -i 'Gastly' newpages.txt >> Gastly.txt
+egrep -i 'Gastrodon' newpages.txt >> Gastrodon.txt
+egrep -i 'Galvantula' newpages.txt >> Galvantula.txt
+egrep -i 'Genesect' newpages.txt >> Genesect.txt
+egrep -i 'Gengar' newpages.txt >> Gengar.txt
+egrep -i 'Geodude' newpages.txt >> Geodude.txt
+egrep -i '\bGible' newpages.txt >> Gible.txt
+egrep -i 'Gigalith' newpages.txt >> Gigalith.txt
+egrep -i 'Girafarig' newpages.txt >> Girafarig.txt
+egrep -i 'Giratina' newpages.txt >> Giratina.txt
+egrep -i 'Glaceon' newpages.txt >> Glaceon.txt
+egrep -i 'Glalie' newpages.txt >> Glalie.txt
+egrep -i 'Glameow' newpages.txt >> Glameow.txt
+egrep -i 'Gligar' newpages.txt >> Gligar.txt
+egrep -i 'Gliscor' newpages.txt >> Gliscor.txt
+egrep -i 'Gloom\b' newpages.txt >> Gloom.txt
+egrep -i 'Golbat' newpages.txt >> Golbat.txt
+egrep -i 'Goldeen' newpages.txt >> Goldeen.txt
+egrep -i 'Golduck' newpages.txt >> Golduck.txt
+egrep -i 'Golem' newpages.txt >> Golem.txt
+egrep -i 'Golett' newpages.txt >> Golett.txt
+egrep -i 'Golurk' newpages.txt >> Golurk.txt
+egrep -i 'Gorebyss' newpages.txt >> Gorebyss.txt
+egrep -i 'Gothita' newpages.txt >> Gothita.txt
+egrep -i 'Gothitelle' newpages.txt >> Gothitelle.txt
+egrep -i 'Gothorita' newpages.txt >> Gothorita.txt
+egrep -i 'Granbull' newpages.txt >> Granbull.txt
+egrep -i 'Graveler' newpages.txt >> Graveler.txt
+egrep -i 'Grimer' newpages.txt >> Grimer.txt
+egrep -i 'Grotle' newpages.txt >> Grotle.txt
+egrep -i 'Groudon' newpages.txt >> Groudon.txt
+egrep -i 'Grovyle' newpages.txt >> Grovyle.txt
+egrep -i 'Growlithe' newpages.txt >> Growlithe.txt
+egrep -i 'Grumpig' newpages.txt >> Grumpig.txt
+egrep -i 'Gulpin' newpages.txt >> Gulpin.txt
+egrep -i 'Gurdurr' newpages.txt >> Gurdurr.txt
+egrep -i 'Gyarados' newpages.txt >> Gyarados.txt
 
 Gabite=`stat --print=%s Gabite.txt`
 Gallade=`stat --print=%s Gallade.txt`

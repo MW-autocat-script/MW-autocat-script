@@ -1,40 +1,40 @@
 #!/bin/bash 
 #Pokemon species by name, starting with the letter B
 
-cat newpages.txt | egrep -i 'Bagon' >> Bagon.txt
-cat newpages.txt | egrep -i 'Baltoy' >> Baltoy.txt
-cat newpages.txt | egrep -i 'Banette' >> Banette.txt
-cat newpages.txt | egrep -i 'Barboach' >> Barboach.txt
-cat newpages.txt | egrep -i 'Basculin' >> Basculin.txt
-cat newpages.txt | egrep -i 'Bastiodon' >> Bastiodon.txt
-cat newpages.txt | egrep -i 'Bayleef' >> Bayleef.txt
-cat newpages.txt | egrep -i 'Beartic' >> Beartic.txt
-cat newpages.txt | egrep -i 'Beautifly' >> Beautifly.txt
-cat newpages.txt | egrep -i 'Beedrill' >> Beedrill.txt
-cat newpages.txt | egrep -i 'Beheeyem' >> Beheeyem.txt
-cat newpages.txt | egrep -i 'Beldum' >> Beldum.txt
-cat newpages.txt | egrep -i 'Bellossom' >> Bellossom.txt
-cat newpages.txt | egrep -i 'Bellsprout' >> Bellsprout.txt
-cat newpages.txt | egrep -i 'Bibarel' >> Bibarel.txt
-cat newpages.txt | egrep -i 'Bidoof' >> Bidoof.txt
-cat newpages.txt | egrep -i 'Bisharp' >> Bisharp.txt
-cat newpages.txt | egrep -i 'Blastoise' >> Blastoise.txt
-cat newpages.txt | egrep -i 'Blaziken' >> Blaziken.txt
-cat newpages.txt | egrep -i 'Blissey' >> Blissey.txt
-cat newpages.txt | egrep -i 'Blitzle' >> Blitzle.txt
-cat newpages.txt | egrep -i 'Boldore' >> Boldore.txt
-cat newpages.txt | egrep -i 'Bonsly' >> Bonsly.txt
-cat newpages.txt | egrep -i 'Bouffalant' >> Bouffalant.txt
-cat newpages.txt | egrep -i 'Braviary' >> Braviary.txt
-cat newpages.txt | egrep -i 'Breloom' >> Breloom.txt
-cat newpages.txt | egrep -i 'Bronzong' >> Bronzong.txt
-cat newpages.txt | egrep -i 'Bronzor' >> Bronzor.txt
-cat newpages.txt | egrep -i 'Budew' >> Budew.txt
-cat newpages.txt | egrep -i 'Buizel' >> Buizel.txt
-cat newpages.txt | egrep -i 'Bulbasaur' >> Bulbasaur.txt
-cat newpages.txt | egrep -i 'Buneary' >> Buneary.txt
-cat newpages.txt | egrep -i 'Burmy' >> Burmy.txt
-cat newpages.txt | egrep -i 'Butterfree' >> Butterfree.txt
+egrep -i 'Bagon' newpages.txt >> Bagon.txt
+egrep -i 'Baltoy' newpages.txt >> Baltoy.txt
+egrep -i 'Banette' newpages.txt >> Banette.txt
+egrep -i 'Barboach' newpages.txt >> Barboach.txt
+egrep -i 'Basculin' newpages.txt >> Basculin.txt
+egrep -i 'Bastiodon' newpages.txt >> Bastiodon.txt
+egrep -i 'Bayleef' newpages.txt >> Bayleef.txt
+egrep -i 'Beartic' newpages.txt >> Beartic.txt
+egrep -i 'Beautifly' newpages.txt >> Beautifly.txt
+egrep -i 'Beedrill' newpages.txt >> Beedrill.txt
+egrep -i 'Beheeyem' newpages.txt >> Beheeyem.txt
+egrep -i 'Beldum' newpages.txt >> Beldum.txt
+egrep -i 'Bellossom' newpages.txt >> Bellossom.txt
+egrep -i 'Bellsprout' newpages.txt >> Bellsprout.txt
+egrep -i 'Bibarel' newpages.txt >> Bibarel.txt
+egrep -i 'Bidoof' newpages.txt >> Bidoof.txt
+egrep -i 'Bisharp' newpages.txt >> Bisharp.txt
+egrep -i 'Blastoise' newpages.txt >> Blastoise.txt
+egrep -i 'Blaziken' newpages.txt >> Blaziken.txt
+egrep -i 'Blissey' newpages.txt >> Blissey.txt
+egrep -i 'Blitzle' newpages.txt >> Blitzle.txt
+egrep -i 'Boldore' newpages.txt >> Boldore.txt
+egrep -i 'Bonsly' newpages.txt >> Bonsly.txt
+egrep -i 'Bouffalant' newpages.txt >> Bouffalant.txt
+egrep -i 'Braviary' newpages.txt >> Braviary.txt
+egrep -i 'Breloom' newpages.txt >> Breloom.txt
+egrep -i 'Bronzong' newpages.txt >> Bronzong.txt
+egrep -i 'Bronzor' newpages.txt >> Bronzor.txt
+egrep -i 'Budew' newpages.txt >> Budew.txt
+egrep -i 'Buizel' newpages.txt >> Buizel.txt
+egrep -i 'Bulbasaur' newpages.txt >> Bulbasaur.txt
+egrep -i 'Buneary' newpages.txt >> Buneary.txt
+egrep -i 'Burmy' newpages.txt >> Burmy.txt
+egrep -i 'Butterfree' newpages.txt >> Butterfree.txt
 
 
 

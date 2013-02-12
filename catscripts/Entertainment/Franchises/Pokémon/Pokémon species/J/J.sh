@@ -1,11 +1,11 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Jellicent' >> Jellicent.txt
-cat newpages.txt | egrep -i 'Jigglypuff' >> Jigglypuff.txt
-cat newpages.txt | egrep -i 'Jirachi' >> Jirachi.txt
-cat newpages.txt | egrep -i 'Jolteon' >> Jolteon.txt
-cat newpages.txt | egrep -i 'Joltik' >> Joltik.txt
-cat newpages.txt | egrep -i 'Jumpluff' >> Jumpluff.txt
-cat newpages.txt | egrep -i 'Jynx' >> Jynx.txt
+egrep -i 'Jellicent' newpages.txt >> Jellicent.txt
+egrep -i 'Jigglypuff' newpages.txt >> Jigglypuff.txt
+egrep -i 'Jirachi' newpages.txt >> Jirachi.txt
+egrep -i 'Jolteon' newpages.txt >> Jolteon.txt
+egrep -i 'Joltik' newpages.txt >> Joltik.txt
+egrep -i 'Jumpluff' newpages.txt >> Jumpluff.txt
+egrep -i 'Jynx' newpages.txt >> Jynx.txt
 
 Jellicent=`stat --print=%s Jellicent.txt`
 Jigglypuff=`stat --print=%s Jigglypuff.txt`

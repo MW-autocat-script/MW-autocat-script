@@ -1,27 +1,27 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Happiny' >> Happiny.txt
-cat newpages.txt | egrep -i 'Hariyama' >> Hariyama.txt
-cat newpages.txt | egrep -i 'Haunter' >> Haunter.txt
-cat newpages.txt | egrep -i 'Haxorus' >> Haxorus.txt
-cat newpages.txt | egrep -i 'Heatmor' >> Heatmor.txt
-cat newpages.txt | egrep -i 'Heatran' >> Heatran.txt
-cat newpages.txt | egrep -i 'Heracross' >> Heracross.txt
-cat newpages.txt | egrep -i 'Herdier' >> Herdier.txt
-cat newpages.txt | egrep -i 'Hippopotas' >> Hippopotas.txt
-cat newpages.txt | egrep -i 'Hippowdon' >> Hippowdon.txt
-cat newpages.txt | egrep -i 'Hitmonchan' >> Hitmonchan.txt
-cat newpages.txt | egrep -i 'Hitmonlee' >> Hitmonlee.txt
-cat newpages.txt | egrep -i 'Hitmontop' >> Hitmontop.txt
-cat newpages.txt | egrep -i 'Ho-Oh' >> Ho-Oh.txt
-cat newpages.txt | egrep -i 'Honchkrow' >> Honchkrow.txt
-cat newpages.txt | egrep -i 'Hoothoot' >> Hoothoot.txt
-cat newpages.txt | egrep -i 'Hoppip' >> Hoppip.txt
-cat newpages.txt | egrep -i 'Horsea' >> Horsea.txt
-cat newpages.txt | egrep -i 'Houndoom' >> Houndoom.txt
-cat newpages.txt | egrep -i 'Houndour' >> Houndour.txt
-cat newpages.txt | egrep -i 'Huntail' >> Huntail.txt
-cat newpages.txt | egrep -i 'Hydreigon' >> Hydreigon.txt
-cat newpages.txt | egrep -i 'Hypno\b' >> Hypno.txt
+egrep -i 'Happiny' newpages.txt >> Happiny.txt
+egrep -i 'Hariyama' newpages.txt >> Hariyama.txt
+egrep -i 'Haunter' newpages.txt >> Haunter.txt
+egrep -i 'Haxorus' newpages.txt >> Haxorus.txt
+egrep -i 'Heatmor' newpages.txt >> Heatmor.txt
+egrep -i 'Heatran' newpages.txt >> Heatran.txt
+egrep -i 'Heracross' newpages.txt >> Heracross.txt
+egrep -i 'Herdier' newpages.txt >> Herdier.txt
+egrep -i 'Hippopotas' newpages.txt >> Hippopotas.txt
+egrep -i 'Hippowdon' newpages.txt >> Hippowdon.txt
+egrep -i 'Hitmonchan' newpages.txt >> Hitmonchan.txt
+egrep -i 'Hitmonlee' newpages.txt >> Hitmonlee.txt
+egrep -i 'Hitmontop' newpages.txt >> Hitmontop.txt
+egrep -i 'Ho-Oh' newpages.txt >> Ho-Oh.txt
+egrep -i 'Honchkrow' newpages.txt >> Honchkrow.txt
+egrep -i 'Hoothoot' newpages.txt >> Hoothoot.txt
+egrep -i 'Hoppip' newpages.txt >> Hoppip.txt
+egrep -i 'Horsea' newpages.txt >> Horsea.txt
+egrep -i 'Houndoom' newpages.txt >> Houndoom.txt
+egrep -i 'Houndour' newpages.txt >> Houndour.txt
+egrep -i 'Huntail' newpages.txt >> Huntail.txt
+egrep -i 'Hydreigon' newpages.txt >> Hydreigon.txt
+egrep -i 'Hypno\b' newpages.txt >> Hypno.txt
 
 Happiny=`stat --print=%s Happiny.txt`
 Hariyama=`stat --print=%s Hariyama.txt`

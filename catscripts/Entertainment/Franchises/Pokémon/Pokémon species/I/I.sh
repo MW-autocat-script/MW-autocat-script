@@ -1,8 +1,8 @@
 #!/bin/bash
-cat newpages.txt | egrep -i 'Igglybuff' >> Igglybuff.txt
-cat newpages.txt | egrep -i 'Illumise' >> Illumise.txt
-cat newpages.txt | egrep -i 'Infernape' >> Infernape.txt
-cat newpages.txt | egrep -i 'Ivysaur' >> Ivysaur.txt
+egrep -i 'Igglybuff' newpages.txt >> Igglybuff.txt
+egrep -i 'Illumise' newpages.txt >> Illumise.txt
+egrep -i 'Infernape' newpages.txt >> Infernape.txt
+egrep -i 'Ivysaur' newpages.txt >> Ivysaur.txt
 
 Igglybuff=`stat --print=%s Igglybuff.txt`
 Illumise=`stat --print=%s Illumise.txt`

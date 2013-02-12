@@ -1,21 +1,21 @@
 #!/bin/bash
-cat newpages.txt | egrep -i "Farfetch'd|Farfetchd" >> Farfetchd.txt
-cat newpages.txt | egrep -i 'Fearow' >> Fearow.txt
-cat newpages.txt | egrep -i 'Feebas' >> Feebas.txt
-cat newpages.txt | egrep -i 'Feraligatr' >> Feraligatr.txt
-cat newpages.txt | egrep -i 'Ferroseed' >> Ferroseed.txt
-cat newpages.txt | egrep -i 'Ferrothorn' >> Ferrothorn.txt
-cat newpages.txt | egrep -i 'Finneon' >> Finneon.txt
-cat newpages.txt | egrep -i 'Flaaffy' >> Flaaffy.txt
-cat newpages.txt | egrep -i 'Flareon' >> Flareon.txt
-cat newpages.txt | egrep -i 'Floatzel' >> Floatzel.txt
-cat newpages.txt | egrep -i 'Flygon' >> Flygon.txt
-cat newpages.txt | egrep -i 'Foongus' >> Foongus.txt
-cat newpages.txt | egrep -i 'Forretress' >> Forretress.txt
-cat newpages.txt | egrep -i 'Fraxure' >> Fraxure.txt
-cat newpages.txt | egrep -i 'Frillish' >> Frillish.txt
-cat newpages.txt | egrep -i 'Froslass' >> Froslass.txt
-cat newpages.txt | egrep -i 'Furret' >> Furret.txt
+egrep -i "Farfetch'd|Farfetchd" newpages.txt >> Farfetchd.txt
+egrep -i 'Fearow' newpages.txt >> Fearow.txt
+egrep -i 'Feebas' newpages.txt >> Feebas.txt
+egrep -i 'Feraligatr' newpages.txt >> Feraligatr.txt
+egrep -i 'Ferroseed' newpages.txt >> Ferroseed.txt
+egrep -i 'Ferrothorn' newpages.txt >> Ferrothorn.txt
+egrep -i 'Finneon' newpages.txt >> Finneon.txt
+egrep -i 'Flaaffy' newpages.txt >> Flaaffy.txt
+egrep -i 'Flareon' newpages.txt >> Flareon.txt
+egrep -i 'Floatzel' newpages.txt >> Floatzel.txt
+egrep -i 'Flygon' newpages.txt >> Flygon.txt
+egrep -i 'Foongus' newpages.txt >> Foongus.txt
+egrep -i 'Forretress' newpages.txt >> Forretress.txt
+egrep -i 'Fraxure' newpages.txt >> Fraxure.txt
+egrep -i 'Frillish' newpages.txt >> Frillish.txt
+egrep -i 'Froslass' newpages.txt >> Froslass.txt
+egrep -i 'Furret' newpages.txt >> Furret.txt
 
 Farfetchd=`stat --print=%s Farfetchd.txt`
 Fearow=`stat --print=%s Fearow.txt`
