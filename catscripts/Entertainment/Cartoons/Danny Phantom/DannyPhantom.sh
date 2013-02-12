@@ -1,6 +1,6 @@
 #!/bin/bash
 #Script for the children's cartoon Danny Phantom
-cat newpages.txt | egrep -i 'Danny Phantom|dannyphantom' >> DannyPhantom.txt
+egrep -i 'Danny Phantom|dannyphantom' newpages.txt >> DannyPhantom.txt
 
 DANNYPHANTOM=`stat --print=%s DannyPhantom.txt`
 
