@@ -17,6 +17,17 @@ There is no timer loop; it was designed to be launched automatically with cron. 
 
 The files that are created to contain the category lists are all stored where newpagescat.sh is stored. This may cause performance problems when using a file manager, but shouldn't be an issue for non-interactive use.
 
+Dependencies
+=====================
+
+This script depends on the following programs / libraries:
+
+* Python (for pywikipediabot)
+* bash
+* [expect](http://www.nist.gov/el/msid/expect.cfm)
+* GNU egrep (other versions of egrep may work but I haven't tested them)
+* GNU stat
+
 Bugs / Errata
 ===================
 
