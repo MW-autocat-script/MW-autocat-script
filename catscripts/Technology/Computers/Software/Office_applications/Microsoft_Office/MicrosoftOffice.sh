@@ -22,14 +22,14 @@ fi
 if [ $ACCESS -ne 0 ];
 then
   export CATFILE="MicrosoftAccess.txt"
-  export CATNAME="Microsoft Access.txt"
+  export CATNAME="Microsoft Access"
   ./catscripts/Categorize.sh
 fi
 
 if [ $EXCEL -ne 0 ];
 then
   export CATFILE="MicrosoftExcel.txt"
-  export CATNAME="Microsoft Excel.txt"
+  export CATNAME="Microsoft Excel"
   ./catscripts/Categorize.sh
 fi
 

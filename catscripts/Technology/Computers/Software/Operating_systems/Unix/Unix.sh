@@ -5,7 +5,7 @@ egrep -i '\bcron\b|crontab|anacron\b|\binit\b|fsck' newpages.txt | egrep -iv 'Li
 egrep -i 'Xenix' newpages.txt >> Unix.txt #Old-skool Microsoft / AT&T Unix
 egrep -i 'Solaris|SunOS|\bSun OS' newpages.txt >> Unix.txt #Sun Microsystems / Oracle
 egrep -i 'IRIX' newpages.txt >> Unix.txt #SGI
-egrep -i 'AIX' newpages.txt >> Unix.txt #IBM
+egrep -i '\bAIX' newpages.txt >> Unix.txt #IBM
 egrep -i 'HP( |-)UX' newpages.txt >> Unix.txt #Hewlett-Packard
 egrep -i 'Tru64' newpages.txt >> Unix.txt #DEC (now Hewlett-Packard)
 egrep -i 'OpenServer' newpages.txt >> Unix.txt #SCO Group
