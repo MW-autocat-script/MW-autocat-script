@@ -1,27 +1,27 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i '\bAkon' >> Akon.txt
-cat newpages.txt | egrep -i 'Justin Bieber|Justin Beiber' >> JustinBieber.txt
-cat newpages.txt | egrep -i 'Johnny Cash' >> JohnnyCash.txt
-cat newpages.txt | egrep -i 'Miley Cyrus|Destiny Hope Cyrus' >> MileyCyrus.txt
-cat newpages.txt | egrep -i 'Vanessa Hudgens' >> VanessaHudgens.txt
-cat newpages.txt | egrep -i 'Whitney Houston' >> WhitneyHouston.txt
-cat newpages.txt | egrep -i '(Michael|Micheal) Jackson' >> MichaelJackson.txt
-cat newpages.txt | egrep -i 'Joe(|seph).+Jonas' >> JoeJonas.txt
-cat newpages.txt | egrep -i '(Nick|Nicholas).+ Jonas' >> NickJonas.txt
-cat newpages.txt | egrep -i 'Beyoncé|Beyonce' >> BeyoncéKnowles.txt
-cat newpages.txt | egrep -i '(Demi|Demetria).+Lovato' >> DemiLovato.txt
-cat newpages.txt | egrep -i 'John Lennon' >> JohnLennon.txt
-cat newpages.txt | egrep -i 'Lady Gaga' >> LadyGaga.txt
-cat newpages.txt | egrep -i '\bMadonna' | egrep -iv 'Lady Madonna' >> Madonna.txt
-cat newpages.txt | egrep -i 'Bob Marley' >> BobMarley.txt
-cat newpages.txt | egrep -i 'Elvis Presley' >> ElvisPresley.txt
-cat newpages.txt | egrep -i 'Josh Ramsay' >> JoshRamsay.txt
-cat newpages.txt | egrep -i 'Rihanna' >> Rihanna.txt
-cat newpages.txt | egrep -i 'Britney Spears' >> BritneySpears.txt
-cat newpages.txt | egrep -i 'Taylor Swift' >> TaylorSwift.txt
-cat newpages.txt | egrep -i 'Tupac|2pac|Shakur' >> TupacShakur.txt
-cat newpages.txt | egrep -i 'Ashley Tisdale' >> AshleyTisdale.txt
+egrep -i '\bAkon' newpages.txt >> Akon.txt
+egrep -i 'Justin Bieber|Justin Beiber' newpages.txt >> JustinBieber.txt
+egrep -i 'Johnny Cash' newpages.txt >> JohnnyCash.txt
+egrep -i 'Miley Cyrus|Destiny Hope Cyrus' newpages.txt >> MileyCyrus.txt
+egrep -i 'Vanessa Hudgens' newpages.txt >> VanessaHudgens.txt
+egrep -i 'Whitney Houston' newpages.txt >> WhitneyHouston.txt
+egrep -i '(Michael|Micheal) Jackson' newpages.txt >> MichaelJackson.txt
+egrep -i 'Joe(|seph).+Jonas' newpages.txt >> JoeJonas.txt
+egrep -i '(Nick|Nicholas).+ Jonas' newpages.txt >> NickJonas.txt
+egrep -i 'Beyoncé|Beyonce' newpages.txt >> BeyoncéKnowles.txt
+egrep -i '(Demi|Demetria).+Lovato' newpages.txt >> DemiLovato.txt
+egrep -i 'John Lennon' newpages.txt >> JohnLennon.txt
+egrep -i 'Lady Gaga' newpages.txt >> LadyGaga.txt
+egrep -i '\bMadonna' newpages.txt| egrep -iv 'Lady Madonna' >> Madonna.txt
+egrep -i 'Bob Marley' newpages.txt >> BobMarley.txt
+egrep -i 'Elvis Presley' newpages.txt >> ElvisPresley.txt
+egrep -i 'Josh Ramsay' newpages.txt >> JoshRamsay.txt
+egrep -i 'Rihanna' newpages.txt >> Rihanna.txt
+egrep -i 'Britney Spears' newpages.txt >> BritneySpears.txt
+egrep -i 'Taylor Swift' newpages.txt >> TaylorSwift.txt
+egrep -i 'Tupac|2pac|Shakur' newpages.txt >> TupacShakur.txt
+egrep -i 'Ashley Tisdale' newpages.txt >> AshleyTisdale.txt
 
 AKON=`stat --print=%s Akon.txt`
 BIEBER=`stat --print=%s JustinBieber.txt`

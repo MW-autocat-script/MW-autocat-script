@@ -1,26 +1,26 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Cad Bane|Cadbane' >> CadBane.txt
-cat newpages.txt | egrep -i 'C-3PO|C3PO' >> C-3PO.txt
-cat newpages.txt | egrep -i 'Chewbacca' >> Chewbacca.txt
-cat newpages.txt | egrep -i 'Boba Fett|Bobafett' >> BobaFett.txt
-cat newpages.txt | egrep -i 'Jango Fett|Jangofett' >> JangoFett.txt
-cat newpages.txt | egrep -i 'Jabba the Hutt|\bJabba\b' >> JabbaTheHutt.txt
-cat newpages.txt | egrep -i 'Obi-Wan|Obiwan|Kenobi' >> Obi-WanKenobi.txt
-cat newpages.txt | egrep -i 'Darth Maul' >> DarthMaul.txt
-cat newpages.txt | egrep -i 'Plo Koon' >> PloKoon.txt
-cat newpages.txt | egrep -i 'R2-D2|R2D2' >> R2-D2.txt
-cat newpages.txt | egrep -i '\bRevan' >> Revan.txt
-cat newpages.txt | egrep -i 'Anakin Skywalker|Anakinskywalker|Darth Vader|\bVader\b' >> DarthVader.txt
-cat newpages.txt | egrep -i 'Luke Skywalker|Lukeskywalker' >> LukeSkywalker.txt
-cat newpages.txt | egrep -i 'Mara Jade|Marajade|Mara Skywalker' >> MaraJadeSkywalker.txt
-cat newpages.txt | egrep -i 'Anakin Solo|Anakinsolo' >> AnakinSolo.txt
-cat newpages.txt | egrep -i 'Han Solo|Hansolo' >> HanSolo.txt
-cat newpages.txt | egrep -i 'Jacen Solo|Jacensolo|\bCaedus\b|Darthcaedus' >> DarthCaedus.txt
-cat newpages.txt | egrep -i 'Leia Organa|Leiaorgana|Leia Solo|Leiasolo|Princess Leia|Princessleia' >> LeiaOrganaSolo.txt
-cat newpages.txt | egrep -i 'Ahsoka Tano|Ahsokatano|Asoka Tano|Asokatano|Ashoka Tano|Ashokatano' >> AhsokaTano.txt
-cat newpages.txt | egrep -i '\bWindu\b|Mace Windu' >> MaceWindu.txt
-cat newpages.txt | egrep -i '\bYoda\b' >> Yoda.txt
+egrep -i 'Cad Bane|Cadbane' newpages.txt >> CadBane.txt
+egrep -i 'C-3PO|C3PO' newpages.txt >> C-3PO.txt
+egrep -i 'Chewbacca' newpages.txt >> Chewbacca.txt
+egrep -i 'Boba Fett|Bobafett' newpages.txt >> BobaFett.txt
+egrep -i 'Jango Fett|Jangofett' newpages.txt >> JangoFett.txt
+egrep -i 'Jabba the Hutt|\bJabba\b' newpages.txt >> JabbaTheHutt.txt
+egrep -i 'Obi-Wan|Obiwan|Kenobi' newpages.txt >> Obi-WanKenobi.txt
+egrep -i 'Darth Maul' newpages.txt >> DarthMaul.txt
+egrep -i 'Plo Koon' newpages.txt >> PloKoon.txt
+egrep -i 'R2-D2|R2D2' newpages.txt >> R2-D2.txt
+egrep -i '\bRevan' newpages.txt >> Revan.txt
+egrep -i 'Anakin Skywalker|Anakinskywalker|Darth Vader|\bVader\b' newpages.txt >> DarthVader.txt
+egrep -i 'Luke Skywalker|Lukeskywalker' newpages.txt >> LukeSkywalker.txt
+egrep -i 'Mara Jade|Marajade|Mara Skywalker' newpages.txt >> MaraJadeSkywalker.txt
+egrep -i 'Anakin Solo|Anakinsolo' newpages.txt >> AnakinSolo.txt
+egrep -i 'Han Solo|Hansolo' newpages.txt >> HanSolo.txt
+egrep -i 'Jacen Solo|Jacensolo|\bCaedus\b|Darthcaedus' newpages.txt >> DarthCaedus.txt
+egrep -i 'Leia Organa|Leiaorgana|Leia Solo|Leiasolo|Princess Leia|Princessleia' newpages.txt >> LeiaOrganaSolo.txt
+egrep -i 'Ahsoka Tano|Ahsokatano|Asoka Tano|Asokatano|Ashoka Tano|Ashokatano' newpages.txt >> AhsokaTano.txt
+egrep -i '\bWindu\b|Mace Windu' newpages.txt >> MaceWindu.txt
+egrep -i '\bYoda\b' newpages.txt >> Yoda.txt
 
 CADBANE=`stat --print=%s CadBane.txt`
 C3PO=`stat --print=%s C-3PO.txt`

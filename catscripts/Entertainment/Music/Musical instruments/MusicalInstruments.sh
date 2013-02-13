@@ -1,14 +1,14 @@
 #!/bin/bash
 
 egrep -i 'Cello\b' newpages.txt | egrep -iv 'Monticello|Nontecello'  >> Cello.txt
-cat newpages.txt | egrep -i 'Clarinet' >> Clarinet.txt
+egrep -i 'Clarinet' newpages.txt >> Clarinet.txt
 egrep -i '\bDrums' newpages.txt | egrep -iv 'ear drums|brakes|chicken|turkey' >> Drums.txt
 egrep -i '\bFlute(s|)' newpages.txt | egrep -iv 'azure flute|Pok(e|é)(| )flute|Pokémon|Pokemon|azelf flute' >> Flute.txt
-cat newpages.txt | egrep -i 'Guitar' | egrep -iv 'hero' >> Guitar.txt
-cat newpages.txt | egrep -i 'Piano' >> Piano.txt
-cat newpages.txt | egrep -i 'on a recorder|on the recorder\]\]|for recorder\]\]|notes.+recorder|recorder.+notes' >> Recorder.txt
-cat newpages.txt | egrep -i 'Saxophone' >> Saxophone.txt
-cat newpages.txt | egrep -i 'Violin' >> Violin.txt
+egrep -i 'Guitar' newpages.txt | egrep -iv 'hero' >> Guitar.txt
+egrep -i 'Piano' newpages.txt >> Piano.txt
+egrep -i 'on a recorder|on the recorder\]\]|for recorder\]\]|notes.+recorder|recorder.+notes' newpages.txt >> Recorder.txt
+egrep -i 'Saxophone' newpages.txt >> Saxophone.txt
+egrep -i 'Violin' newpages.txt >> Violin.txt
 
 CELLO=`stat --print=%s Cello.txt`
 CLARINET=`stat --print=%s Clarinet.txt`

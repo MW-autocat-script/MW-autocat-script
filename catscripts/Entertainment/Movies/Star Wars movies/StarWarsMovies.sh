@@ -1,11 +1,11 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Star Wars.+Episode (1|I\b)|Phantom Menace' >> EpisodeI.txt
-cat newpages.txt | egrep -i 'Star Wars.+Episode (2|II\b)|Attack of the Clones'  >> EpisodeII.txt
-cat newpages.txt | egrep -i 'Star Wars.+Episode (3|III\b)|Revenge of the Sith' >> EpisodeIII.txt
-cat newpages.txt | egrep -i 'Star Wars.+Episode (4|IV\b)|A New Hope' >> EpisodeIV.txt
-cat newpages.txt | egrep -i 'Star Wars.+Episode (5|\bV\b)|Empire Strikes Back' >> EpisodeV.txt
-cat newpages.txt | egrep -i 'Star Wars.+Episode (6|\bVI\b)|Return of the Jedi|\bROTJ\b' >> EpisodeVI.txt
+egrep -i 'Star Wars.+Episode (1|I\b)|Phantom Menace' newpages.txt >> EpisodeI.txt
+egrep -i 'Star Wars.+Episode (2|II\b)|Attack of the Clones' newpages.txt >> EpisodeII.txt
+egrep -i 'Star Wars.+Episode (3|III\b)|Revenge of the Sith' newpages.txt >>  EpisodeIII.txt
+egrep -i 'Star Wars.+Episode (4|IV\b)|A New Hope' newpages.txt >>  EpisodeIV.txt
+egrep -i 'Star Wars.+Episode (5|\bV\b)|Empire Strikes Back' newpages.txt >>  EpisodeV.txt
+egrep -i 'Star Wars.+Episode (6|\bVI\b)|Return of the Jedi|\bROTJ\b' newpages.txt >>  EpisodeVI.txt
 
 EPISODEI=`stat --print=%s EpisodeI.txt`
 EPISODEII=`stat --print=%s EpisodeII.txt`

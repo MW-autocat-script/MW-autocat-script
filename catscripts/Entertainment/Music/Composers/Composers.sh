@@ -1,11 +1,11 @@
 #!/bin/bash
 #Categorization script for composers of music
 
-cat newpages.txt | egrep -i '\bBach\b' >> Bach.txt
-cat newpages.txt | egrep -i 'Wolfgang|Amadeus|Mozart' | egrep -iv 'Rock Me|Puck' >> WolfgangAmadeusMozart.txt 
-cat newpages.txt | egrep -i 'Beethoven' | egrep -iv 'Bernard|breed|dog' >> LudwigVanBeethoven.txt
-cat newpages.txt | egrep -i 'Aaron Copland' >> AaronCopland.txt
-cat newpages.txt | egrep -i 'Igor Stravinsky' >> IgorStravinsky.txt
+egrep -i '\bBach\b' newpages.txt >> Bach.txt
+egrep -i 'Wolfgang|Amadeus|Mozart' newpages.txt | egrep -iv 'Rock Me|Puck' >> WolfgangAmadeusMozart.txt 
+egrep -i 'Beethoven'  newpages.txt | egrep -iv 'Bernard|breed|dog' >> LudwigVanBeethoven.txt
+egrep -i 'Aaron Copland' newpages.txt >> AaronCopland.txt
+egrep -i 'Igor Stravinsky' newpages.txt >> IgorStravinsky.txt
 
 BACH=`stat --print=%s Bach.txt`
 MOZART=`stat --print=%s WolfgangAmadeusMozart.txt`

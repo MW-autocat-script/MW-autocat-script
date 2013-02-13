@@ -1,10 +1,10 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'cheat code' >> CheatCodes.txt
-cat newpages.txt | egrep -i 'cheats for' >> CheatCodes.txt
+egrep -i 'cheat code' newpages.txt >> CheatCodes.txt
+egrep -i 'cheats for' newpages.txt >> CheatCodes.txt
 
-cat newpages.txt | egrep -i 'Action Replay' >> ActionReplay.txt
-cat newpages.txt | egrep -i '\bar codes' >> ActionReplay.txt 
+egrep -i 'Action Replay' newpages.txt >> ActionReplay.txt
+egrep -i '\bar codes' newpages.txt >> ActionReplay.txt 
 
 
 CHEATCODES=`stat --print=%s CheatCodes.txt`
