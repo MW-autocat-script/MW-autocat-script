@@ -43,8 +43,10 @@ cat newpages.txt | egrep -i 'George H(|\.|erbert) W(|\.|alker) Bush' >> GeorgeHW
 cat newpages.txt | egrep -i '(William|Bill)(| Jefferson) Clinton|President Clinton' >> BillClinton.txt
 cat newpages.txt | egrep -i 'George W(|\.|alker) Bush' >> GeorgeWBush.txt
 cat newpages.txt | egrep -i 'Barack.+Obama|President Obama' >> BarackObama.txt
-cat newpages.txt | egrep -i 'Obama' | egrep -iv 'Michel(|l)e Obama' >> BarackObama.txt 
+cat newpages.txt | egrep -i 'Obama' | egrep -iv 'Michel(|l)e Obama' >> BarackObama.txt
+egrep -i 'president of the (U(\.|)S(\.|)|United States)|(U(\.|)S(\.|)|American) president' newpages.txt | egrep -iv 'George Washington|President Washington' | egrep -iv 'George Washington Carver'| egrep -iv 'John Adams'| egrep -iv 'Thomas Jefferson|Jefforsonian|Monticello|President Jefferson'| egrep -iv 'James Madison|President Madison'| egrep -iv 'James Monroe|President Monroe'| egrep -iv 'John Q(|\.|uincy) Adams'| egrep -iv 'Andrew Jackson|President Jackson'| egrep -iv 'Martin Van Buren|President Buren|President Van Buren'| egrep -iv 'William H(|\.|enry) Harrison'| egrep -iv 'John Tyler|President Tyler'| egrep -iv 'James(| K(|\.|nox)) Polk|President Polk'| egrep -iv 'Zachary Taylor|President Taylor'| egrep -iv 'Fillmore'| egrep -iv 'Franklin Pierce|President Pierce'| egrep -iv 'James Buchanan|President Buchanan'| egrep -iv '(Abraham|Abe) Lincoln|President Lincoln'| egrep -iv 'Andrew Johnson'| egrep -iv 'Ulysses(| S(|\.|impson)) Grant|President Grant'| egrep -iv 'Rutherford(| B(|\.|irchard)) Hayes|President Hayes'| egrep -iv 'James(| A(|\.|bram)) Garfield|President Garfield'| egrep -iv 'Chester(| A(|\.|lan)) Arthur|President Arthur'| egrep -iv '(President|Grover) Cleveland'| egrep -iv 'Benjamin Harrison'| egrep -iv '(William|President) McKinley'| egrep -iv '(Theodore|Teddy) Roosevelt'| egrep -iv 'Taft'| egrep -iv 'Woodrow Wilson|President Wilson'| egrep -iv 'Warren(| G(|\.|amaliel)) Harding|President Harding'| egrep -iv 'Coolidge'| egrep -iv 'Herbert(| C(|\.|lark)) Hoover|President Hoover'| egrep -iv 'Franklin(| D(|\.|elano)) Roosevelt|\bFDR\b'| egrep -iv 'Harry(| S(|\.)) Truman|President Truman'| egrep -iv 'Eisenhower'| egrep -iv 'John(| F(|\.|itzgerald)) Kennedy|\bJFK\b'| egrep -iv 'Lyndon(| B(|\.|aines)) Johnson|\bLBJ\b'| egrep -iv 'Richard(| M(|\.|ilhous)) Nixon|President Nixon|Tricky Dick'| egrep -iv 'Gerald(| R(|\.|udolph)) Ford|President Ford'| egrep -iv '(James|Jimmy|President)(| E(|\.|arl)) Carter'| egrep -iv 'Ronald(| W(|\.|ilson)) Reagan|President Reagan'| egrep -iv 'George H(|\.|erbert) W(|\.|alker) Bush'| egrep -iv '(William|Bill)(| Jefferson) Clinton|President Clinton'| egrep -iv 'George W(|\.|alker) Bush'| egrep -iv 'Barack.+Obama|President Obama'| egrep -iv 'Obama' | egrep -iv 'Michel(|l)e Obama' >> President.txt
 
+PRESIDENT=`stat --print=%s President.txt`
 WASHINGTON=`stat --print=%s GeorgeWashington.txt`
 JOHNADAMS=`stat --print=%s JohnAdams.txt`
 JEFFERSON=`stat --print=%s ThomasJefferson.txt`
@@ -88,6 +90,13 @@ GHWBUSH=`stat --print=%s GeorgeHWBush.txt`
 CLINTON=`stat --print=%s BillClinton.txt`
 GWBUSH=`stat --print=%s GeorgeWBush.txt`
 OBAMA=`stat --print=%s BarackObama.txt`
+
+if [ $PRESIDENT -ne 0 ];
+then
+  export CATFILE="President.txt"
+  export CATNAME="US Presidents"
+  ./catscripts/Categorize.sh
+fi
 
 if [ $WASHINGTON -ne 0 ];
 then
@@ -433,3 +442,4 @@ rm GeorgeHWBush.txt
 rm BillClinton.txt
 rm GeorgeWBush.txt
 rm BarackObama.txt
+rm President.txt
