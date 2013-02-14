@@ -202,7 +202,7 @@ fi
 if [ $Mamoswine -ne 0 ];
 then
    export CATFILE="Mamoswine.txt"
-   export CATNAME="Manoswine"
+   export CATNAME="Mamoswine"
    ./catscripts/Categorize.sh
 fi
 
