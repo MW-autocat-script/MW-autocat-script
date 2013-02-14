@@ -116,7 +116,7 @@ fi
 if [ $CACTURNE -ne 0  ];
 then
    export CATFILE="Cacturne.txt"
-   export CATNAME="Cacnea"
+   export CATNAME="Cacturne"
    ./catscripts/Categorize.sh
 fi
 
