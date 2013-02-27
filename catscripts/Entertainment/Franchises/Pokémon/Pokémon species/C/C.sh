@@ -44,7 +44,7 @@ egrep -i 'Cranidos' newpages.txt >> Cranidos.txt
 egrep -i 'Crawdaunt' newpages.txt >> Crawdaunt.txt
 egrep -i 'Cresselia' newpages.txt >> Cresselia.txt
 egrep -i 'Croagunk' newpages.txt >> Croagunk.txt
-egrep -i 'Crobat' newpages.txt >> Crobat.txt
+egrep -i '\bCrobat' newpages.txt >> Crobat.txt
 egrep -i 'Croconaw' newpages.txt >> Croconaw.txt
 egrep -i 'Crustle' newpages.txt >> Crustle.txt
 egrep -i 'Cryogonal' newpages.txt >> Cryogonal.txt

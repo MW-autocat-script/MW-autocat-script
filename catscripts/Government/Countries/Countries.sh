@@ -17,11 +17,13 @@
 ./catscripts/Government/Countries/Haiti/Haiti.sh
 ./catscripts/Government/Countries/Hungary/Hungary.sh
 ./catscripts/Government/Countries/Iceland/Iceland.sh
+./catscripts/Government/Countries/Indonesia/Indonesia.sh
 ./catscripts/Government/Countries/Iran/Iran.sh
 ./catscripts/Government/Countries/Iraq/Iraq.sh
 ./catscripts/Government/Countries/Jamaica/Jamaica.sh
 ./catscripts/Government/Countries/Kenya/Kenya.sh
 ./catscripts/Government/Countries/Libya/Libya.sh
+./catscripts/Government/Countries/Nepal/Nepal.sh
 ./catscripts/Government/Countries/Nigeria/Nigeria.sh
 ./catscripts/Government/Countries/Norway/Norway.sh
 ./catscripts/Government/Countries/Singapore/Singapore.sh 

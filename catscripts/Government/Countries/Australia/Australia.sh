@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Australia' newpages.txt | egrep -iv 'Canberra|Sydney' >> Australia.txt
+egrep -i 'Australia' newpages.txt | egrep -iv 'Canberra|Sydney|Melbourne' >> Australia.txt
 
 AUSTRALIA=`stat --print=%s Australia.txt`
 
@@ -13,5 +13,6 @@ fi
 
 ./catscripts/Government/Countries/Australia/Canberra/Canberra.sh
 ./catscripts/Government/Countries/Australia/Sydney/Sydney.sh
+./catscripts/Government/Countries/Australia/Melbourne/Melbourne.sh
 
 rm Australia.txt
