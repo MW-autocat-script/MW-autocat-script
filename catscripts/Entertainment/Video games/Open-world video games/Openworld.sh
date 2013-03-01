@@ -1,7 +1,7 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Minecraft|Mine craft' | egrep -iv 'besides Minecraft\]\]' > Minecraft.txt
-cat newpages.txt | egrep -i 'Tekkit' | egrep -iv 'besides Tekkit\]\]' >> Tekkit.txt
+egrep -i 'Minecraft|Mine craft' newpages.txt | egrep -iv 'besides Minecraft\]\]' > Minecraft.txt
+egrep -i 'Tekkit' newpages.txt | egrep -iv 'besides Tekkit\]\]' >> Tekkit.txt
 
 MINECRAFT=`stat --print=%s Minecraft.txt`
 TEKKIT=`stat --print=%s Tekkit.txt`

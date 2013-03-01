@@ -1,7 +1,7 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Thailand' | egrep -iv 'Bangkok' >> Thailand.txt
-cat newpages.txt | egrep -i 'Bankok' | egrep -iv 'Mafia Wars|Bankok Dangerous' >> Bangkok.txt
+egrep -i 'Thailand' newpages.txt | egrep -iv 'Bangkok' >> Thailand.txt
+egrep -i 'Bankok' newpages.txt | egrep -iv 'Mafia Wars|Bankok Dangerous' >> Bangkok.txt
 
 THAILAND=`stat --print=%s Thailand.txt`
 BANGKOK=`stat --print=%s Bangkok.txt`

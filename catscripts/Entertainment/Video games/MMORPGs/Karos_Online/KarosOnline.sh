@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i '\bKaros\b' >> KarosOnline.txt
+egrep -i '\bKaros\b' newpages.txt >> KarosOnline.txt
 
 KAROS=`stat --print=%s KarosOnline.txt`
 

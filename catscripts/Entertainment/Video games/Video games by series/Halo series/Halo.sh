@@ -1,12 +1,12 @@
 #1/bin/bash
 
-cat newpages.txt | egrep -i 'Halo(|\:) (CE|Combat Evolved|Custom Edition)|Halo 1' >> Halo1.txt
-cat newpages.txt | egrep -i 'Halo 2' >> Halo2.txt
-cat newpages.txt | egrep -i 'Halo 3' | egrep -iv 'ODST' >> Halo3.txt
-cat newpages.txt | egrep -i 'Halo 3(|\:)(| )ODST' >> ODST.txt
-cat newpages.txt | egrep -i 'Halo 4' >> Halo4.txt
-cat newpages.txt | egrep -i 'Halo Wars' >> HaloWars.txt
-cat newpages.txt | egrep -i 'Halo series|Cortana|(Captain|Miranda) Keyes|John(|-)(| )117|ODST' | egrep -iv 'Halo(|\:) (1|2|3|4|Wars|CE|Combat Evolved|Custom Edition)' >> Haloseries.txt
+egrep -i 'Halo(|\:) (CE|Combat Evolved|Custom Edition)|Halo 1' newpages.txt >> Halo1.txt
+egrep -i 'Halo 2' newpages.txt >> Halo2.txt
+egrep -i 'Halo 3' newpages.txt | egrep -iv 'ODST' >> Halo3.txt
+egrep -i 'Halo 3(|\:)(| )ODST' newpages.txt >> ODST.txt
+egrep -i 'Halo 4' newpages.txt >> Halo4.txt
+egrep -i 'Halo Wars' newpages.txt >> HaloWars.txt
+egrep -i 'Halo series|Cortana|(Captain|Miranda) Keyes|John(|-)(| )117|ODST' newpages.txt | egrep -iv 'Halo(|\:) (1|2|3|4|Wars|CE|Combat Evolved|Custom Edition)' >> Haloseries.txt
 
 HALO1=`stat --print=%s Halo1.txt`
 HALO2=`stat --print=%s Halo2.txt`

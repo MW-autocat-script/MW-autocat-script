@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Xbox 360|Xbox360' | egrep -iv 'for the Xbox 360|For Xbox 360|on (|the) Xbox 360' >> Xbox360.txt
+egrep -i 'Xbox 360|Xbox360' newpages.txt | egrep -iv 'for the Xbox 360|For Xbox 360|on (|the) Xbox 360' >> Xbox360.txt
 
 X360=`stat --print=%s Xbox360.txt`
 

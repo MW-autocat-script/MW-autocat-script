@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i '(AdventureQuest|Adventure Quest)(World(|s)| World(|s))|AQW|Valencia' >> AdventureQuestWorlds.txt
+egrep -i '(AdventureQuest|Adventure Quest)(World(|s)| World(|s))|AQW|Valencia' newpages.txt >> AdventureQuestWorlds.txt
 
 AQW=`stat --print=%s AdventureQuestWorlds.txt`
 

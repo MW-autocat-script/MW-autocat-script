@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'PlayStation 3|Play Station 3|\bPS3|\bPS 3\b' >> PlayStation3.txt
+egrep -i 'PlayStation 3|Play Station 3|\bPS3|\bPS 3\b' newpages.txt >> PlayStation3.txt
 
 PS3=`stat --print=%s PlayStation3.txt`
 

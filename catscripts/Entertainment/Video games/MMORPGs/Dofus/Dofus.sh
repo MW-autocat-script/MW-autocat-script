@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Dofus' >> Dofus.txt
+egrep -i 'Dofus' newpages.txt >> Dofus.txt
 
 DOFUS=`stat --print=%s Dofus.txt`
 

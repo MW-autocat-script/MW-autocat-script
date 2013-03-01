@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Ghost(| )X' >> GhostX.txt
+egrep -i 'Ghost(| )X' newpages.txt >> GhostX.txt
 
 GHOSTX=`stat --print=%s GhostX.txt`
 

@@ -1,12 +1,12 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Monster Hunter.+series' >> MonsterHunterSeries.txt
-cat newpages.txt | egrep -i 'Monster Hunter' | egrep -iv '2|3|Freedom|Frontier|series|portable|Tri' >> MonsterHunter.txt
-cat newpages.txt | egrep -i 'Monster Hunter Freedom' | egrep -iv '2|Unite' >> MonsterHunterFreedom.txt
-cat newpages.txt | egrep -i 'Monster Hunter Freedom Unit.|\bMHFU\b' >> MonsterHunterFreedomUnite.txt #The . instead of an 'e' is intentional
-cat newpages.txt | egrep -i 'Monster Hunter Freedom 2|\bMHF2\b' >> MonsterHunterFreedom2.txt
-cat newpages.txt | egrep -i 'Monster Hunter Frontier' >> MonsterHunterFrontier.txt
-cat newpages.txt | egrep -i 'Monster Hunter (Tri|3)|\bMH3' >> MonsterHunterTri.txt
+egrep -i 'Monster Hunter.+series' newpages.txt >> MonsterHunterSeries.txt
+egrep -i 'Monster Hunter' newpages.txt | egrep -iv '2|3|Freedom|Frontier|series|portable|Tri' >> MonsterHunter.txt
+egrep -i 'Monster Hunter Freedom' newpages.txt | egrep -iv '2|Unite' >> MonsterHunterFreedom.txt
+egrep -i 'Monster Hunter Freedom Unit.|\bMHFU\b' newpages.txt >> MonsterHunterFreedomUnite.txt #The . instead of an 'e' is intentional
+egrep -i 'Monster Hunter Freedom 2|\bMHF2\b' newpages.txt >> MonsterHunterFreedom2.txt
+egrep -i 'Monster Hunter Frontier' newpages.txt >> MonsterHunterFrontier.txt
+egrep -i 'Monster Hunter (Tri|3)|\bMH3' newpages.txt >> MonsterHunterTri.txt
 
 SERIES=`stat --print=%s MonsterHunterSeries.txt`
 HUNTER=`stat --print=%s MonsterHunter.txt`

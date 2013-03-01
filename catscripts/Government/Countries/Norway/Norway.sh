@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Norway' > Norway.txt
+egrep -i 'Norway' newpages.txt > Norway.txt
 
 NORWAY=`stat --print=%s Norway.txt`
 

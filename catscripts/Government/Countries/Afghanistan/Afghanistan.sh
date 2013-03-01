@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Afghani(|stan)' | egrep -iv 'Afghanistan War|war in Afghanistan' >> Afghanistan.txt
+egrep -i 'Afghani(|stan)' newpages.txt | egrep -iv 'Afghanistan War|war in Afghanistan' >> Afghanistan.txt
 
 AFGHANISTAN=`stat --print=%s Afghanistan.txt`
 

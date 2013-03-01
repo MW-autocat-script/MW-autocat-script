@@ -1,7 +1,7 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Greece' | egrep -iv 'ancient Greece' >> Greece.txt
-cat newpages.txt | egrep -i 'ancient Greece' >> Ancient.txt
+egrep -i 'Greece' newpages.txt | egrep -iv 'ancient Greece' >> Greece.txt
+egrep -i 'ancient Greece' newpages.txt >> Ancient.txt
 
 GREECE=`stat --print=%s Greece.txt`
 ANCIENT=`stat --print=%s Ancient.txt`

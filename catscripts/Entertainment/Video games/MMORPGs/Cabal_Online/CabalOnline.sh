@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Cabal(| )Online|Altar of Karion' >> CabalOnline.txt
+egrep -i 'Cabal(| )Online|Altar of Karion' newpages.txt >> CabalOnline.txt
 
 CABAL=`stat --print=%s CabalOnline.txt`
 

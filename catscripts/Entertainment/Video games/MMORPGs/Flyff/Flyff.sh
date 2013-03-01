@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Flyff' >> Flyff.txt
+egrep -i 'Flyff' newpages.txt >> Flyff.txt
 
 FLYFF=`stat --print=%s Flyff.txt`
 

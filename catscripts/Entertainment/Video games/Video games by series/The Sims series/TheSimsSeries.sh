@@ -1,9 +1,9 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'The Sims 2|Sims 2|Sims2' >> TheSims2.txt
-cat newpages.txt | egrep -i 'The Sims 3|Sims 3|Sims3' >> TheSims3.txt
-cat newpages.txt | egrep -i 'MySims|The Sims Wii' >> MySims.txt
-cat newpages.txt | egrep -i 'The Sims' | egrep -iv 'Sims 2|Sims2|Sims 3|Sims3|Sims Wii|Simswii' >> TheSimsSeries.txt
+egrep -i 'The Sims 2|Sims 2|Sims2' newpages.txt >> TheSims2.txt
+egrep -i 'The Sims 3|Sims 3|Sims3' newpages.txt >> TheSims3.txt
+egrep -i 'MySims|The Sims Wii' newpages.txt >> MySims.txt
+egrep -i 'The Sims' newpages.txt | egrep -iv 'Sims 2|Sims2|Sims 3|Sims3|Sims Wii|Simswii' >> TheSimsSeries.txt
 
 SIMS2=`stat --print=%s TheSims2.txt`
 SIMS3=`stat --print=%s TheSims3.txt`

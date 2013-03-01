@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Cyprus' >> Cyprus.txt
+egrep -i 'Cyprus' newpages.txt >> Cyprus.txt
 
 CYPRUS=`stat --print=%s Cyprus.txt`
 

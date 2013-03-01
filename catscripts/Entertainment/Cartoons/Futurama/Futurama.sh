@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Phil(|l)ip(| )(J|)(\.|)(| )Fry|Leela|Bender(| )(|Bending)(| )Rodríguez|Planetary(| )Express|Zoidberg|Prof(\.||essor)(| )Farnsworth|Futurama' nespages.txt >> Futurama.txt
+egrep -i 'Phil(|l)ip(| )(J|)(\.|)(| )Fry|Leela|Bender(| )(|Bending)(| )Rodríguez|Planetary(| )Express|Zoidberg|Prof(\.||essor)(| )Farnsworth|Futurama' newpages.txt >> Futurama.txt
 
 FUTURAMA=`stat --print=%s Futurama.txt`
 

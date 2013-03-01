@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Guild(| )War|PVX' >> GuildWars.txt
+egrep -i 'Guild(| )War|PVX' newpages.txt >> GuildWars.txt
 
 GUILDWARS=`stat --print=%s GuildWars.txt`
 

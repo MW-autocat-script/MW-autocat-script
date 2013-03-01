@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Literacy Planet|LiteracyPlanet|Litracy planet|intrepica|intreprica|interprica|intripeca|lituracy planet|Turtle(| )Knock|Sheep(| )Bounce' > LiteracyPlanet.txt
+egrep -i 'Literacy Planet|LiteracyPlanet|Litracy planet|intrepica|intreprica|interprica|intripeca|lituracy planet|Turtle(| )Knock|Sheep(| )Bounce' newpages.txt > LiteracyPlanet.txt
 
 LITERACYPLANET=`stat --print=%s LiteracyPlanet.txt` 
 

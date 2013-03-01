@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Anarchy(| )Online' >> AnarchyOnline.txt
+egrep -i 'Anarchy(| )Online' newpages.txt >> AnarchyOnline.txt
 
 ANARCHY=`stat --print=%s AnarchyOnline.txt`
 

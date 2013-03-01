@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Talisman Online' >> TalismanOnline.txt
+egrep -i 'Talisman Online' newpages.txt >> TalismanOnline.txt
 
 TALISMAN=`stat --print=%s TalismanOnline.txt`
 

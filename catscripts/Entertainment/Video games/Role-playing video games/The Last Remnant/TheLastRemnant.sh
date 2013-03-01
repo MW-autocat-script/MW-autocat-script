@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'The(| )Last(| )Remnant' >> TheLastRemant.txt
+egrep -i 'The(| )Last(| )Remnant' newpages.txt >> TheLastRemant.txt
 
 REMNANT=`stat --print=%s TheLastRemant.txt`
 

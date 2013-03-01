@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i '\bChile\b|Chilean' >> Chile.txt
+egrep -i '\bChile\b|Chilean' newpages.txt >> Chile.txt
 
 CHILE=`stat --print=%s Chile.txt`
 

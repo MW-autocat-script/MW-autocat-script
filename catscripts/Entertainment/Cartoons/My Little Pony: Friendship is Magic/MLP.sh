@@ -12,5 +12,4 @@ then
   ./catscripts/Categorize.sh
 fi
 
-
 rm MLPFIM.txt

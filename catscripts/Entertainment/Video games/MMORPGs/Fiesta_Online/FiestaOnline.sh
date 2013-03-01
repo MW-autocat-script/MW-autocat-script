@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Fiesta(| )Online' >> FiestaOnline.txt
+egrep -i 'Fiesta(| )Online' newpages.txt >> FiestaOnline.txt
 
 FIESTA=`stat --print=%s FiestaOnline.txt`
 

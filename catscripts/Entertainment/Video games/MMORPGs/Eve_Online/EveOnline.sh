@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Eve(| )Online' >> EveOnline.txt
+egrep -i 'Eve(| )Online' newpages.txt >> EveOnline.txt
 
 EVE=`stat --print=%s EveOnline.txt`
 

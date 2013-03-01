@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Tales(| )of(| )Pirates' >> TalesofPirates.txt
+egrep -i 'Tales(| )of(| )Pirates' newpages.txt >> TalesofPirates.txt
 
 PIRATES=`stat --print=%s TalesofPirates.txt`
 

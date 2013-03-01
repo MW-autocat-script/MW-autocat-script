@@ -1,50 +1,52 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'George Washington|President Washington' | egrep -iv 'George Washington Carver' >> GeorgeWashington.txt
-cat newpages.txt | egrep -i 'John Adams' >> JohnAdams.txt
-cat newpages.txt | egrep -i 'Thomas Jefferson|Jefforsonian|Monticello|President Jefferson' >> ThomasJefferson.txt
-cat newpages.txt | egrep -i 'James Madison|President Madison' >> JamesMadison.txt
-cat newpages.txt | egrep -i 'James Monroe|President Monroe' >> JamesMonroe.txt
-cat newpages.txt | egrep -i 'John Q(|\.|uincy) Adams' >> JohnQuincyAdams.txt
-cat newpages.txt | egrep -i 'Andrew Jackson|President Jackson' >> AndrewJackson.txt
-cat newpages.txt | egrep -i 'Martin Van Buren|President Buren|President Van Buren' >> MartinVanBuren.txt
-cat newpages.txt | egrep -i 'William H(|\.|enry) Harrison' >> WilliamHenryHarrison.txt
-cat newpages.txt | egrep -i 'John Tyler|President Tyler' >> JohnTyler.txt
-cat newpages.txt | egrep -i 'James(| K(|\.|nox)) Polk|President Polk' >> JamesKPolk.txt
-cat newpages.txt | egrep -i 'Zachary Taylor|President Taylor' >> ZacharyTaylor.txt
-cat newpages.txt | egrep -i 'Fillmore' >> MillardFillmore.txt
-cat newpages.txt | egrep -i 'Franklin Pierce|President Pierce' >> FranklinPierce.txt
-cat newpages.txt | egrep -i 'James Buchanan|President Buchanan' >> JamesBuchanan.txt
-cat newpages.txt | egrep -i '(Abraham|Abe) Lincoln|President Lincoln' >> AbrahamLincoln.txt
-cat newpages.txt | egrep -i 'Andrew Johnson' >> AndrewJohnson.txt
-cat newpages.txt | egrep -i 'Ulysses(| S(|\.|impson)) Grant|President Grant' >> UlyssesSGrant.txt
-cat newpages.txt | egrep -i 'Rutherford(| B(|\.|irchard)) Hayes|President Hayes' >> RutherfordBHayes.txt
-cat newpages.txt | egrep -i 'James(| A(|\.|bram)) Garfield|President Garfield' >> JamesAGarfield.txt
-cat newpages.txt | egrep -i 'Chester(| A(|\.|lan)) Arthur|President Arthur' >> ChesterAArthur.txt
-cat newpages.txt | egrep -i '(President|Grover) Cleveland' >> GroverCleveland.txt
-cat newpages.txt | egrep -i 'Benjamin Harrison' >> BenjaminHarrison.txt
-cat newpages.txt | egrep -i '(William|President) McKinley' >> WilliamMcKinley.txt
-cat newpages.txt | egrep -i '(Theodore|Teddy) Roosevelt' >> TheodoreRoosevelt.txt
-cat newpages.txt | egrep -i 'Taft' >> WilliamHowardTaft.txt #Would anything that mentions Taft NOT be about him?
-cat newpages.txt | egrep -i 'Woodrow Wilson|President Wilson' >> WoodrowWilson.txt
-cat newpages.txt | egrep -i 'Warren(| G(|\.|amaliel)) Harding|President Harding' >> WarrenGHarding.txt
-cat newpages.txt | egrep -i 'Coolidge' >> CalvinCoolidge.txt
-cat newpages.txt | egrep -i 'Herbert(| C(|\.|lark)) Hoover|President Hoover' >> HerbertHoover.txt
-cat newpages.txt | egrep -i 'Franklin(| D(|\.|elano)) Roosevelt|\bFDR\b' >> FranklinDelanoRoosevelt.txt
-cat newpages.txt | egrep -i 'Harry(| S(|\.)) Truman|President Truman' >> HarrySTruman.txt
-cat newpages.txt | egrep -i 'Eisenhower' >> DwightDEisenhower.txt
-cat newpages.txt | egrep -i 'John(| F(|\.|itzgerald)) Kennedy|\bJFK\b' >> JohnFKennedy.txt
-cat newpages.txt | egrep -i 'Lyndon(| B(|\.|aines)) Johnson|\bLBJ\b' >> LyndonBJohnson.txt
-cat newpages.txt | egrep -i 'Richard(| M(|\.|ilhous)) Nixon|President Nixon|Tricky Dick' >> RichardMNixon.txt
-cat newpages.txt | egrep -i 'Gerald(| R(|\.|udolph)) Ford|President Ford' >> GeraldFord.txt
-cat newpages.txt | egrep -i '(James|Jimmy|President)(| E(|\.|arl)) Carter' >> JimmyCarter.txt
-cat newpages.txt | egrep -i 'Ronald(| W(|\.|ilson)) Reagan|President Reagan' >> RonaldReagan.txt
-cat newpages.txt | egrep -i 'George H(|\.|erbert) W(|\.|alker) Bush' >> GeorgeHWBush.txt
-cat newpages.txt | egrep -i '(William|Bill)(| Jefferson) Clinton|President Clinton' >> BillClinton.txt
-cat newpages.txt | egrep -i 'George W(|\.|alker) Bush' >> GeorgeWBush.txt
-cat newpages.txt | egrep -i 'Barack.+Obama|President Obama' >> BarackObama.txt
-cat newpages.txt | egrep -i 'Obama' | egrep -iv 'Michel(|l)e Obama' >> BarackObama.txt
-egrep -i 'president of the (U(\.|)S(\.|)|United States)|(U(\.|)S(\.|)|American) president' newpages.txt | egrep -iv 'George Washington|President Washington' | egrep -iv 'George Washington Carver'| egrep -iv 'John Adams'| egrep -iv 'Thomas Jefferson|Jefforsonian|Monticello|President Jefferson'| egrep -iv 'James Madison|President Madison'| egrep -iv 'James Monroe|President Monroe'| egrep -iv 'John Q(|\.|uincy) Adams'| egrep -iv 'Andrew Jackson|President Jackson'| egrep -iv 'Martin Van Buren|President Buren|President Van Buren'| egrep -iv 'William H(|\.|enry) Harrison'| egrep -iv 'John Tyler|President Tyler'| egrep -iv 'James(| K(|\.|nox)) Polk|President Polk'| egrep -iv 'Zachary Taylor|President Taylor'| egrep -iv 'Fillmore'| egrep -iv 'Franklin Pierce|President Pierce'| egrep -iv 'James Buchanan|President Buchanan'| egrep -iv '(Abraham|Abe) Lincoln|President Lincoln'| egrep -iv 'Andrew Johnson'| egrep -iv 'Ulysses(| S(|\.|impson)) Grant|President Grant'| egrep -iv 'Rutherford(| B(|\.|irchard)) Hayes|President Hayes'| egrep -iv 'James(| A(|\.|bram)) Garfield|President Garfield'| egrep -iv 'Chester(| A(|\.|lan)) Arthur|President Arthur'| egrep -iv '(President|Grover) Cleveland'| egrep -iv 'Benjamin Harrison'| egrep -iv '(William|President) McKinley'| egrep -iv '(Theodore|Teddy) Roosevelt'| egrep -iv 'Taft'| egrep -iv 'Woodrow Wilson|President Wilson'| egrep -iv 'Warren(| G(|\.|amaliel)) Harding|President Harding'| egrep -iv 'Coolidge'| egrep -iv 'Herbert(| C(|\.|lark)) Hoover|President Hoover'| egrep -iv 'Franklin(| D(|\.|elano)) Roosevelt|\bFDR\b'| egrep -iv 'Harry(| S(|\.)) Truman|President Truman'| egrep -iv 'Eisenhower'| egrep -iv 'John(| F(|\.|itzgerald)) Kennedy|\bJFK\b'| egrep -iv 'Lyndon(| B(|\.|aines)) Johnson|\bLBJ\b'| egrep -iv 'Richard(| M(|\.|ilhous)) Nixon|President Nixon|Tricky Dick'| egrep -iv 'Gerald(| R(|\.|udolph)) Ford|President Ford'| egrep -iv '(James|Jimmy|President)(| E(|\.|arl)) Carter'| egrep -iv 'Ronald(| W(|\.|ilson)) Reagan|President Reagan'| egrep -iv 'George H(|\.|erbert) W(|\.|alker) Bush'| egrep -iv '(William|Bill)(| Jefferson) Clinton|President Clinton'| egrep -iv 'George W(|\.|alker) Bush'| egrep -iv 'Barack.+Obama|President Obama'| egrep -iv 'Obama' | egrep -iv 'Michel(|l)e Obama' >> President.txt
+egrep -i 'George Washington|President Washington' newpages.txt | egrep -iv 'George Washington Carver' >> GeorgeWashington.txt
+egrep -i 'John Adams' newpages.txt >> JohnAdams.txt
+egrep -i 'Thomas Jefferson|Jefforsonian|Monticello|President Jefferson' newpages.txt >> ThomasJefferson.txt
+egrep -i 'James Madison|President Madison' newpages.txt >> JamesMadison.txt
+egrep -i 'James Monroe|President Monroe' newpages.txt >> JamesMonroe.txt
+egrep -i 'John Q(|\.|uincy) Adams' newpages.txt >> JohnQuincyAdams.txt
+egrep -i 'Andrew Jackson|President Jackson' newpages.txt >> AndrewJackson.txt
+egrep -i 'Martin Van Buren|President Buren|President Van Buren' newpages.txt >> MartinVanBuren.txt
+egrep -i 'William H(|\.|enry) Harrison' newpages.txt >> WilliamHenryHarrison.txt
+egrep -i 'John Tyler|President Tyler' newpages.txt >> JohnTyler.txt
+egrep -i 'James(| K(|\.|nox)) Polk|President Polk' newpages.txt >> JamesKPolk.txt
+egrep -i 'Zachary Taylor|President Taylor' newpages.txt >> ZacharyTaylor.txt
+egrep -i 'Fillmore' newpages.txt >> MillardFillmore.txt
+egrep -i 'Franklin Pierce|President Pierce' newpages.txt >> FranklinPierce.txt
+egrep -i 'James Buchanan|President Buchanan' newpages.txt >> JamesBuchanan.txt
+egrep -i '(Abraham|Abe) Lincoln|President Lincoln' newpages.txt >> AbrahamLincoln.txt
+egrep -i 'Andrew Johnson' newpages.txt >> AndrewJohnson.txt
+egrep -i 'Ulysses(| S(|\.|impson)) Grant|President Grant' newpages.txt >> UlyssesSGrant.txt
+egrep -i 'Rutherford(| B(|\.|irchard)) Hayes|President Hayes' newpages.txt >> RutherfordBHayes.txt
+egrep -i 'James(| A(|\.|bram)) Garfield|President Garfield' newpages.txt >> JamesAGarfield.txt
+egrep -i 'Chester(| A(|\.|lan)) Arthur|President Arthur' newpages.txt >> ChesterAArthur.txt
+egrep -i '(President|Grover) Cleveland' newpages.txt >> GroverCleveland.txt
+egrep -i 'Benjamin Harrison' newpages.txt >> BenjaminHarrison.txt
+egrep -i '(William|President) McKinley' newpages.txt >> WilliamMcKinley.txt
+egrep -i '(Theodore|Teddy) Roosevelt' newpages.txt >> TheodoreRoosevelt.txt
+egrep -i 'Taft' newpages.txt >> WilliamHowardTaft.txt #Would anything that mentions Taft NOT be about him?
+egrep -i 'Woodrow Wilson|President Wilson' newpages.txt >> WoodrowWilson.txt
+egrep -i 'Warren(| G(|\.|amaliel)) Harding|President Harding' newpages.txt >> WarrenGHarding.txt
+egrep -i 'Coolidge' newpages.txt >> CalvinCoolidge.txt
+egrep -i 'Herbert(| C(|\.|lark)) Hoover|President Hoover' newpages.txt >> HerbertHoover.txt
+egrep -i 'Franklin(| D(|\.|elano)) Roosevelt|\bFDR\b' newpages.txt >> FranklinDelanoRoosevelt.txt
+egrep -i 'Harry(| S(|\.)) Truman|President Truman' newpages.txt >> HarrySTruman.txt
+egrep -i 'Eisenhower' newpages.txt >> DwightDEisenhower.txt
+egrep -i 'John(| F(|\.|itzgerald)) Kennedy|\bJFK\b' newpages.txt >> JohnFKennedy.txt
+egrep -i 'Lyndon(| B(|\.|aines)) Johnson|\bLBJ\b' newpages.txt >> LyndonBJohnson.txt
+egrep -i 'Richard(| M(|\.|ilhous)) Nixon|President Nixon|Tricky Dick' newpages.txt >> RichardMNixon.txt
+egrep -i 'Gerald(| R(|\.|udolph)) Ford|President Ford' newpages.txt >> GeraldFord.txt
+egrep -i '(James|Jimmy|President)(| E(|\.|arl)) Carter' newpages.txt >> JimmyCarter.txt
+egrep -i 'Ronald(| W(|\.|ilson)) Reagan|President Reagan' newpages.txt >> RonaldReagan.txt
+egrep -i 'George H(|\.|erbert) W(|\.|alker) Bush' newpages.txt >> GeorgeHWBush.txt
+egrep -i '(William|Bill)(| Jefferson) Clinton|President Clinton' newpages.txt >> BillClinton.txt
+egrep -i 'George W(|\.|alker) Bush' newpages.txt >> GeorgeWBush.txt
+egrep -i 'Barack.+Obama|President Obama' newpages.txt >> BarackObama.txt
+egrep -i 'Obama' newpages.txt | egrep -iv 'Michel(|l)e Obama' newpages.txt >> BarackObama.txt
+egrep -i 'president of the (U(\.|)S(\.|)|United States)|(U(\.|)S(\.|)|American) president' newpages.txt | egrep -iv 'George Washington|President Washington' newpages.txt | egrep -iv 'George Washington Carver'| egrep -iv 'John Adams'| egrep -iv 'Thomas Jefferson|Jefforsonian|Monticello|President Jefferson'| egrep -iv 'James Madison|President Madison'| egrep -iv 'James Monroe|President Monroe'| egrep -iv 'John Q(|\.|uincy) Adams'| egrep -iv 'Andrew Jackson|President Jackson'| egrep -iv 'Martin Van Buren|President Buren|President Van Buren'| egrep -iv 'William H(|\.|enry) Harrison'| egrep -iv 'John Tyler|President Tyler'| egrep -iv 'James(| K(|\.|nox)) Polk|President Polk'| egrep -iv 'Zachary Taylor|President Taylor'| egrep -iv 'Fillmore'| egrep -iv 'Franklin Pierce|President Pierce'| egrep -iv 'James Buchanan|President Buchanan'| egrep -iv '(Abraham|Abe) Lincoln|President Lincoln'| egrep -iv 'Andrew Johnson'| egrep -iv 'Ulysses(| S(|\.|impson)) Grant|President Grant'| egrep -iv 'Rutherford(| B(|\.|irchard)) Hayes|President 
+Hayes'| egrep -iv 'James(| A(|\.|bram)) Garfield|President Garfield'| egrep -iv 'Chester(| A(|\.|lan)) Arthur|President Arthur'| egrep -iv '(President|Grover) Cleveland'| egrep -iv 'Benjamin Harrison'| egrep -iv '(William|President) McKinley'| egrep -iv '(Theodore|Teddy) Roosevelt'| egrep -iv 'Taft'| egrep -iv 'Woodrow Wilson|President Wilson'| egrep -iv 'Warren(| G(|\.|amaliel)) Harding|President Harding'| egrep -iv 'Coolidge'| egrep -iv 'Herbert(| C(|\.|lark)) Hoover|President Hoover'| egrep -iv 'Franklin(| D(|\.|elano)) Roosevelt|\bFDR\b'| egrep -iv 'Harry(| S(|\.)) Truman|President Truman'| egrep -iv 'Eisenhower'| egrep -iv 'John(| F(|\.|itzgerald)) Kennedy|\bJFK\b'| egrep -iv 'Lyndon(| B(|\.|aines)) Johnson|\bLBJ\b'| egrep -iv 'Richard(| M(|\.|ilhous)) Nixon|President Nixon|Tricky Dick'| egrep -iv 'Gerald(| R(|\.|udolph)) Ford|President Ford'| egrep -iv '(James|Jimmy|President)(| E(|\.|arl)) Carter'| egrep -iv 'Ronald(| W(|\.|ilson)) Reagan|President Reagan'| egrep -iv 'George H(|\.|erbert) W(|\.|alker) 
+Bush'| egrep -iv '(William|Bill)(| Jefferson) Clinton|President Clinton'| egrep -iv 'George W(|\.|alker) Bush'| egrep -iv 'Obama' >> President.txt
 
 PRESIDENT=`stat --print=%s President.txt`
 WASHINGTON=`stat --print=%s GeorgeWashington.txt`

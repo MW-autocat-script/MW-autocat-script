@@ -1,7 +1,7 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'World of Warcraft|w\.o\.w' >> WorldOfWarcraft.txt
-cat newpages.txt | egrep 'WoW' >> WorldOfWarcraft.txt
+egrep -i 'World of Warcraft|w\.o\.w' newpages.txt >> WorldOfWarcraft.txt
+egrep 'WoW' newpages.txt >> WorldOfWarcraft.txt
 
 WOW=`stat --print=%s WorldOfWarcraft.txt`
 

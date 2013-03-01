@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Studyladder|Study ladder|study lader|studdy ladder|studdyladder' > Studyladder.txt
+egrep -i 'Studyladder|Study ladder|study lader|studdy ladder|studdyladder' newpages.txt > Studyladder.txt
 
 STUDYLADDER=`stat --print=%s Studyladder.txt`
 

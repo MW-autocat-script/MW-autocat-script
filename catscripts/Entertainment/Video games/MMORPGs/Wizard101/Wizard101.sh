@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Wizard(|s)(|)101' >> Wizard101.txt
+egrep -i 'Wizard(|s)(|)101' newpages.txt >> Wizard101.txt
 
 WIZARD101=`stat --print=%s Wizard101.txt`
 

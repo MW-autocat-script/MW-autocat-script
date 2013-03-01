@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Freeciv' > Freeciv.txt
+egrep -i 'Freeciv' newpages.txt > Freeciv.txt
 
 FREECIV=`stat --print=%s Freeciv.txt`
 

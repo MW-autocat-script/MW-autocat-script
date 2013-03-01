@@ -11,5 +11,4 @@ then
   ./catscripts/Categorize.sh
 fi
 
-
 rm DannyPhantom.txt

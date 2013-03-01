@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Dead Frontier' >> DeadFrontier.txt
+egrep -i 'Dead Frontier' newpages.txt >> DeadFrontier.txt
 
 FRONTIER=`stat --print=%s DeadFrontier.txt`
 

@@ -1,27 +1,27 @@
 #!/bin/bash 
 
-cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)(red| Red)" >> PokémonRed.txt
-cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)(blue| Blue)" >> PokémonBlue.txt
-cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)(yellow| Yellow)" >> PokémonYellow.txt
-cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)(gold| Gold)" >> PokémonGold.txt
-cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)(silver| Silver)" >> PokémonSilver.txt
-cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)(crystal| Crystal)" >> PokémonCrystal.txt
-cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)(ruby| Ruby)" >> PokémonRuby.txt
-cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)(sapphire| Sapphire)" >> PokémonSapphire.txt
-cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)(emerald| Emerald)" >> PokémonEmerald.txt
-cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)(firered|fire red| FireRed| Fire Red)" >> PokémonFireRed.txt
-cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)(leafgreen|leaf green| LeafGreen| Leaf Green)" >> PokémonLeafGreen.txt
-cat newpages.txt | egrep -i "mystery dungeon.+red|red rescue team" >> RedRescueTeam.txt
-cat newpages.txt | egrep -i "mystery dungeon.+blue|blue rescue team" >> BlueRescueTeam.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)(red| Red)" newpages.txt >> PokémonRed.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)(blue| Blue)" newpages.txt >> PokémonBlue.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)(yellow| Yellow)" newpages.txt >> PokémonYellow.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)(gold| Gold)" newpages.txt >> PokémonGold.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)(silver| Silver)" newpages.txt >> PokémonSilver.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)(crystal| Crystal)" newpages.txt >> PokémonCrystal.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)(ruby| Ruby)" newpages.txt >> PokémonRuby.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)(sapphire| Sapphire)" newpages.txt >> PokémonSapphire.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)(emerald| Emerald)" newpages.txt >> PokémonEmerald.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)(firered|fire red| FireRed| Fire Red)" newpages.txt >> PokémonFireRed.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)(leafgreen|leaf green| LeafGreen| Leaf Green)" newpages.txt >> PokémonLeafGreen.txt
+egrep -i "mystery dungeon.+red|red rescue team" newpages.txt >> RedRescueTeam.txt
+egrep -i "mystery dungeon.+blue|blue rescue team" newpages.txt >> BlueRescueTeam.txt
 egrep -i "(Pokémon|Pokemon|Poke'mon)(black| Black)" newpages.txt | egrep -iv 'Black(| )2' >> PokémonBlack.txt
 egrep -i "(Pokémon|Pokemon|Poke'mon)(white| White)" newpages.txt | egrep -iv 'White(| )2' >> PokémonWhite.txt
 egrep -i "(Pokémon|Pokemon|Poke'mon)(black| Black)(| )2" newpages.txt >> PokémonBlack2.txt
 egrep -i "(Pokémon|Pokemon|Poke'mon)(white| White)(| )2" newpages.txt >> PokémonWhite2.txt
-cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)((dimond|diamond)| (dimond|Diamond))" >> PokémonDiamond.txt
-cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)((perl|pearl)| (perl|Pearl))" >> PokémonPearl.txt
-cat newpages.txt | egrep -i "(Pokémon|Pokemon|Poke'mon)((platinum|platnum|platnium)| (Platinum|Platnum|Platnium))" >> PokémonPlatinum.txt
-cat newpages.txt | egrep -i "HeartGold|Heart Gold" >> PokémonHeartGold.txt
-cat newpages.txt | egrep -i "SoulSilver|Soul Silver" >> PokémonSoulSilver.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)((dimond|diamond)| (dimond|Diamond))" newpages.txt >> PokémonDiamond.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)((perl|pearl)| (perl|Pearl))" newpages.txt >> PokémonPearl.txt
+egrep -i "(Pokémon|Pokemon|Poke'mon)((platinum|platnum|platnium)| (Platinum|Platnum|Platnium))" newpages.txt >> PokémonPlatinum.txt
+egrep -i "HeartGold|Heart Gold" newpages.txt >> PokémonHeartGold.txt
+egrep -i "SoulSilver|Soul Silver" newpages.txt >> PokémonSoulSilver.txt
 
 RED=`stat --print=%s PokémonRed.txt`
 BLUE=`stat --print=%s PokémonBlue.txt`
@@ -45,9 +45,6 @@ HEARTGOLD=`stat --print=%s PokémonHeartGold.txt`
 SOULSILVER=`stat --print=%s PokémonSoulSilver.txt`
 BLACK2=`stat --print=%s PokémonBlack2.txt`
 WHITE2=`stat --print=%s PokémonWhite2.txt`
-
-
-
 
 if [ $RED -ne 0 ];
 then
