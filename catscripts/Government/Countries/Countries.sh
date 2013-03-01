@@ -13,6 +13,7 @@
 ./catscripts/Government/Countries/Chile/Chile.sh
 ./catscripts/Government/Countries/Cyprus/Cyprus.sh
 ./catscripts/Government/Countries/Egypt/Egypt.sh
+./catscripts/Government/Countries/Ghana/Ghana.sh
 ./catscripts/Government/Countries/Greece/Greece.sh
 ./catscripts/Government/Countries/Haiti/Haiti.sh
 ./catscripts/Government/Countries/Hungary/Hungary.sh
