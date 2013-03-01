@@ -1,25 +1,15 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'YouTube' >> YouTube.txt
-cat newpages.txt | egrep -i 'You Tube' >> YouTube.txt
-
-cat newpages.txt | egrep -i 'Twitter' >> Twitter.txt
-
-cat newpages.txt | egrep -i 'Facebook' >> Facebook.txt
-cat newpages.txt | egrep -i 'Face book' >> Facebook.txt
-
-cat newpages.txt | egrep -i 'Myspace' >> Myspace.txt
-
-cat newpages.txt | egrep -i 'Gaia Online' >> GaiaOnline.txt
-
-cat newpages.txt | egrep -i 'Google' | egrep -iv 'Google Chrome' >> Google.txt
-
-cat newpages.txt | egrep -i '\bWikia\b' | egrep -iv 'Wikia Search'  >> Wikia.txt
-cat newpages.txt | egrep -i 'Wikia Search' >> WikiaSearch.txt
-
-cat newpages.txt | egrep -i '\bWikianswers\b|wiki answers' >> Wikianswers.txt
-
-cat newpages.txt | egrep -i 'Wikipedia' >> Wikipedia.txt
+egrep -i 'You(| )Tube' newpages.txt >> YouTube.txt
+egrep -i 'Twitter' newpages.txt >> Twitter.txt
+egrep -i 'Face(| )book' newpages.txt >> Facebook.txt
+egrep -i 'Myspace' newpages.txt >> Myspace.txt
+egrep -i 'Gaia(| )Online' newpages.txt >> GaiaOnline.txt
+egrep -i 'Google' newpages.txt | egrep -iv 'Google Chrome' >> Google.txt
+egrep -i '\bWikia\b' newpages.txt | egrep -iv 'Wikia Search'  >> Wikia.txt
+egrep -i 'Wikia Search' newpages.txt >> WikiaSearch.txt
+egrep -i '\bWikianswers\b|wiki answers' newpages.txt >> Wikianswers.txt
+egrep -i 'Wikipedia' newpages.txt >> Wikipedia.txt
 
 YOUTUBE=`stat --print=%s YouTube.txt`
 TWITTER=`stat --print=%s Twitter.txt`
