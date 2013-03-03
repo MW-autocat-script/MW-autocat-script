@@ -12,5 +12,6 @@ then
 fi
 
 ./catscripts/Lifestyle/Religion/Buddhism/Buddhism.sh
+./catscripts/Lifestyle/Religion/Sikhism/Sikhism.sh
 
 rm Religion.txt
