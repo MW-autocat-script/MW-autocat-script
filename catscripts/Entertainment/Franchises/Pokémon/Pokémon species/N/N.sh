@@ -4,8 +4,8 @@ egrep -i 'Nidoking' newpages.txt >> Nidoking.txt
 egrep -i 'Nidoqueen' newpages.txt >> Nidoqueen.txt
 egrep -i 'Nidoran♀|Nidoran ♀|Nidoran (girl|female)|Nidoran \(female\)|(girl|female) Nidoran' newpages.txt >> Nidoran♀.txt
 egrep -i 'Nidoran♂|Nidoran ♂|Nidoran (boy|guy|male)|Nidoran \(male\)|(boy|guy|male) Nidoran' newpages.txt >> Nidoran♂.txt
-egrep -i 'Nidoran' newpages.txt| egrep -iv '♀|♀|girl|female|male|guy|boy' >> Nidoran♀.txt
-egrep -i 'Nidoran' | egrep -iv '♀|♀|girl|female|male|guy|boy' >> Nidoran♂.txt
+egrep -i 'Nidoran' newpages.txt | egrep -iv '♀|♀|girl|female|male|guy|boy' >> Nidoran♀.txt
+egrep -i 'Nidoran' newpages.txt | egrep -iv '♀|♀|girl|female|male|guy|boy' >> Nidoran♂.txt
 egrep -i 'Nidorina' newpages.txt >> Nidorina.txt
 egrep -i 'Nidorino' newpages.txt >> Nidorino.txt
 egrep -i 'Nincada' newpages.txt >> Nincada.txt

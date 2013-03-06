@@ -572,3 +572,5 @@ rm Munchlax.txt
 rm Munna.txt
 rm Murkrow.txt
 rm Musharna.txt
+
+echo "Finish M"

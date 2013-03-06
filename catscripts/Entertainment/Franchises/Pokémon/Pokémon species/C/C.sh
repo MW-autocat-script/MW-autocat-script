@@ -1,6 +1,5 @@
 #!/bin/bash
 #Pokemon species by name, starting with the letter C
-
 egrep -i 'Cacnea' newpages.txt >>  Cacnea.txt
 egrep -i 'Cacturne' newpages.txt >>  Cacturne.txt
 egrep -i 'Camerupt' newpages.txt >> Camerupt.txt
@@ -18,7 +17,7 @@ egrep -i 'Charmander' newpages.txt >> Charmander.txt
 egrep -i 'Charmeleon' newpages.txt >> Charmeleon.txt
 egrep -i 'Chatot' newpages.txt >> Chatot.txt
 egrep -i 'Cherrim' newpages.txt >> Cherrim.txt
-egrep -i "Cherubi\b|Cherubi's|Cherubis\b" >> Cherubi.txt
+egrep -i "Cherubi\b|Cherubi's|Cherubis\b" newpages.txt >> Cherubi.txt
 egrep -i 'Chikorita' newpages.txt >> Chikorita.txt
 egrep -i 'Chimchar' newpages.txt >> Chimchar.txt
 egrep -i 'Chimecho' newpages.txt >> Chimecho.txt
@@ -51,7 +50,6 @@ egrep -i 'Cryogonal' newpages.txt >> Cryogonal.txt
 egrep -i 'Cubchoo' newpages.txt >> Cubchoo.txt
 egrep -i 'Cubone' newpages.txt >> Cubone.txt
 egrep -i 'Cyndaquil' newpages.txt >> Cyndaquil.txt
-
 
 CACNEA=`stat --print=%s Cacnea.txt`
 CACTURNE=`stat --print=%s Cacturne.txt`
@@ -104,8 +102,7 @@ CUBCHOO=`stat --print=%s Cubchoo.txt`
 CUBONE=`stat --print=%s Cubone.txt`
 CYNDAQUIL=`stat --print=%s Cyndaquil.txt`
 
-
-if [ $CACNEA -ne 0  ];
+if [ $CACNEA -ne 0 ];
 then
    export CATFILE="Cacnea.txt"
    export CATNAME="Cacnea"
@@ -113,7 +110,7 @@ then
 fi
 
 
-if [ $CACTURNE -ne 0  ];
+if [ $CACTURNE -ne 0 ];
 then
    export CATFILE="Cacturne.txt"
    export CATNAME="Cacturne"
@@ -121,7 +118,7 @@ then
 fi
 
 
-if [ $CAMERUPT -ne 0  ];
+if [ $CAMERUPT -ne 0 ];
 then
    export CATFILE="Camerupt.txt"
    export CATNAME="Camerupt"
@@ -129,7 +126,7 @@ then
 fi
 
 
-if [ $CARNIVINE -ne 0  ];
+if [ $CARNIVINE -ne 0 ];
 then
    export CATFILE="Carnivine.txt"
    export CATNAME="Carnivine"
@@ -137,7 +134,7 @@ then
 fi
 
 
-if [ $CARRACOSTA -ne 0  ];
+if [ $CARRACOSTA -ne 0 ];
 then
    export CATFILE="Carracosta.txt"
    export CATNAME="Carracosta"
@@ -145,7 +142,7 @@ then
 fi
 
 
-if [ $CARVANHA -ne 0  ];
+if [ $CARVANHA -ne 0 ];
 then
    export CATFILE="Carvanha.txt"
    export CATNAME="Carvanha"
@@ -153,7 +150,7 @@ then
 fi
 
 
-if [ $CASCOON -ne 0  ];
+if [ $CASCOON -ne 0 ];
 then
    export CATFILE="Cascoon.txt"
    export CATNAME="Cascoon"
@@ -161,7 +158,7 @@ then
 fi
 
 
-if [ $CASTFORM -ne 0  ];
+if [ $CASTFORM -ne 0 ];
 then
    export CATFILE="Castform.txt"
    export CATNAME="Castform"
@@ -169,7 +166,7 @@ then
 fi
 
 
-if [ $CATERPIE -ne 0  ];
+if [ $CATERPIE -ne 0 ];
 then
    export CATFILE="Caterpie.txt"
    export CATNAME="Caterpie"
@@ -177,7 +174,7 @@ then
 fi
 
 
-if [ $CELEBI -ne 0  ];
+if [ $CELEBI -ne 0 ];
 then
    export CATFILE="Celebi.txt"
    export CATNAME="Celebi"
@@ -185,7 +182,7 @@ then
 fi
 
 
-if [ $CHANDELURE -ne 0  ];
+if [ $CHANDELURE -ne 0 ];
 then
    export CATFILE="Chandelure.txt"
    export CATNAME="Chandelure"
@@ -193,15 +190,14 @@ then
 fi
 
 
-if [ $CHANSEY -ne 0  ];
+if [ $CHANSEY -ne 0 ];
 then
    export CATFILE="Chansey.txt"
    export CATNAME="Chansey"
    ./catscripts/Categorize.sh
 fi
 
-
-if [ $CHARIZARD -ne 0  ];
+if [ $CHARIZARD -ne 0 ];
 then
    export CATFILE="Charizard.txt"
    export CATNAME="Charizard"
@@ -209,7 +205,7 @@ then
 fi
 
 
-if [ $CHARMANDER -ne 0  ];
+if [ $CHARMANDER -ne 0 ];
 then
    export CATFILE="Charmander.txt"
    export CATNAME="Charmander"
@@ -217,7 +213,7 @@ then
 fi
 
 
-if [ $CHARMELEON -ne 0  ];
+if [ $CHARMELEON -ne 0 ];
 then
    export CATFILE="Charmeleon.txt"
    export CATNAME="Charmeleon"
@@ -225,7 +221,7 @@ then
 fi
 
 
-if [ $CHATOT -ne 0  ];
+if [ $CHATOT -ne 0 ];
 then
    export CATFILE="Chatot.txt"
    export CATNAME="Chatot"
@@ -233,7 +229,7 @@ then
 fi
 
 
-if [ $CHERRIM -ne 0  ];
+if [ $CHERRIM -ne 0 ];
 then
    export CATFILE="Cherrim.txt"
    export CATNAME="Cherrim"
@@ -241,7 +237,7 @@ then
 fi
 
 
-if [ $CHERUBI -ne 0  ];
+if [ $CHERUBI -ne 0 ];
 then
    export CATFILE="Cherubi.txt"
    export CATNAME="Cherubi"
@@ -249,7 +245,7 @@ then
 fi
 
 
-if [ $CHIKORITA -ne 0  ];
+if [ $CHIKORITA -ne 0 ];
 then
    export CATFILE="Chikorita.txt"
    export CATNAME="Chikorita"
@@ -257,7 +253,7 @@ then
 fi
 
 
-if [ $CHIMCHAR -ne 0  ];
+if [ $CHIMCHAR -ne 0 ];
 then
    export CATFILE="Chimchar.txt"
    export CATNAME="Chimchar"
@@ -265,7 +261,7 @@ then
 fi
 
 
-if [ $CHIMECHO -ne 0  ];
+if [ $CHIMECHO -ne 0 ];
 then
    export CATFILE="Chimecho.txt"
    export CATNAME="Chimecho"
@@ -273,7 +269,7 @@ then
 fi
 
 
-if [ $CHINCHOU -ne 0  ];
+if [ $CHINCHOU -ne 0 ];
 then
    export CATFILE="Chinchou.txt"
    export CATNAME="Chinchou"
@@ -281,15 +277,14 @@ then
 fi
 
 
-if [ $CHINGLING -ne 0  ];
+if [ $CHINGLING -ne 0 ];
 then
    export CATFILE="Chingling.txt"
    export CATNAME="Chingling"
    ./catscripts/Categorize.sh
 fi
 
-
-if [ $CINCCINO -ne 0  ];
+if [ $CINCCINO -ne 0 ];
 then
    export CATFILE="Cinccino.txt"
    export CATNAME="Cinccino"
@@ -297,7 +292,7 @@ then
 fi
 
 
-if [ $CLAMPERL -ne 0  ];
+if [ $CLAMPERL -ne 0 ];
 then
    export CATFILE="Clamperl.txt"
    export CATNAME="Clamperl"
@@ -305,7 +300,7 @@ then
 fi
 
 
-if [ $CLAYDOL -ne 0  ];
+if [ $CLAYDOL -ne 0 ];
 then
    export CATFILE="Claydol.txt"
    export CATNAME="Claydol"
@@ -313,7 +308,7 @@ then
 fi
 
 
-if [ $CLEFABLE -ne 0  ];
+if [ $CLEFABLE -ne 0 ];
 then
    export CATFILE="Clefable.txt"
    export CATNAME="Clefable"
@@ -321,7 +316,7 @@ then
 fi
 
 
-if [ $CLEFAIRY -ne 0  ];
+if [ $CLEFAIRY -ne 0 ];
 then
    export CATFILE="Clefairy.txt"
    export CATNAME="Clefairy"
@@ -329,7 +324,7 @@ then
 fi
 
 
-if [ $CLEFFA -ne 0  ];
+if [ $CLEFFA -ne 0 ];
 then
    export CATFILE="Cleffa.txt"
    export CATNAME="Cleffa"
@@ -337,7 +332,7 @@ then
 fi
 
 
-if [ $CLOYSTER -ne 0  ];
+if [ $CLOYSTER -ne 0 ];
 then
    export CATFILE="Cloyster.txt"
    export CATNAME="Cloyster"
@@ -345,7 +340,7 @@ then
 fi
 
 
-if [ $COBALION -ne 0  ];
+if [ $COBALION -ne 0 ];
 then
    export CATFILE="Cobalion.txt"
    export CATNAME="Cobalion"
@@ -353,7 +348,7 @@ then
 fi
 
 
-if [ $COFAGRIGUS -ne 0  ];
+if [ $COFAGRIGUS -ne 0 ];
 then
    export CATFILE="Cofagrigus.txt"
    export CATNAME="Cofagrigus"
@@ -361,7 +356,7 @@ then
 fi
 
 
-if [ $COMBEE -ne 0  ];
+if [ $COMBEE -ne 0 ];
 then
    export CATFILE="Combee.txt"
    export CATNAME="Combee"
@@ -369,7 +364,7 @@ then
 fi
 
 
-if [ $COMBUSKEN -ne 0  ];
+if [ $COMBUSKEN -ne 0 ];
 then
    export CATFILE="Combusken.txt"
    export CATNAME="Combusken"
@@ -377,15 +372,14 @@ then
 fi
 
 
-if [ $CONKELDURR -ne 0  ];
+if [ $CONKELDURR -ne 0 ];
 then
    export CATFILE="Conkeldurr.txt"
    export CATNAME="Conkeldurr"
    ./catscripts/Categorize.sh
 fi
 
-
-if [ $CORPHISH -ne 0  ];
+if [ $CORPHISH -ne 0 ];
 then
    export CATFILE="Corphish.txt"
    export CATNAME="Corphish"
@@ -393,7 +387,7 @@ then
 fi
 
 
-if [ $CORSOLA -ne 0  ];
+if [ $CORSOLA -ne 0 ];
 then
    export CATFILE="Corsola.txt"
    export CATNAME="Corsola"
@@ -401,7 +395,7 @@ then
 fi
 
 
-if [ $COTTONEE -ne 0  ];
+if [ $COTTONEE -ne 0 ];
 then
    export CATFILE="Cottonee.txt"
    export CATNAME="Cottonee"
@@ -409,15 +403,14 @@ then
 fi
 
 
-if [ $CRADILY -ne 0  ];
+if [ $CRADILY -ne 0 ];
 then
    export CATFILE="Cradily.txt"
    export CATNAME="Cradily"
    ./catscripts/Categorize.sh
 fi
 
-
-if [ $CRANIDOS -ne 0  ];
+if [ $CRANIDOS -ne 0 ];
 then
    export CATFILE="Cranidos.txt"
    export CATNAME="Cranidos"
@@ -425,7 +418,7 @@ then
 fi
 
 
-if [ $CRAWDAUNT -ne 0  ];
+if [ $CRAWDAUNT -ne 0 ];
 then
    export CATFILE="Crawdaunt.txt"
    export CATNAME="Crawdaunt"
@@ -433,7 +426,7 @@ then
 fi
 
 
-if [ $CRESSELIA -ne 0  ];
+if [ $CRESSELIA -ne 0 ];
 then
    export CATFILE="Cresselia.txt"
    export CATNAME="Cresselia"
@@ -441,7 +434,7 @@ then
 fi
 
 
-if [ $CROAGUNK -ne 0  ];
+if [ $CROAGUNK -ne 0 ];
 then
    export CATFILE="Croagunk.txt"
    export CATNAME="Croagunk"
@@ -449,7 +442,7 @@ then
 fi
 
 
-if [ $CROBAT -ne 0  ];
+if [ $CROBAT -ne 0 ];
 then
    export CATFILE="Crobat.txt"
    export CATNAME="Crobat"
@@ -457,7 +450,7 @@ then
 fi
 
 
-if [ $CROCONAW -ne 0  ];
+if [ $CROCONAW -ne 0 ];
 then
    export CATFILE="Croconaw.txt"
    export CATNAME="Croconaw"
@@ -465,7 +458,7 @@ then
 fi
 
 
-if [ $CRUSTLE -ne 0  ];
+if [ $CRUSTLE -ne 0 ];
 then
    export CATFILE="Crustle.txt"
    export CATNAME="Crustle"
@@ -473,7 +466,7 @@ then
 fi
 
 
-if [ $CRYOGONAL -ne 0  ];
+if [ $CRYOGONAL -ne 0 ];
 then
    export CATFILE="Cryogonal.txt"
    export CATNAME="Cryogonal"
@@ -481,7 +474,7 @@ then
 fi
 
 
-if [ $CUBCHOO -ne 0  ];
+if [ $CUBCHOO -ne 0 ];
 then
    export CATFILE="Cubchoo.txt"
    export CATNAME="Cubchoo"
@@ -489,7 +482,7 @@ then
 fi
 
 
-if [ $CUBONE -ne 0  ];
+if [ $CUBONE -ne 0 ];
 then
    export CATFILE="Cubone.txt"
    export CATNAME="Cubone"
@@ -497,7 +490,7 @@ then
 fi
 
 
-if [ $CYNDAQUIL -ne 0  ];
+if [ $CYNDAQUIL -ne 0 ];
 then
    export CATFILE="Cyndaquil.txt"
    export CATNAME="Cyndaquil"

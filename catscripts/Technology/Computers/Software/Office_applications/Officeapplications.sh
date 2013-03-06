@@ -4,10 +4,10 @@ egrep -i 'Office suite|office application' newpages.txt | egrep -iv 'Microsoft O
 egrep -i 'Open(| )Office|Libre(| )Office' newpages.txt >> Officeapps.txt
 egrep -i 'word process(or|ing)' newpages.txt | egrep -iv 'Microsoft Word' >> Wordprocessing.txt
 
-APPS=`stat --print=%s Officesuite.txt`
+APPS=`stat --print=%s Officeapps.txt`
 WPROCESS=`stat --print=%s Wordprocessing.txt`
 
-if [ $SUITE -ne 0 ];
+if [ $APPS -ne 0 ];
 then
   export CATFILE="Officeapps.txt"
   export CATNAME="Office applications"

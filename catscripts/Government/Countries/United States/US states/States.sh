@@ -5,4 +5,5 @@
 ./catscripts/Government/Countries/United\ States/US\ states/Arkansas/Arkansas.sh
 ./catscripts/Government/Countries/United\ States/US\ states/New_Mexico/NewMexico.sh
 ./catscripts/Government/Countries/United\ States/US\ states/Pennsylvania/Pennsylvania.sh
+./catscripts/Government/Countries/United\ States/US\ states/Vermont/Vermont.sh
 ./catscripts/Government/Countries/United\ States/US\ states/Wyoming/Wyoming.sh

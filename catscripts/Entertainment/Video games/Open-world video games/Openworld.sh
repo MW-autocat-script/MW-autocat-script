@@ -1,7 +1,7 @@
 #!/bin/bash
 
-egrep -i 'Minecraft|Mine craft' newpages.txt | egrep -iv 'besides Minecraft\]\]' > Minecraft.txt
-egrep -i 'Tekkit' newpages.txt | egrep -iv 'besides Tekkit\]\]' >> Tekkit.txt
+egrep -i 'Minecraft|Mine craft' newpages.txt > Minecraft.txt
+egrep -i 'Tekkit' newpages.txt >> Tekkit.txt
 
 MINECRAFT=`stat --print=%s Minecraft.txt`
 TEKKIT=`stat --print=%s Tekkit.txt`
@@ -22,3 +22,4 @@ fi
 
 rm Minecraft.txt
 rm Tekkit.txt
+

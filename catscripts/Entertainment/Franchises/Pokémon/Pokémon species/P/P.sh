@@ -1,5 +1,4 @@
 #!/bin/bash
-
 egrep -i 'Pachirisu' newpages.txt >> Pachirisu.txt
 egrep -i 'Palkia' newpages.txt >> Palkia.txt
 egrep -i 'Palpitoad' newpages.txt >> Palpitoad.txt

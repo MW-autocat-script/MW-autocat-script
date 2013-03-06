@@ -1,6 +1,5 @@
 #!/bin/bash 
 #Pokemon species by name, starting with the letter D
-
 egrep -i 'Darkrai' newpages.txt >>   Darkrai.txt
 egrep -i 'Darmanitan' newpages.txt >>   Darmanitan.txt
 egrep -i 'Darumaka' newpages.txt >>   Darumaka.txt

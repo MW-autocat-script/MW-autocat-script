@@ -10,3 +10,5 @@ then
   export CATNAME="New Mexico"
   ./catscripts/Categorize.sh
 fi
+
+rm NewMexico.txt

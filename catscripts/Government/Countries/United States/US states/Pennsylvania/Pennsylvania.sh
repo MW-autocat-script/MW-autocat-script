@@ -2,7 +2,7 @@
 
 egrep -i 'Pennsylvania|Pennsylvannia|Pennnsylvania|Pensylvania|Pensylvannia' newpages.txt >> Pennsylvania.txt
 
-PENNSYLVANIA=`stat --print=%s Pennnsylvania.txt`
+PENNSYLVANIA=`stat --print=%s Pennsylvania.txt`
 
 if [ $PENNSYLVANIA -ne 0 ];
 then

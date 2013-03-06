@@ -1,24 +1,24 @@
 #!/bin/bash
-egrep -i 'Eelektrik'newpages.txt >> Eelektrik.txt
-egrep -i 'Eelektross'newpages.txt >> Eelektross.txt
-egrep -i 'Eevee'newpages.txt >> Eevee.txt
-egrep -i 'Ekans'newpages.txt >> Ekans.txt
-egrep -i 'Electabuzz'newpages.txt >> Electabuzz.txt
-egrep -i 'Electivire'newpages.txt >> Electivire.txt
-egrep -i 'Electrike'newpages.txt >> Electrike.txt
-egrep -i 'Electrode'newpages.txt >> Electrode.txt
-egrep -i 'Elekid'newpages.txt >> Elekid.txt
-egrep -i 'Elgyem'newpages.txt >> Elgyem.txt
-egrep -i 'Emboar'newpages.txt >> Emboar.txt
-egrep -i 'Emolga'newpages.txt >> Emolga.txt
-egrep -i 'Empoleon'newpages.txt >> Empoleon.txt
-egrep -i 'Entei'newpages.txt >> Entei.txt
-egrep -i 'Escavalier'newpages.txt >> Escavalier.txt
-egrep -i 'Espeon'newpages.txt >> Espeon.txt
-egrep -i 'Excadrill'newpages.txt >> Excadrill.txt
-egrep -i 'Exeggcute'newpages.txt >> Exeggcute.txt
-egrep -i 'Exeggutor'newpages.txt >> Exeggutor.txt
-egrep -i 'Exploud'newpages.txt >> Exploud.txt
+egrep -i 'Eelektrik' newpages.txt >> Eelektrik.txt
+egrep -i 'Eelektross' newpages.txt >> Eelektross.txt
+egrep -i 'Eevee' newpages.txt >> Eevee.txt
+egrep -i 'Ekans' newpages.txt >> Ekans.txt
+egrep -i 'Electabuzz' newpages.txt >> Electabuzz.txt
+egrep -i 'Electivire' newpages.txt >> Electivire.txt
+egrep -i 'Electrike' newpages.txt >> Electrike.txt
+egrep -i 'Electrode' newpages.txt >> Electrode.txt
+egrep -i 'Elekid' newpages.txt >> Elekid.txt
+egrep -i 'Elgyem' newpages.txt >> Elgyem.txt
+egrep -i 'Emboar' newpages.txt >> Emboar.txt
+egrep -i 'Emolga' newpages.txt >> Emolga.txt
+egrep -i 'Empoleon' newpages.txt >> Empoleon.txt
+egrep -i 'Entei' newpages.txt >> Entei.txt
+egrep -i 'Escavalier' newpages.txt >> Escavalier.txt
+egrep -i 'Espeon' newpages.txt >> Espeon.txt
+egrep -i 'Excadrill' newpages.txt >> Excadrill.txt
+egrep -i 'Exeggcute' newpages.txt >> Exeggcute.txt
+egrep -i 'Exeggutor' newpages.txt >> Exeggutor.txt
+egrep -i 'Exploud' newpages.txt >> Exploud.txt
 
 
 Eelektrik=`stat --print=%s Eelektrik.txt`
