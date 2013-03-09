@@ -1,9 +1,9 @@
 #!/bin/bash 
 
-cat newpages.txt | egrep -i 'Vanadium' >> Vanadium.txt
-cat newpages.txt | egrep -i 'Niobium' >> Niobium.txt
-cat newpages.txt | egrep -i 'Tantalum' >> Tantalum.txt
-cat newpages.txt | egrep -i 'Dubnium' >> Dubnium.txt
+egrep -i 'Vanadium' newpages.txt >> Vanadium.txt
+egrep -i 'Niobium' newpages.txt >> Niobium.txt
+egrep -i 'Tantalum' newpages.txt >> Tantalum.txt
+egrep -i 'Dubnium' newpages.txt >> Dubnium.txt
 
 VANADIUM=`stat --print=%s Vanadium.txt`
 NIOBIUM=`stat --print=%s Niobium.txt`

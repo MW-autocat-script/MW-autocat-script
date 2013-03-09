@@ -1,12 +1,12 @@
 #!/bin/bash
 #IUPAC Group 13 elements.
 
-cat newpages.txt | egrep -i 'Boron' | egrep -iv 'Boron \b.+ide|Boron \b.+ate|Boron \b.+ite' >> Boron.txt
-cat newpages.txt | egrep -i 'Aluminium|Aluminum' | egrep -iv '(Aluminium|Aluminum) \b.+ide|(Aluminium|Aluminum) \b.+ate|(Aluminium|Aluminum) \b.+ite' >> Aluminium.txt
-cat newpages.txt | egrep -i 'Gallium' | egrep -iv 'Gallium \b.+ide|Gallium \b.+ate|Gallium \b.+ite' >> Gallium.txt
-cat newpages.txt | egrep -i 'Indium' | egrep -iv 'Indium \b.+ide|Indium \b.+ate|Indium \b.+ite' >> Indium.txt
-cat newpages.txt | egrep -i 'Thallium' | egrep -iv 'rubidiun \b.+ide|Thallium \b.+ate|Thallium \b.+ite' >> Thallium.txt 
-cat newpages.txt | egrep -i 'Ununtrium' >>  Ununtrium.txt
+egrep -i 'Boron' newpages.txt | egrep -iv 'Boron \b.+ide|Boron \b.+ate|Boron \b.+ite' >> Boron.txt
+egrep -i 'Aluminium|Aluminum' newpages.txt | egrep -iv '(Aluminium|Aluminum) \b.+ide|(Aluminium|Aluminum) \b.+ate|(Aluminium|Aluminum) \b.+ite' >> Aluminium.txt
+egrep -i 'Gallium' newpages.txt | egrep -iv 'Gallium \b.+ide|Gallium \b.+ate|Gallium \b.+ite' >> Gallium.txt
+egrep -i 'Indium' newpages.txt | egrep -iv 'Indium \b.+ide|Indium \b.+ate|Indium \b.+ite' >> Indium.txt
+egrep -i 'Thallium' newpages.txt | egrep -iv 'rubidiun \b.+ide|Thallium \b.+ate|Thallium \b.+ite' >> Thallium.txt 
+egrep -i 'Ununtrium' newpages.txt >>  Ununtrium.txt
 
 BORON=`stat --print=%s Boron.txt`
 ALUMINIUM=`stat --print=%s Aluminium.txt`

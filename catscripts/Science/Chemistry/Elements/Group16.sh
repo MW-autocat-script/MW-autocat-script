@@ -1,11 +1,11 @@
 #!/bin/bash 
 
-cat newpages.txt | egrep -i '\bOxygen' | egrep -iv 'Oxygen \b.+(ate|ide|ite)|channel|network|oxygen sensor|oxygen tank' >> Oxygen.txt
-cat newpages.txt | egrep -i 'Sulfur' | egrep -iv 'Sulfur \b.+(ate|ide|ite)' >> Sulfur.txt
-cat newpages.txt | egrep -i 'Selenium' | egrep -iv 'Selenium \b.+(ate|ide|ite)' >> Selenium.txt
-cat newpages.txt | egrep -i 'Tellurium' | egrep -iv 'Tellurium \b.+(ate|ide|ite)' >> Tellurium.txt
-cat newpages.txt | egrep -i 'Polonium' | egrep -iv 'Polonium \b.+(ate|ide|ite)' >> Polonium.txt
-cat newpages.txt | egrep -i 'Livermorium' | egrep -iv 'Livermorium \b.+(ate|ide|ite)' >> Livermorium.txt
+egrep -i '\bOxygen' newpages.txt | egrep -iv 'Oxygen \b.+(ate|ide|ite)|channel|network|oxygen sensor|oxygen tank' >> Oxygen.txt
+egrep -i 'Sulfur' newpages.txt | egrep -iv 'Sulfur \b.+(ate|ide|ite)' >> Sulfur.txt
+egrep -i 'Selenium' newpages.txt | egrep -iv 'Selenium \b.+(ate|ide|ite)' >> Selenium.txt
+egrep -i 'Tellurium' newpages.txt | egrep -iv 'Tellurium \b.+(ate|ide|ite)' >> Tellurium.txt
+egrep -i 'Polonium' newpages.txt | egrep -iv 'Polonium \b.+(ate|ide|ite)' >> Polonium.txt
+egrep -i 'Livermorium' newpages.txt | egrep -iv 'Livermorium \b.+(ate|ide|ite)' >> Livermorium.txt
 
 OXYGEN=`stat --print=%s Oxygen.txt`
 SULFUR=`stat --print=%s Sulfur.txt`

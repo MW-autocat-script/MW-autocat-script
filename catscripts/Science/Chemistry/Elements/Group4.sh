@@ -1,9 +1,9 @@
 #!/bin/bash 
 
-cat newpages.txt | egrep -i 'Titanium' | egrep -iv 'Titanium \b.+(ate|ide|ite)|blade|toy|katar|lego|muffler|runed titanium' >> Titanium.txt
-cat newpages.txt | egrep -i 'Zirconium' | egrep -iv 'Zirconium \b.+(ate|ide|ite)' >> Zirconium.txt
-cat newpages.txt | egrep -i 'Hafnium' >> Hafnium.txt
-cat newpages.txt | egrep -i 'Rutherfordium' >> Rutherfordium.txt
+egrep -i 'Titanium' newpages.txt | egrep -iv 'Titanium \b.+(ate|ide|ite)|blade|toy|katar|lego|muffler|runed titanium' >> Titanium.txt
+egrep -i 'Zirconium' newpages.txt | egrep -iv 'Zirconium \b.+(ate|ide|ite)' >> Zirconium.txt
+egrep -i 'Hafnium' newpages.txt >> Hafnium.txt
+egrep -i 'Rutherfordium' newpages.txt >> Rutherfordium.txt
 
 TITANIUM=`stat --print=%s Titanium.txt`
 ZIRCONIUM=`stat --print=%s Zirconium.txt`

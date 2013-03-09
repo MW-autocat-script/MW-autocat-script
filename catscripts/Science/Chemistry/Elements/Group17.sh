@@ -1,11 +1,11 @@
 #!/bin/bash 
 
-cat newpages.txt | egrep -i '\bFluorine' | egrep -iv 'Fluorine \b.+(ate|ide|ite)' >> Fluorine.txt
-cat newpages.txt | egrep -i 'Chlorine' | egrep -iv 'Chlorine \b.+(ate|ide|ite)' >> Chlorine.txt
-cat newpages.txt | egrep -i '\bBromine' | egrep -iv 'Bromine \b.+(ate|ide|ite)' >> Bromine.txt
-cat newpages.txt | egrep -i 'Iodine' | egrep -iv 'Iodine \b.+(ate|ide|ite)' >> Iodine.txt
-cat newpages.txt | egrep -i '\bAstatine' | egrep -iv 'Astatine \b.+(ate|ide|ite)' >> Astatine.txt
-cat newpages.txt | egrep -i 'Ununseptium' | egrep -iv 'Ununseptium \b.+(ate|ide|ite)' >> Ununseptium.txt
+egrep -i '\bFluorine' newpages.txt | egrep -iv 'Fluorine \b.+(ate|ide|ite)' >> Fluorine.txt
+egrep -i 'Chlorine' newpages.txt | egrep -iv 'Chlorine \b.+(ate|ide|ite)' >> Chlorine.txt
+egrep -i '\bBromine' newpages.txt | egrep -iv 'Bromine \b.+(ate|ide|ite)' >> Bromine.txt
+egrep -i 'Iodine' newpages.txt | egrep -iv 'Iodine \b.+(ate|ide|ite)' >> Iodine.txt
+egrep -i '\bAstatine' newpages.txt | egrep -iv 'Astatine \b.+(ate|ide|ite)' >> Astatine.txt
+egrep -i 'Ununseptium' newpages.txt | egrep -iv 'Ununseptium \b.+(ate|ide|ite)' >> Ununseptium.txt
 
 FLUORINE=`stat --print=%s Fluorine.txt`
 CHLORINE=`stat --print=%s Chlorine.txt`

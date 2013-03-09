@@ -1,11 +1,11 @@
 #!/bin/bash 
 
-cat newpages.txt | egrep -i '\bNitrogen\b|\bNitrogens\b' | egrep -iv 'Nitrogen \b.+(ate|ide|ite)' >> Nitrogen.txt
-cat newpages.txt | egrep -i 'Phosphorus|Phosphorous' | egrep -iv 'Phosphorus \b.+(ate|ide|ite)' >> Phosphorus.txt
-cat newpages.txt | egrep -i 'Arsenic' | egrep -iv 'Arsenic \b.+(ate|ide|ite)' >> Arsenic.txt
-cat newpages.txt | egrep -i '\bAntimony\b' | egrep -iv 'Antimony \b.+(ate|ide|ite)' >> Antimony.txt
-cat newpages.txt | egrep -i 'Bismuth' >> Bismuth.txt
-cat newpages.txt | egrep -i 'Ununpentium' | egrep -iv 'Ununpentium \b.+(ate|ide|ite)' >> Ununpentium.txt
+egrep -i '\bNitrogen\b|\bNitrogens\b' newpages.txt | egrep -iv 'Nitrogen \b.+(ate|ide|ite)' >> Nitrogen.txt
+egrep -i 'Phosphorus|Phosphorous' newpages.txt | egrep -iv 'Phosphorus \b.+(ate|ide|ite)' >> Phosphorus.txt
+egrep -i 'Arsenic' newpages.txt | egrep -iv 'Arsenic \b.+(ate|ide|ite)' >> Arsenic.txt
+egrep -i '\bAntimony\b' newpages.txt | egrep -iv 'Antimony \b.+(ate|ide|ite)' >> Antimony.txt
+egrep -i 'Bismuth' newpages.txt >> Bismuth.txt
+egrep -i 'Ununpentium' newpages.txt | egrep -iv 'Ununpentium \b.+(ate|ide|ite)' >> Ununpentium.txt
 
 NITROGEN=`stat --print=%s Nitrogen.txt`
 PHOSPHORUS=`stat --print=%s Phosphorus.txt`

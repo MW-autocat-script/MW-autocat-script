@@ -1,20 +1,20 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Lanthanum' >>  Lanthanum.txt
-cat newpages.txt | egrep -i 'Cerium' >> Cerium.txt
-cat newpages.txt | egrep -i 'Praseodymium' >>  Praseodymium.txt
-cat newpages.txt | egrep -i 'Neodymium' >> Neodymium.txt
-cat newpages.txt | egrep -i 'Promethium' >> Promethium.txt
-cat newpages.txt | egrep -i 'Samarium' >> Samarium.txt
-cat newpages.txt | egrep -i 'Europium' >> Europium.txt
-cat newpages.txt | egrep -i 'Gadolinium' >> Gadolinium.txt
-cat newpages.txt | egrep -i '\bTerbium' >> Terbium.txt
-cat newpages.txt | egrep -i 'Dysprosium' >> Dysprosium.txt
-cat newpages.txt | egrep -i 'Holmium' >> Holmium.txt
-cat newpages.txt | egrep -i '\bErbium' >> Erbium.txt
-cat newpages.txt | egrep -i 'Thulium' >> Thulium.txt
-cat newpages.txt | egrep -i 'Ytterbium' >> Ytterbium.txt
-cat newpages.txt | egrep -i 'Lutetium' >> Lutetium.txt
+egrep -i 'Lanthanum' newpages.txt >>  Lanthanum.txt
+egrep -i 'Cerium' newpages.txt >> Cerium.txt
+egrep -i 'Praseodymium' newpages.txt >>  Praseodymium.txt
+egrep -i 'Neodymium' newpages.txt >> Neodymium.txt
+egrep -i 'Promethium' newpages.txt >> Promethium.txt
+egrep -i 'Samarium' newpages.txt >> Samarium.txt
+egrep -i 'Europium' newpages.txt >> Europium.txt
+egrep -i 'Gadolinium' newpages.txt >> Gadolinium.txt
+egrep -i '\bTerbium' newpages.txt >> Terbium.txt
+egrep -i 'Dysprosium' newpages.txt >> Dysprosium.txt
+egrep -i 'Holmium' newpages.txt >> Holmium.txt
+egrep -i '\bErbium' newpages.txt >> Erbium.txt
+egrep -i 'Thulium' newpages.txt >> Thulium.txt
+egrep -i 'Ytterbium' newpages.txt >> Ytterbium.txt
+egrep -i 'Lutetium' newpages.txt >> Lutetium.txt
 
 LANTHANUM=`stat --print=%s Lanthanum.txt`
 CERIUM=`stat --print=%s Cerium.txt`

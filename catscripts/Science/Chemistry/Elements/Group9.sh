@@ -1,9 +1,9 @@
 #!/bin/bash 
 
-cat newpages.txt | egrep -i 'Cobalt' | egrep -iv 'Chevrolet|Chevy' >> Cobalt.txt
-cat newpages.txt | egrep -i 'Rhodium' >> Rhodium.txt
-cat newpages.txt | egrep -i 'Iridium' >> Iridium.txt
-cat newpages.txt | egrep -i 'Meitnerium' >> Meitnerium.txt
+egrep -i 'Cobalt' newpages.txt | egrep -iv 'Chevrolet|Chevy' >> Cobalt.txt
+egrep -i 'Rhodium' newpages.txt >> Rhodium.txt
+egrep -i 'Iridium' newpages.txt >> Iridium.txt
+egrep -i 'Meitnerium' newpages.txt >> Meitnerium.txt
 
 COBALT=`stat --print=%s Cobalt.txt`
 RHODIUM=`stat --print=%s Rhodium.txt`

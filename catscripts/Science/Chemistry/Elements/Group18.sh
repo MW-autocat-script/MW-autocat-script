@@ -1,12 +1,12 @@
 #!/bin/bash 
 
-cat newpages.txt |egrep -i '(\bNeon\b|\bNeons\b)' |egrep -iv '(Dodge|Plymouth) Neon|[0-9]{2,} Neon' >> Neon.txt
-cat newpages.txt | egrep -i '\bHelium' >> Helium.txt
-cat newpages.txt | egrep -i '\bArgon\b|\bArgons\b' >> Argon.txt
-cat newpages.txt | egrep -i 'Krypton' | egrep -iv 'Kryptonite|Superman|planet Krypton|Kryptonian' >> Krypton.txt
-cat newpages.txt | egrep -i '\bXenon' | egrep -iv 'LG Xenon' >> Xenon.txt
-cat newpages.txt | egrep -i '\bRadon' >> Radon.txt
-cat newpages.txt | egrep -i 'Ununoctium' >> Ununoctium.txt
+egrep -i '(\bNeon\b|\bNeons\b)' newpages.txt |egrep -iv '(Dodge|Plymouth) Neon|[0-9]{2,} Neon' >> Neon.txt
+egrep -i '\bHelium' newpages.txt >> Helium.txt
+egrep -i '\bArgon\b|\bArgons\b' newpages.txt >> Argon.txt
+egrep -i 'Krypton' newpages.txt | egrep -iv 'Kryptonite|Superman|planet Krypton|Kryptonian' >> Krypton.txt
+egrep -i '\bXenon' newpages.txt | egrep -iv 'LG Xenon' >> Xenon.txt
+egrep -i '\bRadon' newpages.txt >> Radon.txt
+egrep -i 'Ununoctium' newpages.txt >> Ununoctium.txt
 
 NEON=`stat --print=%s Neon.txt`
 HELIUM=`stat --print=%s Helium.txt`

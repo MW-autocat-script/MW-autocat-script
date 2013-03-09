@@ -1,11 +1,11 @@
 #!/bin/bash 
 
-cat newpages.txt | egrep -i 'Beryllium' | egrep -iv 'beryllium \b.+(ate|ide|ite)' >> Beryllium.txt
-cat newpages.txt | egrep -i 'Magnesium' | egrep -iv 'Magnesium \b.+(ate|ide|ite)' >> Magnesium.txt
-cat newpages.txt | egrep -i 'Calcium' | egrep -iv 'Calcium \b.+(ate|ide|ite)' >> Calcium.txt
-cat newpages.txt | egrep -i 'Strontium' | egrep -iv 'Strontium \b.+(ate|ide|ite)' >> Strontium.txt
-cat newpages.txt | egrep -i 'Barium' | egrep -iv 'Barium \b.+(ate|ide|ite)' >> Barium.txt
-cat newpages.txt | egrep -i 'Radium' | egrep -iv 'Radium \b.+(ate|ide|ite)' >> Radium.txt
+egrep -i 'Beryllium' newpages.txt | egrep -iv 'beryllium \b.+(ate|ide|ite)' >> Beryllium.txt
+egrep -i 'Magnesium' newpages.txt | egrep -iv 'Magnesium \b.+(ate|ide|ite)' >> Magnesium.txt
+egrep -i 'Calcium' newpages.txt | egrep -iv 'Calcium \b.+(ate|ide|ite)' >> Calcium.txt
+egrep -i 'Strontium' newpages.txt | egrep -iv 'Strontium \b.+(ate|ide|ite)' >> Strontium.txt
+egrep -i 'Barium' newpages.txt | egrep -iv 'Barium \b.+(ate|ide|ite)' >> Barium.txt
+egrep -i 'Radium' newpages.txt | egrep -iv 'Radium \b.+(ate|ide|ite)' >> Radium.txt
 
 BERYLLIUM=`stat --print=%s Beryllium.txt`
 MAGNESIUM=`stat --print=%s Magnesium.txt`

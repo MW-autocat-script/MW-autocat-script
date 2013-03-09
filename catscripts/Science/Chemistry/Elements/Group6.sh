@@ -1,9 +1,9 @@
 #!/bin/bash 
 
-cat newpages.txt | egrep -i 'Chromium' | egrep -iv 'internet|browser' >> Chromium.txt
-cat newpages.txt | egrep -i 'Molybdenum' >> Molybdenum.txt
-cat newpages.txt | egrep -i 'Tungsten' | egrep -iv 'Mass Effect' >> Tungsten.txt
-cat newpages.txt | egrep -i 'Seaborgium' >> Seaborgium.txt
+egrep -i 'Chromium' newpages.txt | egrep -iv 'internet|browser' >> Chromium.txt
+egrep -i 'Molybdenum' newpages.txt >> Molybdenum.txt
+egrep -i 'Tungsten' newpages.txt | egrep -iv 'Mass Effect' >> Tungsten.txt
+egrep -i 'Seaborgium' newpages.txt >> Seaborgium.txt
 
 CHROMIUM=`stat --print=%s Chromium.txt`
 MOLYBDENUM=`stat --print=%s Molybdenum.txt`

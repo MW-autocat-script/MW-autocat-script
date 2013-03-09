@@ -1,9 +1,9 @@
 #!/bin/bash 
 
-cat newpages.txt | egrep -i 'Nickel' | egrep -iv 'penny|dime|quarter|cent|dollar|nickel bag|on the nickel|[0-9]{1,}.+nickel|worth|buffalo|poptropica|mint|a nickel\b|coin' >> Nickel.txt
-cat newpages.txt | egrep -i 'Palladium' >> Palladium.txt
-cat newpages.txt | egrep -i 'Platinum' | egrep -iv "record|album|go platinum|Pokemon|Pok'mon|Pokémon|platinum card|platinum medal|Mass Effect" >> Platinum.txt
-cat newpages.txt | egrep -i 'Darmstadtium' >> Darmstadtium.txt
+egrep -i 'Nickel' newpages.txt | egrep -iv 'penny|dime|quarter|cent|dollar|nickel bag|on the nickel|[0-9]{1,}.+nickel|worth|buffalo|poptropica|mint|a nickel\b|coin' >> Nickel.txt
+egrep -i 'Palladium' newpages.txt >> Palladium.txt
+egrep -i 'Platinum' newpages.txt | egrep -iv "record|album|go platinum|Pokemon|Pok'mon|Pokémon|platinum card|platinum medal|Mass Effect" >> Platinum.txt
+egrep -i 'Darmstadtium' newpages.txt >> Darmstadtium.txt
 
 NICKEL=`stat --print=%s Nickel.txt`
 PALLADIUM=`stat --print=%s Palladium.txt`

@@ -1,9 +1,9 @@
 #!/bin/bash 
 
-cat newpages.txt | egrep -i 'Manganese' >> Manganese.txt
-cat newpages.txt | egrep -i 'Technetium' >> Technetium.txt
-cat newpages.txt | egrep -i 'Rhenium' >> Rhenium.txt
-cat newpages.txt | egrep -i 'Bohrium' >> Bohrium.txt
+egrep -i 'Manganese' newpages.txt >> Manganese.txt
+egrep -i 'Technetium' newpages.txt >> Technetium.txt
+egrep -i 'Rhenium' newpages.txt >> Rhenium.txt
+egrep -i 'Bohrium' newpages.txt >> Bohrium.txt
 
 MANGANESE=`stat --print=%s Manganese.txt`
 TECHNETIUM=`stat --print=%s Technetium.txt`
