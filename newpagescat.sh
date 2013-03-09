@@ -43,6 +43,7 @@ python $PYWIKIPEDIADIR/pagegenerators.py -randomredirect:1 -ns:0|sed 's|[0-9][0-
 ./catscripts/Math/Math.sh
 ./catscripts/Science/Science.sh
 ./catscripts/Technology/Technology.sh
+./catscripts/Temp/Temp.sh
 ./catscripts/Transportation/Transportation.sh
 
 rm $PIDFILE

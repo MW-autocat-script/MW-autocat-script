@@ -11,6 +11,8 @@ egrep -i 'Tru64' newpages.txt >> Unix.txt #DEC (now Hewlett-Packard)
 egrep -i 'OpenServer' newpages.txt >> Unix.txt #SCO Group
 #egrep -i 'Mac OS X' >> Unix.txt #Apple Inc. (has it's own category, so not added here)
 egrep -i 'A/UX' newpages.txt >> Unix.txt #Old-skool Apple Unix
+egrep -i 'Apple Rhapsody|RhapsodyOS' newpages.txt >> Unix.txt
+egrep -i 'NextStep' newpages.txt >> Unix.txt
 
 UNIX=`stat --print=%s Unix.txt`
 
