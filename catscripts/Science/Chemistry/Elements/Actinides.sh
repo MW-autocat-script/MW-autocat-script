@@ -1,20 +1,20 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i '\bActinium' >>  Actinium.txt
-cat newpages.txt | egrep -i 'Thorium' | egrep -iv 'World of Warcraft' >> Thorium.txt
-cat newpages.txt | egrep -i 'Protactinium' >>  Protactinium.txt
-cat newpages.txt | egrep -i 'Uranium' >> Uranium.txt
-cat newpages.txt | egrep -i 'Neptunium' >> Neptunium.txt
-cat newpages.txt | egrep -i 'Plutonium' | egrep -iv 'The Sims|Duke Nukem' >> Plutonium.txt
-cat newpages.txt | egrep -i 'Americium' >> Americium.txt
-cat newpages.txt | egrep -i 'Curium' >> Curium.txt
-cat newpages.txt | egrep -i '\bBerkelium' >> Berkelium.txt
-cat newpages.txt | egrep -i 'Californium' >> Californium.txt
-cat newpages.txt | egrep -i 'Einsteinium' >> Einsteinium.txt
-cat newpages.txt | egrep -i '\bFermium' >> Fermium.txt
-cat newpages.txt | egrep -i 'Mendelevium' >> Mendelevium.txt
-cat newpages.txt | egrep -i 'Nobelium' >> Nobelium.txt
-cat newpages.txt | egrep -i 'Lawrencium' >> Lawrencium.txt
+egrep -i '\bActinium' newpages.txt >>  Actinium.txt
+egrep -i 'Thorium' newpages.txt | egrep -iv 'World of Warcraft' >> Thorium.txt
+egrep -i 'Protactinium' newpages.txt >>  Protactinium.txt
+egrep -i 'Uranium' newpages.txt >> Uranium.txt
+egrep -i 'Neptunium' newpages.txt >> Neptunium.txt
+egrep -i 'Plutonium' newpages.txt | egrep -iv 'The Sims|Duke Nukem' >> Plutonium.txt
+egrep -i 'Americium' newpages.txt >> Americium.txt
+egrep -i 'Curium' newpages.txt >> Curium.txt
+egrep -i '\bBerkelium' newpages.txt >> Berkelium.txt
+egrep -i 'Californium' newpages.txt >> Californium.txt
+egrep -i 'Einsteinium' newpages.txt >> Einsteinium.txt
+egrep -i '\bFermium' newpages.txt >> Fermium.txt
+egrep -i 'Mendelevium' newpages.txt >> Mendelevium.txt
+egrep -i 'Nobelium' newpages.txt >> Nobelium.txt
+egrep -i 'Lawrencium' newpages.txt >> Lawrencium.txt
 
 ACTINIUM=`stat --print=%s Actinium.txt`
 THORIUM=`stat --print=%s Thorium.txt`

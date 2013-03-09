@@ -1,14 +1,14 @@
 #!/bin/bash
 #IUPAC Group 1 elements. Hydrogen is also included here for convenience.
 
-cat newpages.txt | egrep -i 'hydrogen' | egrep -iv 'hydrogen \b.+ide|hydrogen \b.+ate|hydrogen \b.+ite' >> Hydrogen.txt
-cat newpages.txt | egrep -i 'lithium' | egrep -iv 'lithium \b.+ide|lithium \b.+ate|lithium \b.+ite' >> Lithium.txt
-cat newpages.txt | egrep -i 'sodium' | egrep -iv 'sodium \b.+ide|sodium \b.+ate|sodium \b.+ite' >> Sodium.txt
-cat newpages.txt | egrep -i 'potassium' | egrep -iv 'potassium \b.+ide|potassium \b.+ate|potassium \b.+ite' >> Potassium.txt
-cat newpages.txt | egrep -i 'rubidium' | egrep -iv 'rubidiun \b.+ide|rubidium \b.+ate|rubidium \b.+ite' >> Rubidium.txt 
-cat newpages.txt | egrep -i 'caesium|cesium' | egrep -iv '(caesium|cesium) \b.+ide|(caesium|cesium) \b.+ate|(caesium|cesium) \b.+ite' >> Caesium.txt
-cat newpages.txt | egrep -i 'Francium' | egrep -iv 'Francium \b.+ide|Francium \b.+ate|Francium \b.+ite' >> Francium.txt
-cat newpages.txt | egrep -i 'Ununennium' >> Ununennium.txt
+egrep -i 'hydrogen' newpages.txt | egrep -iv 'hydrogen \b.+ide|hydrogen \b.+ate|hydrogen \b.+ite' >> Hydrogen.txt
+egrep -i 'lithium' newpages.txt | egrep -iv 'lithium \b.+ide|lithium \b.+ate|lithium \b.+ite' >> Lithium.txt
+egrep -i 'sodium' newpages.txt | egrep -iv 'sodium \b.+ide|sodium \b.+ate|sodium \b.+ite' >> Sodium.txt
+egrep -i 'potassium' newpages.txt | egrep -iv 'potassium \b.+ide|potassium \b.+ate|potassium \b.+ite' >> Potassium.txt
+egrep -i 'rubidium' newpages.txt | egrep -iv 'rubidiun \b.+ide|rubidium \b.+ate|rubidium \b.+ite' >> Rubidium.txt 
+egrep -i 'caesium|cesium' newpages.txt | egrep -iv '(caesium|cesium) \b.+ide|(caesium|cesium) \b.+ate|(caesium|cesium) \b.+ite' >> Caesium.txt
+egrep -i 'Francium' newpages.txt | egrep -iv 'Francium \b.+ide|Francium \b.+ate|Francium \b.+ite' >> Francium.txt
+egrep -i 'Ununennium' newpages.txt >> Ununennium.txt
 
 HYDROGEN=`stat --print=%s Hydrogen.txt`
 LITHIUM=`stat --print=%s Lithium.txt`

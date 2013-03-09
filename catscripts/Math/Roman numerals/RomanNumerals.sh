@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-cat newpages.txt | egrep -i 'Roman numeral' >> RomanNumerals.txt
+egrep -i 'Roman numeral' newpages.txt >> RomanNumerals.txt
 
 NUMERALS=`stat --print=%s RomanNumerals.txt`
 
