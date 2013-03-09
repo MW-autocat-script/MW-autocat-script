@@ -1,10 +1,10 @@
 #!/bin/bash
 
 cat newpages.txt | egrep -i 'Motherboard' >> Motherboards.txt
-cat newpages.txt | egrep -i 'Video card|videocard|graphics card|graphicscard|\bGPU\b' >> VideoCards.txt
+cat newpages.txt | egrep -i 'Video card|videocard|graphics card|graphicscard|\bGPU\b|GeForce|Riva TNT|(ATI|AMD) Radeon' >> VideoCards.txt
 cat newpages.txt | egrep -i 'Sound card|Soundcard|audio card|audiocard|audio device|sound.+computer|computer.+sound' >> SoundCards.txt
 cat newpages.txt | egrep -i '\bPrinter' >> Printers.txt
-cat newpages.txt | egrep -i 'Microprocessor|\bPentium|\bi[357]\b|\bAthlon|Celeron|Sempron|Turion|\b808[568]\b|80286|80386|80586|CPU|Motorola 680(00|10|20|30|40|50|60)|Motorola 88000|M68k|Intel (4004|8008|8086|8088)|(8085|8086|8088) (assembly|program)|Socket A\b|Socket 5|Socket 7|Socket 370|PGA370|Socket 478|Slot 1\b|Slot 2\b|Socket 423|LGA(| )775|LGA(| )1366|LGA(| )1156|LGA(| )1155|LGA(| )2011|LGA(| )1150|Socket 441|Socket 479|Socket 495|Socket M\b|Socket P\b|Socket G1|Socket G2|Socket G3|Socket 8\b|Socket 603|Socket 604|PowerPC' >> Microprocessors.txt
+cat newpages.txt | egrep -i 'Microprocessor|\bPentium|\bi[357]\b|\bAthlon|Celeron|Sempron|\bTurion|\b808[568]\b|80286|80386|80586|CPU|Motorola 680(00|10|20|30|40|50|60)|Motorola 88000|M68k|Intel (4004|8008|8086|8088)|(8085|8086|8088) (assembly|program)|Socket A\b|Socket 5|Socket 7|Socket 370|PGA370|Socket 478|Slot 1\b|Slot 2\b|Socket 423|LGA(| )775|LGA(| )1366|LGA(| )1156|LGA(| )1155|LGA(| )2011|LGA(| )1150|Socket 441|Socket 479|Socket 495|Socket M\b|Socket P\b|Socket G1|Socket G2|Socket G3|Socket 8\b|Socket 603|Socket 604|PowerPC' >> Microprocessors.txt
 cat newpages.txt | egrep -i 'Hard (disk|drive)' >> Harddrive.txt
 cat newpages.txt | egrep -i 'Device driver|Computer hardware' | egrep -iv '(Video|Graphics) card|Motherboard|(sound|audio) card|\bPrinter|hard (disk|drive)' >> ComputerHardware.txt
 
