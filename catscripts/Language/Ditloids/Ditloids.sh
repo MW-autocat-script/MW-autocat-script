@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i '\[\[[0-9]{1,}=[a-z]{1,1}\s|\[\[[0-9]{1,}= [a-z]{1,1}\s|\[\[[0-9]{1,} = [a-z]{1,1}\s|\[\[[0-9]{1,} =[a-z]{1,1}\s|ditloid' >> Ditloids.txt
+egrep -i '\[\[[0-9]{1,}=[a-z]{1,1}\s|\[\[[0-9]{1,}= [a-z]{1,1}\s|\[\[[0-9]{1,} = [a-z]{1,1}\s|\[\[[0-9]{1,} =[a-z]{1,1}\s|ditloid' newpages.txt >> Ditloids.txt
 
  DITLOIDS=`stat --print=%s Ditloids.txt`
 

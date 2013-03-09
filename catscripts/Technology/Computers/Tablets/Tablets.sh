@@ -1,8 +1,8 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Kindle Fire' >> KindleFire.txt
-cat newpages.txt | egrep -i '\biPad' >> iPad.txt
-cat newpages.txt | egrep -i 'tablet (computer|pc)|Android tablet|Windows 8 tablet' | egrep -iv 'iPad|Kindle Fire' >> Tabletcomputers.txt
+egrep -i 'Kindle Fire' newpages.txt >> KindleFire.txt
+egrep -i '\biPad' newpages.txt >> iPad.txt
+egrep -i 'tablet (computer|pc)|Android tablet|Windows 8 tablet' newpages.txt | egrep -iv 'iPad|Kindle Fire' >> Tabletcomputers.txt
 
 KINDLE=`stat --print=%s KindleFire.txt`
 IPAD=`stat --print=%s iPad.txt`

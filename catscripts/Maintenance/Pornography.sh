@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'porn|hentai|lolicon|sex.+videos|videos.+sex' >> Pornography.txt
+egrep -i 'porn|hentai|lolicon|sex.+videos|videos.+sex' newpages.txt >> Pornography.txt
 
 PORN=`stat --print=%s Pornography.txt`
 

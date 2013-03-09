@@ -1,9 +1,9 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Honda Accord|Hondaaccord|[0123456789]{1,} Accord' > HondaAccord.txt
-cat newpages.txt | egrep -i 'Honda Civic|Hondacivic|[0123456789]{1,} Civic' > HondaCivic.txt
-cat newpages.txt | egrep -i 'Honda Passport|Hondapassport|[0-9]{1,} Passport' > HondaPassport.txt
-cat newpages.txt | egrep -i 'Honda Element|Hondaelement|[0-9]{1,} Element\b' > HondaElement.txt
+egrep -i 'Honda Accord|Hondaaccord|[0123456789]{1,} Accord' newpages.txt > HondaAccord.txt
+egrep -i 'Honda Civic|Hondacivic|[0123456789]{1,} Civic' newpages.txt > HondaCivic.txt
+egrep -i 'Honda Passport|Hondapassport|[0-9]{1,} Passport' newpages.txt > HondaPassport.txt
+egrep -i 'Honda Element|Hondaelement|[0-9]{1,} Element\b' newpages.txt > HondaElement.txt
 
 ACCORD=`stat --print=%s HondaAccord.txt`
 CIVIC=`stat --print=%s HondaCivic.txt`

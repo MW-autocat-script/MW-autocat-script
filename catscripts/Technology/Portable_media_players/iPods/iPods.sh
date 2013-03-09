@@ -1,9 +1,9 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'i(| )pod' | egrep -iv 'i(| )Pod touch|i(| )Pod nano|i(| )pod shuffle' > iPods.txt
-cat newpages.txt | egrep -i 'i(| )pod touch' > iPodtouch.txt
-cat newpages.txt | egrep -i 'i(| )pod nano' > iPodnano.txt
-cat newpages.txt | egrep -i 'i(| )pod shuffle' >> iPodshuffle.txt
+egrep -i 'i(| )pod' newpages.txt | egrep -iv 'i(| )Pod touch|i(| )Pod nano|i(| )pod shuffle' > iPods.txt
+egrep -i 'i(| )pod touch' newpages.txt > iPodtouch.txt
+egrep -i 'i(| )pod nano' newpages.txt > iPodnano.txt
+egrep -i 'i(| )pod shuffle' newpages.txt >> iPodshuffle.txt
 
 IPODS=`stat --print=%s iPods.txt`
 TOUCH=`stat --print=%s iPodtouch.txt`

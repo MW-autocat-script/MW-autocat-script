@@ -2,8 +2,8 @@
 
 ##Carbon compounds
 
-cat newpages.txt | egrep -i 'Carbon(| )dioxide' >> CarbonDioxide.txt
-cat newpages.txt | egrep -i 'Carbon(| )monoxide' >> CarbonMonoxide.txt
+egrep -i 'Carbon(| )dioxide' newpages.txt >> CarbonDioxide.txt
+egrep -i 'Carbon(| )monoxide' newpages.txt >> CarbonMonoxide.txt
 
 CO=`stat --print=%s CarbonMonoxide.txt`
 COTWO=`stat --print=%s CarbonDioxide.txt`

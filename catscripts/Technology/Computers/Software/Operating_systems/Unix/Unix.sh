@@ -9,7 +9,7 @@ egrep -i '\bAIX' newpages.txt >> Unix.txt #IBM
 egrep -i 'HP( |-)UX' newpages.txt >> Unix.txt #Hewlett-Packard
 egrep -i 'Tru64' newpages.txt >> Unix.txt #DEC (now Hewlett-Packard)
 egrep -i 'OpenServer' newpages.txt >> Unix.txt #SCO Group
-#cat newpages.txt | egrep -i 'Mac OS X' >> Unix.txt #Apple Inc. (has it's own category, so not added here)
+#egrep -i 'Mac OS X' >> Unix.txt #Apple Inc. (has it's own category, so not added here)
 egrep -i 'A/UX' newpages.txt >> Unix.txt #Old-skool Apple Unix
 
 UNIX=`stat --print=%s Unix.txt`

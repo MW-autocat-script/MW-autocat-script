@@ -1,11 +1,11 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i '\[\[How do you spell [a-z]{1,}\]\]' >> Spelling.txt
-cat newpages.txt | egrep -i '\[\[How do you spell "[a-z]{1,}"\]\]' >> Spelling.txt
-cat newpages.txt | egrep -i "\[\[How do you spell '[a-z]{1,}'\]\]" >> Spelling.txt
-cat newpages.txt | egrep -i '\[\[How to spell [a-z]{1,}\]\]' >> Spelling.txt
-cat newpages.txt | egrep -i '\[\[How to spell "[a-z]{1,}"\]\]' >> Spelling.txt
-cat newpages.txt | egrep -i "\[\[How to spell '[a-z]{1,}'\]\]" >> Spelling.txt
+egrep -i '\[\[How do you spell [a-z]{1,}\]\]' newpages.txt >> Spelling.txt
+egrep -i '\[\[How do you spell "[a-z]{1,}"\]\]' newpages.txt >> Spelling.txt
+egrep -i "\[\[How do you spell '[a-z]{1,}'\]\]" newpages.txt >> Spelling.txt
+egrep -i '\[\[How to spell [a-z]{1,}\]\]' newpages.txt >> Spelling.txt
+egrep -i '\[\[How to spell "[a-z]{1,}"\]\]' newpages.txt >> Spelling.txt
+egrep -i "\[\[How to spell '[a-z]{1,}'\]\]" newpages.txt >> Spelling.txt
 
 SPELLING=`stat --print=%s Spelling.txt`
 

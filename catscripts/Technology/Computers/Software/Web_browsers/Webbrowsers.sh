@@ -1,9 +1,9 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'Internet Explorer|\bIE(| )[0-9]{1,2}\b' >> InternetExplorer.txt
-cat newpages.txt | egrep -i 'Firefox' >> MozillaFirefox.txt
-cat newpages.txt | egrep -i 'Google Chrome|Chrome browser' >> GoogleChrome.txt
-cat newpages.txt | egrep -i 'web browser' | egrep -iv 'Chrome|Firefox|Internet Explorer|\bIE(| )[0-9]{1,2}' >> Webbrowsers.txt
+egrep -i 'Internet Explorer|\bIE(| )[0-9]{1,2}\b' newpages.txt >> InternetExplorer.txt
+egrep -i 'Firefox' newpages.txt >> MozillaFirefox.txt
+egrep -i 'Google Chrome|Chrome browser' newpages.txt >> GoogleChrome.txt
+egrep -i 'web browser' newpages.txt | egrep -iv 'Chrome|Firefox|Internet Explorer|\bIE(| )[0-9]{1,2}' >> Webbrowsers.txt
 
 IEXPLORER=`stat --print=%s InternetExplorer.txt`
 FIREFOX=`stat --print=%s MozillaFirefox.txt`

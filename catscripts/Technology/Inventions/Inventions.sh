@@ -1,9 +1,9 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i '\[\[Who invented [abcdefghijklmnopqrstuvwxyz]{1,}\]\]' >> Inventions.txt
-cat newpages.txt | egrep -i '\[\[Who invented the [abcdefghijklmnopqrstuvwxyz]{1,}\]\]' >> Inventions.txt
-cat newpages.txt | egrep -i '\[\[Who is the inventor of [abcdefghijklmnopqrstuvwxyz]{1,}\]\]' >> Inventions.txt
-cat newpages.txt | egrep -i '\[\[When was the .+ invented\]\]' >> Inventions.txt
+egrep -i '\[\[Who invented [abcdefghijklmnopqrstuvwxyz]{1,}\]\]' newpages.txt >> Inventions.txt
+egrep -i '\[\[Who invented the [abcdefghijklmnopqrstuvwxyz]{1,}\]\]' newpages.txt >> Inventions.txt
+egrep -i '\[\[Who is the inventor of [abcdefghijklmnopqrstuvwxyz]{1,}\]\]' newpages.txt >> Inventions.txt
+egrep -i '\[\[When was the .+ invented\]\]' newpages.txt >> Inventions.txt
 
 INVENTIONS=`stat --print=%s Inventions.txt`
 

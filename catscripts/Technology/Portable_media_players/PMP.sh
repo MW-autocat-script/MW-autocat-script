@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'MP(3|4) player|portable media player' | egrep -iv 'iPod|\bZune' > PMP.txt
+egrep -i 'MP(3|4) player|portable media player' newpages.txt | egrep -iv 'iPod|\bZune' > PMP.txt
 
 PMP=`stat --print=%s PMP.txt`
 

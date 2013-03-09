@@ -1,10 +1,10 @@
 #!/bin/bash
 
-cat newpages.txt | egrep -i 'How do you say.+in Spanish\]\]' >> EnglishtoSpanish.txt
-cat newpages.txt | egrep -i 'How do you spell.+in Spanish\]\]' >> EnglishtoSpanish.txt
-cat newpages.txt | egrep -i '^\[\[[abcdefghijklmopqrstuvwxyz]{1,} in Spanish\]\]' >> EnglishtoSpanish.txt
-cat newpages.txt | egrep -i 'What is the Spanish word for' >> EnglishtoSpanish.txt
-cat newpages.txt | egrep -i 'How to say.+in Spanish' >> EnglishtoSpanish.txt
+egrep -i 'How do you say.+in Spanish\]\]' newpages.txt >> EnglishtoSpanish.txt
+egrep -i 'How do you spell.+in Spanish\]\]' newpages.txt >> EnglishtoSpanish.txt
+egrep -i '^\[\[[abcdefghijklmopqrstuvwxyz]{1,} in Spanish\]\]' newpages.txt >> EnglishtoSpanish.txt
+egrep -i 'What is the Spanish word for' newpages.txt >> EnglishtoSpanish.txt
+egrep -i 'How to say.+in Spanish' newpages.txt >> EnglishtoSpanish.txt
 
 SIZEOFENGLISHTOSPANISH=`stat --print=%s EnglishtoSpanish.txt`
 
