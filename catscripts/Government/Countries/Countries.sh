@@ -27,6 +27,7 @@
 ./catscripts/Government/Countries/Nepal/Nepal.sh
 ./catscripts/Government/Countries/Nigeria/Nigeria.sh
 ./catscripts/Government/Countries/Norway/Norway.sh
+./catscripts/Government/Countries/Philippines/Philippines.sh
 ./catscripts/Government/Countries/Singapore/Singapore.sh 
 ./catscripts/Government/Countries/Sweden/Sweden.sh
 ./catscripts/Government/Countries/Tanzia/Tanzia.sh
