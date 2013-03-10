@@ -9,7 +9,7 @@ egrep -i '\bXen' newpages.txt >> Emulation.txt #virtual machine / hypervisor
 egrep -i 'Aranym' newpages.txt >> Emulation.txt #Atari Falcon emulator
 egrep -i 'QEMU' newpages.txt >> Emulation.txt #Multiple system / processor emulator
 egrep -i 'M\.E\.S\.S\.|Multi Emulator Super System' newpages.txt >> Emulation.txt #Multiple system emulator
-egrep -i '\bMAME' newpages.txt >> Emulation.txt #Arcade system emulator
+egrep -i '\bMAME\b' newpages.txt >> Emulation.txt #Arcade system emulator
 egrep -i 'Bochs' newpages.txt >> Emulation.txt #x86 / x86_64 PC emulator
 egrep -i 'Pear(| )PC' newpages.txt >> Emulation.txt #PowerPC Mac emulator
 egrep -i 'WinUAE' newpages.txt >> Emulation.txt #Amiga emulator
