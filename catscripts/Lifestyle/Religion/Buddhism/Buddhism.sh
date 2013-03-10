@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Buddhism|Buddha|Dalai Lama' newpages.txt >> Buddhism.txt
+egrep -i 'Buddhism|Buddhist|Buddha|Dalai Lama' newpages.txt >> Buddhism.txt
 
 BUDDHISM=`stat --print=%s Buddhism.txt`
 
