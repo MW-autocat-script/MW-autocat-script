@@ -4,6 +4,7 @@ egrep -i 'VMware' newpages.txt >> Emulation.txt #virtual machine
 egrep -i 'Virtual(| )PC' newpages.txt >> Emulation.txt #virtual machine
 egrep -i 'Virtual(| )Box' newpages.txt >> Emulation.txt #virtual machine
 egrep -i 'Parallels Desktop|Parallels Workstation' newpages.txt >> Emulation.txt #virtual machine
+egrep -i '\bSIMH' newpages.txt >> Emulation.txt #Multiple system emulator (mostly old mainframes)
 egrep -i '\bXen' newpages.txt >> Emulation.txt #virtual machine / hypervisor
 egrep -i 'Aranym' newpages.txt >> Emulation.txt #Atari Falcon emulator
 egrep -i 'QEMU' newpages.txt >> Emulation.txt #Multiple system / processor emulator
@@ -28,7 +29,15 @@ egrep 'iDeaS' newpages.txt >> Emulation.txt
 egrep -i 'Ideas emulator' newpages.txt >> Emulation.txt
 egrep -i 'Kega Fusion' newpages.txt >> Emulation.txt #Sega Genesis emulator
 egrep -i 'Dolphin emulator|emulator Dolphin' newpages.txt >> Emulation.txt #Nintendo Gamecube / Nintendo Wii emulator
+egrep -i 'Game(| )Cube emulator' newpages.txt >> Emulation.txt
+egrep -i 'Chankast' newpages.txt >> Emulation.txt #Sega Dreamcast emulator
+egrep -i 'Wii emulator' newpages.txt >> Emulation.txt
+egrep -i 'Xbox(| )(|360)(| )emulator' newpages.txt >> Emulation.txt
 egrep -i 'PCSX' newpages.txt >> Emulation.txt #PlayStation emulator
+egrep -i 'Play(| )Station emulator' newpages.txt >> Emulation.txt
+egrep -i 'Play(| )Station 2 emulator|PS(| )2 emulator' newpages.txt >> Emulation.txt
+egrep -i 'JPCSP' newpages.txt >> Emulation.txt
+egrep -i 'PSP emulator' newpages.txt >> Emulation.txt
 egrep -i 'epsxe' newpages.txt >> Emulation.txt #PlayStation emulator
 egrep -i 'Project 64' newpages.txt >> Emulation.txt #Nintendo 64 emulator
 egrep -i 'DOSBOX' newpages.txt >> Emulation.txt #x86 PC emulator
