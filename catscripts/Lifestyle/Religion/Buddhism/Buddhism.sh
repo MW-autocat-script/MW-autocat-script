@@ -6,7 +6,7 @@ BUDDHISM=`stat --print=%s Buddhism.txt`
 
 if [ $BUDDHISM -ne 0 ];
 then
-  export CATFIlE="Buddhism,txt"
+  export CATFIlE="Buddhism.txt"
   export CATNAME="Buddhism"
   ./catscripts/Categorize.sh
 fi

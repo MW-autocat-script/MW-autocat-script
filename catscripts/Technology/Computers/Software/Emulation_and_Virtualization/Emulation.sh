@@ -24,6 +24,8 @@ egrep -i 'Visual(| )Boy(| )Advance' newpages.txt >> Emulation.txt #Game Boy / Ga
 egrep -i 'NO\$GBA' newpages.txt >> Emulation.txt #Game Boy Advance / Nintendo DS emulator
 egrep -i 'Boycott(| )Advance' newpages.txt >> Emulation.txt #Game Boy Advance emulator
 egrep -i 'Desmume' newpages.txt >> Emulation.txt #Nintendo DS emulator
+egrep 'iDeaS' newpages.txt >> Emulation.txt
+egrep -i 'Ideas emulator' newpages.txt >> Emulation.txt
 egrep -i 'Kega Fusion' newpages.txt >> Emulation.txt #Sega Genesis emulator
 egrep -i 'Dolphin emulator|emulator Dolphin' newpages.txt >> Emulation.txt #Nintendo Gamecube / Nintendo Wii emulator
 egrep -i 'PCSX' newpages.txt >> Emulation.txt #PlayStation emulator

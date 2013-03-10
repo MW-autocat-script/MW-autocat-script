@@ -12,7 +12,7 @@ SCORPIONS=`stat --print=%s Scorpions.txt`
 
 if [ $ARACHNIDS -ne 0 ];
 then
-  export CATFILE="Arachnids.txt`
+  export CATFILE="Arachnids.txt"
   export CATNAME="Arachnids"
   ./catscripts/Categorize.sh
 fi

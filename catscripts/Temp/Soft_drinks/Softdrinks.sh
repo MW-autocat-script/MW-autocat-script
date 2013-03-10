@@ -2,7 +2,7 @@
 
 egrep -i 'Pepsi|Mountain Dew|PepsiCo' newpages.txt >> PepsiCo.txt
 egrep -i 'Coca( |-)Cola|Diet Coke|Dr(|\.) Pepper' newpages.txt  >> CocaCola.txt
-egrep -i 'soft drink|cola|root beer|soda|pop drink' newpages.txt | egrep -iv 'Pepsi|Coca|Diet Coke|baking soda' >> Softdrinks.txt
+egrep -i 'soft drink|\bcola|root beer|soda|pop drink' newpages.txt | egrep -iv 'Pepsi|Coca|Diet Coke|baking soda' >> Softdrinks.txt
 
 PEPSICO=`stat --print=%s PepsiCo.txt`
 COKE=`stat --print=%s CocaCola.txt`
