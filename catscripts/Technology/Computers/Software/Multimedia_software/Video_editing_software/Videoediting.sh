@@ -2,7 +2,7 @@
 
 egrep -i 'Windows(|(| )Live)(| )Movie(| )Maker' newpages.txt >> WindowsMovieMaker.txt
 egrep -i 'Adobe(| )Premiere|Premier(| )Pro' newpages.txt >> AdobePremierePro.txt
-egrep -i '\biMovie' newpages.txt >> Videoediting.txt
+egrep -i '\biMovie|Nero Vision' newpages.txt >> Videoediting.txt
 egrep -i 'video edit|edit video|convert.+video|video.+convert' newpages.txt | egrep -iv 'Windows(|(| )Live)(| )Movie(| )Maker|Adobe(| )Premiere|Premier(| )Pro|\biMovie' >> Videoediting.txt
 
 WMM=`stat --print=%s WindowsMovieMaker.txt`
