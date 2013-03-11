@@ -14,5 +14,7 @@ fi
 rm Religion.txt
 
 ./catscripts/Lifestyle/Religion/Buddhism/Buddhism.sh
+./catscripts/Lifestyle/Religion/Christianity/Christianity.sh
+./catscripts/Lifestyle/Religion/Judaism/Judaism.sh
 ./catscripts/Lifestyle/Religion/Sikhism/Sikhism.sh
 ./catscripts/Lifestyle/Religion/The_Bible/TheBible.sh
