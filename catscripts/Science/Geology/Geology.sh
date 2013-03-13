@@ -22,7 +22,7 @@ then
   ./catscripts/Categorize.sh
 fi
 
-rm [ $VOLCANOES -ne 0 ];
+if [ $VOLCANOES -ne 0 ];
 then
   export CATFILE="Volcanoes.txt"
   export CATNAME="Volcano"
