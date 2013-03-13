@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Computer network|Ethernet|Wi(| |-)fi|wire(d|less) network|wireless card|(wire(d|less)|Ethernet) router|\bLAN(|s)\b|\bWAN(|s)\b|\bWLAN(|s)\b|\bNIC(|s)\b|\bVLAN|DHCP|network administrator|network administration|\bBOOTP|PXE|\bDNS\b|\bDDoS\b|\bTCP\b|\bIPX\b|IP address|OSPF|EIGRP|network interface card|\bAOSS' newpages.txt | egrep -iv 'SSH|Telnet|Lan Hikari|Obi( |-)wan|FTP|VoIP|Skype|Bluetooth|Nic Sheff' >> Computernetworking.txt
+egrep -i 'Computer network|Ethernet|Wi(| |-)fi|wire(d|less) network|wireless card|(wire(d|less)|Ethernet) router|\bLAN(|s)\b|\bWAN(|s)\b|\bWLAN(|s)\b|\bNIC(|s)\b|\bVLAN|DHCP|network administrator|network administration|\bBOOTP|PXE|\bDNS\b|\bDDoS\b|\bTCP\b|\bIPX\b|IP address|OSPF|EIGRP|network interface card|\bAOSS|Intranet' newpages.txt | egrep -iv 'SSH|Telnet|Lan Hikari|Obi( |-)wan|FTP|VoIP|Skype|Bluetooth|Nic Sheff' >> Computernetworking.txt
 egrep -i 'Telnet' newpages.txt >> Telnet.txt
 egrep -i '\bSSH|Secure Shell|OpenSSH|SFTP' newpages.txt >> SSH.txt
 egrep -i '\bFTP\b|TFTP' newpages.txt >> FTP.txt
