@@ -1,19 +1,12 @@
 #!/bin/bash
 
-egrep -i 'Linux|Slackware' newpages.txt | egrep -iv 'Debian|SUSE|Ubuntu|\bco(| )Linux|Fedora|Linux Mint|Android' >> Linux.txt
-
+egrep -i 'Linux|Slackware|vmlinuz|initrd' newpages.txt | egrep -iv 'Debian|SUSE|Ubuntu|\bco(| )Linux|Fedora|Linux Mint|Android' >> Linux.txt
 egrep -i 'Debian' newpages.txt >> Debian.txt 
-
 egrep -i 'OpenSUSE|Open SUSE\b' newpages.txt >> OpenSUSE.txt
-
 egrep -i 'Ubuntu' newpages.txt >> Ubuntu.txt
-
 egrep -i 'coLinux|\bco Linux' newpages.txt >> CoLinux.txt
-
 egrep -i 'Fedora [0-9]{1,}|[io]n Fedora|Fedora Linux' newpages.txt >> FedoraLinux.txt
-
 egrep -i 'Linux Mint' newpages.txt >> LinuxMint.txt
-
 egrep -i 'Google Android' newpages.txt >> GoogleAndroid.txt
 egrep 'Ice Cream Sandwich' newpages.txt >> GoogleAndroid.txt
 
