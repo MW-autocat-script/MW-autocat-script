@@ -1,8 +1,10 @@
 #!/bin/bash
 
-./catscripts/Entertainment/Video\ games/VideoGames.sh
-./catscripts/Entertainment/Franchises/Franchises.sh
-./catscripts/Entertainment/Cartoons/Cartoons.sh
-./catscripts/Entertainment/Music/Music.sh
-./catscripts/Entertainment/Movies/Movies.sh
-./catscripts/Entertainment/Puzzles/Puzzles.sh
+CURRENTDIR="./catscripts/Entertainment"
+
+$CURRENTDIR/Video\ games/VideoGames.sh
+$CURRENTDIR/Franchises/Franchises.sh
+$CURRENTDIR/Entertainment/Cartoons/Cartoons.sh
+$CURRENTDIR/Music/Music.sh
+$CURRENTDIR/Movies/Movies.sh
+$CURRENTDIR/Puzzles/Puzzles.sh

@@ -1,11 +1,13 @@
 #!/bin/bash
 
-./catscripts/Entertainment/Cartoons/American_Dad/AmericanDad.sh
-./catscripts/Entertainment/Cartoons/Family_Guy/FamilyGuy.sh
-./catscripts/Entertainment/Cartoons/Futurama/Futurama.sh
-./catscripts/Entertainment/Cartoons/Kim_Possible/KimPossible.sh
-./catscripts/Entertainment/Cartoons/My\ Little\ Pony\:\ Friendship\ is\ Magic/MLP.sh
-./catscripts/Entertainment/Cartoons/South\ Park/SouthPark.sh
-./catscripts/Entertainment/Cartoons/Danny\ Phantom/DannyPhantom.sh
-./catscripts/Entertainment/Cartoons/SpongeBob\ SquarePants/SpongeBobSquarePants.sh
-./catscripts/Entertainment/Cartoons/The\ Simpsons/TheSimpsons.sh
+CURRENTDIR="./catscripts/Entertainment/Cartoons"
+
+$CURRENTDIR/American_Dad/AmericanDad.sh
+$CURRENTDIR/Family_Guy/FamilyGuy.sh
+$CURRENTDIR/Futurama/Futurama.sh
+$CURRENTDIR/Kim_Possible/KimPossible.sh
+$CURRENTDIR/My\ Little\ Pony\:\ Friendship\ is\ Magic/MLP.sh
+$CURRENTDIR/South\ Park/SouthPark.sh
+$CURRENTDIR/Danny\ Phantom/DannyPhantom.sh
+$CURRENTDIR/SpongeBob\ SquarePants/SpongeBobSquarePants.sh
+$CURRENTDIR/The\ Simpsons/TheSimpsons.sh
