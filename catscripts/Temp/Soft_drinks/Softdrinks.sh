@@ -12,21 +12,21 @@ if [ $PEPSICO -ne 0 ];
 then
   export CATFILE="PepsiCo.txt"
   export CATNAME="PepsiCo Inc."
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $COKE -ne 0 ];
 then
   export CATFILE="CocaCola.txt"
   export CATNAME="The Coca-Cola Company"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SOFT -ne 0 ];
 then
   export CATFILE="Softdrinks.txt"
   export CATNAME="Soft drinks"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm PepsiCo.txt

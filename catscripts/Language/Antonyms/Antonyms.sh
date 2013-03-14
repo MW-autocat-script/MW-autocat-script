@@ -12,7 +12,7 @@ if [ $ANTONYMS -ne 0 ];
 then
   export CATFILE="Antonyms.txt"
   export CATNAME="Antonyms"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Antonyms.txt

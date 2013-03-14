@@ -11,14 +11,14 @@ if [ $SUDOKU -ne 0 ];
 then
   export CATFILE="Sudoku.txt"
   export CATNAME="Sudoku"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CROSSWORD -ne 0 ];
 then
   export CATFILE="Crossword.txt"
   export CATNAME="Crossword Puzzles"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Sudoku.txt

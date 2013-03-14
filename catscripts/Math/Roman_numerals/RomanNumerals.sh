@@ -8,7 +8,7 @@ if [ $NUMERALS -ne 0 ];
 then
   export CATFILE="RomanNumerals.txt"
   export CATNAME="Roman numerals"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm RomanNumerals.txt

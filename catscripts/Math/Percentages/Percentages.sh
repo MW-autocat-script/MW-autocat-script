@@ -13,7 +13,7 @@ if [ $PERCENTAGES -ne 0 ];
 then
   export CATFILE="Percentages.txt"
   export CATNAME="Percentages"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Percentages.txt

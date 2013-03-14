@@ -8,7 +8,7 @@ if [ $SIGN -ne 0 ];
 then
   export CATFILE="Signlanguage.txt"
   export CATNAME="Sign language"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Signlanguage.txt

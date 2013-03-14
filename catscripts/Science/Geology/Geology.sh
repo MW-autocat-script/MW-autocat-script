@@ -12,21 +12,21 @@ if [ $GEOLOGY -ne 0 ];
 then
   export CATFILE="Geology.txt"
   export CATNAME="Geology"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $EARTHQUAKES -ne 0 ];
 then
   export CATFILE="Earthquakes.txt"
   export CATNAME="Earthquakes"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $VOLCANOES -ne 0 ];
 then
   export CATFILE="Volcanoes.txt"
   export CATNAME="Volcano"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Geology.txt

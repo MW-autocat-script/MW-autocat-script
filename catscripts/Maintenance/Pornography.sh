@@ -8,7 +8,7 @@ if [ $PORN -ne 0 ];
 then
   export CATFILE="Pornography.txt"
   export CATNAME="Pornography"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Pornography.txt

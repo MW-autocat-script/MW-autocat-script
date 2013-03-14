@@ -11,7 +11,7 @@ if [ $INVENTIONS -ne 0 ];
 then
   export CATFILE="Inventions.txt"
   export CATNAME="Inventions"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Inventions.txt

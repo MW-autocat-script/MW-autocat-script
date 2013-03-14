@@ -8,7 +8,7 @@ if [ $UNITED -ne 0 ];
 then
   export CATFILE="UnitedNations.txt"
   export CATNAME="United Nations"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm UnitedNations.txt

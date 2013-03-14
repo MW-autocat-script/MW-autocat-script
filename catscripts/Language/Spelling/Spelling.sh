@@ -13,7 +13,7 @@ if [ $SPELLING -ne 0 ];
 then
   export CATFILE="Spelling.txt"
   export CATNAME="Spelling"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Spelling.txt

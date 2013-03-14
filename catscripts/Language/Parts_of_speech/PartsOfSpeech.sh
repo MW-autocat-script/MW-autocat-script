@@ -8,7 +8,7 @@ if [ $SPEECH -ne 0 ];
 then
   export CATFILE="PartsOfSpeech.txt"
   export CATNAME="Parts of speech"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm PartsOfSpeech.txt

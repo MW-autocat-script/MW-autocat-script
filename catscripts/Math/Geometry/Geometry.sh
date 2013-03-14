@@ -8,7 +8,7 @@ if [ $GEOMETRY -ne 0 ];
 then
   export CATFILE="Geometry.txt"
   export CATNAME="Geometry"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Geometry.txt

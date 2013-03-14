@@ -27,14 +27,14 @@ if [ $DEFINITIONS -ne 0 ];
 then
   export CATFILE="Definitions.txt"
   export CATNAME="Definitions"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $NAMEMEANINGS -ne 0 ];
 then
   export CATFILE="NameMeanings.txt"
   export CATNAME="Name meanings"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Definitions.txt

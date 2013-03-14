@@ -10,7 +10,7 @@ if [ $MULTIPLICATION -ne 0 ];
 then
   export CATFILE="Multiplication.txt"
   export CATNAME="Multiplication"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Multiplication.txt

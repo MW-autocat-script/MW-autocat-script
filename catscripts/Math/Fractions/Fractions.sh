@@ -12,7 +12,7 @@ if [ $FRACTIONS -ne 0 ];
 then
   export CATFILE="Fractions.txt"
   export CATNAME="Fractions"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Fractions.txt

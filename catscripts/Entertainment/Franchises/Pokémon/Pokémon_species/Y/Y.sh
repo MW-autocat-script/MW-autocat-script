@@ -11,21 +11,21 @@ if [ $Yamask -ne 0 ];
 then
   export CATFILE="Yamask.txt"
   export CATNAME="Yamask"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Yanma -ne 0 ];
 then
   export CATFILE="Yanma.txt"
   export CATNAME="Yanma"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Yanmega -ne 0 ];
 then
   export CATFILE="Yanmega.txt"
   export CATNAME="Yanmega"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 

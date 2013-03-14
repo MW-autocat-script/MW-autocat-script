@@ -12,14 +12,14 @@ if [ $ETYMOLOGY -ne 0 ];
 then
   export CATFILE="Etymology.txt"
   export CATNAME="Etymology"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ORIGINS -ne 0 ];
 then
   export CATFILE="NameOrigins.txt"
   export CATNAME="Name origins"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Etymology.txt

@@ -14,7 +14,7 @@ if [ $ASTEROIDS -ne 0 ];
 then
   export CATFILE="Asteroids.txt"
   export CATNAME="Asteroids"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Asteroids.txt

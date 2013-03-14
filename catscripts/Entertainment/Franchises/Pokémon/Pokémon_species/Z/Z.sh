@@ -23,63 +23,63 @@ if [ $Zangoose -ne 0 ];
 then
   export CATFILE="Zangoose.txt"
   export CATNAME="Zangoose"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Zapdos -ne 0 ];
 then
   export CATFILE="Zapdos.txt"
   export CATNAME="Zapdos"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Zebstrika -ne 0 ];
 then
   export CATFILE="Zebstrika.txt"
   export CATNAME="Zebstrika"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Zekrom -ne 0 ];
 then
   export CATFILE="Zekrom.txt"
   export CATNAME="Zekrom"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Zigzagoon -ne 0 ];
 then
   export CATFILE="Zigzagoon.txt"
   export CATNAME="Zigzagoon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Zoroark -ne 0 ];
 then
   export CATFILE="Zoroark.txt"
   export CATNAME="Zoroark"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Zorua -ne 0 ];
 then
   export CATFILE="Zorua.txt"
   export CATNAME="Zorua"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Zweilous -ne 0 ];
 then
   export CATFILE="Zweilous.txt"
   export CATNAME="Zweilous"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Zubat -ne 0 ];
 then
   export CATFILE="Zubat.txt"
   export CATNAME="Zubat"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 

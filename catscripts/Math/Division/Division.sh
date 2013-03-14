@@ -10,7 +10,7 @@ if [ $DIVISION -ne 0 ];
 then
   export CATFILE="Division.txt"
   export CATNAME="Division"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Division.txt

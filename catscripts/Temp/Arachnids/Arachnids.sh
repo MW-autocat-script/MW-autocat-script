@@ -14,28 +14,28 @@ if [ $ARACHNIDS -ne 0 ];
 then
   export CATFILE="Arachnids.txt"
   export CATNAME="Arachnids"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TICKS -ne 0 ];
 then
   export CATFILE="Ticks.txt"
   export CATNAME="Ticks"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SPIDERS -ne 0 ];
 then
   export CATFILE="Spiders.txt"
   export CATNAME="Spiders"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SCORPIONS -ne 0 ];
 then
   export CATFILE="Scorpions.txt"
   export CATNAME="Scorpions"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Arachnids.txt

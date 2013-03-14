@@ -9,7 +9,7 @@ if [ $CONVERSIONS -ne 0 ];
 then
   export CATFILE="MeasurementConversions.txt"
   export CATNAME="Measurement conversions"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm MeasurementConversions.txt

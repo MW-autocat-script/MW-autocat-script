@@ -10,7 +10,7 @@ if [ $ACRONYMS -ne 0 ];
 then
   export CATFILE="Acronyms.txt"
   export CATNAME="Acronyms"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Acronyms.txt

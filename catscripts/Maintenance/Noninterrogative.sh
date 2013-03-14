@@ -8,7 +8,7 @@ if [ $NONINT -ne 0 ];
 then
   export CATFILE="noninterrogative.txt"
   export CATNAME="Page titles lacking an interrogative word"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm noninterrogative.txt

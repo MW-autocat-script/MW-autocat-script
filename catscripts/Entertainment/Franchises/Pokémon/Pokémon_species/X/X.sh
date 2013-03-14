@@ -7,7 +7,7 @@ if [ $Xatu -ne 0 ];
 then
   export CATFILE="Xatu.txt"
   export CATNAME="Xatu"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Xatu.txt

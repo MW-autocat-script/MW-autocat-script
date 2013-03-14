@@ -10,7 +10,7 @@ if [ $SYNONYMS -ne 0 ];
 then
   export CATFILE="Synonyms.txt"
   export CATNAME="Synonyms"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Synonyms.txt
