@@ -1,13 +1,15 @@
 #!/bin/bash
 
-./catscripts/Language/Non-English\ languages/NonEnglish.sh 
-./catscripts/Language/Definitions/Definitions.sh
-./catscripts/Language/Synonyms/Synonyms.sh
-./catscripts/Language/Antonyms/Antonyms.sh
-./catscripts/Language/Ditloids/Ditloids.sh
-./catscripts/Language/Etymology/Etymology.sh
-./catscripts/Language/Acronyms/Acronyms.sh
-./catscripts/Language/Parts\ of\ speech/PartsOfSpeech.sh
-./catscripts/Language/Rhyming/Rhyming.sh
-./catscripts/Language/Sign_language/Signlanguage.sh
-./catscripts/Language/Spelling/Spelling.sh
+CURRENTDIR="./catscripts/Language"
+
+$CURRENTDIR/Non-English_languages/NonEnglish.sh 
+$CURRENTDIR/Definitions/Definitions.sh
+$CURRENTDIR/Synonyms/Synonyms.sh
+$CURRENTDIR/Antonyms/Antonyms.sh
+$CURRENTDIR/Ditloids/Ditloids.sh
+$CURRENTDIR/Etymology/Etymology.sh
+$CURRENTDIR/Acronyms/Acronyms.sh
+$CURRENTDIR/Parts_of_speech/PartsOfSpeech.sh
+$CURRENTDIR/Rhyming/Rhyming.sh
+$CURRENTDIR/Sign_language/Signlanguage.sh
+$CURRENTDIR/Spelling/Spelling.sh
