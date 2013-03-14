@@ -1,3 +1,5 @@
 #!/bin/bash
 
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/PokémonSpecies.sh 
+CURRENTDIR="./catscripts/Entertainment/Franchises/Pokémon"
+
+$CURRENTDIR/Pokémon\ species/PokémonSpecies.sh 

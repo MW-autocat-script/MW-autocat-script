@@ -1,3 +1,5 @@
 #!/bin/bash
 
-./catscripts/Entertainment/Movies/Star\ Wars\ movies/StarWarsMovies.sh 
+CURRENTDIR="./catscripts/Entertainment/Movies"
+
+$CURRENTDIR/Star\ Wars\ movies/StarWarsMovies.sh 

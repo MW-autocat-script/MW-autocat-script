@@ -1,5 +1,7 @@
 #!/bin/bash
 
-./catscripts/Entertainment/Franchises/Digimon/Digimon.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon.sh
-./catscripts/Entertainment/Franchises/Star\ Wars/StarWars.sh
+$CURRENTDIR="./catscripts/Entertainment/Franchises"
+
+$CURRENTDIR/Digimon/Digimon.sh
+$CURRENTDIR/Pokémon/Pokémon.sh
+$CURRENTDIR/Star\ Wars/StarWars.sh

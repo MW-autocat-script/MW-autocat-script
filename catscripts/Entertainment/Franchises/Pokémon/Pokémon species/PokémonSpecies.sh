@@ -1,28 +1,30 @@
 #!/bin/bash
 
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/A/A.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/B/B.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/C/C.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/D/D.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/E/E.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/F/F.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/G/G.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/H/H.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/I/I.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/J/J.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/K/K.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/L/L.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/M/M.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/N/N.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/O/O.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/P/P.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Q/Q.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/R/R.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/S/S.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/T/T.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/U/U.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/V/V.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/W/W.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/X/X.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Y/Y.sh
-./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species/Z/Z.sh
+CURRENTDIR="./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species"
+
+$CURRENTDIR/A/A.sh
+$CURRENTDIR/B/B.sh
+$CURRENTDIR/C/C.sh
+$CURRENTDIR/D/D.sh
+$CURRENTDIR/E/E.sh
+$CURRENTDIR/F/F.sh
+$CURRENTDIR/G/G.sh
+$CURRENTDIR/H/H.sh
+$CURRENTDIR/I/I.sh
+$CURRENTDIR/J/J.sh
+$CURRENTDIR/K/K.sh
+$CURRENTDIR/L/L.sh
+$CURRENTDIR/M/M.sh
+$CURRENTDIR/N/N.sh
+$CURRENTDIR/O/O.sh
+$CURRENTDIR/P/P.sh
+$CURRENTDIR/Q/Q.sh
+$CURRENTDIR/R/R.sh
+$CURRENTDIR/S/S.sh
+$CURRENTDIR/T/T.sh
+$CURRENTDIR/U/U.sh
+$CURRENTDIR/V/V.sh
+$CURRENTDIR/W/W.sh
+$CURRENTDIR/X/X.sh
+$CURRENTDIR/Y/Y.sh
+$CURRENTDIR/Z/Z.sh
