@@ -6,7 +6,7 @@ egrep -i 'Ford Escort|[0-9]{2,4} Escort' newpages.txt >> FordEscort.txt
 egrep -i 'Ford Focus|[0-9]{2,4} Focus' newpages.txt >> FordFocus.txt
 egrep -i 'Ford Mustang|[0-9]{2,4} Mustang' newpages.txt >> FordMustang.txt
 egrep -i 'Ford Contour|[0-9]{2,4} Contour' newpages.txt >> FordContour.txt
-egrep -i 'Mondeo' >> Ford.txt #No category exists and currently insufficient number of questions to create
+#egrep -i 'Mondeo' newpages.txt >> Ford.txt #No category exists and currently insufficient number of questions to create
 
 FORD=`stat --print=%s Ford.txt`
 TAURUS=`stat --print=%s FordTaurus.txt`

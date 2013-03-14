@@ -1,4 +1,6 @@
 #!/bin/bash
 
-./catscripts/Entertainment/Video\ games/Educational\ video\ games/Studyladder.sh
-./catscripts/Entertainment/Video\ games/Educational\ video\ games/LiteracyPlanet.sh 
+CURRENTDIR="./catscripts/Entertainment/Video_games/Educational_video_games"
+
+$CURRENTDIR/Studyladder.sh
+$CURRENTDIR/LiteracyPlanet.sh 

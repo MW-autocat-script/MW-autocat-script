@@ -11,4 +11,4 @@ then
   ./catscripts/Categorize.sh
 fi
 
-rm Poptropica.sh
+rm Poptropica.txt

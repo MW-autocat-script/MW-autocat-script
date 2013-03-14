@@ -1,10 +1,12 @@
 #!/bin/bash
 
-./catscripts/Government/Countries/United\ States/US\ states/Alabama/Alabama.sh
-./catscripts/Government/Countries/United\ States/US\ states/Alaska/Alaska.sh
-./catscripts/Government/Countries/United\ States/US\ states/Arizona/Arizona.sh
-./catscripts/Government/Countries/United\ States/US\ states/Arkansas/Arkansas.sh
-./catscripts/Government/Countries/United\ States/US\ states/New_Mexico/NewMexico.sh
-./catscripts/Government/Countries/United\ States/US\ states/Pennsylvania/Pennsylvania.sh
-./catscripts/Government/Countries/United\ States/US\ states/Vermont/Vermont.sh
-./catscripts/Government/Countries/United\ States/US\ states/Wyoming/Wyoming.sh
+CURRENTDIR="./catscripts/Government/Countries/United_States/US_states"
+
+$CURRENTDIR/Alabama/Alabama.sh
+$CURRENTDIR/Alaska/Alaska.sh
+$CURRENTDIR/Arizona/Arizona.sh
+$CURRENTDIR/Arkansas/Arkansas.sh
+$CURRENTDIR/New_Mexico/NewMexico.sh
+$CURRENTDIR/Pennsylvania/Pennsylvania.sh
+$CURRENTDIR/Vermont/Vermont.sh
+$CURRENTDIR/Wyoming/Wyoming.sh

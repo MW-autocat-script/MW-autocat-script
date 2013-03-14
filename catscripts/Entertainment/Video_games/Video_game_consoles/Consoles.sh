@@ -1,5 +1,7 @@
 #!/bin/bash
 
-./catscripts/Entertainment/Video\ games/Video\ game\ consoles/PlayStation2.sh
-./catscripts/Entertainment/Video\ games/Video\ game\ consoles/PlayStation3.sh
-./catscripts/Entertainment/Video\ games/Video\ game\ consoles/Xbox360.sh 
+CURRENTDIR="./catscripts/Entertainment/Video_games/Video_game_consoles"
+
+$CURRENTDIR/PlayStation2.sh
+$CURRENTDIR/PlayStation3.sh
+$CURRENTDIR/Xbox360.sh 

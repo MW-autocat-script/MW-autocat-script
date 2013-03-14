@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Entertainment/Franchises/Pokémon/Pokémon\ species"
+CURRENTDIR="./catscripts/Entertainment/Franchises/Pokémon/Pokémon_species"
 
 $CURRENTDIR/A/A.sh
 $CURRENTDIR/B/B.sh

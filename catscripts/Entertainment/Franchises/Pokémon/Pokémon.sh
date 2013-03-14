@@ -2,4 +2,4 @@
 
 CURRENTDIR="./catscripts/Entertainment/Franchises/Pokémon"
 
-$CURRENTDIR/Pokémon\ species/PokémonSpecies.sh 
+$CURRENTDIR/Pokémon_species/PokémonSpecies.sh 

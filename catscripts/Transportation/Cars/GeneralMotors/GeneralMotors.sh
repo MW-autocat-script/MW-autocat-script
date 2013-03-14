@@ -1,5 +1,4 @@
 #!/bin/bash
-
 egrep -i 'Chev(rolet|y)(| )Aveo|[0-9]{2,}(| )Aveo' newpages.txt >> ChevroletAveo.txt
 egrep -i 'Chev(rolet|y)(| )Beretta|[0-9]{2,}(| )Beretta' newpages.txt >> ChevroletBeretta.txt
 egrep -i 'Camaro' newpages.txt >> ChevroletCamaro.txt

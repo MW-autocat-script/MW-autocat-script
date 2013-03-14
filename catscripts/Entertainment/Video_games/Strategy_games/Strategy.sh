@@ -1,3 +1,5 @@
 #!/bin/bash
 
-./catscripts/Entertainment/Video\ games/Strategy_games/Freeciv.sh
+CURRENTDIR="./catscripts/Entertainment/Video_games/Strategy_games"
+
+$CURRENTDIR/Freeciv.sh

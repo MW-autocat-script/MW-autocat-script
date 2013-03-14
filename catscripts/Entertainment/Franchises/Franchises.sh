@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$CURRENTDIR="./catscripts/Entertainment/Franchises"
+CURRENTDIR="./catscripts/Entertainment/Franchises"
 
 $CURRENTDIR/Digimon/Digimon.sh
 $CURRENTDIR/Pokémon/Pokémon.sh

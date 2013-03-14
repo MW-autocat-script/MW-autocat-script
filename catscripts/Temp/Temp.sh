@@ -1,5 +1,7 @@
 #!/bin/bash
 
-./catscripts/Temp/Arachnids/Arachnids.sh
-./catscripts/Temp/Soft_drinks/Softdrinks.sh
-./catscripts/Temp/War/War.sh
+CURRENTDIR="./catscripts/Temp"
+
+$CURRENTDIR/Arachnids/Arachnids.sh
+$CURRENTDIR/Soft_drinks/Softdrinks.sh
+$CURRENTDIR/War/War.sh

@@ -13,28 +13,28 @@ if [ $TELEPHONES -ne 0 ];
 then
   export CATFILE="Telephones.txt"
   export CATNAME="Telephones"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CELLPHONES -ne 0 ];
 then
   export CATFILE="Cellphones.txt"
   export CATNAME="Cellphones"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $IPHONES -ne 0 ];
 then
   export CATFILE="iPhones.txt"
   export CATNAME="iPhone"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $NOKIA -ne 0 ];
 then
   export CATFILE="Nokia.txt"
   export CATNAME="Nokia"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Telephones.txt

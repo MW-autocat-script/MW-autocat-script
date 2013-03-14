@@ -8,12 +8,12 @@ if [ $PMP -ne 0 ];
 then
   export CATFILE="PMP.txt"
   export CATNAME="Portable media players"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm PMP.txt
 
-CURRENTDIR="./catscripts/Technology/Portable_media_players/"
+CURRENTDIR="./catscripts/Technology/Portable_media_players"
 
 $CURRENTDIR/iPods/iPods.sh
 $CURRENTDIR/Zune/Zune.sh
