@@ -3,24 +3,24 @@
 #
 #Final Fantasy XI - in Role-playing games/Final Fantasy series
 
+CURRENTDIR="./catscripts/Entertainment/Video_games/MMORPGs"
 
-
-./catscripts/Entertainment/Video\ games/MMORPGs/AdventureQuest\ Worlds/AdventureQuestWorlds.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/Anarchy_Online/AnarchyOnline.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/Cabal_Online/CabalOnline.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/Dead_Frontier/DeadFrontier.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/Dofus/Dofus.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/Eve_Online/EveOnline.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/Fiesta_Online/FiestaOnline.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/Flyff/Flyff.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/Free_Realms/FreeRealms.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/GhostX/GhostX.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/Guild_Wars/GuildWars.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/Karos_Online/KarosOnline.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/Mafia_Wars/MafiaWars.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/Poptropica/Poptropica.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/RuneScape/RuneScape.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/Tales_of_Pirates/TalesofPirates.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/Talisman_Online/TalismanOnline.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/Wizard101/Wizard101.sh
-./catscripts/Entertainment/Video\ games/MMORPGs/World\ of\ Warcraft/WorldOfWarcraft.sh
+$CURRENTDIR/AdventureQuest_Worlds/AdventureQuestWorlds.sh
+$CURRENTDIR/Anarchy_Online/AnarchyOnline.sh
+$CURRENTDIR/Cabal_Online/CabalOnline.sh
+$CURRENTDIR/Dead_Frontier/DeadFrontier.sh
+$CURRENTDIR/Dofus/Dofus.sh
+$CURRENTDIR/Eve_Online/EveOnline.sh
+$CURRENTDIR/Fiesta_Online/FiestaOnline.sh
+$CURRENTDIR/Flyff/Flyff.sh
+$CURRENTDIR/Free_Realms/FreeRealms.sh
+$CURRENTDIR/GhostX/GhostX.sh
+$CURRENTDIR/Guild_Wars/GuildWars.sh
+$CURRENTDIR/Karos_Online/KarosOnline.sh
+$CURRENTDIR/Mafia_Wars/MafiaWars.sh
+$CURRENTDIR/Poptropica/Poptropica.sh
+$CURRENTDIR/RuneScape/RuneScape.sh
+$CURRENTDIR/Tales_of_Pirates/TalesofPirates.sh
+$CURRENTDIR/Talisman_Online/TalismanOnline.sh
+$CURRENTDIR/Wizard101/Wizard101.sh
+$CURRENTDIR/World_of_Warcraft/WorldOfWarcraft.sh

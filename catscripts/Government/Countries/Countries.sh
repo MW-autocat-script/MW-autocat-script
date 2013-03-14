@@ -36,5 +36,5 @@ $CURRENTDIR/Singapore/Singapore.sh
 $CURRENTDIR/Sweden/Sweden.sh
 $CURRENTDIR/Tanzia/Tanzia.sh
 $CURRENTDIR/Wales/Wales.sh
-$CURRENTDIR/United\ States/UnitedStates.sh
+$CURRENTDIR/United_States/UnitedStates.sh
 $CURRENTDIR/Unrecognized_countries/Unrecognized.sh

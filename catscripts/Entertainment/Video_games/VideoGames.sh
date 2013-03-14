@@ -17,9 +17,9 @@ CURRENTDIR="./catscripts/Entertainment/Video_games"
 
 $CURRENTDIR/Cheat_codes/CheatCodes.sh 
 $CURRENTDIR/MMORPGs/MMORPGs.sh
-$CURRENTDIR/Video\ game\ consoles/Consoles.sh
-$CURRENTDIR/Video\ games\ by\ series/VideoGameSeries.sh
+$CURRENTDIR/Video_game_consoles/Consoles.sh
+$CURRENTDIR/Video_games_by_series/VideoGameSeries.sh
 $CURRENTDIR/Educational_video_games/EducationalGames.sh
 $CURRENTDIR/Open-world_video_games/Openworld.sh
-$CURRENTDIR/Role-playing\ video\ games/RolePlayingVideoGames.sh
+$CURRENTDIR/Role-playing_video_games/RolePlayingVideoGames.sh
 $CURRENTDIR/Strategy_games/Strategy.sh
