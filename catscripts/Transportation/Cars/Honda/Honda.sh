@@ -14,28 +14,28 @@ if [ $ACCORD -ne 0 ];
 then
   export CATFILE="HondaAccord.txt"
   export CATNAME="Honda Accord"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CIVIC -ne 0 ];
 then
   export CATFILE="HondaCivic.txt"
   export CATNAME="Honda Civic"
-    ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $PASSPORT -ne 0 ];
 then
   export CATFILE="HondaPassport.txt"
   export CATNAME="Honda Passport"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ELEMENT -ne 0 ];
 then
   export CATFILE="HondaElement.txt"
   export CATNAME="Honda Element"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm HondaAccord.txt

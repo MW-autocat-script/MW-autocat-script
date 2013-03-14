@@ -20,49 +20,49 @@ if [ $FORD -ne 0 ];
 then
   export CATFILE="Ford.txt"
   export CATNAME="Ford"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TAURUS -ne 0 ];
 then
   export CATFILE="FordTaurus.txt"
   export CATNAME="Ford Taurus"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ESCORT -ne 0 ];
 then
   export CATFILE="FordEscort.txt"
   export CATNAME="Ford Escort"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FOCUS -ne 0 ];
 then
   export CATFILE="FordFocus.txt"
   export CATNAME="Ford Focus"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MUSTANG -ne 0 ];
 then
   export CATFILE="FordMustang.txt"
   export CATNAME="Ford Mustang"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CONTOUR -ne 0 ];
 then
   export CATFILE="FordContour.txt"
   export CATNAME="Ford Contour"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 #if [ $MONDEO -ne 0 ];
 #then
 #  export CATFILE="FordMondeo.txt"
 #  export CATNAME="Ford Mondeo"
-#  ./catscripts/Categorize.sh
+#  $CATEGORIZE
 #fi
 
 rm Ford.txt

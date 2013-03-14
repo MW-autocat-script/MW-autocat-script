@@ -8,7 +8,7 @@ if [ $SUBURBAN -ne 0 ];
 then
   export CATFILE="Suburban.txt"
   export CATNAME="Chevrolet Suburban"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Suburban.txt

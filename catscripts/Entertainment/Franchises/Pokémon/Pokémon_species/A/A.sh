@@ -64,7 +64,7 @@ if [ $ABOMASNOW -ne 0 ];
 then
    export CATFILE="Abomasnow.txt"
    export CATNAME="Abomasnow"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -72,7 +72,7 @@ if [ $ABRA -ne 0 ];
 then
    export CATFILE="Abra.txt"
    export CATNAME="Abra"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -80,7 +80,7 @@ if [ $ABSOL -ne 0 ];
 then
    export CATFILE="Absol.txt"
    export CATNAME="Absol"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -88,7 +88,7 @@ if [ $ACCELGOR -ne 0 ];
 then
    export CATFILE="Accelgor.txt"
    export CATNAME="Accelgor"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -96,7 +96,7 @@ if [ $AERODACTYL -ne 0 ];
 then
    export CATFILE="Aerodactyl.txt"
    export CATNAME="Aerodactyl"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -104,7 +104,7 @@ if [ $AGGRON -ne 0 ];
 then
    export CATFILE="Aggron.txt"
    export CATNAME="Aggron"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -112,7 +112,7 @@ if [ $AIPOM -ne 0 ];
 then
    export CATFILE="Aipom.txt"
    export CATNAME="Aipom"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -120,7 +120,7 @@ if [ $ALAKAZAM -ne 0 ];
 then
    export CATFILE="Alakazam.txt"
    export CATNAME="Alakazam"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -128,7 +128,7 @@ if [ $ALOMOMOLA -ne 0 ];
 then
    export CATFILE="Alomomola.txt"
    export CATNAME="Alomomola"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -136,7 +136,7 @@ if [ $ALTARIA -ne 0 ];
 then
    export CATFILE="Altaria.txt"
    export CATNAME="Altaria"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -144,7 +144,7 @@ if [ $AMBIPOM -ne 0 ];
 then
    export CATFILE="Ambipom.txt"
    export CATNAME="Ambipom"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -152,7 +152,7 @@ if [ $AMOONGUSS -ne 0 ];
 then
    export CATFILE="Amoonguss.txt"
    export CATNAME="Amoonguss"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -160,7 +160,7 @@ if [ $AMPHAROS -ne 0 ];
 then
    export CATFILE="Ampharos.txt"
    export CATNAME="Ampharos"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -168,7 +168,7 @@ if [ $ANORITH -ne 0 ];
 then
    export CATFILE="Anorith.txt"
    export CATNAME="Anorith"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -176,7 +176,7 @@ if [ $ARBOK -ne 0 ];
 then
    export CATFILE="Arbok.txt"
    export CATNAME="Arbok"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -184,7 +184,7 @@ if [ $ARCANINE -ne 0 ];
 then
    export CATFILE="Arcanine.txt"
    export CATNAME="Arcanine"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -192,7 +192,7 @@ if [ $ARCEUS -ne 0 ];
 then
    export CATFILE="Arceus.txt"
    export CATNAME="Arceus"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -200,7 +200,7 @@ if [ $ARCHEN -ne 0 ];
 then
    export CATFILE="Archen.txt"
    export CATNAME="Archen"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -208,7 +208,7 @@ if [ $ARCHEOPS -ne 0 ];
 then
    export CATFILE="Archeops.txt"
    export CATNAME="Archeops"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -216,7 +216,7 @@ if [ $ARIADOS -ne 0 ];
 then
    export CATFILE="Ariados.txt"
    export CATNAME="Ariados"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -224,7 +224,7 @@ if [ $ARMALDO -ne 0 ];
 then
    export CATFILE="Armaldo.txt"
    export CATNAME="Armaldo"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -232,7 +232,7 @@ if [ $ARON -ne 0 ];
 then
    export CATFILE="Aron.txt"
    export CATNAME="Aron"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -240,7 +240,7 @@ if [ $ARTICUNO -ne 0 ];
 then
    export CATFILE="Articuno.txt"
    export CATNAME="Articuno"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -248,7 +248,7 @@ if [ $AUDINO -ne 0 ];
 then
    export CATFILE="Audino.txt"
    export CATNAME="Audino"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -256,7 +256,7 @@ if [ $AXEW -ne 0 ];
 then
    export CATFILE="Axew.txt"
    export CATNAME="Axew"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -264,7 +264,7 @@ if [ $AZELF -ne 0 ];
 then
    export CATFILE="Azelf.txt"
    export CATNAME="Azelf"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -272,7 +272,7 @@ if [ $AZUMARILL -ne 0 ];
 then
    export CATFILE="Azumarill.txt"
    export CATNAME="Azumarill"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 
@@ -280,13 +280,8 @@ if [ $AZURILL -ne 0 ];
 then
    export CATFILE="Azurill.txt"
    export CATNAME="Azurill"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
-
-
-
-
-
 
 
 rm Abomasnow.txt

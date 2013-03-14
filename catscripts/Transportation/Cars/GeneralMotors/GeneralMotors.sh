@@ -15,35 +15,35 @@ if [ $AVEO -ne 0 ];
 then
   export CATFILE="ChevroletAveo.txt"
   export CATNAME="Chevrolet Aveo"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BERETTA -ne 0 ];
 then
   export CATFILE="ChevroletBeretta.txt"
   export CATNAME="Chevrolet Beretta"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CAMARO -ne 0 ];
 then
   export CATFILE="ChevroletCamaro.txt"
   export CATNAME="Chevrolet Camaro"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CAPRICE -ne 0 ];
 then
   export CATFILE="ChevroletCaprice.txt"
   export CATNAME="Chevrolet Caprice"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CAVALIER -ne 0 ];
 then
   export CATFILE="ChevroletCavalier.txt"
   export CATNAME="Chevrolet Cavalier"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm ChevroletAveo.txt

@@ -1,8 +1,10 @@
 #!/bin/bash
 
-./catscripts/Transportation/Cars/Ford/Ford.sh
-./catscripts/Transportation/Cars/GeneralMotors/GeneralMotors.sh
-./catscripts/Transportation/Cars/Honda/Honda.sh
-#./catscripts/Transportation/Cars/Mitsubishi/Mitsubishi.sh
-#./catscripts/Transportation/Cars/Nissan/Nissan.sh
-#./catscripts/Transportation/Cars/Subaru/Subaru.sh
+CURRENTDIR="./catscripts/Transportation/Cars"
+
+$CURRENTDIR/Ford/Ford.sh
+$CURRENTDIR/GeneralMotors/GeneralMotors.sh
+$CURRENTDIR/Honda/Honda.sh
+#$CURRENTDIR/Mitsubishi/Mitsubishi.sh
+#$CURRENTDIR/Nissan/Nissan.sh
+#$CURRENTDIR/Subaru/Subaru.sh

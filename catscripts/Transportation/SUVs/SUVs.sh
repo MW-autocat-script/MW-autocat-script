@@ -1,3 +1,5 @@
 #!/bin/bash
 
-./catscripts/Transportation/SUVs/Chevrolet/Chevrolet.sh
+CURRENTDIR="./catscripts/Transportation/SUVs"
+
+$CATEGORIZE/Chevrolet/Chevrolet.sh
