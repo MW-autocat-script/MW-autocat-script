@@ -1,8 +1,10 @@
 #!/bin/bash
 
-./catscripts/Entertainment/Music/Bands/Bands.sh
-./catscripts/Entertainment/Music/Composers/Composers.sh
-./catscripts/Entertainment/Music/Lyrics/Lyrics.sh
-./catscripts/Entertainment/Music/Musical\ instruments/MusicalInstruments.sh
-./catscripts/Entertainment/Music/Singers/Singers.sh
+CURRENTDIR="./catscripts/Entertainment/Music"
+
+$CURRENTDIR/Bands/Bands.sh
+$CURRENTDIR/Composers/Composers.sh
+$CURRENTDIR/Lyrics/Lyrics.sh
+$CURRENTDIR/Musical\ instruments/MusicalInstruments.sh
+$CURRENTDIR/Singers/Singers.sh
 
