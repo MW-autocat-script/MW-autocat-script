@@ -27,6 +27,7 @@ $CURRENTDIR/Jamaica/Jamaica.sh
 $CURRENTDIR/Kenya/Kenya.sh
 $CURRENTDIR/Latvia/Latvia.sh
 $CURRENTDIR/Libya/Libya.sh
+$CURRENTDIR/Lithuania/Lithuania.sh
 $CURRENTDIR/Nepal/Nepal.sh
 $CURRENTDIR/Nigeria/Nigeria.sh
 $CURRENTDIR/Norway/Norway.sh

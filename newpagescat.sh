@@ -19,6 +19,7 @@ fi
 fi
 echo $$ > $PIDFILE
 
+export CATEGORIZE="./catscripts/Categorize.sh"
 #GET http://cfaj.freeshell.org/ipaddr.cgi > address.txt
 
 #while read y; do
