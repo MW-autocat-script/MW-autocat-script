@@ -1,3 +1,5 @@
 #!/bin/bash
 
-./catscripts/Technology/Internet/Websites/Websites.sh 
+CURRENTDIR="./catscripts/Technology/Internet"
+
+$CURRENTDIR/Websites/Websites.sh 

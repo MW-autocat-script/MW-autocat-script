@@ -1,8 +1,10 @@
 #!/bin/bash
 
-./catscripts/Technology/Computers/Computer_programming/Computerprogramming.sh
-./catscripts/Technology/Computers/Computer_hardware/Computerhardware.sh
-./catscripts/Technology/Computers/Computer_manufacturers/Manufacturers.sh
-./catscripts/Technology/Computers/Computer_networking/Computernetworking.sh
-./catscripts/Technology/Computers/Software/Software.sh
-./catscripts/Technology/Computers/Tablets/Tablets.sh
+CURRENTDIR="./catscripts/Technology/Computers"
+
+$CURRENTDIR/Computer_programming/Computerprogramming.sh
+$CURRENTDIR/Computer_hardware/Computerhardware.sh
+$CURRENTDIR/Computer_manufacturers/Manufacturers.sh
+$CURRENTDIR/Computer_networking/Computernetworking.sh
+$CURRENTDIR/Software/Software.sh
+$CURRENTDIR/Tablets/Tablets.sh

@@ -13,7 +13,9 @@ then
   ./catscripts/Categorize.sh
 fi
 
-./catscripts/Technology/Computers/Computer_programming/C++_programming/C++.sh
-./catscripts/Technology/Computers/Computer_programming/SQL/SQL.sh
+CURRENTDIR="./catscripts/Technology/Computers/Computer_programming"
+
+$CURRENTDIR/C++_programming/C++.sh
+$CURRENTDIR/SQL/SQL.sh
 
 rm Computerprogramming.txt

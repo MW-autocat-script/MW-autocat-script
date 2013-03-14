@@ -8,14 +8,16 @@ if [ $OS -ne 0 ];
 then
   export CATFILE="OperatingSystems.txt"
   export CATNAME="Operating systems"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
-./catscripts/Technology/Computers/Software/Operating_systems/FreeBSD/FreeBSD.sh
-./catscripts/Technology/Computers/Software/Operating_systems/Linux/Linux.sh
-./catscripts/Technology/Computers/Software/Operating_systems/Mac_OS_X/Mac_OS_X.sh
-./catscripts/Technology/Computers/Software/Operating_systems/OpenBSD/OpenBSD.sh
-./catscripts/Technology/Computers/Software/Operating_systems/Unix/Unix.sh
-./catscripts/Technology/Computers/Software/Operating_systems/Windows/Windows.sh
+CURRENTDIR="./catscripts/Technology/Computers/Software/Operating_systems"
+
+$CURRENTDIR/FreeBSD/FreeBSD.sh
+$CURRENTDIR/Linux/Linux.sh
+$CURRENTDIR/Mac_OS_X/Mac_OS_X.sh
+$CURRENTDIR/OpenBSD/OpenBSD.sh
+$CURRENTDIR/Unix/Unix.sh
+$CURRENTDIR/Windows/Windows.sh
 
 rm OperatingSystems.txt

@@ -24,4 +24,6 @@ fi
 rm Officeapps.txt
 rm Wordprocessing.txt
 
-./catscripts/Technology/Computers/Software/Office_applications/Microsoft_Office/MicrosoftOffice.sh
+CURRENTDIR="./catscripts/Technology/Computers/Software/Office_applications"
+
+$CURRENTDIR/Microsoft_Office/MicrosoftOffice.sh

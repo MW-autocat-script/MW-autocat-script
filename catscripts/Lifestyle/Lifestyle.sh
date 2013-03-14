@@ -1,4 +1,6 @@
 #!/bin/bash
 
-./catscripts/Lifestyle/Health/Health.sh
-./catscripts/Lifestyle/Religion/Religion.sh
+CURRENTDIR="./catscripts/Lifestyle"
+
+$CURRENTDIR/Health/Health.sh
+$CURRENTDIR/Religion/Religion.sh

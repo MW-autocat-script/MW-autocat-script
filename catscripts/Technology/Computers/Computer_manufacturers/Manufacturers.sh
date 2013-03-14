@@ -1,3 +1,5 @@
 #!/bin/bash
 
-./catscripts/Technology/Computers/Computer_manufacturers/Apple_Inc./Apple.sh
+CURRENTDIR="./catscripts/Technology/Computers/Computer_manufacturers"
+
+$CURRENTDIR/Apple_Inc./Apple.sh

@@ -1,4 +1,6 @@
 #!/bin/bash
 
-./catscripts/Science/Chemistry/Elements/Elements.sh
-./catscripts/Science/Chemistry/Compounds/Compounds.sh
+CURRENTDIR="./catscripts/Science/Chemistry"
+
+$CURRENTDIR/Elements/Elements.sh
+$CURRENTDIR/Compounds/Compounds.sh

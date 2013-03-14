@@ -1,7 +1,9 @@
 #!/bin/bash
 
-./catscripts/Technology/Internet/Internet.sh
-./catscripts/Technology/Inventions/Inventions.sh
-./catscripts/Technology/Computers/Computers.sh
-./catscripts/Technology/Telephones/Telephones.sh
-./catscripts/Technology/Portable_media_players/PMP.sh
+CURRENTDIR="./catscripts/Technology"
+
+$CURRENTDIR/Internet/Internet.sh
+$CURRENTDIR/Inventions/Inventions.sh
+$CURRENTDIR/Computers/Computers.sh
+$CURRENTDIR/Telephones/Telephones.sh
+$CURRENTDIR/Portable_media_players/PMP.sh

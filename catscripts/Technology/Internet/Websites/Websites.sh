@@ -104,4 +104,6 @@ rm Wikianswers.txt
 rm WikiaSearch.txt
 rm Wikipedia.txt
 
-./catscripts/Technology/Internet/Websites/Social_networking/Socialnetworking.sh
+CURRENTDIR="./catscripts/Technology/Internet/Websites"
+
+$CURRENTDIR/Social_networking/Socialnetworking.sh

@@ -12,5 +12,8 @@ then
 fi
 
 rm PMP.txt
-./catscripts/Technology/Portable_media_players/iPods/iPods.sh
-./catscripts/Technology/Portable_media_players/Zune/Zune.sh
+
+CURRENTDIR="./catscripts/Technology/Portable_media_players/"
+
+$CURRENTDIR/iPods/iPods.sh
+$CURRENTDIR/Zune/Zune.sh

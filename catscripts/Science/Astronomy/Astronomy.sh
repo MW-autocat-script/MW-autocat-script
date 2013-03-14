@@ -1,8 +1,10 @@
 #!/bin/bash
 
-./catscripts/Science/Astronomy/Dwarf_planets/Dwarfplanets.sh
-./catscripts/Science/Astronomy/Planets/Planets.sh
-./catscripts/Science/Astronomy/Moon/Moon.sh
+CURRENTDIR="./catscripts/Science/Astronomy"
+
+$CURRENTDIR/Dwarf_planets/Dwarfplanets.sh
+$CURRENTDIR/Planets/Planets.sh
+$CURRENTDIR/Moon/Moon.sh
 
 egrep -i 'Asteroid' newpages.txt | egrep -iv 'download|game' >> Asteroids.txt
 

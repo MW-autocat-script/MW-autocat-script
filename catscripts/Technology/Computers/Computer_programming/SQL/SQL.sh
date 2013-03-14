@@ -10,14 +10,14 @@ if [ $SQL -ne 0 ];
 then
   export CATFILE="SQL.txt"
   export CATNAME="SQL"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MYSQL -ne 0 ];
 then
   export CATFILE="MySQL.txt"
   export CATNAME="MySQL"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm SQL.txt

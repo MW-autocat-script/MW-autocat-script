@@ -8,7 +8,7 @@ if [ $CPLUSPLUS -ne 0 ];
 then
   export CATFILE="CPlusPlus.txt"
   export CATNAME="C++ programming"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm CPlusPlus.txt

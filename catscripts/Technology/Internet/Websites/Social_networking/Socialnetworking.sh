@@ -1,3 +1,5 @@
 #!/bin/bash
 
-./catscripts/Technology/Internet/Websites/Social_networking/Woozworld.sh
+CURRENTDIR="./catscripts/Technology/Internet/Websites/Social_networking"
+
+$CURRENTDIR/Woozworld.sh

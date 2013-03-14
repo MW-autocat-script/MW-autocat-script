@@ -13,9 +13,11 @@ fi
 
 rm Religion.txt
 
-./catscripts/Lifestyle/Religion/Buddhism/Buddhism.sh
-./catscripts/Lifestyle/Religion/Christianity/Christianity.sh
-./catscripts/Lifestyle/Religion/Hinduism/Hinduism.sh
-./catscripts/Lifestyle/Religion/Judaism/Judaism.sh
-./catscripts/Lifestyle/Religion/Sikhism/Sikhism.sh
-./catscripts/Lifestyle/Religion/The_Bible/TheBible.sh
+CURRENTDIR="./catscripts/Lifestyle/Religion"
+
+$CURRENTDIR/Buddhism/Buddhism.sh
+$CURRENTDIR/Christianity/Christianity.sh
+$CURRENTDIR/Hinduism/Hinduism.sh
+$CURRENTDIR/Judaism/Judaism.sh
+$CURRENTDIR/Sikhism/Sikhism.sh
+$CURRENTDIR/The_Bible/TheBible.sh

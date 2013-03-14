@@ -1,8 +1,10 @@
 #!/bin/bash
 
-./catscripts/Technology/Computers/Software/DVD_authoring/DVDauthoring.sh
-./catscripts/Technology/Computers/Software/Emulation_and_Virtualization/Emulation.sh
-./catscripts/Technology/Computers/Software/Multimedia_software/Multimedia.sh
-./catscripts/Technology/Computers/Software/Operating_systems/OperatingSystems.sh
-./catscripts/Technology/Computers/Software/Web_browsers/Webbrowsers.sh
-./catscripts/Technology/Computers/Software/Office_applications/Officeapplications.sh
+CURRENTDIR="./catscripts/Technology/Computers/Software"
+
+$CURRENTDIR/DVD_authoring/DVDauthoring.sh
+$CURRENTDIR/Emulation_and_Virtualization/Emulation.sh
+$CURRENTDIR/Multimedia_software/Multimedia.sh
+$CURRENTDIR/Operating_systems/OperatingSystems.sh
+$CURRENTDIR/Web_browsers/Webbrowsers.sh
+$CURRENTDIR/Office_applications/Officeapplications.sh
