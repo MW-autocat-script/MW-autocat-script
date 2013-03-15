@@ -8,7 +8,7 @@ if [ $MOON -ne 0 ];
 then
   export CATFILE="Moon.txt"
   export CATNAME="Moon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Moon.txt

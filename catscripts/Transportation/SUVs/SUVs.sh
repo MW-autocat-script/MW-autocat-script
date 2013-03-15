@@ -2,4 +2,4 @@
 
 CURRENTDIR="./catscripts/Transportation/SUVs"
 
-$CATEGORIZE/Chevrolet/Chevrolet.sh
+$CURRENTDIR/Chevrolet/Chevrolet.sh

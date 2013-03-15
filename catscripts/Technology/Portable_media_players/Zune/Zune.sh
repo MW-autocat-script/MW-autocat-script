@@ -8,7 +8,7 @@ if [ $ZUNE -ne 0 ];
 then
   export CATFILE="Zune.txt"
   export CATNAME="Zune"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Zune.txt

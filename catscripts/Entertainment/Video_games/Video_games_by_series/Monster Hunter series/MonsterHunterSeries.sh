@@ -20,49 +20,49 @@ if [ $SERIES -ne 0 ];
 then
   export CATFILE="MonsterHunterSeries.txt"
   export CATNAME="MonsterHunter series"
-  ./catscripts.Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $HUNTER -ne 0 ];
 then
   export CATFILE="MonsterHunter.txt"
   export CATNAME="Monster Hunter"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FREEDOM -ne 0 ];
 then
   export CATFILE="MonsterHunterFreedom.txt"
   export CATNAME="Monster Hunter Freedom"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MHFU -ne 0 ];
 then
   export CATFILE="MonsterHunterFreedomUnite.txt"
   export CATNAME="Monster Hunter Freedom Unite"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MHF2 -ne 0 ];
 then
   export CATFILE="MonsterHunterFreedom2.txt"
   export CATNAME="Monster Hunter Freedom 2"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FRONTIER -ne 0 ];
 then
   export CATFILE="MonsterHunterFrontier.txt"
   export CATNAME="Monster Hunter Frontier"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TRI -ne 0 ];
 then
   export CATFILE="MonsterHunterTri.txt"
   export CATNAME="Monster Hunter Tri"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm MonsterHunterSeries.txt

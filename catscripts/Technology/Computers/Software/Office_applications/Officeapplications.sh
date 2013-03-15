@@ -11,14 +11,14 @@ if [ $APPS -ne 0 ];
 then
   export CATFILE="Officeapps.txt"
   export CATNAME="Office applications"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $WPROCESS -ne 0 ];
 then
   export CATFILE="Wordprocessing.txt"
   export CATNAME="Word processors"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Officeapps.txt

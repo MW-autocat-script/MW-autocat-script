@@ -22,49 +22,49 @@ if [ $CALLOFDUTY -ne 0 ];
 then
   export CATFILE="CallofDuty.txt"
   export CATNAME="Call of Duty series"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MODERN -ne 0 ];
 then
   export CATFILE="COD4.txt"
   export CATNAME="Call of Duty 4: Modern Warfare"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $WORLDATWAR -ne 0 ];
 then
   export CATFILE="WorldAtWar.txt"
   export CATNAME="Call of Duty: World at War"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MW2 -ne 0 ];
 then
   export CATFILE="ModernWarfare2.txt"
   export CATNAME="Call of Duty: Modern Warfare 2"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BLACKOPS -ne 0 ];
 then
   export CATFILE="BlackOps.txt"
   export CATNAME="Call of Duty: Black Ops"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MW3 -ne 0 ];
 then
   export CATFILE="ModernWarfare3.txt"
   export CATNAME="Call of Duty: Modern Warfare 3"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BO2 -ne 0 ];
 then
   export CATFILE="BlackOps2.txt"
   export CATNAME="Call of Duty: Black Ops II"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm CallofDuty.txt

@@ -14,28 +14,28 @@ if [ $SILVER -ne 0 ];
 then
   export CATFILE="Silver.txt"
   export CATNAME="Silver"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $COPPER -ne 0 ];
 then
   export CATFILE="Copper.txt"
   export CATNAME="Copper"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $GOLD -ne 0 ];
 then
   export CATFILE="Gold.txt"
   export CATNAME="Gold"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ROENTGENIUM -ne 0 ];
 then
   export CATFILE="Roentgenium.txt"
   export CATNAME="Roentgenium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Silver.txt

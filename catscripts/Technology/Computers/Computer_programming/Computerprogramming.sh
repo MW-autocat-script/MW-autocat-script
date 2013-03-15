@@ -10,7 +10,7 @@ if [ $PROGRAMMING -ne 0 ];
 then
   export CATFILE="Computerprogramming.txt"
   export CATNAME="Computer programming"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 CURRENTDIR="./catscripts/Technology/Computers/Computer_programming"

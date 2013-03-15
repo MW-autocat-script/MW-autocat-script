@@ -8,7 +8,7 @@ if [ $CANBERRA -ne 0 ];
 then
   export CATFILE="Canberra.txt"
   export CATNAME="Canberra"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Canberra.txt

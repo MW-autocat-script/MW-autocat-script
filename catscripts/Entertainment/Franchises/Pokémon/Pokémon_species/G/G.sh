@@ -90,294 +90,294 @@ if [ $Gabite -ne 0 ];
 then
    export CATFILE="Gabite.txt"
    export CATNAME="Gabite"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gallade -ne 0 ];
 then
    export CATFILE="Gallade.txt"
    export CATNAME="Gallade"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Garbodor -ne 0 ];
 then
    export CATFILE="Garbodor.txt"
    export CATNAME="Garbodor"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Garchomp -ne 0 ];
 then
    export CATFILE="Garchomp.txt"
    export CATNAME="Garchomp"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gardevoir -ne 0 ];
 then
    export CATFILE="Gardevoir.txt"
    export CATNAME="Gardevoir"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gastly -ne 0 ];
 then
    export CATFILE="Gastly.txt"
    export CATNAME="Gastly"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gastrodon -ne 0 ];
 then
    export CATFILE="Gastrodon.txt"
    export CATNAME="Gastrodon"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Galvantula -ne 0 ];
 then
    export CATFILE="Galvantula.txt"
    export CATNAME="Galvantula"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Genesect -ne 0 ];
 then
    export CATFILE="Genesect.txt"
    export CATNAME="Genesect"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gengar -ne 0 ];
 then
    export CATFILE="Gengar.txt"
    export CATNAME="Gengar"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Geodude -ne 0 ];
 then
    export CATFILE="Geodude.txt"
    export CATNAME="Geodude"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gible -ne 0 ];
 then
    export CATFILE="Gible.txt"
    export CATNAME="Gible"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gigalith -ne 0 ];
 then
    export CATFILE="Gigalith.txt"
    export CATNAME="Gigalith"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Girafarig -ne 0 ];
 then
    export CATFILE="Girafarig.txt"
    export CATNAME="Girafarig"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Giratina -ne 0 ];
 then
    export CATFILE="Giratina.txt"
    export CATNAME="Giratina"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Glaceon -ne 0 ];
 then
    export CATFILE="Glaceon.txt"
    export CATNAME="Glaceon"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Glalie -ne 0 ];
 then
    export CATFILE="Glalie.txt"
    export CATNAME="Glalie"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Glameow -ne 0 ];
 then
    export CATFILE="Glameow.txt"
    export CATNAME="Glameow"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gligar -ne 0 ];
 then
    export CATFILE="Gligar.txt"
    export CATNAME="Gligar"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gliscor -ne 0 ];
 then
    export CATFILE="Gliscor.txt"
    export CATNAME="Gliscor"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gloom -ne 0 ];
 then
    export CATFILE="Gloom.txt"
    export CATNAME="Gloom"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Golbat -ne 0 ];
 then
    export CATFILE="Golbat.txt"
    export CATNAME="Golbat"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Goldeen -ne 0 ];
 then
    export CATFILE="Goldeen.txt"
    export CATNAME="Goldeen"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Golduck -ne 0 ];
 then
    export CATFILE="Golduck.txt"
    export CATNAME="Golduck"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Golem -ne 0 ];
 then
    export CATFILE="Golem.txt"
    export CATNAME="Golem"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Golett -ne 0 ];
 then
    export CATFILE="Golett.txt"
    export CATNAME="Golett"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Golurk -ne 0 ];
 then
    export CATFILE="Golurk.txt"
    export CATNAME="Golurk"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gorebyss -ne 0 ];
 then
    export CATFILE="Gorebyss.txt"
    export CATNAME="Gorebyss"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gothita -ne 0 ];
 then
    export CATFILE="Gothita.txt"
    export CATNAME="Gothita"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gothitelle -ne 0 ];
 then
    export CATFILE="Gothitelle.txt"
    export CATNAME="Gothitelle"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gothorita -ne 0 ];
 then
    export CATFILE="Gothorita.txt"
    export CATNAME="Gothorita"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Granbull -ne 0 ];
 then
    export CATFILE="Granbull.txt"
    export CATNAME="Granbull"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Graveler -ne 0 ];
 then
    export CATFILE="Graveler.txt"
    export CATNAME="Graveler (Pokémon)"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Grimer -ne 0 ];
 then
    export CATFILE="Grimer.txt"
    export CATNAME="Grimer"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Grotle -ne 0 ];
 then
    export CATFILE="Grotle.txt"
    export CATNAME="Grotle"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Groudon -ne 0 ];
 then
    export CATFILE="Groudon.txt"
    export CATNAME="Groudon"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Grovyle -ne 0 ];
 then
    export CATFILE="Grovyle.txt"
    export CATNAME="Grovyle"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Growlithe -ne 0 ];
 then
    export CATFILE="Growlithe.txt"
    export CATNAME="Growlithe"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Grumpig -ne 0 ];
 then
    export CATFILE="Grumpig.txt"
    export CATNAME="Grumpig"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gulpin -ne 0 ];
 then
    export CATFILE="Gulpin.txt"
    export CATNAME="Gulpin"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gurdurr -ne 0 ];
 then
    export CATFILE="Gurdurr.txt"
    export CATNAME="Gurdurr"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Gyarados -ne 0 ];
 then
    export CATFILE="Gyarados.txt"
    export CATNAME="Gyarados"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 

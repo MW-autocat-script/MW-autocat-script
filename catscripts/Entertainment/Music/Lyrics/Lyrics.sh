@@ -8,7 +8,7 @@ if [ $LYRICS -ne 0 ];
 then
   export CATFILE="Lyrics.txt"
   export CATNAME="Lyrics"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Lyrics.txt

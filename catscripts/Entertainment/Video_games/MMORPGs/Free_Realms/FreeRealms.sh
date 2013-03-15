@@ -8,7 +8,7 @@ if [ $FREEREALMS -ne 0 ];
 then	
   export CATFILE="FreeRealms.txt"
   export CATNAME="Free Realms"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm FreeRealms.txt

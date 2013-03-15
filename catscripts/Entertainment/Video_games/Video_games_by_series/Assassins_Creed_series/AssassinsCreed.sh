@@ -12,21 +12,21 @@ if [ $SERIES -ne 0 ];
 then
   export CATFILE="Series.txt"
   export CATNAME="Assassin's Creed series"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TWO -ne 0 ];
 then
   export CATFILE="Two.txt"
   export CATNAME="Assassin's Creed II"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $THREE -ne 0 ];
 then
   export CATFILE="Three.txt"
   export CATNAME="Assassin's Creed III"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Series.txt

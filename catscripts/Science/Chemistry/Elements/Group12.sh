@@ -14,28 +14,28 @@ if [ $MERCURY -ne 0 ];
 then
   export CATFILE="MercuryElement.txt"
   export CATNAME="Mercury (element)"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ZINC -ne 0 ];
 then
   export CATFILE="Zinc.txt"
   export CATNAME="Zinc"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CADMIUM -ne 0 ];
 then
   export CATFILE="Cadmium.txt"
   export CATNAME="Cadmium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $COPERNICIUM -ne 0 ];
 then
   export CATFILE="Copernicium.txt"
   export CATNAME="Copernicium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm MercuryElement.txt

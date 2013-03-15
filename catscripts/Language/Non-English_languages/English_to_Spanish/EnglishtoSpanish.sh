@@ -12,7 +12,7 @@ if [ $SIZEOFENGLISHTOSPANISH -ne 0 ];
 then
   export CATFILE="EnglishtoSpanish.txt"
   export CATNAME="English to Spanish"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm EnglishtoSpanish.txt

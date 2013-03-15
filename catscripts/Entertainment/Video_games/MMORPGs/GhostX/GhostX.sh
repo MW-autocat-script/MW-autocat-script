@@ -8,7 +8,7 @@ if [ $GHOSTX -ne 0 ];
 then
   export CATFILE="GhostX.txt"
   export CATNAME="GhostX"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm GhostX.txt

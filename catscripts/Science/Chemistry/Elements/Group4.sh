@@ -14,28 +14,28 @@ if [ $TITANIUM -ne 0 ];
 then
   export CATFILE="Titanium.txt"
   export CATNAME="Titanium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ZIRCONIUM -ne 0 ];
 then
   export CATFILE="Zirconium.txt"
   export CATNAME="Zirconium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $HAFNIUM -ne 0 ];
 then
   export CATFILE="Hafnium.txt"
   export CATNAME="Hafnium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $RUTHERFORDIUM -ne 0 ];
 then
   export CATFILE="Rutherfordium.txt"
   export CATNAME="Rutherfordium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Titanium.txt

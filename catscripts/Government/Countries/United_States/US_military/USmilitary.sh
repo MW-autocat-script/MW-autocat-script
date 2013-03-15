@@ -18,42 +18,42 @@ if [ $USMC -ne 0 ];
 then
   export CATFILE="USMC.txt"
   export CATNAME="United States Marine Corps"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $USARMY -ne 0 ];
 then
   export CATFILE="USArmy.txt"
   export CATNAME="United States Army"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $USAF -ne 0 ];
 then
   export CATFILE="USAF.txt"
   export CATNAME="United States Air Force"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $USNAVY -ne 0 ];
 then
   export CATFILE="USNavy.txt"
   export CATNAME="United States Navy"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $USCG -ne 0 ];
 then
   export CATFILE="USCG.txt"
   export CATNAME="United States Coast Guard"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $USMILITARY -ne 0 ];
 then
   export CATFILE="USMilitary.txt"
   export CATNAME="US military"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm USMC.txt

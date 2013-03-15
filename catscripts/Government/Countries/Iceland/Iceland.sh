@@ -8,7 +8,7 @@ if [ $ICELAND -ne 0 ];
 then
   export CATFILE="Iceland.txt"
   export CATNAME="Iceland"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Iceland.txt

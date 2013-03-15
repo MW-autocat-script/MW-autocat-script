@@ -11,7 +11,7 @@ if [ $UNRECOGNIZED -ne 0 ];
 then
   export CATFILE="Unrecognized.txt"
   export CATNAME="Unrecognized countries"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Unrecognized.txt

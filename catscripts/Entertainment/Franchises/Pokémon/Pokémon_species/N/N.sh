@@ -35,98 +35,98 @@ if [ $Natu -ne 0 ];
 then
    export CATFILE="Natu.txt"
    export CATNAME="Natu"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Nidoking -ne 0 ];
 then
    export CATFILE="Nidoking.txt"
    export CATNAME="Nidoking"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Nidoqueen -ne 0 ];
 then
    export CATFILE="Nidoqueen.txt"
    export CATNAME="Nidoqueen"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $NidoranFemale -ne 0 ];
 then
    export CATFILE="Nidoran♀.txt"
    export CATNAME="Nidoran (female)"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $NidoranMale -ne 0 ];
 then
    export CATFILE="Nidoran♂.txt"
    export CATNAME="Nidoran (male)"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Nidorina -ne 0 ];
 then
    export CATFILE="Nidorina.txt"
    export CATNAME="Nidorina"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Nidorino -ne 0 ];
 then
    export CATFILE="Nidorino.txt"
    export CATNAME="Nidorino"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Nincada -ne 0 ];
 then
    export CATFILE="Nincada.txt"
    export CATNAME="Nincada"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Ninetales -ne 0 ];
 then
    export CATFILE="Ninetales.txt"
    export CATNAME="Ninetales"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Ninjask -ne 0 ];
 then
    export CATFILE="Ninjask.txt"
    export CATNAME="Ninjask"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Noctowl -ne 0 ];
 then
    export CATFILE="Noctowl.txt"
    export CATNAME="Noctowl"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Nosepass -ne 0 ];
 then
    export CATFILE="Nosepass.txt"
    export CATNAME="Nosepass"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Numel -ne 0 ];
 then
    export CATFILE="Numel.txt"
    export CATNAME="Numel"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Nuzleaf -ne 0 ];
 then
    export CATFILE="Nuzleaf.txt"
    export CATNAME="Nuzleaf"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 

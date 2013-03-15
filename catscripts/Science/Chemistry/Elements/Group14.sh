@@ -18,42 +18,42 @@ if [ $CARBON -ne 0 ];
 then
   export CATFILE="Carbon.txt"
   export CATNAME="Carbon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SILICON -ne 0 ];
 then
   export CATFILE="Silicon.txt"
   export CATNAME="Silicon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $GERMANIUM -ne 0 ];
 then
   export CATFILE="Germanium.txt"
   export CATNAME="Germanium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TIN -ne 0 ];
 then
   export CATFILE="Tin.txt"
   export CATNAME="Tin"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $LEAD -ne 0 ];
 then
   export CATFILE="Lead.txt"
   export CATNAME="Lead"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FLEROVIUM -ne 0 ];
 then
   export CATFILE="Flerovium.txt"
   export CATNAME="Flerovium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Carbon.txt

@@ -8,7 +8,7 @@ if [ $REMNANT -ne 0 ];
 then
   export CATFILE="TheLastRemant.txt"
   export CATNAME="The Last Remnant"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm TheLastRemant.txt

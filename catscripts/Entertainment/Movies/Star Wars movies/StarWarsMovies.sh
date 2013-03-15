@@ -18,42 +18,42 @@ if [ $EPISODEI -ne 0 ];
 then
   export CATFILE="EpisodeI.txt"
   export CATNAME="Star Wars Episode I: The Phantom Menace"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $EPISODEII -ne 0 ];
 then
   export CATFILE="EpisodeII.txt"
   export CATNAME="Star Wars Episode II: Attack of the Clones"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $EPISODEIII -ne 0 ];
 then
   export CATFILE="EpisodeIII.txt"
   export CATNAME="Star Wars Episode III: Revenge of the Sith"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $EPISODEIV -ne 0 ];
 then
   export CATFILE="EpisodeIV.txt"
   export CATNAME="Star Wars Episode IV: A New Hope"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $EPISODEV -ne 0 ];
 then
   export CATFILE="EpisodeV.txt"
   export CATNAME="Star Wars Episode V: The Empire Strikes Back"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $EPISODEVI -ne 0 ];
 then
   export CATFILE="EpisodeVI.txt"
   export CATNAME="Star Wars Episode VI: Return of the Jedi"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm EpisodeI.txt

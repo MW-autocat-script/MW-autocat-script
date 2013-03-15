@@ -9,7 +9,7 @@ if [ $TAIWAN -ne 0 ];
 then
   export CATFILE="Taiwan.txt"
   export CATNAME="Taiwan"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Taiwan.txt

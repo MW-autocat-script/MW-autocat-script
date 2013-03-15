@@ -8,7 +8,7 @@ if [ $WOOZWORLD -ne 0 ];
 then
   export CATFILE="Woozworld.txt"
   export CATNAME="Woozworld"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Woozworld.txt

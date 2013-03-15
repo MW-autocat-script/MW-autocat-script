@@ -14,28 +14,28 @@ if [ $COBALT -ne 0 ];
 then
   export CATFILE="Cobalt.txt"
   export CATNAME="Cobalt"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $RHODIUM -ne 0 ];
 then
   export CATFILE="Rhodium.txt"
   export CATNAME="Rhodium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $IRIDIUM -ne 0 ];
 then
   export CATFILE="Iridium.txt"
   export CATNAME="Iridium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MEITNERIUM -ne 0 ];
 then
   export CATFILE="Meitnerium.txt"
   export CATNAME="Meitnerium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Cobalt.txt

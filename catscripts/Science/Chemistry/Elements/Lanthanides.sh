@@ -36,105 +36,105 @@ if [ $LANTHANUM -ne 0 ] ;
 then
    export CATFILE="Lanthanum.txt"
    export CATNAME="Lanthanum"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $CERIUM -ne 0 ] ;
 then
    export CATFILE="Cerium.txt"
    export CATNAME="Cerium"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $PRASEODYMIUM -ne 0 ] ;
 then
    export CATFILE="Praseodymium.txt"
    export CATNAME="Praseodymium"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $NEODYMIUM -ne 0 ] ;
 then
    export CATFILE="Neodymium.txt"
    export CATNAME="Neodymium"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $PROMETHIUM -ne 0 ] ;
 then
    export CATFILE="Promethium.txt"
    export CATNAME="Promethium"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $SAMARIUM -ne 0 ] ;
 then
    export CATFILE="Samarium.txt"
    export CATNAME="Samarium"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $EUROPIUM -ne 0 ] ;
 then
    export CATFILE="Europium.txt"
    export CATNAME="Europium"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $GADOLINIUM -ne 0 ] ;
 then
    export CATFILE="Gadolinium.txt"
    export CATNAME="Gadolinium"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $TERBIUM -ne 0 ] ;
 then
    export CATFILE="Terbium.txt"
    export CATNAME="Terbium"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $DYSPROSIUM -ne 0 ] ;
 then
    export CATFILE="Dysprosium.txt"
    export CATNAME="Dysprosium"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $HOLMIUM -ne 0 ] ;
 then
    export CATFILE="Holmium.txt"
    export CATNAME="Holmium"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $ERBIUM -ne 0 ] ;
 then
    export CATFILE="Erbium.txt"
    export CATNAME="Erbium"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $THULIUM -ne 0 ] ;
 then
    export CATFILE="Thulium.txt"
    export CATNAME="Thulium"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $YTTERBIUM -ne 0 ] ;
 then
    export CATFILE="Ytterbium.txt"
    export CATNAME="Ytterbium"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $LUTETIUM -ne 0 ] ;
 then
    export CATFILE="Lutetium.txt"
    export CATNAME="Lutetium"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 rm Lanthanum.txt

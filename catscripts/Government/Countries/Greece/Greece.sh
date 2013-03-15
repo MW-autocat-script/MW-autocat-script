@@ -10,14 +10,14 @@ if [ $GREECE -ne 0 ];
 then
   export CATFILE="Greece.txt"
   export CATNAME="Greece"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ANCIENT -ne 0 ];
 then
   export CATFILE="Ancient.txt"
   export CATNAME="Ancient Greece"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Greece.txt

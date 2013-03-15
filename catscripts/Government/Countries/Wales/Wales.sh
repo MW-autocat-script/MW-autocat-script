@@ -8,7 +8,7 @@ if [ $WALES -ne 0 ];
 then
   export CATFILE="Wales.txt"
   export CATNAME="Wales"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Wales.txt

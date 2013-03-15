@@ -14,28 +14,28 @@ if [ $MANGANESE -ne 0 ];
 then
   export CATFILE="Manganese.txt"
   export CATNAME="Manganese"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TECHNETIUM -ne 0 ];
 then
   export CATFILE="Technetium.txt"
   export CATNAME="Technetium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $RHENIUM -ne 0 ];
 then
   export CATFILE="Rhenium.txt"
   export CATNAME="Rhenium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BOHRIUM -ne 0 ];
 then
   export CATFILE="Bohrium.txt"
   export CATNAME="Bohrium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Manganese.txt

@@ -13,28 +13,28 @@ if [ $Igglybuff -ne 0 ];
 then
    export CATFILE="Igglybuff.txt"
    export CATNAME="Igglybuff"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Illumise -ne 0 ];
 then
    export CATFILE="Illumise.txt"
    export CATNAME="Illumise"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Infernape -ne 0 ];
 then
    export CATFILE="Infernape.txt"
    export CATNAME="Infernape"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Ivysaur -ne 0 ];
 then
    export CATFILE="Ivysaur.txt"
    export CATNAME="Ivysaur"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 rm Igglybuff.txt

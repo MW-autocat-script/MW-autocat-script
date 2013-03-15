@@ -9,7 +9,7 @@ if [ $MACINTOSH -ne 0 ];
 then
   export CATFILE="Macintosh.txt"
   export CATNAME="Macintosh"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Macintosh.txt

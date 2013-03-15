@@ -13,21 +13,21 @@ if [ $VIDEO -ne 0 ];
 then
   export CATFILE="Videoediting.txt"
   export CATNAME="Video editing software"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $WMM -ne 0 ];
 then
   export CATFILE="WindowsMovieMaker.txt"
   export CATNAME="Windows Movie Maker"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $PREMIERE -ne 0 ];
 then
   export CATFILE="AdobePremierePro.txt"
   export CATNAME="Adobe Premiere Pro"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm WindowsMovieMaker.txt

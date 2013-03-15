@@ -52,7 +52,7 @@ if [ $EMULATION -ne 0 ];
 then
   export CATFILE="Emulation.txt"
   export CATNAME="Emulation and virtualization"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Emulation.txt

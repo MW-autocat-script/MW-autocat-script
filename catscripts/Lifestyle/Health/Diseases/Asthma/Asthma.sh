@@ -8,7 +8,7 @@ if [ $ASTHMA -ne 0 ];
 then
   export CATFILE="Asthma.txt"
   export CATNAME="Asthma"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Asthma.txt

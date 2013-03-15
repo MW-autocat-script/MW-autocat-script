@@ -9,7 +9,7 @@ if [ $SIMPSONS -ne 0 ];
 then
   export CATFILE="TheSimpsons.txt"
   export CATNAME="The Simpsons"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm TheSimpsons.txt

@@ -8,7 +8,7 @@ if [ $CANCER -ne 0 ];
 then
   export CATFILE="Cancer.txt"
   export CATNAME="Cancer"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 ./catscripts/Lifestyle/Health/Diseases/Cancer/Lung_cancer/Lungcancer.sh

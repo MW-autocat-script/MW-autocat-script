@@ -20,49 +20,49 @@ if [ $NEON -ne 0 ];
 then
   export CATFILE="Neon.txt"
   export CATNAME="Neon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $HELIUM -ne 0 ];
 then
   export CATFILE="Helium.txt"
   export CATNAME="Helium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ARGON -ne 0 ];
 then
   export CATFILE="Argon.txt"
   export CATNAME="Argon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $KRYPTON -ne 0 ];
 then
   export CATFILE="Krypton.txt"
   export CATNAME="Krypton"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $XENON -ne 0 ];
 then
   export CATFILE="Xenon.txt"
   export CATNAME="Xenon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $RADON -ne 0 ];
 then
   export CATFILE="Radon.txt"
   export CATNAME="Radon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $UNUNOCTIUM -ne 0 ];
 then
   export CATFILE="Ununoctium.txt"
   export CATNAME="Ununoctium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Neon.txt

@@ -8,7 +8,7 @@ if [ $TANZIA -ne 0 ];
 then
   export CATFILE="Tanzia.txt"
   export CATNAME="Tanzia"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Tanzia.txt

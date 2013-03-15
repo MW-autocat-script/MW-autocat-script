@@ -8,7 +8,7 @@ if [ $LATVIA -ne 0 ];
 then
   export CATFILE="Latvia.txt"
   export CATNAME="Latvia"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Latvia.txt

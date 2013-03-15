@@ -55,175 +55,175 @@ if [ $Raichu -ne 0 ];
 then
   export CATFILE="Raichu.txt"
   export CATNAME="Raichu"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Raikou -ne 0 ];
 then
   export CATFILE="Raikou.txt"
   export CATNAME="Raikou"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Ralts -ne 0 ];
 then
   export CATFILE="Ralts.txt"
   export CATNAME="Ralts"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Rampardos -ne 0 ];
 then
   export CATFILE="Rampardos.txt"
   export CATNAME="Rampardos"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Rapidash -ne 0 ];
 then
   export CATFILE="Rapidash.txt"
   export CATNAME="Rapidash"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Raticate -ne 0 ];
 then
   export CATFILE="Raticate.txt"
   export CATNAME="Raticate"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Rattata -ne 0 ];
 then
   export CATFILE="Rattata.txt"
   export CATNAME="Rattata"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Rayquaza -ne 0 ];
 then
   export CATFILE="Rayquaza.txt"
   export CATNAME="Rayquaza"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Regice -ne 0 ];
 then
   export CATFILE="Regice.txt"
   export CATNAME="Regice"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Regigigas -ne 0 ];
 then
   export CATFILE="Regigigas.txt"
   export CATNAME="Regigigas"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Regirock -ne 0 ];
 then
   export CATFILE="Regirock.txt"
   export CATNAME="Regirock"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Registeel -ne 0 ];
 then
   export CATFILE="Registeel.txt"
   export CATNAME="Registeel"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Relicanth -ne 0 ];
 then
   export CATFILE="Relicanth.txt"
   export CATNAME="Relicanth"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Remoraid -ne 0 ];
 then
   export CATFILE="Remoraid.txt"
   export CATNAME="Remoraid"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Reshiram -ne 0 ];
 then
   export CATFILE="Reshiram.txt"
   export CATNAME="Reshiram"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Reuniclus -ne 0 ];
 then
   export CATFILE="Reuniclus.txt"
   export CATNAME="Reuniclus"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Rhydon -ne 0 ];
 then
   export CATFILE="Rhydon.txt"
   export CATNAME="Rhydon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Rhyhorn -ne 0 ];
 then
   export CATFILE="Rhyhorn.txt"
   export CATNAME="Rhyhorn"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Rhyperior -ne 0 ];
 then
   export CATFILE="Rhyperior.txt"
   export CATNAME="Rhyperior"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Riolu -ne 0 ];
 then
   export CATFILE="Riolu.txt"
   export CATNAME="Riolu"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Roggenrola -ne 0 ];
 then
   export CATFILE="Roggenrola.txt"
   export CATNAME="Roggenrola"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Roselia -ne 0 ];
 then
   export CATFILE="Roselia.txt"
   export CATNAME="Roselia"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Roserade -ne 0 ];
 then
   export CATFILE="Roserade.txt"
   export CATNAME="Roserade"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Rotom -ne 0 ];
 then
   export CATFILE="Rotom.txt"
   export CATNAME="Rotom"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Rufflet -ne 0 ];
 then
   export CATFILE="Rufflet.txt"
   export CATNAME="Rufflet"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 

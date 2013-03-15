@@ -8,7 +8,7 @@ if [ $MOSHIMONSTERS -ne 0 ];
 then
   export CATFILE="MoshiMonsters.txt"
   export CATNAME="Moshi Monsters"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm MoshiMonsters.txt

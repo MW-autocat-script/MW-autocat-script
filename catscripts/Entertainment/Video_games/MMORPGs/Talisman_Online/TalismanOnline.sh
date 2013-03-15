@@ -8,7 +8,7 @@ if [ $TALISMAN -ne 0 ];
 then
   export CATFILE="TalismanOnline.txt"
   export CATNAME="Talisman Online"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm TalismanOnline.txt

@@ -8,7 +8,7 @@ if [ $POPTROPICA -ne 0 ];
 then
   export CATFILE="Poptropica.txt"
   export CATNAME="Poptropica"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Poptropica.txt

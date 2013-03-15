@@ -8,7 +8,7 @@ if [ $EMBLEM -ne 0 ];
 then
   export CATFILE="FireEmblem.txt"
   export CATNAME="Fire Emblem series"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm FireEmblem.txt

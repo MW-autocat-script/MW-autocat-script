@@ -8,7 +8,7 @@ if [ $FIESTA -ne 0 ];
 then
   export CATFILE="FiestaOnline.txt"
   export CATNAME="Fiesta Online"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm FiestaOnline.txt

@@ -12,14 +12,14 @@ if [ $CO -ne 0 ];
 then
   export CATFILE="CarbonMonoxide.txt"
   export CATNAME="Carbon monoxide"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $COTWO -ne 0 ];
 then
   export CATFILE="CarbonDioxide.txt"
   export CATNAME="Carbon dioxide"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm CarbonMonoxide.txt

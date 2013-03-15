@@ -24,63 +24,63 @@ if [ $CELLO -ne 0 ];
 then
   export CATFILE="Cello.txt"
   export CATNAME="Cello"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CLARINET -ne 0 ];
 then
   export CATFILE="Clarinet.txt"
   export CATNAME="Clarinet"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $DRUMS -ne 0 ];
 then
   export CATFILE="Drums.txt"
   export CATNAME="Drums"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FLUTE -ne 0 ];
 then
   export CATFILE="Flute.txt"
   export CATNAME="Flute"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $GUITAR -ne 0 ];
 then
   export CATFILE="Guitar.txt"
   export CATNAME="Guitar"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $PIANO -ne 0 ];
 then
   export CATFILE="Piano.txt"
   export CATNAME="Piano"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $RECORDER -ne 0 ];
 then
   export CATFILE="Recorder.txt"
   export CATNAME="Recorder (musical instrument)"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SAXOPHONE -ne 0 ];
 then
   export CATFILE="Saxophone.txt"
   export CATNAME="Saxophone"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $VIOLIN -ne 0 ];
 then
   export CATFILE="Violin.txt"
   export CATNAME="Violin"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Cello.txt

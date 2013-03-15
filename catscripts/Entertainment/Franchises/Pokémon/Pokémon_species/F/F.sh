@@ -39,119 +39,119 @@ if [ $Farfetchd -ne 0 ];
 then
    export CATFILE="Farfetchd.txt"
    export CATNAME="Farfetch'd"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Fearow -ne 0 ];
 then
    export CATFILE="Fearow.txt"
    export CATNAME="Fearow"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Feebas -ne 0 ];
 then
    export CATFILE="Feebas.txt"
    export CATNAME="Feebas"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Feraligatr -ne 0 ];
 then
    export CATFILE="Feraligatr.txt"
    export CATNAME="Feraligatr"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Ferroseed -ne 0 ];
 then
    export CATFILE="Ferroseed.txt"
    export CATNAME="Ferroseed"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Ferrothorn -ne 0 ];
 then
    export CATFILE="Ferrothorn.txt"
    export CATNAME="Ferrothorn"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Finneon -ne 0 ];
 then
    export CATFILE="Finneon.txt"
    export CATNAME="Finneon"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Flaaffy -ne 0 ];
 then
    export CATFILE="Flaaffy.txt"
    export CATNAME="Flaffy"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Flareon -ne 0 ];
 then
    export CATFILE="Flareon.txt"
    export CATNAME="Flareon"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Floatzel -ne 0 ];
 then
    export CATFILE="Floatzel.txt"
    export CATNAME="Floatzel"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Flygon -ne 0 ];
 then
    export CATFILE="Flygon.txt"
    export CATNAME="Flygon"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Foongus -ne 0 ];
 then
    export CATFILE="Foongus.txt"
    export CATNAME="Foongus"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Forretress -ne 0 ];
 then
    export CATFILE="Forretress.txt"
    export CATNAME="Forretress"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Fraxure -ne 0 ];
 then
    export CATFILE="Fraxure.txt"
    export CATNAME="Fraxure"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Frillish -ne 0 ];
 then
    export CATFILE="Frillish.txt"
    export CATNAME="Frillish"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Froslass -ne 0 ];
 then
    export CATFILE="Froslass.txt"
    export CATNAME="Froslass"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Furret -ne 0 ];
 then
    export CATFILE="Furret.txt"
    export CATNAME="Furret"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 

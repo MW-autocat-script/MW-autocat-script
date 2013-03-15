@@ -22,49 +22,49 @@ if [ $HYDROGEN -ne 0 ];
 then
   export CATFILE="Hydrogen.txt"
   export CATNAME="Hydrogen"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $LITHIUM -ne 0 ];
 then
   export CATFILE="Lithium.txt"
   export CATNAME="Lithium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SODIUM -ne 0 ];
 then
   export CATFILE="Sodium.txt"
   export CATNAME="Sodium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $POTASSIUM -ne 0 ];
 then
   export CATFILE="Potassium.txt"
   export CATNAME="Potassium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $RUBIDIUM -ne 0 ];
 then
   export CATFILE="Rubidium.txt"
   export CATNAME="Rubidium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FRANCIUM -ne 0 ];
 then
   export CATFILE="Francium.txt"
   export CATNAME="Francium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $UUE -ne 0 ];
 then
   export CATFILE="Ununennium.txt"
   export CATNAME="Ununennium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Hydrogen.txt

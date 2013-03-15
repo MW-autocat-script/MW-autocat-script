@@ -15,7 +15,7 @@ if [ $ONEDIRECTION -ne 0 ];
 then
   export CATFILE="OneDirection.txt"
   export CATNAME="One Direction"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm OneDirection.txt

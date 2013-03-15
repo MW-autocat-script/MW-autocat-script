@@ -8,7 +8,7 @@ if [ $RUNESCAPE -ne 0 ];
 then
   export CATFILE="RuneScape.txt"
   export CATNAME="RuneScape"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm RuneScape.txt

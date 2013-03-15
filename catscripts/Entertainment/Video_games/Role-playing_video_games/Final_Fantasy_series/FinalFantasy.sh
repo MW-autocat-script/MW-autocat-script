@@ -36,91 +36,91 @@ if [ $FFSERIES -ne 0 ];
 then
   export CATFILE="FinalFantasyseries.txt"
   export CATNAME="Final Fantasy series"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FF2 -ne 0 ];
 then
   export CATFILE="FinalFantasy2.txt"
   export CATNAME="Final Fantasy II"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FF3 -ne 0 ];
 then
   export CATFILE="FinalFantasy3.txt"
   export CATNAME="Final Fantasy III"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FF4 -ne 0 ];
 then
   export CATFILE="FinalFantasy4.txt"
   export CATNAME="Final Fantasy IV"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FF5 -ne 0 ];
 then
   export CATFILE="FinalFantasy5.txt"
   export CATNAME="Final Fantasy V"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FF6 -ne 0 ];
 then
   export CATFILE="FinalFantasy6.txt"
   export CATNAME="Final Fantasy VI"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FF7 -ne 0 ];
 then
   export CATFILE="FinalFantasy7.txt"
   export CATNAME="Final Fantasy VII"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FF8 -ne 0 ];
 then
   export CATFILE="FinalFantasy9.txt"
   export CATNAME="Final Fantasy IX"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FF9 -ne 0 ];
 then
   export CATFILE="FinalFantasy9.txt"
   export CATNAME="Final Fantasy IX"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FF10 -ne 0 ];
 then
   export CATFILE="FinalFantasy10.txt"
   export CATNAME="Final Fantasy X"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FFX2 -ne 0 ];
 then
   export CATFILE="FinalFantasyX-2.txt"
   export CATNAME="Final Fantasy X-2"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FF11 -ne 0 ];
 then
   export CATFILE="FinalFantasy11.txt"
   export CATNAME="Final Fantasy XI"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FF12 -ne 0 ];
 then
   export CATFILE="FinalFantasy12.txt"
   export CATNAME="Final Fantasy XII"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm FinalFantasy*.txt #Screw it :)

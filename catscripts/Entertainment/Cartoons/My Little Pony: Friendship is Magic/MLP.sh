@@ -9,7 +9,7 @@ if [ $MLP -ne 0 ];
 then
   export CATFILE="MLPFIM.txt"
   export CATNAME="My Little Pony: Friendship is Magic"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm MLPFIM.txt

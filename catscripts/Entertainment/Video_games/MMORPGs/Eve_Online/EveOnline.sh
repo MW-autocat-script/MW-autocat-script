@@ -8,7 +8,7 @@ if [ $EVE -ne 0 ];
 then
   export CATFILE="EveOnline.txt"
   export CATNAME="Eve Online"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm EveOnline.txt

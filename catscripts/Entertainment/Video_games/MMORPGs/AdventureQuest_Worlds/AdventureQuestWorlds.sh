@@ -8,7 +8,7 @@ if [ $AQW -ne 0 ];
 then
   export CATFILE="AdventureQuestWorlds.txt"
   export CATNAME="AdventureQuest Worlds"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm AdventureQuestWorlds.txt

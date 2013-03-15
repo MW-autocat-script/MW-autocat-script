@@ -8,7 +8,7 @@ if [ $KENYA -ne 0 ];
 then
   export CATFILE="Kenya.txt"
   export CATNAME="Kenya"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Kenya.txt

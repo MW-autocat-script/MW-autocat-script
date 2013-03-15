@@ -8,7 +8,7 @@ if [ $KIRBY -ne 0 ];
 then
   export CATFILE="Kirby.txt"
   export CATNAME="Kirby"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Kirby.txt

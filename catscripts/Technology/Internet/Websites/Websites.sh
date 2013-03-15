@@ -27,70 +27,70 @@ if [ $YOUTUBE -ne 0 ];
 then
    export CATFILE="YouTube.txt"
    export CATNAME="YouTube"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $TWITTER -ne 0 ];
 then
    export CATFILE="Twitter.txt"
    export CATNAME="Twitter"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $FACEBOOK -ne 0 ];
 then
    export CATFILE="Facebook.txt"
    export CATNAME="Facebook"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $MYSPACE -ne 0 ];
 then
    export CATFILE="Myspace.txt"
    export CATNAME="Myspace"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $GAIAONLINE -ne 0 ];
 then
    export CATFILE="GaiaOnline.txt"
    export CATNAME="Gaia Online"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $GOOGLE -ne 0 ];
 then
    export CATFILE="Google.txt"
    export CATNAME="Google"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $WIKIA -ne 0 ];
 then
    export CATFILE="Wikia.txt"
    export CATNAME="Wikia"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $WIKIANSWERS -ne 0 ];
 then
    export CATFILE="Wikianswers.txt"
    export CATNAME="Wikianswers"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $WIKIASEARCH -ne 0 ];
 then
   export CATFILE="WikiaSearch.txt"
   export CATNAME="Wikia Search"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $WIKIPEDIA -ne 0 ];
 then
   export CATFILE="Wikipedia.txt"
   export CATNAME="Wikipedia"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm YouTube.txt

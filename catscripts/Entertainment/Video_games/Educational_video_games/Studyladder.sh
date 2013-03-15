@@ -8,7 +8,7 @@ if [ $STUDYLADDER -ne 0 ];
 then
   export CATFILE="Studyladder.txt"
   export CATNAME="Studyladder"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Studyladder.txt

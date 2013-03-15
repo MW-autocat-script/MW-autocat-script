@@ -11,21 +11,21 @@ if [ $Quagsire -ne 0 ];
 then
   export CATFILE="Quagsire.txt"
   export CATNAME="Quagsire"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Quilava -ne 0 ];
 then
   export CATFILE="Quilava.txt"
   export CATNAME="Quilava"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Qwilfish -ne 0 ];
 then
   export CATFILE="Qwilfish.txt"
   export CATNAME="Qwilfish"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 

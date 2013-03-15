@@ -8,7 +8,7 @@ if [ $GUILDWARS -ne 0 ];
 then
   export CATFILE="GuildWars.txt"
   export CATNAME="Guild Wars"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm GuildWars.txt

@@ -9,7 +9,7 @@ if [ $WOW -ne 0 ];
 then
   export CATFILE="WorldOfWarcraft.txt"
   export CATNAME="World of Warcraft"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm WorldOfWarcraft.txt

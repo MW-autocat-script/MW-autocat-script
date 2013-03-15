@@ -8,7 +8,7 @@ if [ $WMP -ne 0 ];
 then
   export CATFILE="WindowsMediaPlayer.txt"
   export CATNAME="Windows Media Player"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm WindowsMediaPlayer.txt

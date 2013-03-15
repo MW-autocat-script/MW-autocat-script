@@ -8,7 +8,7 @@ if [ $FREEBSD -ne 0 ];
 then
   export CATFILE="FreeBSD.txt"
   export CATNAME="FreeBSD"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm FreeBSD.txt

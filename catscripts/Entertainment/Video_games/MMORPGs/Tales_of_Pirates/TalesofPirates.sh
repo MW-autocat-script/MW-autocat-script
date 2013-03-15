@@ -8,7 +8,7 @@ if [ $PIRATES -ne 0 ];
 then
   export CATFILE="TalesofPirates.txt"
   export CATNAME="Tales of Pirates"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm TalesofPirates.txt

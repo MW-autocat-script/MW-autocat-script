@@ -8,7 +8,7 @@ if [ $HINDUISM -ne 0 ];
 then
   export CATFILE="Hinduism.txt"
   export CATNAME="Hinduism"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Hinduism.txt

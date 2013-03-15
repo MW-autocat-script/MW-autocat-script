@@ -20,7 +20,7 @@ if [ $UNIX -ne 0 ];
 then
   export CATFILE="Unix.txt"
   export CATNAME="Unix"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Unix.txt

@@ -16,7 +16,7 @@ if [ $AUTHORING -ne 0 ];
 then
   export CATFILE="Authoring.txt"
   export CATNAME="CD and DVD authoring"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Authoring.txt

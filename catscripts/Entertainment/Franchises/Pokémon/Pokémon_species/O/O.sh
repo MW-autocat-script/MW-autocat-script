@@ -17,42 +17,42 @@ if [ $Octillery -ne 0 ];
 then
   export CATFILE="Octillery.txt"
   export CATNAME="Octillery"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Oddish -ne 0 ];
 then
   export CATFILE="Oddish.txt"
   export CATNAME="Oddish"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Omanyte -ne 0 ];
 then
   export CATFILE="Omanyte.txt"
   export CATNAME="Omanyte"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Omastar -ne 0 ];
 then
   export CATFILE="Omastar.txt"
   export CATNAME="Omastar"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Onix -ne 0 ];
 then
   export CATFILE="Onix.txt"
   export CATNAME="Onix"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Oshawott -ne 0 ];
 then
   export CATFILE="Oshawott.txt"
   export CATNAME="Oshawott"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 

@@ -12,21 +12,21 @@ if [ $KINDLE -ne 0 ];
 then
   export CATFILE="KindleFire.txt"
   export CATNAME="Kindle Fire"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $IPAD -ne 0 ];
 then
   export CATFILE="iPad.txt"
   export CATNAME="iPad"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TABLETS -ne 0 ];
 then
   export CATFILE="Tabletcomputers.txt"
   export CATNAME="Tablet computers"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm KindleFire.txt

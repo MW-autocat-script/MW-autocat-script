@@ -8,7 +8,7 @@ if [ $CHICKENPOX -ne 0 ];
 then
   export CATFILE="Chickenpox.txt"
   export CATNAME="Chicken pox"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Chickenpox.txt

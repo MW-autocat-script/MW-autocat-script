@@ -8,7 +8,7 @@ if [ $X360 -ne 0 ];
 then
   export CATFILE="Xbox360.txt"
   export CATNAME="Xbox 360"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Xbox360.txt

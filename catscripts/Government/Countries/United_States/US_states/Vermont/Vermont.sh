@@ -8,7 +8,7 @@ if [ $VERMONT -ne 0 ];
 then
   export CATFILE="Vermont.txt"
   export CATNAME="Vermont"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Vermont.txt

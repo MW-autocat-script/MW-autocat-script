@@ -15,14 +15,14 @@ if [ $CHEATCODES -ne 0 ];
 then
   export CATFILE="CheatCodes.txt"
   export CATNAME="Cheat codes"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ACTIONREPLAY -ne 0 ];
 then
   export CATFILE="ActionReplay.txt"
   export CATNAME="Action Replay"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm CheatCodes.txt

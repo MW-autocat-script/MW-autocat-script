@@ -15,35 +15,35 @@ if [ $Umbreon -ne 0 ];
 then
   export CATFILE="Umbreon.txt"
   export CATNAME="Umbreon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Unfezant -ne 0 ];
 then
   export CATFILE="Unfezant.txt"
   export CATNAME="Unfezant"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Unown -ne 0 ];
 then
   export CATFILE="Unown.txt"
   export CATNAME="Unown"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Ursaring -ne 0 ];
 then
   export CATFILE="Ursaring.txt"
   export CATNAME="Ursaring"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Uxie -ne 0 ];
 then
   export CATFILE="Uxie.txt"
   export CATNAME="Uxie"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Umbreon.txt

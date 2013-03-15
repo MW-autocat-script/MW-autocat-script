@@ -8,7 +8,7 @@ if [ $DIGIMON -ne 0 ];
 then
   export CATFILE="Digimon.txt"
   export CATNAME="Digimon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Digimon.txt

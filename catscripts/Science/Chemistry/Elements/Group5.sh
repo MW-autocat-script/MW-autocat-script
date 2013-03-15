@@ -14,28 +14,28 @@ if [ $VANADIUM -ne 0 ];
 then
   export CATFILE="Vanadium.txt"
   export CATNAME="Vanadium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $NIOBIUM -ne 0 ];
 then
   export CATFILE="Niobium.txt"
   export CATNAME="Niobium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TANTALUM -ne 0 ];
 then
   export CATFILE="Tantalum.txt"
   export CATNAME="Tantalum"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $DUBNIUM -ne 0 ];
 then
   export CATFILE="Dubnium.txt"
   export CATNAME="Dubnium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Vanadium.txt

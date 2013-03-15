@@ -8,7 +8,7 @@ if [ $FUTURAMA -ne 0 ];
 then
   export CATFILE="Futurama.txt"
   export CATNAME="Futurama"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Futurama.txt

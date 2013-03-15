@@ -8,7 +8,7 @@ if [ $BEATLES -ne 0 ];
 then
   export CATFILE="TheBeatles.txt"
   export CATNAME="The Beatles"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm TheBeatles.txt

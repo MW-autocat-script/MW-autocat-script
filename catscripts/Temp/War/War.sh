@@ -10,14 +10,14 @@ if [ $WWONE -ne 0 ];
 then
   export CATFILE="WorldWarI.txt"
   export CATNAME="World War I"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $WWTWO -ne 0 ];
 then
   export CATFILE="WorldWarII.txt"
   export CATNAME="World War II"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm WorldWarI.txt

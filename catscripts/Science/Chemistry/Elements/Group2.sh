@@ -18,42 +18,42 @@ if [ $BERYLLIUM -ne 0 ];
 then
   export CATFILE="Beryllium.txt"
   export CATNAME="Beryllium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MAGNESIUM -ne 0 ];
 then
   export CATFILE="Magnesium.txt"
   export CATNAME="Magnesium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CALCIUM -ne 0 ];
 then
   export CATFILE="Calcium.txt"
   export CATNAME="Calcium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $STRONTIUM -ne 0 ];
 then
   export CATFILE="Strontium.txt"
   export CATNAME="Strontium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BARIUM -ne 0 ];
 then
   export CATFILE="Barium.txt"
   export CATNAME="Barium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $RADIUM -ne 0 ];
 then
   export CATFILE="Radium.txt"
   export CATNAME="Radium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Beryllium.txt

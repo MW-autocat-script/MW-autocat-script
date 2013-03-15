@@ -8,7 +8,7 @@ if [ $DANNYPHANTOM -ne 0 ];
 then
   export CATFILE="DannyPhantom.txt"
   export CATNAME="Danny Phantom"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm DannyPhantom.txt

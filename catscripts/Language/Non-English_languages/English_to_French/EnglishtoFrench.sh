@@ -8,7 +8,7 @@ if [ $ETOF -ne 0 ];
 then
   export CATFILE="EnglishtoFrench.txt"
   export CATNAME="English to French"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm EnglishtoFrench.txt

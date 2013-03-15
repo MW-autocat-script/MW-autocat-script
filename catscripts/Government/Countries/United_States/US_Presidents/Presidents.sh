@@ -98,308 +98,308 @@ if [ $PRESIDENT -ne 0 ];
 then
   export CATFILE="President.txt"
   export CATNAME="US Presidents"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $WASHINGTON -ne 0 ];
 then
   export CATFILE="GeorgeWashington.txt"
   export CATNAME="George Washington"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $JOHNADAMS -ne 0 ];
 then
   export CATFILE="JohnAdams.txt"
   export CATNAME="John Adams"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $JEFFERSON -ne 0 ];
 then
   export CATFILE="ThomasJefferson.txt"
   export CATNAME="Thomas Jefferson"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MADISON -ne 0 ];
 then
   export CATFILE="JamesMadison.txt"
   export CATNAME="James Madison"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MONROE -ne 0 ];
 then
   export CATFILE="JamesMonroe.txt"
   export CATNAME="James Monroe"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $QUINCY -ne 0 ];
 then
   export CATFILE="JohnQuincyAdams.txt"
   export CATNAME="John Quincy Adams"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $JACKSON -ne 0 ];
 then
   export CATFILE="AndrewJackson.txt"
   export CATNAME="Andrew Jackson"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BUREN -ne 0 ];
 then
   export CATFILE="MartinVanBuren.txt"
   export CATNAME="Martin Van Buren"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $WHARRISON -ne 0 ];
 then
   export CATFILE="WilliamHenryHarrison.txt"
   export CATNAME="William Henry Harrison"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TYLER -ne 0 ];
 then
   export CATFILE="JohnTyler.txt"
   export CATNAME="John Tyler"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $POLK -ne 0 ];
 then
   export CATFILE="JamesKPolk.txt"
   export CATNAME="James K. Polk"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TAYLOR -ne 0 ];
 then
   export CATFILE="ZacharyTaylor.txt"
   export CATNAME="Zachary Taylor"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FILLMORE -ne 0 ];
 then
   export CATFILE="MillardFillmore.txt"
   export CATNAME="Millard Fillmore"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $PIERCE -ne 0 ];
 then
   export CATFILE="FranklinPierce.txt"
   export CATNAME="Franklin Pierce"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BUCHANAN -ne 0 ];
 then
   export CATFILE="JamesBuchanan.txt"
   export CATNAME="James Buchanan"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $LINCOLN -ne 0 ];
 then
   export CATFILE="AbrahamLincoln.txt"
   export CATNAME="Abraham Lincoln"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $JOHNSON -ne 0 ];
 then
   export CATFILE="AndrewJohnson.txt"
   export CATNAME="Andrew Johnson"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $GRANT -ne 0 ];
 then
   export CATFILE="UlyssesSGrant.txt"
   export CATNAME="Ulysses S. Grant"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $HAYES -ne 0 ];
 then
   export CATFILE="RutherfordBHayes.txt"
   export CATNAME="Rutherford B. Hayes"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $GARFIELD -ne 0 ];
 then
   export CATFILE="JamesAGarfield.txt"
   export CATNAME="James A. Garfield"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ARTHUR -ne 0 ];
 then
   export CATFILE="ChesterAArthur.txt"
   export CATNAME="Chester A. Arthur"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CLEVELAND -ne 0 ];
 then
   export CATFILE="GroverCleveland.txt"
   export CATNAME="Grover Cleveland"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $HARRISON -ne 0 ];
 then
   export CATFILE="BenjaminHarrison.txt"
   export CATNAME="Benjamin Harrison"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MCKINLEY -ne 0 ];
 then
   export CATFILE="WilliamMcKinley.txt"
   export CATNAME="William McKinley"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $THEODORE -ne 0 ];
 then
   export CATFILE="TheodoreRoosevelt.txt"
   export CATNAME="Theodore Roosevelt"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TAFT -ne 0 ];
 then
   export CATFILE="WilliamHowardTaft.txt"
   export CATNAME="William Howard Taft"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $WILSON -ne 0 ];
 then
   export CATFILE="WoodrowWilson.txt"
   export CATNAME="Woodrow Wilson"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $HARDING -ne 0 ];
 then
   export CATFILE="WarrenGHarding.txt"
   export CATNAME="Warren G. Harding"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $COOLIDGE -ne 0 ];
 then
   export CATFILE="CalvinCoolidge.txt"
   export CATNAME="Calvin Coolidge"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $HOOVER -ne 0 ];
 then
   export CATFILE="HerbertHoover.txt"
   export CATNAME="Herbert Hoover"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FDR -ne 0 ];
 then
   export CATFILE="FranklinDelanoRoosevelt.txt"
   export CATNAME="Franklin Delano Roosevelt"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TRUMAN -ne 0 ];
 then
   export CATFILE="HarrySTruman.txt"
   export CATNAME="Harry S. Truman"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $EISENHOWER -ne 0 ];
 then
   export CATFILE="DwightDEisenhower.txt"
   export CATNAME="Dwight D. Eisenhower"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $KENNEDY -ne 0 ];
 then
   export CATFILE="JohnFKennedy.txt"
   export CATNAME="John F. Kennedy"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $LBJ -ne 0 ];
 then
   export CATFILE="LyndonBJohnson.txt"
   export CATNAME="Lyndon B. Johnson"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $NIXON -ne 0 ];
 then
   export CATFILE="RichardMNixon.txt"
   export CATNAME="Richard Nixon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FORD -ne 0 ];
 then
   export CATFILE="GeraldFord.txt"
   export CATNAME="Gerald Ford"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CARTER -ne 0 ];
 then
   export CATFILE="Jimmy Carter.txt"
   export CATNAME="James Earl Carter"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $REAGAN -ne 0 ];
 then
   export CATFILE="RonaldReagan.txt"
   export CATNAME="Ronald Reagan"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $GHWBUSH -ne 0 ];
 then
   export CATFILE="GeorgeHWBush.txt"
   export CATNAME="George Herbert Walker Bush"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CLINTON -ne 0 ];
 then
   export CATFILE="BillClinton.txt"
   export CATNAME="Bill Clinton"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $GWBUSH -ne 0 ];
 then
   export CATFILE="GeorgeWBush.txt"
   export CATNAME="George W. Bush"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $OBAMA -ne 0 ];
 then
   export CATFILE="BarackObama.txt"
   export CATNAME="Barack Obama"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm GeorgeWashington.txt

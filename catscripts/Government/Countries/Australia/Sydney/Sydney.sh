@@ -10,14 +10,14 @@ if [ $SYDNEY -ne 0 ];
 then
   export CATFILE="Sydney.txt"
   export CATNAME="Sydney, Australia"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $OPERA -ne 0 ];
 then
   export CATFILE="SydneyOperaHouse.txt"
   export CATNAME="Sydney Opera House"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm SydneyOperaHouse.txt

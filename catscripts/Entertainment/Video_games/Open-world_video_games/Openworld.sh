@@ -10,14 +10,14 @@ if [ $MINECRAFT -ne 0 ];
 then
   export CATFILE="Minecraft.txt"
   export CATNAME="Minecraft"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TEKKIT -ne 0 ];
 then
   export CATFILE="Tekkit.txt"
   export CATNAME="Tekkit"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Minecraft.txt

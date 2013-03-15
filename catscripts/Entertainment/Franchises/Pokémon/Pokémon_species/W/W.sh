@@ -47,147 +47,147 @@ if [ $Wailmer -ne 0 ];
 then
   export CATFILE="Wailmer.txt"
   export CATNAME="Wailmer"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Wailord -ne 0 ];
 then
   export CATFILE="Wailord.txt"
   export CATNAME="Wailord"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Walrein -ne 0 ];
 then
   export CATFILE="Walrein.txt"
   export CATNAME="Walrein"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Wartortle -ne 0 ];
 then
   export CATFILE="Wartortle.txt"
   export CATNAME="Wartortle"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Watchog -ne 0 ];
 then
   export CATFILE="Watchog.txt"
   export CATNAME="Watchog"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Weavile -ne 0 ];
 then
   export CATFILE="Weavile.txt"
   export CATNAME="Weavile"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Weedle -ne 0 ];
 then
   export CATFILE="Weedle.txt"
   export CATNAME="Weedle"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Weepinbell -ne 0 ];
 then
   export CATFILE="Weepinbell.txt"
   export CATNAME="Weepinbell"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Weezing -ne 0 ];
 then
   export CATFILE="Weezing.txt"
   export CATNAME="Weezing"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Whimsicott -ne 0 ];
 then
   export CATFILE="Whimsicott.txt"
   export CATNAME="Whimsicott"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Whirlipede -ne 0 ];
 then
   export CATFILE="Whirlipede.txt"
   export CATNAME="Whirlipede"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Whiscash -ne 0 ];
 then
   export CATFILE="Whiscash.txt"
   export CATNAME="Whiscash"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Whismur -ne 0 ];
 then
   export CATFILE="Whismur.txt"
   export CATNAME="Whismur"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Wigglytuff -ne 0 ];
 then
   export CATFILE="Wigglytuff.txt"
   export CATNAME="Wigglytuff"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Wingull -ne 0 ];
 then
   export CATFILE="Wingull.txt"
   export CATNAME="Wingull"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Wobbuffet -ne 0 ];
 then
   export CATFILE="Wobbuffet.txt"
   export CATNAME="Wobbuffet"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Woobat -ne 0 ];
 then
   export CATFILE="Woobat.txt"
   export CATNAME="Woobat"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Wooper -ne 0 ];
 then
   export CATFILE="Wooper.txt"
   export CATNAME="Wooper"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Wormadam -ne 0 ];
 then
   export CATFILE="Wormadam.txt"
   export CATNAME="Wormadam"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Wurmple -ne 0 ];
 then
   export CATFILE="Wurmple.txt"
   export CATNAME="Wurmple"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Wynaut -ne 0 ];
 then
   export CATFILE="Wynaut.txt"
   export CATNAME="Wynaut"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 

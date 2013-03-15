@@ -69,224 +69,224 @@ if [ $Taillow -ne 0 ];
 then
   export CATFILE="Taillow.txt"
   export CATNAME="Taillow"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Tangela -ne 0 ];
 then
   export CATFILE="Tangela.txt"
   export CATNAME="Tangela"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Tangrowth -ne 0 ];
 then
   export CATFILE="Tangrowth.txt"
   export CATNAME="Tangrowth"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Tauros -ne 0 ];
 then
   export CATFILE="Tauros.txt"
   export CATNAME="Tauros"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Teddiursa -ne 0 ];
 then
   export CATFILE="Teddiursa.txt"
   export CATNAME="Teddiursa"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Tentacool -ne 0 ];
 then
   export CATFILE="Tentacool.txt"
   export CATNAME="Tentacool"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Tentacruel -ne 0 ];
 then
   export CATFILE="Tentacruel.txt"
   export CATNAME="Tentacruel"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Tepig -ne 0 ];
 then
   export CATFILE="Tepig.txt"
   export CATNAME="Tepig"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Throh -ne 0 ];
 then
   export CATFILE="Throh.txt"
   export CATNAME="Throh"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Thundurus -ne 0 ];
 then
   export CATFILE="Thundurus.txt"
   export CATNAME="Thundurus"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Timburr -ne 0 ];
 then
   export CATFILE="Timburr.txt"
   export CATNAME="Timburr"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Tirtouga -ne 0 ];
 then
   export CATFILE="Tirtouga.txt"
   export CATNAME="Tirtouga"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Togekiss -ne 0 ];
 then
   export CATFILE="Togekiss.txt"
   export CATNAME="Togekiss"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Togepi -ne 0 ];
 then
   export CATFILE="Togepi.txt"
   export CATNAME="Togepi"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Togetic -ne 0 ];
 then
   export CATFILE="Togetic.txt"
   export CATNAME="Togetic"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Torchic -ne 0 ];
 then
   export CATFILE="Torchic.txt"
   export CATNAME="Torchic"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Torkoal -ne 0 ];
 then
   export CATFILE="Torkoal.txt"
   export CATNAME="Torkoal"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Tornadus -ne 0 ];
 then
   export CATFILE="Tornadus.txt"
   export CATNAME="Tornadus"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Torterra -ne 0 ];
 then
   export CATFILE="Torterra.txt"
   export CATNAME="Torterra"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Totodile -ne 0 ];
 then
   export CATFILE="Totodile.txt"
   export CATNAME="Totodile"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Toxicroak -ne 0 ];
 then
   export CATFILE="Toxicroak.txt"
   export CATNAME="Toxicroak"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Tranquill -ne 0 ];
 then
   export CATFILE="Tranquill.txt"
   export CATNAME="Tranquill"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Trapinch -ne 0 ];
 then
   export CATFILE="Trapinch.txt"
   export CATNAME="Trapinch"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Treecko -ne 0 ];
 then
   export CATFILE="Treecko.txt"
   export CATNAME="Treecko"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Tropius -ne 0 ];
 then
   export CATFILE="Tropius.txt"
   export CATNAME="Tropius"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Trubbish -ne 0 ];
 then
   export CATFILE="Trubbish.txt"
   export CATNAME="Trubbish"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Turtwig -ne 0 ];
 then
   export CATFILE="Turtwig.txt"
   export CATNAME="Turtwig"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Tympole -ne 0 ];
 then
   export CATFILE="Tympole.txt"
   export CATNAME="Tympole"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Tynamo -ne 0 ];
 then
   export CATFILE="Tynamo.txt"
   export CATNAME="Tynamo"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Typhlosion -ne 0 ];
 then
   export CATFILE="Typhlosion.txt"
   export CATNAME="Typhlosion"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Tyranitar -ne 0 ];
 then
   export CATFILE="Tyranitar.txt"
   export CATNAME="Tyranitar"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Tyrogue -ne 0 ];
 then
   export CATFILE="Tyrogue.txt"
   export CATNAME="Tyrogue"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 

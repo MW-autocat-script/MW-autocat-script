@@ -50,154 +50,154 @@ if [ $RED -ne 0 ];
 then
   export CATFILE="PokémonRed.txt"
   export CATNAME="Pokémon Red"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BLUE -ne 0 ];
 then
   export CATFILE="PokémonBlue.txt"
   export CATNAME="Pokémon Blue"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $YELLOW -ne 0 ];
 then
   export CATFILE="PokémonYellow.txt"
   export CATNAME="Pokémon Yellow"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $GOLD -ne 0 ];
 then
   export CATFILE="PokémonGold.txt"
   export CATNAME="Pokémon Gold"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SILVER -ne 0 ];
 then
   export CATFILE="PokémonSilver.txt"
   export CATNAME="Pokémon Silver"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CRYSTAL -ne 0 ];
 then
   export CATFILE="PokémonCrystal.txt"
   export CATNAME="Pokémon Crystal"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $RUBY -ne 0 ];
 then
   export CATFILE="PokémonRuby.txt"
   export CATNAME="Pokémon Ruby"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SAPPHIRE -ne 0 ];
 then
   export CATFILE="PokémonSapphire.txt"
   export CATNAME="Pokémon Sapphire"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $EMERALD -ne 0 ];
 then
   export CATFILE="PokémonEmerald.txt"
   export CATNAME="Pokémon Emerald"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FIRERED -ne 0 ];
 then
   export CATFILE="PokémonFireRed.txt"
   export CATNAME="Pokémon FireRed"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $LEAFGREEN -ne 0 ];
 then
   export CATFILE="PokémonLeafGreen.txt"
   export CATNAME="Pokémon LeafGreen"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $REDTEAM -ne 0 ];
 then
   export CATFILE="RedRescueTeam.txt"
   export CATNAME="Pokémon Mystery Dungeon: Red Rescue Team"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BLUETEAM -ne 0 ];
 then
   export CATFILE="BlueRescueTeam.txt"
   export CATNAME="Pokémon Mystery Dungeon: Blue Rescue Team"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BLACK -ne 0 ];
 then
   export CATFILE="PokémonBlack.txt"
   export CATNAME="Pokémon Black"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $WHITE -ne 0 ];
 then
   export CATFILE="PokémonWhite.txt"
   export CATNAME="Pokémon White"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BLACK2 -ne 0 ];
 then
   export CATFILE="PokémonBlack2.txt"
   export CATNAME="Pokémon Black 2"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $WHITE2 -ne 0 ];
 then
   export CATFILE="PokémonWhite2.txt"
   export CATNAME="Pokémon White 2"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $DIAMOND -ne 0 ];
 then
   export CATFILE="PokémonDiamond.txt"
   export CATNAME="Pokémon Diamond"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $PEARL -ne 0 ];
 then
   export CATFILE="PokémonPearl.txt"
   export CATNAME="Pokémon Pearl"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $PLATINUM -ne 0 ];
 then
   export CATFILE="PokémonPlatinum.txt"
   export CATNAME="Pokémon Platinum"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $HEARTGOLD -ne 0 ];
 then
   export CATFILE="PokémonHeartGold.txt"
   export CATNAME="Pokémon HeartGold"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SOULSILVER -ne 0 ];
 then
   export CATFILE="PokémonSoulSilver.txt"
   export CATNAME="Pokémon SoulSilver"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm PokémonRed.txt

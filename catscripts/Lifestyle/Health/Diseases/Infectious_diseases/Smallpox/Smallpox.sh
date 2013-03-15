@@ -8,7 +8,7 @@ if [ $SMALLPOX -ne 0 ];
 then
   export CATFILE="Smallpox.txt"
   export CATNAME="Smallpox"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Smallpox.txt

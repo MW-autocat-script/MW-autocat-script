@@ -8,7 +8,7 @@ if [ $LINKIN -ne 0 ];
 then
   export CATFILE="LinkinPark.txt"
   export CATNAME="Linkin Park"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm LinkinPark.txt

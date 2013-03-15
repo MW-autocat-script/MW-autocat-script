@@ -14,28 +14,28 @@ if [ $IEXPLORER -ne 0 ];
 then
   export CATFILE="InternetExplorer.txt"
   export CATNAME="Internet Explorer"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FIREFOX -ne 0 ];
 then
   export CATFILE="MozillaFirefox.txt"
   export CATNAME="Mozilla Firefox"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CHROME -ne 0 ];
 then
   export CATFILE="GoogleChrome.txt"
   export CATNAME="Google Chrome"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BROWSERS -ne 0 ];
 then
   export CATFILE="Webbrowsers.txt"
   export CATNAME="Web browsers"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm InternetExplorer.txt

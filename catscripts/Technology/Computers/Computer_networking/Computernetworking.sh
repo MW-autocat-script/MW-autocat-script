@@ -20,49 +20,49 @@ if [ $NETWORK -ne 0 ];
 then
   export CATFILE="Computernetworking.txt"
   export CATNAME="Computer networking"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TELNET -ne 0 ];
 then
   export CATFILE="Telnet.txt"
   export CATNAME="Telnet"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SSH -ne 0 ];
 then
   export CATFILE="SSH.txt"
   export CATNAME="SSH"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FTP -ne 0 ];
 then
   export CATFILE="FTP.txt"
   export CATNAME="FTP"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $VOIP -ne 0 ];
 then
   export CATFILE="VoIP.txt"
   export CATNAME="VoIP"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SKYPE -ne 0 ];
 then
   export CATFILE="Skype.txt"
   export CATNAME="Skype"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BLUETOOTH -ne 0 ];
 then
   export CATFILE="Bluetooth.txt"
   export CATNAME="Bluetooth"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Computernetworking.txt

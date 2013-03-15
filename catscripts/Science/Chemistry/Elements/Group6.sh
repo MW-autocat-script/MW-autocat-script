@@ -14,28 +14,28 @@ if [ $CHROMIUM -ne 0 ];
 then
   export CATFILE="Chromium.txt"
   export CATNAME="Chromium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MOLYBDENUM -ne 0 ];
 then
   export CATFILE="Molybdenum.txt"
   export CATNAME="Molybdenum"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TUNGSTEN -ne 0 ];
 then
   export CATFILE="Tungsten.txt"
   export CATNAME="Tungsten"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SEABORGIUM -ne 0 ];
 then
   export CATFILE="Seaborgium.txt"
   export CATNAME="Seaborgium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Chromium.txt

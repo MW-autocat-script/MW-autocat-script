@@ -8,7 +8,7 @@ if [ $OPENBSD -ne 0 ];
 then
   export CATFILE="OpenBSD.txt"
   export CATNAME="OpenBSD"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm OpenBSD.txt

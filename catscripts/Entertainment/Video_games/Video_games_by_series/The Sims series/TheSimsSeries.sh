@@ -14,28 +14,28 @@ if [ $SIMS2 -ne 0 ];
 then
   export CATFILE="TheSims2.txt"
   export CATNAME="The Sims 2"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SIMS3 -ne 0 ];
 then
   export CATFILE="TheSims3.txt"
   export CATNAME="The Sims 3"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MYSIMS -ne 0 ];
 then
   export CATFILE="MySims.txt"
   export CATNAME="MySims"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SERIES -ne 0 ];
 then
   export CATFILE="TheSimsSeries.txt"
   export CATNAME="The Sims series"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm TheSims2.txt

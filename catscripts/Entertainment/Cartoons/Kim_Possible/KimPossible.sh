@@ -8,7 +8,7 @@ if [ $KIMPOSSIBLE -ne 0 ];
 then
   export CATFILE="KimPossible.txt"
   export CATNAME="Kim Possible"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm KimPossible.txt

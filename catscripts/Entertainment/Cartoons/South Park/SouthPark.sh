@@ -8,7 +8,7 @@ if [ $SOUTHPARK -ne 0 ];
 then
   export CATFILE="SouthPark.txt"
   export CATNAME="South Park"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE.sh
 fi
 
 

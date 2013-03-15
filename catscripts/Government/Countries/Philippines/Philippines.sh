@@ -11,14 +11,14 @@ if [ $PHILIPPINES -ne 0 ];
 then
   export CATFILE="Philippines.txt"
   export CATNAME="Philippines"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $PNPA -ne 0 ];
 then
   export CATFILE="PNPA.txt"
   export CATNAME="PNPA"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Philippines.txt

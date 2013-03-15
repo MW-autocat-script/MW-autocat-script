@@ -18,42 +18,42 @@ if [ $NITROGEN -ne 0 ];
 then
   export CATFILE="Nitrogen.txt"
   export CATNAME="Nitrogen"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $PHOSPHORUS -ne 0 ];
 then
   export CATFILE="Phosphorus.txt"
   export CATNAME="Phosphorus"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ARSENIC -ne 0 ];
 then
   export CATFILE="Arsenic.txt"
   export CATNAME="Arsenic"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ANTIMONY -ne 0 ];
 then
   export CATFILE="Antimony.txt"
   export CATNAME="Antimony"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BISMUTH -ne 0 ];
 then
   export CATFILE="Bismuth.txt"
   export CATNAME="Bismuth"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $UNUNPENTIUM -ne 0 ];
 then
   export CATFILE="Ununpentium.txt"
   export CATNAME="Ununpentium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Nitrogen.txt

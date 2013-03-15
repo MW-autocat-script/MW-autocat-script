@@ -8,7 +8,7 @@ if [ $KAROS -ne 0 ];
 then
   export CATFILE="KarosOnline.txt"
   export CATNAME="Karos Online"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm KarosOnline.txt

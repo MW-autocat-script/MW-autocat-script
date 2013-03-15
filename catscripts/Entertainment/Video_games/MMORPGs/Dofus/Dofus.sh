@@ -8,7 +8,7 @@ if [ $DOFUS -ne 0 ];
 then
   export CATFILE="Dofus.txt"
   export CATNAME="Dofus"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Dofus.txt

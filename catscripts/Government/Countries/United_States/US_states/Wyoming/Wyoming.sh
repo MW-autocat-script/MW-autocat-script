@@ -8,7 +8,7 @@ if [ $WYOMING -ne 0 ];
 then
   export CATFILE="Wyoming.txt"
   export CATNAME="Wyoming"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Wyoming.txt

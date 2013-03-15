@@ -8,7 +8,7 @@ if [ $MELBOURNE -ne 0 ];
 then
   export CATFILE="Melbourne.txt"
   export CATNAME="Melbourne, Australia"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Melbourne.txt

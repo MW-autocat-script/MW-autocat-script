@@ -8,7 +8,7 @@ if [ $BELIZE -ne 0 ];
 then
   export CATFILE="Belize.txt"
   export CATNAME="Belize"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Belize.txt

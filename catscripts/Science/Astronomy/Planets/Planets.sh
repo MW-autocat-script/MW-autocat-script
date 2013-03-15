@@ -24,63 +24,63 @@ if [ $Mercury -ne 0 ];
 then
   export CATFILE="Mercury.txt"
   export CATNAME="Mercury"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Venus -ne 0 ];
 then
   export CATFILE="Venus.txt"
   export CATNAME="Venus"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Earth -ne 0 ];
 then
   export CATFILE="Earth.txt"
   export CATNAME="Earth"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Mars -ne 0 ];
 then
   export CATFILE="Mars.txt"
   export CATNAME="Mars"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Jupiter -ne 0 ];
 then
   export CATFILE="Jupiter.txt"
   export CATNAME="Jupiter"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Saturn -ne 0 ];
 then
   export CATFILE="Saturn.txt"
   export CATNAME="Saturn"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Uranus -ne 0 ];
 then
   export CATFILE="Uranus.txt"
   export CATNAME="Uranus"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Neptune -ne 0 ];
 then
   export CATFILE="Neptune.txt"
   export CATNAME="Neptune"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $PLANETS -ne 0 ];
 then
   export CATFILE="Planets.txt"
   export CATNAME="Planets"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Mercury.txt

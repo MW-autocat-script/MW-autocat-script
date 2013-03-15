@@ -14,28 +14,28 @@ if [ $IPODS -ne 0 ];
 then
   export CATFILE="iPods.txt"
   export CATNAME="iPods"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TOUCH -ne 0 ];
 then
   export CATFILE="iPodtouch.txt"
   export CATNAME="iPod touch"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $NANO -ne 0 ];
 then
   export CATFILE="iPodnano.txt"
   export CATNAME="iPod nano"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SHUFFLE -ne 0 ];
 then
   export CATFILE="iPodshuffle.txt"
   export CATNAME="iPod shuffle"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm iPods.txt

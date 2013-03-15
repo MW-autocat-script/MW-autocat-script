@@ -8,7 +8,7 @@ if [ $FREECIV -ne 0 ];
 then
   export CATFILE="Freeciv.txt"
   export CATNAME="Freeciv"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Freeciv.txt

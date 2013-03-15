@@ -8,7 +8,7 @@ if [ $HARVESTMOON -ne 0 ];
 then
   export CATFILE="HarvestMoon.txt"
   export CATNAME="Harvest Moon series"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm HarvestMoon.txt

@@ -49,154 +49,154 @@ if [ $Kabuto -ne 0 ];
 then
    export CATFILE="Kabuto.txt"
    export CATNAME="Kabuto"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Kabutops -ne 0 ];
 then
    export CATFILE="Kabutops.txt"
    export CATNAME="Kabutops"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Kadabra -ne 0 ];
 then
    export CATFILE="Kadabra.txt"
    export CATNAME="Kadabra"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Kakuna -ne 0 ];
 then
    export CATFILE="Kakuna.txt"
    export CATNAME="Kakuna"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Kangaskhan -ne 0 ];
 then
    export CATFILE="Kangaskhan.txt"
    export CATNAME="Kangaskhan"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Karrablast -ne 0 ];
 then
    export CATFILE="Karrablast.txt"
    export CATNAME="Karrablast"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Kecleon -ne 0 ];
 then
    export CATFILE="Kecleon.txt"
    export CATNAME="Kecleon"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Keldeo -ne 0 ];
 then
    export CATFILE="Keldeo.txt"
    export CATNAME="Keldeo"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Kingdra -ne 0 ];
 then
    export CATFILE="Kingdra.txt"
    export CATNAME="Kingdra"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Kingler -ne 0 ];
 then
    export CATFILE="Kingler.txt"
    export CATNAME="Kingler"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Kirlia -ne 0 ];
 then
    export CATFILE="Kirlia.txt"
    export CATNAME="Kirlia"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Klang -ne 0 ];
 then
    export CATFILE="Klang.txt"
    export CATNAME="Klang"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Klink -ne 0 ];
 then
    export CATFILE="Klink.txt"
    export CATNAME="Klink"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Klinklang -ne 0 ];
 then
    export CATFILE="Klinklang.txt"
    export CATNAME="Klinklang"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Koffing -ne 0 ];
 then
    export CATFILE="Koffing.txt"
    export CATNAME="Koffing"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Krabby -ne 0 ];
 then
    export CATFILE="Krabby.txt"
    export CATNAME="Krabby"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Kricketot -ne 0 ];
 then
    export CATFILE="Kricketot.txt"
    export CATNAME="Kricket"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Kricketune -ne 0 ];
 then
    export CATFILE="Kricketune.txt"
    export CATNAME="Kricketune"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Krookodile -ne 0 ];
 then
    export CATFILE="Krookodile.txt"
    export CATNAME="Krookodile"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Krokorok -ne 0 ];
 then
    export CATFILE="Krokorok.txt"
    export CATNAME="Krokorok"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Kyogre -ne 0 ];
 then
    export CATFILE="Kyogre.txt"
    export CATNAME="Kyogre"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Kyurem -ne 0 ];
 then
    export CATFILE="Kyurem.txt"
    export CATNAME="Kyurem"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 

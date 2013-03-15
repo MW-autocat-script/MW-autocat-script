@@ -19,42 +19,42 @@ if [ $BORON -ne 0 ];
 then
   export CATFILE="Boron.txt"
   export CATNAME="Boron"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ALUMINIUM -ne 0 ];
 then
   export CATFILE="Aluminium.txt"
   export CATNAME="Aluminium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $GALLIUM -ne 0 ];
 then
   export CATFILE="Gallium.txt"
   export CATNAME="Gallium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $INDIUM -ne 0 ];
 then
   export CATFILE="Indium.txt"
   export CATNAME="Indium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $THALLIUM -ne 0 ];
 then
   export CATFILE="Thallium.txt"
   export CATNAME="Thallium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $UNUNTRIUM -ne 0 ];
 then
   export CATFILE="Ununtrium.txt"
   export CATNAME="Ununtrium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Boron.txt

@@ -48,147 +48,147 @@ if [ $CADBANE -ne 0 ];
 then
   export CATFILE="CadBane.txt"
   export CATNAME="Cad Bane"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $C3PO -ne 0 ];
 then
   export CATFILE="C-3PO.txt"
   export CATNAME="C-3PO"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CHEWBACCA -ne 0 ];
 then
   export CATFILE="Chewbacca.txt"
   export CATNAME="Chewbacca"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BOBAFETT -ne 0 ];
 then
   export CATFILE="BobaFett.txt"
   export CATNAME="Boba Fett"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $JANGOFETT -ne 0 ];
 then
   export CATFILE="JangoFett.txt"
   export CATNAME="Jango Fett"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $JABBA -ne 0 ];
 then
   export CATFILE="JabbaTheHutt.txt"
   export CATNAME="Jabba the Hutt"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $KENOBI -ne 0 ];
 then
   export CATFILE="Obi-WanKenobi.txt"
   export CATNAME="Obi-Wan Kenobi"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $KOON -ne 0 ];
 then
   export CATFILE="PloKoon.txt"
   export CATNAME="Plo Koon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MAUL -ne 0 ];
 then
   export CATFILE="DarthMaul.txt"
   export CATNAME="Darth Maul"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $R2D2 -ne 0 ];
 then
   export CATFILE="R2-D2.txt"
   export CATNAME="R2-D2"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $REVAN -ne 0 ];
 then
   export CATFILE="Revan.txt"
   export CATNAME="Revan"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $VADER -ne 0 ];
 then
   export CATFILE="DarthVader.txt"
   export CATNAME="Anakin Skywalker / Darth Vader"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $LUKE -ne 0 ];
 then
   export CATFILE="LukeSkywalker.txt"
   export CATNAME="Luke Skywalker"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MARA -ne 0 ];
 then
   export CATFILE="MaraJadeSkywalker.txt"
   export CATNAME="Mara Jade Skywalker"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ANAKINSOLO -ne 0 ];
 then
   export CATFILE="AnakinSolo.txt"
   export CATNAME="Anakin Solo"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $HANSOLO -ne 0 ];
 then
   export CATFILE="HanSolo.txt"
   export CATNAME="Han Solo"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $JACEN -ne 0 ];
 then
   export CATFILE="DarthCaedus.txt"
   export CATNAME="Jacen Solo / Darth Caedus"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $LEIA -ne 0 ];
 then
   export CATFILE="LeiaOrganaSolo.txt"
   export CATNAME="Leia Organa Solo"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $AHSOKA -ne 0 ];
 then
   export CATFILE="AhsokaTano.txt"
   export CATNAME="Ahsoka Tano"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $WINDU -ne 0 ];
 then
   export CATFILE="MaceWindu.txt"
   export CATNAME="Mace Windu"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $YODA -ne 0 ];
 then
   export CATFILE="Yoda.txt"
   export CATNAME="Yoda"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm CadBane.txt

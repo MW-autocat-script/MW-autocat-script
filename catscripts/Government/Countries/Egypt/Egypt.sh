@@ -10,14 +10,14 @@ if [ $EGYPT -ne 0 ];
 then
   export CATFILE="Egypt.txt"
   export CATNAME="Egypt"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ANCIENT -ne 0 ];
 then
   export CATFILE="AncientEgypt.txt"
   export CATNAME="Ancient Egypt"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Egypt.txt

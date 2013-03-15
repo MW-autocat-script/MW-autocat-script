@@ -119,399 +119,399 @@ if [ $Machamp -ne 0 ];
 then
    export CATFILE="Machamp.txt"
    export CATNAME="Machamp"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Machoke -ne 0 ];
 then
    export CATFILE="Machoke.txt"
    export CATNAME="Machoke"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Machop -ne 0 ];
 then
    export CATFILE="Machop.txt"
    export CATNAME="Machop"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Magby -ne 0 ];
 then
    export CATFILE="Magby.txt"
    export CATNAME="Magby"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Magcargo -ne 0 ];
 then
    export CATFILE="Magcargo.txt"
    export CATNAME="Magcargo"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Magikarp -ne 0 ];
 then
    export CATFILE="Magikarp.txt"
    export CATNAME="Magikarp"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Magmar -ne 0 ];
 then
    export CATFILE="Magmar.txt"
    export CATNAME="Magmar"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Magmortar -ne 0 ];
 then
    export CATFILE="Magmortar.txt"
    export CATNAME="Magmortar"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Magnemite -ne 0 ];
 then
    export CATFILE="Magnemite.txt"
    export CATNAME="Magnemite"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Magneton -ne 0 ];
 then
    export CATFILE="Magneton.txt"
    export CATNAME="Magneton"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Magnezone -ne 0 ];
 then
    export CATFILE="Magnezone.txt"
    export CATNAME="Magnezone"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Makuhita -ne 0 ];
 then
    export CATFILE="Makuhita.txt"
    export CATNAME="Makuhita"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Mamoswine -ne 0 ];
 then
    export CATFILE="Mamoswine.txt"
    export CATNAME="Mamoswine"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Manaphy -ne 0 ];
 then
    export CATFILE="Manaphy.txt"
    export CATNAME="Manaphy"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Mandibuzz -ne 0 ];
 then
    export CATFILE="Mandibuzz.txt"
    export CATNAME="Mandibuzz"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Manectric -ne 0 ];
 then
    export CATFILE="Manectric.txt"
    export CATNAME="Manectric"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Mankey -ne 0 ];
 then
    export CATFILE="Mankey.txt"
    export CATNAME="Mankey"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Mantine -ne 0 ];
 then
    export CATFILE="Mantine.txt"
    export CATNAME="Mantine"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Mantyke -ne 0 ];
 then
    export CATFILE="Mantyke.txt"
    export CATNAME="Mantyke"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Maractus -ne 0 ];
 then
    export CATFILE="Maractus.txt"
    export CATNAME="Maractus"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Mareep -ne 0 ];
 then
    export CATFILE="Mareep.txt"
    export CATNAME="Mareep"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Marill -ne 0 ];
 then
    export CATFILE="Marill.txt"
    export CATNAME="Marill"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Marowak -ne 0 ];
 then
    export CATFILE="Marowak.txt"
    export CATNAME="Marowak"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Marshtomp -ne 0 ];
 then
    export CATFILE="Marshtomp.txt"
    export CATNAME="Marshtomp"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Masquerain -ne 0 ];
 then
    export CATFILE="Masquerain.txt"
    export CATNAME="Masquerain"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Mawile -ne 0 ];
 then
    export CATFILE="Mawile.txt"
    export CATNAME="Mawile"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Medicham -ne 0 ];
 then
    export CATFILE="Medicham.txt"
    export CATNAME="Medicham"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Meditite -ne 0 ];
 then
    export CATFILE="Meditite.txt"
    export CATNAME="Meditite"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Meganium -ne 0 ];
 then
    export CATFILE="Meganium.txt"
    export CATNAME="Meganium"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Meloetta -ne 0 ];
 then
    export CATFILE="Meloetta.txt"
    export CATNAME="Meloetta"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Meowth -ne 0 ];
 then
    export CATFILE="Meowth.txt"
    export CATNAME="Meowth"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Mesprit -ne 0 ];
 then
    export CATFILE="Mesprit.txt"
    export CATNAME="Mesprit"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Metagross -ne 0 ];
 then
    export CATFILE="Metagross.txt"
    export CATNAME="Metagross"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Metang -ne 0 ];
 then
    export CATFILE="Metang.txt"
    export CATNAME="Metang"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Metapod -ne 0 ];
 then
    export CATFILE="Metapod.txt"
    export CATNAME="Metapod"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Mew -ne 0 ];
 then
    export CATFILE="Mew.txt"
    export CATNAME="Mew (Pokémon)"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Mewtwo -ne 0 ];
 then
    export CATFILE="Mewtwo.txt"
    export CATNAME="Mewtwo"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Mightyena -ne 0 ];
 then
    export CATFILE="Mightyena.txt"
    export CATNAME="Mightyena"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Milotic -ne 0 ];
 then
    export CATFILE="Milotic.txt"
    export CATNAME="Milotic"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Miltank -ne 0 ];
 then
    export CATFILE="Miltank.txt"
    export CATNAME="Miltank"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $MimeJr -ne 0 ];
 then
    export CATFILE="MimeJr.txt"
    export CATNAME="Mime Jr."
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Minccino -ne 0 ];
 then
    export CATFILE="Minccino.txt"
    export CATNAME="Minccino"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Mienfoo -ne 0 ];
 then
    export CATFILE="Mienfoo.txt"
    export CATNAME="Mienfoo"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Mienshao -ne 0 ];
 then
    export CATFILE="Mienshao.txt"
    export CATNAME="Mienshao"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Minun -ne 0 ];
 then
    export CATFILE="Minun.txt"
    export CATNAME="Minun"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Misdreavus -ne 0 ];
 then
    export CATFILE="Misdreavus.txt"
    export CATNAME="Misdreavus"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Mismagius -ne 0 ];
 then
    export CATFILE="Mismagius.txt"
    export CATNAME="Mismagius"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Moltres -ne 0 ];
 then
    export CATFILE="Moltres.txt"
    export CATNAME="Moltres"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Monferno -ne 0 ];
 then
    export CATFILE="Monferno.txt"
    export CATNAME="Monferno"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Mothim -ne 0 ];
 then
    export CATFILE="Mothim.txt"
    export CATNAME="Mothim"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $MrMime -ne 0 ];
 then
    export CATFILE="MrMime.txt"
    export CATNAME="Mr. Mime"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Mudkip -ne 0 ];
 then
    export CATFILE="Mudkip.txt"
    export CATNAME="Mudkip"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Muk -ne 0 ];
 then
    export CATFILE="Muk.txt"
    export CATNAME="Muk"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Munchlax -ne 0 ];
 then
    export CATFILE="Munchlax.txt"
    export CATNAME="Munchlax"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Munna -ne 0 ];
 then
    export CATFILE="Munna.txt"
    export CATNAME="Munna"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Murkrow -ne 0 ];
 then
    export CATFILE="Murkrow.txt"
    export CATNAME="Murkrow"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Musharna -ne 0 ];
 then
    export CATFILE="Musharna.txt"
    export CATNAME="Musharna"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 

@@ -8,7 +8,7 @@ if [ $MACOS -ne 0 ];
 then
   export CATFILE="MacOSX.txt"
   export CATNAME="Mac OS X"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm MacOSX.txt

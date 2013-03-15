@@ -12,21 +12,21 @@ if [ $DWARF -ne 0 ];
 then
   export CATFILE="Dwarf.txt"
   export CATNAME="Dwarf planets"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $PLUTO -ne 0 ];
 then
   export CATFILE="Pluto.txt"
   export CATNAME="Pluto"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ERIS -ne 0 ];
 then
   export CATFILE="Eris.txt"
   export CATNAME="Eris"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Dwarf.txt

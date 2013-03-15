@@ -18,42 +18,42 @@ if [ $FLUORINE -ne 0 ];
 then
   export CATFILE="Fluorine.txt"
   export CATNAME="Fluorine"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CHLORINE -ne 0 ];
 then
   export CATFILE="Chlorine.txt"
   export CATNAME="Chlorine"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BROMINE -ne 0 ];
 then
   export CATFILE="Bromine.txt"
   export CATNAME="Bromine"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $IODINE -ne 0 ];
 then
   export CATFILE="Iodine.txt"
   export CATNAME="Iodine"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ASTATINE -ne 0 ];
 then
   export CATFILE="Astatine.txt"
   export CATNAME="Astatine"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $UNUNSEPTIUM -ne 0 ];
 then
   export CATFILE="Ununseptium.txt"
   export CATNAME="Ununseptium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Fluorine.txt

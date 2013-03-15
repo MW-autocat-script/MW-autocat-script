@@ -8,7 +8,7 @@ if [ $MAFIA -ne 0 ];
 then
   export CATFILE="MafiaWars.txt"
   export CATNAME="Mafia Wars"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm MafiaWars.txt

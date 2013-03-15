@@ -12,7 +12,7 @@ if [ $ENGLISHTOGERMAN -ne 0 ];
 then
   export CATFILE="EnglishtoGerman.txt"
   export CATNAME="English to German"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm EnglishtoGerman.txt

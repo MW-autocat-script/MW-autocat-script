@@ -8,7 +8,7 @@ if [ $DOOM -ne 0 ];
 then
   export CATFILE="Doom.txt"
   export CATNAME="Doom series"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Doom.txt

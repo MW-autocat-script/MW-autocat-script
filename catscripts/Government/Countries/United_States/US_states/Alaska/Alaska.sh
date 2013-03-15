@@ -8,6 +8,6 @@ if [ $ALASKA -ne 0 ];
 then
   export CATFILE="Alaska.txt"
   export CATNAME="Alaska"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 rm Alaska.txt

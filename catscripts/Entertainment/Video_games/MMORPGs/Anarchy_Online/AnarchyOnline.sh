@@ -8,7 +8,7 @@ if [ $ANARCHY -ne 0 ];
 then
   export CATFILE="AnarchyOnline.txt"
   export CATNAME="Anarchy Online"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm AnarchyOnline.txt

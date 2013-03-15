@@ -45,140 +45,140 @@ if [ $Vanillish -ne 0 ];
 then
   export CATFILE="Vanillish.txt"
   export CATNAME="Vanillish"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Vanilluxe -ne 0 ];
 then
   export CATFILE="Vanilluxe.txt"
   export CATNAME="Vanilluxe"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Vanillite -ne 0 ];
 then
   export CATFILE="Vanillite.txt"
   export CATNAME="Vanillite"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Vaporeon -ne 0 ];
 then
   export CATFILE="Vaporeon.txt"
   export CATNAME="Vaporeon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Venipede -ne 0 ];
 then
   export CATFILE="Venipede.txt"
   export CATNAME="Venipede"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Venomoth -ne 0 ];
 then
   export CATFILE="Venomoth.txt"
   export CATNAME="Venomoth"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Venonat -ne 0 ];
 then
   export CATFILE="Venonat.txt"
   export CATNAME="Venonat"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Venusaur -ne 0 ];
 then
   export CATFILE="Venusaur.txt"
   export CATNAME="Venusaur"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Vespiquen -ne 0 ];
 then
   export CATFILE="Vespiquen.txt"
   export CATNAME="Vespiquen"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Vibrava -ne 0 ];
 then
   export CATFILE="Vibrava.txt"
   export CATNAME="Vibrava"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Victini -ne 0 ];
 then
   export CATFILE="Victini.txt"
   export CATNAME="Victini"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Victreebel -ne 0 ];
 then
   export CATFILE="Victreebel.txt"
   export CATNAME="Victreebel"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Vigoroth -ne 0 ];
 then
   export CATFILE="Vigoroth.txt"
   export CATNAME="Vigoroth"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Vileplume -ne 0 ];
 then
   export CATFILE="Vileplume.txt"
   export CATNAME="Vileplume"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Virizion -ne 0 ];
 then
   export CATFILE="Virizion.txt"
   export CATNAME="Virizion"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Volbeat -ne 0 ];
 then
   export CATFILE="Volbeat.txt"
   export CATNAME="Volbeat"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Volcarona -ne 0 ];
 then
   export CATFILE="Volcarona.txt"
   export CATNAME="Volcarona"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Voltorb -ne 0 ];
 then
   export CATFILE="Voltorb.txt"
   export CATNAME="Voltorb"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Vullaby -ne 0 ];
 then
   export CATFILE="Vullaby.txt"
   export CATNAME="Vullaby"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Vulpix -ne 0 ];
 then
   export CATFILE="Vulpix.txt"
   export CATNAME="Vulpix"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Vanillish.txt

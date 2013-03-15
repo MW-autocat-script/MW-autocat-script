@@ -8,7 +8,7 @@ if [ $CABAL -ne 0 ];
 then
   export CATFILE="CabalOnline.txt"
   export CATNAME="Cabal Online"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm CabalOnline.txt

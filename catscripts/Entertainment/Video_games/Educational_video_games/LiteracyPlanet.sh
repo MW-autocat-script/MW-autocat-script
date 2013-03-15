@@ -8,7 +8,7 @@ if [ $LITERACYPLANET -ne 0 ];
 then
   export CATFILE="LiteracyPlanet.txt"
   export CATNAME="Literacy Planet"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm LiteracyPlanet.txt

@@ -50,154 +50,154 @@ if [ $AKON -ne 0 ];
 then
   export CATFILE="Akon.txt"
   export CATNAME="Akon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BIEBER -ne 0 ];
 then
   export CATFILE="JustinBieber.txt"
   export CATNAME="Justin Bieber"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $JCASH -ne 0 ];
 then
   export CATFILE="JohnnyCash.txt"
   export CATNAME="Johnny Cash"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MCYRUS -ne 0 ];
 then
   export CATFILE="MileyCyrus.txt"
   export CATNAME="Miley Cyrus"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $HUDGENS -ne 0 ];
 then
   export CATFILE="VanessaHudgens.txt"
   export CATNAME="Vanessa Hudgens"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $WHOUSTON -ne 0 ];
 then
   export CATFILE="WhitneyHouston.txt"
   export CATNAME="Whitney Houston"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MJACKSON -ne 0 ];
 then
   export CATFILE="MichaelJackson.txt"
   export CATNAME="Michael Jackson"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $JJONAS -ne 0 ];
 then
   export CATFILE="JoeJonas.txt"
   export CATNAME="Joe Jonas"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $NJONAS -ne 0 ];
 then
   export CATFILE="NickJonas.txt"
   export CATNAME="Nick Jonas"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $KNOWLES -ne 0 ];
 then
   export CATFILE="BeyoncéKnowles.txt"
   export CATNAME="Beyoncé Knowles"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $LOVATO -ne 0 ];
 then
   export CATFILE="DemiLovato.txt"
   export CATNAME="Demi Lovato"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $LENNON -ne 0 ];
 then
   export CATFILE="JohnLennon.txt"
   export CATNAME="John Lennon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $GAGA -ne 0 ];
 then
   export CATFILE="LadyGaga.txt"
   export CATNAME="Lady Gaga"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MADONNA -ne 0 ];
 then
   export CATFILE="Madonna.txt"
   export CATNAME="Madonna"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MARLEY -ne 0 ];
 then
   export CATFILE="BobMarley.txt"
   export CATNAME="Bob Marley"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ELVIS -ne 0 ];
 then
   export CATFILE="ElvisPresley.txt"
   export CATNAME="Elvis Presley"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $RAMSAY -ne 0 ];
 then
   export CATFILE="JoshRamsay.txt"
   export CATNAME="Josh Ramsay"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $RIHANNA -ne 0 ];
 then
   export CATFILE="Rihanna.txt"
   export CATNAME="Rihanna"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BSPEARS -ne 0 ];
 then
   export CATFILE="BritneySpears.txt"
   export CATNAME="Britney Spears"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SWIFT -ne 0 ];
 then
   export CATFILE="TaylorSwift.txt"
   export CATNAME="Taylor Swift"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TUPAC -ne 0 ];
 then
   export CATFILE="TupacShakur.txt"
   export CATFILE="Tupac Shakur"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TISDALE -ne 0 ];
 then
   export CATFILE="AshleyTisdale.txt"
   export CATNAME="Ashley Tisdale"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Akon.txt

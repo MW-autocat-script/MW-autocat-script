@@ -14,28 +14,28 @@ if [ $NICKEL -ne 0 ];
 then
   export CATFILE="Nickel.txt"
   export CATNAME="Nickel"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $PALLADIUM -ne 0 ];
 then
   export CATFILE="Palladium.txt"
   export CATNAME="Palladium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $PLATINUM -ne 0 ];
 then
   export CATFILE="Platinum.txt"
   export CATNAME="Platinum"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $DARMSTADTIUM -ne 0 ];
 then
   export CATFILE="Darmstadtium.txt"
   export CATNAME="Darmstadtium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Nickel.txt

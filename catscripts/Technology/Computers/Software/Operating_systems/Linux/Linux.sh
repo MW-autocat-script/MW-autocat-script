@@ -23,56 +23,56 @@ if [ $LINUX -ne 0 ];
 then
   export CATFILE="Linux.txt"
   export CATNAME="Linux"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $DEBIAN -ne 0 ];
 then
   export CATFILE="Debian.txt"
   export CATNAME="Debian"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $OPENSUSE -ne 0 ];
 then
   export CATFILE="OpenSUSE.txt"
   export CATNAME="OpenSUSE"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $UBUNTU -ne 0 ];
 then
   export CATFILE="Ubuntu.txt"
   export CATNAME="Ubuntu"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $COLINUX -ne 0 ];
 then
   export CATFILE="coLinux.txt"
   export CATNAME="coLinux"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $FEDORA -ne 0 ];
 then
   export CATFILE="FedoraLinux.txt"
   export CATNAME="Fedora Linux"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MINT -ne 0 ];
 then
   export CATFILE="LinuxMint.txt"
   export CATNAME="Linux Mint"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ANDROID -ne 0 ];
 then
   export CATFILE="GoogleAndroid.txt"
   export CATNAME="Google Android"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Linux.txt

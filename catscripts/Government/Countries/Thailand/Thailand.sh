@@ -10,14 +10,14 @@ if [ $THAILAND -ne 0 ];
 then
   export CATFILE="Thailand.txt"
   export CATNAME="Thailand"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BANGKOK -ne 0 ];
 then
   export CATFILE="Bangkok.txt"
   export CATNAME="Bangkok"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Thailand.txt

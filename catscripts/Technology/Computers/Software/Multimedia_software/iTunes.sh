@@ -8,7 +8,7 @@ if [ $ITUNES -ne 0 ];
 then
   export CATFILE="iTunes.txt"
   export CATNAME="iTunes"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm iTunes.txt

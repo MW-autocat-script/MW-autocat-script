@@ -12,7 +12,7 @@ if [ $ENGLISHTOITALIAN -ne 0 ];
 then
   export CATFILE="EnglishtoItalian.txt"
   export CATNAME="English to Italian"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm EnglishtoItalian.txt

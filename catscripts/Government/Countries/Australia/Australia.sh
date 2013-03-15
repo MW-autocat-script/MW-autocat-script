@@ -8,11 +8,13 @@ if [ $AUSTRALIA -ne 0 ];
 then
   export CATFILE="Australia.txt"
   export CATNAME="Australia"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
-./catscripts/Government/Countries/Australia/Canberra/Canberra.sh
-./catscripts/Government/Countries/Australia/Sydney/Sydney.sh
-./catscripts/Government/Countries/Australia/Melbourne/Melbourne.sh
+CURRENTDIR="./catscripts/Government/Countries/Australia"
+
+$CURRENTDIR/Canberra/Canberra.sh
+$CURRENTDIR/Sydney/Sydney.sh
+$CURRENTDIR/Melbourne/Melbourne.sh
 
 rm Australia.txt

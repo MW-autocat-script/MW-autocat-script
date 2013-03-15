@@ -20,28 +20,28 @@ if [ $HALO1 -ne 0 ];
 then
 	export CATFILE="Halo1.txt"
 	export CATNAME="Halo: Combat Evolved"
-	./catscripts/Categorize.sh
+	$CATEGORIZE
 fi
 
 if [ $HALO2 -ne 0 ];
 then
 	export CATFILE="Halo2.txt"
 	export CATNAME="Halo 2"
-	./catscripts/Categorize.sh
+	$CATEGORIZE
 fi
 
 if [ $HALO3 -ne 0 ];
 then
 	export CATFILE="Halo3.txt"
 	export CATNAME="Halo 3"
-	./catscripts/Categorize.sh
+	$CATEGORIZE
 fi
 
 if [ $ODST -ne 0 ];
 then
 	export CATFILE="ODST.txt"
 	export CATNAME="Halo 3: ODST"
-	./catscripts/Categorize.sh
+	$CATEGORIZE
 fi
 
 rm Halo*.txt

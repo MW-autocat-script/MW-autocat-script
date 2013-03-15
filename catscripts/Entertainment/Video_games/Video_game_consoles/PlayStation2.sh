@@ -8,7 +8,7 @@ if [ $PS2 -ne 0 ];
 then
   export CATFILE="PlayStation2.txt"
   export CATNAME="PlayStation 2"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm PlayStation2.txt

@@ -17,35 +17,35 @@ if [ $BACH -ne 0 ];
 then
   export CATFILE="Bach.txt"
   export CATNAME="Johann Sebastian Bach"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $MOZART -ne 0 ];
 then
   export CATFILE="WolfgangAmadeusMozart.txt"
   export CATNAME="Wolfgang Amadeus Mozart"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $BEETHOVEN -ne 0 ];
 then
   export CATFILE="LudwigVanBeethoven.txt"
   export CATNAME="Ludwig van Beethoven"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $COPLAND -ne 0 ];
 then
   export CATFILE="AaronCopland.txt"
   export CATNAME="Aaron Copland"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $STRAVINSKY -ne 0 ];
 then
   export CATFILE="IgorStravinsky.txt"
   export CATNAME="Igor Stravinsky"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Bach.txt

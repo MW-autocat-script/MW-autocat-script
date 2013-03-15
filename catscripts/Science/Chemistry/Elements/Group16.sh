@@ -18,42 +18,42 @@ if [ $OXYGEN -ne 0 ];
 then
   export CATFILE="Oxygen.txt"
   export CATNAME="Oxygen"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SULFUR -ne 0 ];
 then
   export CATFILE="Sulfur.txt"
   export CATNAME="Sulfur"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $SELENIUM -ne 0 ];
 then
   export CATFILE="Selenium.txt"
   export CATNAME="Selenium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TELLURIUM -ne 0 ];
 then
   export CATFILE="Tellurium.txt"
   export CATNAME="Tellurium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $POLONIUM -ne 0 ];
 then
   export CATFILE="Polonium.txt"
   export CATNAME="Polonium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $LIVERMORIUM -ne 0 ];
 then
   export CATFILE="Livermorium.txt"
   export CATNAME="Livermorium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Oxygen.txt

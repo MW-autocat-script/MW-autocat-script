@@ -14,28 +14,28 @@ if [ $IRON -ne 0 ];
 then
   export CATFILE="Iron.txt"
   export CATNAME="Iron"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $RUTHENIUM -ne 0 ];
 then
   export CATFILE="Ruthenium.txt"
   export CATNAME="Ruthenium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $OSMIUM -ne 0 ];
 then
   export CATFILE="Osmium.txt"
   export CATNAME="Osmium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $HASSIUM -ne 0 ];
 then
   export CATFILE="Hassium.txt"
   export CATNAME="Hassium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Iron.txt

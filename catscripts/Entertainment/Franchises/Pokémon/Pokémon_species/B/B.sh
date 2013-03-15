@@ -77,238 +77,238 @@ if [ $BAGON -ne 0 ];
 then
    export CATFILE="Bagon.txt"
    export CATNAME="Bagon"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BALTOY -ne 0 ];
 then
    export CATFILE="Baltoy.txt"
    export CATNAME="Baltoy"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BANETTE -ne 0 ];
 then
    export CATFILE="Banette.txt"
    export CATNAME="Banette"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BARBOACH -ne 0 ];
 then
    export CATFILE="Barboach.txt"
    export CATNAME="Barboach"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BASCULIN -ne 0 ];
 then
    export CATFILE="Basculin.txt"
    export CATNAME="Basculin"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BASTIODON -ne 0 ];
 then
    export CATFILE="Bastiodon.txt"
    export CATNAME="Bastiodon"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BAYLEEF -ne 0 ];
 then
    export CATFILE="Bayleef.txt"
    export CATNAME="Bayleef"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BEARTIC -ne 0 ];
 then
    export CATFILE="Beartic.txt"
    export CATNAME="Beartic"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BEAUTIFLY -ne 0 ];
 then
    export CATFILE="Beautifly.txt"
    export CATNAME="Beautifly"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BEEDRILL -ne 0 ];
 then
    export CATFILE="Beedrill.txt"
    export CATNAME="Beedrill"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BEHEYEM -ne 0 ];
 then
    export CATFILE="Beheeyem.txt"
    export CATNAME="Beheeyem"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BELDUM -ne 0 ];
 then
    export CATFILE="Beldum.txt"
    export CATNAME="Beldum"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BELLOSSOM -ne 0 ];
 then
    export CATFILE="Bellossom.txt"
    export CATNAME="Bellossom"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BELLSPROUT -ne 0 ];
 then
    export CATFILE="Bellsprout.txt"
    export CATNAME="Bellsprout"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BIBAREL -ne 0 ];
 then
    export CATFILE="Bibarel.txt"
    export CATNAME="Bibarel"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BIDOOF -ne 0 ];
 then
    export CATFILE="Bidoof.txt"
    export CATNAME="Bidoof"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BISHARP -ne 0 ];
 then
    export CATFILE="Bisharp.txt"
    export CATNAME="Bisharp"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BLASTOISE -ne 0 ];
 then
    export CATFILE="Blastoise.txt"
    export CATNAME="Blastoise"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BLAZIKEN -ne 0 ];
 then
    export CATFILE="Blaziken.txt"
    export CATNAME="Blaziken"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BLISSEY -ne 0 ];
 then
    export CATFILE="Blissey.txt"
    export CATNAME="Blissey"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BLITZLE -ne 0 ];
 then
    export CATFILE="Blitzle.txt"
    export CATNAME="Blitzle"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BOLDORE -ne 0 ];
 then
    export CATFILE="Boldore.txt"
    export CATNAME="Boldore"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BONSLY -ne 0 ];
 then
    export CATFILE="Bonsly.txt"
    export CATNAME="Bonsly"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BOUFFALANT -ne 0 ];
 then
    export CATFILE="Bouffalant.txt"
    export CATNAME="Bouffalant"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BRAVIARY -ne 0 ];
 then
    export CATFILE="Braviary.txt"
    export CATNAME="Braviary"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BRELOOM -ne 0 ];
 then
    export CATFILE="Breloom.txt"
    export CATNAME="Breloom"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BRONZONG -ne 0 ];
 then
    export CATFILE="Bronzong.txt"
    export CATNAME=""
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BRONZOR -ne 0 ];
 then
    export CATFILE="Bronzor.txt"
    export CATNAME="Bronzor"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BUDEW -ne 0 ];
 then
    export CATFILE="Budew.txt"
    export CATNAME="Budew"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BUIZEL -ne 0 ];
 then
    export CATFILE="Buizel.txt"
    export CATNAME="Buizel"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BULBASAUR -ne 0 ];
 then
    export CATFILE="Bulbasaur.txt"
    export CATNAME="Bulbasaur"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BUNEARY -ne 0 ];
 then
    export CATFILE="Buneary.txt"
    export CATNAME="Buneary"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BURMY -ne 0 ];
 then
    export CATFILE="Burmy.txt"
    export CATNAME="Burmy"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $BUTTERFREE -ne 0 ];
 then
    export CATFILE="Butterfree.txt"
    export CATNAME="Butterfree"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 

@@ -71,231 +71,231 @@ if [ $Lairon -ne 0 ];
 then
    export CATFILE="Lairon.txt"
    export CATNAME="Lairon"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Lampent -ne 0 ];
 then
    export CATFILE="Lampent.txt"
    export CATNAME="Lampent"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Landorus -ne 0 ];
 then
    export CATFILE="Landorus.txt"
    export CATNAME="Landorus"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Lanturn -ne 0 ];
 then
    export CATFILE="Lanturn.txt"
    export CATNAME="Lanturn"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Lapras -ne 0 ];
 then
    export CATFILE="Lapras.txt"
    export CATNAME="Lapras"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Larvesta -ne 0 ];
 then
    export CATFILE="Larvesta.txt"
    export CATNAME="Larvesta"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Larvitar -ne 0 ];
 then
    export CATFILE="Larvitar.txt"
    export CATNAME="Larvitar"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Latias -ne 0 ];
 then
    export CATFILE="Latias.txt"
    export CATNAME="Latias"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Latios -ne 0 ];
 then
    export CATFILE="Latios.txt"
    export CATNAME="Latios"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Leafeon -ne 0 ];
 then
    export CATFILE="Leafeon.txt"
    export CATNAME="Leafeon"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Leavanny -ne 0 ];
 then
    export CATFILE="Leavanny.txt"
    export CATNAME="Leavanny"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Ledian -ne 0 ];
 then
    export CATFILE="Ledian.txt"
    export CATNAME="Ledian"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Ledyba -ne 0 ];
 then
    export CATFILE="Ledyba.txt"
    export CATNAME="Ledyba"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Lickilicky -ne 0 ];
 then
    export CATFILE="Lickilicky.txt"
    export CATNAME="Lickilicky"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Lickitung -ne 0 ];
 then
    export CATFILE="Lickitung.txt"
    export CATNAME="Lickitung"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Liepard -ne 0 ];
 then
    export CATFILE="Liepard.txt"
    export CATNAME="Liepard"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Lileep -ne 0 ];
 then
    export CATFILE="Lileep.txt"
    export CATNAME="Lileep"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Lilligant -ne 0 ];
 then
    export CATFILE="Lilligant.txt"
    export CATNAME="Lilligant"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Lillipup -ne 0 ];
 then
    export CATFILE="Lillipup.txt"
    export CATNAME="Lillipup"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Linoone -ne 0 ];
 then
    export CATFILE="Linoone.txt"
    export CATNAME="Linoone"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Litwick -ne 0 ];
 then
    export CATFILE="Litwick.txt"
    export CATNAME="Litwick"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Lombre -ne 0 ];
 then
    export CATFILE="Lombre.txt"
    export CATNAME="Lombre"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Lopunny -ne 0 ];
 then
    export CATFILE="Lopunny.txt"
    export CATNAME="Lopunny"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Lotad -ne 0 ];
 then
    export CATFILE="Lotad.txt"
    export CATNAME="Lotad"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Loudred -ne 0 ];
 then
    export CATFILE="Loudred.txt"
    export CATNAME="Loudred"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Lucario -ne 0 ];
 then
    export CATFILE="Lucario.txt"
    export CATNAME="Lucario"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Ludicolo -ne 0 ];
 then
    export CATFILE="Ludicolo.txt"
    export CATNAME="Ludicolo"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Lugia -ne 0 ];
 then
    export CATFILE="Lugia.txt"
    export CATNAME="Lugia"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Lumineon -ne 0 ];
 then
    export CATFILE="Lumineon.txt"
    export CATNAME="Lumineon"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Lunatone -ne 0 ];
 then
    export CATFILE="Lunatone.txt"
    export CATNAME="Lunatone"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Luvdisc -ne 0 ];
 then
    export CATFILE="Luvdisc.txt"
    export CATNAME="Luvdisc"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Luxio -ne 0 ];
 then
    export CATFILE="Luxio.txt"
    export CATNAME="Luxio"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Luxray -ne 0 ];
 then
    export CATFILE="Luxray.txt"
    export CATNAME="Luxray"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 

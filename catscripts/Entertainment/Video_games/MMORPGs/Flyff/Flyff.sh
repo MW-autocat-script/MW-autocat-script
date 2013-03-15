@@ -8,7 +8,7 @@ if [ $FLYFF -ne 0 ];
 then
   export CATFILE="Flyff.txt"
   export CATNAME="Flyff"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Flyff.txt

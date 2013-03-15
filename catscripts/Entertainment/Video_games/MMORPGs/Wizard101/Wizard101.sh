@@ -8,7 +8,7 @@ if [ $WIZARD101 -ne 0 ];
 then
   export CATFILE="Wizard101.txt"
   export CATNAME="Wizard101"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Wizard101.txt

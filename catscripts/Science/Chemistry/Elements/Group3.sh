@@ -10,14 +10,14 @@ if [ $SCANDIUM -ne 0 ];
 then
   export CATFILE="Scandium.txt"
   export CATNAME="Scandium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $YTTRIUM -ne 0 ];
 then
   export CATFILE="Yttrium.txt"
   export CATNAME="Yttrium"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Scandium.txt

@@ -22,56 +22,56 @@ if [ $Win98 -ne 0 ];
 then
    export CATFILE="Windows98.txt"
    export CATNAME="Windows 98"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Win2000 -ne 0 ];
 then
    export CATFILE="Windows2000.txt"
    export CATNAME="Windows 2000"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $WinXP -ne 0 ];
 then
    export CATFILE="WindowsXP.txt"
    export CATNAME="Windows XP"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Win2003 -ne 0 ];
 then
    export CATFILE="WindowsServer2003.txt"
    export CATNAME="Windows Server 2003"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $WinVista -ne 0 ];
 then
    export CATFILE="WindowsVista.txt"
    export CATNAME="Windows Vista"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Win7 -ne 0 ];
 then
    export CATFILE="Windows7.txt"
    export CATNAME="Windows 7"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Win2008 -ne 0 ];
 then
    export CATFILE="WindowsServer2008.txt"
    export CATNAME="Windows Server 2008"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Win8 -ne 0 ];
 then
    export CATFILE="Windows8.txt"
    export CATNAME="Windows 8"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 rm Windows98.txt

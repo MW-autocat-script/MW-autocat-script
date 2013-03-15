@@ -191,651 +191,651 @@ if [ $Sableye -ne 0 ];
 then
   export CATFILE="Sableye.txt"
   export CATNAME="Sableye"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Salamence -ne 0 ];
 then
   export CATFILE="Salamence.txt"
   export CATNAME="Salamence"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Samurott -ne 0 ];
 then
   export CATFILE="Samurott.txt"
   export CATNAME="Samurott"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Sandile -ne 0 ];
 then
   export CATFILE="Sandile.txt"
   export CATNAME="Sandile"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Sandshrew -ne 0 ];
 then
   export CATFILE="Sandshrew.txt"
   export CATNAME="Sandshrew"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Sandslash -ne 0 ];
 then
   export CATFILE="Sandslash.txt"
   export CATNAME="Sandslash"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Sawk -ne 0 ];
 then
   export CATFILE="Sawk.txt"
   export CATNAME="Sawk"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Sawsbuck -ne 0 ];
 then
   export CATFILE="Sawsbuck.txt"
   export CATNAME="Sawsbuck"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Sceptile -ne 0 ];
 then
   export CATFILE="Sceptile.txt"
   export CATNAME="Sceptile"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Scizor -ne 0 ];
 then
   export CATFILE="Scizor.txt"
   export CATNAME="Scizor"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Scolipede -ne 0 ];
 then
   export CATFILE="Scolipede.txt"
   export CATNAME="Scolipede"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Scrafty -ne 0 ];
 then
   export CATFILE="Scrafty.txt"
   export CATNAME="Scrafty"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Scraggy -ne 0 ];
 then
   export CATFILE="Scraggy.txt"
   export CATNAME="Scraggy"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Scyther -ne 0 ];
 then
   export CATFILE="Scyther.txt"
   export CATNAME="Scyther"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Seadra -ne 0 ];
 then
   export CATFILE="Seadra.txt"
   export CATNAME="Seadra"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Seaking -ne 0 ];
 then
   export CATFILE="Seaking.txt"
   export CATNAME="Seaking"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Sealeo -ne 0 ];
 then
   export CATFILE="Sealeo.txt"
   export CATNAME="Sealeo"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Seedot -ne 0 ];
 then
   export CATFILE="Seedot.txt"
   export CATNAME="Seedot"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Seel -ne 0 ];
 then
   export CATFILE="Seel.txt"
   export CATNAME="Seel"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Sentret -ne 0 ];
 then
   export CATFILE="Sentret.txt"
   export CATNAME="Sentret"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Serperior -ne 0 ];
 then
   export CATFILE="Serperior.txt"
   export CATNAME="Serperior"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Servine -ne 0 ];
 then
   export CATFILE="Servine.txt"
   export CATNAME="Servine"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Seismitoad -ne 0 ];
 then
   export CATFILE="Seismitoad.txt"
   export CATNAME="Seismitoad"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Seviper -ne 0 ];
 then
   export CATFILE="Seviper.txt"
   export CATNAME="Seviper"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Sewaddle -ne 0 ];
 then
   export CATFILE="Sewaddle.txt"
   export CATNAME="Sewaddle"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Sharpedo -ne 0 ];
 then
   export CATFILE="Sharpedo.txt"
   export CATNAME="Sharpedo"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Shedinja -ne 0 ];
 then
   export CATFILE="Shedinja.txt"
   export CATNAME="Shedinja"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Shelgon -ne 0 ];
 then
   export CATFILE="Shelgon.txt"
   export CATNAME="Shelgon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Shelmet -ne 0 ];
 then
   export CATFILE="Shelmet.txt"
   export CATNAME="Shelmet"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Shellder -ne 0 ];
 then
   export CATFILE="Shellder.txt"
   export CATNAME="Shellder"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Shellos -ne 0 ];
 then
   export CATFILE="Shellos.txt"
   export CATNAME="Shellos"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Shieldon -ne 0 ];
 then
   export CATFILE="Shieldon.txt"
   export CATNAME="Shieldon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Shiftry -ne 0 ];
 then
   export CATFILE="Shiftry.txt"
   export CATNAME="Shiftry"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Shinx -ne 0 ];
 then
   export CATFILE="Shinx.txt"
   export CATNAME="Shinx"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Shroomish -ne 0 ];
 then
   export CATFILE="Shroomish.txt"
   export CATNAME="Shroomish"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Shuckle -ne 0 ];
 then
   export CATFILE="Shuckle.txt"
   export CATNAME="Shuckle"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Shuppet -ne 0 ];
 then
   export CATFILE="Shuppet.txt"
   export CATNAME="Shuppet"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Sigilyph -ne 0 ];
 then
   export CATFILE="Sigilyph.txt"
   export CATNAME="Sigilyph"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Silcoon -ne 0 ];
 then
   export CATFILE="Silcoon.txt"
   export CATNAME="Silcoon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Simipour -ne 0 ];
 then
   export CATFILE="Simipour.txt"
   export CATNAME="Simipour"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Simisage -ne 0 ];
 then
   export CATFILE="Simisage.txt"
   export CATNAME="Simisage"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Simisear -ne 0 ];
 then
   export CATFILE="Simisear.txt"
   export CATNAME="Simisear"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Skarmory -ne 0 ];
 then
   export CATFILE="Skarmory.txt"
   export CATNAME="Skarmory"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Skiploom -ne 0 ];
 then
   export CATFILE="Skiploom.txt"
   export CATNAME="Skiploom"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Skitty -ne 0 ];
 then
   export CATFILE="Skitty.txt"
   export CATNAME="Skitty"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Skorupi -ne 0 ];
 then
   export CATFILE="Skorupi.txt"
   export CATNAME="Skorupi"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Skuntank -ne 0 ];
 then
   export CATFILE="Skuntank.txt"
   export CATNAME="Skuntank"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Slaking -ne 0 ];
 then
   export CATFILE="Slaking.txt"
   export CATNAME="Slaking"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Slakoth -ne 0 ];
 then
   export CATFILE="Slakoth.txt"
   export CATNAME="Slakoth"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Slowbro -ne 0 ];
 then
   export CATFILE="Slowbro.txt"
   export CATNAME="Slowbro"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Slowking -ne 0 ];
 then
   export CATFILE="Slowking.txt"
   export CATNAME="Slowking"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Slowpoke -ne 0 ];
 then
   export CATFILE="Slowpoke.txt"
   export CATNAME="Slowpoke"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Slugma -ne 0 ];
 then
   export CATFILE="Slugma.txt"
   export CATNAME="Slugma"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Smeargle -ne 0 ];
 then
   export CATFILE="Smeargle.txt"
   export CATNAME="Smeargle"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Smoochum -ne 0 ];
 then
   export CATFILE="Smoochum.txt"
   export CATNAME="Smoochum"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Sneasel -ne 0 ];
 then
   export CATFILE="Sneasel.txt"
   export CATNAME="Sneasel"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Snivy -ne 0 ];
 then
   export CATFILE="Snivy.txt"
   export CATNAME="Snivy"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Snorlax -ne 0 ];
 then
   export CATFILE="Snorlax.txt"
   export CATNAME="Snorlax"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Snorunt -ne 0 ];
 then
   export CATFILE="Snorunt.txt"
   export CATNAME="Snorunt"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Snover -ne 0 ];
 then
   export CATFILE="Snover.txt"
   export CATNAME="Snover"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Snubbull -ne 0 ];
 then
   export CATFILE="Snubbull.txt"
   export CATNAME="Snubbull"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Solosis -ne 0 ];
 then
   export CATFILE="Solosis.txt"
   export CATNAME="Solosis"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Solrock -ne 0 ];
 then
   export CATFILE="Solrock.txt"
   export CATNAME="Solrock"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Spearow -ne 0 ];
 then
   export CATFILE="Spearow.txt"
   export CATNAME="Spearow"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Spheal -ne 0 ];
 then
   export CATFILE="Spheal.txt"
   export CATNAME="Spheal"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Spinarak -ne 0 ];
 then
   export CATFILE="Spinarak.txt"
   export CATNAME="Spinarak"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Spinda -ne 0 ];
 then
   export CATFILE="Spinda.txt"
   export CATNAME="Spinda"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Spiritomb -ne 0 ];
 then
   export CATFILE="Spiritomb.txt"
   export CATNAME="Spiritomb"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Spoink -ne 0 ];
 then
   export CATFILE="Spoink.txt"
   export CATNAME="Spoink"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Squirtle -ne 0 ];
 then
   export CATFILE="Squirtle.txt"
   export CATNAME="Squirtle"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Stantler -ne 0 ];
 then
   export CATFILE="Stantler.txt"
   export CATNAME="Stantler"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Staraptor -ne 0 ];
 then
   export CATFILE="Staraptor.txt"
   export CATNAME="Staraptor"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Staravia -ne 0 ];
 then
   export CATFILE="Staravia.txt"
   export CATNAME="Staravia"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Starly -ne 0 ];
 then
   export CATFILE="Starly.txt"
   export CATNAME="Starly"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Starmie -ne 0 ];
 then
   export CATFILE="Starmie.txt"
   export CATNAME="Starmie"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Staryu -ne 0 ];
 then
   export CATFILE="Staryu.txt"
   export CATNAME="Staryu"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Steelix -ne 0 ];
 then
   export CATFILE="Steelix.txt"
   export CATNAME="Steelix"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Stoutland -ne 0 ];
 then
   export CATFILE="Stoutland.txt"
   export CATNAME="Stoutland"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Stunfisk -ne 0 ];
 then
   export CATFILE="Stunfisk.txt"
   export CATNAME="Stunfisk"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Stunky -ne 0 ];
 then
   export CATFILE="Stunky.txt"
   export CATNAME="Stunky"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Sudowoodo -ne 0 ];
 then
   export CATFILE="Sudowoodo.txt"
   export CATNAME="Sudowoodo"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Suicune -ne 0 ];
 then
   export CATFILE="Suicune.txt"
   export CATNAME="Suicune"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Sunflora -ne 0 ];
 then
   export CATFILE="Sunflora.txt"
   export CATNAME="Sunflora"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Sunkern -ne 0 ];
 then
   export CATFILE="Sunkern.txt"
   export CATNAME="Sunkern"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Surskit -ne 0 ];
 then
   export CATFILE="Surskit.txt"
   export CATNAME="Surskit"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Swablu -ne 0 ];
 then
   export CATFILE="Swablu.txt"
   export CATNAME="Swablu"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Swadloon -ne 0 ];
 then
   export CATFILE="Swadloon.txt"
   export CATNAME="Swadloon"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Swalot -ne 0 ];
 then
   export CATFILE="Swalot.txt"
   export CATNAME="Swalot"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Swampert -ne 0 ];
 then
   export CATFILE="Swampert.txt"
   export CATNAME="Swampert"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Swanna -ne 0 ];
 then
   export CATFILE="Swanna.txt"
   export CATNAME="Swanna"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Swellow -ne 0 ];
 then
   export CATFILE="Swellow.txt"
   export CATNAME="Swellow"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Swinub -ne 0 ];
 then
   export CATFILE="Swinub.txt"
   export CATNAME="Swinub"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $Swoobat -ne 0 ];
 then
   export CATFILE="Swoobat.txt"
   export CATNAME="Swoobat"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 

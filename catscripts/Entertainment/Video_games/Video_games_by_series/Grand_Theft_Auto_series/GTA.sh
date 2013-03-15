@@ -31,84 +31,84 @@ if [ $SERIES -ne 0 ];
 then
   export CATFILE="GTA.txt"
   export CATNAME="Grand Theft Auto series"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $GTA2 -ne 0 ];
 then
   export CATFILE="GTA2.txt"
   export CATNAME="Grand Theft Auto 2"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $GTA3 -ne 0 ];
 then
   export CATFILE="GrandTheftAuto3.txt"
   export CATNAME="Grand Theft Auto III"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $VICECITY -ne 0 ];
 then
   export CATFILE="ViceCity.txt"
   export CATNAME="Grand Theft Auto: Vice City"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ANDREAS -ne 0 ];
 then
   export CATFILE="SanAndreas.txt"
   export CATNAME="Grand Theft Auto: San Andreas"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $LIBSTORIES -ne 0 ];
 then
   export CATFILE="LibertyCityStories.txt"
   export CATNAME="Grand Theft Auto: Liberty City Stories"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $VICESTORIES -ne 0 ];
 then
   export CATFILE="ViceCityStories.txt"
   export CATNAME="Grand Theft Auto: Vice City Stories"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $GTA4 -ne 0 ];
 then
   export CATFILE="GrandTheftAuto4.txt"
   export CATNAME="Grand Theft Auto IV"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $GTA5 -ne 0 ];
 then
   export CATFILE="GrandTheftAuto5.txt"
   export CATNAME="Grand Theft Auto V"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $CHINATOWN -ne 0 ];
 then
   export CATFILE="ChinaTown.txt"
   export CATNAME="Grand Theft Auto: Chinatown Wars"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $DAMNED -ne 0 ];
 then
   export CATFILE="Damned.txt"
   export CATNAME="Grand Theft Auto: The Lost and Damned"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $TONY -ne 0 ];
 then
   export CATFILE="GayTony.txt"
   export CATNAME="Grand Theft Auto: The Ballad of Gay Tony"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm GTA.txt

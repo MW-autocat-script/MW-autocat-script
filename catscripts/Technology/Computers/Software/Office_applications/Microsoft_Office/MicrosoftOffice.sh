@@ -16,35 +16,35 @@ if [ $OFFICE -ne 0 ];
 then
   export CATFILE="MicrosoftOffice.txt"
   export CATNAME="Microsoft Office"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $ACCESS -ne 0 ];
 then
   export CATFILE="MicrosoftAccess.txt"
   export CATNAME="Microsoft Access"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $EXCEL -ne 0 ];
 then
   export CATFILE="MicrosoftExcel.txt"
   export CATNAME="Microsoft Excel"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $POWERPOINT -ne 0 ];
 then
   export CATFILE="MicrosoftPowerPoint.txt"
   export CATNAME="Microsoft PowerPoint"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $WORD -ne 0 ];
 then
   export CATFILE="MicrosoftWord.txt"
   export CATNAME="Microsoft Word"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm MicrosoftOffice.txt

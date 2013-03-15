@@ -77,245 +77,245 @@ if [ $Darkrai -ne 0 ];
 then
    export CATFILE="Darkrai.txt"
    export CATNAME=""
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Darmanitan -ne 0 ];
 then
    export CATFILE="Darmanitan.txt"
    export CATNAME="Darmanitan"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Darumaka -ne 0 ];
 then
    export CATFILE="Darumaka.txt"
    export CATNAME="Darumaka"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Deerling -ne 0 ];
 then
    export CATFILE="Deerling.txt"
    export CATNAME="Deerling"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Deino -ne 0 ];
 then
    export CATFILE="Deino.txt"
    export CATNAME="Deino"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Delcatty -ne 0 ];
 then
    export CATFILE="Delcatty.txt"
    export CATNAME="Delcatty"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Delibird -ne 0 ];
 then
    export CATFILE="Delibird.txt"
    export CATNAME="Delibird"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Deoxys -ne 0 ];
 then
    export CATFILE="Deoxys.txt"
    export CATNAME="Deoxys"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Dewgong -ne 0 ];
 then
    export CATFILE="Dewgong.txt"
    export CATNAME="Dewgong"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Dewott -ne 0 ];
 then
    export CATFILE="Dewott.txt"
    export CATNAME="Dewott"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Dialga -ne 0 ];
 then
    export CATFILE="Dialga.txt"
    export CATNAME="Dialga"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Diglett -ne 0 ];
 then
    export CATFILE="Diglett.txt"
    export CATNAME="Diglett"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Ditto -ne 0 ];
 then
    export CATFILE="Ditto.txt"
    export CATNAME="Ditto (Pokémon)"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Dodrio -ne 0 ];
 then
    export CATFILE="Dodrio.txt"
    export CATNAME="Dodrio"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Doduo -ne 0 ];
 then
    export CATFILE="Doduo.txt"
    export CATNAME="Doduo"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Donphan -ne 0 ];
 then
    export CATFILE="Donphan.txt"
    export CATNAME="Donphan"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Dragonair -ne 0 ];
 then
    export CATFILE="Dragonair.txt"
    export CATNAME="Dragonair"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Dragonite -ne 0 ];
 then
    export CATFILE="Dragonite.txt"
    export CATNAME="Dragonite"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Drapion -ne 0 ];
 then
    export CATFILE="Drapion.txt"
    export CATNAME="Drapion"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Dratini -ne 0 ];
 then
    export CATFILE="Dratini.txt"
    export CATNAME="Dratini"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Drilbur -ne 0 ];
 then
    export CATFILE="Drilbur.txt"
    export CATNAME="Drilbur"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Drifblim -ne 0 ];
 then
    export CATFILE="Drifblim.txt"
    export CATNAME="Drifblim"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Drifloon -ne 0 ];
 then
    export CATFILE="Drifloon.txt"
    export CATNAME="Drifloon"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Drowzee -ne 0 ];
 then
    export CATFILE="Drowzee.txt"
    export CATNAME="Drowzee"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Druddigon -ne 0 ];
 then
    export CATFILE="Druddigon.txt"
    export CATNAME="Druddigon"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Ducklett -ne 0 ];
 then
    export CATFILE="Ducklett.txt"
    export CATNAME="Ducklett"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Dugtrio -ne 0 ];
 then
    export CATFILE="Dugtrio.txt"
    export CATNAME="Dugtrio"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Dunsparce -ne 0 ];
 then
    export CATFILE="Dunsparce.txt"
    export CATNAME="Dunsparce"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Duosion -ne 0 ];
 then
    export CATFILE="Duosion.txt"
    export CATNAME="Duosion"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Durant -ne 0 ];
 then
    export CATFILE="Durant.txt"
    export CATNAME="Durant"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Dusclops -ne 0 ];
 then
    export CATFILE="Dusclops.txt"
    export CATNAME="Dusclops"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Dusknoir -ne 0 ];
 then
    export CATFILE="Dusknoir.txt"
    export CATNAME="Dusknoir"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Duskull -ne 0 ];
 then
    export CATFILE="Duskull.txt"
    export CATNAME="Duskull"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Dustox -ne 0 ];
 then
    export CATFILE="Dustox.txt"
    export CATNAME="Dustox"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Dwebble -ne 0 ];
 then
    export CATFILE="Dwebble.txt"
    export CATNAME="Dwebble"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 rm Darkrai.txt

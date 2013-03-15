@@ -8,7 +8,7 @@ if [ $AMERICANDAD -ne 0 ];
 then
   export CATFILE="AmericanDad.txt"
   export CATNAME="American Dad"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm AmericanDad.txt

@@ -8,7 +8,7 @@ if [ $WORLD -ne 0 ];
 then
   export CATFILE="DigimonWorld.txt"
   export CATNAME="Digimon World series"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm DigimonWorld.txt

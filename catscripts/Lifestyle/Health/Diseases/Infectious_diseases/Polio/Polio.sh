@@ -8,7 +8,7 @@ if [ $POLIO -ne 0 ];
 then
   export CATFILE="Polio.txt"
   export CATNAME="Polio"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Polio.txt

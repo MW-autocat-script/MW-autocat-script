@@ -20,49 +20,49 @@ if [ $Motherboards -ne 0 ];
 then
    export CATFILE="Motherboards.txt"
    export CATNAME="Motherboards"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $VideoCards -ne 0 ];
 then
    export CATFILE="VideoCards.txt"
    export CATNAME="Video cards"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $SoundCards -ne 0 ];
 then
    export CATFILE="SoundCards.txt"
    export CATNAME="Sound cards"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Printers -ne 0 ];
 then
    export CATFILE="Printers.txt"
    export CATNAME="Printers"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $Microprocessors -ne 0 ];
 then
    export CATFILE="Microprocessors.txt"
    export CATNAME="Microprocessors"
-   ./catscripts/Categorize.sh
+   $CATEGORIZE
 fi
 
 if [ $HARDDRIVE -ne 0 ];
 then
   export CATFILE="Harddrive.txt"
   export CATNAME="Hard drives"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 if [ $HARDWARE -ne 0 ];
 then
   export CATFILE="ComputerHardware.txt"
   export CATNAME="Computer hardware"
-  ./catscripts/Categorize/sh
+  $CATEGORIZE
 fi
 
 rm Motherboards.txt

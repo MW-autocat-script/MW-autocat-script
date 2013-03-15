@@ -18,7 +18,7 @@ if [ $BATTLEFIELD -ne 0 ];
 then
   export CATFILE="Battlefieldseries.txt"
   export CATNAME="Battlefield series"
-  ./catscripts/Categorize.sh
+  $CATEGORIZE
 fi
 
 rm Battlefieldseries.txt
