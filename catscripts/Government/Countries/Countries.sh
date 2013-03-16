@@ -15,6 +15,7 @@ $CURRENTDIR/Brazil/Brazil.sh
 $CURRENTDIR/Chile/Chile.sh
 $CURRENTDIR/Cyprus/Cyprus.sh
 $CURRENTDIR/Egypt/Egypt.sh
+$CURRENTDIR/Ethiopia/Ethiopia.sh
 $CURRENTDIR/Ghana/Ghana.sh
 $CURRENTDIR/Greece/Greece.sh
 $CURRENTDIR/Haiti/Haiti.sh
