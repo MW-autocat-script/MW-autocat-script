@@ -29,6 +29,7 @@ $CURRENTDIR/Latvia/Latvia.sh
 $CURRENTDIR/Libya/Libya.sh
 $CURRENTDIR/Lithuania/Lithuania.sh
 $CURRENTDIR/Nepal/Nepal.sh
+$CURRENTDIR/New_Zealand/NewZealand.sh
 $CURRENTDIR/Nigeria/Nigeria.sh
 $CURRENTDIR/Norway/Norway.sh
 $CURRENTDIR/Philippines/Philippines.sh
