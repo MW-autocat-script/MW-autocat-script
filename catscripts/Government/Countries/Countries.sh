@@ -38,6 +38,7 @@ $CURRENTDIR/Haiti/Haiti.sh
 $CURRENTDIR/Honduras/Honduras.sh
 $CURRENTDIR/Hungary/Hungary.sh
 $CURRENTDIR/Iceland/Iceland.sh
+$CURRENTDIR/India/India.sh
 $CURRENTDIR/Indonesia/Indonesia.sh
 $CURRENTDIR/Iran/Iran.sh
 $CURRENTDIR/Iraq/Iraq.sh
