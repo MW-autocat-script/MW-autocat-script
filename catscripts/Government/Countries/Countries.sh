@@ -25,6 +25,7 @@ $CURRENTDIR/Denmark/Denmark.txt
 $CURRENTDIR/Dominican_Republic/DominicanRepublic.sh
 $CURRENTDIR/Egypt/Egypt.sh
 $CURRENTDIR/El_Salvador/ElSalvador.sh
+$CURRENTDIR/England/England.sh
 $CURRENTDIR/Ethiopia/Ethiopia.sh
 $CURRENTDIR/Ghana/Ghana.sh
 $CURRENTDIR/Greece/Greece.sh
