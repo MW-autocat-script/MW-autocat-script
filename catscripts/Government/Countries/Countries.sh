@@ -58,6 +58,7 @@ $CURRENTDIR/North_Korea/NorthKorea.sh
 $CURRENTDIR/Norway/Norway.sh
 $CURRENTDIR/Philippines/Philippines.sh
 $CURRENTDIR/Singapore/Singapore.sh
+$CURRENTDIR/South_Korea/SouthKorea.sh
 $CURRENTDIR/Sri_Lanka/SriLanka.sh
 $CURRENTDIR/Sweden/Sweden.sh
 $CURRENTDIR/Tanzia/Tanzia.sh
