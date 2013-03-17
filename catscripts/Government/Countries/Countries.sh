@@ -35,6 +35,7 @@ $CURRENTDIR/Ghana/Ghana.sh
 $CURRENTDIR/Greece/Greece.sh
 $CURRENTDIR/Guatemala/Guatemala.sh
 $CURRENTDIR/Haiti/Haiti.sh
+$CURRENTDIR/Honduras/Honduras.sh
 $CURRENTDIR/Hungary/Hungary.sh
 $CURRENTDIR/Iceland/Iceland.sh
 $CURRENTDIR/Indonesia/Indonesia.sh
