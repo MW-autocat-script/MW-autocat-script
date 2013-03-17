@@ -22,6 +22,7 @@ $CURRENTDIR/Costa_Rica/CostaRica.sh
 $CURRENTDIR/Cuba/Cuba.sh
 $CURRENTDIR/Cyprus/Cyprus.sh
 $CURRENTDIR/Denmark/Denmark.txt
+$CURRENTDIR/Dominican_Republic/DominicanRepublic.sh
 $CURRENTDIR/Egypt/Egypt.sh
 $CURRENTDIR/Ethiopia/Ethiopia.sh
 $CURRENTDIR/Ghana/Ghana.sh
