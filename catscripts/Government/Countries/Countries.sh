@@ -14,6 +14,7 @@ $CURRENTDIR/Belgium/Belgium.sh
 $CURRENTDIR/Belize/Belize.sh
 $CURRENTDIR/Brazil/Brazil.sh
 $CURRENTDIR/Cambodia/Cambodia.sh
+$CURRENTDIR/Cameroon/Cameroon.sh
 $CURRENTDIR/Chile/Chile.sh
 $CURRENTDIR/Cyprus/Cyprus.sh
 $CURRENTDIR/Egypt/Egypt.sh
