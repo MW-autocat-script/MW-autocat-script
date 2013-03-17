@@ -28,6 +28,7 @@ $CURRENTDIR/El_Salvador/ElSalvador.sh
 $CURRENTDIR/England/England.sh
 $CURRENTDIR/Ethiopia/Ethiopia.sh
 $CURRENTDIR/Fiji/Fiji.sh
+$CURRENTDIR/Finland/Finland.sh
 $CURRENTDIR/Ghana/Ghana.sh
 $CURRENTDIR/Greece/Greece.sh
 $CURRENTDIR/Haiti/Haiti.sh
