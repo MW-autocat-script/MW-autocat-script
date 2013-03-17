@@ -28,6 +28,7 @@ $CURRENTDIR/Iceland/Iceland.sh
 $CURRENTDIR/Indonesia/Indonesia.sh
 $CURRENTDIR/Iran/Iran.sh
 $CURRENTDIR/Iraq/Iraq.sh
+$CURRENTDIR/Ivory_Coast/IvoryCoast.sh
 $CURRENTDIR/Jamaica/Jamaica.sh
 $CURRENTDIR/Kenya/Kenya.sh
 $CURRENTDIR/Latvia/Latvia.sh
