@@ -64,6 +64,7 @@ $CURRENTDIR/Morocco/Morocco.sh
 $CURRENTDIR/Namibia/Namibia.sh
 $CURRENTDIR/Nepal/Nepal.sh
 $CURRENTDIR/New_Zealand/NewZealand.sh
+$CURRENTDIR/Nicaragua/Nicaragua.sh
 $CURRENTDIR/Nigeria/Nigeria.sh
 $CURRENTDIR/North_Korea/NorthKorea.sh
 $CURRENTDIR/Norway/Norway.sh
