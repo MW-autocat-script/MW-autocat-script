@@ -19,6 +19,7 @@ $CURRENTDIR/Canada/Canada/sh
 $CURRENTDIR/Chile/Chile.sh
 $CURRENTDIR/China/China.sh
 $CURRENTDIR/Costa_Rica/CostaRica.sh
+$CURRENTDIR/Cuba/Cuba.sh
 $CURRENTDIR/Cyprus/Cyprus.sh
 $CURRENTDIR/Egypt/Egypt.sh
 $CURRENTDIR/Ethiopia/Ethiopia.sh
