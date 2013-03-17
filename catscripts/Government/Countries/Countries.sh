@@ -51,6 +51,7 @@ $CURRENTDIR/Kenya/Kenya.sh
 $CURRENTDIR/Laos/Laos.sh
 $CURRENTDIR/Latvia/Latvia.sh
 $CURRENTDIR/Lebanon/Lebanon.sh
+$CURRENTDIR/Lesotho/Lesotho.sh
 $CURRENTDIR/Libya/Libya.sh
 $CURRENTDIR/Lithuania/Lithuania.sh
 $CURRENTDIR/Nepal/Nepal.sh
