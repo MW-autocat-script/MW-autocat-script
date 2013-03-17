@@ -34,7 +34,8 @@ $CURRENTDIR/New_Zealand/NewZealand.sh
 $CURRENTDIR/Nigeria/Nigeria.sh
 $CURRENTDIR/Norway/Norway.sh
 $CURRENTDIR/Philippines/Philippines.sh
-$CURRENTDIR/Singapore/Singapore.sh 
+$CURRENTDIR/Singapore/Singapore.sh
+$CURRENTDIR/Sri_Lanka/SriLanka.sh
 $CURRENTDIR/Sweden/Sweden.sh
 $CURRENTDIR/Tanzia/Tanzia.sh
 $CURRENTDIR/Wales/Wales.sh
