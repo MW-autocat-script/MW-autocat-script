@@ -33,6 +33,7 @@ $CURRENTDIR/France/France.sh
 $CURRENTDIR/Germany/Germany.sh
 $CURRENTDIR/Ghana/Ghana.sh
 $CURRENTDIR/Greece/Greece.sh
+$CURRENTDIR/Guatemala/Guatemala.sh
 $CURRENTDIR/Haiti/Haiti.sh
 $CURRENTDIR/Hungary/Hungary.sh
 $CURRENTDIR/Iceland/Iceland.sh
