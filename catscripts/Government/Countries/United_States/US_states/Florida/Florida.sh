@@ -1,7 +1,7 @@
 #!/bin/bash
 
 egrep -i 'Florida' newpages.txt | egrep -iv 'Miami' >> Florida.txt
-egrep - i 'Everglades' newpages.txt >> Florida.txt
+egrep -i 'Everglades' newpages.txt >> Florida.txt
 egrep -i 'Miami' newpages.txt | egrep -iv 'CSI(:|| )Miami' >> Miami.txt
 
 FLORIDA=`stat --print=%s Florida.txt`

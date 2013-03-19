@@ -47,4 +47,8 @@ python $PYWIKIPEDIADIR/pagegenerators.py -randomredirect:1 -ns:0|sed 's|[0-9][0-
 ./catscripts/Temp/Temp.sh
 ./catscripts/Transportation/Transportation.sh
 
+#Remove questions that have interrogative words from category 'Page titles lacking an interrogative word'
+
+./util/noninterrogative.sh
+
 rm $PIDFILE

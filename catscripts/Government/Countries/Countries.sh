@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Government/Countries/"
+CURRENTDIR="./catscripts/Government/Countries"
 
 $CURRENTDIR/Afghanistan/Afghanistan.sh
 $CURRENTDIR/Albania/Albania.sh
@@ -15,13 +15,13 @@ $CURRENTDIR/Belize/Belize.sh
 $CURRENTDIR/Brazil/Brazil.sh
 $CURRENTDIR/Cambodia/Cambodia.sh
 $CURRENTDIR/Cameroon/Cameroon.sh
-$CURRENTDIR/Canada/Canada/sh
+$CURRENTDIR/Canada/Canada.sh
 $CURRENTDIR/Chile/Chile.sh
 $CURRENTDIR/China/China.sh
 $CURRENTDIR/Costa_Rica/CostaRica.sh
 $CURRENTDIR/Cuba/Cuba.sh
 $CURRENTDIR/Cyprus/Cyprus.sh
-$CURRENTDIR/Denmark/Denmark.txt
+$CURRENTDIR/Denmark/Denmark.sh
 $CURRENTDIR/Dominican_Republic/DominicanRepublic.sh
 $CURRENTDIR/Egypt/Egypt.sh
 $CURRENTDIR/El_Salvador/ElSalvador.sh
