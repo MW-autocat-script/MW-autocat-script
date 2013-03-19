@@ -1,3 +1,5 @@
 #!/bin/bash
 
-./catscripts/Lifestyle/Health/Diseases/Diseases.sh
+CURRENTDIR="./catscripts/Lifestyle/Health"
+
+$CURRENTDIR/Diseases/Diseases.sh
