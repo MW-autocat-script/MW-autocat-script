@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'religion' newpages.txt | egrep -iv 'Jesus|Christ|Jew|Judaism|Catholic|Orthodox|Shinto|Sikh|god|buddhism|buddhist' >> Religion.txt
+egrep -i 'religion|religious' newpages.txt | egrep -iv 'Jesus|Christ|Jew|Judaism|Catholic|Orthodox|Shinto|Sikh|god|buddhism|buddhist' >> Religion.txt
 
 RELIGION=`stat --print=%s Religion.txt`
 
