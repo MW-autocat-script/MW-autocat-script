@@ -29,7 +29,7 @@ egrep -i 'Politoed' newpages.txt >> Politoed.txt
 egrep -i 'Poliwag' newpages.txt >> Poliwag.txt
 egrep -i 'Poliwhirl' newpages.txt >> Poliwhirl.txt
 egrep -i 'Poliwrath' newpages.txt >> Poliwrath.txt
-egrep -i 'Ponyta' newpages.txt >> Ponyta.txt
+egrep -i 'Ponyta\b' newpages.txt >> Ponyta.txt
 egrep -i 'Poochyena' newpages.txt >> Poochyena.txt
 egrep -i 'Porygon' newpages.txt >> Porygon.txt
 egrep -i 'Porygon-Z' newpages.txt >> Porygon-Z.txt
