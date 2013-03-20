@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python pagegenerators.py -category:"Page titles lacking an interrogative word" |sed s'| [0-9][0-9][0-9][0-9][0-9][0-9]: ||'|sed s'| [0-9][0-9][0-9][0-9][0-9]: ||'|sed s'| [0-9][0-9][0-9][0-9]: ||'  | sed s'| [0-9][0-9][0-9]: ||' | sed s'| [0-9][0-9]: ||' | sed s'|[0-9]: ||' > nonint.txt
+python $PYWIKIPEDIADIR/pagegenerators.py -category:"Page titles lacking an interrogative word" |sed s'| [0-9][0-9][0-9][0-9][0-9][0-9]: ||'|sed s'| [0-9][0-9][0-9][0-9][0-9]: ||'|sed s'| [0-9][0-9][0-9][0-9]: ||'  | sed s'| [0-9][0-9][0-9]: ||' | sed s'| [0-9][0-9]: ||' | sed s'|[0-9]: ||' > nonint.txt
 
 egrep -i '^Who\b' nonint.txt >> Who.txt
 egrep -i '\bwho\b' nonint.txt | egrep -iv 'Doctor Who' >> Who.txt
@@ -70,157 +70,157 @@ AMI=`stat --print=%s AmI.txt`
 
 if [ $WHO -ne 0 ];
 then
-  python replace.py -file:Who.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Who)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Who.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Who)" -always
 fi
 
 if [ $WHAT -ne 0 ];
 then
-  python replace.py -file:What.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches What)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:What.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches What)" -always
 fi
 
 if [ $WHERE -ne 0 ];
 then
-  python replace.py -file:Where.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Where)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Where.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Where)" -always
 fi
 
 if [ $WHEN -ne 0 ];
 then
-  python replace.py -file:When.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches When)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:When.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches When)" -always
 fi
 
 if [ $WHY -ne 0 ];
 then
-  python replace.py -file:Why.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Why)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Why.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Why)" -always
 fi
 
 if [ $HOW -ne 0 ];
 then
-  python replace.py -file:How.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches How)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:How.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches How)" -always
 fi
 
 if [ $DO -ne 0 ];
 then
-  python replace.py -file:Do.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Do)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Do.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Do)" -always
 fi
 
 if [ $DOES -ne 0 ];
 then
-  python replace.py -file:Does.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Does)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Does.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Does)" -always
 fi
 
 if [ $DOESNT -ne 0 ];
 then
-  python replace.py -file:Doesnt.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Doesn't)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Doesnt.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Doesn't)" -always
 fi
 
 if [ $DID -ne 0 ];
 then
-  python replace.py -file:Did.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Did)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Did.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Did)" -always
 fi
 
 if [ $DIDNT -ne 0 ];
 then
-  python replace.py -file:Didnt.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Didn't)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Didnt.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Didn't)" -always
 fi
 
 if [ $WILL -ne 0 ];
 then
-  python replace.py -file:Will.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Will)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Will.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Will)" -always
 fi
 
 if [ $IS -ne 0 ];
 then
-  python replace.py -file:Is.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Is)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Is.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Is)" -always
 fi
 
 if [ $ISNT -ne 0 ];
 then
-  python replace.py -file:Isnt.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Isn't)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Isnt.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Isn't)" -always
 fi
 
 if [ $ARE -ne 0 ];
 then
-  python replace.py -file:Are.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Are)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Are.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Are)" -always
 fi
 
 if [ $ARENT -ne 0 ];
 then
-  python replace.py -file:Arent.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Aren't)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Arent.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Aren't)" -always
 fi
 
 if [ $WERE -ne 0 ];
 then
-  python replace.py -file:Were.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Were)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Were.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Were)" -always
 fi
 
 if [ $WERENT -ne 0 ];
 then
-  python replace.py -file:Werent.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Weren't)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Werent.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Weren't)" -always
 fi
 
 if [ $WAS -ne 0 ];
 then
-  python replace.py -file:Was.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Was)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Was.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Was)" -always
 fi
 
 if [ $WHICH -ne 0 ];
 then
-  python replace.py -file:Which.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Which)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Which.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Which)" -always
 fi
 
 if [ $COULD -ne 0 ];
 then
-  python replace.py -file:Could.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Could)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Could.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Could)" -always
 fi
 
 if [ $COULDNT -ne 0 ];
 then
-  python replace.py -file:Couldnt.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Couldn't)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Couldnt.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Couldn't)" -always
 fi
 
 if [ $SHOULD -ne 0 ];
 then
-  python replace.py -file:Should.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Should)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Should.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Should)" -always
 fi
 
 if [ $SHOULDNT -ne 0 ];
 then
-  python replace.py -file:Shouldnt.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Shouldn't)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Shouldnt.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Shouldn't)" -always
 fi
 
 if [ $WOULD -ne 0 ];
 then
-  python replace.py -file:Would.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Would)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Would.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Would)" -always
 fi
 
 if [ $WOULDNT -ne 0 ];
 then
-  python replace.py -file:Wouldnt.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Wouldn't)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Wouldnt.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Wouldn't)" -always
 fi
 
 if [ $CAN -ne 0 ];
 then
-  python replace.py -file:Can.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Can)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Can.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Can)" -always
 fi
 
 if [ $CANT -ne 0 ];
 then
-  python replace.py -file:Cant.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Can't)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Cant.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Can't)" -always
 fi
 
 if [ $HAS -ne 0 ];
 then
-  python replace.py -file:Has.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Has)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Has.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Has)" -always
 fi
 
 if [ $HASNT -ne 0 ];
 then
-  python replace.py -file:Hasnt.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Hasn't)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:Hasnt.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Hasn't)" -always
 fi
 
 if [ $AMI -ne 0 ];
 then
-  python replace.py -file:AmI.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Am I)" -always
+  python $PYWIKIPEDIADIR/replace.py -file:AmI.txt -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches Am I)" -always
 fi
 
 rm Who.txt
