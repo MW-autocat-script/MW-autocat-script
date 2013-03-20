@@ -21,7 +21,7 @@ egrep -i 'Pidgey' newpages.txt >> Pidgey.txt
 egrep -i 'Pignite' newpages.txt >> Pignite.txt
 egrep -i 'Pikachu' newpages.txt >> Pikachu.txt
 egrep -i 'Piloswine' newpages.txt >> Piloswine.txt
-egrep -i 'Pineco' newpages.txt >> Pineco.txt
+egrep -i 'Pineco\b' newpages.txt >> Pineco.txt
 egrep -i 'Pinsir' newpages.txt >> Pinsir.txt
 egrep -i 'Piplup' newpages.txt >> Piplup.txt
 egrep -i 'Plusle' newpages.txt >> Plusle.txt
