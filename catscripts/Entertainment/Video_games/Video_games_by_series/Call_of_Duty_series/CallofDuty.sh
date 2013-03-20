@@ -1,7 +1,7 @@
 #!/bin/bash
 
 egrep -i '(Call of Duty|CoD) series' newpages.txt >> CallofDuty.txt
-egrep -i 'Modern(| )Warfare|\bCOD(| )4|Call of Duty 4' newpages.txt | egrep -iv 'Modern Warfare [2-9]{1,}' >> COD4.txt
+egrep -i 'Modern(| )Warfare|\bCOD(| )4|Call of Duty 4' newpages.txt | egrep -iv 'Modern(| )Warfare(| )(two|three|[2-9]{1,})' >> COD4.txt
 egrep -i '\bCOD(| )5|\bWaW\b|World at War|Call of Duty 5' newpages.txt >> WorldAtWar.txt
 egrep -i '\bCOD(| )6|\bMW2\b|Modern Warfare 2|Call of Duty 6' newpages.txt >> ModernWarfare2.txt
 egrep -i '\bCOD(| )7|Black Ops|Call of Duty 7' newpages.txt | egrep -iv 'Black Ops ([2-9]{1,}|\bII\b|\bIII\b|\bIV\b|\bV\b)' >> BlackOps.txt
