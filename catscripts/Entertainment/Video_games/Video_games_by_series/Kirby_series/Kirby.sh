@@ -7,7 +7,7 @@ KIRBY=`stat --print=%s Kirby.txt`
 if [ $KIRBY -ne 0 ];
 then
   export CATFILE="Kirby.txt"
-  export CATNAME="Kirby"
+  export CATNAME="Kirby series"
   $CATEGORIZE
 fi
 
