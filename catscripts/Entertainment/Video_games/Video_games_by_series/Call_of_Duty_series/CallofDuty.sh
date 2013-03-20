@@ -7,7 +7,7 @@ egrep -i '\bCOD(| )6|\bMW2\b|Modern Warfare 2|Call of Duty 6' newpages.txt >> Mo
 egrep -i '\bCOD(| )7|Black Ops|Call of Duty 7' newpages.txt | egrep -iv 'Black Ops ([2-9]{1,}|\bII\b|\bIII\b|\bIV\b|\bV\b)' >> BlackOps.txt
 egrep -i '\bCOD(| )8|\bMW3\b|Modern Warfare 3|Call of Duty 8' newpages.txt >> ModernWarfare3.txt
 egrep -i '\bCOD(| )9|Black Ops (2|II\b)|Call of Duty 9' newpages.txt >> BlackOps2.txt
-egrep -i 'Call of Duty' newpages.txt | egrep -iv 'World At War|Black Ops|Modern Warfare|Call of Duty [2-9]{1,}' >> CallofDuty.txt
+egrep -i 'Call of Duty' newpages.txt | egrep -iv 'World At War|WaW|Black Ops|Modern Warfare|Call of Duty [2-9]{1,}' >> CallofDuty.txt
 egrep 'CoD' newpages.txt | egrep -v 'CoD(| )[2-9]' >> CallofDuty.txt
 
 CALLOFDUTY=`stat --print=%s CallofDuty.txt`
