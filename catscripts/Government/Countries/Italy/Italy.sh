@@ -7,7 +7,7 @@ egrep -i 'Pisa' newpages.txt >> Pisa.txt
 egrep -i 'Pompeii' newpages.txt >> Pompeii.txt
 
 ITALY=`stat --print=%s Italy.txt`
-ROME=`stat --print=%s Rome.txt
+ROME=`stat --print=%s Rome.txt`
 ANCIENTROME=`stat --print=%s AncientRome.txt`
 PISA=`stat --print=%s Pisa.txt`
 POMPEII=`stat --print=%s Pompeii.txt`

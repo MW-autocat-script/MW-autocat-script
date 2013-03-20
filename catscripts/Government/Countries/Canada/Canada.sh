@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Canada' newpages.txt | egrep iv 'ginger(| )ale|Toronto' >> Canada.txt
+egrep -i 'Canada' newpages.txt | egrep -iv 'ginger(| )ale|Toronto' >> Canada.txt
 egrep -i 'Toronto' newpages.txt >> Toronto.txt
 
 CANADA=`stat --print=%s Canada.txt`

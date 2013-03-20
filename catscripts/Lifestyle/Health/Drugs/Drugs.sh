@@ -1,5 +1,4 @@
 #!/bin/bash
-
 egrep -i 'drug(|s)\b' newpages.txt | egrep -iv 'prescription|medication|illegal|meth|marijuana|weed|cannabis|cannabinol|pot\b|cocaine|crack|heroin|methadone|speed|\bLSD\b' >> Drugs.txt
 egrep -i 'medication|prescription' newpages.txt >> Medication.txt
 egrep -i 'Ibuprofen|Advil|Tylenol' newpages.txt >> Medication.txt
@@ -10,7 +9,7 @@ egrep -i 'illegal drug' newpages.txt | egrep -iv 'cocaine|marijuana|weed' >> Ill
 egrep -i '\bmeth\b|methamphetamine' newpages.txt >> IllegalDrugs.txt
 egrep -i '\bLSD\b' newpages.txt >> IllegalDrugs.txt
 egrep -i 'Cocaine|smoke crack|crack(| )pipe' newpages.txt >> Cocaine.txt
-egrep -i 'marijuana|(buy|smoke|inhale).+(weed|pot\b|a joint)|cannabis|cannabinol' >> Marijuana.txt
+egrep -i 'marijuana|(buy|smoke|inhale).+(weed|pot\b|a joint)|cannabis|cannabinol' newpages.txt >> Marijuana.txt
 
 DRUGS=`stat --print=%s Drugs.txt`
 MEDICATION=`stat --print=%s Medication.txt`

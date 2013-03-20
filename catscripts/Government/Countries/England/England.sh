@@ -13,7 +13,7 @@ then
   $CATEGORIZE
 fi
 
-rm [ $LONDON -ne 0 ];
+if [ $LONDON -ne 0 ];
 then
   export CATFILE="London.txt"
   export CATNAME="London"

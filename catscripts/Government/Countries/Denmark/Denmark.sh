@@ -18,6 +18,7 @@ then
   export CATFILE="Greenland.txt"
   export CATNAME="Greenland"
   $CATEGORIZE
+fi
 
 rm Denmark.txt
 rm Greenland.txt
