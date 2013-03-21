@@ -6,7 +6,7 @@ egrep -i 'Hiroshima' newpages.txt >> Hiroshima.txt
 egrep -i 'Nagasaki' newpages.txt >> Nagasaki.txt
 
 JAPAN=`stat --print=%s Japan.txt`
-TOKYO=`stat --print=%s Hiroshima.txt`
+TOKYO=`stat --print=%s Tokyo.txt`
 HIROSHIMA=`stat --print=%s Hiroshima.txt`
 NAGASAKI=`stat --print=%s Nagasaki.txt`
 
