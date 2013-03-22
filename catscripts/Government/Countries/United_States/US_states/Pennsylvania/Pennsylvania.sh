@@ -6,7 +6,7 @@ PENNSYLVANIA=`stat --print=%s Pennsylvania.txt`
 
 if [ $PENNSYLVANIA -ne 0 ];
 then
-  export CATFILE="Pennnsylvania.txt"
+  export CATFILE="Pennsylvania.txt"
   export CATNAME="Pennsylvania"
   $CATEGORIZE
 fi
