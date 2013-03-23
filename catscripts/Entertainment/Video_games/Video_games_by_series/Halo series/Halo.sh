@@ -1,4 +1,4 @@
-#1/bin/bash
+#!/bin/bash
 
 egrep -i 'Halo(|\:) (CE|Combat Evolved|Custom Edition)|Halo 1' newpages.txt >> Halo1.txt
 egrep -i 'Halo 2' newpages.txt >> Halo2.txt
