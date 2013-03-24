@@ -1,10 +1,10 @@
 #!/bin/bash
 
-python $PYWIKIPEDIADIR/pagegenerators.py -category:"Page titles lacking an interrogative word" |sed s'|  [0-9][0-9][0-9][0-9][0-9][0-9]: ||'|sed s'|  [0-9][0-9][0-9][0-9][0-9]: ||'|sed s'|[0-9][0-9][0-9][0-9]: ||'  | sed s'| [0-9][0-9][0-9]: ||' | sed s'|  [0-9][0-9]: ||' | sed s'|   [0-9]: ||' > nonint.txt
+python $PYWIKIPEDIADIR/pagegenerators.py -category:"Page titles lacking an interrogative word" |sed s'|[0-9][0-9][0-9][0-9][0-9][0-9]: ||' |sed s'|[0-9][0-9][0-9][0-9][0-9]: ||' |sed s'|[0-9][0-9][0-9][0-9]: ||'  | sed s'| [0-9][0-9][0-9]: ||' | sed s'|  [0-9][0-9]: ||' | sed s'|   [0-9]: ||' > nonint.txt
 
 egrep -i '^Who\b' nonint.txt >> Who.txt
 egrep -i '\bwho\b' nonint.txt | egrep -iv 'Doctor Who' >> Who.txt
-egrep -i '\bWhat' nonint.txt >> What.txt
+egrep -i '\bWhat|^What' nonint.txt >> What.txt
 egrep -i '\bWhere\b' nonint.txt >> Where.txt
 egrep -i '\bWhen\b' nonint.txt >> When.txt
 egrep -i '^Whens\b' nonint.txt >> When.txt
@@ -254,4 +254,3 @@ rm Cant.txt
 rm Has.txt
 rm Hasnt.txt
 rm AmI.txt
-rm nonint.txt
