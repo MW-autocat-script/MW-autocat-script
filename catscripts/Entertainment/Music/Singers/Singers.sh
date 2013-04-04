@@ -22,6 +22,7 @@ egrep -i 'Britney Spears' newpages.txt >> BritneySpears.txt
 egrep -i 'Taylor Swift' newpages.txt >> TaylorSwift.txt
 egrep -i 'Tupac|2pac|Shakur' newpages.txt >> TupacShakur.txt
 egrep -i 'Ashley Tisdale' newpages.txt >> AshleyTisdale.txt
+egrep -i 'Lil(| )Wayne' newpages.txt >> LilWayne.txt
 
 AKON=`stat --print=%s Akon.txt`
 BIEBER=`stat --print=%s JustinBieber.txt`
@@ -45,6 +46,7 @@ BSPEARS=`stat --print=%s BritneySpears.txt`
 SWIFT=`stat --print=%s TaylorSwift.txt`
 TUPAC=`stat --print=%s TupacShakur.txt`
 TISDALE=`stat --print=%s AshleyTisdale.txt`
+LILWAYNE=`stat --print=%s LilWayne.txt`
 
 if [ $AKON -ne 0 ];
 then
@@ -200,6 +202,13 @@ then
   $CATEGORIZE
 fi
 
+if [ $LILWAYNE -ne 0 ];
+then
+  export CATFILE="LilWayne.txt"
+  export CATNAME="Lil Wayne"
+  $CATEGORIZE
+fi
+
 rm Akon.txt
 rm JustinBieber.txt
 rm JohnnyCash.txt
@@ -222,3 +231,4 @@ rm BritneySpears.txt
 rm TaylorSwift.txt
 rm TupacShakur.txt
 rm AshleyTisdale.txt
+rm LilWayne.txt
