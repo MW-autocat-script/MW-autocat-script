@@ -8,7 +8,7 @@ egrep -i 'Jango Fett|Jangofett' newpages.txt >> JangoFett.txt
 egrep -i 'Jabba the Hutt|\bJabba\b' newpages.txt >> JabbaTheHutt.txt
 egrep -i 'Obi-Wan|Obiwan|Kenobi' newpages.txt >> Obi-WanKenobi.txt
 egrep -i 'Darth Maul' newpages.txt >> DarthMaul.txt
-egrep -i 'Palpatine|Darth Sidious' newpages.txt >> DarthSidious.txt
+egrep -i 'Palpatine|Darth Sidious' newpages.txt >> Sidious.txt
 egrep -i 'Plo Koon' newpages.txt >> PloKoon.txt
 egrep -i 'R2-D2|R2D2' newpages.txt >> R2-D2.txt
 egrep -i '\bRevan' newpages.txt >> Revan.txt
@@ -111,7 +111,7 @@ fi
 
 if [ $SIDIOUS -ne 0 ];
 then
-  export CATFILE="DarthSidious.txt"
+  export CATFILE="Sidious.txt"
   export CATNAME="Darth Sidious"
   $CATEGORIZE
 fi
