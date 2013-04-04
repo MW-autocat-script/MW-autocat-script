@@ -1,5 +1,32 @@
 #!/bin/bash
 
+egrep -i 'Singer' newpages.txt \
+| egrep -iv 'sewing machine' \
+| egrep -iv '\bAkon' \
+| egrep -iv 'Justin Bieber|Justin Beiber' \
+| egrep -iv 'Johhny Cash' \
+| egrep -iv 'Miley Cyrus|Destiny Hope Cyrus' \
+| egrep -iv 'Vanessa Hudgens' \
+| egrep -iv 'Whitney Houston' \
+| egrep -iv '(Michael|Micheal) Jackson' \
+| egrep -iv 'Joe(| )seph.+Jonas' \
+| egrep -iv '(Nick|Nicholas).+Jonas' \
+| egrep -iv 'Beyoncé|Beyonce' \
+| egrep -iv '(Demi|Demetria).+Lovato' \
+| egrep -iv 'John Lennon' \
+| egrep -iv 'Lady Gaga' \
+| egrep -iv '\bMadonna' \
+| egrep -iv 'Bob Marley' \
+| egrep -iv 'Elvis Presley' \
+| egrep -iv 'Josh Ramsay' \
+| egrep -iv 'Rihanna' \
+| egrep -iv 'Britney Spears' \
+| egrep -iv 'Taylor Swift' \
+| egrep -iv 'Tupac|2pac|Shakur' \
+| egrep -iv 'Ashley Tisdale' \
+| egrep -iv 'Lil(| )Wayne' \
+>> Singers.txt
+
 egrep -i '\bAkon' newpages.txt >> Akon.txt
 egrep -i 'Justin Bieber|Justin Beiber' newpages.txt >> JustinBieber.txt
 egrep -i 'Johnny Cash' newpages.txt >> JohnnyCash.txt
@@ -24,6 +51,7 @@ egrep -i 'Tupac|2pac|Shakur' newpages.txt >> TupacShakur.txt
 egrep -i 'Ashley Tisdale' newpages.txt >> AshleyTisdale.txt
 egrep -i 'Lil(| )Wayne' newpages.txt >> LilWayne.txt
 
+SINGERS=`stat --print=%s Singers.txt`
 AKON=`stat --print=%s Akon.txt`
 BIEBER=`stat --print=%s JustinBieber.txt`
 JCASH=`stat --print=%s JohnnyCash.txt`
@@ -47,6 +75,13 @@ SWIFT=`stat --print=%s TaylorSwift.txt`
 TUPAC=`stat --print=%s TupacShakur.txt`
 TISDALE=`stat --print=%s AshleyTisdale.txt`
 LILWAYNE=`stat --print=%s LilWayne.txt`
+
+if [ $SINGERS -ne 0 ];
+then
+  export CATFILE="Singers.txt"
+  export CATNAME="Singers"
+  $CATEGORIZE
+fi
 
 if [ $AKON -ne 0 ];
 then
@@ -209,6 +244,7 @@ then
   $CATEGORIZE
 fi
 
+rm Singers.txt
 rm Akon.txt
 rm JustinBieber.txt
 rm JohnnyCash.txt
