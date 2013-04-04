@@ -8,3 +8,4 @@ $CURRENTDIR/Cartoons/Cartoons.sh
 $CURRENTDIR/Music/Music.sh
 $CURRENTDIR/Movies/Movies.sh
 $CURRENTDIR/Puzzles/Puzzles.sh
+$CURRENTDIR/Television_series/Televisionseries.sh
