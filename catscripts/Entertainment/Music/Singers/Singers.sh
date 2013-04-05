@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Singer' newpages.txt \
+egrep -i '\bSinger' newpages.txt \
 | egrep -iv 'sewing machine' \
 | egrep -iv '\bAkon' \
 | egrep -iv 'Justin Bieber|Justin Beiber' \
@@ -25,6 +25,7 @@ egrep -i 'Singer' newpages.txt \
 | egrep -iv 'Tupac|2pac|Shakur' \
 | egrep -iv 'Ashley Tisdale' \
 | egrep -iv 'Lil(| )Wayne' \
+| egrep -iv 'Eminem|Slim Shady|Marshall(| Bruce) Mathers|EMINƎM' \
 >> Singers.txt
 
 egrep -i '\bAkon' newpages.txt >> Akon.txt
@@ -50,6 +51,7 @@ egrep -i 'Taylor Swift' newpages.txt >> TaylorSwift.txt
 egrep -i 'Tupac|2pac|Shakur' newpages.txt >> TupacShakur.txt
 egrep -i 'Ashley Tisdale' newpages.txt >> AshleyTisdale.txt
 egrep -i 'Lil(| )Wayne' newpages.txt >> LilWayne.txt
+egrep -i 'Eminem|Slim Shady|Marshall(| Bruce) Mathers|EMINƎM' newpages.txt >> Eminem.txt
 
 SINGERS=`stat --print=%s Singers.txt`
 AKON=`stat --print=%s Akon.txt`
@@ -75,6 +77,7 @@ SWIFT=`stat --print=%s TaylorSwift.txt`
 TUPAC=`stat --print=%s TupacShakur.txt`
 TISDALE=`stat --print=%s AshleyTisdale.txt`
 LILWAYNE=`stat --print=%s LilWayne.txt`
+EMINEM=`stat --print=%s Eminem.txt`
 
 if [ $SINGERS -ne 0 ];
 then
@@ -244,6 +247,13 @@ then
   $CATEGORIZE
 fi
 
+if [ $EMINEM -ne 0 ];
+then
+  export CATFILE="Eminem.txt"
+  export CATNAME="Eminem"
+  $CATEGORIZE
+fi
+
 rm Singers.txt
 rm Akon.txt
 rm JustinBieber.txt
@@ -268,3 +278,4 @@ rm TaylorSwift.txt
 rm TupacShakur.txt
 rm AshleyTisdale.txt
 rm LilWayne.txt
+rm Eminem.txt
