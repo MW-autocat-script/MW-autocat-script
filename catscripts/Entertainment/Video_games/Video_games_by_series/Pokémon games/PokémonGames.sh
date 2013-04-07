@@ -26,7 +26,8 @@ egrep -i "(Pokemon|Pokémon|Poke'mon)(| )X\b" newpages.txt >> PokémonX.txt
 egrep -i "(Pokemon|Pokémon|Poke'mon)(| )Y\b" newpages.txt >> PokémonY.txt
 egrep -i "Shadow(|s) of (Almia|Amlia)" newpages.txt >> ShadowsOfAlmia.txt
 egrep -i "Guardian Signs" newpages.txt >> GuardianSigns.txt
-egrep -i "(Pokemon|Pokémon|Poke'mon) Ranger" newpages.txt | egrep -iv 'Shadow(|s) of (Almia|Amlia)|Guardian Signs' >> PokémonRanger.txt 
+egrep -i "(Pokemon|Pokémon|Poke'mon) Ranger" newpages.txt | egrep -iv 'Shadow(|s) of (Almia|Amlia)|Guardian Signs' >> PokémonRanger.txt
+egrep -i "(Pokemon|Pokémon|Poke'mon)(| )XD|Gale of Darkness" newpages.txt  >> PokémonXD.txt
 egrep -i "(Pokémon|Pokemon|Poke'mon)(| )Indigo|Unova(| )RPG" newpages.txt >> UnovaRPG.txt
 egrep -i "(Pokémon|Pokemon|Poke'mon)(| )Deluge|Deluge(| )RPG" newpages.txt >> DelugeRPG.txt
 
@@ -59,6 +60,7 @@ POKEMONY=`stat --print=%s PokémonY.txt`
 RANGER=`stat --print=%s PokémonRanger.txt`
 ALMIA=`stat --print=%s ShadowsOfAlmia.txt`
 GUARDIAN=`stat --print=%s GuardianSigns.txt`
+GALEOFDARKNESS=`stat --print=%s PokémonXD.txt`
 
 
 if [ $RED -ne 0 ];
@@ -264,6 +266,13 @@ then
   $CATEGORIZE
 fi
 
+if [ $GALEOFDARKNESS -ne 0 ];
+then
+  export CATFILE="PokémonXD.txt"
+  export CATNAME="Pokémon XD: Gale of Darkness"
+  $CATEGORIZE
+fi
+
 rm PokémonRed.txt
 rm PokémonBlue.txt
 rm PokémonYellow.txt
@@ -293,3 +302,4 @@ rm PokémonY.txt
 rm PokémonRanger.txt
 rm ShadowsOfAlmia.txt
 rm GuardianSigns.txt
+rm PokémonXD.txt
