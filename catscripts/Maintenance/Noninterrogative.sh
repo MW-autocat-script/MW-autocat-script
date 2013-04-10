@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -iv "\bwho|\bwhat|where\b|\bwhen\b|(^|\[\[)Whens\b|\bwhy|\bhow\b|\bdo\b|\shas\b|does\b|did\b|will\b|(^|\[\[)Is\b|\. Is\b|(^|\[\[)Are\b|(^|\[\[)Aren't\b|\bwere\b|\bwas\b|\bwhich\b|\bcould|should\b|shouldn't|\bwould|can\b|(^|\[\[)Has\b|(^|\[\[)Hasn't|[0-9]{1,}(| )(-|\+|x|/|\*|%|\^)|\bAm I\b|(^|\[\[)Have(|n(|')t)\b|(^|\[\[)(Isn't|Isnt)|(^|\[\[)(Doesn't|Doesnt)\b|(^|\[\)[Didn(|')t" newpages.txt >> noninterrogative.txt
+egrep -iv "\bwho" newpages.txt| egrep -iv "\bwhat" | egrep -iv "where\b" | egrep -iv "\bwhen\b" | egrep -iv "(^|\[\[)Whens\b" | egrep -iv "\bwhy" | egrep -iv "\bhow\b" | egrep -iv "\bdo\b" | egrep -iv "\shas\b" | egrep -iv "does\b" | egrep -iv "did\b" | egrep -iv "will\b" | egrep -iv "(^|\[\[)Is\b" | egrep -iv "\. Is\b" | egrep -iv "(^|\[\[)Are\b" | egrep -iv "(^|\[\[)Aren't\b" | egrep -iv "\bwere\b" | egrep -iv "\bwas\b" | egrep -iv "\bwhich\b" | egrep -iv "\bcould" | egrep -iv "should\b" | egrep -iv "shouldn't" | egrep -iv "\bwould" | egrep -iv "\bcan\b" | egrep -iv "(^|\[\[)Has\b" | egrep -iv "(^|\[\[)Hasn't" | egrep -iv "\bAm I\b" | egrep -iv "(^|\[\[)Have(|n(|')t)\b" | egrep -iv "(^|\[\[)(Isn't|Isnt)" | egrep -iv "(^|\[\[)(Doesn't|Doesnt)\b" | egrep -iv "(^|\[\[)Didn(|')t" >> noninterrogative.txt
 
 NONINT=`stat --print=%s noninterrogative.txt`
 

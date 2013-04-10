@@ -9,6 +9,7 @@ $CURRENTDIR/Kingdom\ Hearts\ series/KingdomHearts.sh
 $CURRENTDIR/Kirby_series/Kirby.sh
 $CURRENTDIR/Monster\ Hunter\ series/MonsterHunterSeries.sh
 $CURRENTDIR/Pokémon\ games/PokémonGames.sh
+$CURRENTDIR/The_Elder_Scrolls_series/TheElderScrolls.sh
 $CURRENTDIR/The\ Sims\ series/TheSimsSeries.sh
 $CURRENTDIR/Halo\ series/Halo.sh
 $CURRENTDIR/Battlefield_series/Battlefield.sh

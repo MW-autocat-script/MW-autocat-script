@@ -51,3 +51,4 @@ rm Italy.txt
 rm Rome.txt
 rm AncientRome.txt
 rm Pisa.txt
+rm Pompeii.txt

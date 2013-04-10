@@ -209,7 +209,7 @@ rm JabbaTheHutt.txt
 rm Obi-WanKenobi.txt
 rm PloKoon.txt
 rm DarthMaul.txt
-rm DarthSidious.txt
+rm Sidious.txt
 rm R2-D2.txt
 rm Revan.txt
 rm DarthVader.txt
