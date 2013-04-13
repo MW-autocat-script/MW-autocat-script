@@ -4,7 +4,20 @@ egrep -i 'medication|prescription' newpages.txt >> Medication.txt
 egrep -i 'Ibuprofen|Advil|Tylenol' newpages.txt >> Medication.txt
 egrep -i 'NSAID' newpages.txt >> Medication.txt
 egrep -i 'Asprin' newpages.txt >> Medication.txt
+egrep -i 'Gynera\b' newpages.txt >> Medication.txt
+egrep -i 'quinine' newpages.txt >> Medication.txt
+egrep -i 'Abilify|aripiprazole' newpages.txt >> Medication.txt
+egrep -i 'abiraterone|Zytiga' newpages.txt >> Medication.txt
+egrep -i 'ablavar|gadofosveset' newpages.txt >> Medication.txt
+egrep -i 'Dysport|abobotulinumtoxin' newpages.txt >> Medication.txt
+egrep -i 'Abraxane' newpages.txt >> Medication.txt
+egrep -i 'Absorica|isotretinoin' newpages.txt >> Medication.txt
+egrep -i 'Abstral|fentanyl' newpages.txt >> Medication.txt
+egrep -i 'Campral|acamprosate' newpages.txt >> Medication.txt
 egrep -i 'oxycontin|oxycodone' newpages.txt >> Medication.txt
+egrep -i 'paclitaxel' newpages.txt >> Medication.txt
+
+
 egrep -i 'illegal drug' newpages.txt | egrep -iv 'cocaine|marijuana|weed' >> IllegalDrugs.txt
 egrep -i '\bmeth\b|methamphetamine' newpages.txt >> IllegalDrugs.txt
 egrep -i '\bLSD\b' newpages.txt >> IllegalDrugs.txt
