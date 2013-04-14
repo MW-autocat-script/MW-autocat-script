@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Poland' newpages.txt | egrep -iv 'Warsaw' >> Poland,txt
+egrep -i 'Poland' newpages.txt | egrep -iv 'Warsaw' >> Poland.txt
 egrep -i 'Warsaw' newpages.txt >> Warsaw.txt
 
 POLAND=`stat --print=%s Poland.txt`
