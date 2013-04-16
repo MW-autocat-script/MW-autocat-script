@@ -8,6 +8,7 @@ $CURRENTDIR/Algeria/Algeria.sh
 $CURRENTDIR/Argentina/Argentina.sh
 $CURRENTDIR/Australia/Australia.sh
 $CURRENTDIR/Austria/Austria.sh
+$CURRENTDIR/Bahrain/Bahrain.sh
 $CURRENTDIR/Bangladesh/Bangladesh.sh
 $CURRENTDIR/Barbados/Barbados.sh
 $CURRENTDIR/Belgium/Belgium.sh
