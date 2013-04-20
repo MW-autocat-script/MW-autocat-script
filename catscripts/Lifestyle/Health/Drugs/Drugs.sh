@@ -16,6 +16,7 @@ egrep -i 'Abstral|fentanyl' newpages.txt >> Medication.txt
 egrep -i 'Campral|acamprosate' newpages.txt >> Medication.txt
 egrep -i 'oxycontin|oxycodone' newpages.txt >> Medication.txt
 egrep -i 'paclitaxel' newpages.txt >> Medication.txt
+egrep -i 'Syndol' newpages.txt >> Medication.txt
 egrep -i 'Zyban\b|Wellbutrin|Voxra|Budeprion|Prexaton|Elontril|Aplenzin|Bupropion' newpages.txt >> Medication.txt
 
 
