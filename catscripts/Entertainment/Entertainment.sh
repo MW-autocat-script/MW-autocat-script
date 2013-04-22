@@ -2,6 +2,7 @@
 
 CURRENTDIR="./catscripts/Entertainment"
 
+$CURRENTDIR/Board_games/BoardGames.sh
 $CURRENTDIR/Video_games/VideoGames.sh
 $CURRENTDIR/Franchises/Franchises.sh
 $CURRENTDIR/Cartoons/Cartoons.sh
