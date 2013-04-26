@@ -1,7 +1,7 @@
 #!/bin/bash
 
 egrep -i 'board(| )game' newpages.txt | egrep -iv 'checkers|chess' >> Boardgames.txt
-egrep -i '\bChess\b|Chessboard' newpages.txt >> Chess.txt
+egrep -i '\bChess\b|Chessboard' newpages.txt | egrep -iv 'Leonard Chess|Chess Roberts|Harry Potter|Smallville|Chess River|River Chess' >> Chess.txt
 egrep -i 'Checkers|Checker(| )board' newpages.txt >> Checkers.txt
 
 BOARDGAMES=`stat --print=%s Boardgames.txt`
