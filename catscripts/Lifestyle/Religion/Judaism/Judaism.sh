@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Judaism|Jewish|Yom Kippur|Rosh Hashana|Rosh Hashanah|\bTorah|Hanukkah|Chanukah|Chanukkah|Chanuka' newpages.txt >> Judaism.txt
+egrep -i 'Judaism|Jewish|Yom Kippur|Rosh Hashana|Rosh Hashanah|\bTorah|Talmud|Hanukkah|Chanukah|Chanukkah|Chanuka' newpages.txt >> Judaism.txt
 
 JUDAISM=`stat --print=%s Judaism.txt`
 
