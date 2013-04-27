@@ -4,11 +4,13 @@ egrep -i 'soccer|footballer' newpages.txt >> Soccer.txt
 egrep -i 'tennis' newpages.txt | egrep -iv 'table tennis' >> Tennis.txt
 egrep -i 'ping(|-| )pong' newpages.txt >> PingPong.txt
 egrep -i 'Badminton' newpages.txt >> Badminton.txt
+egrep -i 'Volleyball' newpages.txt >> Volleyball.txt
 
 SOCCER=`stat --print=%s Soccer.txt`
 TENNIS=`stat --print=%s Tennis.txt`
 PINGPONG=`stat --print=%s PingPong.txt`
 BADMINTON=`stat --print=%s Badminton.txt`
+VOLLEYBALL=`stat --print=%s Volleyball.txt`
 
 if [ $SOCCER -ne 0 ];
 then
@@ -38,7 +40,15 @@ then
   $CATEGORIZE
 fi
 
+if [ $VOLLEYBALL -ne 0 ];
+then
+  export CATFILE="Volleyball.txt"
+  export CATNAME="Volleyball"
+  $CATEGORIZE
+fi
+
 rm Soccer.txt
 rm Tennis.txt
 rm PingPong.txt
 rm Badminton.txt
+rm Volleyball.txt
