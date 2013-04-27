@@ -22,3 +22,4 @@ $CURRENTDIR/Jainism/Jainism.sh
 $CURRENTDIR/Judaism/Judaism.sh
 $CURRENTDIR/Sikhism/Sikhism.sh
 $CURRENTDIR/The_Bible/TheBible.sh
+$CURRENTDIR/Wicca/Wicca.sh
