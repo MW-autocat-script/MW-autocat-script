@@ -6,6 +6,7 @@ $CURRENTDIR/Alabama/Alabama.sh
 $CURRENTDIR/Alaska/Alaska.sh
 $CURRENTDIR/Arizona/Arizona.sh
 $CURRENTDIR/Arkansas/Arkansas.sh
+$CURRENTDIR/California/California.sh
 $CURRENTDIR/Florida/Florida.sh
 $CURRENTDIR/Illin	ois/Illinois.sh
 $CURRENTDIR/Maine/Maine.sh
