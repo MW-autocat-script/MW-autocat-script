@@ -2,7 +2,6 @@
 
 CURRENTDIR="./catscripts/Temp"
 
-$CURRENTDIR/Arachnids/Arachnids.sh
-$CURRENTDIR/Dolphins/Dolphins.sh
+$CURRENTDIR/Animals/Animals.sh
 $CURRENTDIR/Soft_drinks/Softdrinks.sh
 $CURRENTDIR/War/War.sh
