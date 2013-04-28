@@ -1,7 +1,7 @@
 #!/bin/bash
 
 egrep -i 'Apple Macintosh|Mac(| )Pro|Mac(| )Book|\bi(| )book|Power(| )Mac|\bi(| )Mac' newpages.txt >> Macintosh.txt
-egrep -i 'on a mac|my mac|for a mac' newpages.txt >> Macintosh.txt
+egrep -i 'on a mac\b|my mac|for a mac\b' newpages.txt >> Macintosh.txt
 
 MACINTOSH=`stat --print=%s Macintosh.txt`
 

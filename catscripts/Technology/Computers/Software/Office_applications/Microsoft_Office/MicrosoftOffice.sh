@@ -1,10 +1,10 @@
 #!/bin/bash
 
-egrep -i 'Microsoft(| )Access|ms(|)access' newpages.txt >> MicrosoftAccess.txt
+egrep -i 'Microsoft(| )Access|\bms(|)access' newpages.txt >> MicrosoftAccess.txt
 egrep -i 'Excel\b|\.xls' newpages.txt | egrep -iv 'Hyundai' >> MicrosoftExcel.txt
 egrep -i 'power(| )point|\.ppt' newpages.txt >> MicrosoftPowerPoint.txt
-egrep -i 'Microsoft(| )Word|ms(|-| )word|\.doc' newpages.txt >> MicrosoftWord.txt
-egrep -i 'Microsoft(| )Office|ms(|-| )office' newpages.txt | egrep -iv 'Microsoft(| )Access|ms(|)access|Excel\b|power(| )point|Microsoft(| )Word|ms(|-| )word' >> MicrosoftOffice.txt
+egrep -i 'Microsoft(| )Word|\bms(|-| )word|\.doc' newpages.txt >> MicrosoftWord.txt
+egrep -i 'Microsoft(| )Office|\bms(|-| )office' newpages.txt | egrep -iv 'Microsoft(| )Access|ms(|)access|Excel\b|power(| )point|Microsoft(| )Word|ms(|-| )word' >> MicrosoftOffice.txt
 
 OFFICE=`stat --print=%s MicrosoftOffice.txt`
 ACCESS=`stat --print=%s MicrosoftAccess.txt`

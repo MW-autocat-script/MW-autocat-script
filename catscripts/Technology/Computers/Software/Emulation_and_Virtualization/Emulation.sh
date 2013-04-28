@@ -5,7 +5,7 @@ egrep -i 'Virtual(| )PC' newpages.txt >> Emulation.txt #virtual machine
 egrep -i 'Virtual(| )Box' newpages.txt >> Emulation.txt #virtual machine
 egrep -i 'Parallels Desktop|Parallels Workstation' newpages.txt >> Emulation.txt #virtual machine
 egrep -i '\bSIMH' newpages.txt >> Emulation.txt #Multiple system emulator (mostly old mainframes)
-egrep -i '\bXen' newpages.txt >> Emulation.txt #virtual machine / hypervisor
+egrep -i '\bXen\b' newpages.txt >> Emulation.txt #virtual machine / hypervisor
 egrep -i 'Aranym' newpages.txt >> Emulation.txt #Atari Falcon emulator
 egrep -i 'QEMU' newpages.txt >> Emulation.txt #Multiple system / processor emulator
 egrep -i 'M\.E\.S\.S\.|Multi Emulator Super System' newpages.txt >> Emulation.txt #Multiple system emulator
