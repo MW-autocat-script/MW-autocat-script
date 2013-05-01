@@ -11,6 +11,7 @@ $CURRENTDIR/Armenia/Armenia.sh
 $CURRENTDIR/Australia/Australia.sh
 $CURRENTDIR/Austria/Austria.sh
 $CURRENTDIR/Azerbaijan/Azerbaijan.sh
+$CURRENTDIR/Bahamas/Bahamas.sh
 $CURRENTDIR/Bahrain/Bahrain.sh
 $CURRENTDIR/Bangladesh/Bangladesh.sh
 $CURRENTDIR/Barbados/Barbados.sh
