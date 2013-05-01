@@ -5,6 +5,7 @@ CURRENTDIR="./catscripts/Government/Countries"
 $CURRENTDIR/Afghanistan/Afghanistan.sh
 $CURRENTDIR/Albania/Albania.sh
 $CURRENTDIR/Algeria/Algeria.sh
+$CURRENTDIR/Angola/Angola.sh
 $CURRENTDIR/Argentina/Argentina.sh
 $CURRENTDIR/Australia/Australia.sh
 $CURRENTDIR/Austria/Austria.sh
