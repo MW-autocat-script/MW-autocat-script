@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Cambodia|Khmer Rouge|Phnom Penh' newpages.txt >> Cambodia.txt
+egrep -i 'Cambodia\b|Khmer Rouge|Phnom Penh' newpages.txt >> Cambodia.txt
 
 CAMBODIA=`stat --print=%s Cambodia.txt`
 

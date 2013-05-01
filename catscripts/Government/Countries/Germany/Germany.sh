@@ -3,7 +3,7 @@
 egrep -i 'Germany' newpages.txt | egrep -iv 'Nazi Germany|Berlin|Hitler' >> Germany.txt
 egrep -i 'Nazi' newpages.txt | egrep -iv 'Hitler' >> NaziGermany.txt
 egrep -i 'Hitler youth' newpages.txt >> NaziGermany.txt
-egrep -i 'Berlin' newpages.txt >> Berlin.txt
+egrep -i '\bBerlin' newpages.txt >> Berlin.txt
 egrep -i 'Hitler' newpages.txt | egrep -iv 'Hitler youth' >> AdolfHitler.txt
 
 GERMANY=`stat --print=%s Germany.txt`
