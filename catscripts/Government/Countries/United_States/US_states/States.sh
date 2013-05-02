@@ -11,6 +11,7 @@ $CURRENTDIR/Florida/Florida.sh
 $CURRENTDIR/Illin	ois/Illinois.sh
 $CURRENTDIR/Maine/Maine.sh
 $CURRENTDIR/Massachusetts/Massachusetts.sh
+$CURRENTDIR/New_Jersey/NewJersey.sh
 $CURRENTDIR/New_Mexico/NewMexico.sh
 $CURRENTDIR/New_York/NewYork.sh
 $CURRENTDIR/Oregon/Oregon.sh
