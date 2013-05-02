@@ -73,6 +73,7 @@ $CURRENTDIR/Nepal/Nepal.sh
 $CURRENTDIR/New_Zealand/NewZealand.sh
 $CURRENTDIR/Nicaragua/Nicaragua.sh
 $CURRENTDIR/Nigeria/Nigeria.sh
+$CURRENTDIR/Northern_Ireland/NorthernIreland.sh
 $CURRENTDIR/North_Korea/NorthKorea.sh
 $CURRENTDIR/Norway/Norway.sh
 $CURRENTDIR/Philippines/Philippines.sh
