@@ -48,6 +48,7 @@ $CURRENTDIR/India/India.sh
 $CURRENTDIR/Indonesia/Indonesia.sh
 $CURRENTDIR/Iran/Iran.sh
 $CURRENTDIR/Iraq/Iraq.sh
+$CURRENTDIR/Ireland/Ireland.sh
 $CURRENTDIR/Israel/Israel.sh
 $CURRENTDIR/Italy/Italy.sh
 $CURRENTDIR/Ivory_Coast/IvoryCoast.sh
