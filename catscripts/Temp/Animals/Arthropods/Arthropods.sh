@@ -2,7 +2,7 @@
 
 CURRENTDIR="./catscripts/Temp/Animals/Arthropods"
 
-egrep -i 'arthropod' newpages.txt | egrep -iv 'arachnid' >> Arthropods.txt
+egrep -i 'arthropod' newpages.txt | egrep -iv 'arachnid|\bant(|s)\b' >> Arthropods.txt
 
 ARTHROPODS=`stat --print=%s Arthropods.txt`
 
@@ -16,3 +16,4 @@ fi
 rm Arthropods.txt
 
 $CURRENTDIR/Arachnids/Arachnids.sh
+$CURRENTDIR/Insects/Insects.sh
