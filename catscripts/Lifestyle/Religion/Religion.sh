@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'religion|religious' newpages.txt | egrep -iv 'Jesus|Christ|Jew|Judaism|Catholic|Orthodox|Shinto|Sikh|god|buddhism|buddhist|jain(|s|ism)\b' >> Religion.txt
+egrep -i 'religion|religious' newpages.txt | egrep -iv 'Jesus|Christ|Jew|Judaism|Catholic|Orthodox|Shinto|Sikh|god|buddhism|buddhist|jain(|s|ism)\b|islam|Muslim|Prophet (Muhammed|Muhammad)' >> Religion.txt
 
 RELIGION=`stat --print=%s Religion.txt`
 
@@ -18,6 +18,7 @@ CURRENTDIR="./catscripts/Lifestyle/Religion"
 $CURRENTDIR/Buddhism/Buddhism.sh
 $CURRENTDIR/Christianity/Christianity.sh
 $CURRENTDIR/Hinduism/Hinduism.sh
+$CURRENTDIR/Islam/Islam.sh
 $CURRENTDIR/Jainism/Jainism.sh
 $CURRENTDIR/Judaism/Judaism.sh
 $CURRENTDIR/Sikhism/Sikhism.sh
