@@ -25,10 +25,10 @@ fi
 if [ $OBLIVION -ne 0 ];
 then
   export CATFILE="Oblivion.txt"
-  export CATNAME="The Elder Scrolls IV: Oblivion
+  export CATNAME="The Elder Scrolls IV: Oblivion"
   $CATEGORIZE
 fi
 
-rm Scrolls.txt
+rm TheElderScrolls.txt
 rm Skyrim.txt
 rm Oblivion.txt

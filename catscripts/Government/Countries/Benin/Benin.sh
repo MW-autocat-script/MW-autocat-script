@@ -6,7 +6,7 @@ BENIN=`stat --print=%s Benin.txt`
 
 if [ $BENIN -ne 0 ];
 then
-  export CATFILE="Benin.txt`
+  export CATFILE="Benin.txt"
   export CATNAME="Benin"
   $CATEGORIZE
 fi
