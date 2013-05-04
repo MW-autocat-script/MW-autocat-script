@@ -19,7 +19,7 @@ egrep -i 'Columbus Blue Jacket' newpages.txt >> NHL.txt
 egrep -i 'Dallas Star' newpages.txt >> NHL.txt
 egrep -i 'Detroit Red Wing' newpages.txt >> NHL.txt
 egrep -i 'Edmonton Oiler' newpages.txt >> NHL.txt
-egrep -i 'Florida Panther' newpages.txt >> NHL.txt
+egrep -i 'Florida Panther' newpages.txt | egrep -i 'NHL|hockey|sport|arena|\bwin|\bwon\b|Stanley|\brink' >> NHL.txt
 egrep -i 'Los Angeles King' newpages.txt >> NHL.txt
 egrep -i 'Minnesota Wild' newpages.txt >> NHL.txt
 egrep -i 'Montreal Canadien' newpages.txt >> NHL.txt
