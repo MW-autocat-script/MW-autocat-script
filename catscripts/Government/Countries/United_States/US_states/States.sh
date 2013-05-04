@@ -17,5 +17,6 @@ $CURRENTDIR/New_York/NewYork.sh
 $CURRENTDIR/North_Carolina/NorthCarolina.sh
 $CURRENTDIR/Oregon/Oregon.sh
 $CURRENTDIR/Pennsylvania/Pennsylvania.sh
+$CURRENTDIR/South_Carolina/SouthCarolina.sh
 $CURRENTDIR/Vermont/Vermont.sh
 $CURRENTDIR/Wyoming/Wyoming.sh
