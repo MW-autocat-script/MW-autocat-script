@@ -3,7 +3,7 @@
 egrep -i "Christianity|Jesus|Greek Orthodox|Russian Orthodox|Jehovah(|')s Witness" newpages.txt | egrep -iv 'Anglican|Catholic|Church of England|Mormon|pope|Lutheran|Martin Luther|Mormon|Latter(-| )Day(| )(|saint)|Amish|Mennonite' >> Christianity.txt
 egrep -i 'Anglican|Church of England' newpages.txt >> Anglican.txt
 egrep -i 'Catholic|Vatican|\bpope(|s)\b|papal' newpages.txt | egrep -iv 'Alexander Pope' >> Catholicism.txt
-egrep -i 'Martin Luther|Lutheran|(95|Ninety-Five) Theses' newpages,txt | egrep -iv 'Martin Luther King' >> Lutheranism.txt
+egrep -i 'Martin Luther|Lutheran|(95|Ninety-Five) Theses' newpages.txt | egrep -iv 'Martin Luther King' >> Lutheranism.txt
 egrep -i 'Mormon|Latter(-| )Day(| )(|saint)' newpages.txt >> Mormonism.txt
 egrep -i 'Amish|Mennonite' newpages.txt >> Amish.txt
 
