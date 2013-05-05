@@ -22,7 +22,7 @@ egrep -i '^Are\b' nonint.txt >> Are.txt
 egrep -i "^Aren't\b|^Arent\b" nonint.txt >> Arent.txt
 egrep -i '^Were\b' nonint.txt  >> Were.txt
 egrep -i "^Weren't\b|^Werent\b" nonint.txt >> Werent.txt
-egrep -i '^Was\b' nonint.txt >> Was.txt
+egrep -i '((\.|,) |^)Was\b' nonint.txt >> Was.txt
 egrep -i '^Which\b' nonint.txt >> Which.txt
 egrep -i '^Could\b' nonint.txt >> Could.txt
 egrep -i "^Couldn't\b|^Couldnt\b" nonint.txt >> Couldnt.txt

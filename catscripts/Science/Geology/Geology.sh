@@ -25,7 +25,7 @@ fi
 if [ $VOLCANOES -ne 0 ];
 then
   export CATFILE="Volcanoes.txt"
-  export CATNAME="Volcano"
+  export CATNAME="Volcanoes"
   $CATEGORIZE
 fi
 

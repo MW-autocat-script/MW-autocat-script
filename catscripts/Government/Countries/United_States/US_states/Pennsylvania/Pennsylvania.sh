@@ -2,7 +2,7 @@
 
 egrep -i 'Pennsylvania|Pennsylvannia|Pennnsylvania|Pensylvania|Pensylvannia' newpages.txt | egrep -iv 'Pittsburgh|Philadelphia' >> Pennsylvania.txt
 egrep -i 'Pittsburgh' newpages.txt | egrep -iv "Steelers|Penguins|Pirates" >> Pittsburgh.txt  
-egrep -i 'Philadelphia' newpages.txt | egrep -iv 'Eagles' >> Philadelpha.txt
+egrep -i 'Philadelphia' newpages.txt | egrep -iv 'Eagles' >> Philadelphia.txt
 
 PENNSYLVANIA=`stat --print=%s Pennsylvania.txt`
 PITTSBURGH=`stat --print=%s Pittsburgh.txt`
@@ -24,8 +24,8 @@ fi
 
 if [ $PHILADELPHIA -ne 0 ];
 then
-  export CATFILE="Philadelpha.txt"
-  export CATNAME="Philadelpha"
+  export CATFILE="Philadelphia.txt"
+  export CATNAME="Philadelphia"
   $CATEGORIZE
 fi
 

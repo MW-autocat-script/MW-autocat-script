@@ -19,7 +19,7 @@ TRI=`stat --print=%s MonsterHunterTri.txt`
 if [ $SERIES -ne 0 ];
 then
   export CATFILE="MonsterHunterSeries.txt"
-  export CATNAME="MonsterHunter series"
+  export CATNAME="Monster Hunter series"
   $CATEGORIZE
 fi
 
