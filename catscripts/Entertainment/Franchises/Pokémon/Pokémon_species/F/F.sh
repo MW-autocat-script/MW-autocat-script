@@ -87,7 +87,7 @@ fi
 if [ $Flaaffy -ne 0 ];
 then
    export CATFILE="Flaaffy.txt"
-   export CATNAME="Flaffy"
+   export CATNAME="Flaaffy"
    $CATEGORIZE
 fi
 
