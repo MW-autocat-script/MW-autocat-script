@@ -15,8 +15,8 @@ egrep -i '^Does\b' nonint.txt >> Does.txt
 egrep -i "^Doesn't\b" nonint.txt >> Doesnt.txt
 egrep -i '^Did\b' nonint.txt >> Did.txt
 egrep -i "^Didn't\b|^Didnt\b" nonint.txt >> Didnt.txt
-egrep -i '(, |^)Will\b' nonint.txt >> Will.txt
-egrep -i '^Is\b' nonint.txt >> Is.txt
+egrep -i '((\.|,) |^)Will\b' nonint.txt >> Will.txt
+egrep -i '((\.|,) |^)Is\b' nonint.txt >> Is.txt
 egrep -i "^Isn't\b|^Isnt\b" nonint.txt >> Isnt.txt
 egrep -i '^Are\b' nonint.txt >> Are.txt
 egrep -i "^Aren't\b|^Arent\b" nonint.txt >> Arent.txt

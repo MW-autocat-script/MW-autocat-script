@@ -4,7 +4,7 @@ egrep -i 'Minecraft|Mine craft' newpages.txt > Minecraft.txt
 egrep -i 'Tekkit' newpages.txt >> Tekkit.txt
 egrep -i 'Saints(| )Row' newpages.txt | egrep -iv 'Saints(| )Row(| )2|The Third|Saints(| )Row(| )(III|3)|Saints(| )Row(| )(4|IV)'  >> SaintsRow.txt
 egrep -i 'Saints(| )Row 2' newpages.txt >> SaintsRow2.txt
-egrep -i 'Saints(| )Row' newpages.txt | egrep -i 'The Third|(| )(III|3)' >> SaintsRow3.txt
+egrep -i 'Saints(| )Row' newpages.txt | egrep -i 'The Third|Saints(| )Row(| )(III|3)' >> SaintsRow3.txt
 egrep -i 'Saints(| )Row(| )(4|IV)' newpages.txt >> SaintsRow4.txt
 
 MINECRAFT=`stat --print=%s Minecraft.txt`
