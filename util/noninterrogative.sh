@@ -30,7 +30,7 @@ egrep -i '^Should\b' nonint.txt >> Should.txt
 egrep -i "^Shouldn't\b|^Shouldnt\b" nonint.txt >> Shouldnt.txt
 egrep -i '^Would\b' nonint.txt >> Would.txt
 egrep -i "^Wouldn't\b|^Wouldnt\b" nonint.txt >> Wouldnt.txt
-egrep -i '^Can\b' nonint.txt >> Can.txt
+egrep -i '(, |^)Can\b' nonint.txt >> Can.txt
 egrep -i "^Can't\b|^Cant\b" nonint.txt >> Cant.txt
 egrep -i '^Has\b' nonint.txt >> Has.txt
 egrep -i "^Hasn't\b|^Hasnt\b" nonint.txt >> Hasnt.txt
