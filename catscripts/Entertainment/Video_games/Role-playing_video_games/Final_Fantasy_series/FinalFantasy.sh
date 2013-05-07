@@ -7,6 +7,7 @@ egrep -i 'Final Fantasy (4|IV\b)|\bFF(| )IV\b' newpages.txt >> FinalFantasy4.txt
 egrep -i 'Final Fantasy (5|\bV\b)|\bFF(| )V\b' newpages.txt >> FinalFantasy5.txt
 egrep -i 'Final Fantasy (6|\bVI\b)|\bFF(| )VI\b' newpages.txt >> FinalFantasy6.txt
 egrep -i 'Final Fantasy (7|\bVII\b)|\bFF(| )VII\b' newpages.txt | egrep -iv 'Before Crisis|Crisis Core|Dirge of Cerberus|Advent Children' >> FinalFantasy7.txt
+egrep -i 'Advent(| )Children' newpages.txt >> AdventChildren.txt
 egrep -i 'Final Fantasy (8|\bVIII\b)|\bFF(| )VIII\b' newpages.txt >> FinalFantasy8.txt
 egrep -i 'Final Fantasy (9|\bIX\b)|\bFF(| )IX\b' newpages.txt >> FinalFantasy9.txt
 egrep -i 'Final Fantasy (10|\bX\b)|\bFF(| )X\b' newpages.txt | egrep -iv 'Final Fantasy X-2|FF(| )X-2' >> FinalFantasy10.txt
@@ -30,6 +31,7 @@ FF10=`stat --print=%s FinalFantasy10.txt`
 FFX2=`stat --print=%s FinalFantasyX-2.txt`
 FF11=`stat --print=%s FinalFantasy11.txt`
 FF12=`stat --print=%s FinalFantasy12.txt`
+ADVENT=`stat --print=%s AdventChildren.txt`
 
 
 if [ $FFSERIES -ne 0 ];
@@ -123,4 +125,12 @@ then
   $CATEGORIZE
 fi
 
+if [ $ADVENT -ne 0 ];
+then
+  export CATFILE="AdventChildren.txt"
+  export CATNAME="Final Fantasy VII: Advent Children"
+  $CATEGORIZE
+fi
+
 rm FinalFantasy*.txt #Screw it :)
+rm AdventChildren.txt
