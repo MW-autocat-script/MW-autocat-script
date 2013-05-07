@@ -160,7 +160,7 @@ fi
 if [ $Kricketot -ne 0 ];
 then
    export CATFILE="Kricketot.txt"
-   export CATNAME="Kricket"
+   export CATNAME="Kricketot"
    $CATEGORIZE
 fi
 
