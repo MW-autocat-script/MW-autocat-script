@@ -20,7 +20,7 @@ egrep -i '((\.|,) |^)Is\b' nonint.txt >> Is.txt
 egrep -i "^Isn't\b|^Isnt\b" nonint.txt >> Isnt.txt
 egrep -i '(^|(\.|,) )Are\b' nonint.txt >> Are.txt
 egrep -i "^Aren't\b|^Arent\b" nonint.txt >> Arent.txt
-egrep -i '^Were\b' nonint.txt  >> Were.txt
+egrep -i '(^|(\.|,) )Were\b' nonint.txt  >> Were.txt
 egrep -i "^Weren't\b|^Werent\b" nonint.txt >> Werent.txt
 egrep -i '((\.|,) |^)Was\b' nonint.txt >> Was.txt
 egrep -i '^Which\b' nonint.txt >> Which.txt
