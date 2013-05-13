@@ -20,6 +20,7 @@ $CURRENTDIR/Karos_Online/KarosOnline.sh
 $CURRENTDIR/Mafia_Wars/MafiaWars.sh
 $CURRENTDIR/Poptropica/Poptropica.sh
 $CURRENTDIR/RuneScape/RuneScape.sh
+$CURRENTDIR/Star_Wars_The_Old_Republic/SWTOR.sh
 $CURRENTDIR/Tales_of_Pirates/TalesofPirates.sh
 $CURRENTDIR/Talisman_Online/TalismanOnline.sh
 $CURRENTDIR/Wizard101/Wizard101.sh

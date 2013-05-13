@@ -1,6 +1,6 @@
-O#!/bin/bash
+#!/bin/bash
 
-egrep -i 'Knights of the Old Republic|KOTOR' newpages.txt | egrep -iv 'The(| )Old(| )Republic(| )(2|II|KOTOR(| )(2|II)' >> KOTOR.txt
+egrep -i 'Knights of the Old Republic|KOTOR' newpages.txt | egrep -iv 'The(| )Old(| )Republic(| )(2|II)|KOTOR(| )(2|II)' >> KOTOR.txt
 
 KOTOR=`stat --print=%s KOTOR.txt`
 
