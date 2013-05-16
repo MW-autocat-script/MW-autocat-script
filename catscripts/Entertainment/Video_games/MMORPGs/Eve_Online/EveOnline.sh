@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i 'Eve(| )Online' newpages.txt >> EveOnline.txt
+export KEYWORDS_MMORPG_EVE="Eve(| )Online"
+
+egrep -i "$KEYWORDS_MMORPG_EVE" newpages.txt >> EveOnline.txt
 
 EVE=`stat --print=%s EveOnline.txt`
 

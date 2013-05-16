@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i 'Dofus' newpages.txt >> Dofus.txt
+export KEYWORDS_MMORPG_DOFUS="Dofus"
+
+egrep -i "$KEYWORDS_MMORPG_DOFUS" newpages.txt >> Dofus.txt
 
 DOFUS=`stat --print=%s Dofus.txt`
 

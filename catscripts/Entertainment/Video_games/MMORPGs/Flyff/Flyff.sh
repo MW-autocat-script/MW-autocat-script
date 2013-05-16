@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i 'Flyff' newpages.txt >> Flyff.txt
+export KEYWORDS_MMORPG_FLYFF="Flyff"
+
+egrep -i "$KEYWORDS_MMORPG_FLYFF" newpages.txt >> Flyff.txt
 
 FLYFF=`stat --print=%s Flyff.txt`
 

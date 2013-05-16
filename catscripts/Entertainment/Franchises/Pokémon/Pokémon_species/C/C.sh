@@ -1,55 +1,55 @@
 #!/bin/bash
 #Pokemon species by name, starting with the letter C
-egrep -i 'Cacnea' newpages.txt >>  Cacnea.txt
-egrep -i 'Cacturne' newpages.txt >>  Cacturne.txt
-egrep -i 'Camerupt' newpages.txt >> Camerupt.txt
-egrep -i 'Carnivine' newpages.txt >> Carnivine.txt
-egrep -i 'Carracosta' newpages.txt >> Carracosta.txt
-egrep -i 'Carvanha' newpages.txt >> Carvanha.txt
-egrep -i 'Cascoon' newpages.txt >> Cascoon.txt
-egrep -i 'Castform' newpages.txt >> Castform.txt
-egrep -i 'Caterpie' newpages.txt >> Caterpie.txt
-egrep -i 'Celebi' newpages.txt >> Celebi.txt
-egrep -i 'Chandelure' newpages.txt >> Chandelure.txt
-egrep -i 'Chansey' newpages.txt >> Chansey.txt
-egrep -i 'Charizard' newpages.txt >> Charizard.txt
-egrep -i 'Charmander' newpages.txt >> Charmander.txt
-egrep -i 'Charmeleon' newpages.txt >> Charmeleon.txt
-egrep -i 'Chatot' newpages.txt >> Chatot.txt
-egrep -i 'Cherrim' newpages.txt >> Cherrim.txt
-egrep -i "Cherubi\b|Cherubi's|Cherubis\b" newpages.txt >> Cherubi.txt
-egrep -i 'Chikorita' newpages.txt >> Chikorita.txt
-egrep -i 'Chimchar' newpages.txt >> Chimchar.txt
-egrep -i 'Chimecho' newpages.txt >> Chimecho.txt
-egrep -i 'Chinchou' newpages.txt >> Chinchou.txt
-egrep -i 'Chingling' newpages.txt >> Chingling.txt
-egrep -i 'Cinccino' newpages.txt >> Cinccino.txt
-egrep -i 'Clamperl' newpages.txt >> Clamperl.txt
-egrep -i 'Claydol' newpages.txt >> Claydol.txt
-egrep -i 'Clefable' newpages.txt >> Clefable.txt
-egrep -i 'Clefairy' newpages.txt >> Clefairy.txt
-egrep -i 'Cleffa' newpages.txt >> Cleffa.txt
-egrep -i 'Cloyster' newpages.txt >> Cloyster.txt
-egrep -i 'Cobalion' newpages.txt >> Cobalion.txt
-egrep -i 'Cofagrigus|Confagrigus' newpages.txt >> Cofagrigus.txt
-egrep -i 'Combee' newpages.txt >> Combee.txt
-egrep -i 'Combusken' newpages.txt >> Combusken.txt
-egrep -i 'Conkeldurr' newpages.txt >> Conkeldurr.txt
-egrep -i 'Corphish' newpages.txt >> Corphish.txt
-egrep -i 'Corsola' newpages.txt >> Corsola.txt
-egrep -i 'Cottonee' newpages.txt >> Cottonee.txt
-egrep -i 'Cradily' newpages.txt >> Cradily.txt
-egrep -i 'Cranidos' newpages.txt >> Cranidos.txt
-egrep -i 'Crawdaunt' newpages.txt >> Crawdaunt.txt
-egrep -i 'Cresselia' newpages.txt >> Cresselia.txt
-egrep -i 'Croagunk' newpages.txt >> Croagunk.txt
-egrep -i '\bCrobat' newpages.txt >> Crobat.txt
-egrep -i 'Croconaw' newpages.txt >> Croconaw.txt
-egrep -i 'Crustle' newpages.txt >> Crustle.txt
-egrep -i 'Cryogonal' newpages.txt >> Cryogonal.txt
-egrep -i 'Cubchoo' newpages.txt >> Cubchoo.txt
-egrep -i 'Cubone' newpages.txt >> Cubone.txt
-egrep -i 'Cyndaquil' newpages.txt >> Cyndaquil.txt
+egrep -i 'Cacnea' newpages.txt >>  Cacnea.txt &
+egrep -i 'Cacturne' newpages.txt >>  Cacturne.txt &
+egrep -i 'Camerupt' newpages.txt >> Camerupt.txt &
+egrep -i 'Carnivine' newpages.txt >> Carnivine.txt &
+egrep -i 'Carracosta' newpages.txt >> Carracosta.txt &
+egrep -i 'Carvanha' newpages.txt >> Carvanha.txt &
+egrep -i 'Cascoon' newpages.txt >> Cascoon.txt &
+egrep -i 'Castform' newpages.txt >> Castform.txt &
+egrep -i 'Caterpie' newpages.txt >> Caterpie.txt &
+egrep -i 'Celebi' newpages.txt >> Celebi.txt &
+egrep -i 'Chandelure' newpages.txt >> Chandelure.txt &
+egrep -i 'Chansey' newpages.txt >> Chansey.txt &
+egrep -i 'Charizard' newpages.txt >> Charizard.txt &
+egrep -i 'Charmander' newpages.txt >> Charmander.txt &
+egrep -i 'Charmeleon' newpages.txt >> Charmeleon.txt &
+egrep -i 'Chatot' newpages.txt >> Chatot.txt &
+egrep -i 'Cherrim' newpages.txt >> Cherrim.txt &
+egrep -i "Cherubi\b|Cherubi's|Cherubis\b" newpages.txt >> Cherubi.txt &
+egrep -i 'Chikorita' newpages.txt >> Chikorita.txt &
+egrep -i 'Chimchar' newpages.txt >> Chimchar.txt &
+egrep -i 'Chimecho' newpages.txt >> Chimecho.txt &
+egrep -i 'Chinchou' newpages.txt >> Chinchou.txt &
+egrep -i 'Chingling' newpages.txt >> Chingling.txt &
+egrep -i 'Cinccino' newpages.txt >> Cinccino.txt &
+egrep -i 'Clamperl' newpages.txt >> Clamperl.txt &
+egrep -i 'Claydol' newpages.txt >> Claydol.txt &
+egrep -i 'Clefable' newpages.txt >> Clefable.txt &
+egrep -i 'Clefairy' newpages.txt >> Clefairy.txt &
+egrep -i 'Cleffa' newpages.txt >> Cleffa.txt &
+egrep -i 'Cloyster' newpages.txt >> Cloyster.txt &
+egrep -i 'Cobalion' newpages.txt >> Cobalion.txt &
+egrep -i 'Cofagrigus|Confagrigus' newpages.txt >> Cofagrigus.txt &
+egrep -i 'Combee' newpages.txt >> Combee.txt &
+egrep -i 'Combusken' newpages.txt >> Combusken.txt &
+egrep -i 'Conkeldurr' newpages.txt >> Conkeldurr.txt &
+egrep -i 'Corphish' newpages.txt >> Corphish.txt &
+egrep -i 'Corsola' newpages.txt >> Corsola.txt &
+egrep -i 'Cottonee' newpages.txt >> Cottonee.txt &
+egrep -i 'Cradily' newpages.txt >> Cradily.txt &
+egrep -i 'Cranidos' newpages.txt >> Cranidos.txt &
+egrep -i 'Crawdaunt' newpages.txt >> Crawdaunt.txt &
+egrep -i 'Cresselia' newpages.txt >> Cresselia.txt &
+egrep -i 'Croagunk' newpages.txt >> Croagunk.txt &
+egrep -i '\bCrobat' newpages.txt >> Crobat.txt &
+egrep -i 'Croconaw' newpages.txt >> Croconaw.txt &
+egrep -i 'Crustle' newpages.txt >> Crustle.txt &
+egrep -i 'Cryogonal' newpages.txt >> Cryogonal.txt &
+egrep -i 'Cubchoo' newpages.txt >> Cubchoo.txt &
+egrep -i 'Cubone' newpages.txt >> Cubone.txt &
+egrep -i 'Cyndaquil' newpages.txt >> Cyndaquil.txt &
 
 CACNEA=`stat --print=%s Cacnea.txt`
 CACTURNE=`stat --print=%s Cacturne.txt`
@@ -498,53 +498,53 @@ then
 fi
 
 
-rm Cacnea.txt
-rm Cacturne.txt
-rm Camerupt.txt
-rm Carnivine.txt
-rm Carracosta.txt
-rm Carvanha.txt
-rm Cascoon.txt
-rm Castform.txt
-rm Caterpie.txt
-rm Celebi.txt
-rm Chandelure.txt
-rm Chansey.txt
-rm Charizard.txt
-rm Charmander.txt
-rm Charmeleon.txt
-rm Chatot.txt
-rm Cherrim.txt
-rm Cherubi.txt
-rm Chikorita.txt
-rm Chimchar.txt
-rm Chimecho.txt
-rm Chinchou.txt
-rm Chingling.txt
-rm Cinccino.txt
-rm Clamperl.txt
-rm Claydol.txt
-rm Clefable.txt
-rm Clefairy.txt
-rm Cleffa.txt
-rm Cloyster.txt
-rm Cobalion.txt
-rm Cofagrigus.txt
-rm Combee.txt
-rm Combusken.txt
-rm Conkeldurr.txt
-rm Corphish.txt
-rm Corsola.txt
-rm Cottonee.txt
-rm Cradily.txt
-rm Cranidos.txt
-rm Crawdaunt.txt
-rm Cresselia.txt
-rm Croagunk.txt
-rm Crobat.txt
-rm Croconaw.txt
-rm Crustle.txt
-rm Cryogonal.txt
-rm Cubchoo.txt
-rm Cubone.txt
-rm Cyndaquil.txt
+rm Cacnea.txt &
+rm Cacturne.txt &
+rm Camerupt.txt &
+rm Carnivine.txt &
+rm Carracosta.txt &
+rm Carvanha.txt &
+rm Cascoon.txt &
+rm Castform.txt &
+rm Caterpie.txt &
+rm Celebi.txt &
+rm Chandelure.txt &
+rm Chansey.txt &
+rm Charizard.txt &
+rm Charmander.txt &
+rm Charmeleon.txt &
+rm Chatot.txt &
+rm Cherrim.txt &
+rm Cherubi.txt &
+rm Chikorita.txt &
+rm Chimchar.txt &
+rm Chimecho.txt &
+rm Chinchou.txt &
+rm Chingling.txt &
+rm Cinccino.txt &
+rm Clamperl.txt &
+rm Claydol.txt &
+rm Clefable.txt &
+rm Clefairy.txt &
+rm Cleffa.txt &
+rm Cloyster.txt &
+rm Cobalion.txt &
+rm Cofagrigus.txt &
+rm Combee.txt &
+rm Combusken.txt &
+rm Conkeldurr.txt &
+rm Corphish.txt &
+rm Corsola.txt &
+rm Cottonee.txt &
+rm Cradily.txt &
+rm Cranidos.txt &
+rm Crawdaunt.txt &
+rm Cresselia.txt &
+rm Croagunk.txt &
+rm Crobat.txt &
+rm Croconaw.txt &
+rm Crustle.txt &
+rm Cryogonal.txt &
+rm Cubchoo.txt &
+rm Cubone.txt &
+rm Cyndaquil.txt &

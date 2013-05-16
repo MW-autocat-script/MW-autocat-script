@@ -1,34 +1,36 @@
 #!/bin/bash
 #Pokemon species by name, starting with the letter A
 
-egrep -i '\bAbomasnow' newpages.txt >> Abomasnow.txt
-egrep -i '\bAbra\b' newpages.txt >> Abra.txt
-egrep -i '\bAbsol\b' newpages.txt >> Absol.txt
-egrep -i '\bAccelgor' newpages.txt >> Accelgor.txt
-egrep -i '\bAerodactyl' newpages.txt >> Aerodactyl.txt
-egrep -i '\bAggron' newpages.txt >> Aggron.txt
-egrep -i '\bAipom' newpages.txt >> Aipom.txt
-egrep -i '\bAlakazam' newpages.txt >> Alakazam.txt
-egrep -i '\bAlomomola' newpages.txt >> Alomomola.txt
-egrep -i '\bAltaria' newpages.txt >> Altaria.txt
-egrep -i '\bAmbipom' newpages.txt >> Ambipom.txt
-egrep -i '\bAmoonguss' newpages.txt >> Amoonguss.txt
-egrep -i '\bAmpharos' newpages.txt >> Ampharos.txt
-egrep -i '\bAnorith' newpages.txt >> Anorith.txt
-egrep -i '\bArbok' newpages.txt >> Arbok.txt
-egrep -i '\bArcanine' newpages.txt >> Arcanine.txt
-egrep -i '\bArceus' newpages.txt >> Arceus.txt
-egrep -i '\bArchen\b' newpages.txt >> Archen.txt
-egrep -i '\bArcheops' newpages.txt >> Archeops.txt
-egrep -i '\bAriados' newpages.txt >> Ariados.txt
-egrep -i '\bArmaldo' newpages.txt >> Armaldo.txt
-egrep -i '\bAron\b|\bArons\b' newpages.txt >> Aron.txt
-egrep -i '\bArticuno' newpages.txt >> Articuno.txt
-egrep -i '\bAudino' newpages.txt >> Audino.txt
-egrep -i '\bAxew' newpages.txt >> Axew.txt
-egrep -i '\bAzelf' newpages.txt >> Azelf.txt
-egrep -i '\bAzumarill' newpages.txt >> Azumarill.txt
-egrep -i '\bAzurill' newpages.txt >> Azurill.txt
+egrep -i '\bAbomasnow' newpages.txt >> Abomasnow.txt &
+egrep -i '\bAbra\b' newpages.txt >> Abra.txt &
+egrep -i '\bAbsol\b' newpages.txt >> Absol.txt &
+egrep -i '\bAccelgor' newpages.txt >> Accelgor.txt &
+egrep -i '\bAerodactyl' newpages.txt >> Aerodactyl.txt &
+egrep -i '\bAggron' newpages.txt >> Aggron.txt &
+egrep -i '\bAipom' newpages.txt >> Aipom.txt &
+egrep -i '\bAlakazam' newpages.txt >> Alakazam.txt &
+egrep -i '\bAlomomola' newpages.txt >> Alomomola.txt &
+egrep -i '\bAltaria' newpages.txt >> Altaria.txt &
+egrep -i '\bAmbipom' newpages.txt >> Ambipom.txt &
+egrep -i '\bAmoonguss' newpages.txt >> Amoonguss.txt &
+egrep -i '\bAmpharos' newpages.txt >> Ampharos.txt &
+egrep -i '\bAnorith' newpages.txt >> Anorith.txt &
+egrep -i '\bArbok' newpages.txt >> Arbok.txt &
+egrep -i '\bArcanine' newpages.txt >> Arcanine.txt &
+egrep -i '\bArceus' newpages.txt >> Arceus.txt &
+egrep -i '\bArchen\b' newpages.txt >> Archen.txt &
+egrep -i '\bArcheops' newpages.txt >> Archeops.txt &
+egrep -i '\bAriados' newpages.txt >> Ariados.txt &
+egrep -i '\bArmaldo' newpages.txt >> Armaldo.txt &
+egrep -i '\bAron\b|\bArons\b' newpages.txt >> Aron.txt &
+egrep -i '\bArticuno' newpages.txt >> Articuno.txt &
+egrep -i '\bAudino' newpages.txt >> Audino.txt &
+egrep -i '\bAxew' newpages.txt >> Axew.txt &
+egrep -i '\bAzelf' newpages.txt >> Azelf.txt &
+egrep -i '\bAzumarill' newpages.txt >> Azumarill.txt &
+egrep -i '\bAzurill' newpages.txt >> Azurill.txt &
+
+wait
 
 ABOMASNOW=`stat --print=%s Abomasnow.txt`
 ABRA=`stat --print=%s Abra.txt` 
@@ -284,31 +286,33 @@ then
 fi
 
 
-rm Abomasnow.txt
-rm Abra.txt
-rm Absol.txt
-rm Accelgor.txt
-rm Aerodactyl.txt
-rm Aggron.txt
-rm Aipom.txt
-rm Alakazam.txt
-rm Alomomola.txt
-rm Altaria.txt
-rm Ambipom.txt
-rm Amoonguss.txt
-rm Ampharos.txt
-rm Anorith.txt
-rm Arbok.txt
-rm Arcanine.txt
-rm Arceus.txt
-rm Archen.txt
-rm Archeops.txt
-rm Ariados.txt
-rm Armaldo.txt
-rm Aron.txt
-rm Articuno.txt
-rm Audino.txt
-rm Axew.txt
-rm Azelf.txt
-rm Azumarill.txt
-rm Azurill.txt
+rm Abomasnow.txt &
+rm Abra.txt &
+rm Absol.txt &
+rm Accelgor.txt &
+rm Aerodactyl.txt &
+rm Aggron.txt &
+rm Aipom.txt &
+rm Alakazam.txt &
+rm Alomomola.txt &
+rm Altaria.txt &
+rm Ambipom.txt &
+rm Amoonguss.txt &
+rm Ampharos.txt &
+rm Anorith.txt &
+rm Arbok.txt &
+rm Arcanine.txt &
+rm Arceus.txt &
+rm Archen.txt &
+rm Archeops.txt &
+rm Ariados.txt &
+rm Armaldo.txt &
+rm Aron.txt &
+rm Articuno.txt &
+rm Audino.txt &
+rm Axew.txt &
+rm Azelf.txt &
+rm Azumarill.txt &
+rm Azurill.txt &
+
+wait

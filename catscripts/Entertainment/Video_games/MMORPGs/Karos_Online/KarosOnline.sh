@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i '\bKaros\b' newpages.txt >> KarosOnline.txt
+export KEYWORDS_MMORPG_KAROS="\bKaros\b"
+
+egrep -i "$KEYWORDS_MMORPG_KAROS" newpages.txt >> KarosOnline.txt
 
 KAROS=`stat --print=%s KarosOnline.txt`
 

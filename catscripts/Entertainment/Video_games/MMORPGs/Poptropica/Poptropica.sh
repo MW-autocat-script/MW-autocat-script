@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i 'poptropica|potropica|poptopica' newpages.txt > Poptropica.txt
+export KEYWORDS_MMORPG_POPTROPICA="poptropica|potropica|poptopica"
+
+egrep -i "$KEYWORDS_MMORPG_POPTROPICA" newpages.txt > Poptropica.txt
 
 POPTROPICA=`stat --print=%s Poptropica.txt`
 

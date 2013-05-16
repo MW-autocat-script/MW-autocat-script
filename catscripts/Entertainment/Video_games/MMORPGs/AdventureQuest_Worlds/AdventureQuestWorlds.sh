@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i '(AdventureQuest|Adventure Quest)(World(|s)| World(|s))|AQW|Valencia' newpages.txt >> AdventureQuestWorlds.txt
+export KEYWORDS_MMORPG_AQW="(AdventureQuest|Adventure Quest)(World(|s)| World(|s))|AQW|Valencia"
+
+egrep -i "$KEYWORDS_MMORPG_AQW" newpages.txt >> AdventureQuestWorlds.txt
 
 AQW=`stat --print=%s AdventureQuestWorlds.txt`
 

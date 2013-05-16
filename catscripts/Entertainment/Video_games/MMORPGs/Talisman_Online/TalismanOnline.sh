@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i 'Talisman Online' newpages.txt >> TalismanOnline.txt
+export KEYWORDS_MMORPG_TALISMAN="Talisman(| )Online"
+
+egrep -i "$KEYWORDS_MMORPG_TALISMAN" newpages.txt >> TalismanOnline.txt
 
 TALISMAN=`stat --print=%s TalismanOnline.txt`
 

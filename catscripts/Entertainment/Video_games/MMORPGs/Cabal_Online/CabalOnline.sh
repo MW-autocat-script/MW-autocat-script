@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i 'Cabal(| )Online|Altar of Karion' newpages.txt >> CabalOnline.txt
+export KEYWORDS_MMORPG_CABAL="Cabal(| )Online|Altar of Karion"
+
+egrep -i "$KEYWORDS_MMORPG_CABAL" newpages.txt >> CabalOnline.txt
 
 CABAL=`stat --print=%s CabalOnline.txt`
 

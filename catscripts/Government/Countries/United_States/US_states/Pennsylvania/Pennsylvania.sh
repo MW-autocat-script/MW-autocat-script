@@ -6,7 +6,7 @@ egrep -i 'Philadelphia' newpages.txt | egrep -iv 'Eagles' >> Philadelphia.txt
 
 PENNSYLVANIA=`stat --print=%s Pennsylvania.txt`
 PITTSBURGH=`stat --print=%s Pittsburgh.txt`
-PHILADELPHIA=`stat --print=%s Philadelpha.txt`
+PHILADELPHIA=`stat --print=%s Philadelphia.txt`
 
 if [ $PENNSYLVANIA -ne 0 ];
 then
@@ -31,4 +31,4 @@ fi
 
 rm Pittsburgh.txt
 rm Pennsylvania.txt
-rm Philadelpha.txt
+rm Philadelphia.txt

@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i 'Ghost(| )X' newpages.txt >> GhostX.txt
+export KEYWORDS_MMORPG_GHOSTX="Ghost(| )X"
+
+egrep -i "$KEYWORDS_MMORPG_GHOSTX" newpages.txt >> GhostX.txt
 
 GHOSTX=`stat --print=%s GhostX.txt`
 

@@ -2,7 +2,7 @@
 
 egrep -i 'Ireland' newpages.txt | egrep -iv 'Northern Ireland' >> Ireland.txt
 
-IRELAND=`stat --print=%s Ireland`
+IRELAND=`stat --print=%s Ireland.txt`
 
 if [ $IRELAND -ne 0 ];
 then

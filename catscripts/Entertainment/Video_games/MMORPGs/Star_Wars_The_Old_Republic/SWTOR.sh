@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i 'The(| )Old(| )Republic|SW(:|)TOR' newpages.txt | egrep -iv 'Knights(| )of(| )the(| )old(| )Republic' >> SWTOR.txt
+export KEYWORDS_MMORPG_SWTOR="The(| )Old(| )Republic|SW(:|)TOR"
+
+egrep -i "$KEYWORDS_MMORPG_SWTOR" newpages.txt | egrep -iv 'Knights(| )of(| )the(| )old(| )Republic' >> SWTOR.txt
 
 SWTOR=`stat --print=%s SWTOR.txt`
 

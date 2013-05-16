@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i 'Guild(| )War|PVX' newpages.txt >> GuildWars.txt
+export KEYWORDS_MMORPG_GUILDWARS="Guild(| )War|PVX"
+
+egrep -i "$KEYWORDS_MMORPG_GUILDWARS" newpages.txt >> GuildWars.txt
 
 GUILDWARS=`stat --print=%s GuildWars.txt`
 

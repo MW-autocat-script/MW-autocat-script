@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i 'Anarchy(| )Online' newpages.txt >> AnarchyOnline.txt
+export KEYWORDS_MMORPG_ANARCHY="Anarchy(| )Online"
+
+egrep -i "$KEYWORDS_MMORPG_ANARCHY" newpages.txt >> AnarchyOnline.txt
 
 ANARCHY=`stat --print=%s AnarchyOnline.txt`
 

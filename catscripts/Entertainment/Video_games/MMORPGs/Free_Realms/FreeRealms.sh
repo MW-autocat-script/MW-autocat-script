@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i 'Free(| )Realms' newpages.txt > FreeRealms.txt
+export KEYWORDS_MMORPG_FREEREALMS="Free(| )Realms"
+
+egrep -i "$KEYWORDS_MMORPG_FREEREALMS" newpages.txt > FreeRealms.txt
 
 FREEREALMS=`stat --print=%s FreeRealms.txt`
 

@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i 'Fiesta(| )Online' newpages.txt >> FiestaOnline.txt
+export KEYWORDS_MMORPG_FIESTA="Fiesta(| )Online"
+
+egrep -i "$KEYWORDS_MMORPG_FIESTA" newpages.txt >> FiestaOnline.txt
 
 FIESTA=`stat --print=%s FiestaOnline.txt`
 

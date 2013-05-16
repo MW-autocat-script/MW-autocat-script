@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i 'Dead Frontier' newpages.txt >> DeadFrontier.txt
+export KEYWORDS_MMORPG_FRONTIER="Dead Frontier"
+
+egrep -i "$KEYWORDS_MMORPG_FRONTIER" newpages.txt >> DeadFrontier.txt
 
 FRONTIER=`stat --print=%s DeadFrontier.txt`
 

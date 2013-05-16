@@ -11,7 +11,7 @@ egrep -i "(Pokémon|Pokemon|Poke'mon)(sapphire| Sapphire)" newpages.txt >> Poké
 egrep -i "(Pokémon|Pokemon|Poke'mon)(emerald| Emerald)" newpages.txt >> PokémonEmerald.txt
 egrep -i "(Pokémon|Pokemon|Poke'mon)(firered|fire red| FireRed| Fire Red)" newpages.txt >> PokémonFireRed.txt
 egrep -i "(Pokémon|Pokemon|Poke'mon)(leafgreen|leaf green| LeafGreen| Leaf Green)" newpages.txt >> PokémonLeafGreen.txt
-egrep -i "mystery dungeon.+red|red rescue team" newpages.txt >> RedRescueTeam.txt
+egrep -i "mystery dungeon.+\bred|red rescue team" newpages.txt >> RedRescueTeam.txt
 egrep -i "mystery dungeon.+blue|blue rescue team" newpages.txt >> BlueRescueTeam.txt
 egrep -i "(Pokémon|Pokemon|Poke'mon)(black| Black)" newpages.txt | egrep -iv 'Black(| )2' >> PokémonBlack.txt
 egrep -i "(Pokémon|Pokemon|Poke'mon)(white| White)" newpages.txt | egrep -iv 'White(| )2' >> PokémonWhite.txt

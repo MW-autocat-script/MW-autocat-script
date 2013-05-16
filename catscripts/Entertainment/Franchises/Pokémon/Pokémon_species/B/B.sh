@@ -1,41 +1,41 @@
 #!/bin/bash 
 #Pokemon species by name, starting with the letter B
-egrep -i 'Bagon' newpages.txt >> Bagon.txt
-egrep -i 'Baltoy' newpages.txt >> Baltoy.txt
-egrep -i 'Banette' newpages.txt >> Banette.txt
-egrep -i 'Barboach' newpages.txt >> Barboach.txt
-egrep -i 'Basculin' newpages.txt >> Basculin.txt
-egrep -i 'Bastiodon' newpages.txt >> Bastiodon.txt
-egrep -i 'Bayleef' newpages.txt >> Bayleef.txt
-egrep -i 'Beartic' newpages.txt >> Beartic.txt
-egrep -i 'Beautifly' newpages.txt >> Beautifly.txt
-egrep -i 'Beedrill' newpages.txt >> Beedrill.txt
-egrep -i 'Beheeyem' newpages.txt >> Beheeyem.txt
-egrep -i 'Beldum' newpages.txt >> Beldum.txt
-egrep -i 'Bellossom' newpages.txt >> Bellossom.txt
-egrep -i 'Bellsprout' newpages.txt >> Bellsprout.txt
-egrep -i 'Bibarel' newpages.txt >> Bibarel.txt
-egrep -i 'Bidoof' newpages.txt >> Bidoof.txt
-egrep -i 'Bisharp' newpages.txt >> Bisharp.txt
-egrep -i 'Blastoise' newpages.txt >> Blastoise.txt
-egrep -i 'Blaziken' newpages.txt >> Blaziken.txt
-egrep -i 'Blissey' newpages.txt >> Blissey.txt
-egrep -i 'Blitzle' newpages.txt >> Blitzle.txt
-egrep -i 'Boldore' newpages.txt >> Boldore.txt
-egrep -i 'Bonsly' newpages.txt >> Bonsly.txt
-egrep -i 'Bouffalant' newpages.txt >> Bouffalant.txt
-egrep -i 'Braviary' newpages.txt >> Braviary.txt
-egrep -i 'Breloom' newpages.txt >> Breloom.txt
-egrep -i 'Bronzong' newpages.txt >> Bronzong.txt
-egrep -i 'Bronzor' newpages.txt >> Bronzor.txt
-egrep -i 'Budew' newpages.txt >> Budew.txt
-egrep -i 'Buizel' newpages.txt >> Buizel.txt
-egrep -i 'Bulbasaur' newpages.txt >> Bulbasaur.txt
-egrep -i 'Buneary' newpages.txt >> Buneary.txt
-egrep -i 'Burmy' newpages.txt >> Burmy.txt
-egrep -i 'Butterfree' newpages.txt >> Butterfree.txt
+egrep -i 'Bagon' newpages.txt >> Bagon.txt &
+egrep -i 'Baltoy' newpages.txt >> Baltoy.txt &
+egrep -i 'Banette' newpages.txt >> Banette.txt &
+egrep -i 'Barboach' newpages.txt >> Barboach.txt &
+egrep -i 'Basculin' newpages.txt >> Basculin.txt &
+egrep -i 'Bastiodon' newpages.txt >> Bastiodon.txt &
+egrep -i 'Bayleef' newpages.txt >> Bayleef.txt &
+egrep -i 'Beartic' newpages.txt >> Beartic.txt &
+egrep -i 'Beautifly' newpages.txt >> Beautifly.txt &
+egrep -i 'Beedrill' newpages.txt >> Beedrill.txt &
+egrep -i 'Beheeyem' newpages.txt >> Beheeyem.txt &
+egrep -i 'Beldum' newpages.txt >> Beldum.txt &
+egrep -i 'Bellossom' newpages.txt >> Bellossom.txt &
+egrep -i 'Bellsprout' newpages.txt >> Bellsprout.txt &
+egrep -i 'Bibarel' newpages.txt >> Bibarel.txt &
+egrep -i 'Bidoof' newpages.txt >> Bidoof.txt &
+egrep -i 'Bisharp' newpages.txt >> Bisharp.txt &
+egrep -i 'Blastoise' newpages.txt >> Blastoise.txt &
+egrep -i 'Blaziken' newpages.txt >> Blaziken.txt &
+egrep -i 'Blissey' newpages.txt >> Blissey.txt &
+egrep -i 'Blitzle' newpages.txt >> Blitzle.txt &
+egrep -i 'Boldore' newpages.txt >> Boldore.txt &
+egrep -i 'Bonsly' newpages.txt >> Bonsly.txt &
+egrep -i 'Bouffalant' newpages.txt >> Bouffalant.txt &
+egrep -i 'Braviary' newpages.txt >> Braviary.txt &
+egrep -i 'Breloom' newpages.txt >> Breloom.txt &
+egrep -i 'Bronzong' newpages.txt >> Bronzong.txt &
+egrep -i 'Bronzor' newpages.txt >> Bronzor.txt &
+egrep -i 'Budew' newpages.txt >> Budew.txt &
+egrep -i 'Buizel' newpages.txt >> Buizel.txt &
+egrep -i 'Bulbasaur' newpages.txt >> Bulbasaur.txt &
+egrep -i 'Buneary' newpages.txt >> Buneary.txt &
+egrep -i 'Burmy' newpages.txt >> Burmy.txt &
+egrep -i 'Butterfree' newpages.txt >> Butterfree.txt &
 
-
+wait
 
 BAGON=`stat --print=%s Bagon.txt`
 BALTOY=`stat --print=%s Baltoy.txt`
@@ -312,37 +312,39 @@ then
 fi
 
 
-rm Bagon.txt
-rm Baltoy.txt
-rm Banette.txt
-rm Barboach.txt
-rm Basculin.txt
-rm Bastiodon.txt
-rm Bayleef.txt
-rm Beartic.txt
-rm Beautifly.txt
-rm Beedrill.txt
-rm Beheeyem.txt
-rm Beldum.txt
-rm Bellossom.txt
-rm Bellsprout.txt
-rm Bibarel.txt
-rm Bidoof.txt
-rm Bisharp.txt
-rm Blastoise.txt
-rm Blaziken.txt
-rm Blissey.txt
-rm Blitzle.txt
-rm Boldore.txt
-rm Bonsly.txt
-rm Bouffalant.txt
-rm Braviary.txt
-rm Breloom.txt
-rm Bronzong.txt
-rm Bronzor.txt
-rm Budew.txt
-rm Buizel.txt
-rm Bulbasaur.txt
-rm Buneary.txt
-rm Burmy.txt
-rm Butterfree.txt
+rm Bagon.txt &
+rm Baltoy.txt &
+rm Banette.txt &
+rm Barboach.txt &
+rm Basculin.txt &
+rm Bastiodon.txt &
+rm Bayleef.txt &
+rm Beartic.txt &
+rm Beautifly.txt &
+rm Beedrill.txt &
+rm Beheeyem.txt &
+rm Beldum.txt &
+rm Bellossom.txt &
+rm Bellsprout.txt &
+rm Bibarel.txt &
+rm Bidoof.txt &
+rm Bisharp.txt &
+rm Blastoise.txt &
+rm Blaziken.txt &
+rm Blissey.txt &
+rm Blitzle.txt &
+rm Boldore.txt &
+rm Bonsly.txt &
+rm Bouffalant.txt &
+rm Braviary.txt &
+rm Breloom.txt &
+rm Bronzong.txt &
+rm Bronzor.txt &
+rm Budew.txt &
+rm Buizel.txt &
+rm Bulbasaur.txt &
+rm Buneary.txt &
+rm Burmy.txt &
+rm Butterfree.txt &
+
+wait

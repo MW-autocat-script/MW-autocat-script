@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i 'Mafia(| )Wars' newpages.txt > MafiaWars.txt
+export KEYWORDS_MMORPG_MAFIA="Mafia(| )Wars"
+
+egrep -i "$KEYWORDS_MMORPG_MAFIA" newpages.txt > MafiaWars.txt
 
 MAFIA=`stat --print=%s MafiaWars.txt`
 
