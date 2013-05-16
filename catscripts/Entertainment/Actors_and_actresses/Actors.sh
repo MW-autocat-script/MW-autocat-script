@@ -17,7 +17,7 @@ export CURRENTDIR="./catscripts/Entertainment/Actors_and_actresses"
 . $CURRENTDIR/Sean_Penn/SeanPenn.sh #$KEYWORDS_ACTOR_SEANPENN
 . $CURRENTDIR/Adam_Sandler/AdamSandler.sh #$KEYWORDS_ACTOR_ADAMSANDLER
 . $CURRENTDIR/Jaden_Smith/JadenSmith.sh #$KEYWORDS_ACTOR_JADENSMITH
-. $CURRENTDIR/Will_Smith/Will_Smith.sh #$KEYWORDS_ACTOR_WILLSMITH
+. $CURRENTDIR/Will_Smith/WillSmith.sh #$KEYWORDS_ACTOR_WILLSMITH
 . $CURRENTDIR/Sylvester_Stallone/SylvesterStallone.sh #$KEYWORDS_ACTOR_SYLVESTERSTALLONE
 . $CURRENTDIR/Patrick_Swayze/PatrickSwayze.sh #$KEYWORDS_ACTOR_PATRICKSWAYZE
 . $CURRENTDIR/Bruce_Willis/BruceWillis.sh #$KEYWORDS_ACTOR_BRUCEWILLIS
@@ -34,7 +34,7 @@ export KEYWORDS_ACTRESS="$KEYWORDS_ACTRESS_SANDRABULLOCK|$KEYWORDS_ACTRESS_MEGAN
 
 export KEYWORDS_ACTRESS_EXEMPT="Demi(| )Lovato|Vanessa(| )Hudgens|Ashley(| )Tisdale"
 
-egrep -i 'actor|actress' newpages.txt | egrep iv "$KEYWORDS_ACTOR|$KEYWORDS_ACTRESS|$KEYWORDS_ACTRESS_EXEMPT" >> Actors.txt
+egrep -i '\bactor|actress' newpages.txt | egrep -iv "$KEYWORDS_ACTOR|$KEYWORDS_ACTRESS|$KEYWORDS_ACTRESS_EXEMPT" >> Actors.txt
 
 ACTORS=`stat --print=%s Actors.txt`
 
