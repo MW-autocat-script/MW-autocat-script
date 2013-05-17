@@ -1,7 +1,7 @@
 #!/bin/bash
 #Script fot the My Little Pony: Friendship is Magic cartoon
 
-egrep -i 'Friendship is Magic|MLP\:FIM|MLP FIM|brony|Rainbow Dash|Twilight Sparkle|Pinkie Pie|Princess Celestia|Princess Luna|Princess Cadance|Princess Cadence|Queen Chrysalis' newpages.txt >> MLPFIM.txt
+egrep -i 'Friendship is Magic|MLP\:FIM|MLP FIM|brony|Rainbow Dash|Twilight Sparkle|Pinkie Pie|Princess Celestia|Princess Luna|Princess Cadance|Princess Cadence|Queen Chrysalis|Fluttershy' newpages.txt >> MLPFIM.txt
 
 MLP=`stat --print=%s MLPFIM.txt`
 
