@@ -15,7 +15,7 @@ egrep -i 'Whismur' newpages.txt >> Whismur.txt
 egrep -i 'Wigglytuff' newpages.txt >> Wigglytuff.txt
 egrep -i 'Wingull' newpages.txt >> Wingull.txt
 egrep -i 'Wobbuffet' newpages.txt >> Wobbuffet.txt
-egrep -i 'Woobat' newpages.txt >> Woobat.txt
+egrep -i '\bWoobat' newpages.txt >> Woobat.txt
 egrep -i 'Wooper' newpages.txt >> Wooper.txt
 egrep -i 'Wormadam' newpages.txt >> Wormadam.txt
 egrep -i 'Wurmple' newpages.txt >> Wurmple.txt

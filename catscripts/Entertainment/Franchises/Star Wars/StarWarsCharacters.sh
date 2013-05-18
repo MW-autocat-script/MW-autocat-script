@@ -11,6 +11,7 @@ egrep -i 'Darth Maul' newpages.txt >> DarthMaul.txt
 egrep -i 'Palpatine|Darth Sidious' newpages.txt >> Sidious.txt
 egrep -i 'Plo Koon' newpages.txt >> PloKoon.txt
 egrep -i 'R2-D2|R2D2' newpages.txt >> R2-D2.txt
+egrep -i 'Dooku' newpages.txt >> Dooku.txt
 egrep -i '\bRevan' newpages.txt >> Revan.txt
 egrep -i 'Anakin Skywalker|Anakinskywalker|Darth Vader|\bVader\b' newpages.txt >> DarthVader.txt
 egrep -i 'Luke Skywalker|Lukeskywalker' newpages.txt >> LukeSkywalker.txt
@@ -32,6 +33,7 @@ JABBA=`stat --print=%s JabbaTheHutt.txt`
 KENOBI=`stat --print=%s Obi-WanKenobi.txt`
 MAUL=`stat --print=%s DarthMaul.txt`
 SIDIOUS=`stat --print=%s Sidious.txt`
+DOOKU=`stat --print=%s Dooku.txt`
 KOON=`stat --print=%s PloKoon.txt`
 R2D2=`stat --print=%s R2-D2.txt`
 REVAN=`stat --print=%s Revan.txt`
@@ -113,6 +115,13 @@ if [ $SIDIOUS -ne 0 ];
 then
   export CATFILE="Sidious.txt"
   export CATNAME="Darth Sidious"
+  $CATEGORIZE
+fi
+
+if [ $DOOKU -ne 0 ];
+then
+  export CATFILE="Dooku.txt"
+  export CATNAME="Count Dooku"
   $CATEGORIZE
 fi
 
@@ -222,3 +231,4 @@ rm LeiaOrganaSolo.txt
 rm AhsokaTano.txt
 rm MaceWindu.txt
 rm Yoda.txt
+rm Dooku.txt
