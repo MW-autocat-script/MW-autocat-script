@@ -3,7 +3,7 @@ egrep -i 'Octillery' newpages.txt >>  Octillery.txt
 egrep -i 'Oddish' newpages.txt >>  Oddish.txt
 egrep -i 'Omanyte' newpages.txt >>  Omanyte.txt
 egrep -i 'Omastar' newpages.txt >>  Omastar.txt
-egrep -i 'Onix' newpages.txt >>  Onix.txt
+egrep -i '\bOnix' newpages.txt >>  Onix.txt
 egrep -i 'Oshawott' newpages.txt >>  Oshawott.txt
 
 Octillery=`stat --print=%s Octillery.txt`

@@ -13,6 +13,7 @@ egrep -i "\[\[What's an [abcdefghijklmnopqrstuvwxyz]{1,}\]\]" newpages.txt>> Def
 egrep -i '\[\[Whats a [abcdefghijklmnopqrstuvwxyz]{1,}\]\]' newpages.txt >> Definitions.txt
 egrep -i '\[\[Whats an [abcdefghijklmnopqrstuvwxyz]{1,}\]\]' newpages.txt >> Definitions.txt
 egrep -i '\[\[What does [abcdefghijklmnopqrstuvwxyz]{1,} mean\]\]' newpages.txt >> Definitions.txt
+egrep -i '\[\[What does [abcdefghijklmnopqrstuvwxyz]{1,} [abcdefghijklmnopqrstuvwxyz]{1,} mean\]\]' newpages.txt >> Definitions.txt
 egrep -i '\[\[What is [abcdefghijklmnopqrstuvwxyz]{1,}\]\]' newpages.txt >> Definitions.txt
 egrep -i '\[\[What is [a-z]{6,} [a-z]{6,}\]\]' newpages.txt >> Definitions.txt
 egrep -i '\[\[What is an [a-z]{6,} [a-z]{6,}\]\]' newpages.txt >> Definitions.txt

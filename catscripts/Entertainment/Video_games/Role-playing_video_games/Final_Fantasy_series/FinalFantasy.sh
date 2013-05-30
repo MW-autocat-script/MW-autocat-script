@@ -1,12 +1,12 @@
 #!/bin/bash
 
-egrep -i 'Final Fantasy (1|I\b)|Final Fantasy series' newpages.txt >> FinalFantasyseries.txt #There isn't a category for the first game yet
+egrep -i 'Final(| )Fantasy(| )(1\b|I\b)|Final Fantasy series' newpages.txt >> FinalFantasyseries.txt #There isn't a category for the first game yet
 egrep -i 'Final Fantasy (2|II\b)' newpages.txt >> FinalFantasy2.txt
 egrep -i 'Final Fantasy (3|III\b)' newpages.txt >> FinalFantasy3.txt
 egrep -i 'Final Fantasy (4|IV\b)|\bFF(| )IV\b' newpages.txt >> FinalFantasy4.txt
 egrep -i 'Final Fantasy (5|\bV\b)|\bFF(| )V\b' newpages.txt >> FinalFantasy5.txt
 egrep -i 'Final Fantasy (6|\bVI\b)|\bFF(| )VI\b' newpages.txt >> FinalFantasy6.txt
-egrep -i 'Final Fantasy (7|\bVII\b)|\bFF(| )VII\b' newpages.txt | egrep -iv 'Before Crisis|Crisis Core|Dirge of Cerberus|Advent Children' >> FinalFantasy7.txt
+egrep -i 'Final(| )Fantasy(| )(7|\bVII\b)|\bFF(| )VII\b' newpages.txt | egrep -iv 'Before Crisis|Crisis Core|Dirge of Cerberus|Advent Children' >> FinalFantasy7.txt
 egrep -i 'Advent(| )Children' newpages.txt >> AdventChildren.txt
 egrep -i 'Final Fantasy (8|\bVIII\b)|\bFF(| )VIII\b' newpages.txt >> FinalFantasy8.txt
 egrep -i 'Final Fantasy (9|\bIX\b)|\bFF(| )IX\b' newpages.txt >> FinalFantasy9.txt
@@ -14,6 +14,7 @@ egrep -i 'Final Fantasy (10|\bX\b)|\bFF(| )X\b' newpages.txt | egrep -iv 'Final 
 egrep -i 'Final Fantasy (10-2|\bX-2\b)|\bFF(| )X-2\b' newpages.txt >> FinalFantasyX-2.txt
 egrep -i 'Final Fantasy (11|\bXI\b)|\bFF(| )(XI|11)\b' newpages.txt >> FinalFantasy11.txt
 egrep -i 'Final Fantasy (12|\bXII\b)|\bFF(| )(12|XII)\b' newpages.txt >> FinalFantasy12.txt
+egrep -i 'Final(| )Fantasy(| )(13|\bXIII\b)|\bFF(| )(13|XIII\b)' newpages.txt >> FinalFantasy13.txt
 
 
 
@@ -31,6 +32,7 @@ FF10=`stat --print=%s FinalFantasy10.txt`
 FFX2=`stat --print=%s FinalFantasyX-2.txt`
 FF11=`stat --print=%s FinalFantasy11.txt`
 FF12=`stat --print=%s FinalFantasy12.txt`
+FF13=`stat --print=%s FinalFantasy13.txt`
 ADVENT=`stat --print=%s AdventChildren.txt`
 
 
@@ -123,6 +125,13 @@ then
   export CATFILE="FinalFantasy12.txt"
   export CATNAME="Final Fantasy XII"
   $CATEGORIZE
+fi
+
+if [ $FF13 -ne 0 ];
+then
+   export CATFILE="FinalFantasy13.txt"
+   export CATNAME="Final Fantasy XIII"
+   $CATEGORIZE
 fi
 
 if [ $ADVENT -ne 0 ];
