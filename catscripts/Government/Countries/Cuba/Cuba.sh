@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Cuba|Fidel Castro|Raul Castro|Havana' newpages.txt >> Cuba.txt
+egrep -i '\bCuba|Fidel Castro|Raul Castro|Havana' newpages.txt >> Cuba.txt
 
 CUBA=`stat --print=%s Cuba.txt`
 

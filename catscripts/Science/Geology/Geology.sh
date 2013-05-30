@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Volcano' newpages.txt >> Volcanoes.txt
+egrep -i 'Volcano' newpages.txt | egrep -iv 'RuneScape' >> Volcanoes.txt
 egrep -i 'Earth(| )quake' newpages.txt >> Earthquakes.txt
 egrep -i 'seismograph|seismology|geology|geological' newpages.txt | egrep -iv 'volcano|earth(| )quake' >> Geology.txt
 

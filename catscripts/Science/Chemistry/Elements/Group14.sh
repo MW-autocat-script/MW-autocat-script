@@ -3,7 +3,7 @@
 egrep -i '\bCarbon\b|\bCarbons\b' newpages.txt | egrep -iv 'Carbon \b.+(ate|ide|ite)|Need For Speed|\bNFS' >> Carbon.txt
 egrep -i 'Silicon' newpages.txt | egrep -iv 'Silicon \b.+(ate|ide|ite)|Silicon Valley' >> Silicon.txt
 egrep -i 'Germanium' newpages.txt | egrep -iv 'Germanium \b.+(ate|ide|ite)' >> Germanium.txt
-egrep -i '\bTin\b' newpages.txt | egrep -iv 'Tin \b.+(ate|ide|ite)|Tin Man|Tin Tower' >> Tin.txt
+egrep -i '\bTin\b' newpages.txt | egrep -iv 'Tin \b.+(ate|ide|ite)|Tin Man|Tin Tower|RuneScape' >> Tin.txt
 egrep -i 'Lead' newpages.txt | egrep -i 'atom|proton|neutron|electron|\bion|melt|boil|metal|vapor|magnet|element|compound|toxic|molecule|electricity|conduct|poison|lead weight' >> Lead.txt
 egrep -i 'Flerovium' newpages.txt | egrep -iv 'Flerovium \b.+(ate|ide|ite)' >> Flerovium.txt
 
