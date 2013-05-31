@@ -2,7 +2,7 @@
 
 egrep -i 'arachnid' newpages.txt | egrep -iv 'spider|tarantula|tick|scorpion' >> Arachnids.txt
 egrep -i 'deer tick' newpages.txt >> Ticks.txt
-egrep -i 'spider|tarantula|daddy( |-)long( |-)leg' newpages.txt | egrep -iv 'spider( ||-)man' >> Spiders.txt
+egrep -i 'spider|tarantula|daddy( |-)long( |-)leg' newpages.txt | egrep -iv 'spider( ||-)man|Rune(| )Scape' >> Spiders.txt
 egrep -i 'scorpion' newpages.txt | egrep -iv 'scorpion king' >> Scorpions.txt
 
 ARACHNIDS=`stat --print=%s Arachnids.txt`
