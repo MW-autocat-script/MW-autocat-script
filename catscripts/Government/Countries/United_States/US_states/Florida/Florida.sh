@@ -3,7 +3,7 @@
 egrep -i 'Florida' newpages.txt | egrep -iv 'Miami|Orlando' >> Florida.txt
 egrep -i 'Everglades' newpages.txt >> Florida.txt
 egrep -i 'Miami' newpages.txt | egrep -iv 'CSI(:|| )Miami' >> Miami.txt
-egrep -i 'Orlando' newpages.txt | egrep -iv 'Orlando Bloom' >> Orlando.txt
+egrep -i 'Orlando' newpages.txt | egrep -iv 'Orlando Bloom|RuneScape|Orlando Smith' >> Orlando.txt
 
 FLORIDA=`stat --print=%s Florida.txt`
 MIAMI=`stat --print=%s Miami.txt`
