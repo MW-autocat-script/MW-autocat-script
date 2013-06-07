@@ -11,16 +11,16 @@ egrep -i '^Whens\b' nonint.txt >> When.txt
 egrep -i '\bwhy\b' nonint.txt >> Why.txt
 egrep -i '\bHow\b' nonint.txt >> How.txt
 egrep -i '^Do\b' nonint.txt >> Do.txt
-egrep -i '^Does\b' nonint.txt >> Does.txt
+egrep -i '((\.|,) |^)Does\b' nonint.txt >> Does.txt
 egrep -i "^Doesn't\b" nonint.txt >> Doesnt.txt
 egrep -i '^Did\b' nonint.txt >> Did.txt
 egrep -i "^Didn't\b|^Didnt\b" nonint.txt >> Didnt.txt
 egrep -i '((\.|,) |^)Will\b' nonint.txt >> Will.txt
 egrep -i '((\.|,) |^)Is\b' nonint.txt >> Is.txt
 egrep -i "^Isn't\b|^Isnt\b" nonint.txt >> Isnt.txt
-egrep -i '(^|(\.|,) )Are\b' nonint.txt >> Are.txt
+egrep -i '((\.|,) |^)Are\b' nonint.txt >> Are.txt
 egrep -i "^Aren't\b|^Arent\b" nonint.txt >> Arent.txt
-egrep -i '(^|(\.|,) )Were\b' nonint.txt  >> Were.txt
+egrep -i '((\.|,) |^)Were\b' nonint.txt  >> Were.txt
 egrep -i "^Weren't\b|^Werent\b" nonint.txt >> Werent.txt
 egrep -i '((\.|,) |^)Was\b' nonint.txt >> Was.txt
 egrep -i '^Which\b' nonint.txt >> Which.txt
