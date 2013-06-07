@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Indonesia(|s)\b' newpages.txt >> Indonesia.txt
+egrep -i 'Indonesia(|s)\b|Sulawesi' newpages.txt >> Indonesia.txt
 
 INDONESIA=`stat --print=%s Indonesia.txt`
 
