@@ -5,15 +5,17 @@ export KEYWORDS_BENFRANKLIN="Ben(|jamin)(| )Franklin"
 export KEYWORDS_GEORGEWASHINGTONCARVER="George(| )(|Washington)(| )Carver"
 export KEYWORDS_DAVINCI="da(| )vinci"
 export KEYWORDS_EDISON="Edison"
+export KEYWORDS_TESLA="Tesla"
 
-export INVENTORSLIST="$KEYWORDS_ALEXANDERBELL|$KEYWORDS_BENFRANKLIN|$KEYWORDS_GEORGEWASHINGTONCARVER|$KEYWORDS_DAVINCI|$KEYWORDS_EDISON"
+export INVENTORSLIST="$KEYWORDS_ALEXANDERBELL|$KEYWORDS_BENFRANKLIN|$KEYWORDS_GEORGEWASHINGTONCARVER|$KEYWORDS_DAVINCI|$KEYWORDS_EDISON|$KEYWORDS_TESLA"
 
 egrep -i "$KEYWORDS_ALEXANDERBELL" newpages.txt > AlexanderGrahamBell.txt
 egrep -i "$KEYWORDS_BENFRANKLIN" newpages.txt > BenjaminFranklin.txt
 egrep -i "$KEYWORDS_GEORGEWASHINGTONCARVER" newpages.txt > GeorgeWashingtonCarver.txt
 egrep -i "$KEYWORDS_DAVINCI" newpages.txt > LeonardoDaVinci.txt
 egrep -i "$KEYWORDS_EDISON" newpages.txt > ThomasEdison.txt
-egrep -i 'Inventor' newpages.txt | egrep -iv "$INVENTORSLIST" > Inventors.txt
+egrep -i "$KEYWORDS_TESLA" newpages.txt | egrep -iv "Fallout(| )3|Brotherhood(| )of(| )Steel|Tesla(| )Roadster|Tesla(| )Motors" > NikolaTesla.txt
+egrep -i 'Invent(e|o)r' newpages.txt | egrep -iv "$INVENTORSLIST" > Inventors.txt
 
 INVENTORS=`stat --print=%s Inventors.txt`
 BELL=`stat --print=%s AlexanderGrahamBell.txt`
@@ -21,6 +23,7 @@ FRANKLIN=`stat --print=%s BenjaminFranklin.txt`
 CARVER=`stat --print=%s GeorgeWashingtonCarver.txt`
 DAVINCI=`stat --print=%s LeonardoDaVinci.txt`
 EDISON=`stat --print=%s ThomasEdison.txt`
+TESLA=`stat --print=%s NikolaTesla.txt`
 
 if [ $INVENTORS -ne 0 ];
 then
@@ -64,9 +67,17 @@ then
   $CATEGORIZE
 fi
 
+if [ $TESLA -ne 0 ];
+then
+  export CATFILE="NikolaTesla.txt"
+  export CATNAME="Nikola Tesla"
+  $CATEGORIZE
+fi
+
 rm Inventors.txt
 rm AlexanderGrahamBell.txt
 rm BenjaminFranklin.txt
 rm GeorgeWashingtonCarver.txt
 rm LeonardoDaVinci.txt
 rm ThomasEdison.txt
+rm NikolaTesla.txt
