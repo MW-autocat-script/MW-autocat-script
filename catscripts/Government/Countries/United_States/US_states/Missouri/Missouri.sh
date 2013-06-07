@@ -2,7 +2,7 @@
 
 egrep -i 'Missouri' newpages.txt >> Missouri.txt
 
-MISSOURI=`stat --print=% Missouri.txt`
+MISSOURI=`stat --print=%s Missouri.txt`
 
 if [ $MISSOURI -ne 0 ];
 then
