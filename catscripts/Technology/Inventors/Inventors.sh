@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export KEYWORDS_BABBAGE="Babbage"
+export KEYWORDS_BENZ="Karl Benz"
 export KEYWORDS_ALEXANDERBELL="Alex(|ander)(| )(|Graham|G\.)(| )Bell"
 export KEYWORDS_BENFRANKLIN="Ben(|jamin)(| )Franklin"
 export KEYWORDS_GEORGEWASHINGTONCARVER="George(| )(|Washington)(| )Carver"
@@ -8,10 +9,11 @@ export KEYWORDS_DAVINCI="da(| )vinci"
 export KEYWORDS_EDISON="Edison"
 export KEYWORDS_TESLA="Tesla"
 
-export INVENTORSLIST="$KEYWORDS_ALEXANDERBELL|$KEYWORDS_BABBAGE|$KEYWORDS_BENFRANKLIN|$KEYWORDS_GEORGEWASHINGTONCARVER|$KEYWORDS_DAVINCI|$KEYWORDS_EDISON|$KEYWORDS_TESLA"
+export INVENTORSLIST="$KEYWORDS_BABBAGE|$KEYWORDS_ALEXANDERBELL|$KEYWORDS_BENZ|$KEYWORDS_BENFRANKLIN|$KEYWORDS_GEORGEWASHINGTONCARVER|$KEYWORDS_DAVINCI|$KEYWORDS_EDISON|$KEYWORDS_TESLA"
 
 egrep -i "$KEYWORDS_BABBAGE" newpages.txt >> CharlesBabbage.txt
 egrep -i "$KEYWORDS_ALEXANDERBELL" newpages.txt > AlexanderGrahamBell.txt
+egrep -i "$KEYWORDS_BENZ" newpages.txt > KarlBenz.tzt
 egrep -i "$KEYWORDS_BENFRANKLIN" newpages.txt > BenjaminFranklin.txt
 egrep -i "$KEYWORDS_GEORGEWASHINGTONCARVER" newpages.txt > GeorgeWashingtonCarver.txt
 egrep -i "$KEYWORDS_DAVINCI" newpages.txt > LeonardoDaVinci.txt
@@ -22,6 +24,7 @@ egrep -i 'Invent(e|o)r' newpages.txt | egrep -iv "$INVENTORSLIST" > Inventors.tx
 INVENTORS=`stat --print=%s Inventors.txt`
 BABBAGE=`stat --print=%s CharlesBabbage.txt`
 BELL=`stat --print=%s AlexanderGrahamBell.txt`
+BENZ=`stat --print=%s KarlBenz.txt`
 FRANKLIN=`stat --print=%s BenjaminFranklin.txt`
 CARVER=`stat --print=%s GeorgeWashingtonCarver.txt`
 DAVINCI=`stat --print=%s LeonardoDaVinci.txt`
@@ -46,6 +49,13 @@ if [ $BELL -ne 0 ];
 then
   export CATFILE="AlexanderGrahamBell.txt"
   export CATNAME="Alexander Graham Bell"
+  $CATEGORIZE
+fi
+
+if [ $BENZ -ne 0 ];
+then
+  export CATFILE="KarlBenz.txt"
+  export CATNAME="Karl Benz"
   $CATEGORIZE
 fi
 
@@ -87,6 +97,7 @@ fi
 rm Inventors.txt
 rm CharlesBabbage.txt
 rm AlexanderGrahamBell.txt
+rm KarlBenz.txt
 rm BenjaminFranklin.txt
 rm GeorgeWashingtonCarver.txt
 rm LeonardoDaVinci.txt
