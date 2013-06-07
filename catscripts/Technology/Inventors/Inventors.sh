@@ -8,8 +8,13 @@ export KEYWORDS_GEORGEWASHINGTONCARVER="George(| )(|Washington)(| )Carver"
 export KEYWORDS_DAVINCI="da(| )vinci"
 export KEYWORDS_EDISON="Edison"
 export KEYWORDS_TESLA="Tesla"
+export KEYWORDS_ELIWHITNEY="Eli(| )Whitney"
 
-export INVENTORSLIST="$KEYWORDS_BABBAGE|$KEYWORDS_ALEXANDERBELL|$KEYWORDS_BENZ|$KEYWORDS_BENFRANKLIN|$KEYWORDS_GEORGEWASHINGTONCARVER|$KEYWORDS_DAVINCI|$KEYWORDS_EDISON|$KEYWORDS_TESLA"
+export INVENTORSLIST="$KEYWORDS_BABBAGE|$KEYWORDS_ALEXANDERBELL|$KEYWORDS_BENZ|$KEYWORDS_BENFRANKLIN|$KEYWORDS_GEORGEWASHINGTONCARVER|$KEYWORDS_DAVINCI|$KEYWORDS_EDISON|$KEYWORDS_TESLA|$KEYWORDS_ELIWHITNEY"
+
+#These are inventors who are notable enough to have Wikipedia articles but do not yet have enough questions about them to warrant their own category
+
+export INVENTORS_OTHER="Ralph(| )(|H(\.|))(| )Baer|Louis(| )Braille"
 
 egrep -i "$KEYWORDS_BABBAGE" newpages.txt >> CharlesBabbage.txt
 egrep -i "$KEYWORDS_ALEXANDERBELL" newpages.txt > AlexanderGrahamBell.txt
@@ -19,6 +24,7 @@ egrep -i "$KEYWORDS_GEORGEWASHINGTONCARVER" newpages.txt > GeorgeWashingtonCarve
 egrep -i "$KEYWORDS_DAVINCI" newpages.txt > LeonardoDaVinci.txt
 egrep -i "$KEYWORDS_EDISON" newpages.txt > ThomasEdison.txt
 egrep -i "$KEYWORDS_TESLA" newpages.txt | egrep -iv "Fallout(| )3|Brotherhood(| )of(| )Steel|Tesla(| )Roadster|Tesla(| )Motors" > NikolaTesla.txt
+egrep -i "$KEYWORDS_ELIWHITNEY" newpages.txt > EliWhitney.txt
 egrep -i 'Invent(e|o)r' newpages.txt | egrep -iv "$INVENTORSLIST" > Inventors.txt
 
 INVENTORS=`stat --print=%s Inventors.txt`
@@ -30,6 +36,7 @@ CARVER=`stat --print=%s GeorgeWashingtonCarver.txt`
 DAVINCI=`stat --print=%s LeonardoDaVinci.txt`
 EDISON=`stat --print=%s ThomasEdison.txt`
 TESLA=`stat --print=%s NikolaTesla.txt`
+WHITNEY=`stat --print=%s EliWhitney.txt`
 
 if [ $INVENTORS -ne 0 ];
 then
@@ -94,6 +101,13 @@ then
   $CATEGORIZE
 fi
 
+if [ $WHITNEY -ne 0 ];
+then
+  export CATFILE="EliWhitney.txt"
+  export CATNAME="Eli Whitney"
+  $CATEGORIZE
+fi
+
 rm Inventors.txt
 rm CharlesBabbage.txt
 rm AlexanderGrahamBell.txt
@@ -103,3 +117,4 @@ rm GeorgeWashingtonCarver.txt
 rm LeonardoDaVinci.txt
 rm ThomasEdison.txt
 rm NikolaTesla.txt
+rm EliWhitney.txt
