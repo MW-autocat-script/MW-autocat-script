@@ -18,14 +18,14 @@ export INVENTORS_OTHER="Ralph(| )(|H(\.|))(| )Baer|Louis(| )Braille"
 
 egrep -i "$KEYWORDS_BABBAGE" newpages.txt >> CharlesBabbage.txt
 egrep -i "$KEYWORDS_ALEXANDERBELL" newpages.txt > AlexanderGrahamBell.txt
-egrep -i "$KEYWORDS_BENZ" newpages.txt > KarlBenz.tzt
+egrep -i "$KEYWORDS_BENZ" newpages.txt > KarlBenz.txt
 egrep -i "$KEYWORDS_BENFRANKLIN" newpages.txt > BenjaminFranklin.txt
 egrep -i "$KEYWORDS_GEORGEWASHINGTONCARVER" newpages.txt > GeorgeWashingtonCarver.txt
 egrep -i "$KEYWORDS_DAVINCI" newpages.txt > LeonardoDaVinci.txt
 egrep -i "$KEYWORDS_EDISON" newpages.txt > ThomasEdison.txt
 egrep -i "$KEYWORDS_TESLA" newpages.txt | egrep -iv "Fallout(| )3|Brotherhood(| )of(| )Steel|Tesla(| )Roadster|Tesla(| )Motors" > NikolaTesla.txt
 egrep -i "$KEYWORDS_ELIWHITNEY" newpages.txt > EliWhitney.txt
-egrep -i 'Invent(e|o)r' newpages.txt | egrep -iv "$INVENTORSLIST" > Inventors.txt
+egrep -i 'Invent(e|o)r(|s)\b' newpages.txt | egrep -iv "$INVENTORSLIST" > Inventors.txt
 
 INVENTORS=`stat --print=%s Inventors.txt`
 BABBAGE=`stat --print=%s CharlesBabbage.txt`
