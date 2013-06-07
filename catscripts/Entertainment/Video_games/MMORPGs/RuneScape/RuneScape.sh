@@ -1,6 +1,9 @@
 #!/bin/bash
 
-export KEYWORDS_MMORPG_RUNESCAPE="RuneScape|Rune scape|rune longsword|rune kite|Lumbridge|Falador|Karamja|Daemonheim|Varrock|Edgeville|Elvarg|strength potion|(Zamorak|Armadyl|Zaros|Saradomin|Guthix|Bandos)|(Zamorak|Armadyl|Zaros|Saradomin|Guthix|Bandos).+godsword|Third Age Arm(or|our)|(abyssal|abby) whip|(addy|rune|dragon) kite|(rune|dragon) (scimitar|scimmy)|zammy|full sara|(obsidian|obby) maul|(king|queen) black dragon|corporeal beast|cockroach (soldier|worker|drone)|strength pure|God Wars Dungeon|ectofuntus|abyssal demon|Shilo Village|Soul Wars|(air|water|earth|fire|Mind|Body|Chaos|Law|Blood|Soul|Cosmic|Death|Nature)(| )(rune|talisman|altar)|Fremen(|n)ik"
+KEYWORDS_RUNESCAPE_PLACES="Lumbridge|Falador|Karamja|Daemonheim|Varrock|Edgeville|God Wars Dungeon|ectofuntus|Shilo Village|Soul Wars|Al(| )Kharid|Kharidian(| )Desert"
+
+
+export KEYWORDS_MMORPG_RUNESCAPE="$KEYWORDS_RUNESCAPE_PLACES|RuneScape|Rune scape|rune longsword|rune kite|Elvarg|strength potion|(Zamorak|Armadyl|Zaros|Saradomin|Guthix|Bandos)|(Zamorak|Armadyl|Zaros|Saradomin|Guthix|Bandos).+godsword|Third Age Arm(or|our)|(abyssal|abby) whip|(addy|rune|dragon) kite|(rune|dragon) (scimitar|scimmy)|zammy|full sara|(obsidian|obby) maul|(king|queen) black dragon|corporeal beast|cockroach (soldier|worker|drone)|strength pure|abyssal demon|(air|water|earth|fire|Mind|Body|Chaos|Law|Blood|Soul|Cosmic|Death|Nature)(| )(rune|talisman|altar)|Fremen(|n)ik|Zuriel|Statius|Dungeoneering|Fractite|Evolution of Combat|Dagannoth|skill(| )cape"
 
 egrep -i "$KEYWORDS_MMORPG_RUNESCAPE" newpages.txt >> RuneScape.txt
 
