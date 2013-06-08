@@ -1,13 +1,10 @@
-$!/bin/bash
+#!/bin/bash
 
 CURRENTDIR="./catscripts/Temp/Animals/Vertebrates"
 
-egrep -i 'vertebrate' newpages.txt \
-| egrep -iv 'fish' \
-| egrep -iv 'amphibian' \
-| egrep -iv 'mammal' \
-| egrep -iv 'bird' \
->> Vertebrates.txt
+export KEYWORDS_VERTEBRATE="fish|amphibian|mammal|bird"
+
+egrep -i 'vertebrate' newpages.txt | egrep -iv "$KEYWORDS_VERTEBRATE" >> Vertebrates.txt
 
 VERTEBRATES=`stat --print=%s Vertebrates.txt`
 
