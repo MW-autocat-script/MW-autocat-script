@@ -18,6 +18,8 @@ egrep -i '(^|\[\[)What is [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt
 egrep -i '(^|\[\[)What is [a-z]{6,} [a-z]{6,}($|\]\])' newpages.txt >> Definitions.txt
 egrep -i '(^|\[\[)What is an [a-z]{6,} [a-z]{6,}($|\]\])' newpages.txt >> Definitions.txt
 egrep -i 'What does the word [a-z]{1,} mean' newpages.txt >> Definitions.txt
+egrep -i '(^|\[\[)What are [a-z]{1,}($|\]\])' newpages.txt >> Definitions.txt
+egrep -i '(^|\[\[)What are [a-z]{1,} [a-z]{1,}($|\]\])' newpages.txt >> Definitions.txt
 egrep -i 'What does the (sur|)name [a-z]{1,} mean' newpages.txt >> NameMeanings.txt
 egrep -i 'What does the (sur|)name "[a-z]{1,}" mean' newpages.txt >> NameMeanings.txt
 egrep -i "What does the (sur|)name '[a-z]{1,}' mean" newpages.txt >> NameMeanings.txt
