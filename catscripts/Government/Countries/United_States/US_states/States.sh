@@ -10,6 +10,7 @@ $CURRENTDIR/California/California.sh
 $CURRENTDIR/Colorado/Colorado.sh
 $CURRENTDIR/Florida/Florida.sh
 $CURRENTDIR/Illinois/Illinois.sh
+$CURRENTDIR/Iowa/Iowa.sh
 $CURRENTDIR/Maine/Maine.sh
 $CURRENTDIR/Massachusetts/Massachusetts.sh
 $CURRENTDIR/Missouri/Missouri.sh
