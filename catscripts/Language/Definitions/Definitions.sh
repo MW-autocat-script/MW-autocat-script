@@ -1,8 +1,7 @@
 #!/bin/bash
 
-egrep -i '(^|\[\[)What is a [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Definitions.txt
-egrep -i '(^|\[\[)What is an [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Definitions.txt
-egrep -i '(^|\[\[)What are [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Definitions.txt
+egrep -i '(^|\[\[)What is a(|n) [abcdefghijklmnopqrstuvwxyz]{1,} (|[abcdefghijklmnopqrstuvwxyz]{1,})($|\]\])' newpages.txt >> Definitions.txt
+egrep -i '(^|\[\[)What are [abcdefghijklmnopqrstuvwxyz]{1,} (|[abcdefghijklmnopqrstuvwxyz]{1,})($|\]\])' newpages.txt >> Definitions.txt
 egrep -i '(^|\[\[)What is the definition of [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Definitions.txt
 egrep -i '(^|\[\[)What is the definition of a [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt  >> Definitions.txt
 egrep -i '(^|\[\[)Definition of [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Definitions.txt
@@ -16,7 +15,6 @@ egrep -i '(^|\[\[)What does [abcdefghijklmnopqrstuvwxyz]{1,} mean($|\]\])' newpa
 egrep -i '(^|\[\[)What does [abcdefghijklmnopqrstuvwxyz]{1,} [abcdefghijklmnopqrstuvwxyz]{1,} mean($|\]\])' newpages.txt >> Definitions.txt
 egrep -i '(^|\[\[)What is [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Definitions.txt
 egrep -i '(^|\[\[)What is [a-z]{6,} [a-z]{6,}($|\]\])' newpages.txt >> Definitions.txt
-egrep -i '(^|\[\[)What is an [a-z]{6,} [a-z]{6,}($|\]\])' newpages.txt >> Definitions.txt
 egrep -i 'What does the word [a-z]{1,} mean' newpages.txt >> Definitions.txt
 egrep -i '(^|\[\[)What are [a-z]{1,}($|\]\])' newpages.txt >> Definitions.txt
 egrep -i '(^|\[\[)What are [a-z]{1,} [a-z]{1,}($|\]\])' newpages.txt >> Definitions.txt
