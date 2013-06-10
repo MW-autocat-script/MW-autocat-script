@@ -12,6 +12,7 @@ egrep -i 'Palpatine|Darth Sidious' newpages.txt >> Sidious.txt
 egrep -i 'Plo Koon' newpages.txt >> PloKoon.txt
 egrep -i 'R2-D2|R2D2' newpages.txt >> R2-D2.txt
 egrep -i 'Dooku' newpages.txt >> Dooku.txt
+egrep -i 'Kit(| )Fisto' newpages.txt >> KitFisto.txt
 egrep -i '\bRevan' newpages.txt >> Revan.txt
 egrep -i 'Anakin Skywalker|Anakinskywalker|Darth Vader|\bVader\b' newpages.txt >> DarthVader.txt
 egrep -i 'Luke Skywalker|Lukeskywalker' newpages.txt >> LukeSkywalker.txt
@@ -23,12 +24,14 @@ egrep -i 'Leia Organa|Leiaorgana|Leia Solo|Leiasolo|Princess Leia|Princessleia' 
 egrep -i 'Ahsoka Tano|Ahsokatano|Asoka Tano|Asokatano|Ashoka Tano|Ashokatano' newpages.txt >> AhsokaTano.txt
 egrep -i '\bWindu\b|Mace Windu' newpages.txt >> MaceWindu.txt
 egrep -i '\bYoda\b' newpages.txt >> Yoda.txt
+egrep -i 'Asajj|Ventress' newpages.txt >> AsajjVentress.txt
 
 CADBANE=`stat --print=%s CadBane.txt`
 C3PO=`stat --print=%s C-3PO.txt`
 CHEWBACCA=`stat --print=%s Chewbacca.txt`
 BOBAFETT=`stat --print=%s BobaFett.txt`
 JANGOFETT=`stat --print=%s JangoFett.txt`
+FISTO=`stat --print=%s KitFisto.txt`
 JABBA=`stat --print=%s JabbaTheHutt.txt`
 KENOBI=`stat --print=%s Obi-WanKenobi.txt`
 MAUL=`stat --print=%s DarthMaul.txt`
@@ -47,6 +50,7 @@ LEIA=`stat --print=%s LeiaOrganaSolo.txt`
 AHSOKA=`stat --print=%s AhsokaTano.txt`
 WINDU=`stat --print=%s MaceWindu.txt`
 YODA=`stat --print=%s Yoda.txt`
+VENTRESS=`stat --print=%s AsajjVentress.txt`
 
 if [ $CADBANE -ne 0 ];
 then
@@ -80,6 +84,13 @@ if [ $JANGOFETT -ne 0 ];
 then
   export CATFILE="JangoFett.txt"
   export CATNAME="Jango Fett"
+  $CATEGORIZE
+fi
+
+if [ $FISTO -ne 0 ];
+then
+  export CATFILE="KitFisto.txt"
+  export CATNAME="Kit Fisto"
   $CATEGORIZE
 fi
 
@@ -209,11 +220,19 @@ then
   $CATEGORIZE
 fi
 
+if [ $VENTRESS -ne 0 ];
+then
+  export CATFILE="AsajjVentress.txt"
+  export CATNAME="Asajj Ventress"
+  $CATEGORIZE
+fi
+
 rm CadBane.txt
 rm C-3PO.txt
 rm Chewbacca.txt
 rm BobaFett.txt
 rm JangoFett.txt
+rm KitFisto.txt
 rm JabbaTheHutt.txt
 rm Obi-WanKenobi.txt
 rm PloKoon.txt
@@ -232,3 +251,4 @@ rm AhsokaTano.txt
 rm MaceWindu.txt
 rm Yoda.txt
 rm Dooku.txt
+rm AsajjVentress.txt
