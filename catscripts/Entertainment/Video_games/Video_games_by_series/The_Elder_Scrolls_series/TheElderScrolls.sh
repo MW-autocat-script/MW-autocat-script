@@ -1,8 +1,11 @@
 #!/bin/bash
 
-egrep -i 'The(| )Elder(| )Scrolls' newpages.txt | egrep -iv 'skyrim|oblivion' >> TheElderScrolls.txt
-egrep -i 'Skyrim' newpages.txt >> Skyrim.txt
-egrep -i 'The Elder Scrolls.+Oblivion|\b(i|o)n Oblivion' newpages.txt >> Oblivion.txt
+KEYWORDS_SKYRIM="Skyrim|Elder Scrolls (Five|5|V)\b"
+KEYWORDS_OBLIVION="The Elder Scrolls.+Oblivion|\b(i|o)n Oblivion|Elder Scrolls (Four|IV|4)\b"
+
+egrep -i 'The(| )Elder(| )Scrolls' newpages.txt | egrep -iv "$KEYWORDS_OBLIVION|$KEYWORDS_SKYRIM" > TheElderScrolls.txt
+egrep -i "$KEYWORDS_SKYRIM" newpages.txt >> Skyrim.txt
+egrep -i "$KEYWORDS_OBLIVION" newpages.txt >> Oblivion.txt
 
 SCROLLS=`stat --print=%s TheElderScrolls.txt`
 SKYRIM=`stat --print=%s Skyrim.txt`
