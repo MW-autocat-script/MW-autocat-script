@@ -21,6 +21,6 @@ $CURRENTDIR/Cars/Cars.sh
 $CURRENTDIR/SUVs/SUVs.sh
 #$CURRENTDIR/Trucks/Trucks.sh
 #$CURRENTDIR/Vans/Vans.sh 
-$CURRENTDIR/Vehicle_manufactuers/Manufactuers.sh
+$CURRENTDIR/Vehicle_manufacturers/Manufacturers.sh
 
 rm Transportation.txt

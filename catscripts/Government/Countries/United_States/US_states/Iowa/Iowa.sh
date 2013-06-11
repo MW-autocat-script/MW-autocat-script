@@ -6,7 +6,7 @@ IOWA=`stat --print=%s Iowa.txt`
 
 if [ $IOWA -ne 0 ];
 then
-  export CATFILE="Iowa.txt`
+  export CATFILE="Iowa.txt"
   export CATNAME="Iowa"
   $CATEGORIZE
 fi
