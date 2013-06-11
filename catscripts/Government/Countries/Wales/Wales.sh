@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Wales' newpages.txt | egrep -iv 'Jim(|bo|my)(| )Wales' >> Wales.txt
+egrep -i 'Wales' newpages.txt | egrep -iv 'Jim(|bo|my)(| )Wales|New South Wales' >> Wales.txt
 
 WALES=`stat --print=%s Wales.txt`
 
