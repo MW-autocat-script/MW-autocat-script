@@ -1,6 +1,11 @@
 #!/bin/bash
 #Categorization script for the adult cartoon South Park
-egrep -i 'South(| )Park|Kenny(| )McCormick|Cartman|(Kyle|Gerald|Sheila|Ike)(| )Broflovski|(Randy|Stan)(| )Marsh|Butters(| )Stotch|(Herbert|Mr(|\.))(| )Garrison|choksondik|Mr(|\.)(| )Mackey|Matt(| )Stone|Trey(| )Parker|Matt.+\bTrey|\bTrey.+Matt|Wendy(| )Testaburger|Jesus and Pals|Make Love(|,)(| )Not Warcraft|Good Times With Weapons|Mysterion|The Coon\b|Karen(| )McCormick|Clyde(| )Donovan|Clyde(| )Frog|(Scott|Jack|Mr\. and Mrs\.)(| )Tenorman|Craig(| )Tucker|Jimmy(| )Valmer|Timmy(| )Burch|Token(| )Black|Mr(|\.)(| )Hat|Mayor McDaniels' newpages.txt >> SouthPark.txt
+
+SOUTHPARK_CHARACTERS="(Kenny|Karen|Kevin)(| )McCormick|Cartman|(Kyle|Ike|Sheila|Gerald)(| )Broflovski|(Randy|Stan|Sharon|Shelly)(| )Marsh|(Butters|Leopold)(| )Stotch|((M(r|s|rs)(|\.)|Herbert)(| )Garrison|Mr(|\.)(| )Mackey|Wendy(| )Testaburger|Choksondick|Clyde(| )Donovan|(Scott|Jack|Mr\. and Mrs\.)(| )Tenorman|Clyde(| )Frog|Craig(| )Tucker|Jimmy(| )Valmer|Timmy(| )Burch|Token(| )Black|Mr(|\.)(| )Hat|Mayor McDaniels"
+
+SOUTHPARK_EPISODES="Make(| )Love(|,)(| )Not(| )Warcraft|Good(| )Times(| )With Weapons|The Coon\b|Imaginationland|Insheeption|Ass Burgers|Kenny Dies"
+
+egrep -i "South(| )Park|Matt(| )Stone|Trey(| )Parker|Matt.+\bTrey|\bTrey.+Matt|Jesus and Pals|Mysterion|$SOUTHPARK_CHARACTERS|$SOUTHPARK_EPISODES" newpages.txt >> SouthPark.txt
 
 SOUTHPARK=`stat --print=%s SouthPark.txt`
 
