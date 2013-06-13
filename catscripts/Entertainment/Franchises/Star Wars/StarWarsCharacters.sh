@@ -7,6 +7,7 @@ egrep -i 'Boba Fett|Bobafett' newpages.txt >> BobaFett.txt
 egrep -i 'Jango Fett|Jangofett' newpages.txt >> JangoFett.txt
 egrep -i 'Jabba the Hutt|\bJabba\b' newpages.txt >> JabbaTheHutt.txt
 egrep -i 'Obi-Wan|Obiwan|Kenobi' newpages.txt >> Obi-WanKenobi.txt
+egrep -i 'Galen(| )Marek|Starkiller' newpages.txt >> Starkiller.txt
 egrep -i 'Darth Maul' newpages.txt >> DarthMaul.txt
 egrep -i 'Palpatine|Darth Sidious' newpages.txt >> Sidious.txt
 egrep -i 'Plo Koon' newpages.txt >> PloKoon.txt
@@ -35,6 +36,7 @@ FISTO=`stat --print=%s KitFisto.txt`
 JABBA=`stat --print=%s JabbaTheHutt.txt`
 KENOBI=`stat --print=%s Obi-WanKenobi.txt`
 MAUL=`stat --print=%s DarthMaul.txt`
+STARKILLER=`stat --print=%s Starkiller.txt`
 SIDIOUS=`stat --print=%s Sidious.txt`
 DOOKU=`stat --print=%s Dooku.txt`
 KOON=`stat --print=%s PloKoon.txt`
@@ -120,6 +122,12 @@ then
   export CATFILE="DarthMaul.txt"
   export CATNAME="Darth Maul"
   $CATEGORIZE
+fi
+
+if [ $STARKILLER -ne 0 ];
+then
+  export CATFILE="Starkiller.txt"
+  export CATNAME="Galen Marek / Starkiller"
 fi
 
 if [ $SIDIOUS -ne 0 ];
@@ -237,6 +245,7 @@ rm JabbaTheHutt.txt
 rm Obi-WanKenobi.txt
 rm PloKoon.txt
 rm DarthMaul.txt
+rm Starkiller.txt
 rm Sidious.txt
 rm R2-D2.txt
 rm Revan.txt
