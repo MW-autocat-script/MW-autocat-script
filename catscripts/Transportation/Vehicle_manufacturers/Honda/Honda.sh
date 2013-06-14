@@ -6,7 +6,7 @@ KEYWORDS_HONDA_SPORTRAX="Sportrax|\b[234]00ex\b"
 
 #Cars keywords
 
-KEYWORDS_HONDA_ACCORD="Honda(| )Accord[0-9]{1,}(| )Accord"
+KEYWORDS_HONDA_ACCORD="Honda(| )Accord|[0-9]{1,}(| )Accord"
 KEYWORDS_HONDA_CIVIC="Honda(| )Civic|[0-9]{1,}(| )Civic"
 KEYWORDS_HONDA_ELEMENT="Honda(| )Element|[0-9]{1,}(| )Element\b"
 KEYWORDS_HONDA_INTEGRA="(Acura|Honda)(| )(RSX|Integra)|[0-9]{1,}(| )(RSX|Integra)"
