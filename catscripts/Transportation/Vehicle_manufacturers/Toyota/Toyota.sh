@@ -22,6 +22,10 @@ KEYWORDS_TOYOTA_4RUNNER="4Runner| 4(| )Runner\b"
 
 KEYWORDS_TOYOTA_ALPHARD="Toyota(| )Alphard|[0-9]{1,}(| )Alphard" #Alphard is also the name of a star, so we can't grab just Alphard
 
+#Brands
+
+KEYWORDS_LEXUS="\bLexus"
+KEYWORDS_SCION="Scion"
 
 #Search cars
 
@@ -30,9 +34,15 @@ egrep -i "$KEYWORDS_TOYOTA_CAMRY" newpages.txt >> ToyotaCamry.txt
 egrep -i "$KEYWORDS_TOYOTA_COROLLA" newpages.txt >> ToyotaCorolla.txt
 egrep -i "$KEYWORDS_TOYOTA_PRIUS" newpages.txt >> ToyotaPrius.txt
 
+
 #Search SUVs
 
 #Search vans
+
+#Search brands
+
+egrep -i "$KEYWORDS_LEXUS" newpages.txt >> Lexus.txt
+egrep -i "$KEYWORDS_SCION" newpages.txt >> Scion.txt
 
 #Stat cars
 
@@ -44,6 +54,11 @@ PRIUS=`stat --print=%s ToyotaPrius.txt`
 #Stat SUVs
 
 #Stat vans
+
+#Stat brands
+
+LEXUS=`stat --print=%s Lexus.txt`
+SCION=`stat --print=%s Scion.txt`
 
 #Categorize cars
 
@@ -79,9 +94,30 @@ fi
 
 #Categorize vans
 
+#Categorize brands
+
+if [ $LEXUS -ne 0 ];
+then
+  export CATFILE="Lexus.txt"
+  export CATNAME="Lexus"
+  $CATEGORIZE
+fi
+
+if [ $SCION -ne 0 ];
+then
+  export CATFILE="Scion.txt"
+  export CATNAME="Scion"
+  $CATEGORIZE
+fi
+
 #Cleanup cars
 
 rm ToyotaAvalon.txt
 rm ToyotaCamry.txt
 rm ToyotaCorolla.txt
 rm ToyotaPrius.txt
+
+#Cleanup brands
+
+rm Lexus.txt
+rm Scion.txt
