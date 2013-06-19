@@ -5,11 +5,12 @@
 KEYWORDS_TOYOTA_2000GT="Toyota(| )2000(| )GT|[0-9]{1,}(| )2000(| )GT"
 KEYWORDS_TOYOTA_86="Toyota(| )86"
 KEYWORDS_TOYOTA_ALLEX="Toyota(| )Allex|[0-9](| )Allex"
+KEYWORDS_TOYOTA_AVALON="Toyota(| )Avalon|[0-9]{1,}(| )Avalon"
 KEYWORDS_TOYOTA_CAMRY="Camry"
 KEYWORDS_TOYOTA_COROLLA="Corolla|$KEYWORDS_TOYOTA_ALLEX" #The Allex is a rebadged Corolla hatchback
 KEYWORDS_TOYOTA_PUBLICA="Toyota(| )(1000|Publica)|[0-9]{1,}(| )Publica"
 KEYWORDS_TOYOTA_PRIUS="Prius"
-KEYWORDS_TOYOTA_CARS="$KEYWORDS_TOYOTA_2000GT|$KEYWORDS_TOYOTA_86|$KEYWORDS_TOYOTA_ALLEX|$KEYWORDS_TOYOTA_CAMRY|$KEYWORDS_TOYOTA_COROLLA|$KEYWORDS_TOYOTA_PUBLICA|$KEYWORDS_TOYOTA_PRIUS"
+KEYWORDS_TOYOTA_CARS="$KEYWORDS_TOYOTA_2000GT|$KEYWORDS_TOYOTA_86|$KEYWORDS_TOYOTA_ALLEX|$KEYWORDS_TOYOTA_AVALON|$KEYWORDS_TOYOTA_CAMRY|$KEYWORDS_TOYOTA_COROLLA|$KEYWORDS_TOYOTA_PUBLICA|$KEYWORDS_TOYOTA_PRIUS"
 KEYWORDS_TOYOTA_CARS_NONPOP="$KEYWORDS_TOYOTA_2000GT|$KEYWORDS_TOYOTA_PUBLICA" #Cars which don't have their own category and should be placed in the parent
 
 #Toyota SUVs
@@ -24,6 +25,7 @@ KEYWORDS_TOYOTA_ALPHARD="Toyota(| )Alphard|[0-9]{1,}(| )Alphard" #Alphard is als
 
 #Search cars
 
+egrep -i "$KEYWORDS_TOYOTA_AVALON" newpages.txt >> ToyotaAvalon.txt
 egrep -i "$KEYWORDS_TOYOTA_CAMRY" newpages.txt >> ToyotaCamry.txt
 egrep -i "$KEYWORDS_TOYOTA_COROLLA" newpages.txt >> ToyotaCorolla.txt
 egrep -i "$KEYWORDS_TOYOTA_PRIUS" newpages.txt >> ToyotaPrius.txt
@@ -34,6 +36,7 @@ egrep -i "$KEYWORDS_TOYOTA_PRIUS" newpages.txt >> ToyotaPrius.txt
 
 #Stat cars
 
+AVALON=`stat --print=%s ToyotaAvalon`
 CAMRY=`stat --print=%s ToyotaCamry.txt`
 COROLLA=`stat --print=%s ToyotaCorolla.txt`
 PRIUS=`stat --print=%s ToyotaPrius.txt`
@@ -43,6 +46,13 @@ PRIUS=`stat --print=%s ToyotaPrius.txt`
 #Stat vans
 
 #Categorize cars
+
+if [ $AVALON -ne 0 ];
+then
+  export CATFILE="ToyotaAvalon.txt"
+  export CATNAME="Toyota Avalon"
+  $CATEGORIZE
+fi
 
 if [ $CAMRY -ne 0 ];
 then
@@ -71,6 +81,7 @@ fi
 
 #Cleanup cars
 
+rm ToyotaAvalon.txt
 rm ToyotaCamry.txt
 rm ToyotaCorolla.txt
 rm ToyotaPrius.txt
