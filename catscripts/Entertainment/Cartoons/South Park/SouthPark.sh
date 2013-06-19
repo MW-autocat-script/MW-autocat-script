@@ -1,7 +1,7 @@
 #!/bin/bash
 #Categorization script for the adult cartoon South Park
 
-SOUTHPARK_CHARACTERS="(Kenny|Karen|Kevin)(| )McCormick|Cartman|(Kyle|Ike|Sheila|Gerald)(| )Broflovski|(Randy|Stan|Sharon|Shelly)(| )Marsh|(Butters|Leopold)(| )Stotch|((M(r|s|rs)(|\.)|Herbert))(| )Garrison|Mr(|\.)(| )Mackey|Wendy(| )Testaburger|Choksondick|Clyde(| )Donovan|(Scott|Jack|Mr\. and Mrs\.)(| )Tenorman|Clyde(| )Frog|Craig(| )Tucker|Jimmy(| )Valmer|Timmy(| )Burch|Token(| )Black|Mr(|\.)(| )Hat|Mayor McDaniels"
+SOUTHPARK_CHARACTERS="(Kenny|Karen|Kevin)(| )McCormick|Cartman|(Kyle|Ike|Sheila|Gerald)(| )Broflovski|(Randy|Stan|Sharon|Shelly)(| )Marsh|(Butters|Leopold)(| )Stotch|((M(r|s|rs)(|\.)|Herbert))(| )Garrison|Mr(|\.)(| )Mackey|Wendy(| )Testaburger|Choksondick|Clyde(| )Donovan|(Scott|Jack|Mr\. and Mrs\.)(| )Tenorman|Clyde(| )Frog|Craig(| )Tucker|Jimmy(| )Valmer|Timmy(| )Burch|Token(| )Black|Mr(|\.)(| )Hat|Mayor McDaniels|Tweek(| )Tweak"
 
 SOUTHPARK_EPISODES="Make(| )Love(|,)(| )Not(| )Warcraft|Good(| )Times(| )With Weapons|The Coon\b|Imaginationland|Insheeption|Ass Burgers|Kenny Dies"
 
