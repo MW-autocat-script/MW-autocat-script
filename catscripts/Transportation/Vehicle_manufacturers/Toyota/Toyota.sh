@@ -36,7 +36,7 @@ egrep -i "$KEYWORDS_TOYOTA_PRIUS" newpages.txt >> ToyotaPrius.txt
 
 CAMRY=`stat --print=%s ToyotaCamry.txt`
 COROLLA=`stat --print=%s ToyotaCorolla.txt`
-PRIUS=`stat --print=%s ToyotaPrius`
+PRIUS=`stat --print=%s ToyotaPrius.txt`
 
 #Stat SUVs
 
