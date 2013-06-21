@@ -117,7 +117,6 @@ then
    $CATEGORIZE
 fi
 
-
 if [ $CAMERUPT -ne 0 ];
 then
    export CATFILE="Camerupt.txt"
