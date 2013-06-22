@@ -2,7 +2,7 @@
 
 egrep -i 'Cello\b' newpages.txt | egrep -iv 'Monticello|Nontecello' >> Cello.txt
 egrep -i 'Clarinet' newpages.txt >> Clarinet.txt
-egrep -i '\bDrums' newpages.txt | egrep -iv 'ear drums|brakes|chicken|turkey' >> Drums.txt
+egrep -i '\bDrums|\bBongo' newpages.txt | egrep -iv 'ear drums|brake|chicken|turkey' >> Drums.txt
 egrep -i '\bFlute(s|)' newpages.txt | egrep -iv 'azure flute|Pok(e|é)(| )flute|Pokémon|Pokemon|azelf flute' >> Flute.txt
 egrep -i 'Guitar' newpages.txt | egrep -iv 'hero' >> Guitar.txt
 egrep -i 'Piano' newpages.txt >> Piano.txt
