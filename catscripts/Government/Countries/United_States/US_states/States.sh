@@ -18,6 +18,7 @@ $CURRENTDIR/New_Jersey/NewJersey.sh
 $CURRENTDIR/New_Mexico/NewMexico.sh
 $CURRENTDIR/New_York/NewYork.sh
 $CURRENTDIR/North_Carolina/NorthCarolina.sh
+$CURRENTDIR/North_Dakota/NorthDakota.sh
 $CURRENTDIR/Ohio/Ohio.sh
 $CURRENTDIR/Oregon/Oregon.sh
 $CURRENTDIR/Pennsylvania/Pennsylvania.sh
