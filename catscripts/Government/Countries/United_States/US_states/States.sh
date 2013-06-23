@@ -23,5 +23,6 @@ $CURRENTDIR/Ohio/Ohio.sh
 $CURRENTDIR/Oregon/Oregon.sh
 $CURRENTDIR/Pennsylvania/Pennsylvania.sh
 $CURRENTDIR/South_Carolina/SouthCarolina.sh
+$CURRENTDIR/South_Dakota/SouthDakota.sh
 $CURRENTDIR/Vermont/Vermont.sh
 $CURRENTDIR/Wyoming/Wyoming.sh
