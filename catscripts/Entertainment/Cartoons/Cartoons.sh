@@ -8,6 +8,7 @@ $CURRENTDIR/Family_Guy/FamilyGuy.sh
 $CURRENTDIR/Futurama/Futurama.sh
 $CURRENTDIR/Johnny_Test/JohnnyTest.sh
 $CURRENTDIR/Kim_Possible/KimPossible.sh
+$CURRENTDIR/Looney_Tunes/LooneyTunes.sh
 $CURRENTDIR/My_Little_Pony\:_Friendship_Is_Magic/MLP.sh
 $CURRENTDIR/Pokémon_anime/PokémonAnime.sh
 $CURRENTDIR/South\ Park/SouthPark.sh
