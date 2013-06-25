@@ -3,6 +3,7 @@
 CURRENTDIR="./catscripts/Math"
 
 $CURRENTDIR/Addition/Addition.sh
+$CURRENTDIR/Algebra/Algebra.sh
 $CURRENTDIR/Division/Division.sh
 $CURRENTDIR/Exponents/Exponents.sh
 $CURRENTDIR/Fractions/Fractions.sh 
