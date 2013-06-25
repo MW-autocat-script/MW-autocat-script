@@ -1,7 +1,7 @@
 #!/bin/bash
 
 KEYWORDS_VIOLA="\bViola(|s)\b|Violist"
-
+KEYWORDS_XYLOPHONE="Xylophon(e|ist)"
 
 egrep -i 'Cello\b' newpages.txt | egrep -iv 'Monticello|Nontecello' >> Cello.txt
 egrep -i 'Clarinet' newpages.txt >> Clarinet.txt
@@ -13,6 +13,7 @@ egrep -i 'on a recorder|on the recorder\]\]|for recorder\]\]|notes.+recorder|rec
 egrep -i 'Saxophone' newpages.txt >> Saxophone.txt
 egrep -i 'Violin' newpages.txt >> Violin.txt
 egrep -i "$KEYWORDS_VIOLA" newpages.txt >> Viola.txt
+egrep -i "$KEYWORDS_XYLOPHONE" newpages.txt >> Xylophone.txt
 
 CELLO=`stat --print=%s Cello.txt`
 CLARINET=`stat --print=%s Clarinet.txt`
@@ -24,6 +25,7 @@ RECORDER=`stat --print=%s Recorder.txt`
 SAXOPHONE=`stat --print=%s Saxophone.txt`
 VIOLIN=`stat --print=%s Violin.txt`
 VIOLA=`stat --print=%s Viola.txt`
+XYLOPHONE=`stat --print=%s Xylophone.txt`
 
 if [ $CELLO -ne 0 ];
 then
@@ -95,6 +97,13 @@ then
   $CATEGORIZE
 fi
 
+if [ $XYLOPHONE -ne 0 ];
+then
+  export CATFILE="Xylophone.txt"
+  export CATNAME="Xylophone"
+  $CATEGORIZE
+fi
+
 rm Cello.txt
 rm Clarinet.txt
 rm Drums.txt
@@ -105,3 +114,4 @@ rm Recorder.txt
 rm Saxophone.txt
 rm Violin.txt
 rm Viola.txt
+rm Xylophone.txt
