@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Mexico|Mexican|Tijuana' newpages.txt | egrep -iv 'New(| )Mexic(o|an)' >> Mexico.txt
+egrep -i 'Mexic(o|an)|Tijuana' newpages.txt | egrep -iv 'New(| )Mexic(o|an)' >> Mexico.txt
 
 MEXICO=`stat --print=%s Mexico.txt`
 
