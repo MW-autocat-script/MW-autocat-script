@@ -8,7 +8,7 @@ if [ $MEXICO -ne 0 ];
 then
   export CATFILE="Mexico.txt"
   export CATNAME="Mexico"
-  $CATSCRIPTS
+  $CATEGROIZE
 fi
 
 rm Mexico.txt
