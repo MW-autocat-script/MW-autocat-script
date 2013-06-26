@@ -1,6 +1,8 @@
 #!/bin/bash
+KEYWORDS_PS2="PlayStation 2|Play Station 2|\bPS2|\bPS 2\b"
+KEYWORDS_PS2_EXCLUDE="PS(| )2(| )(mouse|port|keyboard)"
 
-egrep -i 'PlayStation 2|Play Station 2|\bPS2|\bPS 2\b' newpages.txt | egrep -iv '\b(PS2|PS 2) (mouse|port|keyboard)|for the (PlayStation|Play Station)|for (PlayStation|PlayStation)' >> PlayStation2.txt
+egrep -i "$KEYWORDS_PS2" newpages.txt | egrep -iv "$KEYWORDS_PS2_EXCLUDE" >> PlayStation2.txt
 
 PS2=`stat --print=%s PlayStation2.txt`
 
