@@ -1,7 +1,7 @@
 #!/bin/bash
 
 egrep -i 'Italy' newpages.txt | egrep -iv 'Rome|Pompeii|Pisa|Venice' >> Italy.txt 
-egrep -i '\bRome(|s)\b' newpages.txt | egrep -iv 'Ancient Rome' >> Rome.txt
+egrep -i '\bRome(|s)\b' newpages.txt | egrep -iv 'Ancient Rome|Rome(,|)(| )Georgia' >> Rome.txt
 egrep -i 'Ancient Rome|Romans|Roman times|Augustus Caesar|Emperor Nero|Caligula' newpages.txt | egrep -iv 'Book of Romans|Romans [0-9]{1,}\:[0-9]{1,}|Julius Caesar' >> AncientRome.txt #Exclude biblical book and Julius Caesar
 egrep -i 'Julius Caesar' newpages.txt >> JuliusCaesar.txt
 egrep -i 'Pisa' newpages.txt >> Pisa.txt
