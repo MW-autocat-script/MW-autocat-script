@@ -3,6 +3,7 @@
 CURRENTDIR="./catscripts/Entertainment/Video_games/Video_game_consoles"
 
 . $CURRENTDIR/Nintendo/Nintendo64.sh
+. $CURRENTDIR/Nintendo/NintendoWii.sh
 
 
 
