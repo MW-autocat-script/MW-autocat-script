@@ -9,7 +9,8 @@ CURRENTDIR="./catscripts/Entertainment/Video_games/Video_game_consoles"
 . $CURRENTDIR/Sony/PlayStationPortable.sh
 
 
-. $CURRENTDIR/Xbox.sh
-. $CURRENTDIR/Xbox360.sh 
-. $CURRENTDIR/XboxOne.sh
+. $CURRENTDIR/Microsoft/Xbox.sh
+. $CURRENTDIR/Microsoft/Xbox360.sh
+. $CURRENTDIR/Microsoft/XboxLive.sh # Not a game console, but it's easier to categorize it here
+. $CURRENTDIR/Microsoft/XboxOne.sh
 
