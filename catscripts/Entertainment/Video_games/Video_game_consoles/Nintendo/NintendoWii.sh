@@ -1,7 +1,7 @@
 #!/bin/bash
 
 KEYWORDS_NINTENDO_WII="\bWii"
-KEYWORDS_NINTENDO_WII_EXCLUDE="\bWii(| )U\b|\bWii(| )Sports|\bWii(| )Fit|\bWii(| )Play"
+KEYWORDS_NINTENDO_WII_EXCLUDE="\bWii(| )U\b|\bWii(| )Sports|\bWii(| )Fit|\bWii(| )Play|Mario(| )Kart(| )Wii"
 
 egrep -i "$KEYWORDS_NINTENDO_WII" newpages.txt | egrep -iv "$KEYWORDS_NINTENDO_WII_EXCLUDE" >> NintendoWii.txt
 
