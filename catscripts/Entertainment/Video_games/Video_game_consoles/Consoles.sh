@@ -2,11 +2,11 @@
 
 CURRENTDIR="./catscripts/Entertainment/Video_games/Video_game_consoles"
 
-. $CURRENTDIR/PlayStation.sh
-. $CURRENTDIR/PlayStation2.sh
-. $CURRENTDIR/PlayStation3.sh
-. $CURRENTDIR/PlayStation4.sh
-. $CURRENTDIR/PlayStationPortable.sh
+. $CURRENTDIR/Sony/PlayStation.sh
+. $CURRENTDIR/Sony/PlayStation2.sh
+. $CURRENTDIR/Sony/PlayStation3.sh
+. $CURRENTDIR/Sony/PlayStation4.sh
+. $CURRENTDIR/Sony/PlayStationPortable.sh
 
 
 . $CURRENTDIR/Xbox.sh
