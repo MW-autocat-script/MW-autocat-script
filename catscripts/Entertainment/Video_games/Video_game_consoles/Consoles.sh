@@ -11,4 +11,5 @@ CURRENTDIR="./catscripts/Entertainment/Video_games/Video_game_consoles"
 
 . $CURRENTDIR/Xbox.sh
 . $CURRENTDIR/Xbox360.sh 
+. $CURRENTDIR/XboxOne.sh
 

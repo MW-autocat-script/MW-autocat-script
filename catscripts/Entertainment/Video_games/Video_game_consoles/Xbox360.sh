@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i 'Xbox 360|Xbox360' newpages.txt | egrep -iv 'for the Xbox 360|For Xbox 360|on (|the) Xbox 360' >> Xbox360.txt
+KEYWORDS_XBOX360="X(|-)box(| )360"
+
+egrep -i "$KEYWORDS_XBOX360" newpages.txt >> Xbox360.txt
 
 X360=`stat --print=%s Xbox360.txt`
 
