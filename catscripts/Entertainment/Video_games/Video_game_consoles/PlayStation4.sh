@@ -6,7 +6,7 @@ egrep -i "$KEYWORDS_PS4" newpages.txt >> PlayStation4.txt
 
 PS4=`stat --print=%s PlayStation4.txt`
 
-if [ $PS$ -ne 0 ];
+if [ $PS4 -ne 0 ];
 then
   export CATFILE="PlayStation4.txt"
   export CATNAME="PlayStation 4"
