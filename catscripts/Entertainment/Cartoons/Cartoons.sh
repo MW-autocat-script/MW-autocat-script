@@ -3,7 +3,7 @@
 CURRENTDIR="./catscripts/Entertainment/Cartoons"
 
 $CURRENTDIR/American_Dad/AmericanDad.sh
-$CURRENTDIR/Avatar_The_Last_Airbdender/Avatar.sh
+$CURRENTDIR/Avatar_The_Last_Airbender/Avatar.sh
 $CURRENTDIR/Dora_the_Explorer/Dora.sh
 $CURRENTDIR/Family_Guy/FamilyGuy.sh
 $CURRENTDIR/Futurama/Futurama.sh
