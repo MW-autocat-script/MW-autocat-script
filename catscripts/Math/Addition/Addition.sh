@@ -2,7 +2,7 @@
 
 KEYWORDS_ADDITION="What is [0-9]{1,}(|(/|\.)[0-9]{1,}) (plus|\+) [0-9]{1,}(|(/|\.)[0-9]{1,})|What is [a-z]{1,}(|-[a-z]{1,}) plus [a-z]{1,}(|[a-z]{1,})"
 
-egrep -i "$KEYWORDS_ADDITION" >> Addition.txt
+egrep -i "$KEYWORDS_ADDITION" newpages.txt >> Addition.txt
 
 ADDITION=`stat --print=%s Addition.txt`
 
