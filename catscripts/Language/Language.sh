@@ -10,7 +10,7 @@ $CURRENTDIR/Ditloids/Ditloids.sh
 $CURRENTDIR/Etymology/Etymology.sh
 $CURRENTDIR/Acronyms/Acronyms.sh
 $CURRENTDIR/Parts_of_speech/PartsOfSpeech.sh
-$CURRENTDIR/Pronunciation/Pronunciatiom.sh
+$CURRENTDIR/Pronunciation/Pronunciation.sh
 $CURRENTDIR/Rhyming/Rhyming.sh
 $CURRENTDIR/Sign_language/Signlanguage.sh
 $CURRENTDIR/Spelling/Spelling.sh
