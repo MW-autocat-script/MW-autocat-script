@@ -229,7 +229,7 @@ fi
 if [ $TUPAC -ne 0 ];
 then
   export CATFILE="TupacShakur.txt"
-  export CATFILE="Tupac Shakur"
+  export CATNAME="Tupac Shakur"
   $CATEGORIZE
 fi
 

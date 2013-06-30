@@ -13,21 +13,18 @@ KEYWORDS_DOGS_EXCLUDE="Maltese(| )Falcon|Snoop Dogg|Hot dog"
 KEYWORDS_GOLDFISH="gold(| )fish"
 KEYWORDS_GOLDFISH_EXCLUDE="Gold(| )fish(| )cracker"
 
-#Search dogs
+#Hamster keywords
 
-egrep -i "$KEYWORDS_DOGS" newpages.txt | egrep -iv "$KEYWORDS_DOGS_EXCLUDE" >> Dogs.txt
+KEYWORDS_HAMSTERS="ham(|p)ster"
 
-# Search goldfish
 
-egrep -i "$KEYWORDS_GOLDFISH" newpages.txt | egrep -iv "$KEYWORDS_GOLDFISH_EXCLUDE" >> Goldfish.txt
+egrep -i "$KEYWORDS_DOGS" newpages.txt | egrep -iv "$KEYWORDS_DOGS_EXCLUDE" >> Dogs.txt #Search dogs
+egrep -i "$KEYWORDS_GOLDFISH" newpages.txt | egrep -iv "$KEYWORDS_GOLDFISH_EXCLUDE" >> Goldfish.txt #Search goldfish
+egrep -i "$KEYWORDS_HAMSTERS" newpages.txt >> Hamsters.txt #Search hamsters
 
-#Stat Dogs
-
-DOGS=`stat --print=%s Dogs.txt`
-
-#Stat Goldfish
-
-GOLDFISH=`stat --print=%s Goldfish.txt`
+DOGS=`stat --print=%s Dogs.txt` #stat dogs
+GOLDFISH=`stat --print=%s Goldfish.txt` #stat goldfish
+HAMSTERS=`stat --print=%s Hamsters.txt` #stat hamsters
 
 #Categorize dogs
 
@@ -47,6 +44,15 @@ then
   $CATEGORIZE
 fi
 
+#Categorize hamsters
+
+if [ $HAMSTERS -ne 0 ];
+then
+  export CATFILE="Hamsters.txt"
+  export CATNAME="Hamsters"
+  $CATEGORIZE
+fi
+
 rm Dogs.txt #cleanup dogs
 rm Goldfish.txt #Cleanup goldfish
-
+rm Hamsters.txt #cleanup hamsters
