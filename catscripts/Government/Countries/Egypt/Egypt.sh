@@ -1,8 +1,12 @@
 #!/bin/bash
 
-egrep -i 'Egypt(|s|ian)' newpages.txt | egrep -iv 'ancient Egypt|Nile Rile|River Nile|Nile delta|Aswan Dam' >> Egypt.txt
-egrep -i 'ancient Egypt' newpages.txt >> AncientEgypt.txt
-egrep -i 'Nile River|River Nile|Nile delta|Aswan dam' newpages.txt >> NileRiver.txt
+KEYWORDS_EGYPT="Egypt(|s|ian)"
+KEYWORDS_ANCIENTEGYPYT="ancient Egypt|Tutankhamen|Tutencarmoon|tootencarmoon"
+KEYWORDS_NILERIVER="Nile River|River Nile|Nile delta|Aswan dam"
+
+egrep -i "$KEYWORDS_EGYPT" newpages.txt | egrep -iv "$KEYWORDS_ANCIENTEGYPYT|$KEYWORDS_NILERIVER" >> Egypt.txt
+egrep -i "$KEYWORDS_ANCIENTEGYPYT" newpages.txt >> AncientEgypt.txt
+egrep -i "$KEYWORDS_NILERIVER" newpages.txt >> NileRiver.txt
 
 EGYPT=`stat --print=%s Egypt.txt`
 ANCIENT=`stat --print=%s AncientEgypt.txt`
