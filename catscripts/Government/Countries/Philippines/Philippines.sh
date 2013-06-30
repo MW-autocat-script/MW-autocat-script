@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Philippine|Phillipine|Philipine|Phillippine' newpages.txt | egrep -iv 'Philippine National Police Academy|Philippine literature' >> Philippines.txt
+egrep -i 'Philippine|Phillipine|Philipine|Phillippine|Luzon' newpages.txt | egrep -iv 'Philippine National Police Academy|Philippine literature' >> Philippines.txt
 egrep -i 'PNPA|Philippine National Police Academy' newpages.txt > PNPA.txt
 egrep -i '(pnp\b.+neuro|neuro.+pnp)' newpages.txt >> PNPA.txt
 

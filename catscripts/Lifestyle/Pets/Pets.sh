@@ -8,16 +8,26 @@ KEYWORDS_DOGS_TERRIER="Airedale(| )Terrier"
 KEYWORDS_DOGS="\bDog(|s)|Poodle|Terrier|$KEYWORDS_DOGS_TERRIER|$KEYWORDS_DOGS_TOY|$KEYWORDS_DOGS_WORKING"
 KEYWORDS_DOGS_EXCLUDE="Maltese(| )Falcon|Snoop Dogg|Hot dog"
 
+#Goldfish keywords
+
+KEYWORDS_GOLDFISH="gold(| )fish"
+KEYWORDS_GOLDFISH_EXCLUDE="Gold(| )fish(| )cracker"
 
 #Search dogs
 
 egrep -i "$KEYWORDS_DOGS" newpages.txt | egrep -iv "$KEYWORDS_DOGS_EXCLUDE" >> Dogs.txt
 
+# Search goldfish
+
+egrep -i "$KEYWORDS_GOLDFISH" newpages.txt | egrep -iv "$KEYWORDS_GOLDFISH_EXCLUDE" >> Goldfish.txt
 
 #Stat Dogs
 
 DOGS=`stat --print=%s Dogs.txt`
 
+#Stat Goldfish
+
+GOLDFISH=`stat --print=%s Goldfish.txt`
 
 #Categorize dogs
 
@@ -28,6 +38,15 @@ then
   $CATEGORIZE
 fi
 
-#Cleanup dogs
+#Categorize goldfish
 
-rm Dogs.txt
+if [ $GOLDFISH -ne 0 ];
+then
+  export CATFILE="Goldfish.txt"
+  export CATNAME="Goldfish"
+  $CATEGORIZE
+fi
+
+rm Dogs.txt #cleanup dogs
+rm Goldfish.txt #Cleanup goldfish
+
