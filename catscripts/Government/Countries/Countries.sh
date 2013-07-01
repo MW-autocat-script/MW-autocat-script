@@ -84,6 +84,7 @@ $CURRENTDIR/Philippines/Philippines.sh
 $CURRENTDIR/Poland/Poland.sh
 $CURRENTDIR/Portugal/Portugal.sh
 $CURRENTDIR/Singapore/Singapore.sh
+$CURRENTDIR/South_Africa/SouthAfrica.sh
 $CURRENTDIR/Saudi_Arabia/SaudiArabia.sh
 $CURRENTDIR/South_Korea/SouthKorea.sh
 $CURRENTDIR/Sri_Lanka/SriLanka.sh
