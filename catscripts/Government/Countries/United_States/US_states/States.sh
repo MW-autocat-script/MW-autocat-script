@@ -8,7 +8,11 @@ $CURRENTDIR/Arizona/Arizona.sh
 $CURRENTDIR/Arkansas/Arkansas.sh
 $CURRENTDIR/California/California.sh
 $CURRENTDIR/Colorado/Colorado.sh
+$CURRENTDIR/Connecticut/Connecticut.sh
+$CURRENTDIR/Delaware/Delaware.sh
 $CURRENTDIR/Florida/Florida.sh
+$CURRENTDIR/Georgia/Georgia.sh
+$CURRENTDIR/Idaho/Idaho.sh
 $CURRENTDIR/Illinois/Illinois.sh
 $CURRENTDIR/Iowa/Iowa.sh
 $CURRENTDIR/Maine/Maine.sh
