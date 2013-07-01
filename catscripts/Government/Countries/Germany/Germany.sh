@@ -1,10 +1,20 @@
 #!/bin/bash
 
-egrep -i 'Germany' newpages.txt | egrep -iv 'Nazi Germany|Berlin|Hitler' >> Germany.txt
-egrep -i 'Nazi' newpages.txt | egrep -iv 'Hitler' >> NaziGermany.txt
-egrep -i 'Hitler youth' newpages.txt >> NaziGermany.txt
-egrep -i '\bBerlin' newpages.txt >> Berlin.txt
-egrep -i 'Hitler' newpages.txt | egrep -iv 'Hitler youth' >> AdolfHitler.txt
+KEYWORDS_GERMANY="Germany"
+KEYWORDS_NAZIGERMANY="Nazi"
+KEYWORDS_HITLER="Hitler"
+KEYWORDS_NAZIGERMANY_SECONDARY="Hitler(| )youth"
+KEYWORDS_HITLER_EXCLUDE="$KEYWORDS_NAZIGERMANY_SECONDARY"
+KEYWORDS_BERLIN="Berlin"
+KEYWORDS_AUSCHWITZ="Auschwitz|Oświęcim"
+KEYWORDS_NAZIGERMANY_EXCLUDE="$KEYWORDS_HITLER|$KEYWORDS_AUSCHWITZ"
+KEYWORDS_GERMANY_EXCLUDE="$KEYWORDS_NAZIGERMANY|$KEYWORDS_HITLER|$KEYWORDS_NAZIGERMANY_SECONDARY|$KEYWORDS_AUSCHWITZ|$KEYWORDS_BERLIN"
+
+egrep -i "$KEYWORDS_GERMANY" newpages.txt | egrep -iv "$KEYWORDS_GERMANY_EXCLUDE" >> Germany.txt
+egrep -i "$KEYWORDS_NAZIGERMANY" newpages.txt | egrep -iv "$KEYWORDS_NAZIGERMANY_EXCLUDE" >> NaziGermany.txt
+egrep -i "$KEYWORDS_NAZIGERMANY_SECONDARY" newpages.txt >> NaziGermany.txt
+egrep -i "$KEYWORDS_BERLIN" newpages.txt >> Berlin.txt
+egrep -i "$KEYWORDS_HITLER" newpages.txt | egrep -iv "$KEYWORDS_HITLER_EXCLUDE" >> AdolfHitler.txt
 
 GERMANY=`stat --print=%s Germany.txt`
 NAZI=`stat --print=%s NaziGermany.txt`
