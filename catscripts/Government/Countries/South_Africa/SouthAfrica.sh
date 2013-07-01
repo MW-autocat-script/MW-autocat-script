@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_SOUTHAFRICA="South(| )Africa"
+KEYWORDS_SOUTHAFRICA="South(| )Africa|apartheid"
 KEYWORDS_NELSONMANDELA="Mandela"
 
 egrep -i "$KEYWORDS_SOUTHAFRICA" newpages.txt | egrep -iv "$KEYWORDS_NELSONMANDELA" >> SouthAfrica.txt
