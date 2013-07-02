@@ -113,3 +113,7 @@ rm Volleyball.txt
 rm Softball.txt
 rm Hockey.txt
 rm NHL.txt
+
+export CURRENTDIR="./catscripts/Lifestyle/Sports"
+
+$CURRENTDIR/Autoracing.sh

@@ -1,11 +1,12 @@
 #!/bin/bash
 
 KEYWORDS_ATLANTA="Atlanta"
+KEYWORDS_ATLANTA_EXCLUDE="Atlanta(| )Braves"
 KEYWORDS_GEORGIA="Georgia|, GA\b"
 KEYWORDS_GEORGIA_EXCLUDE="Republic(| )of(| )Georgia|$KEYWORDS_ATLANTA"
 
 egrep -i "$KEYWORDS_GEORGIA" newpages.txt | egrep -iv "$KEYWORDS_GEORGIA_EXCLUDE" >> Georgia.txt
-egrep -i "$KEYWORDS_ATLANTA" newpages.txt >> Atlanta.txt
+egrep -i "$KEYWORDS_ATLANTA" newpages.txt | egrep -iv "$KEYWORDS_ATLANTA_EXCLUDE" >> Atlanta.txt
 
 GEORGIA=`stat --print=%s Georgia.txt`
 ATLANTA=`stat --print=%s Atlanta.txt`

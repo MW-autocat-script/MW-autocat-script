@@ -12,6 +12,7 @@ $CURRENTDIR/Connecticut/Connecticut.sh
 $CURRENTDIR/Delaware/Delaware.sh
 $CURRENTDIR/Florida/Florida.sh
 $CURRENTDIR/Georgia/Georgia.sh
+$CURRENTDIR/Hawaii/Hawaii.sh
 $CURRENTDIR/Idaho/Idaho.sh
 $CURRENTDIR/Illinois/Illinois.sh
 $CURRENTDIR/Iowa/Iowa.sh
