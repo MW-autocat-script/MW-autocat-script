@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'i(| )pod' newpages.txt | egrep -iv 'i(| )Pod touch|i(| )Pod nano|i(| )pod shuffle' > iPods.txt
+egrep -i '\bi(| )pod' newpages.txt | egrep -iv 'i(| )Pod touch|i(| )Pod nano|i(| )pod shuffle' > iPods.txt
 egrep -i 'i(| )pod touch' newpages.txt > iPodtouch.txt
 egrep -i 'i(| )pod nano' newpages.txt > iPodnano.txt
 egrep -i 'i(| )pod shuffle' newpages.txt >> iPodshuffle.txt

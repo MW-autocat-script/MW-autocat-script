@@ -4,7 +4,7 @@ egrep -i 'Darkrai' newpages.txt >>   Darkrai.txt
 egrep -i 'Darmanitan' newpages.txt >>   Darmanitan.txt
 egrep -i 'Darumaka' newpages.txt >>   Darumaka.txt
 egrep -i 'Deerling' newpages.txt >>   Deerling.txt
-egrep -i 'Deino' newpages.txt >>   Deino.txt
+egrep -i 'Deino(|s)\b' newpages.txt >>   Deino.txt
 egrep -i 'Delcatty' newpages.txt >>   Delcatty.txt
 egrep -i 'Delibird' newpages.txt >>   Delibird.txt
 egrep -i 'Deoxys' newpages.txt >>   Deoxys.txt

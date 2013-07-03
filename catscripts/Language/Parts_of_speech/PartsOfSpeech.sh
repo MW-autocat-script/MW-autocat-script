@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i '\bnoun(|s)\b|pronoun(|s)\b|\bverb\b|adverb|adjective|preposition|conjunction|participle|interjection|part of speech|parts of speech' newpages.txt >> PartsOfSpeech.txt
+egrep -i '\bnoun(|s)\b|pronoun(|s)\b|\bverb(|s)\b|adverb|adjective|preposition|conjunction|participle|interjection|part(|s)(| )of(| )speech' newpages.txt >> PartsOfSpeech.txt
 
 SPEECH=`stat --print=%s PartsOfSpeech.txt`
 
