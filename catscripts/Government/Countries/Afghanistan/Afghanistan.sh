@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Starting Afghanistan\n" 
+fi
+
 egrep -i 'Afghani(|stan)' newpages.txt | egrep -iv 'Afghanistan War|war in Afghanistan' >> Afghanistan.txt
 
 AFGHANISTAN=`stat --print=%s Afghanistan.txt`
@@ -12,3 +17,8 @@ then
 fi
 
 rm Afghanistan.txt
+
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Finishing Afghanistan\n" 
+fi

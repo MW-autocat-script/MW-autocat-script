@@ -1,5 +1,11 @@
 #!/bin/bash
 
+
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Starting Albania\n" 
+fi
+
 egrep -i 'Albania' newpages.txt >> Albania.txt
 
 ALBANIA=`stat --print=%s Albania.txt`
@@ -12,3 +18,8 @@ then
 fi
 
 rm Albania.txt
+
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Finishing Albania\n" 
+fi
