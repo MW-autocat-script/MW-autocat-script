@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Starting Definitions\n" 
+fi
+
 egrep -i '(^|\[\[)What is a(|n) [abcdefghijklmnopqrstuvwxyz]{1,} (|[abcdefghijklmnopqrstuvwxyz]{1,})($|\]\])' newpages.txt >> Definitions.txt
 egrep -i '(^|\[\[)What are [abcdefghijklmnopqrstuvwxyz]{1,} (|[abcdefghijklmnopqrstuvwxyz]{1,})($|\]\])' newpages.txt >> Definitions.txt
 egrep -i '(^|\[\[)What is the definition of [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Definitions.txt
@@ -41,3 +46,8 @@ fi
 
 rm Definitions.txt
 rm NameMeanings.txt
+
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Finishing Definitions\n" 
+fi

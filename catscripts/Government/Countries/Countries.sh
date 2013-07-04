@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Starting Countries\n" 
+fi
+
 CURRENTDIR="./catscripts/Government/Countries"
 
 $CURRENTDIR/Afghanistan/Afghanistan.sh
@@ -95,3 +100,8 @@ $CURRENTDIR/Wales/Wales.sh
 $CURRENTDIR/United_Arab_Emirates/UAE.sh
 $CURRENTDIR/United_States/UnitedStates.sh
 $CURRENTDIR/Unrecognized_countries/Unrecognized.sh
+
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Finishing countries\n" 
+fi

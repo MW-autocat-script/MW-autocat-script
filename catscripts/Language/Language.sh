@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Starting Language\n" 
+fi
+
 CURRENTDIR="./catscripts/Language"
 
 $CURRENTDIR/Non-English_languages/NonEnglish.sh 
@@ -14,3 +19,8 @@ $CURRENTDIR/Pronunciation/Pronunciation.sh
 $CURRENTDIR/Rhyming/Rhyming.sh
 $CURRENTDIR/Sign_language/Signlanguage.sh
 $CURRENTDIR/Spelling/Spelling.sh
+
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Finishing Language\n" 
+fi
