@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_JORDAN="(king|queen|prince(|ss).+ of Jordan|Jordanian|(kingdom|country|flag|government) of Jordan"
+KEYWORDS_JORDAN="(king|queen|prince(|ss)).+ of Jordan|Jordanian|(kingdom|country|flag|government) of Jordan"
 
 egrep -i "$KEYWORDS_JORDAN" newpages.txt >> Jordan.txt
 
