@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Starting Religion\n" 
+fi
+
 egrep -i 'religion|religious' newpages.txt | egrep -iv 'Jesus|Christ|Jew|Judaism|Mormon|Catholic|Orthodox|Shinto|Sikh|god|buddhism|buddhist|hindu|jain(|s|ism)\b|islam|Muslim|Prophet (Muhammed|Muhammad)|Scientology|Wicca' >> Religion.txt
 
 RELIGION=`stat --print=%s Religion.txt`
@@ -25,3 +30,8 @@ $CURRENTDIR/Scientology/Scientology.sh
 $CURRENTDIR/Sikhism/Sikhism.sh
 $CURRENTDIR/The_Bible/TheBible.sh
 $CURRENTDIR/Wicca/Wicca.sh
+
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Finishing religion\n" 
+fi

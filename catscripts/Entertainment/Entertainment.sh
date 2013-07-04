@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Starting Entertainment\n" 
+fi
+
 CURRENTDIR="./catscripts/Entertainment"
 
 $CURRENTDIR/Actors_and_actresses/Actors.sh
@@ -11,3 +16,8 @@ $CURRENTDIR/Music/Music.sh
 $CURRENTDIR/Movies/Movies.sh
 $CURRENTDIR/Puzzles/Puzzles.sh
 $CURRENTDIR/Television_series/Televisionseries.sh
+
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Finished Entertainment\n" 
+fi

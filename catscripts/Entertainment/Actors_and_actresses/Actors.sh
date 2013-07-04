@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Starting Actors and actresses\n" 
+fi
+
 export CURRENTDIR="./catscripts/Entertainment/Actors_and_actresses"
 
 . $CURRENTDIR/Orlando_Bloom/OrlandoBloom.sh #$KEYWORDS_ACTOR_ORLANDOBLOOM
@@ -51,3 +56,8 @@ then
 fi
 
 rm Actors.txt
+
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Finishing Actors and actresses\n" 
+fi

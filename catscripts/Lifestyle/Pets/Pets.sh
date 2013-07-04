@@ -1,5 +1,8 @@
 #!/bin/bash
-
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Starting Pets\n" 
+fi
 #Dogs keywords
 
 KEYWORDS_DOGS_TOY="Affenpinscher|Australian(| )Silky(| )Terrier|Spaniel|Chihuahua|Chinese(| )Crested(| )Dog|Griffon(| )Bruxellois|Havanese|Italian(| )Greyhound|Japanese(| )Chin|King(| )Charles(| )Spaniel|Maltese|Miniature(| )Pinscher|Papillon|Pekingese|Pomeranian|\bPug(|s)\b|Shih(| )Tzu|Toy(| )Fox(| )Terrier|Toy(| )Manchester(| )Terrier|Yorkshire(| )Terrier|\bYorkie|Manchester(| )Terrier"
@@ -72,3 +75,8 @@ rm Dogs.txt #cleanup dogs
 rm Goldfish.txt #Cleanup goldfish
 rm Hamsters.txt #cleanup hamsters
 rm Iguanas.txt
+
+if [ "$DEBUG" == "yes" ];
+then
+  printf "Finishing pets\n" 
+fi
