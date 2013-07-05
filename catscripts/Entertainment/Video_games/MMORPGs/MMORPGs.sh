@@ -44,9 +44,4 @@ then
   $CATEGORIZE
 fi
 
-if [ $MMORPG -eq 0 ];
-then
-  echo "MMORPGs is empty"
-fi
-
 rm MMORPG.txt
