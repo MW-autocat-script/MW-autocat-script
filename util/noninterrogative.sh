@@ -10,7 +10,7 @@ egrep -i '\bWhen\b' nonint.txt >> When.txt
 egrep -i '^Whens\b' nonint.txt >> When.txt
 egrep -i '\bwhy\b' nonint.txt >> Why.txt
 egrep -i '\bHow\b' nonint.txt >> How.txt
-egrep -i '^Do\b' nonint.txt >> Do.txt
+egrep -i '((\.|,) |^)Do\b' nonint.txt >> Do.txt
 egrep -i '((\.|,) |^)Does\b' nonint.txt >> Does.txt
 egrep -i "((\.|,) |^)Doesn't\b" nonint.txt >> Doesnt.txt
 egrep -i '((\.|,) |^)Did\b' nonint.txt >> Did.txt
