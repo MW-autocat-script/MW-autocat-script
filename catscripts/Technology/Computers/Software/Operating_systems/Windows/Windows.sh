@@ -1,5 +1,8 @@
 #!/bin/bash
-egrep -i 'Windows 98|Windows98|Win98' newpages.txt >> Windows98.txt
+
+KEYWORDS_WINDOWS_WINDOWS98="Windows(| )98|Win98"
+
+egrep -i "$KEYWORDS_WINDOWS_WINDOWS98" newpages.txt >> Windows98.txt
 egrep -i 'Windows 2000|Windows2000|Win2000|W2k\b' newpages.txt >> Windows2000.txt
 egrep -i 'Windows XP|WindowsXP|2000XP|WinXP' newpages.txt >> WindowsXP.txt
 egrep -i 'Windows Server 2003|Windows 2003|Windows2003|Win2003|Win2k3|W2k3' newpages.txt >> WindowsServer2003.txt

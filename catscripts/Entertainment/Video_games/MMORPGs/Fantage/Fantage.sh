@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_FANTAGE="Fantage"
+KEYWORDS_MMORPG_FANTAGE="Fantage"
 
 egrep -i "$KEYWORDS_MMORPG_FANTAGE" newpages.txt >> Fantage.txt
 
