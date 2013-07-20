@@ -1,57 +1,60 @@
 #!/bin/bash
 
-egrep -i '\bSinger' newpages.txt \
-| egrep -iv 'sewing machine' \
-| egrep -iv '\bAkon' \
-| egrep -iv 'Justin Bieber|Justin Beiber' \
-| egrep -iv 'Johhny Cash' \
-| egrep -iv 'Miley Cyrus|Destiny Hope Cyrus' \
-| egrep -iv 'Vanessa Hudgens' \
-| egrep -iv 'Whitney Houston' \
-| egrep -iv '(Michael|Micheal) Jackson' \
-| egrep -iv 'Joe(| )seph.+Jonas' \
-| egrep -iv '(Nick|Nicholas).+Jonas' \
-| egrep -iv 'Beyoncé|Beyonce' \
-| egrep -iv '(Demi|Demetria).+Lovato' \
-| egrep -iv 'John Lennon' \
-| egrep -iv 'Lady Gaga' \
-| egrep -iv '\bMadonna' \
-| egrep -iv 'Bob Marley' \
-| egrep -iv 'Elvis Presley' \
-| egrep -iv 'Josh Ramsay' \
-| egrep -iv 'Rihanna' \
-| egrep -iv 'Britney Spears' \
-| egrep -iv 'Taylor Swift' \
-| egrep -iv 'Tupac|2pac|Shakur' \
-| egrep -iv 'Ashley Tisdale' \
-| egrep -iv 'Lil(| )Wayne' \
-| egrep -iv 'Eminem|Slim Shady|Marshall(| Bruce) Mathers|EMINƎM' \
->> Singers.txt
+KEYWORDS_SINGERS_AKON="\bAkon"
+KEYWORDS_SINGERS_JUSTINBIEBER="Justin(| )(Beiber|Bieber)"
+KEYWORDS_SINGERS_JOHNNYCASH="Johnny(| )Cash"
+KEYWORDS_SINGERS_MILEYCYRUS="Miley(| )Cyrus|Destiny(| )Hope(| )Cyrus"
+KEYWORDS_SINGERS_VANESSAHUDGENS="Vanessa(| )Hudgens"
+KEYWORDS_SINGERS_WHITNEYHOUSTON="Whitney(| )Houston"
+KEYWORDS_SINGERS_MICHAELJACKSON="(Michael|Micheal)(| )Jackson"
+KEYWORDS_SINGERS_JOEJONAS="Joe(|seph)(| )Jonas"
+KEYWORDS_SINGERS_NICKJONAS="Nic(k|holas).+Jonas"
+KEYWORDS_SINGERS_BEYONCE="Beyoncé|Beyonce"
+KEYWORDS_SINGERS_ELTONJOHN="Elton(| )John"
+KEYWORDS_SINGERS_DEMILOVATO="(Demi|Demetria).+Lovato"
+KEYWORDS_SINGERS_JOHNLENNON="John(| )Lennon"
+KEYWORDS_SINGERS_LADYGAGA="Lady(| )Gaga"
+KEYWORDS_SINGERS_MADONNA="Madonna"
+KEYWORDS_SINGERS_MADONNA_EXCLUDE="Lady(| )Madonna|Madonna(| )and(| )Child"
+KEYWORDS_SINGERS_BOBMARLEY="Bob(| )Marley"
+KEYWORDS_SINGERS_ELVISPRESLEY="Elvis(| )Presley"
+KEYWORDS_SINGERS_JOSHRAMSAY="Josh(| )Ramsay"
+KEYWORDS_SINGERS_RIHANNA="Rihanna"
+KEYWORDS_SINGERS_BRITNEYSPEARS="Britney(| )Spears"
+KEYWORDS_SINGERS_TAYLORSWIFT="Taylor(| )Swift"
+KEYWORDS_SINGERS_TUPACSHAKUR="Tupac|2pac|Shakur"
+KEYWORDS_SINGERS_ASHLEYTSIDALE="Ashley(| )Tisdale"
+KEYWORDS_SINGERS_LILWAYNE="Lil(| )Wayne"
+KEYWORDS_SINGERS_EMINEM="Eminem|Slim(| )Shady|Marshall(|(| )Bruce)(| )Mathers|EMINƎM"
+KEYWORDS_SINGERS="Singer"
+KEYWORDS_SINGERS_EXCLUDE="sewing(| )machine|$KEYWORDS_SINGERS_AKON|$KEYWORDS_SINGERS_ASHLEYTSIDALE|$KEYWORDS_SINGERS_BEYONCE|$KEYWORDS_SINGERS_BOBMARLEY|$KEYWORDS_SINGERS_BRITNEYSPEARS|$KEYWORDS_SINGERS_DEMILOVATO|$KEYWORDS_SINGERS_ELTONJOHN|$KEYWORDS_SINGERS_ELVISPRESLEY|$KEYWORDS_SINGERS_EMINEM|$KEYWORDS_SINGERS_JOEJONAS|$KEYWORDS_SINGERS_JOHNLENNON|$KEYWORDS_SINGERS_JOHNNYCASH|$KEYWORDS_SINGERS_JOSHRAMSAY|$KEYWORDS_SINGERS_JUSTINBIEBER|$KEYWORDS_SINGERS_LADYGAGA|$KEYWORDS_SINGERS_LILWAYNE|$KEYWORDS_SINGERS_MADONNA|$KEYWORDS_SINGERS_MICHAELJACKSON|$KEYWORDS_SINGERS_MILEYCYRUS|$KEYWORDS_SINGERS_NICKJONAS|$KEYWORDS_SINGERS_RIHANNA|$KEYWORDS_SINGERS_TAYLORSWIFT|$KEYWORDS_SINGERS_TUPACSHAKUR|$KEYWORDS_SINGERS_VANESSAHUDGENS|$KEYWORDS_SINGERS_WHITNEYHOUSTON"
 
-egrep -i '\bAkon' newpages.txt >> Akon.txt
-egrep -i 'Justin Bieber|Justin Beiber' newpages.txt >> JustinBieber.txt
-egrep -i 'Johnny Cash' newpages.txt >> JohnnyCash.txt
-egrep -i 'Miley Cyrus|Destiny Hope Cyrus' newpages.txt >> MileyCyrus.txt
-egrep -i 'Vanessa Hudgens' newpages.txt >> VanessaHudgens.txt
-egrep -i 'Whitney Houston' newpages.txt >> WhitneyHouston.txt
-egrep -i '(Michael|Micheal) Jackson' newpages.txt >> MichaelJackson.txt
-egrep -i 'Joe(|seph).+Jonas' newpages.txt >> JoeJonas.txt
-egrep -i '(Nick|Nicholas).+ Jonas' newpages.txt >> NickJonas.txt
-egrep -i 'Beyoncé|Beyonce' newpages.txt >> BeyoncéKnowles.txt
-egrep -i '(Demi|Demetria).+Lovato' newpages.txt >> DemiLovato.txt
-egrep -i 'John Lennon' newpages.txt >> JohnLennon.txt
-egrep -i 'Lady Gaga' newpages.txt >> LadyGaga.txt
-egrep -i '\bMadonna' newpages.txt| egrep -iv 'Lady Madonna' >> Madonna.txt
-egrep -i 'Bob Marley' newpages.txt >> BobMarley.txt
-egrep -i 'Elvis Presley' newpages.txt >> ElvisPresley.txt
-egrep -i 'Josh Ramsay' newpages.txt >> JoshRamsay.txt
-egrep -i 'Rihanna' newpages.txt >> Rihanna.txt
-egrep -i 'Britney Spears' newpages.txt >> BritneySpears.txt
-egrep -i 'Taylor Swift' newpages.txt >> TaylorSwift.txt
-egrep -i 'Tupac|2pac|Shakur' newpages.txt >> TupacShakur.txt
-egrep -i 'Ashley Tisdale' newpages.txt >> AshleyTisdale.txt
-egrep -i 'Lil(| )Wayne' newpages.txt >> LilWayne.txt
-egrep -i 'Eminem|Slim Shady|Marshall(| Bruce) Mathers|EMINƎM' newpages.txt >> Eminem.txt
+egrep -i "$KEYWORDS_SINGERS_AKON" newpages.txt >> Akon.txt
+egrep -i "$KEYWORDS_SINGERS_JUSTINBIEBER" newpages.txt >> JustinBieber.txt
+egrep -i "$KEYWORDS_SINGERS_JOHNNYCASH" newpages.txt >> JohnnyCash.txt
+egrep -i "$KEYWORDS_SINGERS_MILEYCYRUS" newpages.txt >> MileyCyrus.txt
+egrep -i "$KEYWORDS_SINGERS_VANESSAHUDGENS" newpages.txt >> VanessaHudgens.txt
+egrep -i "$KEYWORDS_SINGERS_WHITNEYHOUSTON" newpages.txt >> WhitneyHouston.txt
+egrep -i "$KEYWORDS_SINGERS_MICHAELJACKSON" newpages.txt >> MichaelJackson.txt
+egrep -i "$KEYWORDS_SINGERS_JOEJONAS" newpages.txt >> JoeJonas.txt
+egrep -i "$KEYWORDS_SINGERS_NICKJONAS" newpages.txt >> NickJonas.txt
+egrep -i "$KEYWORDS_SINGERS_BEYONCE" newpages.txt >> BeyoncéKnowles.txt
+egrep -i "$KEYWORDS_SINGERS_DEMILOVATO" newpages.txt >> DemiLovato.txt
+egrep -i "$KEYWORDS_SINGERS_JOHNLENNON" newpages.txt >> JohnLennon.txt
+egrep -i "$KEYWORDS_SINGERS_LADYGAGA" newpages.txt >> LadyGaga.txt
+egrep -i "$KEYWORDS_SINGERS_MADONNA" newpages.txt| egrep -iv "$KEYWORDS_SINGERS_MADONNA_EXCLUDE" >> Madonna.txt
+egrep -i "$KEYWORDS_SINGERS_BOBMARLEY" newpages.txt >> BobMarley.txt
+egrep -i "$KEYWORDS_SINGERS_ELTONJOHN" newpages.txt >> EltonJohn.txt
+egrep -i "$KEYWORDS_SINGERS_ELVISPRESLEY" newpages.txt >> ElvisPresley.txt
+egrep -i "$KEYWORDS_SINGERS_JOSHRAMSAY" newpages.txt >> JoshRamsay.txt
+egrep -i "$KEYWORDS_SINGERS_RIHANNA" newpages.txt >> Rihanna.txt
+egrep -i "$KEYWORDS_SINGERS_BRITNEYSPEARS" newpages.txt >> BritneySpears.txt
+egrep -i "$KEYWORDS_SINGERS_TAYLORSWIFT" newpages.txt >> TaylorSwift.txt
+egrep -i "$KEYWORDS_SINGERS_TUPACSHAKUR" newpages.txt >> TupacShakur.txt
+egrep -i "$KEYWORDS_SINGERS_ASHLEYTSIDALE" newpages.txt >> AshleyTisdale.txt
+egrep -i "$KEYWORDS_SINGERS_LILWAYNE" newpages.txt >> LilWayne.txt
+egrep -i "$KEYWORDS_SINGERS_EMINEM" newpages.txt >> Eminem.txt
+egrep -i "$KEYWORDS_SINGERS" newpages.txt | egrep -iv "$KEYWORDS_SINGERS_EXCLUDE" >> Singers.txt
 
 SINGERS=`stat --print=%s Singers.txt`
 AKON=`stat --print=%s Akon.txt`
@@ -69,6 +72,7 @@ LENNON=`stat --print=%s JohnLennon.txt`
 GAGA=`stat --print=%s LadyGaga.txt`
 MARLEY=`stat --print=%s BobMarley.txt`
 MADONNA=`stat --print=%s Madonna.txt`
+ELTONJOHN=`stat --print=%s EltonJohn.txt`
 ELVIS=`stat --print=%s ElvisPresley.txt`
 RAMSAY=`stat --print=%s JoshRamsay.txt`
 RIHANNA=`stat --print=%s Rihanna.txt`
@@ -191,6 +195,13 @@ then
   $CATEGORIZE
 fi
 
+if [ $ELTONJOHN -ne 0 ];
+then
+  export CATFILE="EltonJohn.txt"
+  export CATNAME="Elton John"
+  $CATEGORIZE
+fi
+
 if [ $ELVIS -ne 0 ];
 then
   export CATFILE="ElvisPresley.txt"
@@ -270,6 +281,7 @@ rm JohnLennon.txt
 rm LadyGaga.txt
 rm Madonna.txt
 rm BobMarley.txt
+rm EltonJohn.txt
 rm ElvisPresley.txt
 rm JoshRamsay.txt
 rm Rihanna.txt
