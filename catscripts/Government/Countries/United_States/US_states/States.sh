@@ -20,6 +20,7 @@ $CURRENTDIR/Iowa/Iowa.sh
 $CURRENTDIR/Kansas/Kansas.sh
 $CURRENTDIR/Kentucky/Kentucky.sh
 $CURRENTDIR/Louisiana/Louisiana.sh
+$CURRENTDIR/Michigan/Michigan.sh
 $CURRENTDIR/Maine/Maine.sh
 $CURRENTDIR/Maryland/Maryland.sh
 $CURRENTDIR/Massachusetts/Massachusetts.sh
