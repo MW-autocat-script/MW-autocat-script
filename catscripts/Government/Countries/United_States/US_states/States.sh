@@ -15,6 +15,7 @@ $CURRENTDIR/Georgia/Georgia.sh
 $CURRENTDIR/Hawaii/Hawaii.sh
 $CURRENTDIR/Idaho/Idaho.sh
 $CURRENTDIR/Illinois/Illinois.sh
+$CURRENTDIR/Indiana/Indiana.sh
 $CURRENTDIR/Iowa/Iowa.sh
 $CURRENTDIR/Maine/Maine.sh
 $CURRENTDIR/Massachusetts/Massachusetts.sh
