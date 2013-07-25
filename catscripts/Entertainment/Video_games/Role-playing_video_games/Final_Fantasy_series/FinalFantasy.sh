@@ -10,7 +10,7 @@ egrep -i 'Final(| )Fantasy(| )(7|\bVII\b)|\bFF(| )VII\b' newpages.txt | egrep -i
 egrep -i 'Advent(| )Children' newpages.txt >> AdventChildren.txt
 egrep -i 'Final Fantasy (8|\bVIII\b)|\bFF(| )VIII\b' newpages.txt >> FinalFantasy8.txt
 egrep -i 'Final Fantasy (9|\bIX\b)|\bFF(| )IX\b' newpages.txt >> FinalFantasy9.txt
-egrep -i 'Final Fantasy (10|\bX\b)|\bFF(| )X\b' newpages.txt | egrep -iv 'Final Fantasy X-2|FF(| )X-2' >> FinalFantasy10.txt
+egrep -i 'Final Fantasy (10|\bX\b)|\bFF(| )X\b|blitzball' newpages.txt | egrep -iv 'Final Fantasy X-2|FF(| )X-2' >> FinalFantasy10.txt
 egrep -i 'Final Fantasy (10-2|\bX-2\b)|\bFF(| )X-2\b' newpages.txt >> FinalFantasyX-2.txt
 egrep -i 'Final Fantasy (11|\bXI\b)|\bFF(| )(XI|11)\b' newpages.txt >> FinalFantasy11.txt
 egrep -i 'Final Fantasy (12|\bXII\b)|\bFF(| )(12|XII)\b' newpages.txt >> FinalFantasy12.txt
