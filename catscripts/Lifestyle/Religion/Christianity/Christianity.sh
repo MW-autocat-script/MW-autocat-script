@@ -6,7 +6,7 @@ egrep -i 'Catholic|Vatican|\bpope(|s)\b|papal' newpages.txt | egrep -iv 'Alexand
 egrep -i 'Martin Luther|Lutheran|(95|Ninety-Five) Theses' newpages.txt | egrep -iv 'Martin Luther King' >> Lutheranism.txt
 egrep -i 'Mormon|Latter(-| )Day(| )(|saint)' newpages.txt >> Mormonism.txt
 egrep -i 'Amish|Mennonite' newpages.txt >> Amish.txt
-egrep -i 'Christmas|X-mas' newpages.txt | egrep -iv "Christmas(| )(Island|Cactus)" >> Christmas.txt
+egrep -i 'Christmas|X-mas|Santa(| )Claus' newpages.txt | egrep -iv "Christmas(| )(Island|Cactus)" >> Christmas.txt
 
 CHRISTIANITY=`stat --print=%s Christianity.txt`
 ANGLICAN=`stat --print=%s Anglican.txt`
