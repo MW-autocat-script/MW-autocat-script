@@ -2,6 +2,7 @@
 
 CURRENTDIR="./catscripts/Entertainment/Movies"
 
+$CURRENTDIR/Ghostbusters/Ghostbusters.sh
 $CURRENTDIR/Harry_Potter/HarryPotter.sh
 $CURRENTDIR/The_Hunger_Games/HungerGames.sh
 $CURRENTDIR/Jurassic_Park_movies/JurassicPark.sh
