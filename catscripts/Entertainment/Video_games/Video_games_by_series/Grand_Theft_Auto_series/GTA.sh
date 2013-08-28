@@ -8,7 +8,7 @@ egrep -i 'GTA(|:| )(SA|San Andreas)|Grand Theft Auto(|:)(| )San Andreas' newpage
 egrep -i 'GTA(|:| )Liberty City Stories|Grand Theft Auto(|:)(| )Liberty City Stories' newpages.txt >> LibertyCityStories.txt
 egrep -i 'GTA(|:| )(VCS|Vice City Stories)|Grand Theft Auto(|:)(| )Vice City Stories' newpages.txt >> ViceCityStories.txt
 egrep -i 'GTA(|:| )(IV|4)|Grand(| )Theft(| )Auto(| )(IV|4)' newpages.txt >> GrandTheftAuto4.txt
-egrep -i 'GTA(|:| )(V|5)|Grand(| )Theft(| )Auto(| )(V\b|5)' newpages.txt >> GrandTheftAuto5.txt
+egrep -i 'GTA(|:| )(V|5)\b|Grand(| )Theft(| )Auto(| )(V\b|5)' newpages.txt >> GrandTheftAuto5.txt
 egrep -i 'China(| )town Wars' newpages.txt >> ChinaTown.txt
 egrep -i 'The Lost and Damned|GTA.+Damned|Grand Theft Auto.+Damned|GTA(|:)(| )TLAD' newpages.txt >> Damned.txt
 egrep -i 'Gay Tony|TBoGT' newpages.txt >> GayTony.txt
