@@ -36,6 +36,7 @@ $CURRENTDIR/Cuba/Cuba.sh
 $CURRENTDIR/Cyprus/Cyprus.sh
 $CURRENTDIR/Denmark/Denmark.sh
 $CURRENTDIR/Dominican_Republic/DominicanRepublic.sh
+$CURReNTDIR/Ecuador/Ecuador.sh
 $CURRENTDIR/Egypt/Egypt.sh
 $CURRENTDIR/El_Salvador/ElSalvador.sh
 $CURRENTDIR/England/England.sh
