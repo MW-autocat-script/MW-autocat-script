@@ -3,6 +3,7 @@
 egrep -i "(What is|What's|Whats) another word for [a-z]{1,}" newpages.txt >> Synonyms.txt
 egrep -i "(What is|What's|Whats) a synonym for [a-z]{1,}" newpages.txt >> Synonyms.txt
 egrep -i "\[\[Another word for [a-z]{1,}\]\]" newpages.txt >> Synonyms.txt
+egrep -i "synonym" newpages.txt >> Synonyms.txt
 
 SYNONYMS=`stat --print=%s Synonyms.txt`
 
