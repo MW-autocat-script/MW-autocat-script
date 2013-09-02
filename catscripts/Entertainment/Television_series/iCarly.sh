@@ -1,6 +1,11 @@
 #!/bin/bash
 
-egrep -i 'iCarly' newpages.txt >> iCarly.txt
+KEYWORDS_TELEVISIONSERIES_ICARLY="iCarly"
+
+if [ "$1" == "" ];
+then 
+
+egrep -i "$KEYWORDS_TELEVISIONSERIES_ICARLY" newpages.txt >> iCarly.txt
 
 ICARLY=`stat --print=%s iCarly.txt`
 
@@ -12,3 +17,5 @@ then
 fi
 
 rm iCarly.txt
+
+fi
