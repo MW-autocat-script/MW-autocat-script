@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CURRENTDIR="./Entertainment/Television_series"
+CURRENTDIR="./catscripts/Entertainment/Television_series"
 
 if [ "$1" == "" ];
 then 
