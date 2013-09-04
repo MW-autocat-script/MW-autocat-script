@@ -51,7 +51,7 @@ fi
 
 if [ $ROW4 -ne 0 ];
 then
-  export CATFILE="SaintsRow3.txt"
+  export CATFILE="SaintsRow4.txt"
   export CATNAME="Saints Row IV"
   $CATEGORIZE
 fi
