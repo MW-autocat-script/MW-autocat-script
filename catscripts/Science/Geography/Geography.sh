@@ -12,7 +12,7 @@ then
   if [ $GEOGRAPHY -ne 0 ];
   then
     export CATFILE="Geography.txt"
-    export CATNAME="Geograhy"
+    export CATNAME="Geography"
     $CATEGORIZE
   fi
 
