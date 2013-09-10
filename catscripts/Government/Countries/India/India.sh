@@ -6,7 +6,8 @@ KEYWORDS_MUMBAI="Mumbai|Bombay"
 KEYWORDS_KOLKATA="Kolkata|Calcutta"
 KEYWORDS_CHENNAI="Chennai|Madras"
 KEYWORDS_BANGALORE="Bangalore|Bengaluru"
-KEYWORDS_INDIA_EXCLUDE="$KEYWORDS_NEWDELHI|$KEYWORDS_MUMBAI|$KEYWORDS_KOLKATA|$KEYWORDS_CHENNAI|$KEYWORDS_BANGALORE"
+KEYWORDS_PUNE="\bPune"
+KEYWORDS_INDIA_EXCLUDE="$KEYWORDS_NEWDELHI|$KEYWORDS_MUMBAI|$KEYWORDS_KOLKATA|$KEYWORDS_CHENNAI|$KEYWORDS_BANGALORE|$KEYWORDS_PUNE"
 
 if [ "$1" == "" ];
 then
@@ -17,6 +18,7 @@ then
   egrep -i "$KEYWORDS_KOLKATA" newpages.txt > Kolkata.txt
   egrep -i "$KEYWORDS_CHENNAI" newpages.txt > Chennai.txt
   egrep -i "$KEYWORDS_BANGALORE" newpages.txt > Bangalore.txt
+  egrep -i "$KEYWORDS_PUNE" newpages.txt > Pune.txt
 
   INDIA=`stat --print=%s India.txt`
   NEWDELHI=`stat --print=%s NewDelhi.txt`
@@ -24,6 +26,7 @@ then
   KOLKATA=`stat --print=%s Kolkata.txt`
   CHENNAI=`stat --print=%s Chennai.txt`
   BANGALORE=`stat --print=%s Bangalore.txt`
+  PUNE=`stat --print=%s Pune.txt`
 
   if [ $INDIA -ne 0 ];
   then
@@ -67,10 +70,18 @@ then
     $CATEGORIZE
   fi
 
+  if [ $PUNE -ne 0 ];
+  then
+    export CATFILE="Pune.txt"
+    export CATNAME="Pune"
+    $CATEGORIZE
+  fi
+
   rm India.txt
   rm NewDelhi.txt
   rm Mumbai.txt
   rm Kolkata.txt
   rm Chennai.txt
   rm Bangalore.txt
+  rm Pune.txt
 fi
