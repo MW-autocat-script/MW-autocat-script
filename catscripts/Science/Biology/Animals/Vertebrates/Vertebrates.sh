@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Temp/Animals/Vertebrates"
+CURRENTDIR="./catscripts/Science/Biology/Animals/Vertebrates"
 
 export KEYWORDS_VERTEBRATE="fish|amphibian|mammal|bird"
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Temp/Animals/Arthropods"
+CURRENTDIR="./catscripts/Science/Biology/Animals/Arthropods"
 
 egrep -i 'arthropod' newpages.txt | egrep -iv 'arachnid|\bant(|s)\b' >> Arthropods.txt
 

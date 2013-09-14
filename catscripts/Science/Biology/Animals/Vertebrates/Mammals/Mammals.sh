@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Temp/Animals/Vertebrates/Mammals"
+CURRENTDIR="./catscripts/Science/Biology/Animals/Vertebrates/Mammals"
 
 egrep -i 'mammal' newpages.txt | egrep -iv 'Dolphin' >> Mammals.txt
 
