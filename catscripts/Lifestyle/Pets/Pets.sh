@@ -24,16 +24,22 @@ KEYWORDS_HAMSTERS="ham(|p)ster"
 
 KEYWORDS_IGUANAS="Iguana"
 
+#Keywords Gerbils
+
+KEYWORDS_GERBILS="Gerbil"
+
 
 egrep -i "$KEYWORDS_DOGS" newpages.txt | egrep -iv "$KEYWORDS_DOGS_EXCLUDE" >> Dogs.txt #Search dogs
 egrep -i "$KEYWORDS_GOLDFISH" newpages.txt | egrep -iv "$KEYWORDS_GOLDFISH_EXCLUDE" >> Goldfish.txt #Search goldfish
 egrep -i "$KEYWORDS_HAMSTERS" newpages.txt >> Hamsters.txt #Search hamsters
 egrep -i "$KEYWORDS_IGUANAS" newpages.txt >> Iguanas.txt #search Iguanas
+egrep -i "$KEYWORDS_GERBILS" newpages.txt >> Gerbils.txt #search gerbils
 
 DOGS=`stat --print=%s Dogs.txt` #stat dogs
 GOLDFISH=`stat --print=%s Goldfish.txt` #stat goldfish
 HAMSTERS=`stat --print=%s Hamsters.txt` #stat hamsters
 IGUANAS=`stat --print=%s Iguanas.txt` #stat iguanas
+GERBILS=`stat --print=%s Gerbils.txt` #stat gerbils
 
 #Categorize dogs
 
@@ -71,10 +77,18 @@ then
   $CATEGORIZE
 fi
 
+if [ $GERBILS -ne 0 ];
+then
+  export CATFILE="Gerbils.txt"
+  export CATNAME="Gerbils"
+  $CATEGORIZE
+fi
+
 rm Dogs.txt #cleanup dogs
 rm Goldfish.txt #Cleanup goldfish
 rm Hamsters.txt #cleanup hamsters
-rm Iguanas.txt
+rm Iguanas.txt #cleanup iguanas
+rm Gerbils.txt #cleanup Gerbils
 
 if [ "$DEBUG" == "yes" ];
 then
