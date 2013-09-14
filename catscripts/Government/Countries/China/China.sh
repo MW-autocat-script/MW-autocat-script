@@ -1,7 +1,7 @@
 #!/bin/bash
 
 egrep -i "People(|')s(| )Republic(| )of(| )China" newpages.txt >> China.txt
-egrep -i 'China' newpages.txt | egrep -iv 'Republic(| )of(| )China|fine(| )china|antique(| )china|Great(| )Wall(| )of(| )China|Beijing|Hong(| )Kong' >> China.txt #There are two "Republics of China". If one is not named  explicitly, presume the question is about the People's Republic, as it is larger and more internationally recognized
+egrep -i 'China' newpages.txt | egrep -iv 'Republic(| )of(| )China|fine(| )china|antique(| )china|Great(| )Wall(| )of(| )China|Beijing|Hong(| )Kong|China(| )town' >> China.txt #There are two "Republics of China". If one is not named  explicitly, presume the question is about the People's Republic, as it is larger and more internationally recognized
 egrep -i "Great(| )Wall(| )of(| )China" newpages.txt >> GreatWall.txt
 egrep -i "Beijing" newpages.txt >> Beijing.txt
 egrep -i "Hong(| )Kong" newpages.txt >> HongKong.txt 
