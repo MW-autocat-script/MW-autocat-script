@@ -1,6 +1,8 @@
 #!/bin/bash
 
-egrep -i 'Woozworld|Wooz world' newpages.txt > Woozworld.txt
+KEYWORDS_WOOZWORLD="Wooz(| )world"
+
+egrep -i "$KEYWORDS_WOOZWORLD" newpages.txt > Woozworld.txt
 
 WOOZWORLD=`stat --print=%s Woozworld.txt`
 
