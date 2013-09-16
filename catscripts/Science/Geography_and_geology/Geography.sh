@@ -44,3 +44,7 @@ then
   rm Earthquakes.txt
 
 fi
+
+CURRENTDIR="./catscripts/Science/Geography_and_geology"
+
+. $CURRENTDIR/Mountains/Mountains.sh
