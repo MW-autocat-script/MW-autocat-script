@@ -20,7 +20,7 @@ then
   egrep -i "$KEYWORDS_SNAKES" newpages.txt | egrep -iv "$KEYWORDS_SNAKES_EXCLUDE" >> Snakes.txt
   egrep -i "$KEYWORDS_LIZARDS" newpages.txt >> Lizards.txt
   egrep -i "$KEYWORDS_CROCODILES" newpages.txt | egrep -iv "$KEYWORDS_CROCODILES_EXCLUDE" >> Crocodiles.txt
-  egrep -i "$KEYWORDS_ALLIGATORS" newpages.txt >> Alligator.txt
+  egrep -i "$KEYWORDS_ALLIGATORS" newpages.txt >> Alligators.txt
   egrep -i "$KEYWORDS_TUATARA" newpages.txt >> Tuatara.txt
 
   REPTILES=`stat --print=%s Reptiles.txt`
