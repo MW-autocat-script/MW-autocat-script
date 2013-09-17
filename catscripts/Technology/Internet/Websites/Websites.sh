@@ -40,7 +40,6 @@ then
 fi
 
 rm YouTube.txt
-rm Google.txt
 rm Wikia.txt
 rm Wikianswers.txt
 rm Wikipedia.txt
