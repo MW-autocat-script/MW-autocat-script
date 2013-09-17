@@ -2,7 +2,7 @@
 
 CURRENTDIR="./catscripts/Science/Biology/Animals/Vertebrates"
 
-export KEYWORDS_VERTEBRATE="fish|amphibian|mammal|bird"
+export KEYWORDS_VERTEBRATE="fish|amphibian|mammal|bird|reptile"
 
 egrep -i 'vertebrate' newpages.txt | egrep -iv "$KEYWORDS_VERTEBRATE" >> Vertebrates.txt
 
@@ -16,6 +16,7 @@ then
 fi
 
 
-$CURRENTDIR/Mammals/Mammals.sh
+. $CURRENTDIR/Mammals/Mammals.sh
+. $CURRENTDIR/Reptiles/Reptiles.sh
 
 rm Vertebrates.txt
