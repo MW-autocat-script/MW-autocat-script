@@ -20,16 +20,16 @@ rm Religion.txt
 
 CURRENTDIR="./catscripts/Lifestyle/Religion"
 
-$CURRENTDIR/Buddhism/Buddhism.sh
-$CURRENTDIR/Christianity/Christianity.sh
-$CURRENTDIR/Hinduism/Hinduism.sh
-$CURRENTDIR/Islam/Islam.sh
-$CURRENTDIR/Jainism/Jainism.sh
-$CURRENTDIR/Judaism/Judaism.sh
-$CURRENTDIR/Scientology/Scientology.sh
-$CURRENTDIR/Sikhism/Sikhism.sh
-$CURRENTDIR/The_Bible/TheBible.sh
-$CURRENTDIR/Wicca/Wicca.sh
+. $CURRENTDIR/Buddhism/Buddhism.sh
+. $CURRENTDIR/Christianity/Christianity.sh
+. $CURRENTDIR/Hinduism/Hinduism.sh
+. $CURRENTDIR/Islam/Islam.sh
+. $CURRENTDIR/Jainism/Jainism.sh
+. $CURRENTDIR/Judaism/Judaism.sh
+. $CURRENTDIR/Scientology/Scientology.sh
+. $CURRENTDIR/Sikhism/Sikhism.sh
+. $CURRENTDIR/The_Bible/TheBible.sh
+. $CURRENTDIR/Wicca/Wicca.sh
 
 if [ "$DEBUG" == "yes" ];
 then
