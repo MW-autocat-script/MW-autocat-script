@@ -16,7 +16,7 @@ then
 fi
 
 
-. $CURRENTDIR/Mammals/Mammals.sh
-. $CURRENTDIR/Reptiles/Reptiles.sh
+. $CURRENTDIR/Mammals/Mammals.sh &
+. $CURRENTDIR/Reptiles/Reptiles.sh &
 
 rm Vertebrates.txt
