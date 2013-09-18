@@ -3,6 +3,7 @@
 KEYWORDS_REPTILES="Reptile"
 KEYWORDS_TURTLES="Turtle|Tortoise|Terrapin"
 KEYWORDS_SNAKES="Snake"
+KEYWORDS_PYTHONS="python"
 KEYWORDS_LIZARDS="Lizard"
 KEYWORDS_IGUANAS="Iguana"
 KEYWORDS_BEARDEDDRAGONS="Bearded(| )dragon"
@@ -12,7 +13,8 @@ KEYWORDS_CROCODILES="Crocodile"
 KEYWORDS_ALLIGATORS="Alligator|Caiman"
 KEYWORDS_TUATARA="Tuatara"
 KEYWORDS_TURTLES_EXCLUDE="tenneage|mutant|ninja|TMNT|Turtle(| )Knock"
-KEYWORDS_SNAKES_EXCLUDE="Solid(| )Snake"
+KEYWORDS_SNAKES_EXCLUDE="Solid(| )Snake|$KEYWORDS_PYTHONS"
+KEYWORDS_PYTHONS_EXCLUDE="in_python\b|program|script"
 KEYWORDS_LIZARDS_EXCLUDE="$KEYWORDS_IGUANAS|$KEYWORDS_BEARDEDDRAGONS|$KEYWORDS_GECKOS|$KEYWORDS_SKINKS"
 KEYWORDS_CROCODILES_EXCLUDE="Crocodile(| )Dundee|Crocodile(| )Hunter"
 KEYWORDS_REPTILES_EXCLUDE="$KEYWORDS_TURTLES|$KEYWORDS_SNAKES|$KEYWORDS_LIZARDS|$KEYWORDS_TUATARA|$KEYWORDS_ALLIGATORS|$KEYWORDS_CROCODILES"
@@ -31,6 +33,7 @@ then
   egrep -i "$KEYWORDS_BEARDEDDRAGONS" newpages.txt >> Beardeddragons.txt
   egrep -i "$KEYWORDS_GECKOS" newpages.txt >> Geckos.txt
   egrep -i "$KEYWORDS_SKINKS" newpages.txt >> Skinks.txt
+  egrep -i "$KEYWORDS_PYTHONS" newpages.txt | egrep -iv "$KEYWORDS_PYTHONS_EXCLUDE" >> Pythons.txt
 
   REPTILES=`stat --print=%s Reptiles.txt`
   TURTLES=`stat --print=%s Turtles.txt`
@@ -43,6 +46,7 @@ then
   BEARDEDDRAGON=`stat --print=%s Beardeddragons.txt`
   GECKOS=`stat --print=%s Geckos.txt`
   SKINKS=`stat --print=%s Skinks.txt`
+  PYTHONS=`stat --print=%s Pythons.txt`
 
   if [ $REPTILES -ne 0 ];
   then
@@ -121,6 +125,13 @@ then
     $CATEGORIZE
   fi
 
+  if [ $PYTHONS -ne 0 ];
+  then
+    export CATFILE="Pythons.txt"
+    export CATNAME="Pythons"
+    $CATEGORIZE
+  fi
+
   rm Reptiles.txt
   rm Turtles.txt
   rm Alligators.txt
@@ -132,5 +143,6 @@ then
   rm Iguanas.txt
   rm Geckos.txt
   rm Skinks.txt
+  rm Pythons.txt
 
 fi
