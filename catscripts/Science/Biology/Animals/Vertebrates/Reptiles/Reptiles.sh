@@ -6,12 +6,13 @@ KEYWORDS_SNAKES="Snake"
 KEYWORDS_LIZARDS="Lizard"
 KEYWORDS_IGUANAS="Iguana"
 KEYWORDS_BEARDEDDRAGONS="Bearded(| )dragon"
+KEYWORDS_GECKOS="Gecko"
 KEYWORDS_CROCODILES="Crocodile"
 KEYWORDS_ALLIGATORS="Alligator|Caiman"
 KEYWORDS_TUATARA="Tuatara"
 KEYWORDS_TURTLES_EXCLUDE="tenneage|mutant|ninja|TMNT|Turtle(| )Knock"
 KEYWORDS_SNAKES_EXCLUDE="Solid(| )Snake"
-KEYWORDS_LIZARDS_EXCLUDE="$KEYWORDS_IGUANAS|$KEYWORDS_BEARDEDDRAGONS"
+KEYWORDS_LIZARDS_EXCLUDE="$KEYWORDS_IGUANAS|$KEYWORDS_BEARDEDDRAGONS|$KEYWORDS_GECKOS"
 KEYWORDS_CROCODILES_EXCLUDE="Crocodile(| )Dundee|Crocodile(| )Hunter"
 KEYWORDS_REPTILES_EXCLUDE="$KEYWORDS_TURTLES|$KEYWORDS_SNAKES|$KEYWORDS_LIZARDS|$KEYWORDS_TUATARA|$KEYWORDS_ALLIGATORS|$KEYWORDS_CROCODILES"
 
@@ -27,6 +28,7 @@ then
   egrep -i "$KEYWORDS_TUATARA" newpages.txt >> Tuatara.txt
   egrep -i "$KEYWORDS_IGUANAS" newpages.txt >> Iguanas.txt
   egrep -i "$KEYWORDS_BEARDEDDRAGONS" newpages.txt >> Beardeddragons.txt
+  egrep -i "$KEYWORDS_GECKOS" newpages.txt >> Geckos.txt
 
   REPTILES=`stat --print=%s Reptiles.txt`
   TURTLES=`stat --print=%s Turtles.txt`
@@ -37,6 +39,7 @@ then
   TUATARA=`stat --print=%s Tuatara.txt`
   IGUANAS=`stat --print=%s Iguanas.txt`
   BEARDEDDRAGON=`stat --print=%s Beardeddragons.txt`
+  GECKOS=`stat --print=%s Geckos.txt`
 
   if [ $REPTILES -ne 0 ];
   then
@@ -101,6 +104,13 @@ then
     $CATEGORIZE
   fi
 
+  if [ $GECKOS -ne 0 ];
+  then
+    export CATFILE="Geckos.txt"
+    export CATNAME="Geckos"
+    $CATEGORIZE
+  fi
+
   rm Reptiles.txt
   rm Turtles.txt
   rm Alligators.txt
@@ -110,5 +120,6 @@ then
   rm Tuatara.txt
   rm Beardeddragons.txt
   rm Iguanas.txt
+  rm Geckos.txt
 
 fi
