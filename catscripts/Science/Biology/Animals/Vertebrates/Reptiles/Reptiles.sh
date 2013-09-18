@@ -5,6 +5,9 @@ KEYWORDS_TURTLES="Turtle|Tortoise|Terrapin"
 KEYWORDS_SNAKES="Snake"
 KEYWORDS_PYTHONS="python"
 KEYWORDS_RATTLESNAKES="Rattle(| )snake"
+KEYWORDS_BOA="\bBoa(|s)\b"
+KEYWORDS_ANACONDAS="Anaconda"
+KEYWORDS_COBRAS="Cobra"
 KEYWORDS_LIZARDS="Lizard"
 KEYWORDS_IGUANAS="Iguana"
 KEYWORDS_BEARDEDDRAGONS="Bearded(| )dragon"
@@ -14,11 +17,13 @@ KEYWORDS_CROCODILES="Crocodile"
 KEYWORDS_ALLIGATORS="Alligator|Caiman"
 KEYWORDS_TUATARA="Tuatara"
 KEYWORDS_TURTLES_EXCLUDE="tenneage|mutant|ninja|TMNT|Turtle(| )Knock"
-KEYWORDS_SNAKES_EXCLUDE="Solid(| )Snake|$KEYWORDS_PYTHONS|Metal(| )Gear"
+KEYWORDS_SNAKES_EXCLUDE="Solid(| )Snake|$KEYWORDS_PYTHONS|Metal(| )Gear|$KEYWORDS_RATTLESNAKES|$KEYWORDS_BOA|$KEYWORDS_ANACONDAS|$KEYWORDS_COBRAS"
 KEYWORDS_PYTHONS_EXCLUDE="in_python\b|program|script|computer(| )language|Metal(| )Gear|Monty(| )Python"
+KEYWORDS_BOAS_EXCLUDE="$KEYWORDS_ANACONDAS|Boa(| )Hancock"
+KEYWORDS_COBRAS_EXCLUDE="Cobra(| )Commando|Shelby(| )Cobra|G(\.|)I(\.|)(| )Joe|Mustang"
 KEYWORDS_LIZARDS_EXCLUDE="$KEYWORDS_IGUANAS|$KEYWORDS_BEARDEDDRAGONS|$KEYWORDS_GECKOS|$KEYWORDS_SKINKS"
 KEYWORDS_CROCODILES_EXCLUDE="Crocodile(| )Dundee|Crocodile(| )Hunter"
-KEYWORDS_REPTILES_EXCLUDE="$KEYWORDS_TURTLES|$KEYWORDS_TURTLES_EXCLUDE|$KEYWORDS_SNAKES|$KEYWORDS_SNAKES_EXCLUDE|$KEYWORDS_LIZARDS|$KEYWORDS_LIZARDS_EXCLUDE|$KEYWORDS_TUATARA|$KEYWORDS_ALLIGATORS|$KEYWORDS_CROCODILES|$KEYWORDS_CROCODILES_EXCLUDE"
+KEYWORDS_REPTILES_EXCLUDE="$KEYWORDS_TURTLES|$KEYWORDS_TURTLES_EXCLUDE|$KEYWORDS_SNAKES|$KEYWORDS_SNAKES_EXCLUDE|$KEYWORDS_LIZARDS|$KEYWORDS_LIZARDS_EXCLUDE|$KEYWORDS_TUATARA|$KEYWORDS_ALLIGATORS|$KEYWORDS_CROCODILES|$KEYWORDS_CROCODILES_EXCLUDE|$KEYWORDS_COBRAS|$KEYWORDS_COBRAS_EXCLUDE"
 
 if [ "$1" == "" ];
 then
@@ -36,6 +41,9 @@ then
   egrep -i "$KEYWORDS_SKINKS" newpages.txt >> Skinks.txt
   egrep -i "$KEYWORDS_PYTHONS" newpages.txt | egrep -iv "$KEYWORDS_PYTHONS_EXCLUDE" >> Pythons.txt
   egrep -i "$KEYWORDS_RATTLESNAKES" newpages.txt >> Rattlesnakes.txt
+  egrep -i "$KEYWORDS_BOA" newpages.txt | egrep -iv "$KEYWORDS_BOA_EXCLUDE" >> Boa.txt
+  egrep -i "$KEYWORDS_ANACONDAS" newpages.txt >> Anacondas.txt
+  egrep -i "$KEYWORDS_COBRAS" newpages.txt | egrep -iv "$KEYWORDS_COBRAS_EXCLUDE" >> Cobras.txt
 
   REPTILES=`stat --print=%s Reptiles.txt`
   TURTLES=`stat --print=%s Turtles.txt`
@@ -50,6 +58,9 @@ then
   SKINKS=`stat --print=%s Skinks.txt`
   PYTHONS=`stat --print=%s Pythons.txt`
   RATTLESNAKES=`stat --print=%s Rattlesnakes.txt`
+  BOA=`stat --print=%s Boa.txt`
+  ANACONDAS=`stat --print=%s Anacondas.txt`
+  COBRAS=`stat --print=%s Cobras.txt`
 
   if [ $REPTILES -ne 0 ];
   then
@@ -142,6 +153,27 @@ then
     $CATEGORIZE
   fi
 
+  if [ $BOA -ne 0 ];
+  then
+    export CATFILE="Boa.txt"
+    export CATNAME="Boa"
+    $CATEGORIZE
+  fi
+
+  if [ $ANACONDAS -ne 0 ];
+  then
+    export CATFILE="Anacondas.txt"
+    export CATNAME="Anacondas"
+    $CATEGORIZE
+  fi
+
+  if [ $COBRAS -ne 0 ];
+  then
+    export CATFILE="Cobras.txt"
+    export CATNAME="Cobras"
+    $CATEGORIZE
+  fi
+
   rm Reptiles.txt
   rm Turtles.txt
   rm Alligators.txt
@@ -155,5 +187,8 @@ then
   rm Skinks.txt
   rm Pythons.txt
   rm Rattlesnakes.txt
+  rm Boa.txt
+  rm Anacondas.txt
+  rm Cobras.txt
 
 fi
