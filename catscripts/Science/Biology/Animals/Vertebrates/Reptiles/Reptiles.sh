@@ -4,6 +4,7 @@ KEYWORDS_REPTILES="Reptile"
 KEYWORDS_TURTLES="Turtle|Tortoise|Terrapin"
 KEYWORDS_SNAKES="Snake"
 KEYWORDS_PYTHONS="python"
+KEYWORDS_RATTLESNAKES="Rattle(| )snake"
 KEYWORDS_LIZARDS="Lizard"
 KEYWORDS_IGUANAS="Iguana"
 KEYWORDS_BEARDEDDRAGONS="Bearded(| )dragon"
@@ -17,7 +18,7 @@ KEYWORDS_SNAKES_EXCLUDE="Solid(| )Snake|$KEYWORDS_PYTHONS|Metal(| )Gear"
 KEYWORDS_PYTHONS_EXCLUDE="in_python\b|program|script|computer(| )language|Metal(| )Gear|Monty(| )Python"
 KEYWORDS_LIZARDS_EXCLUDE="$KEYWORDS_IGUANAS|$KEYWORDS_BEARDEDDRAGONS|$KEYWORDS_GECKOS|$KEYWORDS_SKINKS"
 KEYWORDS_CROCODILES_EXCLUDE="Crocodile(| )Dundee|Crocodile(| )Hunter"
-KEYWORDS_REPTILES_EXCLUDE="$KEYWORDS_TURTLES|$KEYWORDS_SNAKES|$KEYWORDS_LIZARDS|$KEYWORDS_TUATARA|$KEYWORDS_ALLIGATORS|$KEYWORDS_CROCODILES"
+KEYWORDS_REPTILES_EXCLUDE="$KEYWORDS_TURTLES|$KEYWORDS_TURTLES_EXCLUDE|$KEYWORDS_SNAKES|$KEYWORDS_SNAKES_EXCLUDE|$KEYWORDS_LIZARDS|$KEYWORDS_LIZARDS_EXCLUDE|$KEYWORDS_TUATARA|$KEYWORDS_ALLIGATORS|$KEYWORDS_CROCODILES|$KEYWORDS_CROCODILES_EXCLUDE"
 
 if [ "$1" == "" ];
 then
@@ -34,6 +35,7 @@ then
   egrep -i "$KEYWORDS_GECKOS" newpages.txt >> Geckos.txt
   egrep -i "$KEYWORDS_SKINKS" newpages.txt >> Skinks.txt
   egrep -i "$KEYWORDS_PYTHONS" newpages.txt | egrep -iv "$KEYWORDS_PYTHONS_EXCLUDE" >> Pythons.txt
+  egrep -i "$KEYWORDS_RATTLESNAKES" newpages.txt >> Rattlesnakes.txt
 
   REPTILES=`stat --print=%s Reptiles.txt`
   TURTLES=`stat --print=%s Turtles.txt`
@@ -47,6 +49,7 @@ then
   GECKOS=`stat --print=%s Geckos.txt`
   SKINKS=`stat --print=%s Skinks.txt`
   PYTHONS=`stat --print=%s Pythons.txt`
+  RATTLESNAKES=`stat --print=%s Rattlesnakes.txt`
 
   if [ $REPTILES -ne 0 ];
   then
@@ -132,6 +135,13 @@ then
     $CATEGORIZE
   fi
 
+  if [ $RATTLESNAKES -ne 0 ];
+  then
+    export CATFILE="Rattlesnakes.txt"
+    export CATNAME="Rattlesnakes"
+    $CATEGORIZE
+  fi
+
   rm Reptiles.txt
   rm Turtles.txt
   rm Alligators.txt
@@ -144,5 +154,6 @@ then
   rm Geckos.txt
   rm Skinks.txt
   rm Pythons.txt
+  rm Rattlesnakes.txt
 
 fi
