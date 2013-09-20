@@ -27,10 +27,10 @@ export CATEGORIZE="./util/Categorize.sh"
 
 echo "Generating pages"
 
-python $PYWIKIPEDIADIR/pagegenerators.py -new:$NPL|sed '|[0-9][0-9][0-9]: |d' | sed '|[0-9][0-9]: |d' | sed '|[0-9]: |d' > newpages.txt
+python $PYWIKIPEDIADIR/pagegenerators.py -new:$NPL > newpages.txt
 
 #This fetches pages that may be older but have been edited recently; a great way to play catchup
-python $PYWIKIPEDIADIR/pagegenerators.py -recentchanges -ns:0|sed '|[0-9][0-9][0-9]: |d'| sed '|[0-9][0-9]: |d' | sed '|[0-9]: |d' >> newpages.txt
+python $PYWIKIPEDIADIR/pagegenerators.py -recentchanges -ns:0 >> newpages.txt
  
 ./catscripts/Entertainment/Entertainment.sh
 ./catscripts/Government/Government.sh
