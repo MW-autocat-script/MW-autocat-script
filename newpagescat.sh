@@ -27,13 +27,10 @@ export CATEGORIZE="./util/Categorize.sh"
 
 echo "Generating pages"
 
-python $PYWIKIPEDIADIR/pagegenerators.py -new:$NPL|sed 's|[0-9][0-9][0-9]: |d'| sed 's|[0-9][0-9]: |d' | sed 's|[0-9]: |d' > newpages.txt
+python $PYWIKIPEDIADIR/pagegenerators.py -new:$NPL|sed '|[0-9][0-9][0-9]: |d' | sed '|[0-9][0-9]: |d' | sed '|[0-9]: |d' > newpages.txt
 
 #This fetches pages that may be older but have been edited recently; a great way to play catchup
-python $PYWIKIPEDIADIR/pagegenerators.py -recentchanges -ns:0|sed 's|[0-9][0-9][0-9]: |\* \[\[|'| sed 's|[0-9][0-9]: |\* \[\[|' | sed 's|[0-9]: |\* \[\[|' | sed 's:$:]]:' >> newpages.txt
-
-#This fetches a random redirect and checks its target. Inefficient, but better than nothing ATM
-python $PYWIKIPEDIADIR/pagegenerators.py -randomredirect:1 -ns:0|sed 's|[0-9][0-9][0-9]: |\* \[\[|'| sed 's|[0-9][0-9]: |\* \[\[|' | sed 's|[0-9]: |\* \[\[|' | sed 's:$:]]:' >> newpages.txt
+python $PYWIKIPEDIADIR/pagegenerators.py -recentchanges -ns:0|sed '|[0-9][0-9][0-9]: |d'| sed '|[0-9][0-9]: |d' | sed '|[0-9]: |d' >> newpages.txt
  
 ./catscripts/Entertainment/Entertainment.sh
 ./catscripts/Government/Government.sh
