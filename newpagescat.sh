@@ -35,6 +35,7 @@ python $PYWIKIPEDIADIR/pagegenerators.py -recentchanges -ns:0 >> newpages.txt
 ./catscripts/Entertainment/Entertainment.sh
 ./catscripts/Government/Government.sh
 ./catscripts/Language/Language.sh
+./catscripts/Legal/Legal.sh
 ./catscripts/Lifestyle/Lifestyle.sh
 ./catscripts/Maintenance/Maintenance.sh
 ./catscripts/Math/Math.sh
