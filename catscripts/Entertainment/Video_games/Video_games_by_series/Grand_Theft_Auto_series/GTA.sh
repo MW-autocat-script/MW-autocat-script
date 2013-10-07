@@ -4,7 +4,7 @@ egrep -i 'Grand Theft Auto|\bGTA\b' newpages.txt | egrep -iv 'GTA(:|| |SA)|[2-9]
 egrep -i '(GTA|Grand Theft Auto)(|:)(| )(2|II\b)' newpages.txt >> GTA2.txt
 egrep -i 'GTA(|:| )3|Grand(| )Theft(| )Auto(| )(III|3)' newpages.txt >> GrandTheftAuto3.txt
 egrep -i 'GTA(|:| )(VC|Vice City)|Grand Theft Auto(|:)(| )Vice City|Vice City' newpages.txt | egrep -iv 'VCS|Vice City Stories' >> ViceCity.txt
-egrep -i 'GTA(|:| )(SA|San Andreas)|Grand Theft Auto(|:)(| )San Andreas' newpages.txt >> SanAndreas.txt
+egrep -i 'GTA(|:| )(SA|San Andreas)|Grand Theft Auto(|:)(| )San Andreas|Grove Street Families' newpages.txt >> SanAndreas.txt
 egrep -i 'GTA(|:| )Liberty City Stories|Grand Theft Auto(|:)(| )Liberty City Stories' newpages.txt >> LibertyCityStories.txt
 egrep -i 'GTA(|:| )(VCS|Vice City Stories)|Grand Theft Auto(|:)(| )Vice City Stories|Vice City Stories' newpages.txt >> ViceCityStories.txt
 egrep -i 'GTA(|:| )(IV|4)|Grand(| )Theft(| )Auto(| )(IV|4)|(Roman|Niko)(| )Bellic|Niko.+\bRoman|Roman.+\bNiko' newpages.txt >> GrandTheftAuto4.txt
