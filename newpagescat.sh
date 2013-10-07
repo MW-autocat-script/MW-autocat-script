@@ -28,6 +28,7 @@ export CATEGORIZE="./util/Categorize.sh"
 echo "Generating pages"
 
 python $PYWIKIPEDIADIR/pagegenerators.py -new:$NPL > newpages.txt
+python $PYWIKIPEDIADIR/pagegenerators.py -usercontribs:"SpellBot:10" -pt:1 >> newpages.txt #catches pages that have been renamed by spelling bot
 
 #This fetches pages that may be older but have been edited recently; a great way to play catchup
 python $PYWIKIPEDIADIR/pagegenerators.py -recentchanges -ns:0 >> newpages.txt
