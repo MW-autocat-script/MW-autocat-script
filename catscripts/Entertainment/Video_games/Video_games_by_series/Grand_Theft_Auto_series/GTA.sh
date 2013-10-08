@@ -1,17 +1,33 @@
 #!/bin/bash
 
-egrep -i 'Grand Theft Auto|\bGTA\b' newpages.txt | egrep -iv 'GTA(:|| |SA)|[2-9]{1,}|San Andreas|Liberty City|III\b|IV|\bV\b|Vice City|The Lost and Damned|Chinatown Wars|Gay Tony' >> GTA.txt
-egrep -i '(GTA|Grand Theft Auto)(|:)(| )(2|II\b)' newpages.txt >> GTA2.txt
-egrep -i 'GTA(|:| )3|Grand(| )Theft(| )Auto(| )(III|3)' newpages.txt >> GrandTheftAuto3.txt
-egrep -i 'GTA(|:| )(VC|Vice City)|Grand Theft Auto(|:)(| )Vice City|Vice City' newpages.txt | egrep -iv 'VCS|Vice City Stories' >> ViceCity.txt
-egrep -i 'GTA(|:| )(SA|San Andreas)|Grand Theft Auto(|:)(| )San Andreas|Grove Street Families' newpages.txt >> SanAndreas.txt
-egrep -i 'GTA(|:| )Liberty City Stories|Grand Theft Auto(|:)(| )Liberty City Stories' newpages.txt >> LibertyCityStories.txt
-egrep -i 'GTA(|:| )(VCS|Vice City Stories)|Grand Theft Auto(|:)(| )Vice City Stories|Vice City Stories' newpages.txt >> ViceCityStories.txt
-egrep -i 'GTA(|:| )(IV|4)|Grand(| )Theft(| )Auto(| )(IV|4)|(Roman|Niko)(| )Bellic|Niko.+\bRoman|Roman.+\bNiko' newpages.txt >> GrandTheftAuto4.txt
-egrep -i 'GTA(|:| )(V|5)\b|Grand(| )Theft(| )Auto(| )(V\b|5)' newpages.txt >> GrandTheftAuto5.txt
-egrep -i 'China(| )town Wars' newpages.txt >> ChinaTown.txt
-egrep -i 'The Lost and Damned|GTA.+Damned|Grand Theft Auto.+Damned|GTA(|:)(| )TLAD' newpages.txt >> Damned.txt
-egrep -i 'Gay Tony|TBoGT' newpages.txt >> GayTony.txt
+KEYWORDS_GTA_SERIES="Grand Theft Auto|\bGTA\b"
+KEYWORDS_GTA2="(GTA|Grand Theft Auto)(|:)(| )(2|II\b)"
+KEYWORDS_GTA3="GTA(|:| )3|Grand(| )Theft(| )Auto(| )(III|3)"
+KEYWORDS_GTAVC="GTA(|:| )(VC|Vice City)|Grand Theft Auto(|:)(| )Vice(| )City|Vice(| )City"
+KEYWORDS_GTAVC_EXCLUDE="VCS|Vice(| )City(| )Stories"
+KEYWORDS_GTASA="GTA(|:| )(SA|San Andreas)|Grand Theft Auto(|:)(| )San Andreas|Grove(| )Street(| )Families"
+KEYWORDS_GTALCS="GTA(|:| )Liberty City Stories|Grand Theft Auto(|:)(| )Liberty City Stories|\bLCS\b|Toni(| )Cipriani"
+KEYWORDS_GTAVCS="GTA(|:| )(VCS|Vice City Stories)|Grand Theft Auto(|:)(| )Vice City Stories|Vice(| )City(| )Stories|Vic(|tor)(| )Vance"
+KEYWORDS_GTA4="GTA(|:| )(IV|4)|Grand(| )Theft(| )Auto(| )(IV|4)|(Roman|Niko)(| )Bellic|Niko.+\bRoman|Roman.+\bNiko"
+KEYWORDS_GTA5="GTA(|:| )(V|5)\b|Grand(| )Theft(| )Auto(| )(V\b|5)"
+KEYWORDS_GTACHINATOWN="China(| )town(| )Wars|(Grand(| )Theft(| )Auto|GTA)(|:)(| )CTW|Huang(| )Lee"
+KEYWORDS_GTATBOGT="Gay(| )Tony|TBoGT|Luis(| )Lopez"
+KEYWORDS_GTATLAD="The Lost and Damned|GTA.+Damned|Grand Theft Auto.+Damned|GTA(|:)(| )TLAD"
+KEYWORDS_GTA_SERIES_EXCLUDE="$KEYWORDS_GTA2|$KEYWORDS_GTA3|$KEYWORDS_GTA4|$KEYWORDS_GTA5|$KEYWORDS_GTACHINATOWN|$KEYWORDS_GTALCS|$KEYWORDS_GTASA|$KEYWORDS_GTATBOGT|$KEYWORDS_GTATLAD|$KEYWORDS_GTAVC|$KEYWORDS_GTAVC_EXCLUDE|$KEYWORDS_GTAVCS"
+KEYWORDS_GTA_SERIES_ALL="$KEYWORDS_GTA_SERIES|$KEYWORDS_GTA_SERIES_EXCLUDE"
+
+egrep -i "$KEYWORDS_GTA_SERIES" newpages.txt | egrep -iv "$KEYWORDS_GTA_SERIES_EXCLUDE" >> GTA.txt
+egrep -i "$KEYWORDS_GTA2" newpages.txt >> GTA2.txt
+egrep -i "$KEYWORDS_GTA3" newpages.txt >> GrandTheftAuto3.txt
+egrep -i "$KEYWORDS_GTAVC" newpages.txt | egrep -iv "$KEYWORDS_GTAVC_EXCLUDE" >> ViceCity.txt
+egrep -i "$KEYWORDS_GTASA" newpages.txt >> SanAndreas.txt
+egrep -i "$KEYWORDS_GTALCS" newpages.txt >> LibertyCityStories.txt
+egrep -i "$KEYWORDS_GTAVCS" newpages.txt >> ViceCityStories.txt
+egrep -i "$KEYWORDS_GTA4" newpages.txt >> GrandTheftAuto4.txt
+egrep -i "$KEYWORDS_GTA5" newpages.txt >> GrandTheftAuto5.txt
+egrep -i "$KEYWORDS_GTACHINATOWN" newpages.txt >> ChinaTown.txt
+egrep -i "$KEYWORDS_GTATLAD" newpages.txt >> Damned.txt
+egrep -i "$KEYWORDS_GTATBOGT" newpages.txt >> GayTony.txt
 
 
 SERIES=`stat --print=%s GTA.txt`
