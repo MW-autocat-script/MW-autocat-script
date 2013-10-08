@@ -2,7 +2,7 @@
 
 KEYWORDS_GTA_SERIES="Grand Theft Auto|\bGTA\b"
 KEYWORDS_GTA2="(GTA|Grand Theft Auto)(|:)(| )(2|II\b)"
-KEYWORDS_GTA3="GTA(|:| )3|Grand(| )Theft(| )Auto(| )(III|3)"
+KEYWORDS_GTA3="GTA(|:| )(III|3)|Grand(| )Theft(| )Auto(| )(III|3)"
 KEYWORDS_GTAVC="GTA(|:| )(VC|Vice City)|Grand Theft Auto(|:)(| )Vice(| )City|Vice(| )City"
 KEYWORDS_GTAVC_EXCLUDE="VCS|Vice(| )City(| )Stories"
 KEYWORDS_GTASA="GTA(|:| )(SA|San Andreas)|Grand Theft Auto(|:)(| )San Andreas|Grove(| )Street(| )Families"
