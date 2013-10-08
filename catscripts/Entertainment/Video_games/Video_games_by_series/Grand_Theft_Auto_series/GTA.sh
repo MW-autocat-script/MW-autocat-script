@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_GTA_SERIES="Grand Theft Auto|\bGTA\b"
+KEYWORDS_GTA_SERIES="Grand Theft Auto|\bGTA\b|Infernus|Mr\.(| )Whopee"
 KEYWORDS_GTA2="(GTA|Grand Theft Auto)(|:)(| )(2|II\b)"
 KEYWORDS_GTA3="GTA(| )(|:| )(| )(III|3)|Grand(| )Theft(| )Auto(| )(III|3)"
 KEYWORDS_GTAVC="GTA(| )(|:| )(| )(VC|Vice City)|Grand Theft Auto(|:)(| )Vice(| )City|Vice(| )City|Tommy(| )Vercetti"
@@ -8,7 +8,7 @@ KEYWORDS_GTAVC_EXCLUDE="VCS|Vice(| )City(| )Stories"
 KEYWORDS_GTASA="GTA(| )(|:| )(| )(SA|San Andreas)|Grand Theft Auto(|:)(| )San Andreas|Grove(| )Street(| )Families|(Carl|C(\.|)J(\.|))(| )Johnson|\bBallas\b"
 KEYWORDS_GTALCS="GTA(| )(|:| )(| )Liberty City Stories|Grand Theft Auto(|:)(| )Liberty City Stories|\bLCS\b|Toni(| )Cipriani"
 KEYWORDS_GTAVCS="GTA(| )(|:| )(| )(VCS|Vice City Stories)|Grand Theft Auto(|:)(| )Vice City Stories|Vice(| )City(| )Stories|Vic(|tor)(| )Vance"
-KEYWORDS_GTA4="GTA(| )(|:| )(| )(IV|4)|Grand(| )Theft(| )Auto(| )(IV|4)|(Roman|Niko)(| )Bellic|Niko.+\bRoman|Roman.+\bNiko|\bEFLC|Episodes(| )from(| )Liberty(| )City"
+KEYWORDS_GTA4="GTA(| )(|:| )(| )(IV|4)|Grand(| )Theft(| )Auto(| )(IV|4)|(Roman|Niko)(| )Bellic|Niko.+\bRoman|Roman.+\bNiko"
 KEYWORDS_GTA5="GTA(| )(|:| )(| )(V|5)\b|Grand(| )Theft(| )Auto(| )(V\b|5)"
 KEYWORDS_GTACHINATOWN="China(| )town(| )Wars|(Grand(| )Theft(| )Auto|GTA)(|:)(| )CTW|Huang(| )Lee"
 KEYWORDS_GTATBOGT="Gay(| )Tony|TBoGT|Luis(| )Lopez|\bEFLC|Episodes(| )from(| )Liberty(| )City"
