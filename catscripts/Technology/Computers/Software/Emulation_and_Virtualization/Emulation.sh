@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i 'VMware' newpages.txt >> Emulation.txt #virtual machine
+egrep -i 'VMware|virtual machine' newpages.txt >> Emulation.txt #virtual machine
 egrep -i 'Virtual(| )PC' newpages.txt >> Emulation.txt #virtual machine
 egrep -i 'Virtual(| )Box' newpages.txt >> Emulation.txt #virtual machine
 egrep -i 'Parallels(| )Desktop|Parallels(| )Workstation' newpages.txt >> Emulation.txt #virtual machine
