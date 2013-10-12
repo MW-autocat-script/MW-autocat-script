@@ -1,6 +1,6 @@
 #!/bin/bash
 
-egrep -i '.+in French\]\]|French word for' newpages.txt >> EnglishtoFrench.txt
+egrep -i '.+in French$|French word for' newpages.txt >> EnglishtoFrench.txt
 
 ETOF=`stat --print=%s EnglishtoFrench.txt`
 
