@@ -20,7 +20,7 @@ egrep -i "$KEYWORDS_MICROPROCESSOR" newpages.txt >> Microprocessors.txt
 egrep -i "$KEYWORDS_DATASTORAGE" newpages.txt | egrep -iv "$KEYWORDS_DATASTORAGE_EXCLUDE" >> Datastorage.txt
 egrep -i "$KEYWORDS_HARD_DRIVE" newpages.txt >> Harddrive.txt
 egrep -i "$KEYWORDS_FLOPPY" newpages.txt >> Floppy.txt
-egrep -i "$KEYWORDS_COMPUTER_HARDWARE_MAIN" newpages.txt | egrep -iv "$KEYWORDS_COMPUTER_HARDWARE" >> ComputerHardware.txt
+egrep -i "$KEYWORDS_COMPUTER_HARDWARE" newpages.txt | egrep -iv "$KEYWORDS_COMPUTER_HARDWARE_EXCLUDE" >> ComputerHardware.txt
 
 MOTHERBOARDS=`stat --print=%s Motherboards.txt`
 VIDEOCARDS=`stat --print=%s VideoCards.txt`
