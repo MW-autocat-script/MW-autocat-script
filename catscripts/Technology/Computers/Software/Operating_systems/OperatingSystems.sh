@@ -1,9 +1,19 @@
 #!/bin/bash
 
-egrep -i 'operating system|(^| )OS\b|\[\[OS ' newpages.txt | egrep -iv 'Windows|Unix|Linux|Mac OS|Open(| )BSD|Net(| )BSD|Free(| )BSD|\bDOS\b|Google Android|MS(|-| )DOS' >> OperatingSystems.txt
+CURRENTDIR="./catscripts/Technology/Computers/Software/Operating_systems"
 
+. $CURRENTDIR/FreeBSD/FreeBSD.sh
+. $CURRENTDIR/Linux/Linux.sh
+. $CURRENTDIR/Mac_OS_X/Mac_OS_X.sh
+. $CURRENTDIR/OpenBSD/OpenBSD.sh #KEYWORDS_OPENBSD
+. $CURRENTDIR/Unix/Unix.sh
+. $CURRENTDIR/Windows/Windows.sh #$KEYWORDS_WINDOWS_ALL
+
+KEYWORDS_OPERATINGSYSTEMS="operating(| )system|(^| )OS\b"
 KEYWORDS_MSDOS="MS(|-| )DOS"
+KEYWORDS_OPERATINGSYSTEMS_EXCLUDE="$KEYWORDS_WINDOWS_ALL|$KEYWORDS_UNIX|Linux|Mac OS|$KEYWORDS_OPENBSD|Net(| )BSD|Free(| )BSD|\bDOS\b|Google Android|$KEYWORDS_MSDOS"
 
+egrep -i "$KEYWORDS_OPERATINGSYSTEMS" newpages.txt | egrep -iv "$KEYWORDS_OPERATINGSYSTEMS_EXCLUDE" >> OperatingSystems.txt
 egrep -i "$KEYWORDS_MSDOS" newpages.txt >> MS-DOS.txt
 
 OS=`stat --print=%s OperatingSystems.txt`
@@ -22,15 +32,6 @@ then
   export CATNAME="MS-DOS"
   $CATEGORIZE
 fi
-
-CURRENTDIR="./catscripts/Technology/Computers/Software/Operating_systems"
-
-$CURRENTDIR/FreeBSD/FreeBSD.sh
-$CURRENTDIR/Linux/Linux.sh
-$CURRENTDIR/Mac_OS_X/Mac_OS_X.sh
-$CURRENTDIR/OpenBSD/OpenBSD.sh
-$CURRENTDIR/Unix/Unix.sh
-$CURRENTDIR/Windows/Windows.sh
 
 rm OperatingSystems.txt
 rm MS-DOS.txt

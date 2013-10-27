@@ -1,18 +1,15 @@
 #!/bin/bash
 
-egrep -i '\bUnix' newpages.txt >> Unix.txt #Begin with word boundary so LUnix is not placed here
-egrep -i '\bcron\b|crontab|anacron\b|\binit\b|fsck' newpages.txt | egrep -iv 'Linux|BSD' >> Unix.txt
-egrep -i 'Xenix' newpages.txt >> Unix.txt #Old-skool Microsoft / AT&T Unix
-egrep -i 'Solaris|SunOS|\bSun OS' newpages.txt >> Unix.txt #Sun Microsystems / Oracle
-egrep -i 'IRIX' newpages.txt >> Unix.txt #SGI
-egrep -i '\bAIX' newpages.txt >> Unix.txt #IBM
-egrep -i 'HP( |-)UX' newpages.txt >> Unix.txt #Hewlett-Packard
-egrep -i 'Tru64' newpages.txt >> Unix.txt #DEC (now Hewlett-Packard)
-egrep -i 'OpenServer' newpages.txt >> Unix.txt #SCO Group
-#egrep -i 'Mac OS X' >> Unix.txt #Apple Inc. (has it's own category, so not added here)
-egrep -i 'A/UX' newpages.txt >> Unix.txt #Old-skool Apple Unix
-egrep -i 'Apple Rhapsody|RhapsodyOS' newpages.txt >> Unix.txt
-egrep -i 'NextStep' newpages.txt >> Unix.txt
+
+KEYWORDS_UNIX="\bUnix|Xenix|Solaris|Sun(| )OS|IRIX|\bAIX|HP(| |-)UX|Tru64|A/UX|Apple(| )Rhapsody|RhapsodyOS|NextStep|OpenServer"
+KEYWORDS_UNIX_SPECIAL="\bcron\b|crontab|anacron\b|\binit\b|fsck"
+KEYWORDS_UNIX_EXCLUDE="Mac(| )OS|OS(| )X"
+
+if [ "$1" == "" ]; #Normal operation
+then
+  
+  egrep -i "$KEYWORDS_UNIX" newpages.txt | egrep -iv "$KEYWORDS_UNIX_EXCLUDE" >> Unix.txt
+  egrep -i "$KEYWORDS_UNIX_SPECIAL" newpages.txt | egrep -iv "$KEYWORDS_UNIX_EXCLUDE|Linux|BSD" >> Unix.txt #FIXME: Should fetch names of all distros from ./catscripts/Technology/Computers/Software/Operating_systems/Linux/Linux.sh
 
 UNIX=`stat --print=%s Unix.txt`
 

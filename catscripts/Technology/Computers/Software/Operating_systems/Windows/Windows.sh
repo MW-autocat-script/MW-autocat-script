@@ -10,8 +10,11 @@ KEYWORDS_WINDOWS7="Windows(| )7|Win7"
 KEYWORDS_WINDOWSSERVER2008="Windows(| )Server(| )2008|Windows(| )2008|Win(| )2k8|W2k8"
 KEYWORDS_WINDOWS8="Windows(| )8|Win8"
 KEYWORDS_WINDOWS="Microsoft(| )Windows"
-KEYWORDS_WINDOWS_CASESENSITIVE="Windows"
-KEYWORDS_WINDOWS_EXCLUDE="$KEYWORDS_ACTIVEDIRECTORY|$KEYWORDS_WINDOWS98|$KEYWORDS_WINDOWS2000|$KEYWORDS_WINDOWSXP|$KEYWORDS_WINDOWSVISTA|$KEYWORDS_WINDOWS7|$KEYWORDS_WINDOWS8|$KEYWORDS_WINDOWSSERVER2003|$KEYWORDS_WINDOWSSERVER2008|Windows(| )(|Live)(| )(DVD|Movie)(| )Maker|\bX(-| )Windows|Windows(| )Media(| )Player"
+KEYWORDS_WINDOWSMEDIAPLAYER="Windows(| )Media(| )Player"
+KEYWORDS_WINDOWSMOVIEMAKER="Windows(| )(DVD|Movie)(| )Maker|Windows(| )Live(| )(DVD|Movie)(| )Maker"
+KEYWORDS_WINDOWSCASESENSITIVE="Windows"
+KEYWORDS_WINDOWS_EXCLUDE="$KEYWORDS_ACTIVEDIRECTORY|$KEYWORDS_WINDOWS98|$KEYWORDS_WINDOWS2000|$KEYWORDS_WINDOWSXP|$KEYWORDS_WINDOWSVISTA|$KEYWORDS_WINDOWS7|$KEYWORDS_WINDOWS8|$KEYWORDS_WINDOWSSERVER2003|$KEYWORDS_WINDOWSSERVER2008|$KEYWORDS_WINDOWSMOVIEMAKER|\bX(-| )Windows|$KEYWORDS_WINDOWSMEDIAPLAYER"
+KEYWORDS_WINDOWS_ALL="$KEYWORDS_WINDOWSCASESENSITIVE|$KEYWORDS_WINDOWS|$KEYWORDS_WINDOWS_EXCLUDE"
 
 egrep -i "$KEYWORDS_ACTIVEDIRECTORY" newpages.txt >> ActiveDirectory.txt
 egrep -i "$KEYWORDS_WINDOWS98" newpages.txt >> Windows98.txt
@@ -23,7 +26,7 @@ egrep -i "$KEYWORDS_WINDOWS7" newpages.txt >> Windows7.txt
 egrep -i "$KEYWORDS_WINDOWSSERVER2008" newpages.txt >> WindowsServer2008.txt
 egrep -i "$KEYWORDS_WINDOWS8" newpages.txt >> Windows8.txt
 egrep -i "$KEYWORDS_WINDOWS" newpages.txt | egrep -iv "$KEYWORDS_WINDOWS_EXCLUDE" >> Windows.txt
-egrep "$KEYWORDS_WINDOWS_CASESENSITIVE" newpages.txt | egrep -iv "$KEYWORDS_WINDOWS_EXCLUDE" >> Windows.txt
+egrep "$KEYWORDS_WINDOWSCASESENSITIVE" newpages.txt | egrep -iv "$KEYWORDS_WINDOWS_EXCLUDE" >> Windows.txt
 
 ACTIVEDIRECTORY=`stat --print=%s ActiveDirectory.txt`
 Win98=`stat --print=%s Windows98.txt`
@@ -34,7 +37,7 @@ WinVista=`stat --print=%s WindowsVista.txt`
 Win7=`stat --print=%s Windows7.txt`
 Win2008=`stat --print=%s WindowsServer2008.txt`
 Win8=`stat --print=%s Windows8.txt`
-WINDOWS=`stat --print=%S Windows.txt`
+WINDOWS=`stat --print=%s Windows.txt`
 
 
 if [ $ACTIVEDIRECTORY -ne 0 ];
