@@ -2,36 +2,50 @@
 
 CURRENTDIR="./catscripts/Technology/Computers/Software/Operating_systems"
 
-. $CURRENTDIR/FreeBSD/FreeBSD.sh
-. $CURRENTDIR/Linux/Linux.sh
-. $CURRENTDIR/Mac_OS_X/Mac_OS_X.sh
-. $CURRENTDIR/OpenBSD/OpenBSD.sh #KEYWORDS_OPENBSD
-. $CURRENTDIR/Unix/Unix.sh
-. $CURRENTDIR/Windows/Windows.sh #$KEYWORDS_WINDOWS_ALL
 
-KEYWORDS_OPERATINGSYSTEMS="operating(| )system|(^| )OS\b"
-KEYWORDS_MSDOS="MS(|-| )DOS"
-KEYWORDS_OPERATINGSYSTEMS_EXCLUDE="$KEYWORDS_WINDOWS_ALL|$KEYWORDS_UNIX|Linux|Mac OS|$KEYWORDS_OPENBSD|Net(| )BSD|Free(| )BSD|\bDOS\b|Google Android|$KEYWORDS_MSDOS"
-
-egrep -i "$KEYWORDS_OPERATINGSYSTEMS" newpages.txt | egrep -iv "$KEYWORDS_OPERATINGSYSTEMS_EXCLUDE" >> OperatingSystems.txt
-egrep -i "$KEYWORDS_MSDOS" newpages.txt >> MS-DOS.txt
-
-OS=`stat --print=%s OperatingSystems.txt`
-MSDOS=`stat --print=%s MS-DOS.txt`
-
-if [ $OS -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="OperatingSystems.txt"
-  export CATNAME="Operating systems"
-  $CATEGORIZE
+
+  . $CURRENTDIR/FreeBSD/FreeBSD.sh #KEYWORDS_FREEBSD
+  . $CURRENTDIR/Linux/Linux.sh #KEYWORDS_LINUX_ALL
+  . $CURRENTDIR/MS-DOS/MS-DOS.sh #KEYWORDS_MSDOS
+  . $CURRENTDIR/Mac_OS_X/Mac_OS_X.sh
+  . $CURRENTDIR/OpenBSD/OpenBSD.sh #KEYWORDS_OPENBSD
+  . $CURRENTDIR/Unix/Unix.sh #KEYWORDS_UNIX & KEYWORDS_UNIX_SPECIAL
+  . $CURRENTDIR/Windows/Windows.sh #$KEYWORDS_WINDOWS_ALL
+
+  KEYWORDS_OPERATINGSYSTEMS="operating(| )system|(^| )OS\b"
+  KEYWORDS_OPERATINGSYSTEMS_OTHER="Net(| )BSD"
+  KEYWORDS_OPERATINGSYSTEMS_EXCLUDE="$KEYWORDS_WINDOWS_ALL|$KEYWORDS_UNIX|$KEYWORDS_UNIX_SPECIAL|$KEYWORDS_LINUX_ALL|Mac OS|$KEYWORDS_OPENBSD|$KEYWORDS_FREEBSD|$KEYWORDS_MSDOS"
+
+  egrep -i "$KEYWORDS_OPERATINGSYSTEMS|$KEYWORDS_OPERATINGSYSTEMS_OTHER" newpages.txt | egrep -iv "$KEYWORDS_OPERATINGSYSTEMS_EXCLUDE" >> OperatingSystems.txt
+  egrep -i "$KEYWORDS_MSDOS" newpages.txt >> MS-DOS.txt
+
+  OS=`stat --print=%s OperatingSystems.txt`
+
+  if [ $OS -ne 0 ];
+  then
+    export CATFILE="OperatingSystems.txt"
+    export CATNAME="Operating systems"
+    $CATEGORIZE
+  fi
+
+  rm OperatingSystems.txt
+
 fi
 
-if [ $MSDOS -ne 0 ];
+if [ "$1" == "norrun" ];
 then
-  export CATFILE="MS-DOS.txt"
-  export CATNAME="MS-DOS"
-  $CATEGORIZE
-fi
+  . $CURRENTDIR/FreeBSD/FreeBSD.sh norrun
+  . $CURRENTDIR/Linux/Linux.sh norrun
+  . $CURRENTDIR/MS-DOS/MS-DOS.sh norrun
+  . $CURRENTDIR/Mac_OS_X/Mac_OS_X.sh norrun
+  . $CURRENTDIR/OpenBSD/OpenBSD.sh norrun
+  . $CURRENTDIR/Unix/Unix.sh norrun
+  . $CURRENTDIR/Windows/Windows.sh norrun
 
-rm OperatingSystems.txt
-rm MS-DOS.txt
+  KEYWORDS_OPERATINGSYSTEMS="operating(| )system|(^| )OS\b"
+  KEYWORDS_OPERATINGSYSTEMS_OTHER="Net(| )BSD"
+  KEYWORDS_OPERATINGSYSTEMS_EXCLUDE="$KEYWORDS_WINDOWS_ALL|$KEYWORDS_UNIX|$KEYWORDS_UNIX_SPECIAL|$KEYWORDS_LINUX_ALL|Mac OS|$KEYWORDS_OPENBSD|$KEYWORDS_FREEBSD|$KEYWORDS_MSDOS"
+
+fi

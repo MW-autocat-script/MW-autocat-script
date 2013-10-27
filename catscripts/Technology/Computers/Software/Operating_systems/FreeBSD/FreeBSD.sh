@@ -1,14 +1,21 @@
 #!/bin/bash
 
-egrep -i 'Free(| )BSD' newpages.txt >> FreeBSD.txt
+KEYWORDS_FREEBSD="Free(| )BSD"
 
-FREEBSD=`stat --print=%s FreeBSD.txt`
-
-if [ $FREEBSD -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="FreeBSD.txt"
-  export CATNAME="FreeBSD"
-  $CATEGORIZE
-fi
 
-rm FreeBSD.txt
+  egrep -i "$KEYWORDS_FREEBSD" newpages.txt >> FreeBSD.txt
+
+  FREEBSD=`stat --print=%s FreeBSD.txt`
+
+  if [ $FREEBSD -ne 0 ];
+  then
+    export CATFILE="FreeBSD.txt"
+    export CATNAME="FreeBSD"
+    $CATEGORIZE
+  fi
+
+  rm FreeBSD.txt
+
+fi
