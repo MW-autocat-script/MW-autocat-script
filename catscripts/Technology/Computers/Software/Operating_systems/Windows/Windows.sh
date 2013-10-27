@@ -1,5 +1,6 @@
 #!/bin/bash
 
+KEYWORDS_ACTIVEDIRECTORY="Active(| )Directory"
 KEYWORDS_WINDOWS98="Windows(| )98|Win98"
 KEYWORDS_WINDOWS2000="Windows(| )2000|Win2000|W2k\b"
 KEYWORDS_WINDOWSXP="Windows(| )XP|2000XP|WinXP"
@@ -10,8 +11,9 @@ KEYWORDS_WINDOWSSERVER2008="Windows(| )Server(| )2008|Windows(| )2008|Win(| )2k8
 KEYWORDS_WINDOWS8="Windows(| )8|Win8"
 KEYWORDS_WINDOWS="Microsoft(| )Windows"
 KEYWORDS_WINDOWS_CASESENSITIVE="Windows"
-KEYWORDS_WINDOWS_EXCLUDE="$KEYWORDS_WINDOWS98|$KEYWORDS_WINDOWS2000|$KEYWORDS_WINDOWSXP|$KEYWORDS_WINDOWSVISTA|$KEYWORDS_WINDOWS7|$KEYWORDS_WINDOWS8|$KEYWORDS_WINDOWSSERVER2003|$KEYWORDS_WINDOWSSERVER2008|Windows(| )(|Live)(| )(DVD|Movie)(| )Maker|\bX(-| )Windows|Windows(| )Media(| )Player"
+KEYWORDS_WINDOWS_EXCLUDE="$KEYWORDS_ACTIVEDIRECTORY|$KEYWORDS_WINDOWS98|$KEYWORDS_WINDOWS2000|$KEYWORDS_WINDOWSXP|$KEYWORDS_WINDOWSVISTA|$KEYWORDS_WINDOWS7|$KEYWORDS_WINDOWS8|$KEYWORDS_WINDOWSSERVER2003|$KEYWORDS_WINDOWSSERVER2008|Windows(| )(|Live)(| )(DVD|Movie)(| )Maker|\bX(-| )Windows|Windows(| )Media(| )Player"
 
+egrep -i "$KEYWORDS_ACTIVEDIRECTORY" newpages.txt >> ActiveDirectory.txt
 egrep -i "$KEYWORDS_WINDOWS98" newpages.txt >> Windows98.txt
 egrep -i "$KEYWORDS_WINDOWS2000" newpages.txt >> Windows2000.txt
 egrep -i "$KEYWORDS_WINDOWSXP" newpages.txt >> WindowsXP.txt
@@ -23,6 +25,7 @@ egrep -i "$KEYWORDS_WINDOWS8" newpages.txt >> Windows8.txt
 egrep -i "$KEYWORDS_WINDOWS" newpages.txt | egrep -iv "$KEYWORDS_WINDOWS_EXCLUDE" >> Windows.txt
 egrep "$KEYWORDS_WINDOWS_CASESENSITIVE" newpages.txt | egrep -iv "$KEYWORDS_WINDOWS_EXCLUDE" >> Windows.txt
 
+ACTIVEDIRECTORY=`stat --print=%s ActiveDirectory.txt`
 Win98=`stat --print=%s Windows98.txt`
 Win2000=`stat --print=%s Windows2000.txt`
 WinXP=`stat --print=%s WindowsXP.txt`
@@ -33,6 +36,13 @@ Win2008=`stat --print=%s WindowsServer2008.txt`
 Win8=`stat --print=%s Windows8.txt`
 WINDOWS=`stat --print=%S Windows.txt`
 
+
+if [ $ACTIVEDIRECTORY -ne 0 ];
+then
+  export CATFILE="ActiveDirectory.txt"
+  export CATNAME="Active Directory"
+  $CATEGORIZE
+fi
 
 if [ $Win98 -ne 0 ];
 then
@@ -97,6 +107,7 @@ then
   $CATEGORIZE
 fi
 
+rm ActiveDirectory.txt
 rm Windows98.txt
 rm Windows2000.txt
 rm WindowsXP.txt

@@ -42,4 +42,5 @@ $CURRENTDIR/South_Dakota/SouthDakota.sh
 $CURRENTDIR/Texas/Texas.sh
 $CURRENTDIR/Utah/Utah.sh
 $CURRENTDIR/Vermont/Vermont.sh
+$CURRENTDIR/Wisconsin/Wisconsin.sh
 $CURRENTDIR/Wyoming/Wyoming.sh
