@@ -1,50 +1,70 @@
 #!/bin/bash
 
-egrep -i 'VMware|virtual machine' newpages.txt >> Emulation.txt #virtual machine
-egrep -i 'Virtual(| )PC' newpages.txt >> Emulation.txt #virtual machine
-egrep -i 'Virtual(| )Box' newpages.txt >> Emulation.txt #virtual machine
-egrep -i 'Parallels(| )Desktop|Parallels(| )Workstation' newpages.txt >> Emulation.txt #virtual machine
-egrep -i '\bSIMH' newpages.txt >> Emulation.txt #Multiple system emulator (mostly old mainframes)
-egrep -i '\bXen\b' newpages.txt | egrep -iv "Half(|-)(| )Life" >> Emulation.txt #virtual machine / hypervisor
-egrep -i 'Aranym' newpages.txt >> Emulation.txt #Atari Falcon emulator
-egrep -i 'QEMU' newpages.txt >> Emulation.txt #Multiple system / processor emulator
-egrep -i 'M\.E\.S\.S\.|Multi(| )Emulator(| )Super(| )System' newpages.txt >> Emulation.txt #Multiple system emulator
-egrep -i '\bMAME\b' newpages.txt | egrep -iv "Mame(| )Biram(| )Diouf" >> Emulation.txt #Arcade system emulator
-egrep -i 'Bochs' newpages.txt >> Emulation.txt #x86 / x86_64 PC emulator
-egrep -i 'Pear(| )PC' newpages.txt >> Emulation.txt #PowerPC Mac emulator
-egrep -i 'WinUAE' newpages.txt >> Emulation.txt #Amiga emulator
-egrep -i 'Nesticle' newpages.txt >> Emulation.txt #NES emulator
-egrep -i '\bFCEU' newpages.txt >> Emulation.txt #NES emulator
-egrep -i 'JNES' newpages.txt >> Emulation.txt #NES emulator
-egrep -i 'SNES(| )9x' newpages.txt >> Emulation.txt #Super Nintendo emulator
-egrep -i 'ZSNES' newpages.txt >> Emulation.txt #Super Nintendo emulator
-egrep -i 'KiGB' newpages.txt >> Emulation.txt #Game Boy emulator
-egrep -i '\bGEST\b' newpages.txt >> Emulation.txt #Game Boy / Game Boy cColor emulator
-egrep -i '\bGNU(| )Boy' newpages.txt >> Emulation.txt #Game Boy emulator
-egrep -i 'Visual(| )Boy(| )Advance' newpages.txt >> Emulation.txt #Game Boy / Game Boy Advance emulator
-egrep -i 'NO\$GBA' newpages.txt >> Emulation.txt #Game Boy Advance / Nintendo DS emulator
-egrep -i 'Boycott(| )Advance' newpages.txt >> Emulation.txt #Game Boy Advance emulator
-egrep -i 'Desmume' newpages.txt >> Emulation.txt #Nintendo DS emulator
-egrep 'iDeaS' newpages.txt >> Emulation.txt
-egrep -i 'Ideas(| )emulator' newpages.txt >> Emulation.txt
-egrep -i 'Kega(| )Fusion' newpages.txt >> Emulation.txt #Sega Genesis emulator
-egrep -i 'Dolphin.+emulator|emulator.+Dolphin' newpages.txt >> Emulation.txt #Nintendo Gamecube / Nintendo Wii emulator
-egrep -i 'Game(| )Cube.+emulator' newpages.txt >> Emulation.txt
-egrep -i 'Chankast' newpages.txt >> Emulation.txt #Sega Dreamcast emulator
-egrep -i 'Wii.+emulator' newpages.txt >> Emulation.txt
-egrep -i 'Xbox(| )(|360)(| )emulator' newpages.txt >> Emulation.txt
-egrep -i 'PCSX' newpages.txt >> Emulation.txt #PlayStation emulator
-egrep -i 'Play(| )Station.+emulator' newpages.txt >> Emulation.txt
-egrep -i 'Play(| )Station.+2.+emulator|\bPS(| )2.+emulator' newpages.txt >> Emulation.txt
-egrep -i 'JPCSP' newpages.txt >> Emulation.txt
-egrep -i 'PSP.+emulator' newpages.txt >> Emulation.txt
-egrep -i 'epsxe' newpages.txt >> Emulation.txt #PlayStation emulator
-egrep -i 'Project.+64' newpages.txt >> Emulation.txt #Nintendo 64 emulator
-egrep -i 'DOSBOX' newpages.txt >> Emulation.txt #x86 PC emulator
-egrep -i 'DOSEMU\b' newpages.txt >> Emulation.txt #x86 PC emulator
-egrep -i '\bvmac\b' newpages.txt >> Emulation.txt #68k Macintosh emulator
-egrep -i 'Basilisk(| )II' newpages.txt >> Emulation.txt #68k Macintosh emulator
-egrep -i 'Sheep(| )Shaver' newpages.txt >> Emulation.txt #PowerPC Macintosh emulator
+KEYWORDS_EMULATIONANDVIRTUALIZATION="emulator|Emulation|virtualization|virtual(| )machine"
+
+#Computer emulators
+
+KEYWORDS_ARANYM="Aranym"
+KEYWORDS_BASILISKII="Basilisk(| )II"
+KEYWORDS_BOCHS="Bochs"
+KEYWORDS_DOSBOX="DOSBOX"
+KEYWORDS_DOSEMU="DOSEMU\b"
+KEYWORDS_MESS="M\.E\.S\.S\.|Multi(| )Emulator(| )Super(| )System"
+KEYWORDS_PARALLELS="Parallels(| )(Desktop|Workstation)"
+KEYWORDS_PEARPC="Pear(| )PC"
+KEYWORDS_SHEEPSHAVER="Sheep(| )Shaver"
+KEYWORDS_SIMH="SIMH"
+KEYWORDS_QEMU="QEMU"
+KEYWORDS_VIRTUALBOX="Virtual(| )Box"
+KEYWORDS_VIRTUALPC="Virtual(| )PC"
+KEYWORDS_VMAC="\bVMAC\b"
+KEYWORDS_VMWARE="VM(| )ware"
+KEYWORDS_WINUAE="WinUAE"
+KEYWORDS_XEN="Xen"
+KEYWORDS_XEN_EXCLUDE="Half(|-)(| )Life"
+
+#Arcade emulators
+
+KEYWORDS_MAME="\bMAME\b"
+KEYWORDS_MAME_EXCLUDE="Mame(| )Biram(| )Diouf"
+
+
+#Console emulators
+
+KEYWORDS_BOYCOTTADVANCE="Boycott(| )Advance"
+KEYWORDS_CHANKAST="Chankast"
+KEYWORDS_DESMUME="Desmume"
+KEYWORDS_EPSXE="epsxe"
+KEYWORDS_FCEU="FCEU"
+KEYWORDS_GEST="\bGEST\b"
+KEYWORDS_GNUBOY="\bGNU(| )Boy"
+KEYWORDS_IDEAS="Ideas(| )emulator"
+KEYWORDS_IDEAS_CASESENSITIVE="iDeaS"
+KEYWORDS_JNES="JNES"
+KEYWORDS_JPCSP="JPCSP"
+KEYWORDS_KEGAFUSION="Kega(| )Fusion"
+KEYWORDS_KIGB="KiGB"
+KEYWORDS_NESTICLE="Nesticle"
+KEYWORDS_NOCASHGBA="NO\$GBA|Nocash(| )GBA"
+KEYWORDS_PCSX="PCSX"
+KEYWORDS_PROJECT64="Project(| )64"
+KEYWORDS_SNES9X="SNES(| )9x"
+KEYWORDS_VISUALBOYADVANCE="Visual(| )Boy(| )Advance"
+KEYWORDS_ZSNES="ZSNES"
+
+
+#Begin consolidating this mess...
+
+KEYWORDS_EMU_COMPUTER="$KEYWORDS_ARANYM|$KEYWORDS_BASILISKII|$KEYWORDS_BOCHS|$KEYWORDS_DOSBOX|$KEYWORDS_DOSEMU|$KEYWORDS_MESS|$KEYWORDS_PARALLELS|$KEYWORDS_PEARPC|$KEYWORDS_QEMU|$KEYWORDS_SHEEPSHAVER|$KEYWORDS_SIMH|$KEYWORDS_VIRTUALBOX|$KEYWORDS_VIRTUALPC|$KEYWORDS_VMAC|$KEYWORDS_VMWARE|$KEYWORDS_WINUAE|$KEYWORDS_XEN"
+
+KEYWORDS_EMU_CONSOLE="$KEYWORDS_BOYCOTTADVANCE|$KEYWORDS_CHANKAST|$KEYWORDS_DESMUME|$KEYWORDS_EPSXE|$KEYWORDS_FCEU|$KEYWORDS_GEST|$KEYWORDS_GNUBOY|$KEYWORDS_IDEAS|$KEYWORDS_JNES|$KEYWORDS_JPCSP|$KEYWORDS_KEGAFUSION|$KEYWORDS_KIGB|$KEYWORDS_NESTICLE|$KEYWORDS_NOCASHGBA|$KEYWORDS_PCSX|$KEYWORDS_PROJECT64|$KEYWORDS_SNES9X|$KEYWORDS_VISUALBOYADVANCE|$KEYWORDS_ZSNES"
+
+KEYWORDS_EMULATIONANDVIRTUALIZATION_OTHER="$KEYWORDS_EMU_COMPUTER|$KEYWORDS_EMU_CONSOLE|$KEYWORDS_MAME"
+KEYWORDS_EMULATIONANDVIRTUALIZATION_OTHER_EXCLUDE="$KEYWORDS_MAME_EXCLUDE|$KEYWORDS_XEN_EXCLUDE"
+
+
+egrep -i "$KEYWORDS_EMULATIONANDVIRTUALIZATION|$KEYWORDS_EMULATIONANDVIRTUALIZATION_OTHER" newpages.txt | egrep -iv "$KEYWORDS_EMULATIONANDVIRTUALIZATION_OTHER_EXCLUDE" >> Emulation.txt
+egrep "$KEYWORDS_IDEAS_CASESENSITIVE" newpages.txt >> Emulation.txt
 
 EMULATION=`stat --print=%s Emulation.txt`
 
