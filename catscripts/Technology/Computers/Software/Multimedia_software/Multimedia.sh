@@ -1,13 +1,13 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Technology/Computers/Software/Multimedia_software"
+MULTIMEDIADIR="./catscripts/Technology/Computers/Software/Multimedia_software"
 
 if [ "$1" == "" ]; #Normal operation
 then
 
-  . $CURRENTDIR/Video_editing_software/Videoediting.sh #KEYWORDS_VIDEOEDITING_ALL
-  . $CURRENTDIR/WindowsMediaPlayer.sh #KEYWORDS_WINDOWSMEDIAPLAYER
-  . $CURRENTDIR/iTunes.sh #KEYWORDS_ITUNES
+  . $MULTIMEDIADIR/Video_editing_software/Videoediting.sh #KEYWORDS_VIDEOEDITING_ALL
+  . $MULTIMEDIADIR/WindowsMediaPlayer.sh #KEYWORDS_WINDOWSMEDIAPLAYER
+  . $MULTIMEDIADIR/iTunes.sh #KEYWORDS_ITUNES
 
   KEYWORDS_MULTIMEDIASOFTWARE="Multimedia"
   KEYWORDS_MULTIMEDIASOFTWARE_EXCLUDE="$KEYWORDS_VIDEOEDITING_ALL|$KEYWORDS_WINDOWSMEDIAPLAYER|$KEYWORDS_ITUNES"
@@ -32,9 +32,9 @@ fi
 if [ "$1" == "norun" ];
 then
 
-  . $CURRENTDIR/Video_editing_software/Videoediting.sh norun #KEYWORDS_VIDEOEDITING_ALL
-  . $CURRENTDIR/WindowsMediaPlayer.sh norun #KEYWORDS_WINDOWSMEDIAPLAYER
-  . $CURRENTDIR/iTunes.sh norun #KEYWORDS_ITUNES
+  . $MULTIMEDIADIR/Video_editing_software/Videoediting.sh norun #KEYWORDS_VIDEOEDITING_ALL
+  . $MULTIMEDIADIR/WindowsMediaPlayer.sh norun #KEYWORDS_WINDOWSMEDIAPLAYER
+  . $MULTIMEDIADIR/iTunes.sh norun #KEYWORDS_ITUNES
 
   KEYWORDS_MULTIMEDIASOFTWARE="Multimedia"
   KEYWORDS_MULTIMEDIASOFTWARE_EXCLUDE="$KEYWORDS_VIDEOEDITING_ALL|$KEYWORDS_WINDOWSMEDIAPLAYER|$KEYWORDS_ITUNES"
