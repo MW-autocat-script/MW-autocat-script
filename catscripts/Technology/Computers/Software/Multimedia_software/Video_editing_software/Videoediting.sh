@@ -1,36 +1,48 @@
 #!/bin/bash
 
-egrep -i 'Windows(|(| )Live)(| )Movie(| )Maker' newpages.txt >> WindowsMovieMaker.txt
-egrep -i 'Adobe(| )Premiere|Premier(| )Pro' newpages.txt >> AdobePremierePro.txt
-egrep -i '\biMovie|Nero Vision' newpages.txt >> Videoediting.txt
-egrep -i 'Corel Video(| )Studio' newpages.txt >> Videoediting.txt
-egrep -i 'video edit|edit video|convert.+video|video.+convert' newpages.txt | egrep -iv 'Windows(|(| )Live)(| )Movie(| )Maker|Adobe(| )Premiere|Premier(| )Pro|\biMovie' >> Videoediting.txt
+KEYWORDS_WINDOWSMOVIEMAKER="Windows(|(| )Live)(| )Movie(| )Maker"
+KEYWORDS_ADOBEPREMIEREPRO="Adobe(| )Premiere|Premiere(| )Pro"
+KEYWORDS_VIDEOEDITING="video edit|edit video|convert.+video|video.+convert"
+KEYWORDS_VIDEOEDITING_OTHER="\biMovie|Nero(| )Vision|Corel(| )Video(| )Studio" #Apps which don't have their own category yet
+KEYWORDS_VIDEOEDITING_EXCLUDE="$KEYWORDS_WINDOWSMOVIEMAKER|$KEYWORDS_ADOBEPREMIEREPRO|$KEYWORDS_VIDEOEDITING_OTHER"
+KEYWORDS_VIDEOEDITING_ALL="$KEYWORDS_VIDEOEDITING|$KEYWORDS_VIDEOEDITING_EXCLUDE|$KEYWORDS_VIDEOEDITING_OTHER"
 
-WMM=`stat --print=%s WindowsMovieMaker.txt`
-PREMIERE=`stat --print=%s AdobePremierePro.txt`
-VIDEO=`stat --print=%s Videoediting.txt`
 
-if [ $VIDEO -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Videoediting.txt"
-  export CATNAME="Video editing software"
-  $CATEGORIZE
-fi
 
-if [ $WMM -ne 0 ];
-then
-  export CATFILE="WindowsMovieMaker.txt"
-  export CATNAME="Windows Movie Maker"
-  $CATEGORIZE
-fi
+  egrep -i "$KEYWORDS_WINDOWSMOVIEMAKER" newpages.txt >> WindowsMovieMaker.txt
+  egrep -i "$KEYWORDS_ADOBEPREMIEREPRO" newpages.txt >> AdobePremierePro.txt
+  egrep -i "$KEYWORDS_VIDEOEDITING_OTHER" newpages.txt >> Videoediting.txt
+  egrep -i "$KEYWORDS_VIDEOEDITING" newpages.txt | egrep -iv "$KEYWORDS_VIDEOEDITING_EXCLUDE" >> Videoediting.txt
 
-if [ $PREMIERE -ne 0 ];
-then
-  export CATFILE="AdobePremierePro.txt"
-  export CATNAME="Adobe Premiere Pro"
-  $CATEGORIZE
-fi
+  WMM=`stat --print=%s WindowsMovieMaker.txt`
+  PREMIERE=`stat --print=%s AdobePremierePro.txt`
+  VIDEO=`stat --print=%s Videoediting.txt`
 
-rm WindowsMovieMaker.txt
-rm AdobePremierePro.txt
-rm Videoediting.txt
+  if [ $VIDEO -ne 0 ];
+  then
+    export CATFILE="Videoediting.txt"
+    export CATNAME="Video editing software"
+    $CATEGORIZE
+  fi
+
+  if [ $WMM -ne 0 ];
+  then
+    export CATFILE="WindowsMovieMaker.txt"
+    export CATNAME="Windows Movie Maker"
+    $CATEGORIZE
+  fi
+
+  if [ $PREMIERE -ne 0 ];
+  then
+    export CATFILE="AdobePremierePro.txt"
+    export CATNAME="Adobe Premiere Pro"
+    $CATEGORIZE
+  fi
+
+  rm WindowsMovieMaker.txt
+  rm AdobePremierePro.txt
+  rm Videoediting.txt
+
+fi

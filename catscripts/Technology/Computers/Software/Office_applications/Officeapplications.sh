@@ -1,29 +1,40 @@
 #!/bin/bash
 
-egrep -i 'Office suite|office application' newpages.txt | egrep -iv 'Microsoft Office' >> Officeapps.txt
-egrep -i 'Open(| )Office|Libre(| )Office' newpages.txt >> Officeapps.txt
-egrep -i 'word process(or|ing)' newpages.txt | egrep -iv 'Microsoft Word' >> Wordprocessing.txt
-
-APPS=`stat --print=%s Officeapps.txt`
-WPROCESS=`stat --print=%s Wordprocessing.txt`
-
-if [ $APPS -ne 0 ];
-then
-  export CATFILE="Officeapps.txt"
-  export CATNAME="Office applications"
-  $CATEGORIZE
-fi
-
-if [ $WPROCESS -ne 0 ];
-then
-  export CATFILE="Wordprocessing.txt"
-  export CATNAME="Word processors"
-  $CATEGORIZE
-fi
-
-rm Officeapps.txt
-rm Wordprocessing.txt
-
 CURRENTDIR="./catscripts/Technology/Computers/Software/Office_applications"
 
-$CURRENTDIR/Microsoft_Office/MicrosoftOffice.sh
+if [ "$1" == "" ]; #Normal operation
+then
+
+  . $CURRENTDIR/Microsoft_Office/MicrosoftOffice.sh #KEYWORDS_MICROSOFTOFFICE_ALL
+
+  KEYWORDS_OFFICEAPPLICATIONS="Office(| )suite|office(| )application|word(| )process(or|ing)"
+  KEYWORDS_OFFICEAPPLICATIONS_EXCLUDE="$KEYWORDS_MICROSOFTOFFICE_ALL"
+  KEYWORDS_OFFICEAPPLICATIONS_OTHER="Open(| )Office|Libre(| )Office"
+  KEYWORDS_OFFICEAPPLICATIONS_ALL="$KEYWORDS_OFFICEAPPLICATIONS|$KEYWORDS_OFFICEAPPLICATIONS_OTHER|$KEYWORDS_OFFICEAPPLICATIONS_EXCLUDE"
+
+  egrep -i "$KEYWORDS_OFFICEAPPLICATIONS|$KEYWORDS_OFFICEAPPLICATIONS_OTHER" newpages.txt | egrep -iv "$KEYWORDS_OFFICEAPPLICATIONS_EXCLUDE" >> Officeapps.txt
+
+  APPS=`stat --print=%s Officeapps.txt`
+
+  if [ $APPS -ne 0 ];
+  then
+    export CATFILE="Officeapps.txt"
+    export CATNAME="Office applications"
+    $CATEGORIZE
+  fi
+
+  rm Officeapps.txt
+
+fi
+
+if [ "$1" == "norun" ]; #Variables only
+then
+
+  . $CURRENTDIR/Microsoft_Office/MicrosoftOffice.sh norun #KEYWORDS_MICROSOFTOFFICE_ALL
+
+  KEYWORDS_OFFICEAPPLICATIONS="Office(| )suite|office(| )application|word(| )process(or|ing)"
+  KEYWORDS_OFFICEAPPLICATIONS_EXCLUDE="$KEYWORDS_MICROSOFTOFFICE_ALL"
+  KEYWORDS_OFFICEAPPLICATIONS_OTHER="Open(| )Office|Libre(| )Office"
+  KEYWORDS_OFFICEAPPLICATIONS_ALL="$KEYWORDS_OFFICEAPPLICATIONS|$KEYWORDS_OFFICEAPPLICATIONS_OTHER|$KEYWORDS_OFFICEAPPLICATIONS_EXCLUDE"
+
+fi

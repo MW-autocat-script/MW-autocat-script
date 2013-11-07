@@ -2,9 +2,46 @@
 
 CURRENTDIR="./catscripts/Technology/Computers/Software"
 
-. $CURRENTDIR/DVD_authoring/DVDauthoring.sh
-. $CURRENTDIR/Emulation_and_Virtualization/Emulation.sh
-. $CURRENTDIR/Multimedia_software/Multimedia.sh
-. $CURRENTDIR/Operating_systems/OperatingSystems.sh
-. $CURRENTDIR/Web_browsers/Webbrowsers.sh
-. $CURRENTDIR/Office_applications/Officeapplications.sh
+if [ "$1" == "" ]; #Normal operation
+then
+
+  . $CURRENTDIR/DVD_authoring/DVDauthoring.sh #KEYWORDS_DVDAUTHORING_ALL
+  . $CURRENTDIR/Emulation_and_Virtualization/Emulation.sh #KEYWORDS_EMULATION_ALL
+  . $CURRENTDIR/Multimedia_software/Multimedia.sh #KEYWORDS_MULTIMEDIASOFTWARE_ALL
+  . $CURRENTDIR/Operating_systems/OperatingSystems.sh #KEYWORDS_OPERATINGSYSTEMS_ALL
+  . $CURRENTDIR/Web_browsers/Webbrowsers.sh #KEYWORDS_WEBBROWSER_ALL
+  . $CURRENTDIR/Office_applications/Officeapplications.sh #KEYWORDS_OFFICEAPPLICATIONS_ALL
+
+  KEYWORDS_SOFTWARE="software|firmware"
+  KEYWORDS_SOFTWARE_EXCLUDE="$KEYWORDS_DVDAUTHORING_ALL|$KEYWORDS_EMULATION_ALL|$KEYWORDS_OPERATINGSYSTEMS_ALL|$KEYWORDS_MULTIMEDIASOFTWARE_ALL|$KEYWORDS_WEBBROWSER_ALL|$KEYWORDS_OFFICEAPPLICATIONS_ALL"
+  KEYWORDS_SOFTWARE_ALL="$KEYWORDS_SOFTWARE|$KEYWORDS_SOFTWARE_EXCLUDE"
+
+  egrep -i "$KEYWORDS_SOFTWARE" newpages.txt| egrep -iv "$KEYWORDS_SOFTWARE_EXCLUDE" >> Software.txt
+
+  SOFTWARE=`stat --print=%s Software.txt`
+
+  if [ $SOFTWARE -ne 0 ];
+  then
+    export CATFILE="Software.txt"
+    export CATNAME="Software"
+    $CATEGORIZE
+  fi
+
+  rm Software.txt
+
+fi
+
+if [ "$1" == "norun" ]; #Only export variables
+
+  . $CURRENTDIR/DVD_authoring/DVDAuthoring.sh norun #KEYWORDS_DVDAUTHORING_ALL
+  . $CURRENTDIR/Emulation_and_Virtualization/Emulation.sh norrun #KEYWORDS_EMULATION_ALL
+  . $CURRENTDIR/Multimedia_software/Multimedia.sh norun
+  . $CURRENTDIR/Operating_systems/OperatingSystems.sh norun #KEYWORDS_OPERATINGSYSTEMS_ALL
+  . $CURRENTDIR/Web_browsers/Webbrowsers.sh norrun #KEYWORDS_WEBBROWSER_ALL
+  . $CURRENTDIR/Office_applications/Officeapplications.sh norun #KEYWORDS_OFFICEAPPLICATIONS_ALL
+
+  KEYWORDS_SOFTWARE="software|firmware"
+  KEYWORDS_SOFTWARE_EXCLUDE="$KEYWORDS_DVDAUTHORING_ALL|$KEYWORDS_EMULATION_ALL|$KEYWORDS_OPERATINGSYSTEMS_ALL|$KEYWORDS_MULTIMEDIASOFTWARE_ALL|$KEYWORDS_WEBBROWSER_ALL|$KEYWORDS_OFFICEAPPLICATIONS_ALL"
+  KEYWORDS_SOFTWARE_ALL="$KEYWORDS_SOFTWARE|$KEYWORDS_SOFTWARE_EXCLUDE"
+
+fi
