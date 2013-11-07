@@ -1,18 +1,18 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Technology/Computers/Software/Operating_systems"
+OPERATINGSYSTEMDIR="./catscripts/Technology/Computers/Software/Operating_systems"
 
 
 if [ "$1" == "" ]; #Normal operation
 then
 
-  . $CURRENTDIR/FreeBSD/FreeBSD.sh #KEYWORDS_FREEBSD
-  . $CURRENTDIR/Linux/Linux.sh #KEYWORDS_LINUX_ALL
-  . $CURRENTDIR/MS-DOS/MS-DOS.sh #KEYWORDS_MSDOS
-  . $CURRENTDIR/Mac_OS_X/Mac_OS_X.sh #KEYWORDS_MACOS
-  . $CURRENTDIR/OpenBSD/OpenBSD.sh #KEYWORDS_OPENBSD
-  . $CURRENTDIR/Unix/Unix.sh #KEYWORDS_UNIX & KEYWORDS_UNIX_SPECIAL
-  . $CURRENTDIR/Windows/Windows.sh #$KEYWORDS_WINDOWS_ALL
+  . $OPERATINGSYSTEMDIR/FreeBSD/FreeBSD.sh #KEYWORDS_FREEBSD
+  . $OPERATINGSYSTEMDIR/Linux/Linux.sh #KEYWORDS_LINUX_ALL
+  . $OPERATINGSYSTEMDIR/MS-DOS/MS-DOS.sh #KEYWORDS_MSDOS
+  . $OPERATINGSYSTEMDIR/Mac_OS_X/Mac_OS_X.sh #KEYWORDS_MACOS
+  . $OPERATINGSYSTEMDIR/OpenBSD/OpenBSD.sh #KEYWORDS_OPENBSD
+  . $OPERATINGSYSTEMDIR/Unix/Unix.sh #KEYWORDS_UNIX & KEYWORDS_UNIX_SPECIAL
+  . $OPERATINGSYSTEMDIR/Windows/Windows.sh #$KEYWORDS_WINDOWS_ALL
 
   KEYWORDS_OPERATINGSYSTEMS="operating(| )system|(^| )OS\b"
   KEYWORDS_OPERATINGSYSTEMS_OTHER="Net(| )BSD"
@@ -37,13 +37,13 @@ fi
 
 if [ "$1" == "norrun" ];
 then
-  . $CURRENTDIR/FreeBSD/FreeBSD.sh norrun
-  . $CURRENTDIR/Linux/Linux.sh norrun
-  . $CURRENTDIR/MS-DOS/MS-DOS.sh norrun
-  . $CURRENTDIR/Mac_OS_X/Mac_OS_X.sh norrun
-  . $CURRENTDIR/OpenBSD/OpenBSD.sh norrun
-  . $CURRENTDIR/Unix/Unix.sh norrun
-  . $CURRENTDIR/Windows/Windows.sh norrun
+  . $OPERATINGSYSTEMDIR/FreeBSD/FreeBSD.sh norrun
+  . $OPERATINGSYSTEMDIR/Linux/Linux.sh norrun
+  . $OPERATINGSYSTEMDIR/MS-DOS/MS-DOS.sh norrun
+  . $OPERATINGSYSTEMDIR/Mac_OS_X/Mac_OS_X.sh norrun
+  . $OPERATINGSYSTEMDIR/OpenBSD/OpenBSD.sh norrun
+  . $OPERATINGSYSTEMDIR/Unix/Unix.sh norrun
+  . $OPERATINGSYSTEMDIR/Windows/Windows.sh norrun
 
   KEYWORDS_OPERATINGSYSTEMS="operating(| )system|(^| )OS\b"
   KEYWORDS_OPERATINGSYSTEMS_OTHER="Net(| )BSD"

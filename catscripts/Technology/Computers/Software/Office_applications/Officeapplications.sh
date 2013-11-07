@@ -1,11 +1,11 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Technology/Computers/Software/Office_applications"
+OFFICEDIR="./catscripts/Technology/Computers/Software/Office_applications"
 
 if [ "$1" == "" ]; #Normal operation
 then
 
-  . $CURRENTDIR/Microsoft_Office/MicrosoftOffice.sh #KEYWORDS_MICROSOFTOFFICE_ALL
+  . $OFFICEDIR/Microsoft_Office/MicrosoftOffice.sh #KEYWORDS_MICROSOFTOFFICE_ALL
 
   KEYWORDS_OFFICEAPPLICATIONS="Office(| )suite|office(| )application|word(| )process(or|ing)"
   KEYWORDS_OFFICEAPPLICATIONS_EXCLUDE="$KEYWORDS_MICROSOFTOFFICE_ALL"
@@ -30,7 +30,7 @@ fi
 if [ "$1" == "norun" ]; #Variables only
 then
 
-  . $CURRENTDIR/Microsoft_Office/MicrosoftOffice.sh norun #KEYWORDS_MICROSOFTOFFICE_ALL
+  . $OFFICEDIR/Microsoft_Office/MicrosoftOffice.sh norun #KEYWORDS_MICROSOFTOFFICE_ALL
 
   KEYWORDS_OFFICEAPPLICATIONS="Office(| )suite|office(| )application|word(| )process(or|ing)"
   KEYWORDS_OFFICEAPPLICATIONS_EXCLUDE="$KEYWORDS_MICROSOFTOFFICE_ALL"
