@@ -2,7 +2,7 @@
 
 KEYWORDS_OHIO="Ohio"
 KEYWORDS_CLEVELAND="Cleveland"
-KEYWORDS_CLEVELAND_EXCLUDE="Cleveland(| )Brown|Grover(| )Cleveland|President(| )Cleveland"
+KEYWORDS_CLEVELAND_EXCLUDE="Cleveland(| )Brown|Grover(| )Cleveland|President(| )Cleveland|The(| )Cleveland(| )Show|Cleveland(|,)(| )Georgia|Mount(| )Cleveland|Cleveland(| )Hills"
 KEYWORDS_CINCINNATI="Cincinnati"
 KEYWORDS_CINCINNATI_EXCLUDE="Cincinnati(| )Bengals"
 KEYWORDS_OHIO_EXCLUDE="$KEYWORDS_CLEVELAND|$KEYWORDS_CINCINNATI"
