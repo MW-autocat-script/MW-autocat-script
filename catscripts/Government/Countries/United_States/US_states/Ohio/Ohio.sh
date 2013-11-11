@@ -4,11 +4,12 @@ KEYWORDS_OHIO="Ohio"
 KEYWORDS_CLEVELAND="Cleveland"
 KEYWORDS_CLEVELAND_EXCLUDE="Cleveland(| )Brown|Grover(| )Cleveland|President(| )Cleveland"
 KEYWORDS_CINCINNATI="Cincinnati"
+KEYWORDS_CINCINNATI_EXCLUDE="Cincinnati(| )Bengals"
 KEYWORDS_OHIO_EXCLUDE="$KEYWORDS_CLEVELAND|$KEYWORDS_CINCINNATI"
 
 OHIO=`egrep -i "$KEYWORDS_OHIO" newpages.txt | egrep -iv "$KEYWORDS_OHIO_EXCLUDE"`
 CLEVELAND=`egrep -i "$KEYWORDS_CLEVELAND" newpages.txt | egrep -iv "$KEYWORDS_CLEVELAND_EXCLUDE"`
-CINCINNATI=`egrep -i "$KEYWORDS_CINCINNATI" newpages.txt`
+CINCINNATI=`egrep -i "$KEYWORDS_CINCINNATI" newpages.txt | egrep -iv "$KEYWORDS_CINCINNATI_EXCLUDE"`
 
 if [ "$OHIO" != "" ];
 then
@@ -30,7 +31,7 @@ fi
 
 if [ "$CINCINNATI" != "" ];
 then
-  egrep -i "$KEYWORDS_CINCINNATI" newpages.txt > Cincinnati.txt
+  egrep -i "$KEYWORDS_CINCINNATI" newpages.txt | egrep -iv "$KEYWORDS_CINCINNATI_EXCLUDE" > Cincinnati.txt
   export CATFILE="Cincinnati.txt"
   export CATNAME="Cincinnati"
   $CATEGORIZE
