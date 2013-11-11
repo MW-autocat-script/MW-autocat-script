@@ -1,55 +1,64 @@
 #!/bin/bash
 
-egrep -i 'California' newpages.txt | egrep -iv 'Los(| )Angeles|Sacramento|San(| )Diego|San(| )Francisco' >> California.txt
-egrep -i 'Los(| )Angeles' newpages.txt >> LosAngeles.txt
-egrep -i 'Sacramento' newpages.txt >> Sacramento.txt
-egrep -i 'San(| )Diego' newpages.txt >> SanDiego.txt
-egrep -i 'San(| )Francisco' newpages.txt >> SanFrancisco.txt
+KEYWORDS_CALIFORNIA="California"
+KEYWORDS_LOSANGELES="Los(| )Angeles"
+KEYWORDS_SACRAMENTO="Sacramento"
+KEYWORDS_SANDIEGO="San(| )Diego"
+KEYWORDS_SANFRANCISCO="San(| )Francisco"
+KEYWORDS_CALIFORNIA_EXCLUDE="$KEYWORDS_LOSANGELES|$KEYWORDS_SACRAMENTO|$KEYWORDS_SANDIEGO|$KEYWORDS_SANFRANCISCO"
 
-CALIFORNIA=`stat --print=%s California.txt`
-LOSANGELES=`stat --print=%s LosAngeles.txt`
-SACRAMENTO=`stat --print=%s Sacramento.txt`
-SANDIEGO=`stat --print=%s SanDiego.txt`
-SANFRANCISCO=`stat --print=%s SanFrancisco.txt`
+CALIFORNIA=`egrep -i "$KEYWORDS_CALIFORNIA" newpages.txt | egrep -iv "$KEYWORDS_CALIFORNIA_EXCLUDE"`
+LOSANGELES=`egrep -i "$KEYWORDS_LOSANGELES" newpages.txt`
+SACRAMENTO=`egrep -i "$KEYWORDS_SACRAMENTO" newpages.txt`
+SANDIEGO=`egrep -i "$KEYWORDS_SANDIEGO" newpages.txt`
+SANFRANCISCO=`egrep -i "$KEYWORDS_SANFRANCISCO" newpages.txt`
 
-if [ $CALIFORNIA -ne 0 ];
+if [ "$CALIFORNIA" != "" ];
 then
+  egrep -i "$KEYWORDS_CALIFORNIA" newpages.txt | egrep -iv "$KEYWORDS_CALIFORNIA_EXCLUDE" > California.txt
   export CATFILE="California.txt"
   export CATNAME="California"
   $CATEGORIZE
+  rm California.txt
+  unset CALIFORNIA
 fi
 
-if [ $LOSANGELES -ne 0 ];
+if [ "$LOSANGELES" != "" ];
 then
+  egrep -i "$KEYWORDS_LOSANGELES" newpages.txt > LosAngeles.txt
   export CATFILE="LosAngeles.txt"
   export CATNAME="Los Angeles"
   $CATEGORIZE
+  rm LosAngeles.txt
+  unset LOSANGELES
 fi
 
-if [ $SACRAMENTO -ne 0 ];
+if [ "$SACRAMENTO" != "" ];
 then
+  egrep -i "$KEYWORDS_SACRAMENTO" newpages.txt > Sacramento.txt
   export CATFILE="Sacramento.txt"
   export CATNAME="Sacramento"
   $CATEGORIZE
+  rm Sacramento.txt
+  unset SACRAMENTO
 fi
 
-if [ $SANDIEGO -ne 0 ];
+if [ "$SANDIEGO" != "" ];
 then
+  egrep -i "$KEYWORDS_SANDIEGO" newpages.txt > SanDiego.txt
   export CATFILE="SanDiego.txt"
   export CATNAME="San Diego"
   $CATEGORIZE
+  rm SanDiego.txt
+  unset SANDIEGO
 fi
 
-if [ $SANFRANCISCO -ne 0 ];
+if [ "$SANFRANCISCO" != "" ];
 then
+  egrep -i "$KEYWORDS_SANFRANCISCO" newpages.txt > SanFrancisco.txt
   export CATFILE="SanFrancisco.txt"
   export CATNAME="San Francisco"
   $CATEGORIZE
+  rm SanFrancisco.txt
+  unset SANFRANCISCO
 fi
-
-rm California.txt
-rm LosAngeles.txt
-rm Sacramento.txt
-rm SanDiego.txt
-rm SanFrancisco.txt
-
