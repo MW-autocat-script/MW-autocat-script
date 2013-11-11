@@ -91,6 +91,7 @@ $CURRENTDIR/Poland/Poland.sh
 $CURRENTDIR/Portugal/Portugal.sh
 $CURRENTDIR/Singapore/Singapore.sh
 $CURRENTDIR/South_Africa/SouthAfrica.sh
+$CURRENTDIR/Spain/Spain.sh
 $CURRENTDIR/Saudi_Arabia/SaudiArabia.sh
 $CURRENTDIR/Scotland/Scotland.sh
 $CURRENTDIR/South_Korea/SouthKorea.sh
