@@ -1,13 +1,14 @@
 #!/bin/bash
 
-egrep -i "Alaska|Seward's icebox" newpages.txt > Alaska.txt
+KEYWORDS_ALASKA="Alaska|Seward's(| )icebox"
 
-ALASKA=`stat --print=%s Alaska.txt`
+ALASKA=`egrep -i "$KEYWORDS_ALASKA" newpages.txt`
 
-if [ $ALASKA -ne 0 ];
+if [ "$ALASKA" != "" ];
 then
+  egrep -i "$KEYWORDS_ALASKA" newpages.txt > Alaska.txt
   export CATFILE="Alaska.txt"
   export CATNAME="Alaska"
   $CATEGORIZE
+  rm Alaska.txt
 fi
-rm Alaska.txt
