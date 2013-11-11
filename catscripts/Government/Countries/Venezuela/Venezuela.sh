@@ -1,16 +1,14 @@
 #!/bin/bash
 
-export KEYWORDS_COUNTRIES_VENEZUELA="Venezuela"
+KEYWORDS_VENEZUELA="Venezuela"
 
-egrep -i "$KEYWORDS_COUNTRIES_VENEZUELA" newpages.txt >> Venezuela.txt
+VENEZUELA=`egrep -i "$KEYWORDS_VENEZUELA" newpages.txt`
 
-VENEZUELA=`stat --print=%s Venezuela.txt`
-
-if [ $VENEZUELA -ne 0 ];
+if [ "$VENEZUELA" != "" ];
 then
+  egrep -i "$KEYWORDS_VENEZUELA" newpages.txt > Venezuela.txt
   export CATFILE="Venezuela.txt"
   export CATNAME="Venezuela"
   $CATEGORIZE
+  rm Venezuela.txt
 fi
-
-rm Venezuela.txt
