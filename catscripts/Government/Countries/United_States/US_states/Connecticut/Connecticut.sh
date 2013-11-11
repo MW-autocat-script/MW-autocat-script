@@ -2,15 +2,14 @@
 
 KEYWORDS_CONNECTICUT="Connecticut|Hartford|, CT\b"
 
-egrep -i "$KEYWORDS_CONNECTICUT" newpages.txt >> Connecticut.txt
+CONNECTICUT=`egrep -i "$KEYWORDS_CONNECTICUT" newpages.txt`
 
-CONNECTICUT=`stat --print=%s Connecticut.txt`
-
-if [ $CONNECTICUT -ne 0 ];
+if [ "$CONNECTICUT" != "" ];
 then
+  egrep -i "$KEYWORDS_CONNECTICUT" newpages.txt > Connecticut.txt
   export CATFILE="Connecticut.txt"
   export CATNAME="Connecticut"
   $CATEGORIZE
+  rm Connecticut.txt
+  unset CONNECTICUT
 fi
-
-rm Connecticut.txt
