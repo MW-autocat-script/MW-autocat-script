@@ -1,14 +1,14 @@
 #!/bin/bash
 
-egrep -i 'Arizona' newpages.txt >> Arizona.txt
+KEYWORDS_ARIZONA="Arizona"
 
-ARIZONA=`stat --print=%s Arizona.txt`
+ARIZONA=`egrep -i "$KEYWORDS_ARIZONA" newpages.txt`
 
-if [ $ARIZONA -ne 0 ];
+if [ "$ARIZONA" != "" ];
 then
+  egrep -i "$KEYWORDS_ARIZONA" newpages.txt > Arizona.txt
   export CATFILE="Arizona.txt"
   export CATNAME="Arizona"
   $CATEGORIZE
+  rm Arizona.txt
 fi
-
-rm Arizona.txt
