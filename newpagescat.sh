@@ -39,7 +39,7 @@ python $PYWIKIPEDIADIR/pagegenerators.py -recentchanges -ns:0 >> newpages.txt
 touch MD5SUM #Just in case the file doesn't exist yet
 
 OLDSUM=`cat MD5SUM`
-NEWSUM=`md5sum newpagews.txt | cut -b-32`
+NEWSUM=`md5sum newpages.txt | cut -b-32`
 
 if [ "$OLDSUM" != "$NEWSUM" ]; #Lists have changed
 then
