@@ -1,8 +1,6 @@
 #!/bin/bash
 
-egrep -i 'Computer programming' newpages.txt | egrep -iv 'C\+\+|SQL' > Computerprogramming.txt
-egrep -i 'open(|-| )source' newpages.txt | egrep -iv 'C\+\+|SQL' >> Computerprogramming.txt
-egrep -i 'Cygwin|\bMSYS\b' newpages.txt | egrep -iv 'C\+\+|SQL' >> Computerprogramming.txt
+
 
 PROGRAMMING=`stat --print=%s Computerprogramming.txt`
 
@@ -13,9 +11,24 @@ then
   $CATEGORIZE
 fi
 
-CURRENTDIR="./catscripts/Technology/Computers/Computer_programming"
+PROGRAMMINGDIR="./catscripts/Technology/Computers/Computer_programming"
 
-$CURRENTDIR/C++_programming/C++.sh
-$CURRENTDIR/SQL/SQL.sh
+$PROGRAMMINGDIR/C++_programming/C++.sh
+$PROGRAMMINGDIR/SQL/SQL.sh
+
+KEYWORDS_COMPUTERPROGRAMMING="Computer(| )programming|Cygwin|\bMSYS\b|MATLAB"
+KEYWORDS_COMPUTERPROGRAMMING_EXCLUDE="C\+\+|SQL"
+
+egrep -i $KEYWORDS_COMPUTERPROGRAMMING" newpages.txt | egrep -iv "$KEYWORDS_COMPUTERPROGRAMMING_EXCLUDE" > Computerprogramming.txt
+
+PROGRAMMING=`stat --print=%s Computerprogramming.txt`
+
+if [ $PROGRAMMING -ne 0 ];
+then
+  export CATFILE="Computerprogramming.txt"
+  export CATNAME="Computer programming"
+  $CATEGORIZE
+fi
+
 
 rm Computerprogramming.txt
