@@ -3,6 +3,7 @@
 KEYWORDS_GREECE="Greece"
 KEYWORDS_ANCIENTGREECE="Ancient(| )Gree(k|ce)"
 KEYWORDS_ATHENS="Athens|Athenian"
+KEYWORDS_ATHENS_EXCLUDE="Georgia"
 KEYWORDS_SPARTA="Sparta(|s|n)\b"
 KEYWORDS_SPARTA_EXCLUDE="Halo"
 KEYWORDS_SPARTA_EXCLUDE_CASESENSITVE="SPARTAN"
@@ -11,7 +12,7 @@ KEYWORDS_GREECE_EXCLUDE="$KEYWORDS_ANCIENTGREECE|$KEYWORDS_ATHENS|$KEYWORDS_SPAR
 
 GREECE=`egrep -i "$KEYWORDS_GREECE" newpages.txt | egrep -iv "$KEYWORDS_GREECE_EXCLUDE"`
 ANCIENT=`egrep -i "$KEYWORDS_ANCIENTGREECE" newpages.txt | egrep -iv "$KEYWORDS_ANCIENTGREECE_EXCLUDE"`
-ATHENS=`egrep -i "$KEYWORDS_ATHENS" newpages.txt`
+ATHENS=`egrep -i "$KEYWORDS_ATHENS" newpages.txt | egrep -iv "$KEYWORDS_ATHENS_EXCLUDE"`
 SPARTA=`egrep -i "$KEYWORDS_SPARTA" newpages.txt | egrep -iv "$KEYWORDS_SPARTA_EXCLUDE" | egrep -v "$KEYWORDS_SPARTA_EXCLUDE_CASESENSITVE"`
 
 if [ "$GREECE" != "" ];
@@ -36,7 +37,7 @@ fi
 
 if [ "$ATHENS" != "" ];
 then
-  egrep -i "$KEYWORDS_ATHENS" newpages.txt > Athens.txt
+  egrep -i "$KEYWORDS_ATHENS" newpages.txt | egrep -iv "$KEYWORDS_ATHENS_EXCLUDE" > Athens.txt
   export CATFILE="Athens.txt"
   export CATNAME="Athens"
   $CATEGORIZE
