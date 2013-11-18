@@ -1,16 +1,20 @@
 #!/bin/bash
 
-export KEYWORDS_ACTRESS_SELENAGOMEZ="Selena(| )Gomez"
+KEYWORDS_ACTRESS_SELENAGOMEZ="Selena(| )Gomez"
 
-egrep -i "$KEYWORDS_ACTRESS_SELENAGOMEZ" newpages.txt >> SelenaGomez.txt
-
-SELENAGOMEZ=`stat --print=%s SelenaGomez.txt`
-
-if [ $SELENAGOMEZ -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="SelenaGomez.txt"
-  export CATNAME="Selena Gomez"
-  $CATEGORIZE
-fi
 
-rm SelenaGomez.txt
+  SELENAGOMEZ=`egrep -i "$KEYWORDS_ACTRESS_SELENAGOMEZ" newpages.txt`
+
+  if [ "$SELENAGOMEZ" != "" ];
+  then
+    egrep -i "$KEYWORDS_ACTRESS_SELENAGOMEZ" newpages.txt > SelenaGomez.txt
+    export CATFILE="SelenaGomez.txt"
+    export CATNAME="Selena Gomez"
+    $CATEGORIZE
+    rm SelenaGomez.txt
+    unset SELENAGOMEZ
+  fi
+
+fi
