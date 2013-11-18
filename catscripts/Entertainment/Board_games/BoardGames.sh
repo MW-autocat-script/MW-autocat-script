@@ -1,35 +1,47 @@
 #!/bin/bash
 
-egrep -i 'board(| )game' newpages.txt | egrep -iv 'checkers|chess' >> Boardgames.txt
-egrep -i '\bChess\b|Chessboard' newpages.txt | egrep -iv 'Leonard Chess|Chess Roberts|Harry Potter|Smallville|Chess River|River Chess' >> Chess.txt
-egrep -i 'Checkers|Checker(| )board' newpages.txt >> Checkers.txt
+KEYWORDS_BOARDGAMES="board(| )game"
+KEYWORDS_CHESS="\bChess\b|Chessboard"
+KEYWORDS_CHESS_EXCLUDE="Leonard Chess|Chess Roberts|Harry Potter|Smallville|Chess River|River Chess"
+KEYWORDS_CHECKERS="Checkers|Checker(| )board"
+KEYWORDS_BOARDGAMES_EXCLUDE="$KEYWORDS_CHESS|$KEYWORDS_CHECKERS"
 
-BOARDGAMES=`stat --print=%s Boardgames.txt`
-CHESS=`stat --print=%s Chess.txt`
-CHECKERS=`stat --print=%s Checkers.txt`
-
-if [ $BOARDGAMES -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Boardgames.txt"
-  export CATNAME="Board games"
-  $CATEGORIZE
-fi
 
-if [ $CHESS -ne 0 ];
-then
-  export CATFILE="Chess.txt"
-  export CATNAME="Chess"
-  $CATEGORIZE
-fi
+  BOARDGAMES=`egrep -i "$KEYWORDS_BOARDGAMES" newpages.txt | egrep -iv "$KEYWORDS_BOARDGAMES_EXCLUDE"`
+  CHESS=`egrep -i "$KEYWORDS_CHESS" newpages.txt | egrep -iv "$KEYWORDS_CHESS_EXCLUDE"`
+  CHECKERS=`egrep -i "$KEYWORDS_CHECKERS" newpages.txt`
 
-if [ $CHECKERS -ne 0 ];
-then
-  export CATFILE="Checkers.txt"
-  export CATNAME="Checkers"
-  $CATEGORIZE
-fi
+  if [ "$BOARDGAMES" != "" ];
+  then
+    egrep -i "$KEYWORDS_BOARDGAMES" newpages.txt | egrep -iv "$KEYWORDS_BOARDGAMES_EXCLUDE" > Boardgames.txt
+    export CATFILE="Boardgames.txt"
+    export CATNAME="Board games"
+    $CATEGORIZE
+    rm Boardgames.txt
+    unset BOARDGAMES
+  fi
 
-rm Boardgames.txt
-rm Chess.txt
-rm Checkers.txt
+  if [ "$CHESS" != "" ];
+  then
+    egrep -i "$KEYWORDS_CHESS" newpages.txt | egrep -iv "$KEYWORDS_CHESS_EXCLUDE" > Chess.txt
+    export CATFILE="Chess.txt"
+    export CATNAME="Chess"
+    $CATEGORIZE
+    rm Chess.txt
+    unset CHESS
+  fi
+
+  if [ "$CHECKERS" != "" ];
+  then
+    egrep -i "$KEYWORDS_CHECKERS" newpages.txt > Checkers.txt
+    export CATFILE="Checkers.txt"
+    export CATNAME="Checkers"
+    $CATEGORIZE
+    rm Checkers.txt
+    unset CHECKERS
+  fi
+
+fi
   
