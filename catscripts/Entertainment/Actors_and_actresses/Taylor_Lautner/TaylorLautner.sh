@@ -1,16 +1,20 @@
 #!/bin/bash
 
-export KEYWORDS_ACTOR_TAYLORLAUTNER="Taylor(| )Lautner"
+KEYWORDS_ACTOR_TAYLORLAUTNER="Taylor(| )Lautner"
 
-egrep -i "$KEYWORDS_ACTOR_TAYLORLAUTNER" newpages.txt >> TaylorLautner.txt
-
-TAYLORLAUTNER=`stat --print=%s TaylorLautner.txt`
-
-if [ $TAYLORLAUTNER -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="TaylorLautner.txt"
-  export CATNAME="Taylor Lautner"
-  $CATEGORIZE
-fi
 
-rm TaylorLautner.txt
+  TAYLORLAUTNER=`egrep -i "$KEYWORDS_ACTOR_TAYLORLAUTNER" newpages.txt`
+
+  if [ "$TAYLORLAUTNER" != "" ];
+  then
+    egrep -i "$KEYWORDS_ACTOR_TAYLORLAUTNER" newpages.txt > TaylorLautner.txt
+    export CATFILE="TaylorLautner.txt"
+    export CATNAME="Taylor Lautner"
+    $CATEGORIZE
+    rm TaylorLautner.txt
+    unset TAYLORLAUTNER
+  fi
+
+fi
