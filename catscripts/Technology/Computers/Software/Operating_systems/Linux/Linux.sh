@@ -1,7 +1,7 @@
 #!/bin/bash
 
 KEYWORDS_LINUX="Linux|vmlinuz|initrd"
-KEYWORDS_LINUX_OTHER="Slackware|TinyCore" #Names of other distros that might not contain the word "Linux" and don't have their own category
+KEYWORDS_LINUX_OTHER="Slackware|TinyCore|CentOS" #Names of other distros that might not contain the word "Linux" and don't have their own category
 KEYWORDS_DEBIAN="Debian|DFSG"
 KEYWORDS_OPENSUSE="Open(| )SUSE"
 KEYWORDS_UBUNTU="Ubuntu"
@@ -16,88 +16,94 @@ KEYWORDS_LINUX_ALL="$KEYWORDS_LINUX|$KEYWORDS_LINUX_OTHER|$KEYWORDS_LINUX_EXCLUD
 if [ "$1" == "" ]; #Nortmal operation
 then
 
-  egrep -i "$KEYWORDS_LINUX|$KEYWORDS_LINUX_OTHER" newpages.txt | egrep -iv "$KEYWORDS_LINUX_EXCLUDE" >> Linux.txt
-  egrep -i "$KEYWORDS_DEBIAN" newpages.txt >> Debian.txt 
-  egrep -i "$KEYWORDS_OPENSUSE" newpages.txt >> OpenSUSE.txt
-  egrep -i "$KEYWORDS_UBUNTU" newpages.txt >> Ubuntu.txt
-  egrep -i "$KEYWORDS_COLINUX" newpages.txt >> CoLinux.txt
-  egrep -i "$KEYWORDS_FEDORA" newpages.txt >> FedoraLinux.txt
-  egrep -i "$KEYWORDS_LINUXMINT" newpages.txt >> LinuxMint.txt
-  egrep -i "$KEYWORDS_GOOGLEANDROID" newpages.txt >> GoogleAndroid.txt
-  egrep "$KEYWORDS_GOOGLEANDROID_CASESENSITIVE" newpages.txt >> GoogleAndroid.txt
+  LINUX=`egrep -i "$KEYWORDS_LINUX|$KEYWORDS_LINUX_OTHER" newpages.txt | egrep -iv "$KEYWORDS_LINUX_EXCLUDE"`
+  DEBIAN=`egrep -i "$KEYWORDS_DEBIAN" newpages.txt`
+  OPENSUSE=`egrep -i "$KEYWORDS_OPENSUSE" newpages.txt`
+  UBUNTU=`egrep -i "$KEYWORDS_UBUNTU" newpages.txt`
+  COLINUX=` egrep -i "$KEYWORDS_COLINUX" newpages.txt`
+  FEDORA=`egrep -i "$KEYWORDS_FEDORA" newpages.txt`
+  MINT=`egrep -i "$KEYWORDS_LINUXMINT" newpages.txt`
+  ANDROID=`egrep -i "$KEYWORDS_GOOGLEANDROID" newpages.txt & egrep "$KEYWORDS_GOOGLEANDROID_CASESENSITIVE" newpages.txt`
 
-  LINUX=`stat --print=%s Linux.txt`
-  DEBIAN=`stat --print=%s Debian.txt`
-  OPENSUSE=`stat --print=%s OpenSUSE.txt`
-  UBUNTU=`stat --print=%s Ubuntu.txt`
-  COLINUX=`stat --print=%s CoLinux.txt`
-  FEDORA=`stat --print=%s FedoraLinux.txt`
-  MINT=`stat --print=%s LinuxMint.txt`
-  ANDROID=`stat --print=%s GoogleAndroid.txt`
-
-  if [ $LINUX -ne 0 ];
+  if [ "$LINUX" != "" ];
   then
+    egrep -i "$KEYWORDS_LINUX|$KEYWORDS_LINUX_OTHER" newpages.txt | egrep -iv "$KEYWORDS_LINUX_EXCLUDE" > Linux.txt
     export CATFILE="Linux.txt"
     export CATNAME="Linux"
     $CATEGORIZE
+    rm Linux.txt
+    unset LINUX
   fi
 
-  if [ $DEBIAN -ne 0 ];
+  if [ "$DEBIAN" != "" ];
   then
+    egrep -i "$KEYWORDS_DEBIAN" newpages.txt > Debian.txt 
     export CATFILE="Debian.txt"
     export CATNAME="Debian"
     $CATEGORIZE
+    rm Debian.txt
+    unset DEBIAN
   fi
 
-  if [ $OPENSUSE -ne 0 ];
+  if [ "$OPENSUSE" != "" ];
   then
+    egrep -i "$KEYWORDS_OPENSUSE" newpages.txt > OpenSUSE.txt
     export CATFILE="OpenSUSE.txt"
     export CATNAME="OpenSUSE"
     $CATEGORIZE
+    rm OpenSUSE.txt
+    unset OPENSUSE
   fi
 
-  if [ $UBUNTU -ne 0 ];
+  if [ "$UBUNTU" != "" ];
   then
+    egrep -i "$KEYWORDS_UBUNTU" newpages.txt > Ubuntu.txt
     export CATFILE="Ubuntu.txt"
     export CATNAME="Ubuntu"
     $CATEGORIZE
+    rm Ubuntu.txt
+    unset UBUNTU
   fi
 
-  if [ $COLINUX -ne 0 ];
+  if [ "$COLINUX" != "" ];
   then
+    egrep -i "$KEYWORDS_COLINUX" newpages.txt > CoLinux.txt
     export CATFILE="coLinux.txt"
     export CATNAME="coLinux"
     $CATEGORIZE
+    rm CoLinux.txt
+    unset COLINUX
   fi
 
-  if [ $FEDORA -ne 0 ];
+  if [ "$FEDORA" != "" ];
   then
+    egrep -i "$KEYWORDS_FEDORA" newpages.txt > FedoraLinux.txt
     export CATFILE="FedoraLinux.txt"
     export CATNAME="Fedora Linux"
     $CATEGORIZE
+    rm FedoraLinux.txt
+    unset FEDORA
   fi
 
-  if [ $MINT -ne 0 ];
+  if [ "$MINT" != "" ];
   then
+    egrep -i "$KEYWORDS_LINUXMINT" newpages.txt > LinuxMint.txt
     export CATFILE="LinuxMint.txt"
     export CATNAME="Linux Mint"
     $CATEGORIZE
+    rm LinuxMint.txt
+    unset MINT
   fi
 
-  if [ $ANDROID -ne 0 ];
+  if [ "$ANDROID" != "" ];
   then
+    egrep -i "$KEYWORDS_GOOGLEANDROID" newpages.txt > GoogleAndroid.txt
+    egrep "$KEYWORDS_GOOGLEANDROID_CASESENSITIVE" newpages.txt >> GoogleAndroid.txt
     export CATFILE="GoogleAndroid.txt"
     export CATNAME="Google Android"
     $CATEGORIZE
+    rm GoogleAndroid.txt
+    unset ANDROID
   fi
-
-  rm Linux.txt
-  rm Debian.txt
-  rm OpenSUSE.txt
-  rm Ubuntu.txt
-  rm CoLinux.txt
-  rm FedoraLinux.txt
-  rm LinuxMint.txt
-  rm GoogleAndroid.txt
 
 fi
