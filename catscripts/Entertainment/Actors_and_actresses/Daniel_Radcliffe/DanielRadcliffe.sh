@@ -1,16 +1,19 @@
 #!/bin/bash
 
-export KEYWORDS_ACTOR_DANIELRADCLIFFE="Daniel(| )Radcliffe"
+KEYWORDS_ACTOR_DANIELRADCLIFFE="Daniel(| )Radcliffe"
 
-egrep -i "$KEYWORDS_ACTOR_DANIELRADCLIFFE" newpages.txt >> DanielRadcliffe.txt
-
-RADCLIFFE=`stat --print=%s DanielRadcliffe.txt`
-
-if [ $RADCLIFFE -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="DanielRadcliffe.txt"
-  export CATNAME="Daniel Radcliffe"
-  $CATEGORIZE
-fi
 
-rm DanielRadcliffe.txt
+  RADCLIFFE=`egrep -i "$KEYWORDS_ACTOR_DANIELRADCLIFFE" newpages.txt`
+
+  if [ "$RADCLIFFE" != "" ];
+  then
+    egrep -i "$KEYWORDS_ACTOR_DANIELRADCLIFFE" newpages.txt >> DanielRadcliffe.txt
+    export CATFILE="DanielRadcliffe.txt"
+    export CATNAME="Daniel Radcliffe"
+    $CATEGORIZE
+    rm DanielRadcliffe.txt
+    unset RADCLIFFE
+  fi
+fi
