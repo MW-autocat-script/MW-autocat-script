@@ -1,16 +1,20 @@
 #!/bin/bash
 
-export KEYWORDS_ACTOR_ROBERTPATTINSON="Robert(| )Pattinson"
+KEYWORDS_ACTOR_ROBERTPATTINSON="Robert(| )Pattinson"
 
-egrep -i "$KEYWORDS_ACTOR_ROBERTPATTINSON" newpages.txt >> RobertPattinson.txt
-
-PATTINSON=`stat --print=%s RobertPattinson.txt`
-
-if [ $PATTINSON -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="RobertPattinson.txt"
-  export CATNAME="Robert Pattinson"
-  $CATEGORIZE
-fi
 
-rm RobertPattinson.txt
+  PATTINSON=`egrep -i "$KEYWORDS_ACTOR_ROBERTPATTINSON" newpages.txt`
+
+  if [ $PATTINSON -ne 0 ];
+  then
+    egrep -i "$KEYWORDS_ACTOR_ROBERTPATTINSON" newpages.txt > RobertPattinson.txt
+    export CATFILE="RobertPattinson.txt"
+    export CATNAME="Robert Pattinson"
+    $CATEGORIZE
+    rm RobertPattinson.txt
+    unset PATTINSON
+  fi
+
+fi
