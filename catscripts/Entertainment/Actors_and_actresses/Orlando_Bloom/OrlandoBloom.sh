@@ -1,14 +1,20 @@
-export KEYWORDS_ACTOR_ORLANDOBLOOM="Orlando(| )Bloom"
+#!/bin/bash
 
-egrep -i "$KEYWORDS_ACTOR_ORLANDOBLOOM" newpages.txt >> OrlandoBloom.txt
+KEYWORDS_ACTOR_ORLANDOBLOOM="Orlando(| )Bloom"
 
-ORLANDOBLOOM=`stat --print=%s OrlandoBloom.txt`
-
-if [ $ORLANDOBLOOM -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="OrlandoBloom.txt"
-  export CATNAME="Orlando Bloom"
-  $CATEGORIZE
-fi
 
-rm OrlandoBloom.txt
+  ORLANDOBLOOM=`egrep -i "$KEYWORDS_ACTOR_ORLANDOBLOOM" newpages.txt`
+
+  if [ "$ORLANDOBLOOM" != "" ];
+  then
+    egrep -i "$KEYWORDS_ACTOR_ORLANDOBLOOM" newpages.txt > OrlandoBloom.txt
+    export CATFILE="OrlandoBloom.txt"
+    export CATNAME="Orlando Bloom"
+    $CATEGORIZE
+    rm OrlandoBloom.txt
+    unset ORLANDOBLOOM
+  fi
+
+fi
