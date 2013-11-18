@@ -1,16 +1,20 @@
 #!/bin/bash
 
-export KEYWORDS_ACTRESS_SANDRABULLOCK="Sandra(| )Bullock"
+KEYWORDS_ACTRESS_SANDRABULLOCK="Sandra(| )Bullock"
 
-egrep -i "$KEYWORDS_ACTRESS_SANDRABULLOCK" newpages.txt >> SandraBullock.txt
-
-BULLOCK=`stat --print=%s SandraBullock.txt`
-
-if [ $BULLOCK -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="SandraBullock.txt"
-  export CATNAME="Sandra Bullock"
-  $CATEGORIZE
-fi
 
-rm SandraBullock.txt
+  BULLOCK=`egrep -i "$KEYWORDS_ACTRESS_SANDRABULLOCK" newpages.txt`
+
+  if [ "$BULLOCK" != "" ];
+  then
+    egrep -i "$KEYWORDS_ACTRESS_SANDRABULLOCK" newpages.txt > SandraBullock.txt
+    export CATFILE="SandraBullock.txt"
+    export CATNAME="Sandra Bullock"
+    $CATEGORIZE
+    rm SandraBullock.txt
+    unset BULLOCK
+  fi
+
+fi
