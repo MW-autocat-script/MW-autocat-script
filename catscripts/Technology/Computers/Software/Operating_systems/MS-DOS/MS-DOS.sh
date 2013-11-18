@@ -4,18 +4,17 @@ KEYWORDS_MSDOS="\bMS(|-| )DOS|\bDOS\b"
 
 if [ "$1" == "" ]; #Normal operation
 then
-  
-  egrep -i "$KEYWORDS_MSDOS" newpages.txt >> MS-DOS.txt
 
-  MSDOS=`stat --print=%s MS-DOS.txt`
+  MSDOS=`egrep -i "$KEYWORDS_MSDOS" newpages.txt`
 
-  if [ $MSDOS -ne 0 ];
+  if [ "$MSDOS" != "" ];
   then
+    egrep -i "$KEYWORDS_MSDOS" newpages.txt > MS-DOS.txt
     export CATFILE="MS-DOS.txt"
     export CATNAME="MS-DOS"
     $CATEGORIZE
+    rm MS-DOS.txt
+    unset MSDOS
   fi
-
-  rm MS-DOS.txt
 
 fi
