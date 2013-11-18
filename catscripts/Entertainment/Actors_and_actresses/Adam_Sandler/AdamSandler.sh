@@ -1,26 +1,28 @@
 #!/bin/bash
 
-if [ "$DEBUG" == "yes" ];
+KEYWORDS_ACTOR_ADAMSANDLER="Adam(| )Sandler"
+
+if [ "$1" == "" ]; #Normal operation
 then
-  printf "Starting Adam Sandler\n" 
-fi
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Adam Sandler\n" 
+  fi
 
-export KEYWORDS_ACTOR_ADAMSANDLER="Adam(| )Sandler"
+  SANDLER=`egrep -i "$KEYWORDS_ACTOR_ADAMSANDLER" newpages.txt`
 
-egrep -i "$KEYWORDS_ACTOR_ADAMSANDLER" newpages.txt >> AdamSandler.txt
+  if [ "$SANDLER" != "" ];
+  then
+    egrep -i "$KEYWORDS_ACTOR_ADAMSANDLER" newpages.txt > AdamSandler.txt
+    export CATFILE="AdamSandler.txt"
+    export CATNAME="Adam Sandler"
+    $CATEGORIZE
+    rm AdamSandler.txt
+    unset SANDLER
+  fi
 
-SANDLER=`stat --print=%s AdamSandler.txt`
-
-if [ $SANDLER -ne 0 ];
-then
-  export CATFILE="AdamSandler.txt"
-  export CATNAME="Adam Sandler"
-  $CATEGORIZE
-fi
-
-rm AdamSandler.txt
-
-if [ "$DEBUG" == "yes" ];
-then
-  printf "Finishing Adam Sandler\n" 
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Adam Sandler\n" 
+  fi
 fi
