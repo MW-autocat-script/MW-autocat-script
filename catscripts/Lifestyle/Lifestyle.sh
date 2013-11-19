@@ -4,13 +4,14 @@ then
   printf "Starting Lifestyle\n" 
 fi
 
-CURRENTDIR="./catscripts/Lifestyle"
+LIFESTYLEDIR="./catscripts/Lifestyle"
 
-$CURRENTDIR/Health/Health.sh
-$CURRENTDIR/Pets/Pets.sh
-$CURRENTDIR/Religion/Religion.sh
-$CURRENTDIR/Sports/Sports.sh
-$CURRENTDIR/Sexuality/Sexuality.sh
+. $LIFESTYLEDIR/Health/Health.sh
+. $LIFESTYLEDIR/Hobbies/Hobbies.sh
+. $LIFESTYLEDIR/Pets/Pets.sh
+. $LIFESTYLEDIR/Religion/Religion.sh
+. $LIFESTYLEDIR/Sports/Sports.sh
+. $LIFESTYLEDIR/Sexuality/Sexuality.sh
 
 if [ "$DEBUG" == "yes" ];
 then
