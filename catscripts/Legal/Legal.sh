@@ -4,46 +4,65 @@ KEYWORDS_LEGAL="\blegal|illegal|\blaw(s|)\b"
 KEYWORDS_LAWYERS="attorney|lawyer"
 KEYWORDS_DIVORCE="Divorce|alimony"
 KEYWORDS_CRIME="\bCrime(|s)\b|criminal"
+KEYWORDS_COPYRIGHT="copyright|copyleft|fair use|(movie|software)(| )piracy|intellectual(| )property"
 
-egrep -i "$KEYWORDS_LEGAL" newpages.txt | egrep -iv "$KEYWORDS_DIVORCE|$KEYWORDS_CRIME|$KEYWORDS_LAWYERS" >> Legal.txt
-egrep -i "$KEYWORDS_DIVORCE" newpages.txt >> Divorce.txt
-egrep -i "$KEYWORDS_CRIME" newpages.txt >> Crime.txt
-egrep -i "$KEYWORDS_LAWYERS" newpages.txt >> Lawyers.txt
-
-LEGAL=`stat --print=%s Legal.txt`
-CRIME=`stat --print=%s Crime.txt`
-DIVORCE=`stat --print=%s Divorce.txt`
-LAWYERS=`stat --print=%s Lawyers.txt`
-
-if [ $LEGAL -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Legal.txt"
-  export CATNAME="Legal"
-  $CATEGORIZE
-fi
 
-if [ $CRIME -ne 0 ];
-then
-  export CATFILE="Crime.txt"
-  export CATNAME="Crime"
-  $CATEGORIZE
-fi
+  LEGAL=`egrep -i "$KEYWORDS_LEGAL" newpages.txt | egrep -iv "$KEYWORDS_DIVORCE|$KEYWORDS_CRIME|$KEYWORDS_LAWYERS|$KEYWORDS_COPYRIGHT"`
+  CRIME=`egrep -i "$KEYWORDS_CRIME" newpages.txt`
+  DIVORCE=`egrep -i "$KEYWORDS_DIVORCE" newpages.txt`
+  LAWYERS=`egrep -i "$KEYWORDS_LAWYERS" newpages.txt`
+  COPYRIGHT=`egrep -i "$KEYWORDS_COPYRIGHT" newpages.txt`
 
-if [ $DIVORCE -ne 0 ];
-then
-  export CATFILE="Divorce.txt"
-  export CATNAME="Divorce"
-  $CATEGORIZE
-fi
+  if [ "$LEGAL" != "" ];
+  then
+    egrep -i "$KEYWORDS_LEGAL" newpages.txt | egrep -iv "$KEYWORDS_DIVORCE|$KEYWORDS_CRIME|$KEYWORDS_LAWYERS|$KEYWORDS_COPYRIGHT" > Legal.txt
+    export CATFILE="Legal.txt"
+    export CATNAME="Legal"
+    $CATEGORIZE
+    rm Legal.txt
+    unset LEGAL
+  fi
 
-if [ $LAWYERS -ne 0 ];
-then
-  export CATFILE="Lawyers.txt"
-  export CATNAME="Lawyers"
-  $CATEGORIZE
-fi
+  if [ "$CRIME" != "" ];
+  then
+    egrep -i "$KEYWORDS_CRIME" newpages.txt > Crime.txt
+    export CATFILE="Crime.txt"
+    export CATNAME="Crime"
+    $CATEGORIZE
+    rm Crime.txt
+    unset CRIME
+  fi
 
-rm Legal.txt
-rm Crime.txt
-rm Divorce.txt
-rm Lawyers.txt
+  if [ "$DIVORCE" != "" ];
+  then
+    egrep -i "$KEYWORDS_DIVORCE" newpages.txt > Divorce.txt
+    export CATFILE="Divorce.txt"
+    export CATNAME="Divorce"
+    $CATEGORIZE
+    rm Divorce.txt
+    unset DIVORCE
+  fi
+
+  if [ "$LAWYERS" != "" ];
+  then
+    egrep -i "$KEYWORDS_LAWYERS" newpages.txt > Lawyers.txt
+    export CATFILE="Lawyers.txt"
+    export CATNAME="Lawyers"
+    $CATEGORIZE
+    rm Lawyers.txt
+    unset LAWYERS
+  fi
+
+  if [ "$COPYRIGHT" != "" ];
+  then
+    egrep -i "$KEYWORDS_COPYRIGHT" newpages.txt > Copyright.txt
+    export CATFILE="Copyright.txt"
+    export CATNAME="Copyright law"
+    $CATEGORIZE
+    rm Copyright.txt
+    unset COPYRIGHT
+  fi
+
+fi
