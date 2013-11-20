@@ -1,17 +1,20 @@
 #!/bin/bash
 
-egrep -i "\bAsh.+(Misty|Brock|May|Dawn|Iris|Pikachu|Pokemon|Pokémon|Poke'mon)" newpages.txt >> Anime.txt
-egrep -i "(Misty|Brock|May|Dawn|Iris|Pokémon|Pikachu|Pokemon|Poke'mon).+\bAsh" newpages.txt >> Anime.txt
-egrep -i "(Pokémon|Pokemon|Poke'mon).+(cartoon|anime)" newpages.txt >> Anime.txt
-egrep -i "(Anime|cartoon).+(Pokemon|Pokémon|Poke'mon)" newpages.txt >> Anime.txt
+KEYWORDS_POKEMONANIME="\bAsh.+(Misty|Brock|May|Dawn|Iris|Pikachu|Pokemon|Pokémon|Poke'mon)|Ash Ketchum|(Misty|Brock|May|Dawn|Iris|Pokémon|Pikachu|Pokemon|Poke'mon).+\bAsh|(Pokémon|Pokemon|Poke'mon).+(cartoon|anime)|(Anime|cartoon).+(Pokemon|Pokémon|Poke'mon)"
 
-ANIME=`stat --print=%s Anime.txt`
-
-if [ $ANIME -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Anime.txt"
-  export CATNAME="Pokémon anime"
-  $CATEGORIZE
-fi
 
-rm Anime.txt
+  ANIME=`egrep -i "$KEYWORDS_POKEMONANIME" newpages.txt`
+
+  if [ "$ANIME"  != "" ];
+  egrep -i "$KEYWORDS_POKEMONANIME" newpages.txt > Anime.txt
+  then
+    export CATFILE="Anime.txt"
+    export CATNAME="Pokémon anime"
+    $CATEGORIZE
+    rm Anime.txt
+    unset ANIME
+  fi
+
+fi
