@@ -39,6 +39,14 @@ egrep -i 'Vancouver Canuck' newpages.txt >> NHL.txt
 egrep -i 'Washington Capital' newpages.txt >> NHL.txt
 egrep -i 'Winnipeg Jet' newpages.txt >> NHL.txt
 
+KEYWORDS_BASKETBALL="Basket(| )ball"
+KEYWORDS_NBA="\bNBA\b"
+KEYWORDS_MICHAELJORDAN="Michael(| )Jordan"
+KEYWORDS_SHAQUILLEONEAL="Shaquille(| )O(|')Neal|\bShaq\b"
+KEYWORDS_KOBEBRYANT="Kobe(| )Bryant"
+KEYWORDS_NBA_EXCLUDE="$KEYWORDS_MICHAELJORDAN|$KEYWORDS_SHAQUILLEONEAL|$KEYWORDS_KOBEBRYANT"
+KEYWORDS_BASKETBALL_EXCLUDE="$KEYWORDS_NBA_EXCLUDE|$KEYWORDS_NBA"
+
 
 SOCCER=`stat --print=%s Soccer.txt`
 TENNIS=`stat --print=%s Tennis.txt`
@@ -48,6 +56,11 @@ VOLLEYBALL=`stat --print=%s Volleyball.txt`
 SOFTBALL=`stat --print=%s Softball.txt`
 HOCKEY=`stat --print=%s Hockey.txt`
 NHL=`stat --print=%s NHL.txt`
+BASKETBALL=`egrep -i "$KEYWORDS_NBA" newpages.txt | egrep -iv "$KEYWORDS_NBA_EXCLUDE"`
+NBA=`egrep -i "$KEYWORDS_NBA" newpages.txt | egrep -iv "$KEYWORDS_NBA_EXCLUDE"`
+MICHAELJORDAN=`egrep -i "$KEYWORDS_MICHAELJORDAN" newpages.txt`
+SHAQUILLEONEAL=`egrep -i "$KEYWORDS_SHAQUILLEONEAL" newpages.txt`
+KOBEBRYANT=`egrep -i "$KEYWORDS_KOBEBRYANT" newpages.txt`
 
 if [ $SOCCER -ne 0 ];
 then
@@ -103,6 +116,56 @@ then
   export CATFILE="NHL.txt"
   export CATNAME="NHL"
   $CATEGORIZE
+fi
+
+if [ "$BASKETBALL" != "" ];
+then
+  egrep -i "$KEYWORDS_BASKETBALL" newpages.txt | egrep -iv "$KEYWORDS_BASKETBALL_EXCLUDE" > Basketball.txt
+  export CATFILE="Basketball.txt"
+  export CATNAME="Basketball"
+  $CATEGORIZE
+  rm Basketball.txt
+  unset BASKETBALL
+fi
+
+if [ "$NBA" != "" ];
+then
+  egrep -i "$KEYWORDS_NBA" newpages.txt | egrep -iv "$KEYWORDS_NBA_EXCLUDE" > NBA.txt
+  export CATFILE="NBA.txt"
+  export CATNAME="NBA"
+  $CATEGORIZE
+  rm NBA.txt
+  unset NBA
+fi
+
+if [ "$MICHAELJORDAN" != "" ];
+then
+  egrep -i "$KEYWORDS_MICHAELJORDAN" newpages.txt > MichaelJordan.txt
+  export CATFILE="MichaelJordan.txt"
+  export CATNAME="Michael Jordan"
+  $CATEGORIZE
+  rm MichaelJordan.txt
+  unset MICHAELJORDAN
+fi
+
+if [ "$SHAQUILLEONEAL" != "" ];
+then
+  egrep -i "$KEYWORDS_SHAQUILLEONEAL" newpages.txt > ShaquilleONeal.txt
+  export CATFILE="ShaquilleONeal.txt"
+  export CATNAME="Shaquille O'Neal"
+  $CATEGORIZE
+  rm ShaquilleONeal.txt
+  unset SHAQUILLEONEAL
+fi
+
+if [ "$KOBEBRYANT" != "" ];
+then
+  egrep -i "$KEYWORDS_KOBEBRYANT" newpages.txt > KobeBraynt.txt
+  export CATFILE="KobeBraynt.txt"
+  export CATNAME="Kobe Bryant"
+  $CATEGORIZE
+  rm KobeBraynt.txt
+  unset KOBEBRYANT
 fi
 
 rm Soccer.txt
