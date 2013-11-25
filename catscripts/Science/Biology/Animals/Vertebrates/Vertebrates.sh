@@ -18,5 +18,3 @@ export KEYWORDS_VERTEBRATE="fish|amphibian|mammal|bird|reptile"
 
 . $CURRENTDIR/Mammals/Mammals.sh &
 . $CURRENTDIR/Reptiles/Reptiles.sh &
-
-rm Vertebrates.txt

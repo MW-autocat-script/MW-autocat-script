@@ -31,8 +31,6 @@ egrep -i "(Pokemon|Pokémon|Poke'mon)(| )XD|Gale of Darkness" newpages.txt  >> P
 egrep -i "(Pokémon|Pokemon|Poke'mon)(| )Indigo|Unova(| )RPG" newpages.txt >> UnovaRPG.txt
 egrep -i "(Pokémon|Pokemon|Poke'mon)(| )Deluge|Deluge(| )RPG" newpages.txt >> DelugeRPG.txt
 egrep -i "(Pokémon|Pokemon|Poke'mon)(| )Vortex|Vortex Battle Arena" newpages.txt >> Vortex.txt
-egrep -i "(Pokémon|Pokemon|Poke'mon)(| )X\b" newpages.txt >> PokémonX.txt
-egrep -i "(Pokémon|Pokemon|Poke'mon)(| )Y\b" newpages.txt >> PokémonY.txt
 
 RED=`stat --print=%s PokémonRed.txt`
 BLUE=`stat --print=%s PokémonBlue.txt`
@@ -286,20 +284,6 @@ then
   $CATEGORIZE
 fi
 
-if [ $POKEMONX -ne 0 ];
-then
-  export CATFILE="PokémonX.txt"
-  export CATNAME="Pokémon X"
-  $CATEGORIZE
-fi
-
-if [ $POKEMONY -ne 0 ];
-then
-  export CATFILE="PokémonY.txt"
-  export CATNAME="Pokémon Y"
-  $CATEGORIZE
-fi
-
 rm PokémonRed.txt
 rm PokémonBlue.txt
 rm PokémonYellow.txt
@@ -324,8 +308,6 @@ rm PokémonHeartGold.txt
 rm PokémonSoulSilver.txt
 rm UnovaRPG.txt
 rm DelugeRPG.txt
-rm PokémonX.txt
-rm PokémonY.txt
 rm PokémonRanger.txt
 rm ShadowsOfAlmia.txt
 rm GuardianSigns.txt

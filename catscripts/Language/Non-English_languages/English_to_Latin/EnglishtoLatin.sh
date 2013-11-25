@@ -8,7 +8,7 @@ egrep -i 'How to say.+in Latin' newpages.txt >> EnglishtoLatin.txt
 
 LATIN=`stat --print=%s EnglishtoLatin.txt`
 
-if [ $Latin -ne 0 ];
+if [ $LATIN -ne 0 ];
 then
   export CATFILE="EnglishtoLatin.txt"
   export CATNAME="English to Latin"

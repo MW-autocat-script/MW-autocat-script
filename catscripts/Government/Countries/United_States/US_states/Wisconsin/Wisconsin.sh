@@ -11,7 +11,7 @@ then
   egrep -i "$KEYWORDS_WISCONSIN" newpages.txt | egrep -iv "$KEYWORDS_WISCONSIN_EXCLUDE" >> Wisconsin.txt
   egrep -i "$KEYWORDS_MILWAUKEE" newpages.txt >> Milwaukee.txt
 
-  WISCONSIN=`stat --print=% Wisconsin.txt`
+  WISCONSIN=`stat --print=%s Wisconsin.txt`
   MILWAUKEE=`stat --print=%s Milwaukee.txt`
 
   if [ $WISCONSIN -ne 0 ];

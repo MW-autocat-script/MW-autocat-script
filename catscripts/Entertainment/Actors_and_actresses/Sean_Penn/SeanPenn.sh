@@ -7,7 +7,7 @@ then
 
   SEANPENN=`egrep -i "$KEYWORDS_ACTOR_SEANPENN" newpages.txt`
 
-  if [ $SEANPENN -ne 0 ];
+  if [ "$SEANPENN" != "" ];
   then
     egrep -i "$KEYWORDS_ACTOR_SEANPENN" newpages.txt > SeanPenn.txt
     export CATFILE="SeanPenn.txt"

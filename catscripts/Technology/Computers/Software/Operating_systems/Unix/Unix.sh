@@ -11,13 +11,15 @@ then
   egrep -i "$KEYWORDS_UNIX" newpages.txt | egrep -iv "$KEYWORDS_UNIX_EXCLUDE" >> Unix.txt
   egrep -i "$KEYWORDS_UNIX_SPECIAL" newpages.txt | egrep -iv "$KEYWORDS_UNIX_EXCLUDE|Linux|BSD" >> Unix.txt #FIXME: Should fetch names of all distros from ./catscripts/Technology/Computers/Software/Operating_systems/Linux/Linux.sh
 
-UNIX=`stat --print=%s Unix.txt`
+  UNIX=`stat --print=%s Unix.txt`
 
-if [ $UNIX -ne 0 ];
-then
-  export CATFILE="Unix.txt"
-  export CATNAME="Unix"
-  $CATEGORIZE
+  if [ $UNIX -ne 0 ];
+  then
+    export CATFILE="Unix.txt"
+    export CATNAME="Unix"
+    $CATEGORIZE
+  fi
+
+  rm Unix.txt
+
 fi
-
-rm Unix.txt

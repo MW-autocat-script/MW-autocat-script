@@ -7,7 +7,7 @@ then
 
   TOMCRUISE=`egrep -i "$KEYWORDS_ACTOR_TOMCRUISE" newpages.txt`
 
-  if [ $TOMCRUISE -ne 0 ];
+  if [ "$TOMCRUISE" != "" ];
   then
     egrep -i "$KEYWORDS_ACTOR_TOMCRUISE" newpages.txt > TomCruise.txt
     export CATFILE="TomCruise.txt"

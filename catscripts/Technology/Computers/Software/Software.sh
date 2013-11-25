@@ -33,6 +33,7 @@ then
 fi
 
 if [ "$1" == "norun" ]; #Only export variables
+then
 
   . $SOFTWAREDIR/DVD_authoring/DVDAuthoring.sh norun #KEYWORDS_DVDAUTHORING_ALL
   . $SOFTWAREDIR/Emulation_and_Virtualization/Emulation.sh norrun #KEYWORDS_EMULATION_ALL

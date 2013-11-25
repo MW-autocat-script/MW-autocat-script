@@ -7,7 +7,7 @@ then
 
   MARILYNMONROE=`egrep -i "$KEYWORDS_ACTRESS_MARILYNMONROE" newpages.txt`
 
-  if [ $MARILYNMONROE -ne 0 ];
+  if [ "$MARILYNMONROE" != "" ];
   then
     egrep -i "$KEYWORDS_ACTRESS_MARILYNMONROE" newpages.txt >> MarilynMonroe.txt
     export CATFILE="MarilynMonroe.txt"

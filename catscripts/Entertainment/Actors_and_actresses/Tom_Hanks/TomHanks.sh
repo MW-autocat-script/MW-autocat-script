@@ -7,7 +7,7 @@ then
 
   TOMHANKS=`egrep -i "$KEYWORDS_ACTOR_TOMHANKS" newpages.txt`
 
-  if [ $TOMHANKS -ne 0 ];
+  if [ "$TOMHANKS" != "" ];
   then
     egrep -i "$KEYWORDS_ACTOR_TOMHANKS" newpages.txt > TomHanks.txt
     export CATFILE="TomHanks.txt"

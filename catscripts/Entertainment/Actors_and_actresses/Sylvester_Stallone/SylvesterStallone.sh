@@ -7,7 +7,7 @@ then
 
   SYLVESTERSTALLONE=`egrep -i "$KEYWORDS_ACTOR_SYLVESTERSTALLONE" newpages.txt`
 
-  if [ $SYLVESTERSTALLONE -ne 0 ];
+  if [ "$SYLVESTERSTALLONE" != "" ];
   then
     egrep -i "$KEYWORDS_ACTOR_SYLVESTERSTALLONE" newpages.txt > SylvesterStallone.txt
     export CATFILE="SylvesterStallone.txt"
