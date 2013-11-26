@@ -4,5 +4,6 @@
 ./catscripts/Entertainment/Music/Bands/Linkin_Park.sh
 ./catscripts/Entertainment/Music/Bands/Metallica.sh
 ./catscripts/Entertainment/Music/Bands/My_Chemical_Romance.sh
+./catscripts/Entertainment/Music/Bands/Nickleback.sh
 ./catscripts/Entertainment/Music/Bands/One_Direction.sh
 ./catscripts/Entertainment/Music/Bands/The_Beatles.sh
