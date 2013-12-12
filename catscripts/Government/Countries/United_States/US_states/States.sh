@@ -35,6 +35,7 @@ $CURRENTDIR/New_York/NewYork.sh
 $CURRENTDIR/North_Carolina/NorthCarolina.sh
 $CURRENTDIR/North_Dakota/NorthDakota.sh
 $CURRENTDIR/Ohio/Ohio.sh
+$CURRENTDIR/Oklahoma/Oklahoma.sh
 $CURRENTDIR/Oregon/Oregon.sh
 $CURRENTDIR/Pennsylvania/Pennsylvania.sh
 $CURRENTDIR/Rhode_Island/RhodeIsland.sh
