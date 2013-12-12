@@ -7,7 +7,7 @@ KEYWORDS_TAMPA="Tampa(|s)\b"
 KEYWORDS_EVERGLADES="Everglades"
 KEYWORDS_FLORIDA_EXCLUDE="$KEYWORDS_ORLANDO|$KEYWORDS_MIAMI|$KEYWORDS_EVERGLADES|$KEYWORDS_TAMPA"
 KEYWORDS_ORLANDO_EXCLUDE="Orlando(| )Bloom|RuneScape|Orlando(| )Smith"
-KEYWORDS_MIAMI_EXCLUDE="CSI(:|| )Miami|Miami(| )Dolphins|Miami(| )Marlins"
+KEYWORDS_MIAMI_EXCLUDE="CSI(:|| )Miami|Miami(| )Dolphins|Miami(| )Marlins|Miami(| )Heat"
 
 if [ "$1" == "" ]; #Normal operation
 then
