@@ -1,34 +1,47 @@
 #!/bin/bash
 
-egrep -i 'Illinois' newpages.txt | egrep -iv 'Springfield|Chicago' >> Illinois.txt
-egrep -i 'Springfield(|,)(| )Illinois' newpages.txt >> Springfield.txt
-egrep -i 'Chicago' newpages.txt >> Chicago.txt
 
-ILLINOIS=`stat --print=%s Illinois.txt`
-SPRINGFIELD=`stat --print=%s Springfield.txt`
-CHICAGO=`stat --print=%s Springfield.txt`
+KEYWORDS_ILLINOIS="Illinois"
+KEYWORDS_SPRINGFIELD="Springfield(|,)(| )Illinois"
+KEYWORDS_CHICAGO="Chicago"
+KEYWORDS_ILLINOIS_EXCLUDE="$KEYWORDS_CHICAGO|$KEYWORDS_SPRINGFIELD"
+KEYWORDS_CHICAGO_EXCLUDE="Chicago(| )Bulls"
 
-if [ $ILLINOIS -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Illinois.txt"
-  export CATNAME="Illinois"
-  $CATEGORIZE
-fi
 
-if [ $SPRINGFIELD -ne 0 ];
-then
-  export CATFILE="Springfield.txt"
-  export CATNAME="Springfield, Illinois"
-  $CATEGORIZE
-fi
+  ILLINOIS=`egrep -i "$KEYWORDS_ILLINOIS" newpages.txt | egrep -iv "$KEYWORDS_ILLINOIS_EXCLUDE"`
+  SPRINGFIELD=`egrep -i "$KEYWORDS_SPRINGFIELD" newpages.txt`
+  CHICAGO=`egrep -i "$KEYWORDS_CHICAGO" newpages.txt | egrep -iv "$KEYWORDS_CHICAGO_EXCLUDE"`
 
-if [ $CHICAGO -ne 0 ];
-then
-  export CATFILE="Chicago.txt"
-  export CATNAME="Chicago"
-  $CATEGORIZE
-fi
+  if [ "$ILLINOIS" != "" ];
+  then
+    printf "$ILLINOIS" > Illinois.txt
+    export CATFILE="Illinois.txt"
+    export CATNAME="Illinois"
+    $CATEGORIZE
+    rm Illinois.txt
+    unset ILLINOIS
+  fi
 
-rm Illinois.txt
-rm Springfield.txt
-rm Chicago.txt
+  if [ "$SPRINGFIELD" != "" ];
+  then
+    printf "$SPRINGFIELD" > Springfield.txt
+    export CATFILE="Springfield.txt"
+    export CATNAME="Springfield, Illinois"
+    $CATEGORIZE
+    rm Springfield.txt
+    unset SPRINGFIELD
+  fi
+
+  if [ "$CHICAGO" != "" ];
+  then
+    printf "$CHICAGO" > Chicago.txt
+    export CATFILE="Chicago.txt"
+    export CATNAME="Chicago"
+    $CATEGORIZE
+    rm Chicago.txt
+    unset CHICAGO
+  fi
+
+fi
