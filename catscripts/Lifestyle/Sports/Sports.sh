@@ -24,9 +24,11 @@ KEYWORDS_BASKETBALL_EXCLUDE="$KEYWORDS_NBA_EXCLUDE|$KEYWORDS_NBA"
 KEYWORDS_BASEBALL="Baseball"
 KEYWORDS_SOFTBALL="softball"
 KEYWORDS_MLB="\bMLB|Major(| )League(| )Baseball"
+KEYWORDS_BABERUTH="Babe(| )Ruth"
+KEYWORDS_JACKIEROBINSON="Jackie(| )Robinson"
 KEYWORDS_ATLANTA_BRAVES="Atlanta(| )Braves"
 KEYWORDS_MIAMI_MARLINS="Miami(| )Marlins"
-KEYWORDS_MLB_EXCLUDE="$KEYWORDS_ATLANTA_BRAVES|$KEYWORDS_MIAMI_MARLINS"
+KEYWORDS_MLB_EXCLUDE="$KEYWORDS_ATLANTA_BRAVES|$KEYWORDS_MIAMI_MARLINS|$KEYWORDS_BABERUTH|$KEYWORDS_JACKIEROBINSON"
 KEYWORDS_BASEBALL_EXCLUDE="$KEYWORDS_MLB|$KEYWORDS_MLB_EXCLUDE"
 #Hockey
 
@@ -58,6 +60,8 @@ egrep -i "$KEYWORDS_NHL" newpages.txt >> NHL.txt
   KOBEBRYANT=`egrep -i "$KEYWORDS_KOBEBRYANT" newpages.txt`
   BASEBALL=`egrep -i "$KEYWORDS_BASEBALL" newpages.txt | egrep -iv "$KEYWORDS_BASEBALL_EXCLUDE"`
   MLB=`egrep -i "$KEYWORDS_MLB" newpages.txt | egrep -iv "$KEYWORDS_MLB_EXCLUDE"`
+  BABERUTH=`egrep -i "$KEYWORDS_BABERUTH" newpages.txt`
+  JACKIEROBINSON=`egrep -i "$KEYWORDS_JACKIEROBINSON" newpages.txt`
   ATLANTABRAVES=`egrep -i "$KEYWORDS_ATLANTA_BRAVES" newpages.txt`
   MIAMIMARLINS=`egrep -i "$KEYWORDS_MIAMI_MARLINS" newpages.txt`
 
@@ -219,6 +223,26 @@ egrep -i "$KEYWORDS_NHL" newpages.txt >> NHL.txt
     $CATEGORIZE
     rm MLB.txt
     unset MLB
+  fi
+
+  if [ "$BABERUTH" != "" ];
+  then
+    printf "$BABERUTH" > BabeRuth.txt
+    export CATFILE="BabeRuth.txt"
+    export CATNAME="Babe Ruth"
+    $CATEGORIZE
+    rm BabeRuth.txt
+    unset BABERUTH
+  fi
+
+  if [ "$JACKIEROBINSON" != "" ];
+  then
+    printf "$JACKIEROBINSON" > JackieRobinson.txt
+    export CATFILE="JackieRobinson.txt"
+    export CATNAME="Jackie Robinson"
+    $CATEGORIZE
+    rm JackieRobinson.txt
+    unset JACKIEROBINSON
   fi
 
   if [ "$ATLANTABRAVES" != "" ];
