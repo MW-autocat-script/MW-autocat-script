@@ -42,9 +42,6 @@ KEYWORDS_HOCKEY_EXCLUDE="ield hockey|street hockey|indoor hockey|$KEYWORDS_NHL"
 if [ "$1" == "" ]; #Normal operation
 then
 
-egrep -i "$KEYWORDS_NHL" newpages.txt >> NHL.txt
-
-
   SOCCER=`egrep -i "$KEYWORDS_SOCCER" newpages.txt`
   TENNIS=`egrep -i "$KEYWORDS_TENNIS" newpages.txt| egrep -iv "$KEYWORDS_TENNIS_EXCLUDE"`
   PINGPONG=`egrep -i "$KEYWORDS_PINGPONG" newpages.txt`
@@ -276,7 +273,6 @@ egrep -i "$KEYWORDS_NHL" newpages.txt >> NHL.txt
     rm MiamiMarlins.txt
     unset MIAMIMARLINS
   fi
-
 
 fi
 export CURRENTDIR="./catscripts/Lifestyle/Sports"

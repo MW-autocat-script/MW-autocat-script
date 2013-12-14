@@ -93,6 +93,7 @@ $CURRENTDIR/Peru/Peru.sh
 $CURRENTDIR/Philippines/Philippines.sh
 $CURRENTDIR/Poland/Poland.sh
 $CURRENTDIR/Portugal/Portugal.sh
+$CURRENTDIR/Russia/Russia.sh
 $CURRENTDIR/Singapore/Singapore.sh
 $CURRENTDIR/South_Africa/SouthAfrica.sh
 $CURRENTDIR/Spain/Spain.sh
