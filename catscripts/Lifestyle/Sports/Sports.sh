@@ -50,7 +50,7 @@ then
   SOFTBALL=`egrep -i "$KEYWORDS_SOFTBALL" newpages.txt`
   HOCKEY=`egrep -i "$KEYWORDS_HOCKEY" newpages.txt | egrep -iv "$KEYWORDS_NHL"`
   NHL=`egrep -i "$KEYWORDS_NHL" newpages.txt`
-  BASKETBALL=`egrep -i "$KEYWORDS_NBA" newpages.txt | egrep -iv "$KEYWORDS_NBA_EXCLUDE"`
+  BASKETBALL=`egrep -i "$KEYWORDS_BASKETBALL" newpages.txt | egrep -iv "$KEYWORDS_BASKETBALL_EXCLUDE"`
   NBA=`egrep -i "$KEYWORDS_NBA" newpages.txt | egrep -iv "$KEYWORDS_NBA_EXCLUDE"`
   CHICAGOBULLS=`egrep -i "$KEYWORDS_CHICAGOBULLS" newpages.txt`
   MIAMIHEAT=`egrep -i "$KEYWORDS_MIAMIHEAT" newpages.txt`

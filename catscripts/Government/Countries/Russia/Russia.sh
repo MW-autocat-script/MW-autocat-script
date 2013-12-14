@@ -4,6 +4,8 @@ KEYWORDS_RUSSIA="\bRussia"
 KEYWORDS_MOSCOW="Moscow"
 KEYWORDS_MOSCOW_EXCLUDE="Mafia(| )Wars"
 KEYWORDS_SOVIET="Soviet|U(\.|)S(\.|)S(\.|)R(\.|)"
+KEYWORDS_LENIN="Lenin"
+KEYWORDS_LENIN_EXCLUDE="Leningrad"
 KEYWORDS_STALIN="Stalin"
 KEYWORDS_RUSSIA_EXCLUDE="$KEYWORDS_MOSCOW|$KEYWORDS_SOVIET|\bin(| )Russian|Stravinsky"
 KEYWORDS_SOVIET_EXCLUDE="$KEYWORDS_STALIN"
@@ -15,6 +17,7 @@ then
   MOSCOW=`egrep -i "$KEYWORDS_MOSCOW" newpages.txt | egrep -iv "$KEYWORDS_MOSCOW_EXCLUDE"`
   SOVIET=`egrep -i "$KEYWORDS_SOVIET" newpages.txt | egrep -iv "$KEYWORDS_SOVIET_EXCLUDE"`
   STALIN=`egrep -i "$KEYWORDS_STALIN" newpages.txt`
+  LENIN=`egrep -i "$KEYWORDS_LENIN" newpages.txt | egrep -iv "$KEYWORDS_LENIN_EXCLUDE"`
 
   if [ "$RUSSIA" != "" ];
   then
@@ -54,6 +57,16 @@ then
     $CATEGORIZE
     rm Stalin.txt
     unset STALIN
+  fi
+
+  if [ "$LENIN" != "" ];
+  then
+    printf "$LENIN" > Lenin.txt
+    export CATFILE="Lenin.txt"
+    export CATNAME="Vladimir Lenin"
+    $CATEGORIZE
+    rm Lenin.txt
+    unset LENIN
   fi
 
 fi
