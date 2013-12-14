@@ -1,17 +1,20 @@
 #!/bin/bash
 
-KEYWORDS_RUSSIA="Russia"
+KEYWORDS_RUSSIA="\bRussia"
 KEYWORDS_MOSCOW="Moscow"
 KEYWORDS_MOSCOW_EXCLUDE="Mafia(| )Wars"
 KEYWORDS_SOVIET="Soviet|U(\.|)S(\.|)S(\.|)R(\.|)"
-KEYWORDS_RUSSIA_EXCLUDE="$KEYWORDS_MOSCOW|$KEYWORDS_SOVIET|\bin(| )Russian"
+KEYWORDS_STALIN="Stalin"
+KEYWORDS_RUSSIA_EXCLUDE="$KEYWORDS_MOSCOW|$KEYWORDS_SOVIET|\bin(| )Russian|Stravinsky"
+KEYWORDS_SOVIET_EXCLUDE="$KEYWORDS_STALIN"
 
 if [ "$1" == "" ]; #Normal operation
 then
 
   RUSSIA=`egrep -i "$KEYWORDS_RUSSIA" newpages.txt | egrep -iv "$KEYWORDS_RUSSIA_EXCLUDE"`
   MOSCOW=`egrep -i "$KEYWORDS_MOSCOW" newpages.txt | egrep -iv "$KEYWORDS_MOSCOW_EXCLUDE"`
-  SOVIET=`egrep -i "$KEYWORDS_SOVIET" newpages.txt`
+  SOVIET=`egrep -i "$KEYWORDS_SOVIET" newpages.txt | egrep -iv "$KEYWORDS_SOVIET_EXCLUDE"`
+  STALIN=`egrep -i "$KEYWORDS_STALIN" newpages.txt`
 
   if [ "$RUSSIA" != "" ];
   then
@@ -41,6 +44,16 @@ then
     $CATEGORIZE
     rm SovietUnion.txt
     unset SOVIET
+  fi
+
+  if [ "$STALIN" != "" ];
+  then
+    printf "$STALIN" > Stalin.txt
+    export CATFILE="Stalin.txt"
+    export CATNAME="Joseph Stalin"
+    $CATEGORIZE
+    rm Stalin.txt
+    unset STALIN
   fi
 
 fi
