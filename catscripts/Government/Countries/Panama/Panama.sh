@@ -15,7 +15,7 @@ then
 
   if [ "$PANAMA" != "" ];
   then
-    printf "$PANAMA" > Panama.tct
+    printf "$PANAMA" > Panama.txt
     export CATFILE="Panama.txt"
     export CATNAME="Panama"
     $CATEGORIZE

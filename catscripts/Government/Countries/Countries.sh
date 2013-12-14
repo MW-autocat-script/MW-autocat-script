@@ -26,6 +26,7 @@ $CURRENTDIR/Benin/Benin.sh
 $CURRENTDIR/Bolivia/Bolivia.sh
 $CURRENTDIR/Brazil/Brazil.sh
 $CURRENTDIR/Brunei/Brunei.sh
+$CURRENTDIR/Bulgaria/Bulgaria.sh
 $CURRENTDIR/Cambodia/Cambodia.sh
 $CURRENTDIR/Cameroon/Cameroon.sh
 $CURRENTDIR/Canada/Canada.sh
