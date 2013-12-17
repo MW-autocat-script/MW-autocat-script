@@ -1,18 +1,30 @@
 #!/bin/bash
 
-egrep -i '(^|\[\[)Who invented [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Inventions.txt
-egrep -i '(^|\[\[)Who invented the [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Inventions.txt
-egrep -i '(^|\[\[)Who is the inventor of [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Inventions.txt
-egrep -i '(^|\[\[)When was .+ invented($|\]\])' newpages.txt >> Inventions.txt
-egrep -i '(^|\[\[)Where was .+ invented($|\]\])' newpages.txt >> Inventions.txt
+KEYWORDS_INVENTIONS="Who invented [a-z]{1,}$|Who invented the [a-z]{1,}|(When|Where) was the .+ invented"
 
-INVENTIONS=`stat --print=%s Inventions.txt`
-
-if [ $INVENTIONS -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Inventions.txt"
-  export CATNAME="Inventions"
-  $CATEGORIZE
-fi
 
-rm Inventions.txt
+  INVENTIONS=`egrep -i "$KEYWORDS_INVENTIONS" newpages.txt`
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Inventions\n"
+  fi
+
+  if [ "$INVENTIONS" != "" ];
+  then
+    printf "$INVENTIONS" > Inventions.txt
+    export CATFILE="Inventions.txt"
+    export CATNAME="Inventions"
+    $CATEGORIZE
+    rm Inventions.txt
+    unset INVENTIONS
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Inventions\n"
+  fi
+
+fi
