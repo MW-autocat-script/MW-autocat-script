@@ -1,18 +1,31 @@
 #!/bin/bash
 
-egrep -i 'How do you say.+in Korean' newpages.txt >> EnglishtoKorean.txt
-egrep -i 'How do you spell.+in Korean' newpages.txt >> EnglishtoKorean.txt
-egrep -i '^\[\[[abcdefghijklmopqrstuvwxyz]{1,} in Korean' newpages.txt >> EnglishtoKorean.txt
-egrep -i 'What is the Korean word for' newpages.txt >> EnglishtoKorean.txt
-egrep -i 'How to say.+in Korean' newpages.txt >> EnglishtoKorean.txt
+KEYWORDS_ENGLISHTOKOREAN="How (to|do you) (say|spell).+ in Korean|What is the Korean word for"
 
-KOREAN=`stat --print=%s EnglishtoKorean.txt`
-
-if [ $KOREAN -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="EnglishtoKorean.txt"
-  export CATNAME="English to Korean"
-  $CATEGORIZE
+
+  KOREAN=`egrep -i "$KEYWORDS_ENGLISHTOKOREAN" newpages.txt`
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting English to Korean\n"
+  fi
+
+  if [ "$KOREAN" != "" ];
+  then
+    printf "$KOREAN" > EnglishtoKorean.txt
+    export CATFILE="EnglishtoKorean.txt"
+    export CATNAME="English to Korean"
+    $CATEGORIZE
+    rm EnglishtoKorean.txt
+    unset KOREAN
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing English to Korean\n"
+  fi
+
 fi
 
-rm EnglishtoKorean.txt
