@@ -1,19 +1,21 @@
 #!/bin/bash
 
-egrep -i '\[\[How do you spell [a-z]{1,}\]\]' newpages.txt >> Spelling.txt
-egrep -i '\[\[How do you spell "[a-z]{1,}"\]\]' newpages.txt >> Spelling.txt
-egrep -i "\[\[How do you spell '[a-z]{1,}'\]\]" newpages.txt >> Spelling.txt
-egrep -i '\[\[How to spell [a-z]{1,}\]\]' newpages.txt >> Spelling.txt
-egrep -i '\[\[How to spell "[a-z]{1,}"\]\]' newpages.txt >> Spelling.txt
-egrep -i "\[\[How to spell '[a-z]{1,}'\]\]" newpages.txt >> Spelling.txt
+KEYWORDS_SPELLING="How (to|do you) spell (|\"|')[a-z]{1,}(|\"|')$"
 
-SPELLING=`stat --print=%s Spelling.txt`
 
-if [ $SPELLING -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Spelling.txt"
-  export CATNAME="Spelling"
-  $CATEGORIZE
-fi
 
-rm Spelling.txt
+  SPELLING=`egrep -i "$KEYWORDS_SPELLING"`
+
+  if [ "$SPELLING" != "" ];
+  then
+    printf "$SPELLING" > Spelling.txt
+    export CATFILE="Spelling.txt"
+    export CATNAME="Spelling"
+    $CATEGORIZE
+    rm Spelling.txt
+    unset SPELLING
+  fi
+
+fi

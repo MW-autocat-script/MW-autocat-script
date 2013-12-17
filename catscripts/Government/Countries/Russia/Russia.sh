@@ -7,7 +7,7 @@ KEYWORDS_SOVIET="Soviet|U(\.|)S(\.|)S(\.|)R(\.|)"
 KEYWORDS_LENIN="Lenin"
 KEYWORDS_LENIN_EXCLUDE="Leningrad"
 KEYWORDS_STALIN="Stalin"
-KEYWORDS_RUSSIA_EXCLUDE="$KEYWORDS_MOSCOW|$KEYWORDS_SOVIET|\bin(| )Russian|Stravinsky"
+KEYWORDS_RUSSIA_EXCLUDE="$KEYWORDS_MOSCOW|$KEYWORDS_SOVIET|\bin(| )Russian|Stravinsky|Russian(| )word"
 KEYWORDS_SOVIET_EXCLUDE="$KEYWORDS_STALIN"
 
 if [ "$1" == "" ]; #Normal operation
