@@ -1,17 +1,30 @@
 #!/bin/bash
 
-egrep -i "(What is|What's|Whats) another word for [a-z]{1,}" newpages.txt >> Synonyms.txt
-egrep -i "(What is|What's|Whats) a synonym for [a-z]{1,}" newpages.txt >> Synonyms.txt
-egrep -i "\[\[Another word for [a-z]{1,}\]\]" newpages.txt >> Synonyms.txt
-egrep -i "synonym" newpages.txt >> Synonyms.txt
+KEYWORDS_SYNONYMS="synonym|another word for"
 
-SYNONYMS=`stat --print=%s Synonyms.txt`
-
-if [ $SYNONYMS -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Synonyms.txt"
-  export CATNAME="Synonyms"
-  $CATEGORIZE
-fi
 
-rm Synonyms.txt
+  SYNONYMS=`egrep -i "$KEYWORDS_SYNONYMS" newpages.txt`
+
+  if [ "$DEBUG" == "yes" ]; 
+  then
+    printf "Starting Synonyms\n"
+  fi
+
+  if [ "$SYNONYMS" != "" ];
+  then
+    printf "$SYNONYMS" > Synonyms.txt
+    export CATFILE="Synonyms.txt"
+    export CATNAME="Synonyms"
+    $CATEGORIZE
+    rm Synonyms.txt
+    unset SYNONYMS
+  fi
+
+  if [ "$DEBUG" == "yes" ]; 
+  then
+    printf "Finishing Synonyms\n"
+  fi
+
+fi
