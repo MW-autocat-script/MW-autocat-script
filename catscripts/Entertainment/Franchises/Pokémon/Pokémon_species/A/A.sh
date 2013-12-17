@@ -34,292 +34,324 @@ KEYWORDS_POKEMONSPECIES_A="$KEYWORDS_ABOMASNOW|$KEYWORDS_ABRA|$KEYWORDS_ABSOL|$K
 if [ "$1" == "" ];
 then
 
-  egrep -i "$KEYWORDS_ABOMASNOW" newpages.txt >> Abomasnow.txt &
-  egrep -i "$KEYWORDS_ABRA" newpages.txt >> Abra.txt &
-  egrep -i "$KEYWORDS_ABSOL" newpages.txt >> Absol.txt &
-  egrep -i "$KEYWORDS_ACCELGOR" newpages.txt >> Accelgor.txt &
-  egrep -i "$KEYWORDS_AERODACTYL" newpages.txt >> Aerodactyl.txt &
-  egrep -i "$KEYWORDS_AGGRON" newpages.txt >> Aggron.txt &
-  egrep -i "$KEYWORDS_AIPOM" newpages.txt >> Aipom.txt &
-  egrep -i "$KEYWORDS_ALAKAZAM" newpages.txt >> Alakazam.txt &
-  egrep -i "$KEYWORDS_ALOMOMOLA" newpages.txt >> Alomomola.txt &
-  egrep -i "$KEYWORDS_ALTARIA" newpages.txt >> Altaria.txt &
-  egrep -i "$KEYWORDS_AMBIPOM" newpages.txt >> Ambipom.txt &
-  egrep -i "$KEYWORDS_AMOONGUSS" newpages.txt >> Amoonguss.txt &
-  egrep -i "$KEYWORDS_AMPHAROS" newpages.txt >> Ampharos.txt &
-  egrep -i "$KEYWORDS_ANORITH" newpages.txt >> Anorith.txt &
-  egrep -i "$KEYWORDS_ARBOK" newpages.txt >> Arbok.txt &
-  egrep -i "$KEYWORDS_ARCANINE" newpages.txt >> Arcanine.txt &
-  egrep -i "$KEYWORDS_ARCEUS" newpages.txt >> Arceus.txt &
-  egrep -i "$KEYWORDS_ARCHEN" newpages.txt >> Archen.txt &
-  egrep -i "$KEYWORDS_ARCHEOPS" newpages.txt >> Archeops.txt &
-  egrep -i "$KEYWORDS_ARIADOS" newpages.txt >> Ariados.txt &
-  egrep -i "$KEYWORDS_ARMALDO" newpages.txt >> Armaldo.txt &
-  egrep -i "$KEYWORDS_ARON" newpages.txt >> Aron.txt &
-  egrep -i "$KEYWORDS_ARTICUNO" newpages.txt >> Articuno.txt &
-  egrep -i "$KEYWORDS_AUDINO" newpages.txt >> Audino.txt &
-  egrep -i "$KEYWORDS_AXEW" newpages.txt >> Axew.txt &
-  egrep -i "$KEYWORDS_AZELF" newpages.txt >> Azelf.txt &
-  egrep -i "$KEYWORDS_AZUMARILL" newpages.txt >> Azumarill.txt &
-  egrep -i "$KEYWORDS_AZURILL" newpages.txt >> Azurill.txt &
+  ABOMASNOW=`egrep -i "$KEYWORDS_ABOMASNOW" newpages.txt`
+  ABRA=`egrep -i "$KEYWORDS_ABRA" newpages.txt` 
+  ABSOL=`egrep -i "$KEYWORDS_ABSOL" newpages.txt` 
+  ACCELGOR=`egrep -i "$KEYWORDS_ACCELGOR" newpages.txt` 
+  AERODACTYL=`egrep -i "$KEYWORDS_AERODACTYL" newpages.txt`
+  AGGRON=`egrep -i "$KEYWORDS_AGGRON" newpages.txt` 
+  AIPOM=`egrep -i "$KEYWORDS_AIPOM" newpages.txt` 
+  ALAKAZAM=`egrep -i "$KEYWORDS_ALAKAZAM" newpages.txt` 
+  ALOMOMOLA=`egrep -i "$KEYWORDS_ALOMOMOLA" newpages.txt` 
+  ALTARIA=`egrep -i "$KEYWORDS_ALTARIA" newpages.txt` 
+  AMBIPOM=`egrep -i "$KEYWORDS_AMBIPOM" newpages.txt` 
+  AMOONGUSS=`egrep -i "$KEYWORDS_AMOONGUSS" newpages.txt` 
+  AMPHAROS=`egrep -i "$KEYWORDS_AMPHAROS" newpages.txt` 
+  ANORITH=`egrep -i "$KEYWORDS_ANORITH" newpages.txt` 
+  ARBOK=`egrep -i "$KEYWORDS_ARBOK" newpages.txt` 
+  ARCANINE=`egrep -i "$KEYWORDS_ARCANINE" newpages.txt` 
+  ARCEUS=`egrep -i "$KEYWORDS_ARCEUS" newpages.txt` 
+  ARCHEN=`egrep -i "$KEYWORDS_ARCHEN" newpages.txt` 
+  ARCHEOPS=`egrep -i "$KEYWORDS_ARCHEOPS" newpages.txt` 
+  ARIADOS=`egrep -i "$KEYWORDS_ARIADOS" newpages.txt` 
+  ARMALDO=`egrep -i "$KEYWORDS_ARMALDO" newpages.txt` 
+  ARON=`egrep -i "$KEYWORDS_ARON" newpages.txt` 
+  ARTICUNO=`egrep -i "$KEYWORDS_ARTICUNO" newpages.txt` 
+  AUDINO=`egrep -i "$KEYWORDS_AUDINO" newpages.txt` 
+  AXEW=`egrep -i "$KEYWORDS_AXEW" newpages.txt` 
+  AZELF=`egrep -i "$KEYWORDS_AZELF" newpages.txt` 
+  AZUMARILL=`egrep -i "$KEYWORDS_AZUMARILL" newpages.txt` 
+  AZURILL=`egrep -i "$KEYWORDS_AZURILL" newpages.txt`
 
-  wait
-
-  ABOMASNOW=`stat --print=%s Abomasnow.txt`
-  ABRA=`stat --print=%s Abra.txt` 
-  ABSOL=`stat --print=%s Absol.txt` 
-  ACCELGOR=`stat --print=%s Accelgor.txt` 
-  AERODACTYL=`stat --print=%s Aerodactyl.txt`
-  AGGRON=`stat --print=%s Aggron.txt` 
-  AIPOM=`stat --print=%s Aipom.txt` 
-  ALAKAZAM=`stat --print=%s Alakazam.txt` 
-  ALOMOMOLA=`stat --print=%s Alomomola.txt` 
-  ALTARIA=`stat --print=%s Altaria.txt` 
-  AMBIPOM=`stat --print=%s Ambipom.txt` 
-  AMOONGUSS=`stat --print=%s Amoonguss.txt` 
-  AMPHAROS=`stat --print=%s Ampharos.txt` 
-  ANORITH=`stat --print=%s Anorith.txt` 
-  ARBOK=`stat --print=%s Arbok.txt` 
-  ARCANINE=`stat --print=%s Arcanine.txt` 
-  ARCEUS=`stat --print=%s Arceus.txt` 
-  ARCHEN=`stat --print=%s Archen.txt` 
-  ARCHEOPS=`stat --print=%s Archeops.txt` 
-  ARIADOS=`stat --print=%s Ariados.txt` 
-  ARMALDO=`stat --print=%s Armaldo.txt` 
-  ARON=`stat --print=%s Aron.txt` 
-  ARTICUNO=`stat --print=%s Articuno.txt` 
-  AUDINO=`stat --print=%s Audino.txt` 
-  AXEW=`stat --print=%s Axew.txt` 
-  AZELF=`stat --print=%s Azelf.txt` 
-  AZUMARILL=`stat --print=%s Azumarill.txt` 
-  AZURILL=`stat --print=%s Azurill.txt`
-
-
-  if [ $ABOMASNOW -ne 0 ]; 
+  if [ "$DEBUG" == "yes" ];
   then
+    printf "Starting Pokemon 'A' species\n"
+  fi
+
+
+  if [ "$ABOMASNOW" != "" ]; 
+  then
+    printf "$ABOMASNOW" > Abomasnow.txt
     export CATFILE="Abomasnow.txt"
     export CATNAME="Abomasnow"
     $CATEGORIZE
+    rm Abomasnow.txt
+    unset ABOMASNOW
   fi
 
-  if [ $ABRA -ne 0 ]; 
+  if [ "$ABRA" != "" ]; 
   then
+    printf "$ABRA" > Abra.txt
     export CATFILE="Abra.txt"
     export CATNAME="Abra"
     $CATEGORIZE
+    rm Abra.txt
+    unset ABRA
   fi
 
-  if [ $ABSOL -ne 0 ]; 
+  if [ "$ABSOL" != "" ]; 
   then
+    printf "$ABSOL" > Absol.txt
     export CATFILE="Absol.txt"
     export CATNAME="Absol"
     $CATEGORIZE
+    rm Absol.txt
+    unset ABSOL
   fi
 
-  if [ $ACCELGOR -ne 0 ]; 
+  if [ "$ACCELGOR" != "" ]; 
   then
+    printf "$ACCELGOR" > Accelgor.txt
     export CATFILE="Accelgor.txt"
     export CATNAME="Accelgor"
     $CATEGORIZE
+    rm Accelgor.txt
+    unset ACCELGOR
   fi
 
-  if [ $AERODACTYL -ne 0 ]; 
+  if [ "$AERODACTYL" != "" ]; 
   then
+    printf "$AERODACTYL" > Aerodactyl.txt
     export CATFILE="Aerodactyl.txt"
     export CATNAME="Aerodactyl"
     $CATEGORIZE
+    rm Aerodactyl.txt
+    unset AERODACTYL
   fi
 
-  if [ $AGGRON -ne 0 ]; 
+  if [ "$AGGRON" != "" ]; 
   then
+    printf "$AGGRON" > Aggron.txt
     export CATFILE="Aggron.txt"
     export CATNAME="Aggron"
     $CATEGORIZE
+    rm Aggron.txt
+    unset AGGRON
   fi
 
-  if [ $AIPOM -ne 0 ]; 
+  if [ "$AIPOM" != "" ]; 
   then
+    printf "$AIPOM" > Aipom.txt
     export CATFILE="Aipom.txt"
     export CATNAME="Aipom"
     $CATEGORIZE
+    rm Aipom.txt
+    unset AIPOM
   fi
 
-  if [ $ALAKAZAM -ne 0 ]; 
+  if [ "$ALAKAZAM" != "" ]; 
   then
+    printf "$ALAKAZAM" > Alakazam.txt
     export CATFILE="Alakazam.txt"
     export CATNAME="Alakazam"
     $CATEGORIZE
+    rm Alakazam.txt
+    unset ALAKAZAM
   fi
 
-  if [ $ALOMOMOLA -ne 0 ]; 
+  if [ "$ALOMOMOLA" != "" ]; 
   then
+    printf "$ALOMOMOLA" > Alomomola.txt
     export CATFILE="Alomomola.txt"
     export CATNAME="Alomomola"
     $CATEGORIZE
+    rm Alomomola.txt
+    unset ALOMOMOLA
   fi
 
-  if [ $ALTARIA -ne 0 ]; 
+  if [ "$ALTARIA" != "" ]; 
   then
+    printf "$ALTARIA" > Altaria.txt
     export CATFILE="Altaria.txt"
     export CATNAME="Altaria"
     $CATEGORIZE
+    rm Altaria.txt
+    unset ALTARIA
   fi
 
-  if [ $AMBIPOM -ne 0 ]; 
+  if [ "$AMBIPOM" != "" ]; 
   then
+    printf "$AMBIPOM" > Ambipom.txt
     export CATFILE="Ambipom.txt"
     export CATNAME="Ambipom"
     $CATEGORIZE
+    rm Ambipom.txt
+    unset AMBIPOM
   fi
 
-  if [ $AMOONGUSS -ne 0 ]; 
+  if [ "$AMOONGUSS" != "" ]; 
   then
+    printf "$AMOONGUSS" > Amoonguss.txt
     export CATFILE="Amoonguss.txt"
     export CATNAME="Amoonguss"
     $CATEGORIZE
+    rm Amoonguss.txt
+    unset AMOONGUSS
   fi
 
-  if [ $AMPHAROS -ne 0 ]; 
+  if [ "$AMPHAROS" != "" ]; 
   then
+    printf "$AMPHAROS" > Ampharos.txt
     export CATFILE="Ampharos.txt"
     export CATNAME="Ampharos"
     $CATEGORIZE
+    rm Ampharos.txt
+    unset AMPHAROS
   fi
 
-  if [ $ANORITH -ne 0 ]; 
+  if [ "$ANORITH" != "" ]; 
   then
+    printf "$ANORITH" > Anorith.txt
     export CATFILE="Anorith.txt"
     export CATNAME="Anorith"
     $CATEGORIZE
+    rm Anorith.txt
+    unset ANORITH
   fi
 
-  if [ $ARBOK -ne 0 ]; 
+  if [ "$ARBOK" != "" ]; 
   then
+    printf "$ARBOK" > Arbok.txt
     export CATFILE="Arbok.txt"
     export CATNAME="Arbok"
     $CATEGORIZE
+    rm Arbok.txt
+    unset ARBOK
   fi
 
-  if [ $ARCANINE -ne 0 ]; 
+  if [ "$ARCANINE" != "" ]; 
   then
+    printf "$ARCANINE" > Arcanine.txt
     export CATFILE="Arcanine.txt"
     export CATNAME="Arcanine"
     $CATEGORIZE
+    rm Arcanine.txt
+    unset ARCANINE
   fi
 
-  if [ $ARCEUS -ne 0 ]; 
+  if [ "$ARCEUS" != "" ]; 
   then
+    printf "$ARCEUS" > Arceus.txt
     export CATFILE="Arceus.txt"
     export CATNAME="Arceus"
     $CATEGORIZE
+    rm Arceus.txt
+    unset ARCEUS
   fi
 
-  if [ $ARCHEN -ne 0 ]; 
+  if [ "$ARCHEN" != "" ]; 
   then
+    printf "$ARCHEN" > Archen.txt
     export CATFILE="Archen.txt"
     export CATNAME="Archen"
     $CATEGORIZE
+    rm Archen.txt
+    unset ARCHEN
   fi
 
-  if [ $ARCHEOPS -ne 0 ]; 
+  if [ "$ARCHEOPS" != "" ]; 
   then
+    printf "$ARCHEOPS" > Archeops.txt
     export CATFILE="Archeops.txt"
     export CATNAME="Archeops"
     $CATEGORIZE
+    rm Archeops.txt
+    unset ARCHEOPS
   fi
 
-  if [ $ARIADOS -ne 0 ]; 
+  if [ "$ARIADOS" != "" ]; 
   then
+    printf "$ARIADOS" > Ariados.txt
     export CATFILE="Ariados.txt"
     export CATNAME="Ariados"
     $CATEGORIZE
+    rm Ariados.txt
+    unset ARIADOS
   fi
 
-  if [ $ARMALDO -ne 0 ]; 
+  if [ "$ARMALDO" != "" ]; 
   then
+    printf "$ARMALDO" > Armaldo.txt
     export CATFILE="Armaldo.txt"
     export CATNAME="Armaldo"
     $CATEGORIZE
+    rm Armaldo.txt
+    unset ARMALDO
   fi
 
-  if [ $ARON -ne 0 ]; 
+  if [ "$ARON" != "" ]; 
   then
+    printf "$ARON" > Aron.txt
     export CATFILE="Aron.txt"
     export CATNAME="Aron"
     $CATEGORIZE
+    rm Aron.txt
+    unset ARON
   fi
 
-  if [ $ARTICUNO -ne 0 ]; 
+  if [ "$ARTICUNO" != "" ]; 
   then
+    printf "$ARTICUNO" > Articuno.txt
     export CATFILE="Articuno.txt"
     export CATNAME="Articuno"
     $CATEGORIZE
+    rm Articuno.txt
+    unset ARTICUNO
   fi
 
-  if [ $AUDINO -ne 0 ]; 
+  if [ "$AUDINO" != "" ]; 
   then
+    printf "$AUDINO" > Audino.txt
     export CATFILE="Audino.txt"
     export CATNAME="Audino"
     $CATEGORIZE
+    rm Audino.txt
+    unset AUDINO
   fi
 
-  if [ $AXEW -ne 0 ]; 
+  if [ "$AXEW" != "" ]; 
   then
+    printf "$AXEW" > Axew.txt
     export CATFILE="Axew.txt"
     export CATNAME="Axew"
     $CATEGORIZE
+    rm Axew.txt
+    unset AXEW
   fi
 
-  if [ $AZELF -ne 0 ]; 
+  if [ "$AZELF" != "" ]; 
   then
+    printf "$AZELF" > Azelf.txt
     export CATFILE="Azelf.txt"
     export CATNAME="Azelf"
     $CATEGORIZE
+    rm Azelf.txt
+    unset AZELF
   fi
 
-  if [ $AZUMARILL -ne 0 ]; 
+  if [ "$AZUMARILL" != "" ]; 
   then
+    printf "$AZUMARILL" > Azumarill.txt
     export CATFILE="Azumarill.txt"
     export CATNAME="Azumarill"
     $CATEGORIZE
+    rm Azumarill.txt
+    unset AZUMARILL
   fi
 
-  if [ $AZURILL -ne 0 ]; 
+  if [ "$AZURILL" != "" ]; 
   then
+    printf "$AZURILL" > Azurill.txt
     export CATFILE="Azurill.txt"
     export CATNAME="Azurill"
     $CATEGORIZE
+    rm Azurill.txt
+    unset AZURILL
   fi
 
-  rm Abomasnow.txt &
-  rm Abra.txt &
-  rm Absol.txt &
-  rm Accelgor.txt &
-  rm Aerodactyl.txt &
-  rm Aggron.txt &
-  rm Aipom.txt &
-  rm Alakazam.txt &
-  rm Alomomola.txt &
-  rm Altaria.txt &
-  rm Ambipom.txt &
-  rm Amoonguss.txt &
-  rm Ampharos.txt &
-  rm Anorith.txt &
-  rm Arbok.txt &
-  rm Arcanine.txt &
-  rm Arceus.txt &
-  rm Archen.txt &
-  rm Archeops.txt &
-  rm Ariados.txt &
-  rm Armaldo.txt &
-  rm Aron.txt &
-  rm Articuno.txt &
-  rm Audino.txt &
-  rm Axew.txt &
-  rm Azelf.txt &
-  rm Azumarill.txt &
-  rm Azurill.txt &
-
-  wait
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Pokemon 'A' species\n"
+  fi
 
 fi
