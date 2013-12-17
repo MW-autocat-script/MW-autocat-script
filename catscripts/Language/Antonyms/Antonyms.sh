@@ -1,28 +1,32 @@
 #!/bin/bash
 
-if [ "$DEBUG" == "yes" ];
+KEYWORDS_ANTONYMS="antonym|(What is|What(|')s) the opposite of [a-z]{1,}"
+
+
+if [ "$1" == "" ]; #Normal operation
 then
-  printf "Starting Antonyms\n" 
-fi
 
-egrep -i "(What is|What's|Whats) the opposite of [a-z]{1,}" newpages.txt >> Antonyms.txt
-egrep -i "(What is|What's|Whats) (a|an) antonym of [a-z]{1,}" newpages.txt >> Antonyms.txt
-egrep -i "\[\[opposite of [a-z]{1,}\]\]" newpages.txt >> Antonyms.txt
-egrep -i "\[\[Antonym(|s) for [a-z]{1,}\]\]" newpages.txt >> Antonyms.txt
-egrep -i 'antonym' newpages.txt >> Antonyms.txt
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Antonyms\n" 
+  fi
 
-ANTONYMS=`stat --print=%s Antonyms.txt`
 
-if [ $ANTONYMS -ne 0 ];
-then
-  export CATFILE="Antonyms.txt"
-  export CATNAME="Antonyms"
-  $CATEGORIZE
-fi
+  ANTONYMS=`egrep -i "$KEYWORDS_ANTONYMS" newpages.txt`
 
-rm Antonyms.txt
+  if [ "$ANTONYMS" != "" ];
+  then
+    printf "$ANTONYMS" > Antonyms.txt
+    export CATFILE="Antonyms.txt"
+    export CATNAME="Antonyms"
+    $CATEGORIZE
+    rm Antonyms.txt
+    unset ANTONYMS
+  fi
 
-if [ "$DEBUG" == "yes" ];
-then
-  printf "Finishing Antonyms\n" 
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Antonyms\n" 
+  fi
+
 fi
