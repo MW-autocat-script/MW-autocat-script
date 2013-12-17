@@ -1,53 +1,43 @@
 #!/bin/bash
 
-if [ "$DEBUG" == "yes" ];
+KEYWORDS_DEFINITIONS="^What is [a-z]{1,}(| )(|[a-z]{1,})$|^What is a [a-z]{1,}(| )(|[a-z]{1,})$|^What is an [a-z]{1,}(| )(|[a-z]{1,})$|^What(|')s a [a-z]{1,}(| )(|[a-z]{1,})$|^What(|'s) an [a-z]{1,}(| )(|[a-z]{1,})$|^What does [a-z]{1,}(| )(|[a-z]{1,})(| )mean$|^What does the word [a-z]{1,}(| )(|[a-z]{1,})(| )mean$"
+KEYWORDS_NAMES="^What does the (sur|)name (|\"|')[a-z]{1,}(|\"|') mean"
+
+if [ "$1" == "" ]; #Normal operation
 then
-  printf "Starting Definitions\n" 
-fi
 
-egrep -i '(^|\[\[)What is a(|n) [abcdefghijklmnopqrstuvwxyz]{1,} (|[abcdefghijklmnopqrstuvwxyz]{1,})($|\]\])' newpages.txt >> Definitions.txt
-egrep -i '(^|\[\[)What are [abcdefghijklmnopqrstuvwxyz]{1,} (|[abcdefghijklmnopqrstuvwxyz]{1,})($|\]\])' newpages.txt >> Definitions.txt
-egrep -i '(^|\[\[)What is the definition of [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Definitions.txt
-egrep -i '(^|\[\[)What is the definition of a [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt  >> Definitions.txt
-egrep -i '(^|\[\[)Definition of [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Definitions.txt
-egrep -i '(^|\[\[)Defination of [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Definitions.txt
-egrep -i '(^|\[\[)Difinition of [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Definitions.txt
-egrep -i "(^|\[\[)What's a [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])" newpages.txt >> Definitions.txt
-egrep -i "(^|\[\[)What's an [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])" newpages.txt>> Definitions.txt
-egrep -i '(^|\[\[)Whats a [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Definitions.txt
-egrep -i '(^|\[\[)Whats an [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Definitions.txt
-egrep -i '(^|\[\[)What does [abcdefghijklmnopqrstuvwxyz]{1,} mean($|\]\])' newpages.txt >> Definitions.txt
-egrep -i '(^|\[\[)What does [abcdefghijklmnopqrstuvwxyz]{1,} [abcdefghijklmnopqrstuvwxyz]{1,} mean($|\]\])' newpages.txt >> Definitions.txt
-egrep -i '(^|\[\[)What is [abcdefghijklmnopqrstuvwxyz]{1,}($|\]\])' newpages.txt >> Definitions.txt
-egrep -i '(^|\[\[)What is [a-z]{6,} [a-z]{6,}($|\]\])' newpages.txt >> Definitions.txt
-egrep -i 'What does the word [a-z]{1,} mean' newpages.txt >> Definitions.txt
-egrep -i '(^|\[\[)What are [a-z]{1,}($|\]\])' newpages.txt >> Definitions.txt
-egrep -i '(^|\[\[)What are [a-z]{1,} [a-z]{1,}($|\]\])' newpages.txt >> Definitions.txt
-egrep -i 'What does the (sur|)name [a-z]{1,} mean' newpages.txt >> NameMeanings.txt
-egrep -i 'What does the (sur|)name "[a-z]{1,}" mean' newpages.txt >> NameMeanings.txt
-egrep -i "What does the (sur|)name '[a-z]{1,}' mean" newpages.txt >> NameMeanings.txt
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Definitions\n" 
+  fi
 
-DEFINITIONS=`stat --print=%s Definitions.txt`
-NAMEMEANINGS=`stat --print=%s NameMeanings.txt`
+  DEFINITIONS=`egrep -i "$KEYWORDS_DEFINITIONS" newpages.txt`
+  NAMEMEANINGS=`egrep -i "$KEYWORDS_NAMES" newpages.txt`
 
-if [ $DEFINITIONS -ne 0 ];
-then
-  export CATFILE="Definitions.txt"
-  export CATNAME="Definitions"
-  $CATEGORIZE
-fi
+  if [ "$DEFINITIONS" != "" ];
+  then
+    printf "$DEFINITIONS" > Definitions.txt
+    export CATFILE="Definitions.txt"
+    export CATNAME="Definitions"
+    $CATEGORIZE
+    rm Definitions.txt
+    unset DEFINITIONS
+  fi
 
-if [ $NAMEMEANINGS -ne 0 ];
-then
-  export CATFILE="NameMeanings.txt"
-  export CATNAME="Name meanings"
-  $CATEGORIZE
-fi
+  if [ "$NAMEMEANINGS" != "" ];
+  then
+    printf "$NAMEMEANINGS" > NameMeanings.txt
+    export CATFILE="NameMeanings.txt"
+    export CATNAME="Name meanings"
+    $CATEGORIZE
+    rm NameMeanings.txt
+    unset NAMEMEANINGS
+  fi
 
-rm Definitions.txt
-rm NameMeanings.txt
 
-if [ "$DEBUG" == "yes" ];
-then
-  printf "Finishing Definitions\n" 
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Definitions\n" 
+  fi
+
 fi
