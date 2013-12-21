@@ -1,14 +1,31 @@
 #!/bin/bash
 
-egrep -i '\bnoun(|s)\b|pronoun(|s)\b|\bverb(|s)\b|adverb|adjective|preposition|conjunction|participle|interjection|part(|s)(| )of(| )speech' newpages.txt >> PartsOfSpeech.txt
+KEYWORDS_PARTSOFSPEECH="\bnoun(|s)\b|pronoun(|s)\b|\bverb(|s)\b|adverb|adjective|preposition|conjunction|participle|interjection|part(|s)(| )of(| )speech"
 
-SPEECH=`stat --print=%s PartsOfSpeech.txt`
 
-if [ $SPEECH -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="PartsOfSpeech.txt"
-  export CATNAME="Parts of speech"
-  $CATEGORIZE
-fi
 
-rm PartsOfSpeech.txt
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Parts of Speech\n"
+  fi
+
+  SPEECH=`egrep -i "$KEYWORDS_PARTSOFSPEECH" newpages.txt`
+
+  if [ "$SPEECH" != "" ];
+  then
+    printf "$SPEECH" > PartsOfSpeech.txt
+    export CATFILE="PartsOfSpeech.txt"
+    export CATNAME="Parts of speech"
+    $CATEGORIZE
+    rm PartsOfSpeech.txt
+    unset SPEECH
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Parts of Speech\n"
+  fi
+
+fi
