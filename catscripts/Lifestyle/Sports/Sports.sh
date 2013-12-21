@@ -94,7 +94,7 @@ then
     unset PINGPONG
   fi
 
-  if [ $BADMINTON != "" ];
+  if [ "$BADMINTON" != "" ];
   then
     printf "$BADMINTON" > Badminton.txt
     export CATFILE="Badminton.txt"
@@ -275,6 +275,7 @@ then
   fi
 
 fi
+
 export CURRENTDIR="./catscripts/Lifestyle/Sports"
 
 $CURRENTDIR/Autoracing.sh
