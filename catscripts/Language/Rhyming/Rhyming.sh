@@ -25,7 +25,7 @@ then
 
   if [ "$DEBUG" == "yes" ];
   then
-    printf "Starting Rhyming\n"
+    printf "Finishing Rhyming\n"
   fi
 
 fi
