@@ -626,7 +626,7 @@ then
     export_category STANTLER Stantler
   fi
 
-  if [ "$STARAPTOR"!= "" ];
+  if [ "$STARAPTOR" != "" ];
   then
     printf "$STARAPTOR" > Staraptor.txt
     export_category STARAPTOR Starraptor
