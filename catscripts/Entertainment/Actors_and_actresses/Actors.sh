@@ -46,7 +46,7 @@ then
 
   #People who do not yet have their own category, so will be placed in the parent
 
-  KEYWORDS_ACTOR_INCLUDE="Jet(| )Li\b|Jason(| )Statham|Robin(| )Williams"
+  KEYWORDS_ACTOR_INCLUDE="Jet(| )Li\b|Jason(| )Statham|Robin(| )Williams|Steve(| )McQueen"
 
 
   ACTORS=`egrep -i "\bactor|actress|$KEYWORDS_ACTOR_INCLUDE" newpages.txt | egrep -iv "$KEYWORDS_ACTOR|$KEYWORDS_ACTRESS|$KEYWORDS_ACTRESS_EXEMPT"`
