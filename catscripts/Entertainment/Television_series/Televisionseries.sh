@@ -1,14 +1,15 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Entertainment/Television_series"
+TVSERIESDIR="./catscripts/Entertainment/Television_series"
 
 if [ "$1" == "" ];
 then 
-  . $CURRENTDIR/iCarly.sh 
+  . $TVSERIESDIR/DoctorWho.sh
+  . $TVSERIESDIR/iCarly.sh 
 fi
 
 KEYWORDS_TELEVISIONSERIES="television(| )(series|show)"
-KEYWORDS_TELEVISIONSERIES_EXCLUDE="$KEYWORDS_TELEVISIONSERIES_ICARLY"
+KEYWORDS_TELEVISIONSERIES_EXCLUDE="$KEYWORDS_TELEVISIONSERIES_ICARLY|$KEYWORDS_DOCTORWHO"
 
 if [ "$1" == "" ];
 then 
