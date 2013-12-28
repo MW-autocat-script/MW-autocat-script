@@ -62,7 +62,6 @@ $CURRENTDIR/Iraq/Iraq.sh
 $CURRENTDIR/Ireland/Ireland.sh
 $CURRENTDIR/Israel/Israel.sh
 $CURRENTDIR/Italy/Italy.sh
-$CURRENTDIR/Ivory_Coast/IvoryCoast.sh
 $CURRENTDIR/Jamaica/Jamaica.sh
 $CURRENTDIR/Japan/Japan.sh
 $CURRENTDIR/Jordan/Jordan.sh
