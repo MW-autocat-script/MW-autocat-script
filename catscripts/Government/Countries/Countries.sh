@@ -87,6 +87,7 @@ $CURRENTDIR/Nigeria/Nigeria.sh
 $CURRENTDIR/Northern_Ireland/NorthernIreland.sh
 $CURRENTDIR/North_Korea/NorthKorea.sh
 $CURRENTDIR/Norway/Norway.sh
+$CURRENTDIR/Pakistan/Pakistan.sh
 $CURRENTDIR/Panama/Panama.sh
 $CURRENTDIR/Paraguay/Paraguay.sh
 $CURRENTDIR/Peru/Peru.sh
