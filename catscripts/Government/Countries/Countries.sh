@@ -79,6 +79,7 @@ $CURRENTDIR/Madagascar/Madagascar.sh
 $CURRENTDIR/Malaysia/Malaysia.sh
 $CURRENTDIR/Mali/Mali.sh
 $CURRENTDIR/Mexico/Mexico.sh
+$CURRENTDIR/Moldova/Moldova.sh
 $CURRENTDIR/Mongolia/Mongolia.sh
 $CURRENTDIR/Morocco/Morocco.sh
 $CURRENTDIR/Namibia/Namibia.sh
