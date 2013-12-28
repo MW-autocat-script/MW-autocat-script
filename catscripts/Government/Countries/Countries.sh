@@ -34,6 +34,7 @@ $CURRENTDIR/Canada/Canada.sh
 $CURRENTDIR/Chile/Chile.sh
 $CURRENTDIR/China/China.sh
 $CURRENTDIR/Costa_Rica/CostaRica.sh
+$CURRENTDIR/Côte\ d\'Ivoire/Côte_d\'Ivoire.sh
 $CURRENTDIR/Cuba/Cuba.sh
 $CURRENTDIR/Cyprus/Cyprus.sh
 $CURRENTDIR/Denmark/Denmark.sh
