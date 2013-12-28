@@ -65,6 +65,7 @@ $CURRENTDIR/Italy/Italy.sh
 $CURRENTDIR/Jamaica/Jamaica.sh
 $CURRENTDIR/Japan/Japan.sh
 $CURRENTDIR/Jordan/Jordan.sh
+$CURRENTDIR/Kazakhstan/Kazakhstan.sh
 $CURRENTDIR/Kenya/Kenya.sh
 $CURRENTDIR/Laos/Laos.sh
 $CURRENTDIR/Latvia/Latvia.sh
