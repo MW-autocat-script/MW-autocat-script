@@ -15,7 +15,7 @@ then
   if [ "$PAKISTAN" != "" ];
   then
     printf "$PAKISTAN" > Pakistan.txt
-    export CATFILE="Pakistan,txt"
+    export CATFILE="Pakistan.txt"
     export CATNAME="Pakistan"
     $CATEGORIZE
     rm Pakistan.txt

@@ -9,6 +9,11 @@ KEYWORDS_PANAMA_EXCLUDE="$KEYWORDS_PANAMACANAL|$KEYWORDS_PANAMACITY"
 if [ "$1" == "" ]; #Normal operation
 then
 
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Panama\n"
+  fi
+
   PANAMA=`egrep -i "$KEYWORDS_PANAMA" newpages.txt | egrep -iv "$KEYWORDS_PANAMA_EXCLUDE"`
   PANAMACANAL=`egrep -i "$KEYWORDS_PANAMACANAL" newpages.txt`
   PANAMACITY=`egrep -i "$KEYWORDS_PANAMACITY" newpages.txt | egrep -iv "$KEYWORDS_PANAMACITY_EXCLUDE"`
@@ -41,6 +46,11 @@ then
     $CATEGORIZE
     rm PanamaCity.txt
     unset PANAMACITY
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Panama\n"
   fi
 
 fi
