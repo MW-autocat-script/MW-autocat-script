@@ -20,6 +20,7 @@ $CURRENTDIR/Bahamas/Bahamas.sh
 $CURRENTDIR/Bahrain/Bahrain.sh
 $CURRENTDIR/Bangladesh/Bangladesh.sh
 $CURRENTDIR/Barbados/Barbados.sh
+$CURRENTDIR/Belarus/Belarus.sh
 $CURRENTDIR/Belgium/Belgium.sh
 $CURRENTDIR/Belize/Belize.sh
 $CURRENTDIR/Benin/Benin.sh
