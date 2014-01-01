@@ -110,6 +110,7 @@ $CURRENTDIR/Switzerland/Switzerland.sh
 $CURRENTDIR/Tanzia/Tanzia.sh
 $CURRENTDIR/Tunisia/Tunisia.sh
 $CURRENTDIR/Wales/Wales.sh
+$CURRENTDIR/Uganda/Uganda.sh
 $CURRENTDIR/United_Arab_Emirates/UAE.sh
 $CURRENTDIR/United_States/UnitedStates.sh
 $CURRENTDIR/Unrecognized_countries/Unrecognized.sh
