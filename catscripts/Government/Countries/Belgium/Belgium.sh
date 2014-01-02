@@ -1,14 +1,30 @@
 #!/bin/bash
 
-egrep -i 'Belgium|Belgian' newpages.txt >> Belgium.txt
+KEYWORDS_BELGIUM="Belgium|Belguim|Belgum"
 
-BELGIUM=`stat --print=%s Belgium.txt`
-
-if [ $BELGIUM -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Belgium.txt"
-  export CATNAME="Belgium"
-  $CATEGORIZE
-fi
 
-rm Belgium.txt
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Belgium\n"
+  fi
+
+  BELGIUM=`egrep -i "$KEYWORDS_BELGIUM" newpages.txt`
+
+  if [ "$BELGIUM" != "" ];
+  then
+    printf "$BELGIUM" > Belgium.txt
+    export CATFILE="Belgium.txt"
+    export CATNAME="Belgium"
+    $CATEGORIZE
+    rm Belgium.txt
+    unset BELGIUM
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Belgium\n"
+  fi
+
+fi
