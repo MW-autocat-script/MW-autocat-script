@@ -1,14 +1,30 @@
 #!/bin/bash
 
-egrep -i 'polio' newpages.txt >> Polio.txt
+KEYWORDS_POLIO="Polio"
 
-POLIO=`stat --print=%s Polio.txt`
-
-if [ $POLIO -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Polio.txt"
-  export CATNAME="Polio"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Polio\n"
+  fi
 
-rm Polio.txt
+  POLIO=`egrep -i "$KEYWORDS_POLIO" newpages.txt`
+
+  if [ "$POLIO" != "" ];
+  then
+    printf "$POLIO" > Polio.txt
+    export CATFILE="Polio.txt"
+    export CATNAME="Polio"
+    $CATEGORIZE
+    rm Polio.txt
+    unset POLIO
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Polio\n"
+  fi
+
+fi

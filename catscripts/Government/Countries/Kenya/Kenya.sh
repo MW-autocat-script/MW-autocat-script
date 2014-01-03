@@ -1,14 +1,31 @@
 #!/bin/bash
 
-egrep -i 'Kenya' newpages.txt > Kenya.txt
+KEYWORDS_KENYA="Kenya"
 
-KENYA=`stat --print=%s Kenya.txt`
-
-if [ $KENYA -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Kenya.txt"
-  export CATNAME="Kenya"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Kenya\n"
+  fi
 
-rm Kenya.txt
+
+  KENYA=`egrep -i "$KEYWORDS_KENYA" newpages.txt`
+
+  if [ "$KENYA" != "" ];
+  then
+    printf "$KENYA" > Kenya.txt
+    export CATFILE="Kenya.txt"
+    export CATNAME="Kenya"
+    $CATEGORIZE
+    rm Kenya.txt
+    unset KENYA
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Kenya\n"
+  fi
+
+fi

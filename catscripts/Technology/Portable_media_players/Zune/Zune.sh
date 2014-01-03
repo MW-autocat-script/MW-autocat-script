@@ -1,14 +1,30 @@
 #!/bin/bash
 
-egrep -i '\bZune' newpages.txt > Zune.txt
+KEYWORDS_ZUNE="\bZune"
 
-ZUNE=`stat --print=%s Zune.txt`
-
-if [ $ZUNE -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Zune.txt"
-  export CATNAME="Zune"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Zune\n"
+  fi
 
-rm Zune.txt
+  ZUNE=`egrep -i "$KEYWORDS_ZUNE" newpages.txt`
+
+  if [ "$ZUNE" != "" ];
+  then
+    printf "$ZUNE" > Zune.txt
+    export CATFILE="Zune.txt"
+    export CATNAME="Zune"
+    $CATEGORIZE
+    rm Zune.txt
+    unset ZUNE
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Zune\n"
+  fi
+
+fi

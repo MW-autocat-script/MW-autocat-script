@@ -1,14 +1,31 @@
 #!/bin/bash
 
-egrep -i '\bant(|s)\b' newpages.txt >> Ants.txt
+KEYWORDS_INSECTS="Insect"
+KEYWORDS_ANTS="\bAnt(|s)\b"
 
-ANTS=`stat --print=%s Ants.txt`
-
-if [ $ANTS -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Ants.txt"
-  export CATNAME="Ants"
-  $CATEGORIZE
-fi
 
-rm Ants.txt
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Insects\n"
+  fi
+
+  ANTS=`egrep -i "$KEYWORDS_ANTS" newpages.txt`
+
+  if [ "$ANTS" != "" ];
+  then
+    printf "$ANTS" > Ants.txt
+    export CATFILE="Ants.txt"
+    export CATNAME="Ants"
+    $CATEGORIZE
+    rm Ants.txt
+    unset ANTS
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Insects\n"
+  fi
+
+fi

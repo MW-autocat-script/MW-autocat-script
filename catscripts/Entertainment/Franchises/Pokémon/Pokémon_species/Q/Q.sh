@@ -1,34 +1,54 @@
 #!/bin/bash
-egrep -i 'Quagsire' newpages.txt >> Quagsire.txt
-egrep -i 'Quilava' newpages.txt >> Quilava.txt
-egrep -i 'Qwilfish' newpages.txt >> Qwilfish.txt
 
-Quagsire=`stat --print=%s Quagsire.txt`
-Quilava=`stat --print=%s Quilava.txt`
-Qwilfish=`stat --print=%s Qwilfish.txt`
+KEYWORDS_QUAGSIRE="Quagsire"
+KEYWORDS_QUILAVA="Quilava"
+KEYWORDS_QWILFISH="Qwilfish"
 
-if [ $Quagsire -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Quagsire.txt"
-  export CATNAME="Quagsire"
-  $CATEGORIZE
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Pokemon Q scripts\n"
+  fi
+
+  QUAGSIRE=`egrep -i "$KEYWORDS_QUAGSIRE" newpages.txt`
+  QUILAVA=`egrep -i "$KEYWORDS_QUILAVA" newpages.txt`
+  QWILFISH=`egrep -i "$KEYWORDS_QWILFISH" newpages.txt`
+
+  if [ "$QUAGSIRE" != "" ];
+  then
+    printf "$QUAGSIRE" > Quagsire.txt
+    export CATFILE="Quagsire.txt"
+    export CATNAME="Quagsire"
+    $CATEGORIZE
+    rm Quagsire.txt
+    unset QUAGSIRE
+  fi
+
+  if [ "$QUILAVA" != "" ];
+  then
+    printf "$QUILAVA" > Quilava.txt
+    export CATFILE="Quilava.txt"
+    export CATNAME="Quilava"
+    $CATEGORIZE
+    rm Quilava.txt
+    unset QUILAVA
+  fi
+
+  if [ "$QWILFISH" != "" ];
+  then
+    printf "$QWILFISH" > Qwilfish.txt
+    export CATFILE="Qwilfish.txt"
+    export CATNAME="Qwilfish"
+    $CATEGORIZE
+    rm Qwilfish.txt
+    unset QWILFISH
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Pokemon Q scripts\n"
+  fi
+
 fi
-
-if [ $Quilava -ne 0 ];
-then
-  export CATFILE="Quilava.txt"
-  export CATNAME="Quilava"
-  $CATEGORIZE
-fi
-
-if [ $Qwilfish -ne 0 ];
-then
-  export CATFILE="Qwilfish.txt"
-  export CATNAME="Qwilfish"
-  $CATEGORIZE
-fi
-
-
-rm Quagsire.txt
-rm Quilava.txt
-rm Qwilfish.txt

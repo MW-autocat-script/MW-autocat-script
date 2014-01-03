@@ -1,43 +1,66 @@
 #!/bin/bash
-egrep -i 'Igglybuff' newpages.txt >> Igglybuff.txt
-egrep -i 'Illumise' newpages.txt >> Illumise.txt
-egrep -i 'Infernape' newpages.txt >> Infernape.txt
-egrep -i 'Ivysaur' newpages.txt >> Ivysaur.txt
 
-Igglybuff=`stat --print=%s Igglybuff.txt`
-Illumise=`stat --print=%s Illumise.txt`
-Infernape=`stat --print=%s Infernape.txt`
-Ivysaur=`stat --print=%s Ivysaur.txt`
+KEYWORDS_IGGLYBUFF="Igglybuff"
+KEYWORDS_ILLUMISE="Illumise"
+KEYWORDS_INFERNAPE="Infernape"
+KEYWORDS_IVYSAUR="Ivysaur"
 
-if [ $Igglybuff -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-   export CATFILE="Igglybuff.txt"
-   export CATNAME="Igglybuff"
-   $CATEGORIZE
-fi
 
-if [ $Illumise -ne 0 ];
-then
-   export CATFILE="Illumise.txt"
-   export CATNAME="Illumise"
-   $CATEGORIZE
-fi
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Pokemon I script\n"
+  fi
 
-if [ $Infernape -ne 0 ];
-then
-   export CATFILE="Infernape.txt"
-   export CATNAME="Infernape"
-   $CATEGORIZE
-fi
+  IGGLYBUFF=`egrep -i "$KEYWORDS_IGGLYBUFF" newpages.txt`
+  ILLUMISE=`egrep -i "$KEYWORDS_ILLUMISE" newpages.txt`
+  INFERNAPE=`egrep -i "$KEYWORDS_INFERNAPE" newpages.txt`
+  IVYSAUR=`egrep -i "$KEYWORDS_IVYSAUR" newpages.txt`
 
-if [ $Ivysaur -ne 0 ];
-then
-   export CATFILE="Ivysaur.txt"
-   export CATNAME="Ivysaur"
-   $CATEGORIZE
-fi
+  if [ "$IGGLYBUFF" != "" ];
+  then
+    printf "$IGGLYBUFF" > Igglybuff.txt
+    export CATFILE="Igglybuff.txt"
+    export CATNAME="Igglybuff"
+    $CATEGORIZE
+    rm Igglybuff.txt
+    unset IGGLYBUFF
+  fi
 
-rm Igglybuff.txt
-rm Illumise.txt
-rm Infernape.txt
-rm Ivysaur.txt
+  if [ "$ILLUMISE" != "" ];
+  then
+    printf "$ILLUMISE" > Illumise.txt
+    export CATFILE="Illumise.txt"
+    export CATNAME="Illumise"
+    $CATEGORIZE
+    rm Illumise.txt
+    unset ILLUMISE
+  fi
+
+  if [ "$INFERNAPE" != "" ];
+  then
+    printf "$INFERNAPE" > Infernape.txt
+    export CATFILE="Infernape.txt"
+    export CATNAME="Infernape"
+    $CATEGORIZE
+    rm Infernape.txt
+    unset INFERNAPE
+  fi
+
+  if [ "$IVYSAUR" != "" ];
+  then
+    printf "$IVYSAUR" > Ivysaur.txt
+    export CATFILE="Ivysaur.txt"
+    export CATNAME="Ivysaur"
+    $CATEGORIZE
+    rm Ivysaur.txt
+    unset IVYSAUR
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Pokemon I script\n"
+  fi
+
+fi

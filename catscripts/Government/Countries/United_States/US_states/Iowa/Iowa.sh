@@ -1,14 +1,30 @@
 #!/bin/bash
 
-egrep -i '\bIowa' newpages.txt >> Iowa.txt
+KEYWORDS_IOWA="\bIowa"
 
-IOWA=`stat --print=%s Iowa.txt`
-
-if [ $IOWA -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Iowa.txt"
-  export CATNAME="Iowa"
-  $CATEGORIZE
-fi
 
-rm Iowa.txt
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Iowa\n"
+  fi
+
+  IOWA=`egrep -i "$KEYWORDS_IOWA" newpages.txt`
+
+  if [ "$IOWA" != "" ];
+  then
+    printf "$IOWA" > Iowa.txt
+    export CATFILE="Iowa.txt"
+    export CATNAME="Iowa"
+    $CATEGORIZE
+    rm Iowa.txt
+    unset IOWA
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Iowa\n"
+  fi
+
+fi

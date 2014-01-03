@@ -4,18 +4,27 @@ KEYWORDS_WINDOWSMEDIAPLAYER="Windows(| )Media(| )Player|\bWMP\b"
 
 if [ "$1" == "" ];
 then
-  
-  egrep -i "$KEYWORDS_WINDOWSMEDIAPLAYER" newpages.txt >> WindowsMediaPlayer.txt
 
-  WMP=`stat --print=%s WindowsMediaPlayer.txt`
-
-  if [ $WMP -ne 0 ];
+  if [ "$DEBUG" == "yes" ];
   then
+    printf "Starting Windows Media Player\n"
+  fi
+
+  WMP=`egrep -i "$KEYWORDS_WINDOWSMEDIAPLAYER" newpages.txt`
+
+  if [ "$WMP" != "" ];
+  then
+    printf "$WMP" > WindowsMediaPlayer.txt
     export CATFILE="WindowsMediaPlayer.txt"
     export CATNAME="Windows Media Player"
     $CATEGORIZE
+    rm WindowsMediaPlayer.txt
+    unset WMP
   fi
 
-  rm WindowsMediaPlayer.txt
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Windows Media Player\n"
+  fi
 
 fi

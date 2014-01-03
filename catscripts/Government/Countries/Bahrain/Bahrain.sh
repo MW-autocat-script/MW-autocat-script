@@ -1,14 +1,30 @@
 #!/bin/bash
 
-egrep -i 'Bahrain' newpages.txt >> Bahrain.txt
+KEYWORDS_BAHRAIN="Bahrain"
 
-BAHRAIN=`stat --print=%s Bahrain.txt`
-
-if [ $BAHRAIN -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Bahrain.txt"
-  export CATNAME="Bahrain"
-  $CATEGORIZE
-fi
 
-rm Bahrain.txt
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Bahrain\n"
+  fi
+
+  BAHRAIN=`egrep -i "$KEYWORDS_BAHRAIN" newpages.txt`
+
+  if [ "$BAHRAIN" != "" ];
+  then
+    printf "$BAHRAIN" > Bahrain.txt
+    export CATFILE="Bahrain.txt"
+    export CATNAME="Bahrain"
+    $CATEGORIZE
+    rm Bahrain.txt
+    unset BAHRAIN
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Bahrain\n"
+  fi
+
+fi

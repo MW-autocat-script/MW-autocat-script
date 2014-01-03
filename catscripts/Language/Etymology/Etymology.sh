@@ -1,26 +1,43 @@
 #!/bin/bash
 
-egrep -i 'etymology' newpages.txt >> Etymology.txt
-egrep -i 'Where (does|did) the (word|phrase|saying) .+ (originate|come from)' newpages.txt >> Etymology.txt
-egrep -i 'origin of the word [a-z]{1,}' newpages.txt >> Etymology.txt
-egrep -i 'Where (does|did) the (sur|)name [a-z]{1,} (originate|come from)' newpages.txt >> NameOrigins.txt
+KEYWORDS_ETYMOLOGY="etymology|etymological|Where(| )(does|did)(| )the(| )(word|phrase|saying).+(originate|come from)|origin(| )of(| )the(| )word(| )[a-z]{1,}"
+KEYWORDS_NAMEORIGINS="Where(| )(does|did)(| )the(| )(sur|)name(| )[a-z]{1,}(| )(originate|come(| )from)|What(| )is(| )the(| )origin(| )of(| )the(| )name(| )[a-z]{1,}|(etymology|etymological(| )origin)(| )of(| )the(| )(|sur)name"
 
-ETYMOLOGY=`stat --print=%s Etymology.txt`
-ORIGINS=`stat --print=%s NameOrigins.txt`
-
-if [ $ETYMOLOGY -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Etymology.txt"
-  export CATNAME="Etymology"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "" ];
+  then
+    printf "Starting Etymology\n"
+  fi
+    
 
-if [ $ORIGINS -ne 0 ];
-then
-  export CATFILE="NameOrigins.txt"
-  export CATNAME="Name origins"
-  $CATEGORIZE
-fi
+  ETYMOLOGY=`egrep -i "$KEYWORDS_ETYMOLOGY" newpages.txt | egrep -iv "$KEYWORDS_NAMEORIGINS"`
+  ORIGINS=`egrep -i "$KEYWORDS_NAMEORIGINS" newpages.txt`
 
-rm Etymology.txt
-rm NameOrigins.txt
+  if [ "$ETYMOLOGY" != "" ];
+  then
+    printf "$ETYMOLOGY" > Etymology.txt
+    export CATFILE="Etymology.txt"
+    export CATNAME="Etymology"
+    $CATEGORIZE
+    rm Etymology.txt
+    unset ETYMOLOGY
+  fi
+
+  if [ "$ORIGINS" != "" ];
+  then
+    printf "$ORIGINS" > NameOrigins.txt
+    export CATFILE="NameOrigins.txt"
+    export CATNAME="Name origins"
+    $CATEGORIZE
+    rm NameOrigins.txt
+    unset ORIGINS
+  fi
+
+  if [ "$DEBUG" == "" ];
+  then
+    printf "Finishing Etymology\n"
+  fi
+
+fi

@@ -1,14 +1,30 @@
 #!/bin/bash
 
-egrep -i 'Benin' newpages.txt >> Benin.txt
+KEYWORDS_BENIN="Benin"
 
-BENIN=`stat --print=%s Benin.txt`
-
-if [ $BENIN -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Benin.txt"
-  export CATNAME="Benin"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Benin\n"
+  fi
 
-rm Benin.txt
+  BENIN=`egrep -i "$KEYWORDS_BENIN" newpages.txt`
+
+  if [ "$BENIN" != "" ];
+  then
+    printf "$BENIN" > Benin.txt
+    export CATFILE="Benin.txt"
+    export CATNAME="Benin"
+    $CATEGORIZE
+    rm Benin.txt
+    unset BENIN
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Benin\n"
+  fi
+
+fi

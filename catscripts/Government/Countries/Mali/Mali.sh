@@ -1,14 +1,30 @@
 #!/bin/bash
 
-egrep -i 'Mali\b' newpages.txt >> Mali.txt
+KEYWORDS_MALI="Mali\b"
 
-MALI=`stat --print=%s Mali.txt`
-
-if [ $MALI -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Mali.txt"
-  export CATNAME="Mali"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Mali\n"
+  fi
 
-rm Mali.txt
+  MALI=`egrep -i "$KEYWORDS_MALI" newpages.txt`
+
+  if [ "$MALI" != "" ];
+  then
+    printf "$MALI" > Mali.txt
+    export CATFILE="Mali.txt"
+    export CATNAME="Mali"
+    $CATEGORIZE
+    rm Mali.txt
+    unset MALI
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Mali\n"
+  fi
+
+fi
