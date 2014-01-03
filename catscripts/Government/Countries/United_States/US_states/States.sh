@@ -27,6 +27,7 @@ $CURRENTDIR/Massachusetts/Massachusetts.sh
 $CURRENTDIR/Minnesota/Minnesota.sh
 $CURRENTDIR/Mississippi/Mississippi.sh
 $CURRENTDIR/Missouri/Missouri.sh
+$CURRENTDIR/Montana/Montana.sh
 $CURRENTDIR/Nebraska/Nebraska.sh
 $CURRENTDIR/Nevada/Nevada.sh
 $CURRENTDIR/New_Jersey/NewJersey.sh
