@@ -1,14 +1,27 @@
 #!/bin/bash
 
-egrep -i 'Wicca' newpages.txt >> Wicca.txt
+KEYWORDS_WICCA="Wicca"
 
-WICCA=`stat --print=%s Wicca.txt`
-
-if [ $WICCA -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Wicca.txt"
-  export CATNAME="Wicca"
-  $CATEGORIZE
-fi
 
-rm Wicca.txt
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Wicca\n"
+  fi
+
+  WICCA=`egrep -i "$KEYWORDS_WICCA" newpages.txt`
+
+  if [ "$WICCA" != "" ];
+  then
+    export CATFILE="Wicca.txt"
+    export CATNAME="Wicca"
+    $CATEGORIZE
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Wicca\n"
+  fi
+
+fi

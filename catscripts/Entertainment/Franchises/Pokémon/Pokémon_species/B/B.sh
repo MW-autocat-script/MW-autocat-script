@@ -40,353 +40,380 @@ KEYWORDS_POKEMONSPECIES_B="$KEYWORDS_BAGON|$KEYWORDS_BALTOY|$KEYWORDS_BANETTE|$K
 if [ "$1" == "" ]; #Normal operation
 then
 
-  egrep -i "$KEYWORDS_BAGON" newpages.txt >> Bagon.txt &
-  egrep -i "$KEYWORDS_BALTOY" newpages.txt >> Baltoy.txt &
-  egrep -i "$KEYWORDS_BANETTE" newpages.txt >> Banette.txt &
-  egrep -i "$KEYWORDS_BARBOACH" newpages.txt >> Barboach.txt &
-  egrep -i "$KEYWORDS_BASCULIN" newpages.txt >> Basculin.txt &
-  egrep -i "$KEYWORDS_BASTIODON" newpages.txt >> Bastiodon.txt &
-  egrep -i "$KEYWORDS_BAYLEEF" newpages.txt >> Bayleef.txt &
-  egrep -i "$KEYWORDS_BEARTIC" newpages.txt >> Beartic.txt &
-  egrep -i "$KEYWORDS_BEAUTIFLY" newpages.txt >> Beautifly.txt &
-  egrep -i "$KEYWORDS_BEEDRILL" newpages.txt >> Beedrill.txt &
-  egrep -i "$KEYWORDS_BEHEEYEM" newpages.txt >> Beheeyem.txt &
-  egrep -i "$KEYWORDS_BELDUM" newpages.txt >> Beldum.txt &
-  egrep -i "$KEYWORDS_BELLOSSOM" newpages.txt >> Bellossom.txt &
-  egrep -i "$KEYWORDS_BELLSPROUT" newpages.txt >> Bellsprout.txt &
-  egrep -i "$KEYWORDS_BIBAREL" newpages.txt >> Bibarel.txt &
-  egrep -i "$KEYWORDS_BIDOOF" newpages.txt >> Bidoof.txt &
-  egrep -i "$KEYWORDS_BISHARP" newpages.txt >> Bisharp.txt &
-  egrep -i "$KEYWORDS_BLASTOISE" newpages.txt >> Blastoise.txt &
-  egrep -i "$KEYWORDS_BLAZIKEN" newpages.txt >> Blaziken.txt &
-  egrep -i "$KEYWORDS_BLISSEY" newpages.txt >> Blissey.txt &
-  egrep -i "$KEYWORDS_BLITZLE" newpages.txt >> Blitzle.txt &
-  egrep -i "$KEYWORDS_BOLDORE" newpages.txt >> Boldore.txt &
-  egrep -i "$KEYWORDS_BONSLY" newpages.txt >> Bonsly.txt &
-  egrep -i "$KEYWORDS_BOUFFALANT" newpages.txt >> Bouffalant.txt &
-  egrep -i "$KEYWORDS_BRAVIARY" newpages.txt >> Braviary.txt &
-  egrep -i "$KEYWORDS_BRELOOM" newpages.txt >> Breloom.txt &
-  egrep -i "$KEYWORDS_BRONZONG" newpages.txt >> Bronzong.txt &
-  egrep -i "$KEYWORDS_BRONZOR" newpages.txt >> Bronzor.txt &
-  egrep -i "$KEYWORDS_BUDEW" newpages.txt >> Budew.txt &
-  egrep -i "$KEYWORDS_BUIZEL" newpages.txt >> Buizel.txt &
-  egrep -i "$KEYWORDS_BULBASAUR" newpages.txt >> Bulbasaur.txt &
-  egrep -i "$KEYWORDS_BUNEARY" newpages.txt >> Buneary.txt &
-  egrep -i "$KEYWORDS_BURMY" newpages.txt >> Burmy.txt &
-  egrep -i "$KEYWORDS_BUTTERFREE" newpages.txt >> Butterfree.txt &
-
-  wait
-
-  BAGON=`stat --print=%s Bagon.txt`
-  BALTOY=`stat --print=%s Baltoy.txt`
-  BANETTE=`stat --print=%s Banette.txt`
-  BARBOACH=`stat --print=%s Barboach.txt`
-  BASCULIN=`stat --print=%s Basculin.txt`
-  BASTIODON=`stat --print=%s Bastiodon.txt`
-  BAYLEEF=`stat --print=%s Bayleef.txt`
-  BEARTIC=`stat --print=%s Beartic.txt`
-  BEAUTIFLY=`stat --print=%s Beautifly.txt`
-  BEEDRILL=`stat --print=%s Beedrill.txt`
-  BEHEYEM=`stat --print=%s Beheeyem.txt`
-  BELDUM=`stat --print=%s Beldum.txt`
-  BELLOSSOM=`stat --print=%s Bellossom.txt`
-  BELLSPROUT=`stat --print=%s Bellsprout.txt`
-  BIBAREL=`stat --print=%s Bibarel.txt`
-  BIDOOF=`stat --print=%s Bidoof.txt`
-  BISHARP=`stat --print=%s Bisharp.txt`
-  BLASTOISE=`stat --print=%s Blastoise.txt`
-  BLAZIKEN=`stat --print=%s Blaziken.txt`
-  BLISSEY=`stat --print=%s Blissey.txt`
-  BLITZLE=`stat --print=%s Blitzle.txt`
-  BOLDORE=`stat --print=%s Boldore.txt`
-  BONSLY=`stat --print=%s Bonsly.txt`
-  BOUFFALANT=`stat --print=%s Bouffalant.txt`
-  BRAVIARY=`stat --print=%s Braviary.txt`
-  BRELOOM=`stat --print=%s Breloom.txt`
-  BRONZONG=`stat --print=%s Bronzong.txt`
-  BRONZOR=`stat --print=%s Bronzor.txt`
-  BUDEW=`stat --print=%s Budew.txt`
-  BUIZEL=`stat --print=%s Buizel.txt`
-  BULBASAUR=`stat --print=%s Bulbasaur.txt`
-  BUNEARY=`stat --print=%s Buneary.txt`
-  BURMY=`stat --print=%s Burmy.txt`
-  BUTTERFREE=`stat --print=%s Butterfree.txt`
+  BAGON=`egrep -i "$KEYWORDS_BAGON" newpages.txt`
+  BALTOY=`egrep -i "$KEYWORDS_BALTOY" newpages.txt`
+  BANETTE=`egrep -i "$KEYWORDS_BANETTE" newpages.txt`
+  BARBOACH=`egrep -i "$KEYWORDS_BARBOACH" newpages.txt`
+  BASCULIN=`egrep -i "$KEYWORDS_BASCULIN" newpages.txt`
+  BASTIODON=`egrep -i "$KEYWORDS_BASTIODON" newpages.txt`
+  BAYLEEF=`egrep -i "$KEYWORDS_BAYLEEF" newpages.txt`
+  BEARTIC=`egrep -i "$KEYWORDS_BEARTIC" newpages.txt`
+  BEAUTIFLY=`egrep -i "$KEYWORDS_BEAUTIFLY" newpages.txt`
+  BEEDRILL=`egrep -i "$KEYWORDS_BEEDRILL" newpages.txt`
+  BEHEEYEM=`egrep -i "$KEYWORDS_BEHEEYEM" newpages.txt`
+  BELDUM=`egrep -i "$KEYWORDS_BELDUM" newpages.txt`
+  BELLOSSOM=`egrep -i "$KEYWORDS_BELLOSSOM" newpages.txt`
+  BELLSPROUT=`egrep -i "$KEYWORDS_BELLSPROUT" newpages.txt`
+  BIBAREL=`egrep -i "$KEYWORDS_BIBAREL" newpages.txt`
+  BIDOOF=`egrep -i "$KEYWORDS_BIDOOF" newpages.txt`
+  BISHARP=`egrep -i "$KEYWORDS_BISHARP" newpages.txt`
+  BLASTOISE=`egrep -i "$KEYWORDS_BLASTOISE" newpages.txt`
+  BLAZIKEN=`egrep -i "$KEYWORDS_BLAZIKEN" newpages.txt`
+  BLISSEY=`egrep -i "$KEYWORDS_BLISSEY" newpages.txt`
+  BLITZLE=`egrep -i "$KEYWORDS_BLITZLE" newpages.txt`
+  BOLDORE=`egrep -i "$KEYWORDS_BOLDORE" newpages.txt`
+  BONSLY=`egrep -i "$KEYWORDS_BONSLY" newpages.txt`
+  BOUFFALANT=`egrep -i "$KEYWORDS_BOUFFALANT" newpages.txt`
+  BRAVIARY=`egrep -i "$KEYWORDS_BRAVIARY" newpages.txt`
+  BRELOOM=`egrep -i "$KEYWORDS_BRELOOM" newpages.txt`
+  BRONZONG=`egrep -i "$KEYWORDS_BRONZONG" newpages.txt`
+  BRONZOR=`egrep -i "$KEYWORDS_BRONZOR" newpages.txt`
+  BUDEW=`egrep -i "$KEYWORDS_BUDEW" newpages.txt`
+  BUIZEL=`egrep -i "$KEYWORDS_BUIZEL" newpages.txt`
+  BULBASAUR=`egrep -i "$KEYWORDS_BULBASAUR" newpages.txt`
+  BUNEARY=`egrep -i "$KEYWORDS_BUNEARY" newpages.txt`
+  BURMY=`egrep -i "$KEYWORDS_BURMY" newpages.txt`
+  BUTTERFREE=`egrep -i "$KEYWORDS_BUTTERFREE" newpages.txt`
 
 
-  if [ $BAGON -ne 0 ];
+  if [ "$BAGON" != "" ];
   then
+    printf "$BAGON" > Bagon.txt
     export CATFILE="Bagon.txt"
     export CATNAME="Bagon"
     $CATEGORIZE
+    rm Bagon.txt
+    unset BAGON
   fi
 
-  if [ $BALTOY -ne 0 ];
+  if [ "$BALTOY" != "" ];
   then
+    printf "$BALTOY" > Baltoy.txt
     export CATFILE="Baltoy.txt"
     export CATNAME="Baltoy"
     $CATEGORIZE
+    rm Baltoy.txt
+    unset BALTOY
   fi
 
-  if [ $BANETTE -ne 0 ];
+  if [ "$BANETTE" != "" ];
   then
+    printf "$BANETTE" > Banette.txt
     export CATFILE="Banette.txt"
     export CATNAME="Banette"
     $CATEGORIZE
+    rm Banette.txt
+    unset BANETTE
   fi
 
-  if [ $BARBOACH -ne 0 ];
+  if [ "$BARBOACH" != "" ];
   then
+    printf "$BARBOACH" > Barboach.txt
     export CATFILE="Barboach.txt"
     export CATNAME="Barboach"
     $CATEGORIZE
+    rm Barboach.txt
+    unset BARBOACH
   fi
 
-  if [ $BASCULIN -ne 0 ];
+  if [ "$BASCULIN" != "" ];
   then
+    printf "$BASCULIN" > Basculin.txt
     export CATFILE="Basculin.txt"
     export CATNAME="Basculin"
     $CATEGORIZE
+    rm Basculin.txt
+    unset BASCULIN
   fi
 
-  if [ $BASTIODON -ne 0 ];
+  if [ "$BASTIODON" != "" ];
   then
+    printf "$BASTIODON" > Bastiodon.txt
     export CATFILE="Bastiodon.txt"
     export CATNAME="Bastiodon"
     $CATEGORIZE
+    rm Bastiodon.txt
+    unset BASTIODON
   fi
 
-  if [ $BAYLEEF -ne 0 ];
+  if [ "$BAYLEEF" != "" ];
   then
+    printf "$BAYLEEF" > Bayleef.txt
     export CATFILE="Bayleef.txt"
     export CATNAME="Bayleef"
     $CATEGORIZE
+    rm Bayleef.txt
+    unset BAYLEEF
   fi
 
-  if [ $BEARTIC -ne 0 ];
+  if [ "$BEARTIC" != "" ];
   then
+    printf "$BEARTIC" > Beartic.txt
     export CATFILE="Beartic.txt"
     export CATNAME="Beartic"
     $CATEGORIZE
+    rm Beartic.txt
+    unset BEARTIC
   fi
 
-  if [ $BEAUTIFLY -ne 0 ];
+  if [ "$BEAUTIFLY" != "" ];
   then
+    printf "$BEAUTIFLY" > Beautifly.txt
     export CATFILE="Beautifly.txt"
     export CATNAME="Beautifly"
     $CATEGORIZE
+    rm Beautifly.txt
+    unset BEAUTIFLY
   fi
 
-  if [ $BEEDRILL -ne 0 ];
+  if [ "$BEEDRILL" != "" ];
   then
+    printf "$BEEDRILL" > Beedrill.txt
     export CATFILE="Beedrill.txt"
     export CATNAME="Beedrill"
     $CATEGORIZE
+    rm Beedrill.txt
+    unset BEEDRILL
   fi
 
-  if [ $BEHEYEM -ne 0 ];
+  if [ "$BEHEEYEM" != "" ];
   then
+    printf "$BEHEEYEM" > Beheeyem.txt
     export CATFILE="Beheeyem.txt"
     export CATNAME="Beheeyem"
     $CATEGORIZE
+    rm Beheeyem.txt
+    unset BEHEEYEM
   fi
 
-  if [ $BELDUM -ne 0 ];
+  if [ "$BELDUM" != "" ];
   then
+    printf "$BELDUM" > Beldum.txt
     export CATFILE="Beldum.txt"
     export CATNAME="Beldum"
     $CATEGORIZE
+    rm Beldum.txt
+    unset BELDUM
   fi
 
-  if [ $BELLOSSOM -ne 0 ];
+  if [ "$BELLOSSOM" != "" ];
   then
+    printf "$BELLOSSOM" > Bellossom.txt
     export CATFILE="Bellossom.txt"
     export CATNAME="Bellossom"
     $CATEGORIZE
+    rm Bellossom.txt
+    unset BELLOSSOM
   fi
 
-  if [ $BELLSPROUT -ne 0 ];
+  if [ "$BELLSPROUT" != "" ];
   then
+    printf "$BELLSPROUT" > Bellsprout.txt
     export CATFILE="Bellsprout.txt"
     export CATNAME="Bellsprout"
     $CATEGORIZE
+    rm Bellsprout.txt
+    unset BELLSPROUT
   fi
 
-  if [ $BIBAREL -ne 0 ];
+  if [ "$BIBAREL" != "" ];
   then
+    printf "$BIBAREL" > Bibarel.txt
     export CATFILE="Bibarel.txt"
     export CATNAME="Bibarel"
     $CATEGORIZE
+    rm Bibarel.txt
+    unset BIBAREL
   fi
 
-  if [ $BIDOOF -ne 0 ];
+  if [ "$BIDOOF" != "" ];
   then
+    printf "$BIDOOF" > Bidoof.txt
     export CATFILE="Bidoof.txt"
     export CATNAME="Bidoof"
     $CATEGORIZE
+    rm Bidoof.txt
+    unset BIDOOF
   fi
 
-  if [ $BISHARP -ne 0 ];
+  if [ "$BISHARP" != "" ];
   then
+    printf "$BISHARP" > Bisharp.txt
     export CATFILE="Bisharp.txt"
     export CATNAME="Bisharp"
     $CATEGORIZE
+    rm Bisharp.txt
+    unset BISHARP
   fi
 
-  if [ $BLASTOISE -ne 0 ];
+  if [ "$BLASTOISE" != "" ];
   then
+    printf "$BLASTOISE" > Blastoise.txt
     export CATFILE="Blastoise.txt"
     export CATNAME="Blastoise"
     $CATEGORIZE
+    rm Blastoise.txt
+    unset BLASTOISE
   fi
 
-  if [ $BLAZIKEN -ne 0 ];
+  if [ "$BLAZIKEN" != "" ];
   then
+    printf "$BLAZIKEN" > Blaziken.txt
     export CATFILE="Blaziken.txt"
     export CATNAME="Blaziken"
     $CATEGORIZE
+    rm Blaziken.txt
+    unset BLAZIKEN
   fi
 
-  if [ $BLISSEY -ne 0 ];
+  if [ "$BLISSEY" != "" ];
   then
+    printf "$BLISSEY" > Blissey.txt
     export CATFILE="Blissey.txt"
     export CATNAME="Blissey"
     $CATEGORIZE
+    rm Blissey.txt
+    unset BLISSEY
   fi
 
-  if [ $BLITZLE -ne 0 ];
+  if [ "$BLITZLE" != "" ];
   then
+    printf "$BLITZLE" > Blitzle.txt
     export CATFILE="Blitzle.txt"
     export CATNAME="Blitzle"
     $CATEGORIZE
+    rm Blitzle.txt
+    unset BLITZLE
   fi
 
-  if [ $BOLDORE -ne 0 ];
+  if [ "$BOLDORE" != "" ];
   then
+    printf "$BOLDORE" > Boldore.txt
     export CATFILE="Boldore.txt"
     export CATNAME="Boldore"
     $CATEGORIZE
+    rm Boldore.txt
+    unset BOLDORE
   fi
 
-  if [ $BONSLY -ne 0 ];
+  if [ "$BONSLY" != "" ];
   then
+    printf "$BONSLY" > Bonsly.txt
     export CATFILE="Bonsly.txt"
     export CATNAME="Bonsly"
     $CATEGORIZE
+    rm Bonsly.txt
+    unset BONSLY
   fi
 
-  if [ $BOUFFALANT -ne 0 ];
+  if [ "$BOUFFALANT" != "" ];
   then
+    printf "$BOUFFALANT" > Bouffalant.txt
     export CATFILE="Bouffalant.txt"
     export CATNAME="Bouffalant"
     $CATEGORIZE
+    rm Bouffalant.txt
+    unset BOUFFALANT
   fi
 
-  if [ $BRAVIARY -ne 0 ];
+  if [ "$BRAVIARY" != "" ];
   then
+    printf "$BRAVIARY" > Braviary.txt
     export CATFILE="Braviary.txt"
     export CATNAME="Braviary"
     $CATEGORIZE
+    rm Braviary.txt
+    unset BRAVIARY
   fi
 
-  if [ $BRELOOM -ne 0 ];
+  if [ "$BRELOOM" != "" ];
   then
+    printf "$BRELOOM" > Breloom.txt
     export CATFILE="Breloom.txt"
     export CATNAME="Breloom"
     $CATEGORIZE
+    rm Breloom.txt
+    unset BRELOOM
   fi
 
-  if [ $BRONZONG -ne 0 ];
+  if [ "$BRONZONG" != "" ];
   then
+    printf "$BRONZONG" > Bronzong.txt
     export CATFILE="Bronzong.txt"
     export CATNAME=""
     $CATEGORIZE
+    rm Bronzong.txt
+    unset BRONZONG
   fi
 
-  if [ $BRONZOR -ne 0 ];
+  if [ "$BRONZOR" != "" ];
   then
+    printf "$BRONZOR" > Bronzor.txt
     export CATFILE="Bronzor.txt"
     export CATNAME="Bronzor"
     $CATEGORIZE
+    rm Bronzor.txt
+    unset BRONZOR
   fi
 
-  if [ $BUDEW -ne 0 ];
+  if [ "$BUDEW" != "" ];
   then
+    printf "$BUDEW" > Budew.txt
     export CATFILE="Budew.txt"
     export CATNAME="Budew"
     $CATEGORIZE
+    rm Budew.txt
+    unset BUDEW
   fi
 
-  if [ $BUIZEL -ne 0 ];
+  if [ "$BUIZEL" != "" ];
   then
+    printf "$BUIZEL" > Buizel.txt
     export CATFILE="Buizel.txt"
     export CATNAME="Buizel"
     $CATEGORIZE
+    rm Buizel.txt
+    unset BUIZEL
   fi
 
-  if [ $BULBASAUR -ne 0 ];
+  if [ "$BULBASAUR" != "" ];
   then
+    printf "$BULBASAUR" > Bulbasaur.txt
     export CATFILE="Bulbasaur.txt"
     export CATNAME="Bulbasaur"
     $CATEGORIZE
+    rm Bulbasaur.txt
+    unset BULBASAUR
   fi
 
-  if [ $BUNEARY -ne 0 ];
+  if [ "$BUNEARY" != "" ];
   then
+    printf "$BUNEARY" > Buneary.txt
     export CATFILE="Buneary.txt"
     export CATNAME="Buneary"
     $CATEGORIZE
+    rm Buneary.txt
+    unset BUNEARY
   fi
 
-  if [ $BURMY -ne 0 ];
+  if [ "$BURMY" != "" ];
   then
+    printf "$BURMY" > Burmy.txt
     export CATFILE="Burmy.txt"
     export CATNAME="Burmy"
     $CATEGORIZE
+    rm Burmy.txt
+    unset BURMY
   fi
 
-  if [ $BUTTERFREE -ne 0 ];
+  if [ "$BUTTERFREE" != "" ];
   then
+    printf "$BUTTERFREE" > Butterfree.txt
     export CATFILE="Butterfree.txt"
     export CATNAME="Butterfree"
     $CATEGORIZE
+    rm Butterfree.txt
+    unset BUTTERFREE
   fi
-
-
-  rm Bagon.txt &
-  rm Baltoy.txt &
-  rm Banette.txt &
-  rm Barboach.txt &
-  rm Basculin.txt &
-  rm Bastiodon.txt &
-  rm Bayleef.txt &
-  rm Beartic.txt &
-  rm Beautifly.txt &
-  rm Beedrill.txt &
-  rm Beheeyem.txt &
-  rm Beldum.txt &
-  rm Bellossom.txt &
-  rm Bellsprout.txt &
-  rm Bibarel.txt &
-  rm Bidoof.txt &
-  rm Bisharp.txt &
-  rm Blastoise.txt &
-  rm Blaziken.txt &
-  rm Blissey.txt &
-  rm Blitzle.txt &
-  rm Boldore.txt &
-  rm Bonsly.txt &
-  rm Bouffalant.txt &
-  rm Braviary.txt &
-  rm Breloom.txt &
-  rm Bronzong.txt &
-  rm Bronzor.txt &
-  rm Budew.txt &
-  rm Buizel.txt &
-  rm Bulbasaur.txt &
-  rm Buneary.txt &
-  rm Burmy.txt &
-  rm Butterfree.txt &
-
-  wait
 
 fi

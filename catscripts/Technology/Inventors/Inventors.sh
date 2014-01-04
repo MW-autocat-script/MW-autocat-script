@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_INVENTORS="Invent(e|o)r"
+KEYWORDS_INVENTORS="Invent(e|o)r(|s)\b"
 KEYWORDS_INVENTORS_OTHER="Ralph(| )(|H(\.|))(| )Baer|Louis(| )Braille" #These are inventors who are notable enough to have Wikipedia articles but do not yet have enough questions about them to warrant their own category
 KEYWORDS_BABBAGE="Babbage"
 KEYWORDS_BENZ="Karl Benz"

@@ -1,14 +1,30 @@
 #!/bin/bash
 
-egrep -i 'Nepal' newpages.txt >> Nepal.txt
+KEYWORDS_NEPAL="Nepal"
 
-NEPAL=`stat --print=%s Nepal.txt`
-
-if [ $NEPAL -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Nepal.txt"
-  export CATNAME="Nepal"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Nepal\n"
+  fi
 
-rm Nepal.txt
+  NEPAL=`egrep -i "$KEYWORDS_NEPAL" newpages.txt`
+
+  if [ "$NEPAL" != "" ];
+  then
+    printf "$NEPAL" > Nepal.txt
+    export CATFILE="Nepal.txt"
+    export CATNAME="Nepal"
+    $CATEGORIZE
+    rm Nepal.txt
+    unset NEPAL
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Nepal\n"
+  fi
+
+fi

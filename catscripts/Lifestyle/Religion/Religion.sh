@@ -5,7 +5,22 @@ then
   printf "Starting Religion\n" 
 fi
 
-egrep -i 'religion|religious' newpages.txt | egrep -iv 'Jesus|Christ|Jew|Judaism|Mormon|Catholic|Orthodox|Shinto|Sikh|god|buddhism|buddhist|hindu|jain(|s|ism)\b|islam|Muslim|Prophet (Muhammed|Muhammad)|Scientology|Wicca' >> Religion.txt
+
+RELIGIONDIR="./catscripts/Lifestyle/Religion"
+
+. $RELIGIONDIR/Buddhism/Buddhism.sh
+. $RELIGIONDIR/Christianity/Christianity.sh #KEYWORDS_CHRISTIANITY_ALL
+. $RELIGIONDIR/Hinduism/Hinduism.sh
+. $RELIGIONDIR/Islam/Islam.sh
+. $RELIGIONDIR/Jainism/Jainism.sh
+. $RELIGIONDIR/Judaism/Judaism.sh
+. $RELIGIONDIR/Scientology/Scientology.sh
+. $RELIGIONDIR/Sikhism/Sikhism.sh
+. $RELIGIONDIR/The_Bible/TheBible.sh
+. $RELIGIONDIR/Wicca/Wicca.sh #KEYWORDS_WICCA
+
+
+egrep -i 'religion|religious' newpages.txt | egrep -iv "$KEYWORDS_CHRISTIANITY_ALL|Shinto|Sikh|god|buddhism|buddhist|hindu|jain(|s|ism)\b|islam|Muslim|Prophet (Muhammed|Muhammad)|Scientology|$KEYWORDS_WICCA" >> Religion.txt
 
 RELIGION=`stat --print=%s Religion.txt`
 
@@ -17,19 +32,6 @@ then
 fi
 
 rm Religion.txt
-
-CURRENTDIR="./catscripts/Lifestyle/Religion"
-
-. $CURRENTDIR/Buddhism/Buddhism.sh
-. $CURRENTDIR/Christianity/Christianity.sh
-. $CURRENTDIR/Hinduism/Hinduism.sh
-. $CURRENTDIR/Islam/Islam.sh
-. $CURRENTDIR/Jainism/Jainism.sh
-. $CURRENTDIR/Judaism/Judaism.sh
-. $CURRENTDIR/Scientology/Scientology.sh
-. $CURRENTDIR/Sikhism/Sikhism.sh
-. $CURRENTDIR/The_Bible/TheBible.sh
-. $CURRENTDIR/Wicca/Wicca.sh
 
 if [ "$DEBUG" == "yes" ];
 then
