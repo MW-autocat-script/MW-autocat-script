@@ -1,445 +1,574 @@
 #!/bin/bash
 
-egrep -i 'George Washington|President Washington' newpages.txt | egrep -iv 'George Washington Carver' >> GeorgeWashington.txt
-egrep -i 'John Adams' newpages.txt >> JohnAdams.txt
-egrep -i 'Thomas Jefferson|Jefforsonian|Monticello|President Jefferson' newpages.txt >> ThomasJefferson.txt
-egrep -i 'James Madison|President Madison' newpages.txt >> JamesMadison.txt
-egrep -i 'James Monroe|President Monroe' newpages.txt >> JamesMonroe.txt
-egrep -i 'John Q(|\.|uincy) Adams' newpages.txt >> JohnQuincyAdams.txt
-egrep -i 'Andrew Jackson|President Jackson' newpages.txt >> AndrewJackson.txt
-egrep -i 'Martin Van Buren|President Buren|President Van Buren' newpages.txt >> MartinVanBuren.txt
-egrep -i 'William H(|\.|enry) Harrison' newpages.txt >> WilliamHenryHarrison.txt
-egrep -i 'John Tyler|President Tyler' newpages.txt >> JohnTyler.txt
-egrep -i 'James(| K(|\.|nox)) Polk|President Polk' newpages.txt >> JamesKPolk.txt
-egrep -i 'Zachary Taylor|President Taylor' newpages.txt >> ZacharyTaylor.txt
-egrep -i 'Fillmore' newpages.txt >> MillardFillmore.txt
-egrep -i 'Franklin Pierce|President Pierce' newpages.txt >> FranklinPierce.txt
-egrep -i 'James Buchanan|President Buchanan' newpages.txt >> JamesBuchanan.txt
-egrep -i '(Abraham|Abe) Lincoln|President Lincoln' newpages.txt >> AbrahamLincoln.txt
-egrep -i 'Andrew Johnson' newpages.txt >> AndrewJohnson.txt
-egrep -i 'Ulysses(| S(|\.|impson)) Grant|President Grant' newpages.txt >> UlyssesSGrant.txt
-egrep -i 'Rutherford(| B(|\.|irchard)) Hayes|President Hayes' newpages.txt >> RutherfordBHayes.txt
-egrep -i 'James(| A(|\.|bram)) Garfield|President Garfield' newpages.txt >> JamesAGarfield.txt
-egrep -i 'Chester(| A(|\.|lan)) Arthur|President Arthur' newpages.txt >> ChesterAArthur.txt
-egrep -i '(President|Grover) Cleveland' newpages.txt >> GroverCleveland.txt
-egrep -i 'Benjamin Harrison' newpages.txt >> BenjaminHarrison.txt
-egrep -i '(William|President) McKinley' newpages.txt >> WilliamMcKinley.txt
-egrep -i '(Theodore|Teddy) Roosevelt' newpages.txt >> TheodoreRoosevelt.txt
-egrep -i 'Taft' newpages.txt >> WilliamHowardTaft.txt #Would anything that mentions Taft NOT be about him?
-egrep -i 'Woodrow Wilson|President Wilson' newpages.txt >> WoodrowWilson.txt
-egrep -i 'Warren(| G(|\.|amaliel)) Harding|President Harding' newpages.txt >> WarrenGHarding.txt
-egrep -i 'Coolidge' newpages.txt >> CalvinCoolidge.txt
-egrep -i 'Herbert(| C(|\.|lark)) Hoover|President Hoover' newpages.txt >> HerbertHoover.txt
-egrep -i 'Franklin(| D(|\.|elano)) Roosevelt|\bFDR\b' newpages.txt >> FranklinDelanoRoosevelt.txt
-egrep -i 'Harry(| S(|\.)) Truman|President Truman' newpages.txt >> HarrySTruman.txt
-egrep -i 'Eisenhower' newpages.txt >> DwightDEisenhower.txt
-egrep -i 'John(| F(|\.|itzgerald)) Kennedy|\bJFK\b' newpages.txt >> JohnFKennedy.txt
-egrep -i 'Lyndon(| B(|\.|aines)) Johnson|\bLBJ\b' newpages.txt >> LyndonBJohnson.txt
-egrep -i 'Richard(| M(|\.|ilhous)) Nixon|President Nixon|Tricky Dick' newpages.txt >> RichardMNixon.txt
-egrep -i 'Gerald(| R(|\.|udolph)) Ford|President Ford' newpages.txt >> GeraldFord.txt
-egrep -i '(James|Jimmy|President)(| E(|\.|arl)) Carter' newpages.txt >> JimmyCarter.txt
-egrep -i 'Ronald(| W(|\.|ilson)) Reagan|President Reagan' newpages.txt >> RonaldReagan.txt
-egrep -i 'George H(|\.|erbert) W(|\.|alker) Bush' newpages.txt >> GeorgeHWBush.txt
-egrep -i '(William|Bill)(| Jefferson) Clinton|President Clinton' newpages.txt >> BillClinton.txt
-egrep -i 'George W(|\.|alker) Bush' newpages.txt >> GeorgeWBush.txt
-egrep -i 'Barack.+Obama|President Obama' newpages.txt >> BarackObama.txt
-egrep -i 'Obama' newpages.txt | egrep -iv 'Michel(|l)e Obama' >> BarackObama.txt
-egrep -i 'president of the US|President of the U(|\.)S(|\.)|President of the United States|American president|U(|\.)S(|\.) president' newpages.txt | egrep -iv 'George Washington|President Washington' | egrep -iv 'George Washington Carver'| egrep -iv 'John Adams'| egrep -iv 'Thomas Jefferson|Jefforsonian|Monticello|President Jefferson'| egrep -iv 'James Madison|President Madison'| egrep -iv 'James Monroe|President Monroe'| egrep -iv 'John Q(|\.|uincy) Adams'| egrep -iv 'Andrew Jackson|President Jackson'| egrep -iv 'Martin Van Buren|President Buren|President Van Buren'| egrep -iv 'William H(|\.|enry) Harrison' | egrep -iv 'John Tyler|President Tyler'| egrep -iv 'James(| K(|\.|nox)) Polk|President Polk'| egrep -iv 'Zachary Taylor|President Taylor'| egrep -iv 'Fillmore'| egrep -iv 'Franklin Pierce|President Pierce'| egrep -iv 'James Buchanan|President Buchanan'| egrep -iv '(Abraham|Abe) Lincoln|President Lincoln'| egrep -iv 'Andrew Johnson'| egrep -iv 'Ulysses(| S(|\.|impson)) Grant|President Grant'| egrep -iv 'Rutherford(| B(|\.|irchard)) Hayes|President Hayes' | egrep -iv 'James(| A(|\.|bram)) Garfield|President Garfield' | egrep -iv 'Chester(| A(|\.|lan)) Arthur|President Arthur'| egrep -iv '(President|Grover) Cleveland'| egrep -iv 'Benjamin Harrison'| egrep -iv '(William|President) McKinley'| egrep -iv '(Theodore|Teddy) Roosevelt'| egrep -iv 'Taft'| egrep -iv 'Woodrow Wilson|President Wilson'| egrep -iv 'Warren(| G(|\.|amaliel)) Harding|President Harding'| egrep -iv 'Coolidge'| egrep -iv 'Herbert(| C(|\.|lark)) Hoover|President Hoover'| egrep -iv 'Franklin(| D(|\.|elano)) Roosevelt|\bFDR\b'| egrep -iv 'Harry(| S(|\.)) Truman|President Truman'| egrep -iv 'Eisenhower'| egrep -iv 'John(| F(|\.|itzgerald)) Kennedy|\bJFK\b'| egrep -iv 'Lyndon(| B(|\.|aines)) Johnson|\bLBJ\b'| egrep -iv 'Richard(| M(|\.|ilhous)) Nixon|President Nixon|Tricky Dick'| egrep -iv 'Gerald(| R(|\.|udolph)) Ford|President Ford'| egrep -iv '(James|Jimmy|President)(| E(|\.|arl)) Carter'| egrep -iv 'Ronald(| W(|\.|ilson)) Reagan|President Reagan'| egrep -iv 'George H(|\.|erbert) W(|\.|alker) Bush'| egrep -iv '(William|Bill)(| Jefferson) Clinton|President Clinton'| egrep -iv 'George W(|\.|alker) Bush'| egrep -iv 'Obama' >> President.txt
+KEYWORDS_USPRESIDENT="president(| )of(| )the(| )(U(|\.)S(|\.)|United(| )States)|(United(| )States|U(|\.)S(|\.))(| )president|\bPOTUS|American(| )president"
+KEYWORDS_GEORGEWASHINGTON="(George|General|President)(| )Washington"
+KEYWORDS_GEORGEWASHINGTON_EXCLUDE="George(| )Washington(| )Carver"
+KEYWORDS_JOHNADAMS="John(| )Adams"
+KEYWORDS_THOMASJEFFERSON="(Thomas|President)(| )Jefferson|Jeffersonian|Monticello"
+KEYWORDS_JAMESMADISON="(James|President)(| )Madison"
+KEYWORDS_JAMESMONROE="(James|President)(| )Monroe"
+KEYWORDS_JOHNQUINCYADAMS="John(| )Q(\.|uincy| )(| )Adams"
+KEYWORDS_ANDREWJACKSON="(Andrew|President)(| )Jackson"
+KEYWORDS_MARTINVANBUREN="(President|Martin)(| )(|Van)(| )Buren"
+KEYWORDS_WILLIAMHHARRISON="William(| )H(|\.|enry)(| )Harrison"
+KEYWORDS_JOHNTYLER="(President|John)(| )Tyler"
+KEYWORDS_JAMESKPOLK="(James|President)(| )(K(\.|nox|)|)(| )Polk"
+KEYWORDS_ZACHARYTAYLOR="(Zachary|President)(| )Taylor"
+KEYWORDS_MILLARDFILLMORE="Fillmore"
+KEYWORDS_FRANKLINPIERCE="(President|Franklin)(| )Pierce"
+KEYWORDS_JAMESBUCHANAN="(President|James)(| )Buchanan"
+KEYWORDS_ABRAHAMLINCOLN="(President|Abe|Abraham)(| )Lincoln|Honest(| )Abe"
+KEYWORDS_ANDREWJOHNSON="Andrew(| )Johnson" #There were two "President Johnsons", so not used here
+KEYWORDS_ULYSSESSGRANT="(Ulysses|President)(| )(S(\.|impson|)|)(| )Grant"
+KEYWORDS_RUTHERFORDBHAYES="(Rutherford|President)(| )(B(\.|irchard|)|)(| )Hayes"
+KEYWORDS_JAMESGARFIELD="(President|James)(| )(A(\.|bram|)|)(| )Garfield"
+KEYWORDS_CHESTERAARTHUR="(President|Chester)(| )(A(\.|lan|)|)(| )Arthur"
+KEYWORDS_GROVERCLEVELAND="(President|Grover)(| )Cleveland"
+KEYWORDS_BENJAMINHARRISON="Benjamin(| )Harrison"
+KEYWORDS_WILLIAMMCKINLEY="(William|President)(| )McKinley"
+KEYWORDS_THEODOREROOSEVELT="(Theodore|Teddy)(| )Roosevelt|Roosevelt(| )Corollary"
+KEYWORDS_WILLIAMHOWARDTAFT="Taft"
+KEYWORDS_WOODROWWILSON="(Woodrow|President)(| )Wilson"
+KEYWORDS_WARRENHARDING="(Warren|President)(| )(G(\.|amaliel|)|)(| )Harding"
+KEYWORDS_CALVINCOOLIDGE="Coolidge"
+KEYWORDS_HERBERTHOOVER="(Herbert|President)(| )(C(\.|lark|)|)(| )Hoover"
+KEYWORDS_FRANKLINDROOSEVELT="Franklin(| )(D(\.|elano|)|)(| )Roosevelt|F(|\.)D(|\.)R"
+KEYWORDS_HARRYTRUMAN="(Harry|President)(| )(S(\.|)|)(| )Truman"
+KEYWORDS_DWIGHTEISENHOWER="Eisenhower"
+KEYWORDS_JOHNFKENNEDY="(John|President)(| )(F(\.|itzgerald|)|)(| )Kennedy|Kennedy(| )administration"
+KEYWORDS_LYNDONJOHNSON="Lyndon(| )(B(\.|aines|)|)(| )Johnson|\bL(\.|)B(\.|)J\b"
+KEYWORDS_RICHARDNIXON="(Richard|President)(| )(M(\.|ilhaus|)|)(| )Nixon|Tricky(| )Dick"
+KEYWORDS_GERALDFORD="(President|Gerald)(| )(R(\.|udolph|)|)(| )Ford"
+KEYWORDS_JAMESCARTER="(James|President|Jimmy)(| )(E(\.|arl|)|)(| )Carter"
+KEYWORDS_RONALDREAGAN="(Ronald|President)(| )(W(\.|ilson|)|)(| )Reagan"
+KEYWORDS_GEORGEHWBUSH="George(| )H(\.|erbert|)W(\.|alker|)(| )Bush"
+KEYWORDS_BILLCLINTON="(William|Bill|President)(| )(J(\.|efferson|)|)(| )Clinton|Clinton(| )administration"
+KEYWORDS_GEORGEWBUSH="George(| )W(\.|alker|)(| )Bush"
+KEYWORDS_BARACKOBAMA="Obama"
+KEYWORDS_BARACKOBAMA_EXCLUDE="Michel(|l)e(| )Obama"
 
-PRESIDENT=`stat --print=%s President.txt`
-WASHINGTON=`stat --print=%s GeorgeWashington.txt`
-JOHNADAMS=`stat --print=%s JohnAdams.txt`
-JEFFERSON=`stat --print=%s ThomasJefferson.txt`
-MADISON=`stat --print=%s JamesMadison.txt`
-MONROE=`stat --print=%s JamesMonroe.txt`
-QUINCY=`stat --print=%s JohnQuincyAdams.txt`
-JACKSON=`stat --print=%s AndrewJackson.txt`
-BUREN=`stat --print=%s MartinVanBuren.txt`
-WHARRISON=`stat --print=%s WilliamHenryHarrison.txt`
-TYLER=`stat --print=%s JohnTyler.txt`
-POLK=`stat --print=%s JamesKPolk.txt`
-TAYLOR=`stat --print=%s ZacharyTaylor.txt`
-FILLMORE=`stat --print=%s MillardFillmore.txt`
-PIERCE=`stat --print=%s FranklinPierce.txt`
-BUCHANAN=`stat --print=%s JamesBuchanan.txt`
-LINCOLN=`stat --print=%s AbrahamLincoln.txt`
-JOHNSON=`stat --print=%s AndrewJohnson.txt`
-GRANT=`stat --print=%s UlyssesSGrant.txt`
-HAYES=`stat --print=%s RutherfordBHayes.txt`
-GARFIELD=`stat --print=%s JamesAGarfield.txt`
-ARTHUR=`stat --print=%s ChesterAArthur.txt`
-CLEVELAND=`stat --print=%s GroverCleveland.txt`
-HARRISON=`stat --print=%s BenjaminHarrison.txt`
-MCKINLEY=`stat --print=%s WilliamMcKinley.txt`
-THEODORE=`stat --print=%s TheodoreRoosevelt.txt`
-TAFT=`stat --print=%s WilliamHowardTaft.txt`
-WILSON=`stat --print=%s WoodrowWilson.txt`
-HARDING=`stat --print=%s WarrenGHarding.txt`
-COOLIDGE=`stat --print=%s CalvinCoolidge.txt`
-HOOVER=`stat --print=%s HerbertHoover.txt`
-FDR=`stat --print=%s FranklinDelanoRoosevelt.txt`
-TRUMAN=`stat --print=%s HarrySTruman.txt`
-EISENHOWER=`stat --print=%s DwightDEisenhower.txt`
-KENNEDY=`stat --print=%s JohnFKennedy.txt`
-LBJ=`stat --print=%s LyndonBJohnson.txt`
-NIXON=`stat --print=%s RichardMNixon.txt`
-FORD=`stat --print=%s GeraldFord.txt`
-CARTER=`stat --print=%s JimmyCarter.txt`
-REAGAN=`stat --print=%s RonaldReagan.txt`
-GHWBUSH=`stat --print=%s GeorgeHWBush.txt`
-CLINTON=`stat --print=%s BillClinton.txt`
-GWBUSH=`stat --print=%s GeorgeWBush.txt`
-OBAMA=`stat --print=%s BarackObama.txt`
 
-if [ $PRESIDENT -ne 0 ];
+#Group presidents alphabetically to enable easier combo
+
+KEYWORDS_USPRESIDENT_A="$KEYWORDS_JOHNADAMS|$KEYWORDS_JOHNQUINCYADAMS|$KEYWORDS_CHESTERAARTHUR" #Total: 3
+KEYWORDS_USPRESIDENT_B="$KEYWORDS_JAMESBUCHANAN|$KEYWORDS_MARTINVANBUREN|$KEYWORDS_GEORGEHWBUSH|$KEYWORDS_GEORGEWBUSH" #Total: 4
+KEYWORDS_USPRESIDENT_C="$KEYWORDS_JAMESCARTER|$KEYWORDS_GROVERCLEVELAND|$KEYWORDS_BILLCLINTON|$KEYWORDS_CALVINCOOLIDGE" #Total: 4
+KEYWORDS_USPRESIDENT_E="$KEYWORDS_DWIGHTEISENHOWER" #Total: 1
+KEYWORDS_USPRESIDENT_F="$KEYWORDS_MILLARDFILLMORE|$KEYWORDS_GERALDFORD" #Total: 2
+KEYWORDS_USPRESIDENT_G="$KEYWORDS_JAMESGARFIELD|$KEYWORDS_ULYSSESSGRANT" #Total: 2
+KEYWORDS_USPRESIDENT_H="$KEYWORDS_WARRENHARDING|$KEYWORDS_BENJAMINHARRISON|$KEYWORDS_WILLIAMHHARRISON|$KEYWORDS_RUTHERFORDBHAYES|$KEYWORDS_HERBERTHOOVER" #Total: 5
+KEYWORDS_USPRESIDENT_J="$KEYWORDS_ANDREWJACKSON|$KEYWORDS_THOMASJEFFERSON|$KEYWORDS_ANDREWJOHNSON|$KEYWORDS_LYNDONJOHNSON" #Total: 4
+KEYWORDS_USPRESIDENT_K="$KEYWORDS_JOHNFKENNEDY" #Total: 1
+KEYWORDS_USPRESIDENT_L="$KEYWORDS_ABRAHAMLINCOLN" #Total: 1
+KEYWORDS_USPRESIDENT_M="$KEYWORDS_JAMESMADISON|$KEYWORDS_WILLIAMMCKINLEY|$KEYWORDS_JAMESMONROE" #Total: 3
+KEYWORDS_USPRESIDENT_N="$KEYWORDS_RICHARDNIXON" #Total: 1
+KEYWORDS_USPRESIDENT_O="$KEYWORDS_BARACKOBAMA" #Total: 1
+KEYWORDS_USPRESIDENT_P="$KEYWORDS_FRANKLINPIERCE|$KEYWORDS_JAMESKPOLK" #Total: 2
+KEYWORDS_USPRESIDENT_R="$KEYWORDS_RONALDREAGAN|$KEYWORDS_FRANKLINDROOSEVELT|$KEYWORDS_THEODOREROOSEVELT" #Total: 3
+KEYWORDS_USPRESIDENT_T="$KEYWORDS_WILLIAMHOWARDTAFT|$KEYWORDS_ZACHARYTAYLOR|$KEYWORDS_HARRYTRUMAN|$KEYWORDS_JOHNTYLER" #Total: 4
+KEYWORDS_USPRESIDENT_W="$KEYWORDS_GEORGEWASHINGTON|$KEYWORDS_WOODROWWILSON" #Total: 2
+
+KEYWORDS_USPRESIDENT_EXCLUDE="$KEYWORDS_USPRESIDENT_A|$KEYWORDS_USPRESIDENT_B|$KEYWORDS_USPRESIDENT_C|$KEYWORDS_USPRESIDENT_E|$KEYWORDS_USPRESIDENT_F|$KEYWORDS_USPRESIDENT_G|$KEYWORDS_USPRESIDENT_H|$KEYWORDS_USPRESIDENT_J|$KEYWORDS_USPRESIDENT_K|$KEYWORDS_USPRESIDENT_L|$KEYWORDS_USPRESIDENT_M|$KEYWORDS_USPRESIDENT_N|$KEYWORDS_USPRESIDENT_O|$KEYWORDS_USPRESIDENT_P|$KEYWORDS_USPRESIDENT_R|$KEYWORDS_USPRESIDENT_T|$KEYWORDS_USPRESIDENT_W"
+
+KEYWORDS_USPRESIDENT_ALL="$KEYWORDS_USPRESIDENT|$KEYWORDS_USPRESIDENT_EXCLUDE"
+
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="President.txt"
-  export CATNAME="US Presidents"
-  $CATEGORIZE
-fi
 
-if [ $WASHINGTON -ne 0 ];
-then
-  export CATFILE="GeorgeWashington.txt"
-  export CATNAME="George Washington"
-  $CATEGORIZE
-fi
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting US Presidents\n"
+  fi
 
-if [ $JOHNADAMS -ne 0 ];
-then
-  export CATFILE="JohnAdams.txt"
-  export CATNAME="John Adams"
-  $CATEGORIZE
-fi
+  PRESIDENT=`egrep -i "$KEYWORDS_USPRESIDENT" newpages.txt | egrep -iv "$KEYWORDS_USPRESIDENT_EXCLUDE"`
+  WASHINGTON=`egrep -i "$KEYWORDS_GEORGEWASHINGTON" newpages.txt | egrep -iv "$KEYWORDS_GEORGEWASHINGTON_EXCLUDE"`
+  JOHNADAMS=`egrep -i "$KEYWORDS_JOHNADAMS" newpages.txt`
+  JEFFERSON=`egrep -i "$KEYWORDS_THOMASJEFFERSON" newpages.txt`
+  MADISON=`egrep -i "$KEYWORDS_JAMESMADISON" newpages.txt`
+  MONROE=`egrep -i "$KEYWORDS_JAMESMONROE" newpages.txt`
+  QUINCY=`egrep -i "$KEYWORDS_JOHNQUINCYADAMS" newpages.txt`
+  JACKSON=`egrep -i "$KEYWORDS_ANDREWJACKSON" newpages.txt`
+  BUREN=`egrep -i "$KEYWORDS_MARTINVANBUREN" newpages.txt`
+  WHARRISON=`egrep -i "$KEYWORDS_WILLIAMHHARRISON" newpages.txt`
+  TYLER=`egrep -i "$KEYWORDS_JOHNTYLER" newpages.txt`
+  POLK=`egrep -i "$KEYWORDS_JAMESKPOLK" newpages.txt`
+  TAYLOR=`egrep -i "$KEYWORDS_ZACHARYTAYLOR" newpages.txt`
+  FILLMORE=`egrep -i "$KEYWORDS_MILLARDFILLMORE" newpages.txt`
+  PIERCE=`egrep -i "$KEYWORDS_FRANKLINPIERCE" newpages.txt`
+  BUCHANAN=`egrep -i "$KEYWORDS_JAMESBUCHANAN" newpages.txt`
+  LINCOLN=`egrep -i "$KEYWORDS_ABRAHAMLINCOLN" newpages.txt`
+  JOHNSON=`egrep -i "$KEYWORDS_ANDREWJOHNSON" newpages.txt`
+  GRANT=`egrep -i "$KEYWORDS_ULYSSESSGRANT" newpages.txt`
+  HAYES=`egrep -i "$KEYWORDS_RUTHERFORDBHAYES" newpages.txt`
+  GARFIELD=`egrep -i "$KEYWORDS_JAMESGARFIELD" newpages.txt`
+  ARTHUR=`egrep -i "$KEYWORDS_CHESTERAARTHUR" newpages.txt`
+  CLEVELAND=`egrep -i "$KEYWORDS_GROVERCLEVELAND" newpages.txt`
+  HARRISON=`egrep -i "$KEYWORDS_BENJAMINHARRISON" newpages.txt`
+  MCKINLEY=`egrep -i "$KEYWORDS_WILLIAMMCKINLEY" newpages.txt`
+  THEODORE=`egrep -i "$KEYWORDS_THEODOREROOSEVELT" newpages.txt`
+  TAFT=`egrep -i "$KEYWORDS_WILLIAMHOWARDTAFT" newpages.txt`
+  WILSON=`egrep -i "$KEYWORDS_WOODROWWILSON" newpages.txt`
+  HARDING=`egrep -i "$KEYWORDS_WARRENHARDING" newpages.txt`
+  COOLIDGE=`egrep -i "$KEYWORDS_CALVINCOOLIDGE" newpages.txt`
+  HOOVER=`egrep -i "$KEYWORDS_HERBERTHOOVER" newpages.txt`
+  FDR=`egrep -i "$KEYWORDS_FRANKLINDROOSEVELT" newpages.txt`
+  TRUMAN=`egrep -i "$KEYWORDS_HARRYTRUMAN" newpages.txt`
+  EISENHOWER=`egrep -i "$KEYWORDS_DWIGHTEISENHOWER" newpages.txt`
+  KENNEDY=`egrep -i "$KEYWORDS_JOHNFKENNEDY" newpages.txt`
+  LBJ=`egrep -i "$KEYWORDS_LYNDONJOHNSON" newpages.txt`
+  NIXON=`egrep -i "$KEYWORDS_RICHARDNIXON" newpages.txt`
+  FORD=`egrep -i "$KEYWORDS_GERALDFORD" newpages.txt`
+  CARTER=`egrep -i "$KEYWORDS_JAMESCARTER" newpages.txt`
+  REAGAN=`egrep -i "$KEYWORDS_RONALDREAGAN" newpages.txt`
+  GHWBUSH=`egrep -i "$KEYWORDS_GEORGEHWBUSH" newpages.txt`
+  CLINTON=`egrep -i "$KEYWORDS_BILLCLINTON" newpages.txt`
+  GWBUSH=`egrep -i "$KEYWORDS_GEORGEWBUSH" newpages.txt`
+  OBAMA=`egrep -i "$KEYWORDS_BARACKOBAMA" newpages.txt | egrep -iv "$KEYWORDS_BARACKOBAMA_EXCLUDE"`
 
-if [ $JEFFERSON -ne 0 ];
-then
-  export CATFILE="ThomasJefferson.txt"
-  export CATNAME="Thomas Jefferson"
-  $CATEGORIZE
-fi
+  if [ "$PRESIDENT" != "" ];
+  then
+    printf "$PRESIDENT" > President.txt
+    export CATFILE="President.txt"
+    export CATNAME="US Presidents"
+    $CATEGORIZE
+    rm President.txt
+    unset PRESIDENT
+  fi
 
-if [ $MADISON -ne 0 ];
-then
-  export CATFILE="JamesMadison.txt"
-  export CATNAME="James Madison"
-  $CATEGORIZE
-fi
+  if [ "$WASHINGTON" != "" ];
+  then
+    printf "$WASHINGTON" > GeorgeWashington.txt
+    export CATFILE="GeorgeWashington.txt"
+    export CATNAME="George Washington"
+    $CATEGORIZE
+    rm GeorgeWashington.txt
+    unset WASHINGTON
+  fi
 
-if [ $MONROE -ne 0 ];
-then
-  export CATFILE="JamesMonroe.txt"
-  export CATNAME="James Monroe"
-  $CATEGORIZE
-fi
+  if [ "$JOHNADAMS" != "" ];
+  then
+    printf "$JOHNADAMS" > JohnAdams.txt
+    export CATFILE="JohnAdams.txt"
+    export CATNAME="John Adams"
+    $CATEGORIZE
+    rm JohnAdams.txt
+    unset JOHNADAMS
+  fi
 
-if [ $QUINCY -ne 0 ];
-then
-  export CATFILE="JohnQuincyAdams.txt"
-  export CATNAME="John Quincy Adams"
-  $CATEGORIZE
-fi
+  if [ "$JEFFERSON" != "" ];
+  then
+    printf "$JEFFERSON" > ThomasJefferson.txt
+    export CATFILE="ThomasJefferson.txt"
+    export CATNAME="Thomas Jefferson"
+    $CATEGORIZE
+    rm ThomasJefferson.txt
+    unset JEFFERSON
+  fi
 
-if [ $JACKSON -ne 0 ];
-then
-  export CATFILE="AndrewJackson.txt"
-  export CATNAME="Andrew Jackson"
-  $CATEGORIZE
-fi
+  if [ "$MADISON" != "" ];
+  then
+    printf "$MADISON" > JamesMadison.txt
+    export CATFILE="JamesMadison.txt"
+    export CATNAME="James Madison"
+    $CATEGORIZE
+    rm JamesMadison.txt
+    unset MADISON
+  fi
 
-if [ $BUREN -ne 0 ];
-then
-  export CATFILE="MartinVanBuren.txt"
-  export CATNAME="Martin Van Buren"
-  $CATEGORIZE
-fi
+  if [ "$MONROE" != "" ];
+  then
+    printf "$MONROE" > JamesMonroe.txt
+    export CATFILE="JamesMonroe.txt"
+    export CATNAME="James Monroe"
+    $CATEGORIZE
+    rm JamesMonroe.txt
+    unset MONROE
+  fi
 
-if [ $WHARRISON -ne 0 ];
-then
-  export CATFILE="WilliamHenryHarrison.txt"
-  export CATNAME="William Henry Harrison"
-  $CATEGORIZE
-fi
+  if [ "$QUINCY" != "" ];
+  then
+    printf "$QUINCY" > JohnQuincyAdams.txt
+    export CATFILE="JohnQuincyAdams.txt"
+    export CATNAME="John Quincy Adams"
+    $CATEGORIZE
+    rm JohnQuincyAdams.txt
+    unset QUINCY
+  fi
 
-if [ $TYLER -ne 0 ];
-then
-  export CATFILE="JohnTyler.txt"
-  export CATNAME="John Tyler"
-  $CATEGORIZE
-fi
+  if [ "$JACKSON" != "" ];
+  then
+    printf "$JACKSON" > AndrewJackson.txt
+    export CATFILE="AndrewJackson.txt"
+    export CATNAME="Andrew Jackson"
+    $CATEGORIZE
+    rm AndrewJackson.txt
+    unset JACKSON
+  fi
 
-if [ $POLK -ne 0 ];
-then
-  export CATFILE="JamesKPolk.txt"
-  export CATNAME="James K. Polk"
-  $CATEGORIZE
-fi
+  if [ "$BUREN" != "" ];
+  then
+    printf "$BUREN" > MartinVanBuren.txt
+    export CATFILE="MartinVanBuren.txt"
+    export CATNAME="Martin Van Buren"
+    $CATEGORIZE
+    rm MartinVanBuren.txt
+    unset BUREN
+  fi
 
-if [ $TAYLOR -ne 0 ];
-then
-  export CATFILE="ZacharyTaylor.txt"
-  export CATNAME="Zachary Taylor"
-  $CATEGORIZE
-fi
+  if [ "$WHARRISON" != "" ];
+  then
+    printf "$WHARRISON" > WilliamHenryHarrison.txt
+    export CATFILE="WilliamHenryHarrison.txt"
+    export CATNAME="William Henry Harrison"
+    $CATEGORIZE
+    rm WilliamHenryHarrison.txt
+    unset WHARRISON
+  fi
 
-if [ $FILLMORE -ne 0 ];
-then
-  export CATFILE="MillardFillmore.txt"
-  export CATNAME="Millard Fillmore"
-  $CATEGORIZE
-fi
+  if [ "$TYLER" != "" ];
+  then
+    printf "$TYLER" > JohnTyler.txt
+    export CATFILE="JohnTyler.txt"
+    export CATNAME="John Tyler"
+    $CATEGORIZE
+    rm JohnTyler.txt
+    unset TYLER
+  fi
 
-if [ $PIERCE -ne 0 ];
-then
-  export CATFILE="FranklinPierce.txt"
-  export CATNAME="Franklin Pierce"
-  $CATEGORIZE
-fi
+  if [ "$POLK" != "" ];
+  then
+    printf "$POLK" > JamesKPolk.txt
+    export CATFILE="JamesKPolk.txt"
+    export CATNAME="James K. Polk"
+    $CATEGORIZE
+    rm JamesKPolk.txt
+    unset POLK
+  fi
 
-if [ $BUCHANAN -ne 0 ];
-then
-  export CATFILE="JamesBuchanan.txt"
-  export CATNAME="James Buchanan"
-  $CATEGORIZE
-fi
+  if [ "$TAYLOR" != "" ];
+  then
+    printf "$TAYLOR" > ZacharyTaylor.txt
+    export CATFILE="ZacharyTaylor.txt"
+    export CATNAME="Zachary Taylor"
+    $CATEGORIZE
+    rm ZacharyTaylor.txt
+    unset TAYLOR
+  fi
 
-if [ $LINCOLN -ne 0 ];
-then
-  export CATFILE="AbrahamLincoln.txt"
-  export CATNAME="Abraham Lincoln"
-  $CATEGORIZE
-fi
+  if [ "$FILLMORE" != "" ];
+  then
+    printf "$FILLMORE" > MillardFillmore.txt
+    export CATFILE="MillardFillmore.txt"
+    export CATNAME="Millard Fillmore"
+    $CATEGORIZE
+    rm MillardFillmore.txt
+    unset FILLMORE
+  fi
 
-if [ $JOHNSON -ne 0 ];
-then
-  export CATFILE="AndrewJohnson.txt"
-  export CATNAME="Andrew Johnson"
-  $CATEGORIZE
-fi
+  if [ "$PIERCE" != "" ];
+  then
+    printf "$PIERCE" > FranklinPierce.txt
+    export CATFILE="FranklinPierce.txt"
+    export CATNAME="Franklin Pierce"
+    $CATEGORIZE
+    rm FranklinPierce.txt
+    unset PIERCE
+  fi
 
-if [ $GRANT -ne 0 ];
-then
-  export CATFILE="UlyssesSGrant.txt"
-  export CATNAME="Ulysses S. Grant"
-  $CATEGORIZE
-fi
+  if [ "$BUCHANAN" != "" ];
+  then
+    printf "$BUCHANAN" > JamesBuchanan.txt
+    export CATFILE="JamesBuchanan.txt"
+    export CATNAME="James Buchanan"
+    $CATEGORIZE
+    rm JamesBuchanan.txt
+    unset BUCHANAN
+  fi
 
-if [ $HAYES -ne 0 ];
-then
-  export CATFILE="RutherfordBHayes.txt"
-  export CATNAME="Rutherford B. Hayes"
-  $CATEGORIZE
-fi
+  if [ "$LINCOLN" != "" ];
+  then
+    printf "$LINCOLN" > AbrahamLincoln.txt
+    export CATFILE="AbrahamLincoln.txt"
+    export CATNAME="Abraham Lincoln"
+    $CATEGORIZE
+    rm AbrahamLincoln.txt
+    unset LINCOLN
+  fi
 
-if [ $GARFIELD -ne 0 ];
-then
-  export CATFILE="JamesAGarfield.txt"
-  export CATNAME="James A. Garfield"
-  $CATEGORIZE
-fi
+  if [ "$JOHNSON" != "" ];
+  then
+    printf "$JOHNSON" > AndrewJohnson.txt
+    export CATFILE="AndrewJohnson.txt"
+    export CATNAME="Andrew Johnson"
+    $CATEGORIZE
+    rm AndrewJohnson.txt
+    unset JOHNSON
+  fi
 
-if [ $ARTHUR -ne 0 ];
-then
-  export CATFILE="ChesterAArthur.txt"
-  export CATNAME="Chester A. Arthur"
-  $CATEGORIZE
-fi
+  if [ "$GRANT" != "" ];
+  then
+    printf "$GRANT" > UlyssesSGrant.txt
+    export CATFILE="UlyssesSGrant.txt"
+    export CATNAME="Ulysses S. Grant"
+    $CATEGORIZE
+    rm UlyssesSGrant.txt
+    unset GRANT
+  fi
 
-if [ $CLEVELAND -ne 0 ];
-then
-  export CATFILE="GroverCleveland.txt"
-  export CATNAME="Grover Cleveland"
-  $CATEGORIZE
-fi
+  if [ "$HAYES" != "" ];
+  then
+    printf "$HAYES" > RutherfordBHayes.txt
+    export CATFILE="RutherfordBHayes.txt"
+    export CATNAME="Rutherford B. Hayes"
+    $CATEGORIZE
+    rm RutherfordBHayes.txt
+    unset HAYES
+  fi
 
-if [ $HARRISON -ne 0 ];
-then
-  export CATFILE="BenjaminHarrison.txt"
-  export CATNAME="Benjamin Harrison"
-  $CATEGORIZE
-fi
+  if [ "$GARFIELD" != "" ];
+  then
+    printf "$GARFIELD" > JamesAGarfield.txt
+    export CATFILE="JamesAGarfield.txt"
+    export CATNAME="James A. Garfield"
+    $CATEGORIZE
+    rm JamesAGarfield.txt
+    unset GARFIELD
+  fi
 
-if [ $MCKINLEY -ne 0 ];
-then
-  export CATFILE="WilliamMcKinley.txt"
-  export CATNAME="William McKinley"
-  $CATEGORIZE
-fi
+  if [ "$ARTHUR" != "" ];
+  then
+    printf "$ARTHUR" > ChesterAArthur.txt
+    export CATFILE="ChesterAArthur.txt"
+    export CATNAME="Chester A. Arthur"
+    $CATEGORIZE
+    rm ChesterAArthur.txt
+    unset ARTHUR
+  fi
 
-if [ $THEODORE -ne 0 ];
-then
-  export CATFILE="TheodoreRoosevelt.txt"
-  export CATNAME="Theodore Roosevelt"
-  $CATEGORIZE
-fi
+  if [ "$CLEVELAND" != "" ];
+  then
+    printf "$CLEVELAND" > GroverCleveland.txt
+    export CATFILE="GroverCleveland.txt"
+    export CATNAME="Grover Cleveland"
+    $CATEGORIZE
+    rm GroverCleveland.txt
+    unset CLEVELAND
+  fi
 
-if [ $TAFT -ne 0 ];
-then
-  export CATFILE="WilliamHowardTaft.txt"
-  export CATNAME="William Howard Taft"
-  $CATEGORIZE
-fi
+  if [ "$HARRISON" != "" ];
+  then
+    printf "$HARRISON" > BenjaminHarrison.txt
+    export CATFILE="BenjaminHarrison.txt"
+    export CATNAME="Benjamin Harrison"
+    $CATEGORIZE
+    rm BenjaminHarrison.txt
+    unset HARRISON
+  fi
 
-if [ $WILSON -ne 0 ];
-then
-  export CATFILE="WoodrowWilson.txt"
-  export CATNAME="Woodrow Wilson"
-  $CATEGORIZE
-fi
+  if [ "$MCKINLEY" != "" ];
+  then
+    printf "$MCKINLEY" > WilliamMcKinley.txt
+    export CATFILE="WilliamMcKinley.txt"
+    export CATNAME="William McKinley"
+    $CATEGORIZE
+    rm WilliamMcKinley.txt
+    unset MCKINLEY
+  fi
 
-if [ $HARDING -ne 0 ];
-then
-  export CATFILE="WarrenGHarding.txt"
-  export CATNAME="Warren G. Harding"
-  $CATEGORIZE
-fi
+  if [ "$THEODORE" != "" ];
+  then
+    printf "$THEODORE" > TheodoreRoosevelt.txt
+    export CATFILE="TheodoreRoosevelt.txt"
+    export CATNAME="Theodore Roosevelt"
+    $CATEGORIZE
+    rm TheodoreRoosevelt.txt
+    unset THEODORE
+  fi
 
-if [ $COOLIDGE -ne 0 ];
-then
-  export CATFILE="CalvinCoolidge.txt"
-  export CATNAME="Calvin Coolidge"
-  $CATEGORIZE
-fi
+  if [ "$TAFT" != "" ];
+  then
+    printf "$TAFT" > WilliamHowardTaft.txt
+    export CATFILE="WilliamHowardTaft.txt"
+    export CATNAME="William Howard Taft"
+    $CATEGORIZE
+    rm WilliamHowardTaft.txt
+    unset TAFT
+  fi
 
-if [ $HOOVER -ne 0 ];
-then
-  export CATFILE="HerbertHoover.txt"
-  export CATNAME="Herbert Hoover"
-  $CATEGORIZE
-fi
+  if [ "$WILSON" != "" ];
+  then
+    printf "$WILSON" > WoodrowWilson.txt
+    export CATFILE="WoodrowWilson.txt"
+    export CATNAME="Woodrow Wilson"
+    $CATEGORIZE
+    rm WoodrowWilson.txt
+    unset WILSON
+  fi
 
-if [ $FDR -ne 0 ];
-then
-  export CATFILE="FranklinDelanoRoosevelt.txt"
-  export CATNAME="Franklin Delano Roosevelt"
-  $CATEGORIZE
-fi
+  if [ "$HARDING" != "" ];
+  then
+    printf "$HARDING" > WarrenGHarding.txt
+    export CATFILE="WarrenGHarding.txt"
+    export CATNAME="Warren G. Harding"
+    $CATEGORIZE
+    rm WarrenGHarding.txt
+    unset HARDING
+  fi
 
-if [ $TRUMAN -ne 0 ];
-then
-  export CATFILE="HarrySTruman.txt"
-  export CATNAME="Harry S. Truman"
-  $CATEGORIZE
-fi
+  if [ "$COOLIDGE" != "" ];
+  then
+    printf "$COOLIDGE" > CalvinCoolidge.txt
+    export CATFILE="CalvinCoolidge.txt"
+    export CATNAME="Calvin Coolidge"
+    $CATEGORIZE
+    rm CalvinCoolidge.txt
+    unset COOLIDGE
+  fi
 
-if [ $EISENHOWER -ne 0 ];
-then
-  export CATFILE="DwightDEisenhower.txt"
-  export CATNAME="Dwight D. Eisenhower"
-  $CATEGORIZE
-fi
+  if [ "$HOOVER" != "" ];
+  then
+    printf "$HOOVER" > HerbertHoover.txt
+    export CATFILE="HerbertHoover.txt"
+    export CATNAME="Herbert Hoover"
+    $CATEGORIZE
+    rm HerbertHoover.txt
+    unset HOOVER
+  fi
 
-if [ $KENNEDY -ne 0 ];
-then
-  export CATFILE="JohnFKennedy.txt"
-  export CATNAME="John F. Kennedy"
-  $CATEGORIZE
-fi
+  if [ "$FDR" != "" ];
+  then
+    printf "$FDR" > FranklinDelanoRoosevelt.txt
+    export CATFILE="FranklinDelanoRoosevelt.txt"
+    export CATNAME="Franklin Delano Roosevelt"
+    $CATEGORIZE
+    rm FranklinDelanoRoosevelt.txt
+    unset FDR
+  fi
 
-if [ $LBJ -ne 0 ];
-then
-  export CATFILE="LyndonBJohnson.txt"
-  export CATNAME="Lyndon B. Johnson"
-  $CATEGORIZE
-fi
+  if [ "$TRUMAN" != "" ];
+  then
+    printf "$TRUMAN" > HarrySTruman.txt
+    export CATFILE="HarrySTruman.txt"
+    export CATNAME="Harry S. Truman"
+    $CATEGORIZE
+    rm HarrySTruman.txt
+    unset TRUMAN
+  fi
 
-if [ $NIXON -ne 0 ];
-then
-  export CATFILE="RichardMNixon.txt"
-  export CATNAME="Richard Nixon"
-  $CATEGORIZE
-fi
+  if [ "$EISENHOWER" != "" ];
+  then
+    printf "$EISENHOWER" > DwightDEisenhower.txt
+    export CATFILE="DwightDEisenhower.txt"
+    export CATNAME="Dwight D. Eisenhower"
+    $CATEGORIZE
+    rm DwightDEisenhower.txt
+    unset EISENHOWER
+  fi
 
-if [ $FORD -ne 0 ];
-then
-  export CATFILE="GeraldFord.txt"
-  export CATNAME="Gerald Ford"
-  $CATEGORIZE
-fi
+  if [ "$KENNEDY" != "" ];
+  then
+    printf "$KENNEDY" > JohnFKennedy.txt
+    export CATFILE="JohnFKennedy.txt"
+    export CATNAME="John F. Kennedy"
+    $CATEGORIZE
+    rm JohnFKennedy.txt
+    unset KENNEDY
+  fi
 
-if [ $CARTER -ne 0 ];
-then
-  export CATFILE="Jimmy Carter.txt"
-  export CATNAME="James Earl Carter"
-  $CATEGORIZE
-fi
+  if [ "$LBJ" != "" ];
+  then
+    printf "$LBJ" > LyndonBJohnson.txt
+    export CATFILE="LyndonBJohnson.txt"
+    export CATNAME="Lyndon B. Johnson"
+    $CATEGORIZE
+    rm LyndonBJohnson.txt
+    unset LBJ
+  fi
 
-if [ $REAGAN -ne 0 ];
-then
-  export CATFILE="RonaldReagan.txt"
-  export CATNAME="Ronald Reagan"
-  $CATEGORIZE
-fi
+  if [ "$NIXON" != "" ];
+  then
+    printf "$NIXON" > RichardMNixon.txt
+    export CATFILE="RichardMNixon.txt"
+    export CATNAME="Richard Nixon"
+    $CATEGORIZE
+    rm RichardMNixon.txt
+    unset NIXON
+  fi
 
-if [ $GHWBUSH -ne 0 ];
-then
-  export CATFILE="GeorgeHWBush.txt"
-  export CATNAME="George Herbert Walker Bush"
-  $CATEGORIZE
-fi
+  if [ "$FORD" != "" ];
+  then
+    printf "$FORD" > GeraldFord.txt
+    export CATFILE="GeraldFord.txt"
+    export CATNAME="Gerald Ford"
+    $CATEGORIZE
+    rm GeraldFord.txt
+    unset FORD
+  fi
 
-if [ $CLINTON -ne 0 ];
-then
-  export CATFILE="BillClinton.txt"
-  export CATNAME="Bill Clinton"
-  $CATEGORIZE
-fi
+  if [ "$CARTER" != "" ];
+  then
+    printf "$CARTER" > JimmyCarter.txt
+    export CATFILE="JimmyCarter.txt"
+    export CATNAME="James Earl Carter"
+    $CATEGORIZE
+    rm JimmyCarter.txt
+    unset CARTER
+  fi
 
-if [ $GWBUSH -ne 0 ];
-then
-  export CATFILE="GeorgeWBush.txt"
-  export CATNAME="George W. Bush"
-  $CATEGORIZE
-fi
+  if [ "$REAGAN" != "" ];
+  then
+    printf "$REAGAN" > RonaldReagan.txt
+    export CATFILE="RonaldReagan.txt"
+    export CATNAME="Ronald Reagan"
+    $CATEGORIZE
+    rm RonaldReagan.txt
+    unset REAGAN
+  fi
 
-if [ $OBAMA -ne 0 ];
-then
-  export CATFILE="BarackObama.txt"
-  export CATNAME="Barack Obama"
-  $CATEGORIZE
-fi
+  if [ "$GHWBUSH" != "" ];
+  then
+    printf "$GHWBUSH" > GeorgeHWBush.txt
+    export CATFILE="GeorgeHWBush.txt"
+    export CATNAME="George Herbert Walker Bush"
+    $CATEGORIZE
+    rm GeorgeHWBush.txt
+    unset GHWBUSH
+  fi
 
-rm GeorgeWashington.txt
-rm JohnAdams.txt
-rm ThomasJefferson.txt
-rm JamesMadison.txt
-rm JamesMonroe.txt
-rm JohnQuincyAdams.txt
-rm AndrewJackson.txt
-rm MartinVanBuren.txt
-rm WilliamHenryHarrison.txt
-rm JohnTyler.txt
-rm JamesKPolk.txt
-rm ZacharyTaylor.txt
-rm MillardFillmore.txt
-rm FranklinPierce.txt
-rm JamesBuchanan.txt
-rm AbrahamLincoln.txt
-rm AndrewJohnson.txt
-rm UlyssesSGrant.txt
-rm RutherfordBHayes.txt
-rm JamesAGarfield.txt
-rm ChesterAArthur.txt
-rm GroverCleveland.txt
-rm BenjaminHarrison.txt
-rm WilliamMcKinley.txt
-rm TheodoreRoosevelt.txt
-rm WilliamHowardTaft.txt
-rm WoodrowWilson.txt
-rm WarrenGHarding.txt
-rm CalvinCoolidge.txt
-rm HerbertHoover.txt
-rm FranklinDelanoRoosevelt.txt
-rm HarrySTruman.txt
-rm DwightDEisenhower.txt
-rm JohnFKennedy.txt
-rm LyndonBJohnson.txt
-rm RichardMNixon.txt
-rm GeraldFord.txt
-rm JimmyCarter.txt
-rm RonaldReagan.txt
-rm GeorgeHWBush.txt
-rm BillClinton.txt
-rm GeorgeWBush.txt
-rm BarackObama.txt
-rm President.txt
+  if [ "$CLINTON" != "" ];
+  then
+    printf "$CLINTON" > BillClinton.txt
+    export CATFILE="BillClinton.txt"
+    export CATNAME="Bill Clinton"
+    $CATEGORIZE
+    rm BillClinton.txt
+    unset CLINTON
+  fi
+
+  if [ "$GWBUSH" != "" ];
+  then
+    printf "$GWBUSH" > GeorgeWBush.txt
+    export CATFILE="GeorgeWBush.txt"
+    export CATNAME="George W. Bush"
+    $CATEGORIZE
+    rm GeorgeWBush.txt
+    unset GWBUSH
+  fi
+
+  if [ "$OBAMA" != "" ];
+  then
+    printf "$OBAMA" > BarackObama.txt
+    export CATFILE="BarackObama.txt"
+    export CATNAME="Barack Obama"
+    $CATEGORIZE
+    rm BarackObama.txt
+    unset OBAMA
+  fi
+
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing US Presidents\n"
+  fi
+
+fi

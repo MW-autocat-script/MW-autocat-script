@@ -1,14 +1,30 @@
 #!/bin/bash
 
-egrep -i 'C\+\+|C Plus Plus' newpages.txt > CPlusPlus.txt
+KEYWORDS_CPLUSPLUS="C\+\+|C Plus Plus"
 
-CPLUSPLUS=`stat --print=%s CPlusPlus.txt`
-
-if [ $CPLUSPLUS -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="CPlusPlus.txt"
-  export CATNAME="C++ programming"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting C++\n"
+  fi
 
-rm CPlusPlus.txt
+  CPLUSPLUS=`egrep -i "$KEYWORDS_CPLUSPLUS" newpages.txt`
+
+  if [ "$CPLUSPLUS" != "" ];
+  then
+    printf "$CPLUSPLUS" > CPlusPlus.txt
+    export CATFILE="CPlusPlus.txt"
+    export CATNAME="C++ programming"
+    $CATEGORIZE
+    rm CPlusPlus.txt
+    unset CPLUSPLUS
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing C++\n"
+  fi
+
+fi

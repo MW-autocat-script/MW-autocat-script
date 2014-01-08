@@ -1,14 +1,30 @@
 #!/bin/bash
 
-egrep -i 'Kirby' newpages.txt >> Kirby.txt
+KEYWORDS_KIRBY="Kirby"
 
-KIRBY=`stat --print=%s Kirby.txt`
-
-if [ $KIRBY -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Kirby.txt"
-  export CATNAME="Kirby series"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Kirby series\n"
+  fi
 
-rm Kirby.txt
+  KIRBY=`egrep -i "$KEYWORDS_KIRBY" newpages.txt`
+
+  if [ "$KIRBY" != "" ];
+  then
+    printf "$KIRBY" > Kirby.txt
+    export CATFILE="Kirby.txt"
+    export CATNAME="Kirby series"
+    $CATEGORIZE
+    rm Kirby.txt
+    unset KIRBY
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Kirby series\n"
+  fi
+
+fi

@@ -1,14 +1,31 @@
 #!/bin/bash
 
-egrep -i 'Belize' newpages.txt >> Belize.txt
+KEYWORDS_BELIZE="Belize"
+KEYWORDS_BELIZE_ALL="$KEYWORDS_BELIZE"
 
-BELIZE=`stat --print=%s Belize.txt`
-
-if [ $BELIZE -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Belize.txt"
-  export CATNAME="Belize"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Belize\n"
+  fi
 
-rm Belize.txt
+  BELIZE=`stat --print=%s Belize.txt`
+
+  if [ "$BELIZE" != "" ];
+  then
+    printf "$BELIZE" > Belize.txt
+    export CATFILE="Belize.txt"
+    export CATNAME="Belize"
+    $CATEGORIZE
+    rm Belize.txt
+    unset BELIZE
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Belize\n"
+  fi
+
+fi

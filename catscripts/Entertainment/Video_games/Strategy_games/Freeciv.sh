@@ -1,14 +1,31 @@
 #!/bin/bash
 
-egrep -i 'Freeciv' newpages.txt > Freeciv.txt
+KEYWORDS_FREECIV="Freeciv"
+KEYWORDS_FREECIV_ALL="$KEYWORDS_FREECIV"
 
-FREECIV=`stat --print=%s Freeciv.txt`
-
-if [ $FREECIV -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Freeciv.txt"
-  export CATNAME="Freeciv"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Freeciv\n"
+  fi
 
-rm Freeciv.txt
+  FREECIV=`egrep -i "$KEYWORDS_FREECIV" newpages.txt`
+
+  if [ "$FREECIV" != "" ];
+  then
+    printf "$FREECIV" > Freeciv.txt
+    export CATFILE="Freeciv.txt"
+    export CATNAME="Freeciv"
+    $CATEGORIZE
+    rm Freeciv.txt
+    unset FREECIV
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Freeciv\n"
+  fi
+
+fi

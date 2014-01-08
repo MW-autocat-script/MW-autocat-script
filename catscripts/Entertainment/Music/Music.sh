@@ -1,10 +1,10 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Entertainment/Music"
+MUSICDIR="./catscripts/Entertainment/Music"
 
-$CURRENTDIR/Bands/Bands.sh
-$CURRENTDIR/Composers/Composers.sh
-$CURRENTDIR/Lyrics/Lyrics.sh
-$CURRENTDIR/Musical\ instruments/MusicalInstruments.sh
-$CURRENTDIR/Singers/Singers.sh
+$MUSICDIR/Bands/Bands.sh
+$MUSICDIR/Composers/Composers.sh
+. $MUSICDIR/Lyrics/Lyrics.sh #KEYWORDS_LYRICS_ALL
+$MUSICDIR/Musical\ instruments/MusicalInstruments.sh
+$MUSICDIR/Singers/Singers.sh
 

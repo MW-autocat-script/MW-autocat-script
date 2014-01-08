@@ -1,14 +1,31 @@
 #!/bin/bash
 
-egrep -i '\bChile\b|Chilean' newpages.txt >> Chile.txt
+KEYWORDS_CHILE="\bChile\b|Chilean"
+KEYWORDS_CHILE_ALL="$KEYWORDS_CHILE"
 
-CHILE=`stat --print=%s Chile.txt`
-
-if [ $CHILE -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Chile.txt"
-  export CATNAME="Chile"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Chile\n"
+  fi
 
-rm Chile.txt
+  CHILE=`egrep -i "$KEYWORDS_CHILE" newpages.txt`
+
+  if [ "$CHILE" != "" ];
+  then
+    printf "$CHILE" > Chile.txt
+    export CATFILE="Chile.txt"
+    export CATNAME="Chile"
+    $CATEGORIZE
+    rm Chile.txt
+    unset CHILE
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Chile\n"
+  fi
+
+fi

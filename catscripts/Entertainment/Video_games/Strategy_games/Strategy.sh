@@ -1,5 +1,5 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Entertainment/Video_games/Strategy_games"
+STRATEGYGAMEDIR="./catscripts/Entertainment/Video_games/Strategy_games"
 
-$CURRENTDIR/Freeciv.sh
+. $STRATEGYGAMEDIR/Freeciv.sh #KEYWORDS_FREECIV_ALL

@@ -1,14 +1,30 @@
 #!/bin/bash
 
-egrep -i 'Libya|Ghadafi' newpages.txt >> Libya.txt
+KEYWORDS_LIBYA="Libya|Ghadafi"
 
-LIBYA=`stat --print=%s Libya.txt`
-
-if [ $LIBYA -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Libya.txt"
-  export CATNAME="Libya"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Libya\n"
+  fi
 
-rm Libya.txt
+  LIBYA=`egrep -i "$KEYWORDS_LIBYA" newpages.txt`
+
+  if [ "$LIBYA" != "" ];
+  then
+    printf "$LIBYA" > Libya.txt
+    export CATFILE="Libya.txt"
+    export CATNAME="Libya"
+    $CATEGORIZE
+    rm Libya.txt
+    unset LIBYA
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Libya\n"
+  fi
+
+fi

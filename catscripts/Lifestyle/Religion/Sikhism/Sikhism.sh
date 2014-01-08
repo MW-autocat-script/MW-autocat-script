@@ -1,14 +1,31 @@
 #!/bin/bash
 
-egrep -i '\bSikh' newpages.txt >> Sikhism.txt
+KEYWORDS_SIKHISM="\bSikh"
+KEYWORDS_SIKHISM_ALL="$KEYWORDS_SIKHISM"
 
-SIKHISM=`stat --print=%s Sikhism.txt`
-
-if [ $SIKHISM -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Sikhism.txt"
-  export CATNAME="Sikhism"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Sikhism\n"
+  fi
 
-rm Sikhism.txt
+  SIKHISM=`egrep -i "$KEYWORDS_SIKHISM" newpages.txt`
+
+  if [ "$SIKHISM" != "" ];
+  then
+    printf "$SIKHISM" > Sikhism.txt
+    export CATFILE="Sikhism.txt"
+    export CATNAME="Sikhism"
+    $CATEGORIZE
+    rm Sikhism.txt
+    unset SIKHISM
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Sikhism\n"
+  fi
+
+fi

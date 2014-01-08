@@ -1,14 +1,31 @@
 #!/bin/bash
 
-egrep -i 'Brazil' newpages.txt >> Brazil.txt
+KEYWORDS_BRAZIL="Brazil"
+KEYWORDS_BRAZIL_ALL="$KEYWORDS_BRAZIL"
 
-BRAZIL=`stat --print=%s Brazil.txt`
-
-if [ $BRAZIL -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Brazil.txt"
-  export CATNAME="Brazil"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Brazil\n"
+  fi
 
-rm Brazil.txt
+  BRAZIL=`egrep -i "$KEYWORDS_BRAZIL" newpages.txt`
+
+  if [ "$BRAZIL" != "" ];
+  then
+    printf "$BRAZIL" > Brazil.txt
+    export CATFILE="Brazil.txt"
+    export CATNAME="Brazil"
+    $CATEGORIZE
+    rm Brazil.txt
+    unset BRAZIL
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Brazil\n"
+  fi
+
+fi

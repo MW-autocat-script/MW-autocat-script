@@ -1,14 +1,30 @@
 #!/bin/bash
 
-egrep -i 'Brunei' newpages.txt >> Brunei.txt
+KEYWORDS_BRUNEI="Brunei"
 
-BRUNEI=`stat --print=%s Brunei.txt`
-
-if [ $BRUNEI -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Brunei.txt"
-  export CATNAME="Brunei"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Brunei\n"
+  fi
 
-rm Brunei.txt
+  BRUNEI=`egrep -i "$KEYWORDS_BRUNEI" newpages.txt`
+
+  if [ "$BRUNEI" != "" ];
+  then
+    printf "$BRUNEI" > Brunei.txt
+    export CATFILE="Brunei.txt"
+    export CATNAME="Brunei"
+    $CATEGORIZE
+    rm Brunei.txt
+    unset BRUNEI
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Brunei\n"
+  fi
+
+fi

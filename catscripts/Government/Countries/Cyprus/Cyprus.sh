@@ -1,14 +1,31 @@
 #!/bin/bash
 
-egrep -i 'Cyprus' newpages.txt >> Cyprus.txt
+KEYWORDS_CYPRUS="Cyrpus"
+KEYWORDS_CYPRUS_ALL="$KEYWORDS_CYPRUS"
 
-CYPRUS=`stat --print=%s Cyprus.txt`
-
-if [ $CYPRUS -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Cyprus.txt"
-  export CATNAME="Cyprus"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Cyprus\n"
+  fi
 
-rm Cyprus.txt
+  CYPRUS=`egrep -i "$KEYWORDS_CYPRUS" newpages.txt`
+
+  if [ "$CYPRUS" != "" ];
+  then
+    printf "$CYPRUS" > Cyrpus.txt
+    export CATFILE="Cyprus.txt"
+    export CATNAME="Cyprus"
+    $CATEGORIZE
+    rm Cyprus.txt
+    unset CYPRUS
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Cyprus\n"
+  fi
+
+fi

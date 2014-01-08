@@ -1,14 +1,31 @@
 #!/bin/bash
 
-egrep -i 'Tanzia' newpages.txt >> Tanzia.txt
+KEYWORDS_TANZIA="Tanzia"
+KEYWORDS_TANZIA_ALL="$KEYWORDS_TANZIA"
 
-TANZIA=`stat --print=%s Tanzia.txt`
-
-if [ $TANZIA -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Tanzia.txt"
-  export CATNAME="Tanzia"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Tanzia\n"
+  fi
 
-rm Tanzia.txt
+  TANZIA=`egrep -i "$KEYWORDS_TANZIA" newpages.txt`
+
+  if [ "$TANZIA" != "" ];
+  then
+    printf "$TANZIA" > Tanzia.txt
+    export CATFILE="Tanzia.txt"
+    export CATNAME="Tanzia"
+    $CATEGORIZE
+    rm Tanzia.txt
+    unset TANZIA
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Tanzia\n"
+  fi
+
+fi
