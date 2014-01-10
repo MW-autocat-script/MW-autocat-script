@@ -2,36 +2,55 @@
 
 KEYWORDS_GABITE="Gabite"
 KEYWORDS_GALLADE="Gallade"
+KEYWORDS_GALVANTULA="Galvantula"
 KEYWORDS_GARBODOR="Garbodor"
+KEYWORDS_GARCHOMP="Garchomp"
+KEYWORDS_GARDEVOIR="Gardevoir"
+KEYWORDS_GASTLY="Gastly"
+KEYWORDS_GASTRODON="Gastrodon"
+KEYWORDS_GENESECT="Genesect"
+KEYWORDS_GENGAR="Gengar"
+KEYWORDS_GEODUDE="Geodude"
+KEYWORDS_GIBLE="\bGible"
+KEYWORDS_GIGALITH="Gigalith"
+KEYWORDS_GIRAFARIG="Girafarig"
+KEYWORDS_GIRATINA="Giratina"
+KEYWORDS_GLACEON="Glaceon"
+KEYWORDS_GLALIE="Glalie"
+KEYWORDS_GLAMEOW="Glameow"
+KEYWORDS_GLIGAR="Gligar"
+KEYWORDS_GLISCOR="Gliscor"
+KEYWORDS_GLOOM="Gloom\b"
+KEYWORDS_GOLBAT="Golbat"
+KEYWORDS_GOLDEEN="Goldeen"
+KEYWORDS_GOLDUCK="Golduck"
+KEYWORDS_GOLEM="Golem"
+KEYWORDS_GOLETT="Golett"
 
 if [ "$1" == "" ]; #Normal operation
 then
-  egrep -i "$KEYWORDS_GABITE" newpages.txt >> Gabite.txt
-  egrep -i "$KEYWORDS_GALLADE" newpages.txt >> Gallade.txt
-  egrep -i "$KEYWORDS_GARBODOR" newpages.txt >> Garbodor.txt
-  egrep -i 'Garchomp' newpages.txt >> Garchomp.txt
-  egrep -i 'Gardevoir' newpages.txt >> Gardevoir.txt
-  egrep -i 'Gastly' newpages.txt >> Gastly.txt
-  egrep -i 'Gastrodon' newpages.txt >> Gastrodon.txt
-  egrep -i 'Galvantula' newpages.txt >> Galvantula.txt
-  egrep -i 'Genesect' newpages.txt >> Genesect.txt
-  egrep -i 'Gengar' newpages.txt >> Gengar.txt
-  egrep -i 'Geodude' newpages.txt >> Geodude.txt
-  egrep -i '\bGible' newpages.txt >> Gible.txt
-  egrep -i 'Gigalith' newpages.txt >> Gigalith.txt
-  egrep -i 'Girafarig' newpages.txt >> Girafarig.txt
-  egrep -i 'Giratina' newpages.txt >> Giratina.txt
-  egrep -i 'Glaceon' newpages.txt >> Glaceon.txt
-  egrep -i 'Glalie' newpages.txt >> Glalie.txt
-  egrep -i 'Glameow' newpages.txt >> Glameow.txt
-  egrep -i 'Gligar' newpages.txt >> Gligar.txt
-  egrep -i 'Gliscor' newpages.txt >> Gliscor.txt
-  egrep -i 'Gloom\b' newpages.txt >> Gloom.txt
-  egrep -i 'Golbat' newpages.txt >> Golbat.txt
-  egrep -i 'Goldeen' newpages.txt >> Goldeen.txt
-  egrep -i 'Golduck' newpages.txt >> Golduck.txt
-  egrep -i 'Golem' newpages.txt >> Golem.txt
-  egrep -i 'Golett' newpages.txt >> Golett.txt
+
+  egrep -i "$KEYWORDS_GARDEVOIR" newpages.txt >> Gardevoir.txt
+  egrep -i "$KEYWORDS_GASTLY" newpages.txt >> Gastly.txt
+  egrep -i "$KEYWORDS_GASTRODON" newpages.txt >> Gastrodon.txt
+  egrep -i "$KEYWORDS_GENESECT" newpages.txt >> Genesect.txt
+  egrep -i "$KEYWORDS_GENGAR" newpages.txt >> Gengar.txt
+  egrep -i "$KEYWORDS_GEODUDE" newpages.txt >> Geodude.txt
+  egrep -i "$KEYWORDS_GIBLE" newpages.txt >> Gible.txt
+  egrep -i "$KEYWORDS_GIGALITH" newpages.txt >> Gigalith.txt
+  egrep -i "$KEYWORDS_GIRAFARIG" newpages.txt >> Girafarig.txt
+  egrep -i "$KEYWORDS_GIRATINA" newpages.txt >> Giratina.txt
+  egrep -i "$KEYWORDS_GLACEON" newpages.txt >> Glaceon.txt
+  egrep -i "$KEYWORDS_GLALIE" newpages.txt >> Glalie.txt
+  egrep -i "$KEYWORDS_GLAMEOW" newpages.txt >> Glameow.txt
+  egrep -i "$KEYWORDS_GLIGAR" newpages.txt >> Gligar.txt
+  egrep -i "$KEYWORDS_GLISCOR" newpages.txt >> Gliscor.txt
+  egrep -i "$KEYWORDS_GLOOM" newpages.txt >> Gloom.txt
+  egrep -i "$KEYWORDS_GOLBAT" newpages.txt >> Golbat.txt
+  egrep -i "$KEYWORDS_GOLDEEN" newpages.txt >> Goldeen.txt
+  egrep -i "$KEYWORDS_GOLDUCK" newpages.txt >> Golduck.txt
+  egrep -i "$KEYWORDS_GOLEM" newpages.txt >> Golem.txt
+  egrep -i "$KEYWORDS_GOLETT" newpages.txt >> Golett.txt
   egrep -i 'Golurk' newpages.txt >> Golurk.txt
   egrep -i 'Gorebyss' newpages.txt >> Gorebyss.txt
   egrep -i 'Gothita' newpages.txt >> Gothita.txt
@@ -49,14 +68,14 @@ then
   egrep -i 'Gurdurr' newpages.txt >> Gurdurr.txt
   egrep -i 'Gyarados' newpages.txt >> Gyarados.txt
 
-  Gabite=`stat --print=%s Gabite.txt`
-  Gallade=`stat --print=%s Gallade.txt`
-  Garbodor=`stat --print=%s Garbodor.txt`
-  Garchomp=`stat --print=%s Garchomp.txt`
+  GABITE=`egrep -i "$KEYWORDS_GABITE" newpages.txt`
+  GALLADE=`egrep -i "$KEYWORDS_GALLADE" newpages.txt`
+  GARBODOR=`egrep -i "$KEYWORDS_GARBODOR" newpages.txt`
+  GARCHOMP=`egrep -i "$KEYWORDS_GARCHOMP" newpages.txt`
   Gardevoir=`stat --print=%s Gardevoir.txt`
   Gastly=`stat --print=%s Gastly.txt`
   Gastrodon=`stat --print=%s Gastrodon.txt`
-  Galvantula=`stat --print=%s Galvantula.txt`
+  GALVANTULA=`egrep -i "$KEYWORDS_GALVANTULA" newpages.txt`
   Genesect=`stat --print=%s Genesect.txt`
   Gengar=`stat --print=%s Gengar.txt`
   Geodude=`stat --print=%s Geodude.txt`
@@ -92,32 +111,45 @@ then
   Gurdurr=`stat --print=%s Gurdurr.txt`
   Gyarados=`stat --print=%s Gyarados.txt`
 
-  if [ $Gabite -ne 0 ];
+
+  if [ "$GABITE" != "" ];
   then
+    printf "$GABITE" > Gabite.txt
     export CATFILE="Gabite.txt"
     export CATNAME="Gabite"
     $CATEGORIZE
+    rm Gabite.txt
+    unset GABITE
   fi
 
-  if [ $Gallade -ne 0 ];
+  if [ "$GALLADE" != "" ];
   then
+    printf "$GALLADE" > Gallade.txt
     export CATFILE="Gallade.txt"
     export CATNAME="Gallade"
     $CATEGORIZE
+    rm Gallade.txt
+    unset GALLADE
   fi
 
-  if [ $Garbodor -ne 0 ];
+  if [ "$GARBODOR" != "" ];
   then
+    printf "$GARBODOR" > Garbodor.txt
     export CATFILE="Garbodor.txt"
     export CATNAME="Garbodor"
     $CATEGORIZE
+    rm Garbodor.txt
+    unset GARBODOR
   fi
 
-  if [ $Garchomp -ne 0 ];
+  if [ "$GARCHOMP" != "" ];
   then
+    printf "$GARCHOMP" > Garchomp.txt    
     export CATFILE="Garchomp.txt"
     export CATNAME="Garchomp"
     $CATEGORIZE
+    rm Garchomp.txt
+    unset GARCHOMP
   fi
 
   if [ $Gardevoir -ne 0 ];
@@ -141,11 +173,14 @@ then
     $CATEGORIZE
   fi
 
-  if [ $Galvantula -ne 0 ];
+  if [ "$GALVANTULA" != "" ];
   then
+    printf "$GALVANTULA" > Galvantula.txt
     export CATFILE="Galvantula.txt"
     export CATNAME="Galvantula"
     $CATEGORIZE
+    rm Galvantula.txt
+    unset GALVANTULA
   fi
 
   if [ $Genesect -ne 0 ];
@@ -386,10 +421,6 @@ then
     $CATEGORIZE
   fi
 
-  rm Gabite.txt
-  rm Gallade.txt
-  rm Garbodor.txt
-  rm Garchomp.txt
   rm Gardevoir.txt
   rm Gastly.txt
   rm Gastrodon.txt
