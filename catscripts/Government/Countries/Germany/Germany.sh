@@ -10,46 +10,67 @@ KEYWORDS_AUSCHWITZ="Auschwitz|Oświęcim"
 KEYWORDS_NAZIGERMANY_EXCLUDE="$KEYWORDS_HITLER|$KEYWORDS_AUSCHWITZ"
 KEYWORDS_GERMANY_EXCLUDE="$KEYWORDS_NAZIGERMANY|$KEYWORDS_HITLER|$KEYWORDS_NAZIGERMANY_SECONDARY|$KEYWORDS_AUSCHWITZ|$KEYWORDS_BERLIN"
 
-egrep -i "$KEYWORDS_GERMANY" newpages.txt | egrep -iv "$KEYWORDS_GERMANY_EXCLUDE" >> Germany.txt
-egrep -i "$KEYWORDS_NAZIGERMANY" newpages.txt | egrep -iv "$KEYWORDS_NAZIGERMANY_EXCLUDE" >> NaziGermany.txt
-egrep -i "$KEYWORDS_NAZIGERMANY_SECONDARY" newpages.txt >> NaziGermany.txt
-egrep -i "$KEYWORDS_BERLIN" newpages.txt >> Berlin.txt
-egrep -i "$KEYWORDS_HITLER" newpages.txt | egrep -iv "$KEYWORDS_HITLER_EXCLUDE" >> AdolfHitler.txt
+KEYWORDS_GERMANY_ALL="$KEYWORDS_GERMANY|$KEYWORDS_NAZIGERMANY|$KEYWORDS_HITLER|$KEYWORDS_NAZIGERMANY_SECONDARY|$KEYWORDS_BERLIN|$KEYWORDS_AUSCHWITZ"
 
-GERMANY=`stat --print=%s Germany.txt`
-NAZI=`stat --print=%s NaziGermany.txt`
-HITLER=`stat --print=%s AdolfHitler.txt`
-BERLIN=`stat --print=%s Berlin.txt`
-
-if [ $GERMANY -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Germany.txt"
-  export CATNAME="Germany"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Germany\n"
+  fi
 
-if [ $NAZI -ne 0 ];
-then
-  export CATFILE="NaziGermany.txt"
-  export CATNAME="Nazi Germany"
-  $CATEGORIZE
-fi
+  GERMANY=`egrep -i "$KEYWORDS_GERMANY" newpages.txt | egrep -iv "$KEYWORDS_GERMANY_EXCLUDE"`
+  NAZI=`egrep -i "$KEYWORDS_NAZIGERMANY" newpages.txt | egrep -iv "$KEYWORDS_NAZIGERMANY_EXCLUDE"`
+  NAZISECONDARY=`egrep -i "$KEYWORDS_NAZIGERMANY_SECONDARY" newpages.txt`
+  HITLER=`egrep -i "$KEYWORDS_BERLIN" newpages.txt`
+  BERLIN=`egrep -i "$KEYWORDS_HITLER" newpages.txt | egrep -iv "$KEYWORDS_HITLER_EXCLUDE"`
 
-if [ $HITLER -ne 0 ];
-then
-  export CATFILE="AdolfHitler.txt"
-  export CATNAME="Adolf Hitler"
-  $CATEGORIZE
-fi
+  if [ "$GERMANY" != "" ];
+  then
+    printf "$GERMANY" > Germany.txt
+    export CATFILE="Germany.txt"
+    export CATNAME="Germany"
+    $CATEGORIZE
+    rm Germany.txt
+    unset GERMANY
+  fi
 
-if [ $BERLIN -ne 0 ];
-then
-  export CATFILE="Berlin.txt"
-  export CATNAME="Berlin"
-  $CATEGORIZE
-fi
+  if [ "$NAZI" != "" ] || [ "$NAZISECONDARY" != "" ];
+  then
+    printf "$NAZI" > NaziGermany.txt
+    printf "$NAZISECONDARY" >> NaziGermany.txt
+    export CATFILE="NaziGermany.txt"
+    export CATNAME="Nazi Germany"
+    $CATEGORIZE
+    rm NaziGermany.txt
+    unset NAZI
+    unset NAZISECONDARY
+  fi
 
-rm Germany.txt
-rm NaziGermany.txt
-rm AdolfHitler.txt
-rm Berlin.txt
+  if [ "$HITLER" != "" ];
+  then
+    printf "$HITLER" > AdolfHitler.txt
+    export CATFILE="AdolfHitler.txt"
+    export CATNAME="Adolf Hitler"
+    $CATEGORIZE
+    rm AdolfHitler.txt
+    unset HITLER
+  fi
+
+  if [ "$BERLIN" != "" ];
+  then
+    printf "$BERLIN" > Berlin.txt
+    export CATFILE="Berlin.txt"
+    export CATNAME="Berlin"
+    $CATEGORIZE
+    rm Berlin.txt
+    unset BERLIN
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Germany\n"
+  fi
+
+fi

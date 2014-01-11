@@ -9,49 +9,62 @@ KEYWORDS_DALLAS_EXCLUDE="Dallas(| )Cowboys"
 KEYWORDS_HOUSTON_EXCLUDE="(Sam|Whitney)(| )Houston"
 
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
-  egrep -i "$KEYWORDS_TEXAS" newpages.txt | egrep -iv "$KEYWORDS_TEXAS_EXCLUDE" > Texas.txt
-  egrep -i "$KEYWORDS_DALLAS" newpages.txt | egrep -iv "$KEYWORDS_DALLAS_EXCLUDE" > Dallas.txt
-  egrep -i "$KEYWORDS_HOUSTON" newpages.txt | egrep -iv "$KEYWORDS_HOUSTON_EXCLUDE" > Houston.txt
-  egrep -i "$KEYWORDS_SANANTONIO" newpages.txt > SanAntonio.txt
 
-  TEXAS=`stat --print=%s Texas.txt`
-  DALLAS=`stat --print=%s Dallas.txt`
-  HOUSTON=`stat --print=%s Houston.txt`
-  SANANTONIO=`stat --print=%s SanAntonio.txt`
-
-  if [ $TEXAS -ne 0 ];
+  if [ "$DEBUG" == "yes" ];
   then
+    printf "Starting Texas\n"
+  fi
+
+  TEXAS=`egrep -i "$KEYWORDS_TEXAS" newpages.txt | egrep -iv "$KEYWORDS_TEXAS_EXCLUDE"`
+  DALLAS=`egrep -i "$KEYWORDS_DALLAS" newpages.txt | egrep -iv "$KEYWORDS_DALLAS_EXCLUDE"`
+  HOUSTON=`egrep -i "$KEYWORDS_HOUSTON" newpages.txt | egrep -iv "$KEYWORDS_HOUSTON_EXCLUDE"`
+  SANANTONIO=`egrep -i "$KEYWORDS_SANANTONIO" newpages.txt`
+
+  if [ "$TEXAS" != "" ];
+  then
+    printf "$TEXAS" > Texas.txt
     export CATFILE="Texas.txt"
     export CATNAME="Texas"
     $CATEGORIZE
+    rm Texas.txt
+    unset TEXAS
   fi
 
-  if [ $DALLAS -ne 0 ];
+  if [ "$DALLAS" != "" ];
   then
+    printf "$DALLAS" > Dallas.txt
     export CATFILE="Dallas.txt"
     export CATNAME="Dallas"
     $CATEGORIZE
+    rm Dallas.txt
+    unset DALLAS
   fi
 
-  if [ $HOUSTON -ne 0 ];
+  if [ "$HOUSTON" != "" ];
   then
+    printf "$HOUSTON" > Houston.txt
     export CATFILE="Houston.txt"
     export CATNAME="Houston"
     $CATEGORIZE
+    rm Houston.txt
+    unset HOUSTON
   fi
 
-  if [ $SANANTONIO -ne 0 ];
+  if [ "$SANANTONIO" != "" ];
   then
+    printf "$SANANTONIO" > SanAntonio.txt
     export CATFILE="SanAntonio.txt"
     export CATNAME="San Antonio"
     $CATEGORIZE
+    rm SanAntonio.txt
+    unset SANANTONIO
   fi
 
-  rm Texas.txt
-  rm Dallas.txt
-  rm Houston.txt
-  rm SanAntonio.txt
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Texas\n"
+  fi
 
 fi

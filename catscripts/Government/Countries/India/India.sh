@@ -12,76 +12,92 @@ KEYWORDS_INDIA_EXCLUDE="$KEYWORDS_NEWDELHI|$KEYWORDS_MUMBAI|$KEYWORDS_KOLKATA|$K
 if [ "$1" == "" ];
 then
 
-  egrep -i "$KEYWORDS_INDIA" newpages.txt | egrep -iv "$KEYWORDS_INDIA_EXCLUDE" > India.txt
-  egrep -i "$KEYWORDS_NEWDELHI" newpages.txt > NewDelhi.txt
-  egrep -i "$KEYWORDS_MUMBAI" newpages.txt > Mumbai.txt
-  egrep -i "$KEYWORDS_KOLKATA" newpages.txt > Kolkata.txt
-  egrep -i "$KEYWORDS_CHENNAI" newpages.txt > Chennai.txt
-  egrep -i "$KEYWORDS_BANGALORE" newpages.txt > Bangalore.txt
-  egrep -i "$KEYWORDS_PUNE" newpages.txt > Pune.txt
-
-  INDIA=`stat --print=%s India.txt`
-  NEWDELHI=`stat --print=%s NewDelhi.txt`
-  MUMBAI=`stat --print=%s Mumbai.txt`
-  KOLKATA=`stat --print=%s Kolkata.txt`
-  CHENNAI=`stat --print=%s Chennai.txt`
-  BANGALORE=`stat --print=%s Bangalore.txt`
-  PUNE=`stat --print=%s Pune.txt`
-
-  if [ $INDIA -ne 0 ];
+  if [ "$DEBUG" == "yes" ];
   then
+    printf "Starting India\n"
+  fi
+
+  INDIA=`egrep -i "$KEYWORDS_INDIA" newpages.txt | egrep -iv "$KEYWORDS_INDIA_EXCLUDE"`
+  NEWDELHI=`egrep -i "$KEYWORDS_NEWDELHI" newpages.txt`
+  MUMBAI=`egrep -i "$KEYWORDS_MUMBAI" newpages.txt`
+  KOLKATA=`egrep -i "$KEYWORDS_KOLKATA" newpages.txt`
+  CHENNAI=`egrep -i "$KEYWORDS_CHENNAI" newpages.txt`
+  BANGALORE=`egrep -i "$KEYWORDS_BANGALORE" newpages.txt`
+  PUNE=`egrep -i "$KEYWORDS_PUNE" newpages.txt`
+
+  if [ "$INDIA" != "" ];
+  then
+    printf "$INDIA" > India.txt
     export CATFILE="India.txt"
     export CATNAME="India"
     $CATEGORIZE
+    rm India.txt
+    unset INDIA
   fi
 
-  if [ $NEWDELHI -ne 0 ];
+  if [ "$NEWDELHI" != "" ];
   then
+    printf "$NEWDELHI" > NewDelhi.txt
     export CATFILE="NewDelhi.txt"
     export CATNAME="New Delhi"
     $CATEGORIZE
+    rm NewDelhi.txt
+    unset NEWDELHI
   fi
 
-  if [ $MUMBAI -ne 0 ];
+  if [ "$MUMBAI" != "" ];
   then
+    printf "$MUMBAI" > Mumbai.txt
     export CATFILE="Mumbai.txt"
     export CATNAME="Mumbai"
     $CATEGORIZE
+    rm Mumbai.txt
+    unset MUMBAI
   fi
 
-  if [ $KOLKATA -ne 0 ];
+  if [ "$KOLKATA" != "" ];
   then
+    printf "$KOLKATA" > Kolkata.txt
     export CATFILE="Kolkata.txt"
     export CATNAME="Kolkata"
     $CATEGORIZE
+    rm Kolkata.txt
+    unset KOLKATA
   fi
 
-  if [ $CHENNAI -ne 0 ];
+  if [ "$CHENNAI" != "" ];
   then
+    printf "$CHENNAI" > Chennai.txt
     export CATFILE="Chennai.txt"
     export CATNAME="Chennai"
     $CATEGORIZE
+    rm Chennai.txt
+    unset CHENNAI
   fi
 
-  if [ $BANGALORE -ne 0 ];
+  if [ "$BANGALORE" != "" ];
   then
+    printf "$BANGALORE" > Bangalore.txt
     export CATFILE="Bangalore.txt"
     export CATNAME="Bangalore"
     $CATEGORIZE
+    rm Bangalore.txt
+    unset BANGALORE
   fi
 
-  if [ $PUNE -ne 0 ];
+  if [ "$PUNE" != "" ];
   then
+    printf "$PUNE" > Pune.txt
     export CATFILE="Pune.txt"
     export CATNAME="Pune"
     $CATEGORIZE
+    rm Pune.txt
+    unset PUNE
   fi
 
-  rm India.txt
-  rm NewDelhi.txt
-  rm Mumbai.txt
-  rm Kolkata.txt
-  rm Chennai.txt
-  rm Bangalore.txt
-  rm Pune.txt
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing India\n"
+  fi
+
 fi

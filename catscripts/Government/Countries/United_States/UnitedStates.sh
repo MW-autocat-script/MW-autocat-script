@@ -4,12 +4,12 @@ then
   printf "Starting United States\n" 
 fi
 
-CURRENTDIR="./catscripts/Government/Countries/United_States"
+UNITEDSTATESDIR="./catscripts/Government/Countries/United_States"
 
-$CURRENTDIR/US_military/USmilitary.sh
-$CURRENTDIR/US_Presidents/Presidents.sh
-$CURRENTDIR/US_states/States.sh
-$CURRENTDIR/Puerto_Rico/PuertoRico.sh
+$UNITEDSTATESDIR/US_military/USmilitary.sh #KEYWORDS_USMILITARY_ALL
+$UNITEDSTATESDIR/US_Presidents/Presidents.sh
+$UNITEDSTATESDIR/US_states/States.sh
+$UNITEDSTATESDIR/Puerto_Rico/PuertoRico.sh
 
 if [ "$DEBUG" == "yes" ];
 then
