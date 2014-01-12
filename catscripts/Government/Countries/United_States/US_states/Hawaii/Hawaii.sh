@@ -5,35 +5,51 @@ KEYWORDS_HONOLULU="Honolulu"
 KEYWORDS_PEARLHARBOR="Pearl(| )Harbo(|u)r"
 KEYWORDS_HAWAII_EXCLUDE="$KEYWORDS_HONOLULU|$KEYWORDS_PEARLHARBOR"
 
-egrep -i "$KEYWORDS_HAWAII" newpages.txt | egrep -iv "$KEYWORDS_HAWAII_EXCLUDE" >> Hawaii.txt
-egrep -i "$KEYWORDS_HONOLULU" newpages.txt >> Honolulu.txt
-egrep -i "$KEYWORDS_PEARLHARBOR" newpages.txt >> PearlHarbor.txt
-
-HAWAII=`stat --print=%s Hawaii.txt`
-HONOLULU=`stat --print=%s Honolulu.txt`
-PEARLHORBOR=`stat --print=%s PearlHarbor.txt`
-
-if [ $HAWAII -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Hawaii.txt"
-  export CATNAME="Hawaii"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Hawaii\n"
+  fi
 
-if [ $HONOLULU -ne 0 ];
-then
-  export CATFILE="Honolulu.txt"
-  export CATNAME="Honolulu"
-  $CATEGORIZE
-fi
+  HAWAII=`egrep -i "$KEYWORDS_HAWAII" newpages.txt | egrep -iv "$KEYWORDS_HAWAII_EXCLUDE"`
+  HONOLULU=`egrep -i "$KEYWORDS_HONOLULU" newpages.txt`
+  PEARLHARBOR=`egrep -i "$KEYWORDS_PEARLHARBOR" newpages.txt`
 
-if [ $PEARLHORBOR -ne 0 ];
-then
-  export CATFILE="PearlHarbor.txt"
-  export CATNAME="Pearl Harbor"
-  $CATEGORIZE
-fi
+  if [ "$HAWAII" != "" ];
+  then
+    printf "$HAWAII" > Hawaii.txt
+    export CATFILE="Hawaii.txt"
+    export CATNAME="Hawaii"
+    $CATEGORIZE
+    rm Hawaii.txt
+    unset HAWAII
+  fi
 
-rm Hawaii.txt
-rm Honolulu.txt
-rm PearlHarbor.txt
+  if [ "$HONOLULU" != "" ];
+  then
+    printf "$HONOLULU" > Honolulu.txt
+    export CATFILE="Honolulu.txt"
+    export CATNAME="Honolulu"
+    $CATEGORIZE
+    rm Honolulu.txt
+    unset HONOLULU
+  fi
+
+  if [ "$PEARLHARBOR" != "" ];
+  then
+    printf "$PEARLHARBOR" > PearlHarbor.txt
+    export CATFILE="PearlHarbor.txt"
+    export CATNAME="Pearl Harbor"
+    $CATEGORIZE
+    rm PearlHarbor.txt
+    unset PEARLHARBOR
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Hawaii\n"
+  fi
+
+fi

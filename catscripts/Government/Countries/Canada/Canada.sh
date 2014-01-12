@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_CANADA="Canada"
+KEYWORDS_CANADA="Canada|Canadian"
 
 
 KEYWORDS_ONTARIO="Ontario"

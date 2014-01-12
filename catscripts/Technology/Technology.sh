@@ -2,7 +2,6 @@
 
 CURRENTDIR="./catscripts/Technology"
 
-$CURRENTDIR/Internet/Internet.sh
 $CURRENTDIR/Inventions/Inventions.sh
 $CURRENTDIR/Inventors/Inventors.sh
 $CURRENTDIR/Computers/Computers.sh

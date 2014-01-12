@@ -10,6 +10,7 @@ then
   . $COMPUTERDIR/Computer_hardware/Computerhardware.sh
   . $COMPUTERDIR/Computer_manufacturers/Manufacturers.sh
   . $COMPUTERDIR/Computer_networking/Computernetworking.sh
+  . $COMPUTERDIR/Internet/Internet.sh
   . $COMPUTERDIR/Software/Software.sh #KEYWORDS_SOFTWARE_ALL
   . $COMPUTERDIR/Tablets/Tablets.sh
 fi
