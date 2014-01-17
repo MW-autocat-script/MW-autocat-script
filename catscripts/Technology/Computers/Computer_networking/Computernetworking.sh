@@ -1,74 +1,114 @@
 #!/bin/bash
 
-egrep -i 'Computer network|Ethernet|Wi(| |-)fi|wire(d|less) network|wireless card|(wire(d|less)|Ethernet) router|\bLAN(|s)\b|\bWAN(|s)\b|\bWLAN(|s)\b|\bNIC(|s)\b|\bVLAN|DHCP|network administrator|network administration|\bBOOTP|PXE|\bDNS\b|\bDDoS\b|\bTCP\b|\bIPX\b|IP address|OSPF|EIGRP|network interface card|\bAOSS|Intranet|default gateway|subnet|netmask|network cable|i(p|f)config|port forward|DNSSEC|IPSEC' newpages.txt | egrep -iv 'SSH|Telnet|Lan Hikari|Obi( |-)wan|FTP|VoIP|Skype|Bluetooth|Nic Sheff' >> Computernetworking.txt
-egrep -i 'Telnet' newpages.txt >> Telnet.txt
-egrep -i '\bSSH|Secure Shell|OpenSSH|SFTP' newpages.txt >> SSH.txt
-egrep -i '\bFTP\b|TFTP' newpages.txt >> FTP.txt
-egrep -i 'VoIP|Voice over IP' newpages.txt | egrep -iv 'Skype' >> VoIP.txt
-egrep -i 'Skype' newpages.txt >> Skype.txt
-egrep -i 'Bluetooth' newpages.txt >> Bluetooth.txt
+KEYWORDS_WIRELESS="wire(| )less(| )(router|network|card|Ethernet)|\bWLAN(|s)\b|DD(|-| )WRT|Open(| )WRT|wi(| |-)fi|wireless fidelity|802\.11|\bAOSS"
 
-NETWORK=`stat --print=%s Computernetworking.txt`
-TELNET=`stat --print=%s Telnet.txt`
-SSH=`stat --print=%s SSH.txt`
-FTP=`stat --print=%s FTP.txt`
-VOIP=`stat --print=%s VoIP.txt`
-SKYPE=`stat --print=%s Skype.txt`
-BLUETOOTH=`stat --print=%s Bluetooth.txt`
+KEYWORDS_WIRED="Ethernet|Category(| )(3|4|5|6|7)(e|)(| )cable|RJ(| |-)45|network(| )cable"
 
-if [ $NETWORK -ne 0 ];
+KEYWORDS_NETWORK_OTHER="Computer(| )network|\b(WAN|LAN|VLAN)(|s)\b|\bNIC(|s)\b|DHCP|network(| )admin|\bBOOTP|PXE|\bDNS(|SEC)\b|\bDDoS\b|\bTCP\b|\bIPX\b|IP(| )address|OSPF|EIGRP|network(| )interface|Intranet|default(| )gateway|subnet|netmask|i(p|f)config|port(| )forward|IPSEC"
+
+KEYWORDS_NETWORK="$KEYWORDS_WIRED|$KEYWORDS_WIRELESS|$KEYWORDS_NETWORK_OTHER"
+
+KEYWORDS_TELNET="Telnet"
+KEYWORDS_SSH="\bSSH|Secure(| )Shell|OpenSSH|SFTP|\bSCP\b"
+KEYWORDS_FTP="\bFTP\b|TFTP"
+KEYWORDS_VOIP="VOIP|Voice(| )over(| )IP"
+KEYWORDS_SKYPE="Skype"
+KEYWORDS_VOIP_EXCLUDE="$KEYWORDS_SKYPE"
+KEYWORDS_BLUETOOTH="Bluetooth"
+
+KEYWORDS_NETWORK_EXCLUDE="$KEYWORDS_TELNET|$KEYWORDS_SSH|$KEYWORDS_VOIP|$KEYWORDS_SKYPE|$KEYWORDS_FTP|$KEYWORDS_BLUETOOTH|Nic Sheff"
+
+KEYWORDS_NETWORK_ALL="$KEYWORDS_NETWORK|$KEYWORDS_BLUETOOTH|$KEYWORDS_FTP|$KEYWORDS_SKYPE|$KEYWORDS_SSH|$KEYWORDS_TELNET|$KEYWORDS_VOIP"
+
+if [ "$1" == "" ];
 then
-  export CATFILE="Computernetworking.txt"
-  export CATNAME="Computer networking"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Computer networking\n"
+  fi
 
-if [ $TELNET -ne 0 ];
-then
-  export CATFILE="Telnet.txt"
-  export CATNAME="Telnet"
-  $CATEGORIZE
-fi
+  NETWORK=`egrep -i "$KEYWORDS_NETWORK" newpages.txt | egrep -iv "$KEYWORDS_NETWORK_EXCLUDE"`
+  TELNET=`egrep -i "$KEYWORDS_TELNET" newpages.txt`
+  SSH=`egrep -i "$KEYWORDS_SSH" newpages.txt`
+  FTP=`egrep -i "$KEYWORDS_FTP" newpages.txt`
+  VOIP=`egrep -i "$KEYWORDS_VOIP" newpages.txt | egrep -iv "$KEYWORDS_VOIP_EXCLUDE"`
+  SKYPE=`egrep -i "$KEYWORDS_SKYPE" newpages.txt`
+  BLUETOOTH=`egrep -i "$KEYWORDS_BLUETOOTH" newpages.txt`
 
-if [ $SSH -ne 0 ];
-then
-  export CATFILE="SSH.txt"
-  export CATNAME="SSH"
-  $CATEGORIZE
-fi
+  if [ "$NETWORK" != "" ];
+  then
+    printf "$NETWORK" > Computernetworking.txt
+    export CATFILE="Computernetworking.txt"
+    export CATNAME="Computer networking"
+    $CATEGORIZE
+    rm Computernetworking.txt
+    unset NETWORK
+  fi
 
-if [ $FTP -ne 0 ];
-then
-  export CATFILE="FTP.txt"
-  export CATNAME="FTP"
-  $CATEGORIZE
-fi
+  if [ "$TELNET" != "" ];
+  then
+    printf "$TELNET" > Telnet.txt
+    export CATFILE="Telnet.txt"
+    export CATNAME="Telnet"
+    $CATEGORIZE
+    rm Telnet.txt
+    unset TELNET
+  fi
 
-if [ $VOIP -ne 0 ];
-then
-  export CATFILE="VoIP.txt"
-  export CATNAME="VoIP"
-  $CATEGORIZE
-fi
+  if [ "$SSH" != "" ];
+  then
+    printf "$SSH" > SSH.txt
+    export CATFILE="SSH.txt"
+    export CATNAME="SSH"
+    $CATEGORIZE
+    rm SSH.txt
+    unset SSH
+  fi
 
-if [ $SKYPE -ne 0 ];
-then
-  export CATFILE="Skype.txt"
-  export CATNAME="Skype"
-  $CATEGORIZE
-fi
+  if [ "$FTP" != "" ];
+  then
+    printf "$FTP" > FTP.txt
+    export CATFILE="FTP.txt"
+    export CATNAME="FTP"
+    $CATEGORIZE
+    rm FTP.txt
+    unset FTP
+  fi
 
-if [ $BLUETOOTH -ne 0 ];
-then
-  export CATFILE="Bluetooth.txt"
-  export CATNAME="Bluetooth"
-  $CATEGORIZE
-fi
+  if [ "$VOIP" != "" ];
+  then
+    printf "$VOIP" > VoIP.txt
+    export CATFILE="VoIP.txt"
+    export CATNAME="VoIP"
+    $CATEGORIZE
+    rm VoIP.txt
+    unset VOIP
+  fi
 
-rm Computernetworking.txt
-rm Telnet.txt
-rm SSH.txt
-rm FTP.txt
-rm VoIP.txt
-rm Skype.txt
-rm Bluetooth.txt
+  if [ "$SKYPE" != "" ];
+  then
+    printf "$SKYPE" > Skype.txt
+    export CATFILE="Skype.txt"
+    export CATNAME="Skype"
+    $CATEGORIZE
+    rm Skype.txt
+    unset SKYPE
+  fi
+
+  if [ "$BLUETOOTH" != "" ];
+  then
+    printf "$BLUETOOTH" > Bluetooth.txt
+    export CATFILE="Bluetooth.txt"
+    export CATNAME="Bluetooth"
+    $CATEGORIZE
+    rm Bluetooth.txt
+    unset BLUETOOTH
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Computer networking\n"
+  fi
+
+fi

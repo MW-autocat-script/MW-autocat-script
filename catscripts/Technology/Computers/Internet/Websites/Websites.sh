@@ -44,7 +44,7 @@ rm Wikia.txt
 rm Wikianswers.txt
 rm Wikipedia.txt
 
-CURRENTDIR="./catscripts/Technology/Internet/Websites"
+WEBSITEDIR="./catscripts/Technology/Computers/Internet/Websites"
 
-$CURRENTDIR/Social_networking/Socialnetworking.sh
-$CURRENTDIR/Search_engines/Searchengines.sh
+$WEBSITEDIR/Social_networking/Socialnetworking.sh
+$WEBSITEDIR/Search_engines/Searchengines.sh
