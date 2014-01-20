@@ -81,6 +81,7 @@ $COUNTRYDIR/Mali/Mali.sh
 $COUNTRYDIR/Mexico/Mexico.sh
 $COUNTRYDIR/Moldova/Moldova.sh
 $COUNTRYDIR/Mongolia/Mongolia.sh
+$COUNTRYDIR/Monaco/Monaco.sh
 $COUNTRYDIR/Morocco/Morocco.sh
 $COUNTRYDIR/Namibia/Namibia.sh
 $COUNTRYDIR/Nepal/Nepal.sh
