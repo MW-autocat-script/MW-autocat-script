@@ -103,6 +103,7 @@ $COUNTRYDIR/South_Africa/SouthAfrica.sh
 $COUNTRYDIR/Spain/Spain.sh
 $COUNTRYDIR/Saudi_Arabia/SaudiArabia.sh
 $COUNTRYDIR/Scotland/Scotland.sh
+$COUNTRYDIR/Slovenia/Slovenia.sh #KEYWORDS_SLOVENIA_ALL
 $COUNTRYDIR/South_Korea/SouthKorea.sh
 $COUNTRYDIR/Sri_Lanka/SriLanka.sh
 $COUNTRYDIR/Sweden/Sweden.sh
