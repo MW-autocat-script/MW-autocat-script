@@ -72,6 +72,7 @@ $COUNTRYDIR/Laos/Laos.sh
 $COUNTRYDIR/Latvia/Latvia.sh
 $COUNTRYDIR/Lebanon/Lebanon.sh
 $COUNTRYDIR/Lesotho/Lesotho.sh
+$COUNTRYDIR/Liberia/Liberia.sh #KEYWORDS_LIBERIA_ALL
 $COUNTRYDIR/Libya/Libya.sh
 $COUNTRYDIR/Lithuania/Lithuania.sh
 $COUNTRYDIR/Luxembourg/Luxembourg.sh
