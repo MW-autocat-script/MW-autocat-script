@@ -98,6 +98,7 @@ $COUNTRYDIR/Peru/Peru.sh
 $COUNTRYDIR/Philippines/Philippines.sh
 $COUNTRYDIR/Poland/Poland.sh
 $COUNTRYDIR/Portugal/Portugal.sh
+$COUNTRYDIR/Romania/Romania.sh
 $COUNTRYDIR/Russia/Russia.sh
 $COUNTRYDIR/Singapore/Singapore.sh
 $COUNTRYDIR/South_Africa/SouthAfrica.sh

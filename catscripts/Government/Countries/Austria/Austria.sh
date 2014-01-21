@@ -1,6 +1,9 @@
 #!/bin/bash
 
-egrep -i 'Austria' newpages.txt >> Austria.txt
+KEYWORDS_AUSTRIA="Austria"
+KEYWORDS_AUSTRIA_ALL="$KEYWORDS_AUSTRIA"
+
+egrep -i "$KEYWORDS_AUSTRIA" newpages.txt >> Austria.txt
 
 AUSTRIA=`stat --print=%s Austria.txt`
 
