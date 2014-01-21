@@ -111,6 +111,7 @@ $COUNTRYDIR/Spain/Spain.sh
 $COUNTRYDIR/Saudi_Arabia/SaudiArabia.sh
 $COUNTRYDIR/Scotland/Scotland.sh
 $COUNTRYDIR/Serbia/Serbia.sh #KEYWORDS_SERBIA_ALL
+$COUNTRYDIR/Slovakia/Slovakia.sh #KEYWORDS_SLOVAKIA_ALL
 $COUNTRYDIR/Slovenia/Slovenia.sh #KEYWORDS_SLOVENIA_ALL
 $COUNTRYDIR/South_Korea/SouthKorea.sh
 $COUNTRYDIR/Sri_Lanka/SriLanka.sh
