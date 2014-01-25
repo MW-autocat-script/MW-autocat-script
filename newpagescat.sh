@@ -44,6 +44,7 @@ NEWSUM=`md5sum newpages.txt | cut -b-32`
 if [ "$OLDSUM" != "$NEWSUM" ]; #Lists have changed
 then
  
+  ./catscripts/Education/Education.sh
   ./catscripts/Entertainment/Entertainment.sh
   ./catscripts/Government/Government.sh
   ./catscripts/Language/Language.sh

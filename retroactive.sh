@@ -28,6 +28,7 @@ python $PYWIKIPEDIADIR/pagegenerators.py -start:. -pt:1 |sed s'|  [0-9][0-9][0-9
 
 printf "List complete; beginning categorization\n"
  
+./catscripts/Education/Education.sh
 ./catscripts/Entertainment/Entertainment.sh
 ./catscripts/Government/Government.sh
 ./catscripts/Language/Language.sh
