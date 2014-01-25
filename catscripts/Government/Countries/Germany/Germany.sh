@@ -23,7 +23,7 @@ then
   GERMANY=`egrep -i "$KEYWORDS_GERMANY" newpages.txt | egrep -iv "$KEYWORDS_GERMANY_EXCLUDE"`
   NAZI=`egrep -i "$KEYWORDS_NAZIGERMANY" newpages.txt | egrep -iv "$KEYWORDS_NAZIGERMANY_EXCLUDE"`
   NAZISECONDARY=`egrep -i "$KEYWORDS_NAZIGERMANY_SECONDARY" newpages.txt`
-  HITLER=`egrep -i "$KEYWORDS_HITLER" newpages.txt | egrep -iv "$KEYWORDS_HITLER_EXCLUDE`
+  HITLER=`egrep -i "$KEYWORDS_HITLER" newpages.txt | egrep -iv "$KEYWORDS_HITLER_EXCLUDE"`
   BERLIN=`egrep -i "$KEYWORDS_BERLIN" newpages.txt`
 
   if [ "$GERMANY" != "" ];

@@ -1,14 +1,31 @@
 #!/bin/bash
 
-egrep -i 'scientology|scientologist' newpages.txt >> Scientology.txt
+KEYWORDS_SCIENTOLOGY="scientology|scientologist|lord xenu"
+KEYWORDS_SCIENTOLOGY_ALL="$KEYWORDS_SCIENTOLOGY"
 
-SCIENTOLOGY=`stat --print=%s Scientology.txt`
-
-if [ $SCIENTOLOGY -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Scientology.txt"
-  export CATNAME="Scientology"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Scientology\n"
+  fi
 
-rm Scientology.txt
+  SCIENTOLOGY=`egrep -i "$KEYWORDS_SCIENTOLOGY" newpages.txt`
+
+  if [ "$SCIENTOLOGY" != "" ];
+  then
+    printf "$SCIENTOLOGY" > Scientology.txt
+    export CATFILE="Scientology.txt"
+    export CATNAME="Scientology"
+    $CATEGORIZE
+    rm Scientology.txt
+    unset SCIENTOLOGY
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Scientology\n"
+  fi
+
+fi
