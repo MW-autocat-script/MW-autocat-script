@@ -1,14 +1,31 @@
 #!/bin/bash
 
-egrep -i 'Finland' newpages.txt >> Finland.txt
+KEYWORDS_FINLAND="Finland|Helsinki"
+KEYWORDS_FINLAND_ALL="$KEYWORDS_FINLAND"
 
-FINLAND=`stat --print=%s Finland.txt`
-
-if [ $FINLAND -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Finland.txt"
-  export CATNAME="Finland"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Finland\n"
+  fi
 
-rm Finland.txt
+  FINLAND=`egrep -i "$KEYWORDS_FINLAND" newpages.txt`
+
+  if [ "$FINLAND" != "" ];
+  then
+    printf "$FINLAND" > Finland.txt
+    export CATFILE="Finland.txt"
+    export CATNAME="Finland"
+    $CATEGORIZE
+    rm Finland.txt
+    unset FINLAND
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Finland\n"
+  fi
+
+fi

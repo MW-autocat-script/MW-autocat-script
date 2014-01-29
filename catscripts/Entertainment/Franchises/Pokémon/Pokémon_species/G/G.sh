@@ -26,90 +26,69 @@ KEYWORDS_GOLDEEN="Goldeen"
 KEYWORDS_GOLDUCK="Golduck"
 KEYWORDS_GOLEM="Golem"
 KEYWORDS_GOLETT="Golett"
+KEYWORDS_GOLURK="Golurk"
+KEYWORDS_GOREBYSS="Gorebyss"
+KEYWORDS_GOTHITA="Gothita"
+KEYWORDS_GOTHITELLE="Gothitelle"
+KEYWORDS_GOTHORITA="Gothorita"
+KEYWORDS_GRANBULL="Granbull"
+KEYWORDS_GRAVELER="Graveler"
+KEYWORDS_GRIMER="Grimer"
+KEYWORDS_GROTLE="Grotle"
+KEYWORDS_GROUDON="Groudon"
+KEYWORDS_GROVYLE="Grovyle"
+KEYWORDS_GROWLITHE="Growlithe"
+KEYWORDS_GRUMPIG="Grumpig"
+KEYWORDS_GULPIN="Gulpin"
+KEYWORDS_GURDURR="Gurdurr"
+KEYWORDS_GYARADOS="Gyarados"
+
 
 if [ "$1" == "" ]; #Normal operation
 then
-
-  egrep -i "$KEYWORDS_GARDEVOIR" newpages.txt >> Gardevoir.txt
-  egrep -i "$KEYWORDS_GASTLY" newpages.txt >> Gastly.txt
-  egrep -i "$KEYWORDS_GASTRODON" newpages.txt >> Gastrodon.txt
-  egrep -i "$KEYWORDS_GENESECT" newpages.txt >> Genesect.txt
-  egrep -i "$KEYWORDS_GENGAR" newpages.txt >> Gengar.txt
-  egrep -i "$KEYWORDS_GEODUDE" newpages.txt >> Geodude.txt
-  egrep -i "$KEYWORDS_GIBLE" newpages.txt >> Gible.txt
-  egrep -i "$KEYWORDS_GIGALITH" newpages.txt >> Gigalith.txt
-  egrep -i "$KEYWORDS_GIRAFARIG" newpages.txt >> Girafarig.txt
-  egrep -i "$KEYWORDS_GIRATINA" newpages.txt >> Giratina.txt
-  egrep -i "$KEYWORDS_GLACEON" newpages.txt >> Glaceon.txt
-  egrep -i "$KEYWORDS_GLALIE" newpages.txt >> Glalie.txt
-  egrep -i "$KEYWORDS_GLAMEOW" newpages.txt >> Glameow.txt
-  egrep -i "$KEYWORDS_GLIGAR" newpages.txt >> Gligar.txt
-  egrep -i "$KEYWORDS_GLISCOR" newpages.txt >> Gliscor.txt
-  egrep -i "$KEYWORDS_GLOOM" newpages.txt >> Gloom.txt
-  egrep -i "$KEYWORDS_GOLBAT" newpages.txt >> Golbat.txt
-  egrep -i "$KEYWORDS_GOLDEEN" newpages.txt >> Goldeen.txt
-  egrep -i "$KEYWORDS_GOLDUCK" newpages.txt >> Golduck.txt
-  egrep -i "$KEYWORDS_GOLEM" newpages.txt >> Golem.txt
-  egrep -i "$KEYWORDS_GOLETT" newpages.txt >> Golett.txt
-  egrep -i 'Golurk' newpages.txt >> Golurk.txt
-  egrep -i 'Gorebyss' newpages.txt >> Gorebyss.txt
-  egrep -i 'Gothita' newpages.txt >> Gothita.txt
-  egrep -i 'Gothitelle' newpages.txt >> Gothitelle.txt
-  egrep -i 'Gothorita' newpages.txt >> Gothorita.txt
-  egrep -i 'Granbull' newpages.txt >> Granbull.txt
-  egrep -i 'Graveler' newpages.txt >> Graveler.txt
-  egrep -i 'Grimer' newpages.txt >> Grimer.txt
-  egrep -i 'Grotle' newpages.txt >> Grotle.txt
-  egrep -i 'Groudon' newpages.txt >> Groudon.txt
-  egrep -i 'Grovyle' newpages.txt >> Grovyle.txt
-  egrep -i 'Growlithe' newpages.txt >> Growlithe.txt
-  egrep -i 'Grumpig' newpages.txt >> Grumpig.txt
-  egrep -i 'Gulpin' newpages.txt >> Gulpin.txt
-  egrep -i 'Gurdurr' newpages.txt >> Gurdurr.txt
-  egrep -i 'Gyarados' newpages.txt >> Gyarados.txt
 
   GABITE=`egrep -i "$KEYWORDS_GABITE" newpages.txt`
   GALLADE=`egrep -i "$KEYWORDS_GALLADE" newpages.txt`
   GARBODOR=`egrep -i "$KEYWORDS_GARBODOR" newpages.txt`
   GARCHOMP=`egrep -i "$KEYWORDS_GARCHOMP" newpages.txt`
-  Gardevoir=`stat --print=%s Gardevoir.txt`
-  Gastly=`stat --print=%s Gastly.txt`
-  Gastrodon=`stat --print=%s Gastrodon.txt`
+  GARDEVOIR=`egrep -i "$KEYWORDS_GARDEVOIR" newpages.txt`
+  GASTLY=`egrep -i "$KEYWORDS_GASTLY" newpages.txt`
+  GASTRODON=`egrep -i "$KEYWORDS_GASTRODON" newpages.txt`
   GALVANTULA=`egrep -i "$KEYWORDS_GALVANTULA" newpages.txt`
-  Genesect=`stat --print=%s Genesect.txt`
-  Gengar=`stat --print=%s Gengar.txt`
-  Geodude=`stat --print=%s Geodude.txt`
-  Gible=`stat --print=%s Gible.txt`
-  Gigalith=`stat --print=%s Gigalith.txt`
-  Girafarig=`stat --print=%s Girafarig.txt`
-  Giratina=`stat --print=%s Giratina.txt`
-  Glaceon=`stat --print=%s Glaceon.txt`
-  Glalie=`stat --print=%s Glalie.txt`
-  Glameow=`stat --print=%s Glameow.txt`
-  Gligar=`stat --print=%s Gligar.txt`
-  Gliscor=`stat --print=%s Gliscor.txt`
-  Gloom=`stat --print=%s Gloom.txt`
-  Golbat=`stat --print=%s Golbat.txt`
-  Goldeen=`stat --print=%s Goldeen.txt`
-  Golduck=`stat --print=%s Golduck.txt`
-  Golem=`stat --print=%s Golem.txt`
-  Golett=`stat --print=%s Golett.txt`
-  Golurk=`stat --print=%s Golurk.txt`
-  Gorebyss=`stat --print=%s Gorebyss.txt`
-  Gothita=`stat --print=%s Gothita.txt`
-  Gothitelle=`stat --print=%s Gothitelle.txt`
-  Gothorita=`stat --print=%s Gothorita.txt`
-  Granbull=`stat --print=%s Granbull.txt`
-  Graveler=`stat --print=%s Graveler.txt`
-  Grimer=`stat --print=%s Grimer.txt`
-  Grotle=`stat --print=%s Grotle.txt`
-  Groudon=`stat --print=%s Groudon.txt`
-  Grovyle=`stat --print=%s Grovyle.txt`
-  Growlithe=`stat --print=%s Growlithe.txt`
-  Grumpig=`stat --print=%s Grumpig.txt`
-  Gulpin=`stat --print=%s Gulpin.txt`
-  Gurdurr=`stat --print=%s Gurdurr.txt`
-  Gyarados=`stat --print=%s Gyarados.txt`
+  GENESECT=`egrep -i "$KEYWORDS_GENESECT" newpages.txt`
+  GENGAR=`egrep -i "$KEYWORDS_GENGAR" newpages.txt`
+  GEODUDE=`egrep -i "$KEYWORDS_GEODUDE" newpages.txt`
+  GIBLE=`egrep -i "$KEYWORDS_GIBLE" newpages.txt`
+  GIGALITH=`egrep -i "$KEYWORDS_GIGALITH" newpages.txt`
+  GIRAFARIG=`egrep -i "$KEYWORDS_GIRAFARIG" newpages.txt`
+  GIRATINA=`egrep -i "$KEYWORDS_GIRATINA" newpages.txt`
+  GLACEON=`egrep -i "$KEYWORDS_GLACEON" newpages.txt`
+  GLALIE=`egrep -i "$KEYWORDS_GLALIE" newpages.txt`
+  GLAMEOW=`egrep -i "$KEYWORDS_GLAMEOW" newpages.txt`
+  GLIGAR=`egrep -i "$KEYWORDS_GLIGAR" newpages.txt`
+  GLISCOR=`egrep -i "$KEYWORDS_GLISCOR" newpages.txt`
+  GLOOM=`egrep -i "$KEYWORDS_GLOOM" newpages.txt`
+  GOLBAT=`egrep -i "$KEYWORDS_GOLBAT" newpages.txt`
+  GOLDEEN=`egrep -i "$KEYWORDS_GOLDEEN" newpages.txt`
+  GOLDUCK=`egrep -i "$KEYWORDS_GOLDUCK" newpages.txt`
+  GOLEM=`egrep -i "$KEYWORDS_GOLEM" newpages.txt`
+  GOLETT=`egrep -i "$KEYWORDS_GOLETT" newpages.txt`
+  GOLURK=`egrep -i "$KEYWORDS_GOLURK" newpages.txt`
+  GOREBYSS=`egrep -i "$KEYWORDS_GOREBYSS" newpages.txt`
+  GOTHITA=`egrep -i "$KEYWORDS_GOTHITA" newpages.txt`
+  GOTHITELLE=`egrep -i "$KEYWORDS_GOTHITELLE" newpages.txt`
+  GOTHORITA=`egrep -i "$KEYWORDS_GOTHORITA" newpages.txt`
+  GRANBULL=`egrep -i "$KEYWORDS_GRANBULL" newpages.txt`
+  GRAVELER=`egrep -i "$KEYWORDS_GRAVELER" newpages.txt`
+  GRIMER=`egrep -i "$KEYWORDS_GRIMER" newpages.txt`
+  GROTLE=`egrep -i "$KEYWORDS_GROTLE" newpages.txt`
+  GROUDON=`egrep -i "$KEYWORDS_GROUDON" newpages.txt`
+  GROVYLE=`egrep -i "$KEYWORDS_GROVYLE" newpages.txt`
+  GROWLITHE=`egrep -i "$KEYWORDS_GROWLITHE" newpages.txt`
+  GRUMPIG=`egrep -i "$KEYWORDS_GRUMPIG" newpages.txt`
+  GULPIN=`egrep -i "$KEYWORDS_GULPIN" newpages.txt`
+  GURDURR=`egrep -i "$KEYWORDS_GURDURR" newpages.txt`
+  GYARADOS=`egrep -i "$KEYWORDS_GYARADOS" newpages.txt`
 
 
   if [ "$GABITE" != "" ];
@@ -152,25 +131,34 @@ then
     unset GARCHOMP
   fi
 
-  if [ $Gardevoir -ne 0 ];
+  if [ "$GARDEVOIR" != "" ];
   then
+    printf "$GARDEVOIR" > Gardevoir.txt
     export CATFILE="Gardevoir.txt"
     export CATNAME="Gardevoir"
     $CATEGORIZE
+    rm Gardevoir.txt
+    unset GARDEVOIR
   fi
 
-  if [ $Gastly -ne 0 ];
+  if [ "$GASTLY" != "" ];
   then
+    printf "$GASTLY" > Gastly.txt
     export CATFILE="Gastly.txt"
     export CATNAME="Gastly"
     $CATEGORIZE
+    rm Gastly.txt
+    unset GASTLY
   fi
 
-  if [ $Gastrodon -ne 0 ];
+  if [ "$GASTRODON" != "" ];
   then
+    printf "$GASTRODON" > Gastrodon.txt
     export CATFILE="Gastrodon.txt"
     export CATNAME="Gastrodon"
     $CATEGORIZE
+    rm Gastrodon.txt
+    unset GASTRODON
   fi
 
   if [ "$GALVANTULA" != "" ];
@@ -183,281 +171,344 @@ then
     unset GALVANTULA
   fi
 
-  if [ $Genesect -ne 0 ];
+  if [ "$GENESECT" != "" ];
   then
+    printf "$GENESECT" > Genesect.txt
     export CATFILE="Genesect.txt"
     export CATNAME="Genesect"
     $CATEGORIZE
+    rm Genesect.txt
+    unset GENESECT
   fi
 
-  if [ $Gengar -ne 0 ];
+  if [ "$GENGAR" != "" ];
   then
+    printf "$GENGAR" > Gengar.txt
     export CATFILE="Gengar.txt"
     export CATNAME="Gengar"
     $CATEGORIZE
+    rm Gengar.txt
+    unset GENGAR
   fi
 
-  if [ $Geodude -ne 0 ];
+  if [ "$GEODUDE" != "" ];
   then
+    printf "$GEODUDE" > Geodude.txt
     export CATFILE="Geodude.txt"
     export CATNAME="Geodude"
     $CATEGORIZE
+    rm Geodude.txt
+    unset GEODUDE
   fi
 
-  if [ $Gible -ne 0 ];
+  if [ "$GIBLE" != "" ];
   then
+    printf "$GIBLE" > Gible.txt
     export CATFILE="Gible.txt"
     export CATNAME="Gible"
     $CATEGORIZE
+    rm Gible.txt
+    unset GIBLE
   fi
 
-  if [ $Gigalith -ne 0 ];
+  if [ "$GIGALITH" != "" ];
   then
+    printf "$GIGALITH" > Gigalith.txt
     export CATFILE="Gigalith.txt"
     export CATNAME="Gigalith"
     $CATEGORIZE
+    rm Gigalith.txt
+    unset GIGALITH
   fi
 
-  if [ $Girafarig -ne 0 ];
+  if [ "$GIRAFARIG" != "" ];
   then
+    printf "$GIRAFARIG" > Girafarig.txt
     export CATFILE="Girafarig.txt"
     export CATNAME="Girafarig"
     $CATEGORIZE
+    rm Girafarig.txt
+    unset GIRAFARIG
   fi
 
-  if [ $Giratina -ne 0 ];
+  if [ "$GIRATINA" != "" ];
   then
+    printf "$GIRATINA" > Giratina.txt
     export CATFILE="Giratina.txt"
     export CATNAME="Giratina"
     $CATEGORIZE
+    rm Giratina.txt
+    unset GIRATINA
   fi
 
-  if [ $Glaceon -ne 0 ];
+  if [ "$GLACEON" != "" ];
   then
+    printf "$GLACEON" > Glaceon.txt
     export CATFILE="Glaceon.txt"
     export CATNAME="Glaceon"
     $CATEGORIZE
+    rm Glaceon.txt
+    unset GLACEON
   fi
 
-  if [ $Glalie -ne 0 ];
+  if [ "$GLALIE" != "" ];
   then
+    printf "$GLALIE" > Glalie.txt
     export CATFILE="Glalie.txt"
     export CATNAME="Glalie"
     $CATEGORIZE
+    rm Glalie.txt
+    unset GLALIE
   fi
 
-  if [ $Glameow -ne 0 ];
+  if [ "$GLAMEOW" != "" ];
   then
+    printf "$GLAMEOW" > Glameow.txt
     export CATFILE="Glameow.txt"
     export CATNAME="Glameow"
     $CATEGORIZE
+    rm Glameow.txt
+    unset GLAMEOW
   fi
 
-  if [ $Gligar -ne 0 ];
+  if [ "$GLIGAR" != "" ];
   then
+    printf "$GLIGAR" > Gligar.txt
     export CATFILE="Gligar.txt"
     export CATNAME="Gligar"
     $CATEGORIZE
+    rm Gligar.txt
+    unset GLIGAR
   fi
 
-  if [ $Gliscor -ne 0 ];
+  if [ "$GLISCOR" != "" ];
   then
+    printf "$GLISCOR" > Gliscor.txt
     export CATFILE="Gliscor.txt"
     export CATNAME="Gliscor"
     $CATEGORIZE
+    rm Gliscor.txt
+    unset GLISCOR
   fi
 
-  if [ $Gloom -ne 0 ];
+  if [ "$GLOOM" != "" ];
   then
+    printf "$GLOOM" > Gloom.txt
     export CATFILE="Gloom.txt"
     export CATNAME="Gloom"
     $CATEGORIZE
+    rm Gloom.txt
+    unset GLOOM
   fi
 
-  if [ $Golbat -ne 0 ];
+  if [ "$GOLBAT" != "" ];
   then
+    printf "$GOLBAT" > Golbat.txt
     export CATFILE="Golbat.txt"
     export CATNAME="Golbat"
     $CATEGORIZE
+    rm Golbat.txt
+    unset GOLBAT
   fi
 
-  if [ $Goldeen -ne 0 ];
+  if [ "$GOLDEEN" != "" ];
   then
+    printf "$GOLDEEN" > Goldeen.txt
     export CATFILE="Goldeen.txt"
     export CATNAME="Goldeen"
     $CATEGORIZE
+    rm Goldeen.txt
+    unset GOLDEEN
   fi
 
-  if [ $Golduck -ne 0 ];
+  if [ "$GOLDUCK" != "" ];
   then
+    printf "$GOLDUCK" > Golduck.txt
     export CATFILE="Golduck.txt"
     export CATNAME="Golduck"
     $CATEGORIZE
+    rm Golduck.txt
+    unset GOLDUCK
   fi
 
-  if [ $Golem -ne 0 ];
+  if [ "$GOLEM" != "" ];
   then
+    printf "$GOLEM" > Golem.txt
     export CATFILE="Golem.txt"
     export CATNAME="Golem"
     $CATEGORIZE
+    rm Golem.txt
+    unset GOLEM
   fi
 
-  if [ $Golett -ne 0 ];
+  if [ "$GOLETT" != "" ];
   then
+    printf "$GOLETT" > Golett.txt
     export CATFILE="Golett.txt"
     export CATNAME="Golett"
     $CATEGORIZE
+    rm Golett.txt
+    unset GOLETT
   fi
 
-  if [ $Golurk -ne 0 ];
+  if [ "$GOLURK" != "" ];
   then
+    printf "$GOLURK" > Golurk.txt
     export CATFILE="Golurk.txt"
     export CATNAME="Golurk"
     $CATEGORIZE
+    rm Golurk.txt
+    unset GOLURK
   fi
 
-  if [ $Gorebyss -ne 0 ];
+  if [ "$GOREBYSS" != "" ];
   then
+    printf "$GOREBYSS" > Gorebyss.txt
     export CATFILE="Gorebyss.txt"
     export CATNAME="Gorebyss"
     $CATEGORIZE
+    rm Gorebyss.txt
+    unset GOREBYSS
   fi
 
-  if [ $Gothita -ne 0 ];
+  if [ "$GOTHITA" != "" ];
   then
+    printf "$GOTHITA" > Gothita.txt
     export CATFILE="Gothita.txt"
     export CATNAME="Gothita"
     $CATEGORIZE
+    rm Gothita.txt
+    unset GOTHITA
   fi
 
-  if [ $Gothitelle -ne 0 ];
+  if [ "$GOTHITELLE" != "" ];
   then
+    printf "$GOTHITELLE" > Gothitelle.txt
     export CATFILE="Gothitelle.txt"
     export CATNAME="Gothitelle"
     $CATEGORIZE
+    rm Gothitelle.txt
+    unset GOTHITELLE
   fi
 
-  if [ $Gothorita -ne 0 ];
+  if [ "$GOTHORITA" != "" ];
   then
+    printf "$GOTHORITA" > Gothorita.txt
     export CATFILE="Gothorita.txt"
     export CATNAME="Gothorita"
     $CATEGORIZE
+    rm Gothorita.txt
+    unset GOTHORITA
   fi
 
-  if [ $Granbull -ne 0 ];
+  if [ "$GRANBULL" != "" ];
   then
+    printf "$GRANBULL" > Granbull.txt
     export CATFILE="Granbull.txt"
     export CATNAME="Granbull"
     $CATEGORIZE
+    rm Granbull.txt
+    unset GRANBULL
   fi
 
-  if [ $Graveler -ne 0 ];
+  if [ "$GRAVELER" != "" ];
   then
+    printf "$GRAVELER" > Graveler.txt
     export CATFILE="Graveler.txt"
     export CATNAME="Graveler (Pokémon)"
     $CATEGORIZE
+    rm Graveler.txt
+    unset GRAVELER
   fi
 
-  if [ $Grimer -ne 0 ];
+  if [ "$GRIMER" != "" ];
   then
+    printf "$GRIMER" > Grimer.txt
     export CATFILE="Grimer.txt"
     export CATNAME="Grimer"
     $CATEGORIZE
+    rm Grimer.txt
+    unset GRIMER
   fi
 
-  if [ $Grotle -ne 0 ];
+  if [ "$GROTLE" != "" ];
   then
+    printf "$GROTLE" > Grotle.txt
     export CATFILE="Grotle.txt"
     export CATNAME="Grotle"
     $CATEGORIZE
+    rm Grotle.txt
+    unset GROTLE
   fi
 
-  if [ $Groudon -ne 0 ];
+  if [ "$GROUDON" != "" ];
   then
+    printf "$GROUDON" > Groudon.txt
     export CATFILE="Groudon.txt"
     export CATNAME="Groudon"
     $CATEGORIZE
+    rm Groudon.txt
+    unset GROUDON
   fi
 
-  if [ $Grovyle -ne 0 ];
+  if [ "$GROVYLE" != "" ];
   then
+    printf "$GROVYLE" > Grovyle.txt
     export CATFILE="Grovyle.txt"
     export CATNAME="Grovyle"
     $CATEGORIZE
+    rm Grovyle.txt
+    unset GROVYLE
   fi
 
-  if [ $Growlithe -ne 0 ];
+  if [ "$GROWLITHE" != "" ];
   then
+    printf "$GROWLITHE" > Growlithe.txt
     export CATFILE="Growlithe.txt"
     export CATNAME="Growlithe"
     $CATEGORIZE
+    rm Growlithe.txt
+    unset GROWLITHE
   fi
 
-  if [ $Grumpig -ne 0 ];
+  if [ "$GRUMPIG" != "" ];
   then
+    printf "$GRUMPIG" > Grumpig.txt
     export CATFILE="Grumpig.txt"
     export CATNAME="Grumpig"
     $CATEGORIZE
+    rm Grumpig.txt
+    unset GRUMPIG
   fi
 
-  if [ $Gulpin -ne 0 ];
+  if [ "$GULPIN" != "" ];
   then
+    printf "$GULPIN" > Gulpin.txt
     export CATFILE="Gulpin.txt"
     export CATNAME="Gulpin"
     $CATEGORIZE
+    rm Gulpin.txt
+    unset GULPIN
   fi
 
-  if [ $Gurdurr -ne 0 ];
+  if [ "$GURDURR" != "" ];
   then
+    printf "$GURDURR" > Gurdurr.txt
     export CATFILE="Gurdurr.txt"
     export CATNAME="Gurdurr"
     $CATEGORIZE
+    rm Gurdurr.txt
+    unset GURDURR
   fi
 
-  if [ $Gyarados -ne 0 ];
+  if [ "$GYARADOS" != "" ];
   then
+    printf "$GYARADOS" > Gyarados.txt
     export CATFILE="Gyarados.txt"
     export CATNAME="Gyarados"
     $CATEGORIZE
+    rm Gyarados.txt
+    unset GYARADOS
   fi
-
-  rm Gardevoir.txt
-  rm Gastly.txt
-  rm Gastrodon.txt
-  rm Galvantula.txt
-  rm Genesect.txt
-  rm Gengar.txt
-  rm Geodude.txt
-  rm Gible.txt
-  rm Gigalith.txt
-  rm Girafarig.txt
-  rm Giratina.txt
-  rm Glaceon.txt
-  rm Glalie.txt
-  rm Glameow.txt
-  rm Gligar.txt
-  rm Gliscor.txt
-  rm Gloom.txt
-  rm Golbat.txt
-  rm Goldeen.txt
-  rm Golduck.txt
-  rm Golem.txt
-  rm Golett.txt
-  rm Golurk.txt
-  rm Gorebyss.txt
-  rm Gothita.txt
-  rm Gothitelle.txt
-  rm Gothorita.txt
-  rm Granbull.txt
-  rm Graveler.txt
-  rm Grimer.txt
-  rm Grotle.txt
-  rm Groudon.txt
-  rm Grovyle.txt
-  rm Growlithe.txt
-  rm Grumpig.txt
-  rm Gulpin.txt
-  rm Gurdurr.txt
-  rm Gyarados.txt
 
 fi

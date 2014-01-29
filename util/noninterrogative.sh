@@ -1,6 +1,11 @@
 #!/bin/bash
 
-python $PYWIKIPEDIADIR/pagegenerators.py -category:"Page titles lacking an interrogative word" |sed s'|[0-9][0-9][0-9][0-9][0-9][0-9]: ||' |sed s'|[0-9][0-9][0-9][0-9][0-9]: ||' |sed s'|[0-9][0-9][0-9][0-9]: ||'  | sed s'| [0-9][0-9][0-9]: ||' | sed s'|  [0-9][0-9]: ||' | sed s'|   [0-9]: ||' > nonint.txt
+python $PYWIKIPEDIADIR/pagegenerators.py -category:"Page titles lacking an interrogative word" > nonint.txt
+
+
+if [ `cat nonint.txt` != "" ];
+then
+
 
 egrep -i '^Who\b' nonint.txt >> Who.txt
 egrep -i '\bwho\b' nonint.txt | egrep -iv 'Doctor Who' >> Who.txt
@@ -254,3 +259,5 @@ rm Cant.txt
 rm Has.txt
 rm Hasnt.txt
 rm AmI.txt
+
+fi

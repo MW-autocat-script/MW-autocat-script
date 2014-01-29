@@ -1,14 +1,31 @@
 #!/bin/bash
 
-egrep -i 'Vermont' newpages.txt >> Vermont.txt
+KEYWORDS_VERMONT="Vermont|Montpelier"
+KEYWORDS_VERMONT_ALL="$KEYWORDS_VERMONT"
 
-VERMONT=`stat --print=%s Vermont.txt`
-
-if [ $VERMONT -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Vermont.txt"
-  export CATNAME="Vermont"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Vermont\n"
+  fi
 
-rm Vermont.txt
+  VERMONT=$(egrep -i "$KEYWORDS_VERMONT" newpages.txt)
+
+  if [ "$VERMONT" != "" ];
+  then
+    printf "%s" "$VERMONT" > Vermont.txt
+    export CATFILE="Vermont.txt"
+    export CATNAME="Vermont"
+    $CATEGORIZE
+    rm Vermont.txt
+    unset VERMONT
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Vermont\n"
+  fi
+
+fi

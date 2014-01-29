@@ -1,574 +1,688 @@
 #!/bin/bash
-egrep -i 'Machamp' newpages.txt >> Machamp.txt
-egrep -i 'Machoke' newpages.txt >> Machoke.txt
-egrep -i 'Machop' newpages.txt >> Machop.txt
-egrep -i 'Magby' newpages.txt >> Magby.txt
-egrep -i 'Magcargo' newpages.txt >> Magcargo.txt
-egrep -i 'Magikarp' newpages.txt >> Magikarp.txt
-egrep -i 'Magmar' newpages.txt >> Magmar.txt
-egrep -i 'Magmortar' newpages.txt >> Magmortar.txt
-egrep -i 'Magnemite' newpages.txt >> Magnemite.txt
-egrep -i 'Magneton' newpages.txt >> Magneton.txt
-egrep -i 'Magnezone' newpages.txt >> Magnezone.txt
-egrep -i 'Makuhita' newpages.txt >> Makuhita.txt
-egrep -i 'Mamoswine' newpages.txt >> Mamoswine.txt
-egrep -i 'Manaphy' newpages.txt >> Manaphy.txt
-egrep -i 'Mandibuzz' newpages.txt >> Mandibuzz.txt
-egrep -i 'Manectric' newpages.txt >> Manectric.txt
-egrep -i 'Mankey' newpages.txt >> Mankey.txt
-egrep -i 'Mantine' newpages.txt >> Mantine.txt
-egrep -i 'Mantyke' newpages.txt >> Mantyke.txt
-egrep -i 'Maractus' newpages.txt >> Maractus.txt
-egrep -i 'Mareep' newpages.txt >> Mareep.txt
-egrep -i 'Marill' newpages.txt >> Marill.txt
-egrep -i 'Marowak' newpages.txt >> Marowak.txt
-egrep -i 'Marshtomp' newpages.txt >> Marshtomp.txt
-egrep -i 'Masquerain' newpages.txt >> Masquerain.txt
-egrep -i 'Mawile' newpages.txt >> Mawile.txt
-egrep -i 'Medicham' newpages.txt >> Medicham.txt
-egrep -i 'Meditite' newpages.txt >> Meditite.txt
-egrep -i 'Meganium' newpages.txt >> Meganium.txt
-egrep -i 'Meloetta' newpages.txt >> Meloetta.txt
-egrep -i 'Meowth' newpages.txt >> Meowth.txt
-egrep -i 'Mesprit' newpages.txt >> Mesprit.txt
-egrep -i 'Metagross' newpages.txt >> Metagross.txt
-egrep -i 'Metang' newpages.txt >> Metang.txt
-egrep -i 'Metapod' newpages.txt >> Metapod.txt
-egrep -i '\bMew\b' newpages.txt >> Mew.txt
-egrep -i 'Mewtwo' newpages.txt >> Mewtwo.txt
-egrep -i 'Mightyena' newpages.txt >> Mightyena.txt
-egrep -i 'Milotic' newpages.txt >> Milotic.txt
-egrep -i 'Miltank' newpages.txt >> Miltank.txt
-egrep -i 'Mime Jr' newpages.txt >> MimeJr.txt
-egrep -i 'Minccino' newpages.txt >> Minccino.txt
-egrep -i 'Mienfoo' newpages.txt >> Mienfoo.txt
-egrep -i 'Mienshao' newpages.txt >> Mienshao.txt
-egrep -i 'Minun' newpages.txt >> Minun.txt
-egrep -i 'Misdreavus' newpages.txt >> Misdreavus.txt
-egrep -i 'Mismagius' newpages.txt >> Mismagius.txt
-egrep -i 'Moltres' newpages.txt >> Moltres.txt
-egrep -i 'Monferno' newpages.txt >> Monferno.txt
-egrep -i 'Mothim' newpages.txt >> Mothim.txt
-egrep -i 'Mr. Mime' newpages.txt >> MrMime.txt
-egrep -i 'Mudkip' newpages.txt >> Mudkip.txt
-egrep -i 'Muk' newpages.txt >> Muk.txt
-egrep -i 'Munchlax' newpages.txt >> Munchlax.txt
-egrep -i 'Munna\b' newpages.txt >> Munna.txt
-egrep -i 'Murkrow' newpages.txt >> Murkrow.txt
-egrep -i 'Musharna' newpages.txt >> Musharna.txt
 
-Machamp=`stat --print=%s Machamp.txt`
-Machoke=`stat --print=%s Machoke.txt`
-Machop=`stat --print=%s Machop.txt`
-Magby=`stat --print=%s Magby.txt`
-Magcargo=`stat --print=%s Magcargo.txt`
-Magikarp=`stat --print=%s Magikarp.txt`
-Magmar=`stat --print=%s Magmar.txt`
-Magmortar=`stat --print=%s Magmortar.txt`
-Magnemite=`stat --print=%s Magnemite.txt`
-Magneton=`stat --print=%s Magneton.txt`
-Magnezone=`stat --print=%s Magnezone.txt`
-Makuhita=`stat --print=%s Makuhita.txt`
-Mamoswine=`stat --print=%s Mamoswine.txt`
-Manaphy=`stat --print=%s Manaphy.txt`
-Mandibuzz=`stat --print=%s Mandibuzz.txt`
-Manectric=`stat --print=%s Manectric.txt`
-Mankey=`stat --print=%s Mankey.txt`
-Mantine=`stat --print=%s Mantine.txt`
-Mantyke=`stat --print=%s Mantyke.txt`
-Maractus=`stat --print=%s Maractus.txt`
-Mareep=`stat --print=%s Mareep.txt`
-Marill=`stat --print=%s Marill.txt`
-Marowak=`stat --print=%s Marowak.txt`
-Marshtomp=`stat --print=%s Marshtomp.txt`
-Masquerain=`stat --print=%s Masquerain.txt`
-Mawile=`stat --print=%s Mawile.txt`
-Medicham=`stat --print=%s Medicham.txt`
-Meditite=`stat --print=%s Meditite.txt`
-Meganium=`stat --print=%s Meganium.txt`
-Meloetta=`stat --print=%s Meloetta.txt`
-Meowth=`stat --print=%s Meowth.txt`
-Mesprit=`stat --print=%s Mesprit.txt`
-Metagross=`stat --print=%s Metagross.txt`
-Metang=`stat --print=%s Metang.txt`
-Metapod=`stat --print=%s Metapod.txt`
-Mew=`stat --print=%s Mew.txt`
-Mewtwo=`stat --print=%s Mewtwo.txt`
-Mightyena=`stat --print=%s Mightyena.txt`
-Milotic=`stat --print=%s Milotic.txt`
-Miltank=`stat --print=%s Miltank.txt`
-MimeJr=`stat --print=%s MimeJr.txt`
-Minccino=`stat --print=%s Minccino.txt`
-Mienfoo=`stat --print=%s Mienfoo.txt`
-Mienshao=`stat --print=%s Mienshao.txt`
-Minun=`stat --print=%s Minun.txt`
-Misdreavus=`stat --print=%s Misdreavus.txt`
-Mismagius=`stat --print=%s Mismagius.txt`
-Moltres=`stat --print=%s Moltres.txt`
-Monferno=`stat --print=%s Monferno.txt`
-Mothim=`stat --print=%s Mothim.txt`
-MrMime=`stat --print=%s MrMime.txt`
-Mudkip=`stat --print=%s Mudkip.txt`
-Muk=`stat --print=%s Muk.txt`
-Munchlax=`stat --print=%s Munchlax.txt`
-Munna=`stat --print=%s Munna.txt`
-Murkrow=`stat --print=%s Murkrow.txt`
-Musharna=`stat --print=%s Musharna.txt`
+KEYWORDS_MACHAMP="Machamp"
+KEYWORDS_MACHOKE="Machoke"
+KEYWORDS_MACHOP="Machop"
+KEYWORDS_MAGBY="Magby"
+KEYWORDS_MAGCARGO="Magcargo"
+KEYWORDS_MAGIKARP="Magikarp"
+KEYWORDS_MAGMAR="Magmar"
+KEYWORDS_MAGMORTAR="Magmortar"
+KEYWORDS_MAGNEMITE="Magnemite"
+KEYWORDS_MAGNETON="Magneton"
+KEYWORDS_MAGNEZONE="Magnezone"
+KEYWORDS_MAKUHITA="Makuhita"
+KEYWORDS_MAMOSWINE="Mamoswine"
+KEYWORDS_MANAPHY="Manaphy"
+KEYWORDS_MANDIBUZZ="Mandibuzz"
+KEYWORDS_MANECTRIC="Manectric"
+KEYWORDS_MANKEY="Mankey"
+KEYWORDS_MANTINE="Mantine"
+KEYWORDS_MANTYKE="Mantyke"
+KEYWORDS_MARACTUS="Maractus"
+KEYWORDS_MAREEP="Mareep"
+KEYWORDS_MARILL="Marill"
+KEYWORDS_MAROWAK="Marowak"
+KEYWORDS_MARSHTOMP="Marshtomp"
+KEYWORDS_MASQUERAIN="Masquerain"
+KEYWORDS_MAWILE="Mawile"
+KEYWORDS_MEDICHAM="Medicham"
+KEYWORDS_MEDITITE="Meditite"
+KEYWORDS_MEGANIUM="Meganium"
+KEYWORDS_MELOETTA="Meloetta"
+KEYWORDS_MEOWTH="Meowth"
+KEYWORDS_MESPRIT="Mesprit"
+KEYWORDS_METAGROSS="Metagross"
+KEYWORDS_METANG="Metang"
+KEYWORDS_METAPOD="Metapod"
+KEYWORDS_MEW="\bMew\b"
+KEYWORDS_MEWTWO="Mewtwo"
+KEYWORDS_MIGHTYENA="Mightyena"
+KEYWORDS_MILOTIC="Milotic"
+KEYWORDS_MILTANK="Miltank"
+KEYWORDS_MIMEJR="Mime Jr"
+KEYWORDS_MINCCINO="Minccino"
+KEYWORDS_MIENFOO="Mienfoo"
+KEYWORDS_MIENSHAO="Mienshao"
+KEYWORDS_MINUN="Minun"
+KEYWORDS_MISDREAVUS="Misdreavus"
+KEYWORDS_MISMAGIUS="Mismagius"
+KEYWORDS_MOLTRES="Moltres"
+KEYWORDS_MONFERNO="Monferno"
+KEYWORDS_MOTHIM="Mothim"
+KEYWORDS_MRMIME="Mr(|\.)(| )Mime"
+KEYWORDS_MUDKIP="Mudkip"
+KEYWORDS_MUK="Muk"
+KEYWORDS_MUNCHLAX="Munchlax"
+KEYWORDS_MUNNA="Munna\b"
+KEYWORDS_MURKROW="Murkrow"
+KEYWORDS_MUSHARNA="Musharna"
 
-if [ $Machamp -ne 0 ];
+
+MACHAMP=`egrep -i "$KEYWORDS_MACHAMP" newpages.txt`
+MACHOKE=`egrep -i "$KEYWORDS_MACHOKE" newpages.txt`
+MACHOP=`egrep -i "$KEYWORDS_MACHOP" newpages.txt`
+MAGBY=`egrep -i "$KEYWORDS_MAGBY" newpages.txt`
+MAGCARGO=`egrep -i "$KEYWORDS_MAGCARGO" newpages.txt`
+MAGIKARP=`egrep -i "$KEYWORDS_MAGIKARP" newpages.txt`
+MAGMAR=`egrep -i "$KEYWORDS_MAGMAR" newpages.txt`
+MAGMORTAR=`egrep -i "$KEYWORDS_MAGMORTAR" newpages.txt`
+MAGNEMITE=`egrep -i "$KEYWORDS_MAGNEMITE" newpages.txt`
+MAGNETON=`egrep -i "$KEYWORDS_MAGNETON" newpages.txt`
+MAGNEZONE=`egrep -i "$KEYWORDS_MAGNEZONE" newpages.txt`
+MAKUHITA=`egrep -i "$KEYWORDS_MAKUHITA" newpages.txt`
+MAMOSWINE=`egrep -i "$KEYWORDS_MAMOSWINE" newpages.txt`
+MANAPHY=`egrep -i "$KEYWORDS_MANAPHY" newpages.txt`
+MANDIBUZZ=`egrep -i "$KEYWORDS_MANDIBUZZ" newpages.txt`
+MANECTRIC=`egrep -i "$KEYWORDS_MANECTRIC" newpages.txt`
+MANKEY=`egrep -i "$KEYWORDS_MANKEY" newpages.txt`
+MANTINE=`egrep -i "$KEYWORDS_MANTINE" newpages.txt`
+MANTYKE=`egrep -i "$KEYWORDS_MANTYKE" newpages.txt`
+MARACTUS=`egrep -i "$KEYWORDS_MARACTUS" newpages.txt`
+MAREEP=`egrep -i "$KEYWORDS_MAREEP" newpages.txt`
+MARILL=`egrep -i "$KEYWORDS_MARILL" newpages.txt`
+MAROWAK=`egrep -i "$KEYWORDS_MAROWAK" newpages.txt`
+MARSHTOMP=`egrep -i "$KEYWORDS_MARSHTOMP" newpages.txt`
+MASQUERAIN=`egrep -i "$KEYWORDS_MASQUERAIN" newpages.txt`
+MAWILE=`egrep -i "$KEYWORDS_MAWILE" newpages.txt`
+MEDICHAM=`egrep -i "$KEYWORDS_MEDICHAM" newpages.txt`
+MEDITITE=`egrep -i "$KEYWORDS_MEDITITE" newpages.txt`
+MEGANIUM=`egrep -i "$KEYWORDS_MEGANIUM" newpages.txt`
+MELOETTA=`egrep -i "$KEYWORDS_MELOETTA" newpages.txt`
+MEOWTH=`egrep -i "$KEYWORDS_MEOWTH" newpages.txt`
+MESPRIT=`egrep -i "$KEYWORDS_MESPRIT" newpages.txt`
+METAGROSS=`egrep -i "$KEYWORDS_METAGROSS" newpages.txt`
+METANG=`egrep -i "$KEYWORDS_METANG" newpages.txt`
+METAPOD=`egrep -i "$KEYWORDS_METAPOD" newpages.txt`
+MEW=`egrep -i "$KEYWORDS_MEW" newpages.txt`
+MEWTWO=`egrep -i "$KEYWORDS_MEWTWO" newpages.txt`
+MIGHTYENA=`egrep -i "$KEYWORDS_MIGHTYENA" newpages.txt`
+MILOTIC=`egrep -i "$KEYWORDS_MILOTIC" newpages.txt`
+MILTANK=`egrep -i "$KEYWORDS_MILTANK" newpages.txt`
+MIMEJR=`egrep -i "$KEYWORDS_MIMEJR" newpages.txt`
+MINCCINO=`egrep -i "$KEYWORDS_MINCCINO" newpages.txt`
+MIENFOO=`egrep -i "$KEYWORDS_MIENFOO" newpages.txt`
+MIENSHAO=`egrep -i "$KEYWORDS_MIENSHAO" newpages.txt`
+MINUN=`egrep -i "$KEYWORDS_MINUN" newpages.txt`
+MISDREAVUS=`egrep -i "$KEYWORDS_MISDREAVUS" newpages.txt`
+MISMAGIUS=`egrep -i "$KEYWORDS_MISMAGIUS" newpages.txt`
+MOLTRES=`egrep -i "$KEYWORDS_MOLTRES" newpages.txt`
+MONFERNO=`egrep -i "$KEYWORDS_MONFERNO" newpages.txt`
+MOTHIM=`egrep -i "$KEYWORDS_MOTHIM" newpages.txt`
+MRMIME=`egrep -i "$KEYWORDS_MRMIME" newpages.txt`
+MUDKIP=`egrep -i "$KEYWORDS_MUDKIP" newpages.txt`
+MUK=`egrep -i "$KEYWORDS_MUK" newpages.txt`
+MUNCHLAX=`egrep -i "$KEYWORDS_MUNCHLAX" newpages.txt`
+MUNNA=`egrep -i "$KEYWORDS_MUNNA" newpages.txt`
+MURKROW=`egrep -i "$KEYWORDS_MURKROW" newpages.txt`
+MUSHARNA=`egrep -i "$KEYWORDS_MUSHARNA" newpages.txt`
+
+if [ "$MACHAMP" != "" ];
 then
-   export CATFILE="Machamp.txt"
-   export CATNAME="Machamp"
-   $CATEGORIZE
+  printf "$MACHAMP" > Machamp.txt
+  export CATFILE="Machamp.txt"
+  export CATNAME="Machamp"
+  $CATEGORIZE
+  rm Machamp.txt
+  unset MACHAMP
 fi
 
-if [ $Machoke -ne 0 ];
+if [ "$MACHOKE" != "" ];
 then
-   export CATFILE="Machoke.txt"
-   export CATNAME="Machoke"
-   $CATEGORIZE
+  printf "$MACHOKE" > Machoke.txt
+  export CATFILE="Machoke.txt"
+  export CATNAME="Machoke"
+  $CATEGORIZE
+  rm Machoke.txt
+  unset MACHOKE
 fi
 
-if [ $Machop -ne 0 ];
+if [ "$MACHOP" != "" ];
 then
-   export CATFILE="Machop.txt"
-   export CATNAME="Machop"
-   $CATEGORIZE
+  printf "$MACHOP" > Machop.txt
+  export CATFILE="Machop.txt"
+  export CATNAME="Machop"
+  $CATEGORIZE
+  rm Machop.txt
+  unset MACHOP
 fi
 
-if [ $Magby -ne 0 ];
+if [ "$MAGBY" != "" ];
 then
-   export CATFILE="Magby.txt"
-   export CATNAME="Magby"
-   $CATEGORIZE
+  printf "$MAGBY" > Magby.txt
+  export CATFILE="Magby.txt"
+  export CATNAME="Magby"
+  $CATEGORIZE
+  rm Magby.txt
+  unset MAGBY
 fi
 
-if [ $Magcargo -ne 0 ];
+if [ "$MAGCARGO" != "" ];
 then
-   export CATFILE="Magcargo.txt"
-   export CATNAME="Magcargo"
-   $CATEGORIZE
+  printf "$MAGCARGO" > Magcargo.txt
+  export CATFILE="Magcargo.txt"
+  export CATNAME="Magcargo"
+  $CATEGORIZE
+  rm Magcargo.txt
+  unset MAGCARGO
 fi
 
-if [ $Magikarp -ne 0 ];
+if [ "$MAGIKARP" != "" ];
 then
-   export CATFILE="Magikarp.txt"
-   export CATNAME="Magikarp"
-   $CATEGORIZE
+  printf "$MAGIKARP" > Magikarp.txt
+  export CATFILE="Magikarp.txt"
+  export CATNAME="Magikarp"
+  $CATEGORIZE
+  rm Magikarp.txt
+  unset MAGIKARP
 fi
 
-if [ $Magmar -ne 0 ];
+if [ "$MAGMAR" != "" ];
 then
-   export CATFILE="Magmar.txt"
-   export CATNAME="Magmar"
-   $CATEGORIZE
+  printf "$MAGMAR" > Magmar.txt
+  export CATFILE="Magmar.txt"
+  export CATNAME="Magmar"
+  $CATEGORIZE
+  rm Magmar.txt
+  unset MAGMAR
 fi
 
-if [ $Magmortar -ne 0 ];
+if [ "$MAGMORTAR" != "" ];
 then
-   export CATFILE="Magmortar.txt"
-   export CATNAME="Magmortar"
-   $CATEGORIZE
+  printf "$MAGMORTAR" > Magmortar.txt
+  export CATFILE="Magmortar.txt"
+  export CATNAME="Magmortar"
+  $CATEGORIZE
+  rm Magmortar.txt
+  unset MAGMORTAR
 fi
 
-if [ $Magnemite -ne 0 ];
+if [ "$MAGNEMITE" != "" ];
 then
-   export CATFILE="Magnemite.txt"
-   export CATNAME="Magnemite"
-   $CATEGORIZE
+  printf "$MAGNEMITE" > Magnemite.txt
+  export CATFILE="Magnemite.txt"
+  export CATNAME="Magnemite"
+  $CATEGORIZE
+  rm Magnemite.txt
+  unset MAGNEMITE
 fi
 
-if [ $Magneton -ne 0 ];
+if [ "$MAGNETON" != "" ];
 then
-   export CATFILE="Magneton.txt"
-   export CATNAME="Magneton"
-   $CATEGORIZE
+  printf "$MAGNETON" > Magneton.txt
+  export CATFILE="Magneton.txt"
+  export CATNAME="Magneton"
+  $CATEGORIZE
+  rm Magneton.txt
+  unset MAGNETON
 fi
 
-if [ $Magnezone -ne 0 ];
+if [ "$MAGNEZONE" != "" ];
 then
-   export CATFILE="Magnezone.txt"
-   export CATNAME="Magnezone"
-   $CATEGORIZE
+  printf "$MAGNEZONE" > Magnezone.txt
+  export CATFILE="Magnezone.txt"
+  export CATNAME="Magnezone"
+  $CATEGORIZE
+  rm Magnezone.txt
+  unset MAGNEZONE
 fi
 
-if [ $Makuhita -ne 0 ];
+if [ "$MAKUHITA" != "" ];
 then
-   export CATFILE="Makuhita.txt"
-   export CATNAME="Makuhita"
-   $CATEGORIZE
+  printf "$MAKUHITA" > Makuhita.txt
+  export CATFILE="Makuhita.txt"
+  export CATNAME="Makuhita"
+  $CATEGORIZE
+  rm Makuhita.txt
+  unset MAKUHITA
 fi
 
-if [ $Mamoswine -ne 0 ];
+if [ "$MAMOSWINE" != "" ];
 then
-   export CATFILE="Mamoswine.txt"
-   export CATNAME="Mamoswine"
-   $CATEGORIZE
+  printf "$MAMOSWINE" > Mamoswine.txt
+  export CATFILE="Mamoswine.txt"
+  export CATNAME="Mamoswine"
+  $CATEGORIZE
+  rm Mamoswine.txt
+  unset MAMOSWINE
 fi
 
-if [ $Manaphy -ne 0 ];
+if [ "$MANAPHY" != "" ];
 then
-   export CATFILE="Manaphy.txt"
-   export CATNAME="Manaphy"
-   $CATEGORIZE
+  printf "$MANAPHY" > Manaphy.txt
+  export CATFILE="Manaphy.txt"
+  export CATNAME="Manaphy"
+  $CATEGORIZE
+  rm Manaphy.txt
+  unset MANAPHY
 fi
 
-if [ $Mandibuzz -ne 0 ];
+if [ "$MANDIBUZZ" != "" ];
 then
-   export CATFILE="Mandibuzz.txt"
-   export CATNAME="Mandibuzz"
-   $CATEGORIZE
+  printf "$MANDIBUZZ" > Mandibuzz.txt
+  export CATFILE="Mandibuzz.txt"
+  export CATNAME="Mandibuzz"
+  $CATEGORIZE
+  rm Mandibuzz.txt
+  unset MANDIBUZZ
 fi
 
-if [ $Manectric -ne 0 ];
+if [ "$MANECTRIC" != "" ];
 then
-   export CATFILE="Manectric.txt"
-   export CATNAME="Manectric"
-   $CATEGORIZE
+  printf "$MANECTRIC" > Manectric.txt
+  export CATFILE="Manectric.txt"
+  export CATNAME="Manectric"
+  $CATEGORIZE
+  rm Manectric.txt
+  unset MANECTRIC
 fi
 
-if [ $Mankey -ne 0 ];
+if [ "$MANKEY" != "" ];
 then
-   export CATFILE="Mankey.txt"
-   export CATNAME="Mankey"
-   $CATEGORIZE
+  printf "$MANKEY" > Mankey.txt
+  export CATFILE="Mankey.txt"
+  export CATNAME="Mankey"
+  $CATEGORIZE
+  rm Mankey.txt
+  unset MANKEY
 fi
 
-if [ $Mantine -ne 0 ];
+if [ "$MANTINE" != "" ];
 then
-   export CATFILE="Mantine.txt"
-   export CATNAME="Mantine"
-   $CATEGORIZE
+  printf "$MANTINE" > Mantine.txt
+  export CATFILE="Mantine.txt"
+  export CATNAME="Mantine"
+  $CATEGORIZE
+  rm Mantine.txt
+  unset MANTINE
 fi
 
-if [ $Mantyke -ne 0 ];
+if [ "$MANTYKE" != "" ];
 then
-   export CATFILE="Mantyke.txt"
-   export CATNAME="Mantyke"
-   $CATEGORIZE
+  printf "$MANTYKE" > Mantyke.txt
+  export CATFILE="Mantyke.txt"
+  export CATNAME="Mantyke"
+  $CATEGORIZE
+  rm Mantyke.txt
+  unset MANTYKE
 fi
 
-if [ $Maractus -ne 0 ];
+if [ "$MARACTUS" != "" ];
 then
-   export CATFILE="Maractus.txt"
-   export CATNAME="Maractus"
-   $CATEGORIZE
+  printf "$MARACTUS" > Maractus.txt
+  export CATFILE="Maractus.txt"
+  export CATNAME="Maractus"
+  $CATEGORIZE
+  rm Maractus.txt
+  unset MARACTUS
 fi
 
-if [ $Mareep -ne 0 ];
+if [ "$MAREEP" != "" ];
 then
-   export CATFILE="Mareep.txt"
-   export CATNAME="Mareep"
-   $CATEGORIZE
+  printf "$MAREEP" > Mareep.txt
+  export CATFILE="Mareep.txt"
+  export CATNAME="Mareep"
+  $CATEGORIZE
+  rm Mareep.txt
+  unset MAREEP
 fi
 
-if [ $Marill -ne 0 ];
+if [ "$MARILL" != "" ];
 then
-   export CATFILE="Marill.txt"
-   export CATNAME="Marill"
-   $CATEGORIZE
+  printf "$MARILL" > Marill.txt
+  export CATFILE="Marill.txt"
+  export CATNAME="Marill"
+  $CATEGORIZE
+  rm Marill.txt
+  unset MARILL
 fi
 
-if [ $Marowak -ne 0 ];
+if [ "$MAROWAK" != "" ];
 then
-   export CATFILE="Marowak.txt"
-   export CATNAME="Marowak"
-   $CATEGORIZE
+  printf "$MAROWAK" > Marowak.txt
+  export CATFILE="Marowak.txt"
+  export CATNAME="Marowak"
+  $CATEGORIZE
+  rm Marowak.txt
+  unset MAROWAK
 fi
 
-if [ $Marshtomp -ne 0 ];
+if [ "$MARSHTOMP" != "" ];
 then
-   export CATFILE="Marshtomp.txt"
-   export CATNAME="Marshtomp"
-   $CATEGORIZE
+  printf "$MARSHTOMP" > Marshtomp.txt
+  export CATFILE="Marshtomp.txt"
+  export CATNAME="Marshtomp"
+  $CATEGORIZE
+  rm Marshtomp.txt
+  unset MARSHTOMP
 fi
 
-if [ $Masquerain -ne 0 ];
+if [ "$MASQUERAIN" != "" ];
 then
-   export CATFILE="Masquerain.txt"
-   export CATNAME="Masquerain"
-   $CATEGORIZE
+  printf "$MASQUERAIN" > Masquerain.txt
+  export CATFILE="Masquerain.txt"
+  export CATNAME="Masquerain"
+  $CATEGORIZE
+  rm Masquerain.txt
+  unset MASQUERAIN
 fi
 
-if [ $Mawile -ne 0 ];
+if [ "$MAWILE" != "" ];
 then
-   export CATFILE="Mawile.txt"
-   export CATNAME="Mawile"
-   $CATEGORIZE
+  printf "$MAWILE" > Mawile.txt
+  export CATFILE="Mawile.txt"
+  export CATNAME="Mawile"
+  $CATEGORIZE
+  rm Mawile.txt
+  unset MAWILE
 fi
 
-if [ $Medicham -ne 0 ];
+if [ "$MEDICHAM" != "" ];
 then
-   export CATFILE="Medicham.txt"
-   export CATNAME="Medicham"
-   $CATEGORIZE
+  printf "$MEDICHAM" > Medicham.txt
+  export CATFILE="Medicham.txt"
+  export CATNAME="Medicham"
+  $CATEGORIZE
+  rm Medicham.txt
+  unset MEDICHAM
 fi
 
-if [ $Meditite -ne 0 ];
+if [ "$MEDITITE" != "" ];
 then
-   export CATFILE="Meditite.txt"
-   export CATNAME="Meditite"
-   $CATEGORIZE
+  printf "$MEDITITE" > Meditite.txt
+  export CATFILE="Meditite.txt"
+  export CATNAME="Meditite"
+  $CATEGORIZE
+  rm Meditite.txt
+  unset MEDITITE
 fi
 
-if [ $Meganium -ne 0 ];
+if [ "$MEGANIUM" != "" ];
 then
-   export CATFILE="Meganium.txt"
-   export CATNAME="Meganium"
-   $CATEGORIZE
+  printf "$MEGANIUM" > Meganium.txt
+  export CATFILE="Meganium.txt"
+  export CATNAME="Meganium"
+  $CATEGORIZE
+  rm Meganium.txt
+  unset MEGANIUM
 fi
 
-if [ $Meloetta -ne 0 ];
+if [ "$MELOETTA" != "" ];
 then
-   export CATFILE="Meloetta.txt"
-   export CATNAME="Meloetta"
-   $CATEGORIZE
+  printf "$MELOETTA" > Meloetta.txt
+  export CATFILE="Meloetta.txt"
+  export CATNAME="Meloetta"
+  $CATEGORIZE
+  rm Meloetta.txt
+  unset MELOETTA
 fi
 
-if [ $Meowth -ne 0 ];
+if [ "$MEOWTH" != "" ];
 then
-   export CATFILE="Meowth.txt"
-   export CATNAME="Meowth"
-   $CATEGORIZE
+  printf "$MEOWTH" > Meowth.txt
+  export CATFILE="Meowth.txt"
+  export CATNAME="Meowth"
+  $CATEGORIZE
+  rm Meowth.txt
+  unset MEOWTH
 fi
 
-if [ $Mesprit -ne 0 ];
+if [ "$MESPRIT" != "" ];
 then
-   export CATFILE="Mesprit.txt"
-   export CATNAME="Mesprit"
-   $CATEGORIZE
+  printf "$MESPRIT" > Mesprit.txt
+  export CATFILE="Mesprit.txt"
+  export CATNAME="Mesprit"
+  $CATEGORIZE
+  rm Mesprit.txt
+  unset MESPRIT
 fi
 
-if [ $Metagross -ne 0 ];
+if [ "$METAGROSS" != "" ];
 then
-   export CATFILE="Metagross.txt"
-   export CATNAME="Metagross"
-   $CATEGORIZE
+  printf "$METAGROSS" > Metagross.txt
+  export CATFILE="Metagross.txt"
+  export CATNAME="Metagross"
+  $CATEGORIZE
+  rm Metagross.txt
+  unset METAGROSS
 fi
 
-if [ $Metang -ne 0 ];
+if [ "$METANG" != "" ];
 then
-   export CATFILE="Metang.txt"
-   export CATNAME="Metang"
-   $CATEGORIZE
+  printf "$METANG" > Metang.txt
+  export CATFILE="Metang.txt"
+  export CATNAME="Metang"
+  $CATEGORIZE
+  rm Metang.txt
+  unset METANG
 fi
 
-if [ $Metapod -ne 0 ];
+if [ "$METAPOD" != "" ];
 then
-   export CATFILE="Metapod.txt"
-   export CATNAME="Metapod"
-   $CATEGORIZE
+  printf "$METAPOD" > Metapod.txt
+  export CATFILE="Metapod.txt"
+  export CATNAME="Metapod"
+  $CATEGORIZE
+  rm Metapod.txt
+  unset METAPOD
 fi
 
-if [ $Mew -ne 0 ];
+if [ "$MEW" != "" ];
 then
-   export CATFILE="Mew.txt"
-   export CATNAME="Mew (Pokémon)"
-   $CATEGORIZE
+  printf "$MEW" > Mew.txt
+  export CATFILE="Mew.txt"
+  export CATNAME="Mew (Pokémon)"
+  $CATEGORIZE
+  rm Mew.txt
+  unset MEW
 fi
 
-if [ $Mewtwo -ne 0 ];
+if [ "$MEWTWO" != "" ];
 then
-   export CATFILE="Mewtwo.txt"
-   export CATNAME="Mewtwo"
-   $CATEGORIZE
+  printf "$MEWTWO" > Mewtwo.txt
+  export CATFILE="Mewtwo.txt"
+  export CATNAME="Mewtwo"
+  $CATEGORIZE
+  rm Mewtwo.txt
+  unset MEWTWO
 fi
 
-if [ $Mightyena -ne 0 ];
+if [ "$MIGHTYENA" != "" ];
 then
-   export CATFILE="Mightyena.txt"
-   export CATNAME="Mightyena"
-   $CATEGORIZE
+  printf "$MIGHTYENA" > Mightyena.txt
+  export CATFILE="Mightyena.txt"
+  export CATNAME="Mightyena"
+  $CATEGORIZE
+  rm Mightyena.txt
+  unset MIGHTYENA
 fi
 
-if [ $Milotic -ne 0 ];
+if [ "$MILOTIC" != "" ];
 then
-   export CATFILE="Milotic.txt"
-   export CATNAME="Milotic"
-   $CATEGORIZE
+  printf "$MILOTIC" > Milotic.txt
+  export CATFILE="Milotic.txt"
+  export CATNAME="Milotic"
+  $CATEGORIZE
+  rm Milotic.txt
+  unset MILOTIC
 fi
 
-if [ $Miltank -ne 0 ];
+if [ "$MILTANK" != "" ];
 then
-   export CATFILE="Miltank.txt"
-   export CATNAME="Miltank"
-   $CATEGORIZE
+  printf "$MILTANK" > Miltank.txt
+  export CATFILE="Miltank.txt"
+  export CATNAME="Miltank"
+  $CATEGORIZE
+  rm Miltank.txt
+  unset MILTANK
 fi
 
-if [ $MimeJr -ne 0 ];
+if [ "$MIMEJR" != "" ];
 then
-   export CATFILE="MimeJr.txt"
-   export CATNAME="Mime Jr."
-   $CATEGORIZE
+  printf "$MIMEJR" > MimeJr.txt
+  export CATFILE="MimeJr.txt"
+  export CATNAME="Mime Jr."
+  $CATEGORIZE
+  rm MimeJr.txt
+  unset MIMEJR
 fi
 
-if [ $Minccino -ne 0 ];
+if [ "$MINCCINO" != "" ];
 then
-   export CATFILE="Minccino.txt"
-   export CATNAME="Minccino"
-   $CATEGORIZE
+  printf "$MINCCINO" > Minccino.txt
+  export CATFILE="Minccino.txt"
+  export CATNAME="Minccino"
+  $CATEGORIZE
+  rm Minccino.txt
+  unset MINCCINO
 fi
 
-if [ $Mienfoo -ne 0 ];
+if [ "$MIENFOO" != "" ];
 then
-   export CATFILE="Mienfoo.txt"
-   export CATNAME="Mienfoo"
-   $CATEGORIZE
+  printf "$MIENFOO" > Mienfoo.txt
+  export CATFILE="Mienfoo.txt"
+  export CATNAME="Mienfoo"
+  $CATEGORIZE
+  rm Mienfoo.txt
+  unset MIENFOO
 fi
 
-if [ $Mienshao -ne 0 ];
+if [ "$MIENSHAO" != "" ];
 then
-   export CATFILE="Mienshao.txt"
-   export CATNAME="Mienshao"
-   $CATEGORIZE
+  printf "$MIENSHAO" > Mienshao.txt
+  export CATFILE="Mienshao.txt"
+  export CATNAME="Mienshao"
+  $CATEGORIZE
+  rm Mienshao.txt
+  unset MIENSHAO
 fi
 
-if [ $Minun -ne 0 ];
+if [ "$MINUN" != "" ];
 then
-   export CATFILE="Minun.txt"
-   export CATNAME="Minun"
-   $CATEGORIZE
+  printf "$MINUN" > Minun.txt
+  export CATFILE="Minun.txt"
+  export CATNAME="Minun"
+  $CATEGORIZE
+  rm Minun.txt
+  unset MINUN
 fi
 
-if [ $Misdreavus -ne 0 ];
+if [ "$MISDREAVUS" != "" ];
 then
-   export CATFILE="Misdreavus.txt"
-   export CATNAME="Misdreavus"
-   $CATEGORIZE
+  printf "$MISDREAVUS" > Misdreavus.txt
+  export CATFILE="Misdreavus.txt"
+  export CATNAME="Misdreavus"
+  $CATEGORIZE
+  rm Misdreavus.txt
+  unset MISDREAVUS
 fi
 
-if [ $Mismagius -ne 0 ];
+if [ "$MISMAGIUS" != "" ];
 then
-   export CATFILE="Mismagius.txt"
-   export CATNAME="Mismagius"
-   $CATEGORIZE
+  printf "$MISMAGIUS" > Mismagius.txt
+  export CATFILE="Mismagius.txt"
+  export CATNAME="Mismagius"
+  $CATEGORIZE
+  rm Mismagius.txt
+  unset MISMAGIUS
 fi
 
-if [ $Moltres -ne 0 ];
+if [ "$MOLTRES" != "" ];
 then
-   export CATFILE="Moltres.txt"
-   export CATNAME="Moltres"
-   $CATEGORIZE
+  printf "$MOLTRES" > Moltres.txt
+  export CATFILE="Moltres.txt"
+  export CATNAME="Moltres"
+  $CATEGORIZE
+  rm Moltres.txt
+  unset MOLTRES
 fi
 
-if [ $Monferno -ne 0 ];
+if [ "$MONFERNO" != "" ];
 then
-   export CATFILE="Monferno.txt"
-   export CATNAME="Monferno"
-   $CATEGORIZE
+  printf "$MONFERNO" > Monferno.txt
+  export CATFILE="Monferno.txt"
+  export CATNAME="Monferno"
+  $CATEGORIZE
+  rm Monferno.txt
+  unset MONFERNO
 fi
 
-if [ $Mothim -ne 0 ];
+if [ "$MOTHIM" != "" ];
 then
-   export CATFILE="Mothim.txt"
-   export CATNAME="Mothim"
-   $CATEGORIZE
+  printf "$MOTHIM" > Mothim.txt
+  export CATFILE="Mothim.txt"
+  export CATNAME="Mothim"
+  $CATEGORIZE
+  rm Mothim.txt
+  unset MOTHIM
 fi
 
-if [ $MrMime -ne 0 ];
+if [ "$MRMIME" != "" ];
 then
-   export CATFILE="MrMime.txt"
-   export CATNAME="Mr. Mime"
-   $CATEGORIZE
+  printf "$MRMIME" > MrMime.txt
+  export CATFILE="MrMime.txt"
+  export CATNAME="Mr. Mime"
+  $CATEGORIZE
+  rm MrMime.txt
+  unset MRMIME
 fi
 
-if [ $Mudkip -ne 0 ];
+if [ "$MUDKIP" != "" ];
 then
-   export CATFILE="Mudkip.txt"
-   export CATNAME="Mudkip"
-   $CATEGORIZE
+  printf "$MUDKIP" > Mudkip.txt
+  export CATFILE="Mudkip.txt"
+  export CATNAME="Mudkip"
+  $CATEGORIZE
+  rm Mudkip.txt
+  unset MUDKIP
 fi
 
-if [ $Muk -ne 0 ];
+if [ "$MUK" != "" ];
 then
-   export CATFILE="Muk.txt"
-   export CATNAME="Muk"
-   $CATEGORIZE
+  printf "$MUK" > Muk.txt
+  export CATFILE="Muk.txt"
+  export CATNAME="Muk"
+  $CATEGORIZE
+  rm Muk.txt
+  unset MUK
 fi
 
-if [ $Munchlax -ne 0 ];
+if [ "$MUNCHLAX" != "" ];
 then
-   export CATFILE="Munchlax.txt"
-   export CATNAME="Munchlax"
-   $CATEGORIZE
+  printf "$MUNCHLAX" > Munchlax.txt
+  export CATFILE="Munchlax.txt"
+  export CATNAME="Munchlax"
+  $CATEGORIZE
+  rm Munchlax.txt
+  unset MUNCHLAX
 fi
 
-if [ $Munna -ne 0 ];
+if [ "$MUNNA" != "" ];
 then
-   export CATFILE="Munna.txt"
-   export CATNAME="Munna"
-   $CATEGORIZE
+  printf "$MUNNA" > Munna.txt
+  export CATFILE="Munna.txt"
+  export CATNAME="Munna"
+  $CATEGORIZE
+  rm Munna.txt
+  unset MUNNA
 fi
 
-if [ $Murkrow -ne 0 ];
+if [ "$MURKROW" != "" ];
 then
-   export CATFILE="Murkrow.txt"
-   export CATNAME="Murkrow"
-   $CATEGORIZE
+  printf "$MURKROW" > Murkrow.txt
+  export CATFILE="Murkrow.txt"
+  export CATNAME="Murkrow"
+  $CATEGORIZE
+  rm Murkrow.txt
+  unset MURKROW
 fi
 
-if [ $Musharna -ne 0 ];
+if [ "$MUSHARNA" != "" ];
 then
-   export CATFILE="Musharna.txt"
-   export CATNAME="Musharna"
-   $CATEGORIZE
+  printf "$MUSHARNA" > Musharna.txt
+  export CATFILE="Musharna.txt"
+  export CATNAME="Musharna"
+  $CATEGORIZE
+  rm Musharna.txt
+  unset MUSHARNA
 fi
-
-
-rm Machamp.txt
-rm Machoke.txt
-rm Machop.txt
-rm Magby.txt
-rm Magcargo.txt
-rm Magikarp.txt
-rm Magmar.txt
-rm Magmortar.txt
-rm Magnemite.txt
-rm Magneton.txt
-rm Magnezone.txt
-rm Makuhita.txt
-rm Mamoswine.txt
-rm Manaphy.txt
-rm Mandibuzz.txt
-rm Manectric.txt
-rm Mankey.txt
-rm Mantine.txt
-rm Mantyke.txt
-rm Maractus.txt
-rm Mareep.txt
-rm Marill.txt
-rm Marowak.txt
-rm Marshtomp.txt
-rm Masquerain.txt
-rm Mawile.txt
-rm Medicham.txt
-rm Meditite.txt
-rm Meganium.txt
-rm Meloetta.txt
-rm Meowth.txt
-rm Mesprit.txt
-rm Metagross.txt
-rm Metang.txt
-rm Metapod.txt
-rm Mew.txt
-rm Mewtwo.txt
-rm Mightyena.txt
-rm Milotic.txt
-rm Miltank.txt
-rm MimeJr.txt
-rm Minccino.txt
-rm Mienfoo.txt
-rm Mienshao.txt
-rm Minun.txt
-rm Misdreavus.txt
-rm Mismagius.txt
-rm Moltres.txt
-rm Monferno.txt
-rm Mothim.txt
-rm MrMime.txt
-rm Mudkip.txt
-rm Muk.txt
-rm Munchlax.txt
-rm Munna.txt
-rm Murkrow.txt
-rm Musharna.txt

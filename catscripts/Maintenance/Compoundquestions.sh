@@ -6,9 +6,9 @@
 #find all examples and place them in a maintenance category. Most of them can
 #stand to be reworded, anyway
 
-KEYWORDS_COMPOUNDQUESTION="\.(| )(Who|What|When|Where|Why|How|Do(|es)|Can|Each|There|Where|Were(n|)\b"
+KEYWORDS_COMPOUNDQUESTION="\.(| )(Who|What|When|Where|Why|How|Do(|es)|Can|Each|There|Where|Were(n|))\b"
 
-if [ "$1" == "" ]; #Normal operatin
+if [ "$1" == "" ]; #Normal operation
 then
   
   if [ "$DEBUG" == "yes" ];

@@ -1,14 +1,31 @@
 #!/bin/bash
 
-egrep -i 'Nigeria' newpages.txt >> Nigeria.txt
+KEYWORDS_NIGERIA="Nigeria"
+KEYWORDS_NIGERIA_ALL="Nigeria"
 
-NIGERIA=`stat --print=%s Nigeria.txt`
-
-if [ $NIGERIA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Nigeria.txt"
-  export CATNAME="Nigeria"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "" ];
+  then
+    printf "Starting Nigeria\n"
+  fi
 
-rm Nigeria.txt
+  NIGERIA=`egrep -i "$KEYWORDS_NIGERIA" newpages.txt`
+
+  if [ "$NIGERIA" != "" ];
+  then
+    printf "$NIGERIA" > Nigeria.txt
+    export CATFILE="Nigeria.txt"
+    export CATNAME="Nigeria"
+    $CATEGORIZE
+    rm Nigeria.txt
+    unset NIGERIA
+  fi
+
+  if [ "$DEBUG" == "" ];
+  then
+    printf "Finishing Nigeria\n"
+  fi
+
+fi

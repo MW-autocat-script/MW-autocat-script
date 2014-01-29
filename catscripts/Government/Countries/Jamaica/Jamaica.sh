@@ -1,14 +1,31 @@
 #!/bin/bash
 
-egrep -i 'Jamaica' newpages.txt >> Jamaica.txt
+KEYWORDS_JAMAICA="Jamaica"
+KEYWORDS_JAMAICA_ALL="$KEYWORDS_JAMAICA"
 
-JAMAICA=`stat --print=%s Jamaica.txt`
-
-if [ $JAMAICA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Jamaica.txt"
-  export CATNAME="Jamaica"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Jamaica\n"
+  fi
 
-rm Jamaica.txt
+  JAMAICA=`egrep -i "$KEYWORDS_JAMAICA" newpages.txt`
+
+  if [ "$JAMAICA" != "" ];
+  then
+    printf "$JAMAICA" > Jamaica.txt
+    export CATFILE="Jamaica.txt"
+    export CATNAME="Jamaica"
+    $CATEGORIZE
+    rm Jamaica.txt
+    unset JAMAICA
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Jamaica\n"
+  fi
+
+fi

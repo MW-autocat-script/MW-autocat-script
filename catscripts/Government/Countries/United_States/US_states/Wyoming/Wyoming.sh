@@ -1,14 +1,31 @@
 #!/bin/bash
 
-egrep -i 'Wyoming' newpages.txt >> Wyoming.txt
+KEYWORDS_WYOMING="Wyoming"
+KEYWORDS_WYOMING_ALL="$KEYWORDS_WYOMING"
 
-WYOMING=`stat --print=%s Wyoming.txt`
-
-if [ $WYOMING -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Wyoming.txt"
-  export CATNAME="Wyoming"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Wyoming\n"
+  fi
 
-rm Wyoming.txt
+  WYOMING="$(egrep -i "$KEYWORDS_WYOMING" newpages.txt)"
+
+  if [ "$WYOMING" != "" ];
+  then
+    printf "%s" "$WYOMING" > Wyoming.txt
+    export CATFILE="Wyoming.txt"
+    export CATNAME="Wyoming"
+    $CATEGORIZE
+    rm Wyoming.txt
+    unset WYOMING
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Wyoming\n"
+  fi
+
+fi
