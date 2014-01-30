@@ -1,14 +1,20 @@
 #!/bin/bash
 
-egrep -i 'Johnny(| )Test' newpages.txt >> JohnnyTest.txt
+KEYWORDS_JOHNNYTEST="Johnny(| )Test"
 
-JOHNNYTEST=`stat --print=%s JohnnyTest.txt`
-
-if [ $JOHNNYTEST -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="JohnnyTest.txt"
-  export CATNAME="Johnny Test"
-  $CATEGORIZE
-fi
 
-rm JohnnyTest.txt
+JOHNNYTEST="$(egrep -i "$KEYWORDS_JOHNNYTEST" newpages.txt)"
+
+  if [ "$JOHNNYTEST" != "" ];
+  then
+    printf "%s" "$JOHNNYTEST" > JohnnyTest.txt
+    export CATFILE="JohnnyTest.txt"
+    export CATNAME="Johnny Test"
+    $CATEGORIZE
+    rm JohnnyTest.txt
+    unset JOHNNYTEST
+  fi
+
+fi

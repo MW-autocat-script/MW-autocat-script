@@ -79,37 +79,37 @@ then
     printf "Starting Canada\n"
   fi
 
-  CANADA=`egrep -i "$KEYWORDS_CANADA" newpages.txt | egrep -iv "$KEYWORDS_CANADA_EXCLUDE"`
-  ONTARIO=`egrep -i "$KEYWORDS_ONTARIO" newpages.txt | egrep -iv "$KEYWORDS_ONTARIO_EXCLUDE"`
-  TORONTO=`egrep -i "$KEYWORDS_TORONTO" newpages.txt`
-  OTTAWA=`egrep -i "$KEYWORDS_OTTAWA" newpages.txt`
-  QUEBECPROVINCE=`egrep -i "$KEYWORDS_QUEBEC_PROVINCE" newpages.txt | egrep -iv "$KEYWORDS_QUEBEC_PROVINCE_EXCLUDE"`
-  QUEBECCITY=`egrep -i "$KEYWORDS_QUEBEC_CITY" newpages.txt`
-  MONTREAL=`egrep -i "$KEYWORDS_MONTREAL" newpages.txt`
-  NOVASCOTIA=`egrep -i "$KEYWORDS_NOVASCOTIA" newpages.txt | egrep -iv "$KEYWORDS_NOVASCOTIA_EXCLUDE"`
-  HALIFAX=`egrep -i "$KEYWORDS_HALIFAX" newpages.txt`
-  NEWBRUNSWICK=`egrep -i "$KEYWORDS_NEWBRUNSWICK" newpages.txt`
-  MANITOBA=`egrep -i "$KEYWORDS_MANITOBA" newpages.txt | egrep -iv "$KEYWORDS_MANITOBA_EXCLUDE"`
-  WINNIPEG=`egrep -i "$KEYWORDS_WINNIPEG" newpages.txt`
-  BRITISHCOLUMBIA=`egrep -i "$KEYWORDS_BRITISHCOLUMBIA" newpages.txt | egrep -iv "$KEYWORDS_BRITISHCOLUMBIA_EXCLUDE"`
-  VICTORIABC=`egrep -i "$KEYWORDS_VICTORIABC" newpages.txt`
-  VANCOUVER=`egrep -i "$KEYWORDS_VANCOUVER" newpages.txt`
-  PRINCEEDWARDISLAND=`egrep -i "$KEYWORDS_PRINCEEDWARDISLAND" newpages.txt`
-  SASKATCHEWAN=`egrep -i "$KEYWORDS_SASKATCHEWAN" newpages.txt | egrep -iv "$KEYWORDS_SASKATCHEWAN_EXCLUDE"`
-  REGINA=`egrep -i "$KEYWORDS_REGINA" newpages.txt | egrep -iv "$KEYWORDS_REGINA_EXCLUDE"`
-  SASKATOON=`egrep -i "$KEYWORDS_SASKATOON" newpages.txt`
-  ALBERTA=`egrep -i "$KEYWORDS_ALBERTA" newpages.txt | egrep -iv "$KEYWORDS_ALBERTA_EXCLUDE"`
-  EDMONTON=`egrep -i "$KEYWORDS_EDMONTON" newpages.txt`
-  CALGARY=`egrep -i "$KEYWORDS_CALGARY" newpages.txt`
-  NEWFOUNDLANDANDLABRADOR=`egrep -i "$KEYWORDS_NEWFOUNDLANDANDLABRADOR" newpages.txt | egrep -iv "$KEYWORDS_NEWFOUNDLANDANDLABRADOR_EXCLUDE"`
-  NORTHWESTTERRITORIES=`egrep -i "$KEYWORDS_NORTHWESTTERRITORIES" newpages.txt | egrep -iv "$KEYWORDS_NORTHWESTTERRITORIES_EXCLUDE"`
-  YELLOWKNIFE=`egrep -i "$KEYWORDS_YELLOWKNIFE" newpages.txt"`
-  YUKON=`egrep -i "$KEYWORDS_YUKON" newpages.txt | egrep -iv "$KEYWORDS_YUKON_EXCLUDE"`
-  NUNAVUT=`egrep -i "$KEYWORDS_NUNAVUT" newpages.txt`
+  CANADA="$(egrep -i "$KEYWORDS_CANADA" newpages.txt | egrep -iv "$KEYWORDS_CANADA_EXCLUDE")"
+  ONTARIO="$(egrep -i "$KEYWORDS_ONTARIO" newpages.txt | egrep -iv "$KEYWORDS_ONTARIO_EXCLUDE")"
+  TORONTO="$(egrep -i "$KEYWORDS_TORONTO" newpages.txt)"
+  OTTAWA="$(egrep -i "$KEYWORDS_OTTAWA" newpages.txt)"
+  QUEBECPROVINCE="$(egrep -i "$KEYWORDS_QUEBEC_PROVINCE" newpages.txt | egrep -iv "$KEYWORDS_QUEBEC_PROVINCE_EXCLUDE")"
+  QUEBECCITY="$(egrep -i "$KEYWORDS_QUEBEC_CITY" newpages.txt)"
+  MONTREAL="$(egrep -i "$KEYWORDS_MONTREAL" newpages.txt)"
+  NOVASCOTIA="$(egrep -i "$KEYWORDS_NOVASCOTIA" newpages.txt | egrep -iv "$KEYWORDS_NOVASCOTIA_EXCLUDE")"
+  HALIFAX="$(egrep -i "$KEYWORDS_HALIFAX" newpages.txt)"
+  NEWBRUNSWICK="$(egrep -i "$KEYWORDS_NEWBRUNSWICK" newpages.txt)"
+  MANITOBA="$(egrep -i "$KEYWORDS_MANITOBA" newpages.txt | egrep -iv "$KEYWORDS_MANITOBA_EXCLUDE")"
+  WINNIPEG="$(egrep -i "$KEYWORDS_WINNIPEG" newpages.txt)"
+  BRITISHCOLUMBIA="$(egrep -i "$KEYWORDS_BRITISHCOLUMBIA" newpages.txt | egrep -iv "$KEYWORDS_BRITISHCOLUMBIA_EXCLUDE")"
+  VICTORIABC="$(egrep -i "$KEYWORDS_VICTORIABC" newpages.txt)"
+  VANCOUVER="$(egrep -i "$KEYWORDS_VANCOUVER" newpages.txt)"
+  PRINCEEDWARDISLAND="$(egrep -i "$KEYWORDS_PRINCEEDWARDISLAND" newpages.txt)"
+  SASKATCHEWAN="$(egrep -i "$KEYWORDS_SASKATCHEWAN" newpages.txt | egrep -iv "$KEYWORDS_SASKATCHEWAN_EXCLUDE")"
+  REGINA="$(egrep -i "$KEYWORDS_REGINA" newpages.txt | egrep -iv "$KEYWORDS_REGINA_EXCLUDE")"
+  SASKATOON="$(egrep -i "$KEYWORDS_SASKATOON" newpages.txt)"
+  ALBERTA="$(egrep -i "$KEYWORDS_ALBERTA" newpages.txt | egrep -iv "$KEYWORDS_ALBERTA_EXCLUDE")"
+  EDMONTON="$(egrep -i "$KEYWORDS_EDMONTON" newpages.txt)"
+  CALGARY="$(egrep -i "$KEYWORDS_CALGARY" newpages.txt)"
+  NEWFOUNDLANDANDLABRADOR="$(egrep -i "$KEYWORDS_NEWFOUNDLANDANDLABRADOR" newpages.txt | egrep -iv "$KEYWORDS_NEWFOUNDLANDANDLABRADOR_EXCLUDE")"
+  NORTHWESTTERRITORIES="$(egrep -i "$KEYWORDS_NORTHWESTTERRITORIES" newpages.txt | egrep -iv "$KEYWORDS_NORTHWESTTERRITORIES_EXCLUDE")"
+  YELLOWKNIFE="$(egrep -i "$KEYWORDS_YELLOWKNIFE" newpages.txt)"
+  YUKON="$(egrep -i "$KEYWORDS_YUKON" newpages.txt | egrep -iv "$KEYWORDS_YUKON_EXCLUDE")"
+  NUNAVUT="$(egrep -i "$KEYWORDS_NUNAVUT" newpages.txt)"
 
   if [ "$CANADA" != "" ];
   then
-    printf "$CANADA" > Canada.txt
+    printf "%s" "$CANADA" > Canada.txt
     export CATFILE="Canada.txt"
     export CATNAME="Canada"
     $CATEGORIZE
@@ -119,7 +119,7 @@ then
 
   if [ "$ONTARIO" != "" ];
   then
-    printf "$ONTARIO" > Ontario.txt
+    printf "%s" "$ONTARIO" > Ontario.txt
     export CATFILE="Ontario.txt"
     export CATNAME="Ontario province"
     $CATEGORIZE
@@ -129,7 +129,7 @@ then
 
   if [ "$TORONTO" != "" ];
   then
-    printf "$TORONTO" > Toronto.txt
+    printf "%s" "$TORONTO" > Toronto.txt
     export CATFILE="Toronto.txt"
     export CATNAME="Toronto"
     $CATEGORIZE
@@ -139,7 +139,7 @@ then
 
   if [ "$OTTAWA" != "" ];
   then
-    printf "$OTTAWA" > Ottawa.txt
+    printf "%s" "$OTTAWA" > Ottawa.txt
     export CATFILE="Ottawa.txt"
     export CATNAME="Ottawa"
     $CATEGORIZE
@@ -149,7 +149,7 @@ then
 
   if [ "$QUEBECPROVINCE" != "" ];
   then
-    printf "$QUEBECPROVINCE" > QuebecProvince.txt
+    printf "%s" "$QUEBECPROVINCE" > QuebecProvince.txt
     export CATFILE="QuebecProvince.txt"
     export CATNAME="Quebec province"
     $CATEGORIZE
@@ -159,7 +159,7 @@ then
 
   if [ "$QUEBECCITY" != "" ];
   then
-    printf "$QUEBECCITY" > QuebecCity.txt
+    printf "%s" "$QUEBECCITY" > QuebecCity.txt
     export CATFILE="QuebecCity.txt"
     export CATNAME="Quebec City"
     $CATEGORIZE
@@ -169,7 +169,7 @@ then
 
   if [ "$MONTREAL" != "" ];
   then
-    printf "$MONTREAL" > Montreal.txt
+    printf "%s" "$MONTREAL" > Montreal.txt
     export CATFILE="Montreal.txt"
     export CATNAME="Montreal"
     $CATEGORIZE
@@ -179,7 +179,7 @@ then
 
   if [ "$NOVASCOTIA" != "" ];
   then
-    printf "$NOVASCOTIA" > NovaScotia.txt
+    printf "%s" "$NOVASCOTIA" > NovaScotia.txt
     export CATFILE="NovaScotia.txt"
     export CATNAME="Nova Scotia"
     $CATEGORIZE
@@ -189,7 +189,7 @@ then
 
   if [ "$HALIFAX" != "" ];
   then
-    printf "$HALIFAX" > Halifax.txt
+    printf "%s" "$HALIFAX" > Halifax.txt
     export CATFILE="Halifax.txt"
     export CATNAME="Halifax"
     $CATEGORIZE
@@ -199,7 +199,7 @@ then
 
   if [ "$NEWBRUNSWICK" != "" ];
   then
-    printf "$NEWBRUNSWICK" > NewBrunswick.txt
+    printf "%s" "$NEWBRUNSWICK" > NewBrunswick.txt
     export CATFILE="NewBrunswick.txt"
     export CATNAME="New Brunswick"
     $CATEGORIZE
@@ -209,7 +209,7 @@ then
 
   if [ "$MANITOBA" != "" ];
   then
-    printf "$MANITOBA" > Manitoba.txt
+    printf "%s" "$MANITOBA" > Manitoba.txt
     export CATFILE="Manitoba.txt"
     export CATNAME="Manitoba"
     $CATEGORIZE
@@ -219,7 +219,7 @@ then
 
   if [ "$WINNIPEG" != "" ];
   then
-    printf "$WINNIPEG" > Winnipeg.txt
+    printf "%s" "$WINNIPEG" > Winnipeg.txt
     export CATFILE="Winnipeg.txt"
     export CATNAME="Winnipeg"
     $CATEGORIZE
@@ -229,7 +229,7 @@ then
 
   if [ "$BRITISHCOLUMBIA" != "" ];
   then
-    printf "$BRITISHCOLUMBIA" > BritishColumbia.txt
+    printf "%s" "$BRITISHCOLUMBIA" > BritishColumbia.txt
     export CATFILE="BritishColumbia.txt"
     export CATNAME="British Columbia"
     $CATEGORIZE
@@ -239,7 +239,7 @@ then
 
   if [ "$VICTORIABC" != "" ];
   then
-    printf "$VICTORIABC" > VictoriaBC.txt
+    printf "%s" "$VICTORIABC" > VictoriaBC.txt
     export CATFILE="VictoriaBC.txt"
     export CATNAME="Victoria, British Columbia"
     $CATEGORIZE
@@ -249,7 +249,7 @@ then
 
   if [ "$VANCOUVER" != "" ];
   then
-    printf "$VANCOUVER" > Vancouver.txt
+    printf "%s" "$VANCOUVER" > Vancouver.txt
     export CATFILE="Vancouver.txt"
     export CATNAME="Vancouver"
     $CATEGORIZE
@@ -259,7 +259,7 @@ then
 
   if [ "$PRINCEEDWARDISLAND" != "" ];
   then
-    printf "$PRINCEEDWARDISLAND" > PrinceEdwardIsland.txt
+    printf "%s" "$PRINCEEDWARDISLAND" > PrinceEdwardIsland.txt
     export CATFILE="PrinceEdwardIsland.txt"
     export CATNAME="Prince Edward Island"
     $CATEGORIZE
@@ -269,7 +269,7 @@ then
 
   if [ "$SASKATCHEWAN" != "" ];
   then
-    printf "$SASKATCHEWAN" > Saskatchewan.txt
+    printf "%s" "$SASKATCHEWAN" > Saskatchewan.txt
     export CATFILE="Saskatchewan.txt"
     export CATNAME="Saskatchewan"
     $CATEGORIZE
@@ -279,7 +279,7 @@ then
 
   if [ "$REGINA" != "" ];
   then
-    printf "$REGINA" > Regina.txt
+    printf "%s" "$REGINA" > Regina.txt
     export CATFILE="Regina.txt"
     export CATNAME="Regina"
     $CATEGORIZE
@@ -289,7 +289,7 @@ then
 
   if [ "$SASKATOON" != "" ];
   then
-    printf "$SASKATOON" > Saskatoon.txt
+    printf "%s" "$SASKATOON" > Saskatoon.txt
     export CATFILE="Saskatoon.txt"
     export CATNAME="Saskatoon"
     $CATEGORIZE
@@ -299,7 +299,7 @@ then
 
   if [ "$ALBERTA" != "" ];
   then
-    printf "$ALBERTA" > Alberta.txt
+    printf "%s" "$ALBERTA" > Alberta.txt
     export CATFILE="Alberta.txt"
     export CATNAME="Alberta"
     $CATEGORIZE
@@ -309,7 +309,7 @@ then
 
   if [ "$EDMONTON" != "" ];
   then
-    printf "$EDMONTON" > Edmonton.txt
+    printf "%s" "$EDMONTON" > Edmonton.txt
     export CATFILE="Edmonton.txt"
     export CATNAME="Edmonton"
     $CATEGORIZE
@@ -319,7 +319,7 @@ then
 
   if [ "$CALGARY" != "" ];
   then
-    printf "$CALGARY" > Calgary.txt
+    printf "%s" "$CALGARY" > Calgary.txt
     export CATFILE="Calgary.txt"
     export CATNAME="Calgary"
     $CATEGORIZE
@@ -329,7 +329,7 @@ then
 
   if [ "$NEWFOUNDLANDANDLABRADOR" != "" ];
   then
-    printf "$NEWFOUNDLANDANDLABRADOR" > Newfoundland.txt
+    printf "%s" "$NEWFOUNDLANDANDLABRADOR" > Newfoundland.txt
     export CATFILE="Newfoundland.txt"
     export CATNAME="Newfoundland and Labrador"
     $CATEGORIZE
@@ -339,7 +339,7 @@ then
 
   if [ "$NORTHWESTTERRITORIES" != "" ];
   then
-    printf "$NORTHWESTTERRITORIES" > NorthwestTerritories.txt
+    printf "%s" "$NORTHWESTTERRITORIES" > NorthwestTerritories.txt
     export CATFILE="NorthwestTerritories.txt"
     export CATNAME="Northwest Territories"
     $CATEGORIZE
@@ -349,7 +349,7 @@ then
 
   if [ "$YELLOWKNIFE" != "" ];
   then
-    printf "$YELLOWKNIFE" > Yellowknife.txt
+    printf "%s" "$YELLOWKNIFE" > Yellowknife.txt
     export CATFILE="Yellowknife.txt"
     export CATNAME="Yellowknife"
     $CATEGORIZE
@@ -359,7 +359,7 @@ then
 
   if [ "$YUKON" != "" ];
   then
-    printf "$YUKON" > Yukon.txt
+    printf "%s" "$YUKON" > Yukon.txt
     export CATFILE="Yukon.txt"
     export CATNAME="Yukon"
     $CATEGORIZE
@@ -369,7 +369,7 @@ then
 
   if [ "$NUNAVUT" != "" ];
   then
-    printf "$NUNAVUT" > Nunavut.txt
+    printf "%s" "$NUNAVUT" > Nunavut.txt
     export CATFILE="Nunavut.txt"
     export CATNAME="Nunavut"
     $CATEGORIZE
