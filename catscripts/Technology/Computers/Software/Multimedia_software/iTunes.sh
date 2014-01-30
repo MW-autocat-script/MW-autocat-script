@@ -5,17 +5,26 @@ KEYWORDS_ITUNES="iTunes|\bi Tunes"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  egrep -i "$KEYWORDS_ITUNES" newpages.txt >> iTunes.txt
-
-  ITUNES=`stat --print=%s iTunes.txt`
-
-  if [ $ITUNES -ne 0 ];
+  if [ "$DEBUG" == "yes" ];
   then
+    printf "Starting iTunes\n"
+  fi
+
+  ITUNES="$(egrep -i "$KEYWORDS_ITUNES" newpages.txt)"
+
+  if [ "$ITUNES" != "" ];
+  then
+    printf "%s" "$ITUNES" > iTunes.txt
     export CATFILE="iTunes.txt"
     export CATNAME="iTunes"
     $CATEGORIZE
+    rm iTunes.txt
+    unset ITUNES
   fi
 
-  rm iTunes.txt
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing iTunes\n"
+  fi
 
 fi

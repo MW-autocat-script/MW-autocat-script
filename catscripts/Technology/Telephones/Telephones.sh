@@ -1,43 +1,82 @@
 #!/bin/bash
-egrep -i 'telephone|\bphone|caller ID|call waiting|busy signal' newpages.txt | egrep -iv 'cell(|ullar)(| )phone|mobile (|tele)phone|\bi phone|Nokia' >> Telephones.txt
-egrep -i 'cell(|ular)(| )phone|mobile phone|SIM card|(^| )(2|3|4)G\b|GPRS' newpages.txt | egrep -iv 'i(| )phone|iPod|Nokia' >> Cellphones.txt
-egrep -i 'i(| )phone' newpages.txt >> iPhones.txt
-egrep -i 'Nokia' newpages.txt >> Nokia.txt
 
-TELEPHONES=`stat --print=%s Telephones.txt`
-CELLPHONES=`stat --print=%s Cellphones.txt`
-IPHONES=`stat --print=%s iPhones.txt`
-NOKIA=`stat --print=%s Nokia.txt`
+KEYWORDS_TELEPHONES="telephone|\bphone|caller(| )ID|call(| )waiting|busy(| )signal"
+KEYWORDS_CELLPHONES="cell(|ular)(| )phone|mobile(| )(|tele)phone|SIM(| )card|(^| )(2|3|4)G\b|GPRS"
+KEYWORDS_IPHONE="\bi(| )phone"
+KEYWORDS_NOKIA="Nokia"
+KEYWORDS_LGSCRIPT="LG(| )Script"
+KEYWORDS_CELLPHONES_EXCLUDE="$KEYWORDS_IPHONE|$KEYWORDS_NOKIA|$KEYWORDS_LGSCRIPT"
+KEYWORDS_CELLPHONES_ALL="$KEYWORDS_CELLPHONES|$KEYWORDS_IPHONE|$KEYWORDS_NOKIA|$KEYWORDS_LGSCRIPT"
+KEYWORDS_TELEPHONES_EXCLUDE="$KEYWORDS_CELLPHONES_ALL|$KEYWORDS_CELLPHONES_EXCLUDE"
 
-if [ $TELEPHONES -ne 0 ];
+
+if [ "$1" == "" ];
 then
-  export CATFILE="Telephones.txt"
-  export CATNAME="Telephones"
-  $CATEGORIZE
-fi
 
-if [ $CELLPHONES -ne 0 ];
-then
-  export CATFILE="Cellphones.txt"
-  export CATNAME="Cellphones"
-  $CATEGORIZE
-fi
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Telephones\n"
+  fi
 
-if [ $IPHONES -ne 0 ];
-then
-  export CATFILE="iPhones.txt"
-  export CATNAME="iPhone"
-  $CATEGORIZE
-fi
+  TELEPHONES="$(egrep -i "$KEYWORDS_TELEPHONES" newpages.txt | egrep -iv "$KEYWORDS_TELEPHONES_EXCLUDE")"
+  CELLPHONES="$(egrep -i "$KEYWORDS_CELLPHONES" newpages.txt | egrep -iv "$KEYWORDS_CELLPHONES_EXCLUDE")"
+  IPHONES="$(egrep -i "$KEYWORDS_IPHONE" newpages.txt)"
+  NOKIA="$(egrep -i "$KEYWORDS_NOKIA" newpages.txt)"
+  LGSCRIPT="$(egrep -i "$KEYWORDS_LGSCRIPT" newpages.txt)"
 
-if [ $NOKIA -ne 0 ];
-then
-  export CATFILE="Nokia.txt"
-  export CATNAME="Nokia"
-  $CATEGORIZE
-fi
+  if [ "$TELEPHONES" != "" ];
+  then
+    printf "%s" "$TELEPHONES" > Telephones.txt
+    export CATFILE="Telephones.txt"
+    export CATNAME="Telephones"
+    $CATEGORIZE
+    rm Telephones.txt
+    unset TELEPHONES
+  fi
 
-rm Telephones.txt
-rm Cellphones.txt
-rm iPhones.txt
-rm Nokia.txt
+  if [ "$CELLPHONES" != "" ];
+  then
+    printf "%s" "$CELLPHONES" > Cellphones.txt
+    export CATFILE="Cellphones.txt"
+    export CATNAME="Cellphones"
+    $CATEGORIZE
+    rm Cellphones.txt
+    unset CELLPHONES
+  fi
+
+  if [ "$IPHONES" != "" ];
+  then
+    printf "*s" "$IPHONES" > iPhones.txt
+    export CATFILE="iPhones.txt"
+    export CATNAME="iPhone"
+    $CATEGORIZE
+    rm iPhones.txt
+    unset IPHONES
+  fi
+
+  if [ "$NOKIA" != "" ];
+  then
+    printf "%s" "$NOKIA" > Nokia.txt
+    export CATFILE="Nokia.txt"
+    export CATNAME="Nokia"
+    $CATEGORIZE
+    rm Nokia.txt
+    unset NOKIA
+  fi
+
+  if [ "$LGSCRIPT" != "" ];
+  then
+    printf "%s" "$LGSCRIPT" > LGScript.txt
+    export CATFILE="LGScript.txt"
+    export CATNAME="LG Script"
+    $CATEGORIZE
+    rm LGScript.txt
+    unset LGSCRIPT
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Telephones\n"
+  fi
+
+fi

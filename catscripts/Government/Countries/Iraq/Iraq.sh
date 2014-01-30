@@ -1,24 +1,44 @@
 #!/bin/bash
 
-egrep -i 'Iraq' newpages.txt | egrep -iv 'Baghdad' >> Iraq.txt
-egrep -i 'Baghdad' newpages.txt >> Baghdad.txt
+KEYWORDS_IRAQ="Iraq"
+KEYWORDS_BAGHDAD="Baghdad"
+KEYWORDS_IRAQ_EXCLUDE="$KEYWORDS_BAGHDAD"
+KEYWORDS_IRAQ_ALL="$KEYWORDS_IRAQ|$KEYWORDS_BAGHDAD"
 
-IRAQ=`stat --print=%s Iraq.txt`
-BAGHDAD=`stat --print=%s Baghdad.txt`
-
-if [ $IRAQ -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Iraq.txt"
-  export CATNAME="Iraq"
-  $CATEGORIZE
-fi
 
-if [ $BAGHDAD -ne 0 ];
-then
-  export CATFILE="Baghdad.txt"
-  export CATNAME="Baghdad"
-  $CATEGORIZE
-fi
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Iraq\n"
+  fi
 
-rm Iraq.txt
-rm Baghdad.txt
+  IRAQ="$(egrep -i "$KEYWORDS_IRAQ" newpages.txt | egrep -iv "$KEYWORDS_IRAQ_EXCLUDE")"
+  BAGHDAD="$(egrep -i "$KEYWORDS_BAGHDAD" newpages.txt)"
+
+  if [ "$IRAQ" != "" ];
+  then
+    printf "%s" "$IRAQ" > Iraq.txt
+    export CATFILE="Iraq.txt"
+    export CATNAME="Iraq"
+    $CATEGORIZE
+    rm Iraq.txt
+    unset IRAQ
+  fi
+
+  if [ "$BAGHDAD" != "" ];
+  then
+    printf "%s" "$BAGHDAD" > Baghdad.txt
+    export CATFILE="Baghdad.txt"
+    export CATNAME="Baghdad"
+    $CATEGORIZE
+    rm Baghdad.txt
+    unset BAGHDAD
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Iraq\n"
+  fi
+
+fi

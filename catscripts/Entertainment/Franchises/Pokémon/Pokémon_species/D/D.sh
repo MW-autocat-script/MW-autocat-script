@@ -41,19 +41,8 @@ KEYWORDS_POKEMONSPECIES_D="$KEYWORDS_DARKRAI|$KEYWORDS_DARMANITAN|$KEYWORDS_DARU
 
 if [ "$1" == "" ];
 then
-  egrep -i "$KEYWORDS_DARKRAI" newpages.txt >> Darkrai.txt &
-  egrep -i "$KEYWORDS_DARMANITAN" newpages.txt >> Darmanitan.txt &
-  egrep -i "$KEYWORDS_DARUMAKA" newpages.txt >> Darumaka.txt &
-  egrep -i "$KEYWORDS_DEERLING" newpages.txt >> Deerling.txt &
-  egrep -i "$KEYWORDS_DEINO" newpages.txt >> Deino.txt &
-  egrep -i "$KEYWORDS_DELCATTY" newpages.txt >> Delcatty.txt &
-  egrep -i "$KEYWORDS_DELIBIRD" newpages.txt >> Delibird.txt &
-  egrep -i "$KEYWORDS_DEOXYS" newpages.txt >> Deoxys.txt &
-  egrep -i "$KEYWORDS_DEWGONG" newpages.txt >> Dewgong.txt &
-  egrep -i "$KEYWORDS_DEWOTT" newpages.txt >> Dewott.txt &
-  egrep -i "$KEYWORDS_DIALGA" newpages.txt >> Dialga.txt &
-  egrep -i "$KEYWORDS_DIGLETT" newpages.txt >> Diglett.txt &
-  egrep -i "$KEYWORDS_DITTO" newpages.txt >> Ditto.txt &
+
+
   egrep -i "$KEYWORDS_DODRIO" newpages.txt >> Dodrio.txt &
   egrep -i "$KEYWORDS_DODUO" newpages.txt >> Doduo.txt &
   egrep -i "$KEYWORDS_DONPHAN" newpages.txt >> Donphan.txt &
@@ -79,19 +68,19 @@ then
 
   wait
 
-  Darkrai=`stat --print=%s Darkrai.txt`
-  Darmanitan=`stat --print=%s Darmanitan.txt`
-  Darumaka=`stat --print=%s Darumaka.txt`
-  Deerling=`stat --print=%s Deerling.txt`
-  Deino=`stat --print=%s Deino.txt`
-  Delcatty=`stat --print=%s Delcatty.txt`
-  Delibird=`stat --print=%s Delibird.txt`
-  Deoxys=`stat --print=%s Deoxys.txt`
-  Dewgong=`stat --print=%s Dewgong.txt`
-  Dewott=`stat --print=%s Dewott.txt`
-  Dialga=`stat --print=%s Dialga.txt`
-  Diglett=`stat --print=%s Diglett.txt`
-  Ditto=`stat --print=%s Ditto.txt`
+  DARKRAI="$(egrep -i "$KEYWORDS_DARKRAI" newpages.txt)"
+  DARMANITAN="$(egrep -i "$KEYWORDS_DARMANITAN" newpages.txt)"
+  DARUMAKA="$(egrep -i "$KEYWORDS_DARUMAKA" newpages.txt)"
+  DEERLING="$(egrep -i "$KEYWORDS_DEERLING" newpages.txt)"
+  DEINO="$(egrep -i "$KEYWORDS_DEINO" newpages.txt)"
+  DELCATTY="$(egrep -i "$KEYWORDS_DELCATTY" newpages.txt)"
+  DELIBIRD="$(egrep -i "$KEYWORDS_DELIBIRD" newpages.txt)"
+  DEOXYS="$(egrep -i "$KEYWORDS_DEOXYS" newpages.txt)"
+  DEWGONG="$(egrep -i "$KEYWORDS_DEWGONG" newpages.txt)"
+  DEWOTT="$(egrep -i "$KEYWORDS_DEWOTT" newpages.txt)"
+  DIALGA="$(egrep -i "$KEYWORDS_DIALGA" newpages.txt)"
+  DIGLETT="$(egrep -i "$KEYWORDS_DIGLETT" newpages.txt)"
+  DITTO="$(egrep -i "$KEYWORDS_DITTO" newpages.txt)"
   Dodrio=`stat --print=%s Dodrio.txt`
   Doduo=`stat --print=%s Doduo.txt`
   Donphan=`stat --print=%s Donphan.txt`
@@ -116,95 +105,134 @@ then
   Dwebble=`stat --print=%s Dwebble.txt`
 
 
-  if [ $Darkrai -ne 0 ];
+  if [ "$DARKRAI" != "" ];
   then
+    printf "%s" "$DARKRAI" > Darkrai.txt
     export CATFILE="Darkrai.txt"
     export CATNAME=""
     $CATEGORIZE
+    rm Darkrai.txt
+    unset DARKRAI
   fi
 
-  if [ $Darmanitan -ne 0 ];
+  if [ "$DARMANITAN" != "" ];
   then
+    printf "%s" "$DARMANITAN" > Darmanitan.txt
     export CATFILE="Darmanitan.txt"
     export CATNAME="Darmanitan"
     $CATEGORIZE
+    rm Darmanitan.txt
+    unset DARMANITAN
   fi
 
-  if [ $Darumaka -ne 0 ];
+  if [ "$DARUMAKA" != "" ];
   then
+    printf "%s" "$DARUMAKA" > Darumaka.txt
     export CATFILE="Darumaka.txt"
     export CATNAME="Darumaka"
     $CATEGORIZE
+    rm Darumaka.txt
+    unset DARUMAKA
   fi
 
-  if [ $Deerling -ne 0 ];
+  if [ "$DEERLING" != "" ];
   then
+    printf "%s" "$DEERLING" > Deerling.txt
     export CATFILE="Deerling.txt"
     export CATNAME="Deerling"
     $CATEGORIZE
+    rm Deerling.txt
+    unset DEERLING
   fi
 
-  if [ $Deino -ne 0 ];
+  if [ "$DEINO" != "" ];
   then
+    printf "%s" "$DEINO" > Deino.txt
     export CATFILE="Deino.txt"
     export CATNAME="Deino"
     $CATEGORIZE
+    rm Deino.txt
+    unset DEINO
   fi
 
-  if [ $Delcatty -ne 0 ];
+  if [ "$DELCATTY" != "" ];
   then
+    printf "%s" "$DELCATTY" > Delcatty.txt
     export CATFILE="Delcatty.txt"
     export CATNAME="Delcatty"
     $CATEGORIZE
+    rm Delcatty.txt
+    unset DELCATTY
   fi
 
-  if [ $Delibird -ne 0 ];
+  if [ "$DELIBIRD" != "" ];
   then
+    printf "%s" "$DELIBIRD" > Delibird.txt
     export CATFILE="Delibird.txt"
     export CATNAME="Delibird"
     $CATEGORIZE
+    rm Delibird.txt
+    unset DELIBIRD
   fi
 
-  if [ $Deoxys -ne 0 ];
+  if [ "$DEOXYS" != "" ];
   then
+    printf "%s" "$DEOXYS" > Deoxys.txt
     export CATFILE="Deoxys.txt"
     export CATNAME="Deoxys"
     $CATEGORIZE
+    rm Deoxys.txt
+    unset DEOXYS
   fi
 
-  if [ $Dewgong -ne 0 ];
+  if [ "$DEWGONG" != "" ];
   then
+    printf "%s" "$DEWGONG" > Dewgong.txt
     export CATFILE="Dewgong.txt"
     export CATNAME="Dewgong"
     $CATEGORIZE
+    rm Dewgong.txt
+    unset DEWGONG
   fi
 
-  if [ $Dewott -ne 0 ];
+  if [ "$DEWOTT" != "" ];
   then
+    printf "%s" "$DEWOTT" > Dewott.txt
     export CATFILE="Dewott.txt"
     export CATNAME="Dewott"
     $CATEGORIZE
+    rm Dewott.txt
+    unset DEWOTT
   fi
 
-  if [ $Dialga -ne 0 ];
+  if [ "$DIALGA" != "" ];
   then
+    printf "%s" "$DIALGA" > Dialga.txt
     export CATFILE="Dialga.txt"
     export CATNAME="Dialga"
     $CATEGORIZE
+    rm Dialga.txt
+    unset DIALGA
   fi
 
-  if [ $Diglett -ne 0 ];
+  if [ "$DIGLETT" != "" ];
   then
+    printf "%s" "$DIGLETT" > Diglett.txt
     export CATFILE="Diglett.txt"
     export CATNAME="Diglett"
     $CATEGORIZE
+    rm Diglett.txt
+    unset DIGLETT
   fi
 
-  if [ $Ditto -ne 0 ];
+  if [ "$DITTO" != "" ];
   then
+    printf "%s" "$DITTO" > Ditto.txt
     export CATFILE="Ditto.txt"
     export CATNAME="Ditto (Pokémon)"
     $CATEGORIZE
+    rm Ditto.txt
+    unset DITTO
   fi
 
   if [ $Dodrio -ne 0 ];
@@ -361,19 +389,6 @@ then
     $CATEGORIZE
   fi
 
-  rm Darkrai.txt &
-  rm Darmanitan.txt &
-  rm Darumaka.txt &
-  rm Deerling.txt &
-  rm Deino.txt &
-  rm Delcatty.txt &
-  rm Delibird.txt &
-  rm Deoxys.txt &
-  rm Dewgong.txt &
-  rm Dewott.txt &
-  rm Dialga.txt &
-  rm Diglett.txt &
-  rm Ditto.txt &
   rm Dodrio.txt &
   rm Doduo.txt &
   rm Donphan.txt &
