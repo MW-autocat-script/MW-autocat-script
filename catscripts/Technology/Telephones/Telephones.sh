@@ -1,12 +1,15 @@
 #!/bin/bash
 
 KEYWORDS_TELEPHONES="telephone|\bphone|caller(| )ID|call(| )waiting|busy(| )signal"
+
 KEYWORDS_CELLPHONES="cell(|ular)(| )phone|mobile(| )(|tele)phone|SIM(| )card|(^| )(2|3|4)G\b|GPRS"
 KEYWORDS_IPHONE="\bi(| )phone"
 KEYWORDS_NOKIA="Nokia"
 KEYWORDS_LGSCRIPT="LG(| )Script"
-KEYWORDS_CELLPHONES_EXCLUDE="$KEYWORDS_IPHONE|$KEYWORDS_NOKIA|$KEYWORDS_LGSCRIPT"
-KEYWORDS_CELLPHONES_ALL="$KEYWORDS_CELLPHONES|$KEYWORDS_IPHONE|$KEYWORDS_NOKIA|$KEYWORDS_LGSCRIPT"
+KEYWORDS_SMS="\bSMS\b|text(| )messag(e|ing)|texting|sexting"
+
+KEYWORDS_CELLPHONES_EXCLUDE="$KEYWORDS_IPHONE|$KEYWORDS_NOKIA|$KEYWORDS_LGSCRIPT|$KEYWORDS_SMS"
+KEYWORDS_CELLPHONES_ALL="$KEYWORDS_CELLPHONES|$KEYWORDS_IPHONE|$KEYWORDS_NOKIA|$KEYWORDS_LGSCRIPT|$KEYWORDS_SMS"
 KEYWORDS_TELEPHONES_EXCLUDE="$KEYWORDS_CELLPHONES_ALL|$KEYWORDS_CELLPHONES_EXCLUDE"
 
 
@@ -23,6 +26,7 @@ then
   IPHONES="$(egrep -i "$KEYWORDS_IPHONE" newpages.txt)"
   NOKIA="$(egrep -i "$KEYWORDS_NOKIA" newpages.txt)"
   LGSCRIPT="$(egrep -i "$KEYWORDS_LGSCRIPT" newpages.txt)"
+  SMS="$(egrep -i "$KEYWORDS_SMS" newpages.txt)"
 
   if [ "$TELEPHONES" != "" ];
   then
@@ -72,6 +76,16 @@ then
     $CATEGORIZE
     rm LGScript.txt
     unset LGSCRIPT
+  fi
+
+  if [ "$SMS" != "" ];
+  then
+    printf "%s" "$SMS" > SMS.txt
+    export CATFILE="SMS.txt"
+    export CATNAME="SMS"
+    $CATEGORIZE
+    rm SMS.txt
+    unset SMS
   fi
 
   if [ "$DEBUG" == "yes" ];
