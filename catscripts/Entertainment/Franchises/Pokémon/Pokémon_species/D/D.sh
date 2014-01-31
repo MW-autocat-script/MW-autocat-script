@@ -42,12 +42,6 @@ KEYWORDS_POKEMONSPECIES_D="$KEYWORDS_DARKRAI|$KEYWORDS_DARMANITAN|$KEYWORDS_DARU
 if [ "$1" == "" ];
 then
 
-
-  egrep -i "$KEYWORDS_DODRIO" newpages.txt >> Dodrio.txt &
-  egrep -i "$KEYWORDS_DODUO" newpages.txt >> Doduo.txt &
-  egrep -i "$KEYWORDS_DONPHAN" newpages.txt >> Donphan.txt &
-  egrep -i "$KEYWORDS_DRAGONAIR" newpages.txt >> Dragonair.txt &
-  egrep -i "$KEYWORDS_DRAGONITE" newpages.txt | egrep -iv "$KEYWORDS_DRAGONITE_EXCLUDE" >> Dragonite.txt &
   egrep -i "$KEYWORDS_DRAPION" newpages.txt >> Drapion.txt &
   egrep -i "$KEYWORDS_DRATINI" newpages.txt >> Dratini.txt &
   egrep -i "$KEYWORDS_DRIFBLIM" newpages.txt >> Drifblim.txt &
@@ -81,11 +75,11 @@ then
   DIALGA="$(egrep -i "$KEYWORDS_DIALGA" newpages.txt)"
   DIGLETT="$(egrep -i "$KEYWORDS_DIGLETT" newpages.txt)"
   DITTO="$(egrep -i "$KEYWORDS_DITTO" newpages.txt)"
-  Dodrio=`stat --print=%s Dodrio.txt`
-  Doduo=`stat --print=%s Doduo.txt`
-  Donphan=`stat --print=%s Donphan.txt`
-  Dragonair=`stat --print=%s Dragonair.txt`
-  Dragonite=`stat --print=%s Dragonite.txt`
+  DODRIO="$(egrep -i "$KEYWORDS_DODRIO" newpages.txt)"
+  DODUO="$(egrep -i "$KEYWORDS_DODUO" newpages.txt)"
+  DONPHAN="$(egrep -i "$KEYWORDS_DONPHAN" newpages.txt)"
+  DRAGONAIR="$(egrep -i "$KEYWORDS_DRAGONAIR" newpages.txt)"
+  DRAGONITE="$(egrep -i "$KEYWORDS_DRAGONITE" newpages.txt | egrep -iv "$KEYWORDS_DRAGONITE_EXCLUDE")"
   Drapion=`stat --print=%s Drapion.txt`
   Dratini=`stat --print=%s Dratini.txt`
   Drifblim=`stat --print=%s Drifblim.txt`
@@ -235,39 +229,54 @@ then
     unset DITTO
   fi
 
-  if [ $Dodrio -ne 0 ];
+  if [ "$DODRIO" != "" ];
   then
+    printf "%s" "$DODRIO" > Dodrio.txt
     export CATFILE="Dodrio.txt"
     export CATNAME="Dodrio"
     $CATEGORIZE
+    rm Dodrio.txt
+    unset DODRIO
   fi
 
-  if [ $Doduo -ne 0 ];
+  if [ "$DODUO" != "" ];
   then
+    printf "%s" "$DODUO" > Doduo.txt
     export CATFILE="Doduo.txt"
     export CATNAME="Doduo"
     $CATEGORIZE
+    rm Doduo.txt
+    unset DODUO
   fi
 
-  if [ $Donphan -ne 0 ];
+  if [ "$DONPHAN" != "" ];
   then
+    printf "%s" "$DONPHAN" > Donphan.txt
     export CATFILE="Donphan.txt"
     export CATNAME="Donphan"
     $CATEGORIZE
+    rm Donphan.txt
+    unset DONPHAN
   fi
 
-  if [ $Dragonair -ne 0 ];
+  if [ "$DRAGONAIR" != "" ];
   then
+    printf "%s" "$DRAGONAIR" > Dragonair.txt
     export CATFILE="Dragonair.txt"
     export CATNAME="Dragonair"
     $CATEGORIZE
+    rm Dragonair.txt
+    unset DRAGONAIR
   fi
 
-  if [ $Dragonite -ne 0 ];
+  if [ "$DRAGONITE" != "" ];
   then
+    printf "%s" "$DRAGONITE" > Dragonite.txt
     export CATFILE="Dragonite.txt"
     export CATNAME="Dragonite"
     $CATEGORIZE
+    rm Dragonite.txt
+    unset DRAGONITE
   fi
 
   if [ $Drapion -ne 0 ];
@@ -389,11 +398,6 @@ then
     $CATEGORIZE
   fi
 
-  rm Dodrio.txt &
-  rm Doduo.txt &
-  rm Donphan.txt &
-  rm Dragonair.txt &
-  rm Dragonite.txt &
   rm Drapion.txt &
   rm Dratini.txt &
   rm Drifblim.txt &

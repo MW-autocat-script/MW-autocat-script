@@ -65,5 +65,6 @@ fi
 #Remove questions that have interrogative words from category 'Page titles lacking an interrogative word'
 
 ./util/noninterrogative.sh
+./util/period.sh
 
 rm $PIDFILE

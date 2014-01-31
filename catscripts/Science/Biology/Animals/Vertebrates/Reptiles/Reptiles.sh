@@ -8,7 +8,7 @@ KEYWORDS_TURTLES_ALL="$KEYWORDS_TURTLES"
 
 KEYWORDS_SNAKES="Snake"
 KEYWORDS_PYTHONS="python"
-KEYWORDS_PYTHONS_EXCLUDE="in_python\b|program|script|computer(| )language|Metal(| )Gear|Monty(| )Python"
+KEYWORDS_PYTHONS_EXCLUDE="in python\b|program|script|computer(| )language|Metal(| )Gear|Monty(| )Python"
 KEYWORDS_RATTLESNAKES="Rattle(| )snake"
 KEYWORDS_BOA="\bBoa(|s)\b"
 KEYWORDS_BOAS_EXCLUDE="$KEYWORDS_ANACONDAS|Boa(| )Hancock"

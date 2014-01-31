@@ -9,98 +9,120 @@ KEYWORDS_DATASTORAGE="Data(| )storage|(USB|Flash)(| )drive|memory(| )stick|SD(| 
 KEYWORDS_FLOPPY="Floppy(| )(disk|drive)|(o|i)n(| )a(| )floppy"
 KEYWORDS_HARD_DRIVE="Hard (disk|drive)|\bSSD|solid(| )state(| )drive"
 KEYWORDS_DATASTORAGE_EXCLUDE="$KEYWORDS_HARD_DRIVE|$KEYWORDS_FLOPPY"
-KEYWORDS_COMPUTER_HARDWARE="Device driver|Computer hardware|adapter card|\bUSB" #Stuff to put in the parent category
+KEYWORDS_COMPUTER_HARDWARE="Device(| )driver|Computer(| )hardware|adapter(| )card|\bUSB|\bPCI\b|expansion(| )bus" #Stuff to put in the parent category
 KEYWORDS_COMPUTER_HARDWARE_EXCLUDE="$KEYWORDS_DATASTORAGE|$KEYWORDS_DATASTORAGE_EXCLUDE|$KEYWORDS_MICROPROCESSOR|$KEYWORDS_MOTHERBOARD|$KEYWORDS_PRINTER|$KEYWORDS_SOUND_CARDS|$KEYWORDS_VIDEO_CARDS"
 
-egrep -i "$KEYWORDS_MOTHERBOARD" newpages.txt >> Motherboards.txt
-egrep -i "$KEYWORDS_VIDEO_CARDS" newpages.txt >> VideoCards.txt
-egrep -i "$KEYWORDS_SOUND_CARDS" newpages.txt >> SoundCards.txt
-egrep -i "$KEYWORDS_PRINTER" newpages.txt >> Printers.txt
-egrep -i "$KEYWORDS_MICROPROCESSOR" newpages.txt >> Microprocessors.txt
-egrep -i "$KEYWORDS_DATASTORAGE" newpages.txt | egrep -iv "$KEYWORDS_DATASTORAGE_EXCLUDE" >> Datastorage.txt
-egrep -i "$KEYWORDS_HARD_DRIVE" newpages.txt >> Harddrive.txt
-egrep -i "$KEYWORDS_FLOPPY" newpages.txt >> Floppy.txt
-egrep -i "$KEYWORDS_COMPUTER_HARDWARE" newpages.txt | egrep -iv "$KEYWORDS_COMPUTER_HARDWARE_EXCLUDE" >> ComputerHardware.txt
-
-MOTHERBOARDS=`stat --print=%s Motherboards.txt`
-VIDEOCARDS=`stat --print=%s VideoCards.txt`
-SOUNDCARDS=`stat --print=%s SoundCards.txt`
-PRINTERS=`stat --print=%s Printers.txt`
-MICROPROCESSORS=`stat --print=%s Microprocessors.txt`
-DATASTORAGE=`stat --print=%s Datastorage.txt`
-HARDDRIVE=`stat --print=%s Harddrive.txt`
-FLOPPY=`stat --print=%s Floppy.txt`
-HARDWARE=`stat --print=%s ComputerHardware.txt`
-
-if [ $MOTHERBOARDS -ne 0 ];
+if [ "$1" == "" ];
 then
-   export CATFILE="Motherboards.txt"
-   export CATNAME="Motherboards"
-   $CATEGORIZE
-fi
 
-if [ $VIDEOCARDS -ne 0 ];
-then
-   export CATFILE="VideoCards.txt"
-   export CATNAME="Video cards"
-   $CATEGORIZE
-fi
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Computer hardware\n"
+  fi
 
-if [ $SOUNDCARDS -ne 0 ];
-then
-   export CATFILE="SoundCards.txt"
-   export CATNAME="Sound cards"
-   $CATEGORIZE
-fi
+  MOTHERBOARDS="$(egrep -i "$KEYWORDS_MOTHERBOARD" newpages.txt)"
+  VIDEOCARDS="$(egrep -i "$KEYWORDS_VIDEO_CARDS" newpages.txt)"
+  SOUNDCARDS="$(egrep -i "$KEYWORDS_SOUND_CARDS" newpages.txt)"
+  PRINTERS="$(egrep -i "$KEYWORDS_PRINTER" newpages.txt)"
+  MICROPROCESSORS="$(egrep -i "$KEYWORDS_MICROPROCESSOR" newpages.txt)"
+  DATASTORAGE="$(egrep -i "$KEYWORDS_DATASTORAGE" newpages.txt | egrep -iv "$KEYWORDS_DATASTORAGE_EXCLUDE")"
+  HARDDRIVE="$(egrep -i "$KEYWORDS_HARD_DRIVE" newpages.txt)"
+  FLOPPY="$(egrep -i "$KEYWORDS_FLOPPY" newpages.txt)"
+  HARDWARE="$(egrep -i "$KEYWORDS_COMPUTER_HARDWARE" newpages.txt | egrep -iv "$KEYWORDS_COMPUTER_HARDWARE_EXCLUDE")"
 
-if [ $PRINTERS -ne 0 ];
-then
-   export CATFILE="Printers.txt"
-   export CATNAME="Printers"
-   $CATEGORIZE
-fi
+  if [ "$MOTHERBOARDS" != "" ];
+  then
+    printf "%s" "$MOTHERBOARDS" > Motherboards.txt
+    export CATFILE="Motherboards.txt"
+    export CATNAME="Motherboards"
+    $CATEGORIZE
+    rm Motherboards.txt
+    unset MOTHERBOARDS
+  fi
 
-if [ $MICROPROCESSORS -ne 0 ];
-then
-   export CATFILE="Microprocessors.txt"
-   export CATNAME="Microprocessors"
-   $CATEGORIZE
-fi
+  if [ "$VIDEOCARDS" != "" ];
+  then
+    printf "%s" "$VIDEOCARDS" > VideoCards.txt
+    export CATFILE="VideoCards.txt"
+    export CATNAME="Video cards"
+    $CATEGORIZE
+    rm VideoCards.txt
+    unset VIDEOCARDS
+  fi
 
-if [ $DATASTORAGE -ne 0 ];
-then
-  export CATFILE="Datastorage.txt"
-  export CATNAME="Data storage devices"
-  $CATEGORIZE
-fi
+  if [ "$SOUNDCARDS" != "" ];
+  then
+    printf "%s" "$SOUNDCARDS" > SoundCards.txt
+    export CATFILE="SoundCards.txt"
+    export CATNAME="Sound cards"
+    $CATEGORIZE
+    rm SoundCards.txt
+    unset SOUNDCARDS
+  fi
 
-if [ $HARDDRIVE -ne 0 ];
-then
-  export CATFILE="Harddrive.txt"
-  export CATNAME="Hard drives"
-  $CATEGORIZE
-fi
+  if [ "$PRINTERS" != "" ];
+  then
+    printf "%s" "$PRINTERS" > Printers.txt
+    export CATFILE="Printers.txt"
+    export CATNAME="Printers"
+    $CATEGORIZE
+    rm Printers.txt
+    unset PRINTERS
+  fi
 
-if [ $FLOPPY -ne 0 ];
-then
-  export CATFILE="Floppy.txt"
-  export CATNAME="Floppy drives"
-  $CATEGORIZE
-fi
+  if [ "$MICROPROCESSORS" != "" ];
+  then
+    printf "%s" "$MICROPROCESSORS" > Microprocessors.txt
+    export CATFILE="Microprocessors.txt"
+    export CATNAME="Microprocessors"
+    $CATEGORIZE
+    rm Microprocessors.txt
+    unset MICROPROCESSORS
+  fi
 
-if [ $HARDWARE -ne 0 ];
-then
-  export CATFILE="ComputerHardware.txt"
-  export CATNAME="Computer hardware"
-  $CATEGORIZE
-fi
+  if [ "$DATASTORAGE" != "" ];
+  then
+    printf "%s" "$DATASTORAGE" > Datastorage.txt
+    export CATFILE="Datastorage.txt"
+    export CATNAME="Data storage devices"
+    $CATEGORIZE
+    rm Datastorage.txt
+    unset DATASTORAGE
+  fi
 
-rm Motherboards.txt
-rm VideoCards.txt
-rm SoundCards.txt
-rm Printers.txt
-rm Microprocessors.txt
-rm Datastorage.txt
-rm Harddrive.txt
-rm Floppy.txt
-rm ComputerHardware.txt
+  if [ "$HARDDRIVE" != "" ];
+  then
+    printf "%s" "$HARDDRIVE" > Harddrive.txt
+    export CATFILE="Harddrive.txt"
+    export CATNAME="Hard drives"
+    $CATEGORIZE
+    rm Harddrive.txt
+    unset HARDDRIVE
+  fi
+
+  if [ "$FLOPPY" != "" ];
+  then
+    printf "%s" "$FLOPPY" > Floppy.txt
+    export CATFILE="Floppy.txt"
+    export CATNAME="Floppy drives"
+    $CATEGORIZE
+    rm Floppy.txt
+    unset FLOPPY
+  fi
+
+  if [ "$HARDWARE" != "" ];
+  then
+    printf "%s" "$HARDWARE" > ComputerHardware.txt
+    export CATFILE="ComputerHardware.txt"
+    export CATNAME="Computer hardware"
+    $CATEGORIZE
+    rm ComputerHardware.txt
+    unset HARDWARE
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Computer hardware\n"
+  fi
+
+fi
