@@ -1,14 +1,30 @@
 #!/bin/bash
 
-egrep -i 'Harvest(| )Moon' newpages.txt >> HarvestMoon.txt
+KEYWORDS_HARVESTMOON="Harvest(| )Moon"
 
-HARVESTMOON=`stat --print=%s HarvestMoon.txt`
-
-if [ $HARVESTMOON -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="HarvestMoon.txt"
-  export CATNAME="Harvest Moon series"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Harvest Moon series\n"
+  fi
 
-rm HarvestMoon.txt
+  HARVESTMOON="$(egrep -i "$KEYWORDS_HARVESTMOON" newpages.txt)"
+
+  if [ "$HARVESTMOON" != "" ];
+  then
+    printf "%s" "$HARVESTMOON" > HarvestMoon.txt
+    export CATFILE="HarvestMoon.txt"
+    export CATNAME="Harvest Moon series"
+    $CATEGORIZE
+    rm HarvestMoon.txt
+    unset HARVESTMOON
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Harvest Moon series\n"
+  fi
+
+fi

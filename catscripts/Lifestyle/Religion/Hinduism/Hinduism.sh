@@ -1,14 +1,30 @@
 #!/bin/bash
 
-egrep -i 'Hinduism' newpages.txt >> Hinduism.txt
+KEYWORDS_HINDUISM="Hindu(|s)\b|Hinduism"
 
-HINDUISM=`stat --print=%s Hinduism.txt`
-
-if [ $HINDUISM -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Hinduism.txt"
-  export CATNAME="Hinduism"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Hinduism\n"
+  fi
 
-rm Hinduism.txt
+  HINDUISM="$(egrep -i "$KEYWORDS_HINDUISM" newpages.txt)"
+
+  if [ "$HINDUISM" != "" ];
+  then
+    printf "%s" "$HINDUISM" > Hinduism.txt
+    export CATFILE="Hinduism.txt"
+    export CATNAME="Hinduism"
+    $CATEGORIZE
+    rm Hinduism.txt
+    unset HINDUISM
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Hinduism\n"
+  fi
+
+fi

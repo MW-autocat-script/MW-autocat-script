@@ -1,24 +1,43 @@
 #!/bin/bash 
 
-egrep -i 'Scandium' newpages.txt | egrep -iv 'Scandium \b.+(ate|ide|ite)' >> Scandium.txt
-egrep -i 'Yttrium' newpages.txt | egrep -iv 'Yttrium \b.+(ate|ide|ite)' >> Yttrium.txt
+KEYWORDS_SCANDIUM="Scandium"
+KEYWORDS_YTTRIUM="Yttrium"
+KEYWORDS_GROUP3_ELEMENTS="$KEYWORDS_SCANDIUM|$KEYWORDS_YTTRIUM"
 
-SCANDIUM=`stat --print=%s Scandium.txt`
-YTTRIUM=`stat --print=%s Yttrium.txt`
-
-if [ $SCANDIUM -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Scandium.txt"
-  export CATNAME="Scandium"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Group 3 elements\n"
+  fi
 
-if [ $YTTRIUM -ne 0 ];
-then
-  export CATFILE="Yttrium.txt"
-  export CATNAME="Yttrium"
-  $CATEGORIZE
-fi
+  SCANDIUM="$(egrep -i "$KEYWORDS_SCANDIUM" newpages.txt)"
+  YTTRIUM="$(egrep -i "$KEYWORDS_YTTRIUM" newpages.txt)"
 
-rm Scandium.txt
-rm Yttrium.txt
+  if [ "$SCANDIUM" != "" ];
+  then
+    printf "%s" "$SCANDIUM" > Scandium.txt
+    export CATFILE="Scandium.txt"
+    export CATNAME="Scandium"
+    $CATEGORIZE
+    rm Scandium.txt
+    unset SCANDIUM
+  fi
+
+  if [ "$YTTRIUM" != "" ];
+  then
+    printf "%s" "$YTTRIUM" > Yttrium.txt
+    export CATFILE="Yttrium.txt"
+    export CATNAME="Yttrium"
+    $CATEGORIZE
+    rm Yttrium.txt
+    unset YTTRIUM
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Group 3 elements\n"
+  fi
+
+fi

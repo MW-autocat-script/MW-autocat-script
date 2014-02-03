@@ -1,44 +1,73 @@
 #!/bin/bash 
 
-egrep -i 'Chromium' newpages.txt | egrep -iv 'internet|browser' >> Chromium.txt
-egrep -i 'Molybdenum' newpages.txt >> Molybdenum.txt
-egrep -i 'Tungsten' newpages.txt | egrep -iv 'Mass Effect' >> Tungsten.txt
-egrep -i 'Seaborgium' newpages.txt >> Seaborgium.txt
+KEYWORDS_CHROMIUM="Chromium"
+KEYWORDS_CHROMIUM_EXCLUDE="internet|browser"
 
-CHROMIUM=`stat --print=%s Chromium.txt`
-MOLYBDENUM=`stat --print=%s Molybdenum.txt`
-TUNGSTEN=`stat --print=%s Tungsten.txt`
-SEABORGIUM=`stat --print=%s Seaborgium.txt`
+KEYWORDS_MOLYBDENUM="Molybdenum"
 
-if [ $CHROMIUM -ne 0 ];
+KEYWORDS_TUNGSTEN="Tungsten"
+KEYWORDS_TUNGSTEN_EXCLUDE="Mass(| )Effect"
+
+KEYWORDS_SEABORGIUM="Seaborgium"
+
+KEYWORDS_GROUP6_ELEMENTS="$KEYWORDS_CHROMIUM|$KEYWORDS_MOLYBDENUM|$KEYWORDS_TUNGSTEN|$KEYWORDS_SEABORGIUM"
+
+if [ "$1" == "" ];
 then
-  export CATFILE="Chromium.txt"
-  export CATNAME="Chromium"
-  $CATEGORIZE
-fi
 
-if [ $MOLYBDENUM -ne 0 ];
-then
-  export CATFILE="Molybdenum.txt"
-  export CATNAME="Molybdenum"
-  $CATEGORIZE
-fi
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Group 6 elements\n"
+  fi
 
-if [ $TUNGSTEN -ne 0 ];
-then
-  export CATFILE="Tungsten.txt"
-  export CATNAME="Tungsten"
-  $CATEGORIZE
-fi
+  CHROMIUM="$(egrep -i "$KEYWORDS_CHROMIUM" newpages.txt | egrep -iv "$KEYWORDS_CHROMIUM_EXCLUDE")"
+  MOLYBDENUM="$(egrep -i "$KEYWORDS_MOLYBDENUM" newpages.txt)"
+  TUNGSTEN="$(egrep -i "$KEYWORDS_TUNGSTEN" newpages.txt | egrep -iv "$KEYWORDS_TUNGSTEN_EXCLUDE")"
+  SEABORGIUM="$(egrep -i "$KEYWORDS_SEABORGIUM" newpages.txt)"
 
-if [ $SEABORGIUM -ne 0 ];
-then
-  export CATFILE="Seaborgium.txt"
-  export CATNAME="Seaborgium"
-  $CATEGORIZE
-fi
+  if [ "$CHROMIUM" != "" ];
+  then
+    printf "%s" "$CHROMIUM" > Chromium.txt
+    export CATFILE="Chromium.txt"
+    export CATNAME="Chromium"
+    $CATEGORIZE
+    rm Chromium.txt
+    unset CHROMIUM
+  fi
 
-rm Chromium.txt
-rm Molybdenum.txt
-rm Tungsten.txt
-rm Seaborgium.txt
+  if [ "$MOLYBDENUM" != "" ];
+  then
+    printf "%s" "$MOLYBDENUM" > Molybdenum.txt
+    export CATFILE="Molybdenum.txt"
+    export CATNAME="Molybdenum"
+    $CATEGORIZE
+    rm Molybdenum.txt
+    unset MOLYBDENUM
+  fi
+
+  if [ "$TUNGSTEN" != "" ];
+  then
+    printf "%s" "$TUNGSTEN" > Tungsten.txt
+    export CATFILE="Tungsten.txt"
+    export CATNAME="Tungsten"
+    $CATEGORIZE
+    rm Tungsten.txt
+    unset TUNGSTEN
+  fi
+
+  if [ "$SEABORGIUM" != "" ];
+  then
+    printf "%s" "$SEABORGIUM" > Seaborgium.txt
+    export CATFILE="Seaborgium.txt"
+    export CATNAME="Seaborgium"
+    $CATEGORIZE
+    rm Seaborgium.txt
+    unset SEABORGIUM
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Group 6 elements\n"
+  fi
+
+fi

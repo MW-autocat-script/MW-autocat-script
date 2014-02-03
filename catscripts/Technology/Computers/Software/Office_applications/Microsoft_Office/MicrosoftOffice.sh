@@ -12,15 +12,15 @@ KEYWORDS_MICROSOFTOFFICE_ALL="$KEYWORDS_MICROSOFTOFFICE|$KEYWORDS_MICROSOFTOFFIC
 if [ "$1" == "" ]; #Normal operation
 then
 
-  OFFICE=`egrep -i "$KEYWORDS_MICROSOFTOFFICE" newpages.txt | egrep -iv "$KEYWORDS_MICROSOFTOFFICE_EXCLUDE"`
-  ACCESS=`egrep -i "$KEYWORDS_MICROSOFTACCESS" newpages.txt`
-  EXCEL=`egrep -i "$KEYWORDS_MICROSOFTEXCEL" newpages.txt | egrep -iv "$KEYWORDS_MICROSOFTEXCEL_EXCLUDE"`
-  POWERPOINT=`egrep -i "$KEYWORDS_MICROSOFTPOWERPOINT" newpages.txt`
-  WORD=`egrep -i "$KEYWORDS_MICROSOFTWORD" newpages.txt`
+  OFFICE="$(egrep -i "$KEYWORDS_MICROSOFTOFFICE" newpages.txt | egrep -iv "$KEYWORDS_MICROSOFTOFFICE_EXCLUDE")"
+  ACCESS="$(egrep -i "$KEYWORDS_MICROSOFTACCESS" newpages.txt)"
+  EXCEL="$(egrep -i "$KEYWORDS_MICROSOFTEXCEL" newpages.txt | egrep -iv "$KEYWORDS_MICROSOFTEXCEL_EXCLUDE")"
+  POWERPOINT="$(egrep -i "$KEYWORDS_MICROSOFTPOWERPOINT" newpages.txt)"
+  WORD="$(egrep -i "$KEYWORDS_MICROSOFTWORD" newpages.txt)"
 
   if [ "$OFFICE" != "" ];
   then
-      egrep -i "$KEYWORDS_MICROSOFTOFFICE" newpages.txt | egrep -iv "$KEYWORDS_MICROSOFTOFFICE_EXCLUDE" > MicrosoftOffice.txt
+    printf "%s" "$OFFICE" > MicrosoftOffice.txt
     export CATFILE="MicrosoftOffice.txt"
     export CATNAME="Microsoft Office"
     $CATEGORIZE
@@ -30,7 +30,7 @@ then
 
   if [ "$ACCESS" != "" ];
   then
-    egrep -i "$KEYWORDS_MICROSOFTACCESS" newpages.txt > MicrosoftAccess.txt
+    printf "%s" "$ACCESS" > MicrosoftAccess.txt
     export CATFILE="MicrosoftAccess.txt"
     export CATNAME="Microsoft Access"
     $CATEGORIZE
@@ -40,7 +40,7 @@ then
 
   if [ "$EXCEL" != "" ];
   then
-    egrep -i "$KEYWORDS_MICROSOFTEXCEL" newpages.txt | egrep -iv "$KEYWORDS_MICROSOFTEXCEL_EXCLUDE" > MicrosoftExcel.txt
+    printf "%s" "$EXCEL" > MicrosoftExcel.txt
     export CATFILE="MicrosoftExcel.txt"
     export CATNAME="Microsoft Excel"
     $CATEGORIZE
@@ -50,7 +50,7 @@ then
 
   if [ "$POWERPOINT" != "" ];
   then
-    egrep -i "$KEYWORDS_MICROSOFTPOWERPOINT" newpages.txt > MicrosoftPowerPoint.txt
+    printf "%s" "$POWERPOINT" > MicrosoftPowerPoint.txt
     export CATFILE="MicrosoftPowerPoint.txt"
     export CATNAME="Microsoft PowerPoint"
     $CATEGORIZE
@@ -60,11 +60,11 @@ then
 
   if [ "$WORD" != "" ];
   then
-    egrep -i "$KEYWORDS_MICROSOFTWORD" newpages.txt > MicrosoftWord.txt
+    printf "%s" "$WORD" > MicrosoftWord.txt
     export CATFILE="MicrosoftWord.txt"
     export CATNAME="Microsoft Word"
     $CATEGORIZE
-    rm MicrosoftWord,txt
+    rm MicrosoftWord.txt
     unset WORD
   fi
 

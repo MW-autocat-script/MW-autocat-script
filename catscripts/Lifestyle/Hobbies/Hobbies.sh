@@ -30,7 +30,7 @@ then
   if [ "$SEWING" != "" ];
   then
     egrep -i "$KEYWORDS_SEWING" newpages.txt | egrep -iv "$KEYWORDS_SEWING_EXCLUDE" > Sewing.txt
-    export CATFILE="Sewing,txt"
+    export CATFILE="Sewing.txt"
     export CATNAME="Sewing"
     $CATEGORIZE
     rm Sewing.txt

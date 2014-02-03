@@ -1,14 +1,30 @@
 #!/bin/bash
 
-egrep -i 'Jain(|s|ism)\b' newpages.txt >> Jainism.txt
+KEYWORDS_JAINISM="Jain(|s|ism)\b"
 
-JAINISM=`stat --print=%s Jainism.txt`
-
-if [ $JAINISM -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Jainism.txt"
-  export CATNAME="Jainism"
-  $CATEGORIZE
-fi
+  
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Jainism\n"
+  fi
 
-rm Jainism.txt
+  JAINISM="$(egrep -i "$KEYWORDS_JAINISM" newpages.txt)"
+
+  if [ "$JAINISM" != "" ];
+  then
+    printf "%s" "$JAINISM" > Jainism.txt
+    export CATFILE="Jainism.txt"
+    export CATNAME="Jainism"
+    $CATEGORIZE
+    rm Jainism.txt
+    unset JAINISM
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Jainism\n"
+  fi
+
+fi

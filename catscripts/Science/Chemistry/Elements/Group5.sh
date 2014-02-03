@@ -1,5 +1,9 @@
 #!/bin/bash 
 
+KEYWORDS_VANADIUM="Vanadium"
+
+
+
 egrep -i 'Vanadium' newpages.txt >> Vanadium.txt
 egrep -i 'Niobium' newpages.txt >> Niobium.txt
 egrep -i 'Tantalum' newpages.txt >> Tantalum.txt

@@ -42,25 +42,10 @@ KEYWORDS_POKEMONSPECIES_D="$KEYWORDS_DARKRAI|$KEYWORDS_DARMANITAN|$KEYWORDS_DARU
 if [ "$1" == "" ];
 then
 
-  egrep -i "$KEYWORDS_DRAPION" newpages.txt >> Drapion.txt &
-  egrep -i "$KEYWORDS_DRATINI" newpages.txt >> Dratini.txt &
-  egrep -i "$KEYWORDS_DRIFBLIM" newpages.txt >> Drifblim.txt &
-  egrep -i "$KEYWORDS_DRIFLOON" newpages.txt >> Drifloon.txt &
-  egrep -i "$KEYWORDS_DRILBUR" newpages.txt >> Drilbur.txt &
-  egrep -i "$KEYWORDS_DROWZEE" newpages.txt >> Drowzee.txt &
-  egrep -i "$KEYWORDS_DRUDDIGON" newpages.txt >> Druddigon.txt &
-  egrep -i "$KEYWORDS_DUCKLETT" newpages.txt >> Ducklett.txt &
-  egrep -i "$KEYWORDS_DUGTRIO" newpages.txt >> Dugtrio.txt &
-  egrep -i "$KEYWORDS_DUNSPARCE" newpages.txt >> Dunsparce.txt &
-  egrep -i "$KEYWORDS_DUOSION" newpages.txt >> Duosion.txt &
-  egrep -i "$KEYWORDS_DURANT" newpages.txt >> Durant.txt &
-  egrep -i "$KEYWORDS_DUSCLOPS" newpages.txt >> Dusclops.txt &
-  egrep -i "$KEYWORDS_DUSKNOIR" newpages.txt >> Dusknoir.txt &
-  egrep -i "$KEYWORDS_DUSKULL" newpages.txt >> Duskull.txt &
-  egrep -i "$KEYWORDS_DUSTOX" newpages.txt >> Dustox.txt &
-  egrep -i "$KEYWORDS_DWEBBLE" newpages.txt >> Dwebble.txt &
-
-  wait
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Pokemon D scripts\n"
+  fi
 
   DARKRAI="$(egrep -i "$KEYWORDS_DARKRAI" newpages.txt)"
   DARMANITAN="$(egrep -i "$KEYWORDS_DARMANITAN" newpages.txt)"
@@ -80,23 +65,23 @@ then
   DONPHAN="$(egrep -i "$KEYWORDS_DONPHAN" newpages.txt)"
   DRAGONAIR="$(egrep -i "$KEYWORDS_DRAGONAIR" newpages.txt)"
   DRAGONITE="$(egrep -i "$KEYWORDS_DRAGONITE" newpages.txt | egrep -iv "$KEYWORDS_DRAGONITE_EXCLUDE")"
-  Drapion=`stat --print=%s Drapion.txt`
-  Dratini=`stat --print=%s Dratini.txt`
-  Drifblim=`stat --print=%s Drifblim.txt`
-  Drifloon=`stat --print=%s Drifloon.txt`
-  Drilbur=`stat --print=%s Drilbur.txt`
-  Drowzee=`stat --print=%s Drowzee.txt`
-  Druddigon=`stat --print=%s Druddigon.txt`
-  Ducklett=`stat --print=%s Ducklett.txt`
-  Dugtrio=`stat --print=%s Dugtrio.txt`
-  Dunsparce=`stat --print=%s Dunsparce.txt`
-  Duosion=`stat --print=%s Duosion.txt`
-  Durant=`stat --print=%s Durant.txt`
-  Dusclops=`stat --print=%s Dusclops.txt`
-  Dusknoir=`stat --print=%s Dusknoir.txt`
-  Duskull=`stat --print=%s Duskull.txt`
-  Dustox=`stat --print=%s Dustox.txt`
-  Dwebble=`stat --print=%s Dwebble.txt`
+  DRAPION="$(egrep -i "$KEYWORDS_DRAPION" newpages.txt)"
+  DRATINI="$(egrep -i "$KEYWORDS_DRATINI" newpages.txt)"
+  DRIFBLIM="$(egrep -i "$KEYWORDS_DRIFBLIM" newpages.txt)"
+  DRIFLOON="$(egrep -i "$KEYWORDS_DRIFLOON" newpages.txt)"
+  DRILBUR="$(egrep -i "$KEYWORDS_DRILBUR" newpages.txt)"
+  DROWZEE="$(egrep -i "$KEYWORDS_DROWZEE" newpages.txt)"
+  DRUDDIGON="$(egrep -i "$KEYWORDS_DRUDDIGON" newpages.txt)"
+  DUCKLETT="$(egrep -i "$KEYWORDS_DUCKLETT" newpages.txt)"
+  DUGTRIO="$(egrep -i "$KEYWORDS_DUGTRIO" newpages.txt)"
+  DUNSPARCE="$(egrep -i "$KEYWORDS_DUNSPARCE" newpages.txt)"
+  DUOSION="$(egrep -i "$KEYWORDS_DUOSION" newpages.txt)"
+  DURANT="$(egrep -i "$KEYWORDS_DURANT" newpages.txt)"
+  DUSCLOPS="$(egrep -i "$KEYWORDS_DUSCLOPS" newpages.txt)"
+  DUSKNOIR="$(egrep -i "$KEYWORDS_DUSKNOIR" newpages.txt)"
+  DUSKULL="$(egrep -i "$KEYWORDS_DUSKULL" newpages.txt)"
+  DUSTOX="$(egrep -i "$KEYWORDS_DUSTOX" newpages.txt)"
+  DWEBBLE="$(egrep -i "$KEYWORDS_DWEBBLE" newpages.txt)"
 
 
   if [ "$DARKRAI" != "" ];
@@ -279,143 +264,179 @@ then
     unset DRAGONITE
   fi
 
-  if [ $Drapion -ne 0 ];
+  if [ "$DRAPION" != "" ];
   then
+    printf "%s" "$DRAPION" > Drapion.txt
     export CATFILE="Drapion.txt"
     export CATNAME="Drapion"
     $CATEGORIZE
+    rm Drapion.txt
+    unset DRAPION
   fi
 
-  if [ $Dratini -ne 0 ];
+  if [ "$DRATINI" != "" ];
   then
+    printf "%s" "$DRATINI" > Dratini.txt
     export CATFILE="Dratini.txt"
     export CATNAME="Dratini"
     $CATEGORIZE
+    rm Dratini.txt
+    unset DRATINI
   fi
 
-  if [ $Drifblim -ne 0 ];
+  if [ "$DRIFBLIM" != "" ];
   then
+    printf "%s" "$DRIFBLIM" > Drifblim.txt
     export CATFILE="Drifblim.txt"
     export CATNAME="Drifblim"
     $CATEGORIZE
+    rm Drifblim.txt
+    unset DRIFBLIM
   fi
 
-  if [ $Drifloon -ne 0 ];
+  if [ "$DRIFLOON" != "" ];
   then
+    printf "%s" "$DRIFLOON" > Drifloon.txt
     export CATFILE="Drifloon.txt"
     export CATNAME="Drifloon"
     $CATEGORIZE
+    rm Drifloon.txt
+    unset DRIFLOON
   fi
 
-  if [ $Drilbur -ne 0 ];
+  if [ "$DRILBUR" != "" ];
   then
+    printf "%s" "$DRILBUR" > Drilbur.txt
     export CATFILE="Drilbur.txt"
     export CATNAME="Drilbur"
     $CATEGORIZE
+    rm Drilbur.txt
+    unset DRILBUR
   fi
 
-  if [ $Drowzee -ne 0 ];
+  if [ "$DROWZEE" != "" ];
   then
+    printf "%s" "$DROWZEE" > Drowzee.txt
     export CATFILE="Drowzee.txt"
     export CATNAME="Drowzee"
     $CATEGORIZE
+    rm Drowzee.txt
+    unset DROWZEE
   fi
 
-  if [ $Druddigon -ne 0 ];
+  if [ "$DRUDDIGON" != "" ];
   then
+    printf "%s" "$DRUDDIGON" > Druddigon.txt
     export CATFILE="Druddigon.txt"
     export CATNAME="Druddigon"
     $CATEGORIZE
+    rm Druddigon.txt
+    unset DRUDDIGON
   fi
 
-  if [ $Ducklett -ne 0 ];
+  if [ "$DUCKLETT" != "" ];
   then
+    printf "%s" "$DUCKLETT" > Ducklett.txt 
     export CATFILE="Ducklett.txt"
     export CATNAME="Ducklett"
     $CATEGORIZE
+    rm Ducklett.txt
+    unset DUCKLETT
   fi
 
-  if [ $Dugtrio -ne 0 ];
+  if [ "$DUGTRIO" != "" ];
   then
+    printf "%s" "$DUGTRIO" > Dugtrio.txt
     export CATFILE="Dugtrio.txt"
     export CATNAME="Dugtrio"
     $CATEGORIZE
+    rm Dugtrio.txt
+    unset DUGTRIO
   fi
 
-  if [ $Dunsparce -ne 0 ];
+  if [ "$DUNSPARCE" != "" ];
   then
+    printf "%s" "$DUNSPARCE" > Dunsparce.txt
     export CATFILE="Dunsparce.txt"
     export CATNAME="Dunsparce"
     $CATEGORIZE
+    rm Dunsparce.txt
+    unset DUNSPARCE
   fi
 
-  if [ $Duosion -ne 0 ];
+  if [ "$DUOSION" != "" ];
   then
+    printf "%s" "$DUOSION" > Duosion.txt
     export CATFILE="Duosion.txt"
     export CATNAME="Duosion"
     $CATEGORIZE
+    rm Duosion.txt
+    unset DUOSION
   fi
 
-  if [ $Durant -ne 0 ];
+  if [ "$DURANT" != "" ];
   then
+    printf "%s" "$DURANT" > Durant.txt
     export CATFILE="Durant.txt"
     export CATNAME="Durant"
     $CATEGORIZE
+    rm Durant.txt
+    unset DURANT
   fi
 
-  if [ $Dusclops -ne 0 ];
+  if [ "$DUSCLOPS" != "" ];
   then
+    printf "%s" "$DUSCLOPS" > Dusclops.txt
     export CATFILE="Dusclops.txt"
     export CATNAME="Dusclops"
     $CATEGORIZE
+    rm Dusclops.txt
+    unset DUSCLOPS
   fi
 
-  if [ $Dusknoir -ne 0 ];
+  if [ "$DUSKNOIR" != "" ];
   then
+    printf "%s" "$DUSKNOIR" > Dusknoir.txt
     export CATFILE="Dusknoir.txt"
     export CATNAME="Dusknoir"
     $CATEGORIZE
+    rm Dusknoir.txt
+    unset DUSKNOIR
   fi
 
-  if [ $Duskull -ne 0 ];
+  if [ "$DUSKULL" != "" ];
   then
+    printf "%s" "$DUSKULL" > Duskull.txt
     export CATFILE="Duskull.txt"
     export CATNAME="Duskull"
     $CATEGORIZE
+    rm Duskull.txt
+    unset DUSKULL
   fi
 
-  if [ $Dustox -ne 0 ];
+  if [ "$DUSTOX" != "" ];
   then
+    printf "%s" "$DUSTOX" > Dustox.txt
     export CATFILE="Dustox.txt"
     export CATNAME="Dustox"
     $CATEGORIZE
+    rm Dustox.txt
+    unset DUSTOX
   fi
 
-  if [ $Dwebble -ne 0 ];
+  if [ "$DWEBBLE" != "" ];
   then
+    printf "%s" "$DWEBBLE" > Dwebble.txt
     export CATFILE="Dwebble.txt"
     export CATNAME="Dwebble"
     $CATEGORIZE
+    rm Dwebble.txt
+    unset DWEBBLE
   fi
 
-  rm Drapion.txt &
-  rm Dratini.txt &
-  rm Drifblim.txt &
-  rm Drifloon.txt &
-  rm Drilbur.txt &
-  rm Drowzee.txt &
-  rm Druddigon.txt &
-  rm Ducklett.txt &
-  rm Dugtrio.txt &
-  rm Dunsparce.txt &
-  rm Duosion.txt &
-  rm Durant.txt &
-  rm Dusclops.txt &
-  rm Dusknoir.txt &
-  rm Duskull.txt &
-  rm Dustox.txt &
-  rm Dwebble.txt &
-
-  wait
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Pokemon D scripts\n"
+  fi
 
 fi

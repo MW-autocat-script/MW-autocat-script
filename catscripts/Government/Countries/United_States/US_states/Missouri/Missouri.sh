@@ -1,14 +1,30 @@
 #!/bin/bash
 
-egrep -i 'Missouri' newpages.txt >> Missouri.txt
+KEYWORDS_MISSOURI="Missouri"
 
-MISSOURI=`stat --print=%s Missouri.txt`
-
-if [ $MISSOURI -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Missouri.txt"
-  export CATNAME="Missouri"
-  $CATEGORIZE
-fi
 
-rm Missouri.txt
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Missouri\n"
+  fi
+
+  MISSOURI="$(egrep -i "$KEYWORDS_MISSOURI" newpages.txt)"
+
+  if [ "$MISSOURI" != "" ];
+  then
+    printf "%s" "$MISSOURI" > Missouri.txt
+    export CATFILE="Missouri.txt"
+    export CATNAME="Missouri"
+    $CATEGORIZE
+    rm Missouri.txt
+    unset MISSOURI
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Missouri\n"
+  fi
+
+fi

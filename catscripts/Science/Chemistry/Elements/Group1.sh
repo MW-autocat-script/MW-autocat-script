@@ -1,77 +1,115 @@
 #!/bin/bash
 #IUPAC Group 1 elements. Hydrogen is also included here for convenience.
 
-egrep -i 'hydrogen' newpages.txt | egrep -iv 'hydrogen \b.+ide|hydrogen \b.+ate|hydrogen \b.+ite' >> Hydrogen.txt
-egrep -i 'lithium' newpages.txt | egrep -iv 'lithium \b.+ide|lithium \b.+ate|lithium \b.+ite' >> Lithium.txt
-egrep -i 'sodium' newpages.txt | egrep -iv 'sodium \b.+ide|sodium \b.+ate|sodium \b.+ite' >> Sodium.txt
-egrep -i 'potassium' newpages.txt | egrep -iv 'potassium \b.+ide|potassium \b.+ate|potassium \b.+ite' >> Potassium.txt
-egrep -i 'rubidium' newpages.txt | egrep -iv 'rubidiun \b.+ide|rubidium \b.+ate|rubidium \b.+ite' >> Rubidium.txt 
-egrep -i 'caesium|cesium' newpages.txt | egrep -iv '(caesium|cesium) \b.+ide|(caesium|cesium) \b.+ate|(caesium|cesium) \b.+ite' >> Caesium.txt
-egrep -i 'Francium' newpages.txt | egrep -iv 'Francium \b.+ide|Francium \b.+ate|Francium \b.+ite' >> Francium.txt
-egrep -i 'Ununennium' newpages.txt >> Ununennium.txt
+KEYWORDS_HYDROGEN="Hydrogen"
+KEYWORDS_LITHIUM="Lithium"
+KEYWORDS_SODIUM="Sodium"
+KEYWORDS_POTASSIUM="Potassium"
+KEYWORDS_RUBIDIUM="Rubidium"
+KEYWORDS_CAESIUM="C(|a)esium"
+KEYWORDS_FRANCIUM="Francium"
+KEYWORDS_UNUNENNIUM="Ununennium"
 
-HYDROGEN=`stat --print=%s Hydrogen.txt`
-LITHIUM=`stat --print=%s Lithium.txt`
-SODIUM=`stat --print=%s Sodium.txt`
-POTASSIUM=`stat --print=%s Potassium.txt`
-RUBIDIUM=`stat --print=%s Rubidium.txt`
-FRANCIUM=`stat --print=%s Francium.txt`
-UUE=`stat --print=%s Ununennium.txt`
-
-if [ $HYDROGEN -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Hydrogen.txt"
-  export CATNAME="Hydrogen"
-  $CATEGORIZE
-fi
 
-if [ $LITHIUM -ne 0 ];
-then
-  export CATFILE="Lithium.txt"
-  export CATNAME="Lithium"
-  $CATEGORIZE
-fi
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting Group 1 elements\n"
+  fi
 
-if [ $SODIUM -ne 0 ];
-then
-  export CATFILE="Sodium.txt"
-  export CATNAME="Sodium"
-  $CATEGORIZE
-fi
+  HYDROGEN="$(egrep -i "$KEYWORDS_HYDROGEN" newpages.txt)"
+  LITHIUM="$(egrep -i "$KEYWORDS_LITHIUM" newpages.txt)"
+  SODIUM="$(egrep -i "$KEYWORDS_SODIUM" newpages.txt)"
+  POTASSIUM="$(egrep -i "$KEYWORDS_POTASSIUM" newpages.txt)"
+  RUBIDIUM="$(egrep -i "$KEYWORDS_RUBIDIUM" newpages.txt)"
+  CAESIUM="$(egrep -i "$KEYWORDS_CAESIUM" newpages.txt)"
+  FRANCIUM="$(egrep -i "$KEYWORDS_FRANCIUM" newpages.txt)"
+  UUE="$(egrep -i "$KEYWORDS_UNUNENNIUM" newpages.txt)"
 
-if [ $POTASSIUM -ne 0 ];
-then
-  export CATFILE="Potassium.txt"
-  export CATNAME="Potassium"
-  $CATEGORIZE
-fi
+  if [ "$HYDROGEN" != "" ];
+  then
+    printf "%s" "$HYDROGEN" > Hydrogen.txt
+    export CATFILE="Hydrogen.txt"
+    export CATNAME="Hydrogen"
+    $CATEGORIZE
+    rm Hydrogen.txt
+    unset HYDROGEN
+  fi
 
-if [ $RUBIDIUM -ne 0 ];
-then
-  export CATFILE="Rubidium.txt"
-  export CATNAME="Rubidium"
-  $CATEGORIZE
-fi
+  if [ "$LITHIUM" != "" ];
+  then
+    printf "%s" "$LITHIUM" > Lithium.txt
+    export CATFILE="Lithium.txt"
+    export CATNAME="Lithium"
+    $CATEGORIZE
+    rm Lithium.txt
+    unset LITHIUM
+  fi
 
-if [ $FRANCIUM -ne 0 ];
-then
-  export CATFILE="Francium.txt"
-  export CATNAME="Francium"
-  $CATEGORIZE
-fi
+  if [ "$SODIUM" != "" ];
+  then
+    printf "%s" "$SODIUM" > Sodium.txt
+    export CATFILE="Sodium.txt"
+    export CATNAME="Sodium"
+    $CATEGORIZE
+    rm Sodium.txt
+    unset SODIUM
+  fi
 
-if [ $UUE -ne 0 ];
-then
-  export CATFILE="Ununennium.txt"
-  export CATNAME="Ununennium"
-  $CATEGORIZE
-fi
+  if [ "$POTASSIUM" != "" ];
+  then
+    printf "%s" "$POTASSIUM" > Potassium.txt
+    export CATFILE="Potassium.txt"
+    export CATNAME="Potassium"
+    $CATEGORIZE
+    rm Potassium.txt
+    unset POTASSIUM
+  fi
 
-rm Hydrogen.txt
-rm Lithium.txt
-rm Sodium.txt
-rm Potassium.txt
-rm Rubidium.txt
-rm Caesium.txt
-rm Francium.txt
-rm Ununennium.txt
+  if [ "$RUBIDIUM" != "" ];
+  then
+    printf "%s" "$RUBIDIUM" > Rubidium.txt
+    export CATFILE="Rubidium.txt"
+    export CATNAME="Rubidium"
+    $CATEGORIZE
+    rm Rubidium.txt
+    unset RUBIDIUM
+  fi
+
+  if [ "$CAESIUM" != "" ];
+  then
+    printf "%s" "$CAESIUM" > Caesium.txt
+    export CATFILE="Caesium.txt"
+    export CATNAME="Caesium"
+    $CATEGORIZE
+    rm Caesium.txt
+    unset CAESIUM
+  fi
+
+  if [ "$FRANCIUM" != "" ];
+  then
+    printf "%s" "$FRANCIUM" > Francium.txt
+    export CATFILE="Francium.txt"
+    export CATNAME="Francium"
+    $CATEGORIZE
+    rm Francium.txt
+    unset FRANCIUM
+  fi
+
+  if [ "$UUE" != "" ];
+  then
+    printf "%s" "$UUE" > Ununennium.txt
+    export CATFILE="Ununennium.txt"
+    export CATNAME="Ununennium"
+    $CATEGORIZE
+    rm Ununennium.txt
+    unset UUE
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing Group 1 elements\n"
+  fi
+
+fi
