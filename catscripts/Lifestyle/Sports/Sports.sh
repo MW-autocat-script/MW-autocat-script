@@ -1,6 +1,9 @@
 #!/bin/bash
 
 KEYWORDS_SOCCER="soccer|footballer"
+KEYWORDS_CRONALDO="Cristiano(| )Romaldo|\bC(\.|-| )(| )ronaldo"
+KEYWORDS_LMESSI="\bMessi(|s)\b"
+KEYWORDS_SOCCER_EXCLUDE="$KEYWORDS_CRONALDO|$KEYWORDS_LMESSI"
 
 #"Net" sports"
 KEYWORDS_TENNIS="Tennis"
@@ -42,7 +45,9 @@ KEYWORDS_HOCKEY_EXCLUDE="ield hockey|street hockey|indoor hockey|$KEYWORDS_NHL"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  SOCCER=`egrep -i "$KEYWORDS_SOCCER" newpages.txt`
+  SOCCER=`egrep -i "$KEYWORDS_SOCCER" newpages.txt | egrep -iv "$KEYWORDS_SOCCER_EXCLUDE`
+  CRONALDO="$(egrep -i "$KEYWORDS_CRONALDO" newpages.txt)"
+  LMESSI="$(egrep -i "$KEYWORDS_LMESSI" newpages.txt)"
   TENNIS=`egrep -i "$KEYWORDS_TENNIS" newpages.txt| egrep -iv "$KEYWORDS_TENNIS_EXCLUDE"`
   PINGPONG=`egrep -i "$KEYWORDS_PINGPONG" newpages.txt`
   BADMINTON=`egrep -i "$KEYWORDS_BADMINTON" newpages.txt`
@@ -72,6 +77,26 @@ then
     $CATEGORIZE
     rm Soccer.txt
     unset SOCCER
+  fi
+
+  if [ "$CRONALDO" != "" ];
+  then
+    printf "%s" "$CRONALDO" > CRonaldo.txt
+    export CATFILE="CRonaldo.txt"
+    export CATNAME="Cristiano Ronaldo"
+    $CATEGORIZE
+    rm CRonaldo.txt
+    unset CRONALDO
+  fi
+
+  if [ "$LMESSI" != "" ];
+  then
+    printf "%s" "$LMESSI" > LionelMessi.txt
+    export CATFILE="LionelMessi.txt"
+    export CATNAME="Lionel Messi"
+    $CATEGORIZE
+    rm LionelMessi.txt
+    unset LMESSI
   fi
 
   if [ "$TENNIS" != "" ];
