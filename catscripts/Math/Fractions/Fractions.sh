@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_FRACTIONS="'as(| )a(| )fraction$|into(| )a(| )fraction$|in(| )simplest(| )form$|in(| )its(| )simplest(| )form$|in(| )lowest(| )terms$|reduced(| )fraction|simplest(| )form(| )of(| )[0-9]{1,}/[0-9]{1,}|[0-9]{1,}(/|\\)[0-9]{1,}(| )of(| )[0-9]{1,}|[0-9]{1,}(/|\\)[0-9]{1,}(| )(plus|minus|times|divided(| )by)(| )[0-9]{1,}(/|\\)[0-9]{1,}|[0-9]{1,}(/|\\)[0-9]{1,}(| )(plus|minus|times|divided(| )by)(| )[0-9]{1.}(| )[0-9]{1,}(/|\\)[0-9]{1,}"
+KEYWORDS_FRACTIONS="(as(| )a|into(| )a)(| )fraction$|in(| )(|its)(lowest(| )terms|simplest(| )form)$|reduced(| )fraction|simplest(| )form(| )of(| )[0-9]{1,}/[0-9]{1,}|[0-9]{1,}/[0-9]{1,}(| )of(| )[0-9]{1,}|[0-9]{1,}/[0-9]{1,}(| )(plus|minus|times|divided(| )by)(| )[0-9]{1,}/[0-9]{1,}|[0-9]{1,}/[0-9]{1,}(| )(plus|minus|times|divided)(| )by(| )[0-9]{1.}(| )[0-9]{1,}/[0-9]{1,}"
 
 if [ "$1" == "" ];
 then

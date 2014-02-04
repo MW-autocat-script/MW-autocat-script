@@ -45,7 +45,7 @@ KEYWORDS_HOCKEY_EXCLUDE="ield hockey|street hockey|indoor hockey|$KEYWORDS_NHL"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  SOCCER=`egrep -i "$KEYWORDS_SOCCER" newpages.txt | egrep -iv "$KEYWORDS_SOCCER_EXCLUDE`
+  SOCCER="$(egrep -i "$KEYWORDS_SOCCER" newpages.txt | egrep -iv "$KEYWORDS_SOCCER_EXCLUDE")"
   CRONALDO="$(egrep -i "$KEYWORDS_CRONALDO" newpages.txt)"
   LMESSI="$(egrep -i "$KEYWORDS_LMESSI" newpages.txt)"
   TENNIS=`egrep -i "$KEYWORDS_TENNIS" newpages.txt| egrep -iv "$KEYWORDS_TENNIS_EXCLUDE"`
