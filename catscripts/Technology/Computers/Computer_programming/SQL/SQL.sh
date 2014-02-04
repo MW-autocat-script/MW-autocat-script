@@ -1,24 +1,44 @@
 #!/bin/bash
 
-egrep -i 'SQL' newpages.txt | egrep -iv 'MySQL' >> SQL.txt
-egrep -i 'MySQL|Maria(| )DB' newpages.txt >> MySQL.txt
+KEYWORDS_MYSQL="My(| )SQL|Maria(| )DB"
+KEYWORDS_SQL="SQL"
+KEYWORDS_SQL_EXCLUDE="$KEYWORDS_MYSQL"
 
-SQL=`stat --print=%s SQL.txt`
-MYSQL=`stat --print=%s MySQL.txt`
-
-if [ $SQL -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="SQL.txt"
-  export CATNAME="SQL"
-  $CATEGORIZE
-fi
 
-if [ $MYSQL -ne 0 ];
-then
-  export CATFILE="MySQL.txt"
-  export CATNAME="MySQL"
-  $CATEGORIZE
-fi
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Starting SQL\n"
+  fi
 
-rm SQL.txt
-rm MySQL.txt
+  SQL="$(egrep -i "$KEYWORDS_SQL" newpages.txt | egrep -iv "$KEYWORDS_SQL_EXCLUDE")"
+
+  if [ "$SQL" != "" ];
+  then
+    printf "%s" "$SQL" > SQL.txt
+    export CATFILE="SQL.txt"
+    export CATNAME="SQL"
+    $CATEGORIZE
+    rm SQL.txt
+    unset SQL
+  fi
+
+  MYSQL="$(egrep -i "$KEYWORDS_MYSQL" newpages.txt)"
+
+  if [ "$MYSQL" != "" ];
+  then
+    printf "%s" "$MYSQL" > MySQL.txt
+    export CATFILE="MySQL.txt"
+    export CATNAME="MySQL"
+    $CATEGORIZE
+    rm MySQL.txt
+    unset MYSQL
+  fi
+
+  if [ "$DEBUG" == "yes" ];
+  then
+    printf "Finishing SQL\n"
+  fi
+
+fi

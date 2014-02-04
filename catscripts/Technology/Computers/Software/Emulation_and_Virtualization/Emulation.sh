@@ -20,7 +20,7 @@ KEYWORDS_VIRTUALPC="Virtual(| )PC"
 KEYWORDS_VMAC="\bVMAC\b"
 KEYWORDS_VMWARE="VM(| )ware"
 KEYWORDS_WINUAE="WinUAE"
-KEYWORDS_XEN="\bXen"
+KEYWORDS_XEN="\bXen(|s)\b"
 KEYWORDS_XEN_EXCLUDE="Half(|-)(| )Life"
 
 #Arcade emulators

@@ -115,6 +115,7 @@ $COUNTRYDIR/Slovakia/Slovakia.sh #KEYWORDS_SLOVAKIA_ALL
 $COUNTRYDIR/Slovenia/Slovenia.sh #KEYWORDS_SLOVENIA_ALL
 $COUNTRYDIR/South_Korea/SouthKorea.sh
 $COUNTRYDIR/Sri_Lanka/SriLanka.sh
+$COUNTRYDIR/Sudan/Sudan.sh #KEYWORDS_SUDAN_ALL
 $COUNTRYDIR/Sweden/Sweden.sh
 $COUNTRYDIR/Switzerland/Switzerland.sh
 $COUNTRYDIR/Tanzia/Tanzia.sh
