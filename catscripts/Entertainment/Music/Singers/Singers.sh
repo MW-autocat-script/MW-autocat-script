@@ -275,7 +275,7 @@ then
     unset BRUNOMARS
   fi
 
-  if [ $MERRYGOLD != "" ];
+  if [ "$MERRYGOLD" != "" ];
   then
     printf "$MERRYGOLD" > AstonMerrygold.txt
     export CATFILE="AstonMerrygold.txt"

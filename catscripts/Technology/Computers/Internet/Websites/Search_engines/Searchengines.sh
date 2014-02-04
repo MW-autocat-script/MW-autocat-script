@@ -1,9 +1,9 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Technology/Internet/Websites/Search_engines"
+SEARCHENGINEDIR="./catscripts/Technology/Computers/Internet/Websites/Search_engines"
 
-. $CURRENTDIR/Google/Google.sh
-. $CURRENTDIR/Wikia_Search/WikiaSearch.sh
+. $SEARCHENGINEDIR/Google/Google.sh
+. $SEARCHENGINEDIR/Wikia_Search/WikiaSearch.sh
 
 KEYWORDS_SEARCHENGINES="Search(| )engine"
 KEYWORDS_SEARCHENGINES_EXCLUDE="$KEYWORDS_GOOGLE|$KEYWORDS_WIKIASEARCH"

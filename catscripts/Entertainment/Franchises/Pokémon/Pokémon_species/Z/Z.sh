@@ -69,7 +69,7 @@ then
     unset ZEKROM
   fi
 
-  if [ $ZIGZAGOON != "" ];
+  if [ "$ZIGZAGOON" != "" ];
   then
     printf "%s" "$ZIGZAGOON" > Zigzagoon.txt
     export CATFILE="Zigzagoon.txt"

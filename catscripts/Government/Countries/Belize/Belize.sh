@@ -11,11 +11,11 @@ then
     printf "Starting Belize\n"
   fi
 
-  BELIZE=`stat --print=%s Belize.txt`
+  BELIZE="$(egrep -i "$KEYWORDS_BELIZE" newpages.txt)"
 
   if [ "$BELIZE" != "" ];
   then
-    printf "$BELIZE" > Belize.txt
+    printf "%s" "$BELIZE" > Belize.txt
     export CATFILE="Belize.txt"
     export CATNAME="Belize"
     $CATEGORIZE

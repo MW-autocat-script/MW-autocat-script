@@ -11,7 +11,7 @@ then
     printf "Starting Page titles ending in a period\n"
   fi
 
-  PERIOD="$(egrep -i "$KEYWORDS_PERIOD" newpages.txt | egrep iv "$KEYWORDS_PERIOD_EXCLUDE")"
+  PERIOD="$(egrep -i "$KEYWORDS_PERIOD" newpages.txt | egrep -iv "$KEYWORDS_PERIOD_EXCLUDE")"
 
   if [ "$PERIOD" != "" ];
   then

@@ -2,8 +2,9 @@
 
 python $PYWIKIPEDIADIR/pagegenerators.py -category:"Page titles lacking an interrogative word" > nonint.txt
 
+NONINT="$(cat nonint.txt)"
 
-if [ `cat nonint.txt` != "" ];
+if [ "$NONINT" != "" ];
 then
 
 

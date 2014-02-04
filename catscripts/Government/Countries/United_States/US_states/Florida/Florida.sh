@@ -60,8 +60,8 @@ then
 
   if [ "$EVERGLADES" != "" ];
   then
-    printf "$EVERGLADES" != "" ];
-    export CATFILE="Evergaldes.txt"
+    printf "$EVERGLADES" > Everglades.txt
+    export CATFILE="Everglades.txt"
     export CATNAME="Everglades"
     $CATEGORIZE
     rm Evergaldes.txt
