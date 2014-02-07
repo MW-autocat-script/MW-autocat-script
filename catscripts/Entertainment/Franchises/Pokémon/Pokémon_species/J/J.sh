@@ -1,73 +1,96 @@
 #!/bin/bash
-egrep -i 'Jellicent' newpages.txt >> Jellicent.txt
-egrep -i 'Jigglypuff' newpages.txt >> Jigglypuff.txt
-egrep -i 'Jirachi' newpages.txt >> Jirachi.txt
-egrep -i 'Jolteon' newpages.txt >> Jolteon.txt
-egrep -i 'Joltik' newpages.txt >> Joltik.txt
-egrep -i 'Jumpluff' newpages.txt >> Jumpluff.txt
-egrep -i 'Jynx' newpages.txt >> Jynx.txt
 
-Jellicent=`stat --print=%s Jellicent.txt`
-Jigglypuff=`stat --print=%s Jigglypuff.txt`
-Jirachi=`stat --print=%s Jirachi.txt`
-Jolteon=`stat --print=%s Jolteon.txt`
-Joltik=`stat --print=%s Joltik.txt`
-Jumpluff=`stat --print=%s Jumpluff.txt`
-Jynx=`stat --print=%s Jynx.txt`
+KEYWORDS_JELLICENT="Jellicent"
+KEYWORDS_JIGGLYPUFF="Jigglypuff"
+KEYWORDS_JIRACHI="Jirachi"
+KEYWORDS_JOLTEON="Jolteon"
+KEYWORDS_JOLTIK="Joltik"
+KEYWORDS_JUMPLUFF="Jumpluff"
+KEYWORDS_JYNX="Jynx"
 
-if [ $Jellicent -ne 0 ];
+if [ "$1" == "" ];
 then
-   export CATFILE="Jellicent.txt"
-   export CATNAME="Jellicent"
-   $CATEGORIZE
-fi
 
-if [ $Jigglypuff -ne 0 ];
-then
-   export CATFILE="Jigglypuff.txt"
-   export CATNAME="Jigglypuff"
-   $CATEGORIZE
-fi
+  debug_start "Pokemon 'J' script"
 
-if [ $Jirachi -ne 0 ];
-then
-   export CATFILE="Jirachi.txt"
-   export CATNAME="Jirachi"
-   $CATEGORIZE
-fi
+  JELLICENT="$(egrep -i "$KEYWORDS_JELLICENT" newpages.txt)"
+  JIGGLYPUFF="$(egrep -i "$KEYWORDS_JIGGLYPUFF" newpages.txt)"
+  JIRACHI="$(egrep -i "$KEYWORDS_JIRACHI" newpages.txt)"
+  JOLTEON="$(egrep -i "$KEYWORDS_JOLTEON" newpages.txt)"
+  JOLTIK="$(egrep -i "$KEYWORDS_JOLTIK" newpages.txt)"
+  JUMPLUFF="$(egrep -i "$KEYWORDS_JUMPLUFF" newpages.txt)"
+  JYNX="$(egrep -i "$KEYWORDS_JYNX" newpages.txt)"
 
-if [ $Jolteon -ne 0 ];
-then
-   export CATFILE="Jolteon.txt"
-   export CATNAME="Jolteon"
-   $CATEGORIZE
-fi
+  if [ "$JELLICENT" != "" ];
+  then
+    printf "%s" "$JELLICENT" > Jellicent.txt
+    export CATFILE="Jellicent.txt"
+    export CATNAME="Jellicent"
+    $CATEGORIZE
+    rm Jellicent.txt
+    unset JELLICENT
+  fi
 
-if [ $Joltik -ne 0 ];
-then
-   export CATFILE="Joltik.txt"
-   export CATNAME="Joltik"
-   $CATEGORIZE
-fi
+  if [ "$JIGGLYPUFF" != "" ];
+  then
+    printf "%s" "$JIGGLYPUFF" > Jigglypuff.txt
+    export CATFILE="Jigglypuff.txt"
+    export CATNAME="Jigglypuff"
+    $CATEGORIZE
+    rm Jigglypuff.txt
+    unset JIGGLYPUFF
+  fi
 
-if [ $Jumpluff -ne 0 ];
-then
-   export CATFILE="Jumpluff.txt"
-   export CATNAME="Jumpluff"
-   $CATEGORIZE
-fi
+  if [ "$JIRACHI" != "" ];
+  then
+    printf "%s" "$JIRACHI" > Jirachi.txt
+    export CATFILE="Jirachi.txt"
+    export CATNAME="Jirachi"
+    $CATEGORIZE
+    rm Jirachi.txt
+    unset JIRACHI
+  fi
 
-if [ $Jynx -ne 0 ];
-then
-   export CATFILE="Jynx.txt"
-   export CATNAME="Jynx"
-   $CATEGORIZE
-fi
+  if [ "$JOLTEON" != "" ];
+  then
+    printf "%s" "$JOLTEON" > Jolteon.txt
+    export CATFILE="Jolteon.txt"
+    export CATNAME="Jolteon"
+    $CATEGORIZE
+    rm Jolteon.txt
+    unset JOLTEON
+  fi
 
-rm Jellicent.txt
-rm Jigglypuff.txt
-rm Jirachi.txt
-rm Jolteon.txt
-rm Joltik.txt
-rm Jumpluff.txt
-rm Jynx.txt
+  if [ "$JOLTIK" != "" ];
+  then
+    printf "%s" "$JOLTIK" > Joltik.txt
+    export CATFILE="Joltik.txt"
+    export CATNAME="Joltik"
+    $CATEGORIZE
+    rm Joltik.txt
+    unset JOLTIK
+  fi
+
+  if [ "$JUMPLUFF" != "" ];
+  then
+    printf "%s" "$JUMPLUFF" > Jumpluff.txt
+    export CATFILE="Jumpluff.txt"
+    export CATNAME="Jumpluff"
+    $CATEGORIZE
+    rm Jumpluff.txt
+    unset JUMPLUFF
+  fi
+
+  if [ "$JYNX" != "" ];
+  then
+    printf "%s" "$JYNX" > Jynx.txt
+    export CATFILE="Jynx.txt"
+    export CATNAME="Jynx"
+    $CATEGORIZE
+    rm Jynx.txt
+    unset JYNX
+  fi
+
+  debug_end "Pokemon 'J' script"
+
+fi

@@ -5,11 +5,11 @@ KEYWORDS_POKEMONANIME="\bAsh.+(Misty|Brock|May|Dawn|Iris|Pikachu|Pokemon|Pokémo
 if [ "$1" == "" ];
 then
 
-  ANIME=`egrep -i "$KEYWORDS_POKEMONANIME" newpages.txt`
+  ANIME="$(egrep -i "$KEYWORDS_POKEMONANIME" newpages.txt)"
 
   if [ "$ANIME"  != "" ];
-  egrep -i "$KEYWORDS_POKEMONANIME" newpages.txt > Anime.txt
   then
+    printf "%s" "$ANIME"  > Anime.txt
     export CATFILE="Anime.txt"
     export CATNAME="Pokémon anime"
     $CATEGORIZE

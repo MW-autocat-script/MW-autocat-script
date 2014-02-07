@@ -73,38 +73,9 @@ KEYWORDS_CANADA_ALL="$KEYWORDS_CANADA|$KEYWORDS_ALBERTA_ALL|$KEYWORDS_BRITISHCOL
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Canada\n"
-  fi
+  debug_start "Canada"
 
   CANADA="$(egrep -i "$KEYWORDS_CANADA" newpages.txt | egrep -iv "$KEYWORDS_CANADA_EXCLUDE")"
-  ONTARIO="$(egrep -i "$KEYWORDS_ONTARIO" newpages.txt | egrep -iv "$KEYWORDS_ONTARIO_EXCLUDE")"
-  TORONTO="$(egrep -i "$KEYWORDS_TORONTO" newpages.txt)"
-  OTTAWA="$(egrep -i "$KEYWORDS_OTTAWA" newpages.txt)"
-  QUEBECPROVINCE="$(egrep -i "$KEYWORDS_QUEBEC_PROVINCE" newpages.txt | egrep -iv "$KEYWORDS_QUEBEC_PROVINCE_EXCLUDE")"
-  QUEBECCITY="$(egrep -i "$KEYWORDS_QUEBEC_CITY" newpages.txt)"
-  MONTREAL="$(egrep -i "$KEYWORDS_MONTREAL" newpages.txt)"
-  NOVASCOTIA="$(egrep -i "$KEYWORDS_NOVASCOTIA" newpages.txt | egrep -iv "$KEYWORDS_NOVASCOTIA_EXCLUDE")"
-  HALIFAX="$(egrep -i "$KEYWORDS_HALIFAX" newpages.txt)"
-  NEWBRUNSWICK="$(egrep -i "$KEYWORDS_NEWBRUNSWICK" newpages.txt)"
-  MANITOBA="$(egrep -i "$KEYWORDS_MANITOBA" newpages.txt | egrep -iv "$KEYWORDS_MANITOBA_EXCLUDE")"
-  WINNIPEG="$(egrep -i "$KEYWORDS_WINNIPEG" newpages.txt)"
-  BRITISHCOLUMBIA="$(egrep -i "$KEYWORDS_BRITISHCOLUMBIA" newpages.txt | egrep -iv "$KEYWORDS_BRITISHCOLUMBIA_EXCLUDE")"
-  VICTORIABC="$(egrep -i "$KEYWORDS_VICTORIABC" newpages.txt)"
-  VANCOUVER="$(egrep -i "$KEYWORDS_VANCOUVER" newpages.txt)"
-  PRINCEEDWARDISLAND="$(egrep -i "$KEYWORDS_PRINCEEDWARDISLAND" newpages.txt)"
-  SASKATCHEWAN="$(egrep -i "$KEYWORDS_SASKATCHEWAN" newpages.txt | egrep -iv "$KEYWORDS_SASKATCHEWAN_EXCLUDE")"
-  REGINA="$(egrep -i "$KEYWORDS_REGINA" newpages.txt | egrep -iv "$KEYWORDS_REGINA_EXCLUDE")"
-  SASKATOON="$(egrep -i "$KEYWORDS_SASKATOON" newpages.txt)"
-  ALBERTA="$(egrep -i "$KEYWORDS_ALBERTA" newpages.txt | egrep -iv "$KEYWORDS_ALBERTA_EXCLUDE")"
-  EDMONTON="$(egrep -i "$KEYWORDS_EDMONTON" newpages.txt)"
-  CALGARY="$(egrep -i "$KEYWORDS_CALGARY" newpages.txt)"
-  NEWFOUNDLANDANDLABRADOR="$(egrep -i "$KEYWORDS_NEWFOUNDLANDANDLABRADOR" newpages.txt | egrep -iv "$KEYWORDS_NEWFOUNDLANDANDLABRADOR_EXCLUDE")"
-  NORTHWESTTERRITORIES="$(egrep -i "$KEYWORDS_NORTHWESTTERRITORIES" newpages.txt | egrep -iv "$KEYWORDS_NORTHWESTTERRITORIES_EXCLUDE")"
-  YELLOWKNIFE="$(egrep -i "$KEYWORDS_YELLOWKNIFE" newpages.txt)"
-  YUKON="$(egrep -i "$KEYWORDS_YUKON" newpages.txt | egrep -iv "$KEYWORDS_YUKON_EXCLUDE")"
-  NUNAVUT="$(egrep -i "$KEYWORDS_NUNAVUT" newpages.txt)"
 
   if [ "$CANADA" != "" ];
   then
@@ -116,6 +87,8 @@ then
     unset CANADA
   fi
 
+  ONTARIO="$(egrep -i "$KEYWORDS_ONTARIO" newpages.txt | egrep -iv "$KEYWORDS_ONTARIO_EXCLUDE")"
+
   if [ "$ONTARIO" != "" ];
   then
     printf "%s" "$ONTARIO" > Ontario.txt
@@ -125,6 +98,8 @@ then
     rm Ontario.txt
     unset ONTARIO
   fi
+
+  TORONTO="$(egrep -i "$KEYWORDS_TORONTO" newpages.txt)"
 
   if [ "$TORONTO" != "" ];
   then
@@ -136,6 +111,8 @@ then
     unset TORONTO
   fi
 
+  OTTAWA="$(egrep -i "$KEYWORDS_OTTAWA" newpages.txt)"
+
   if [ "$OTTAWA" != "" ];
   then
     printf "%s" "$OTTAWA" > Ottawa.txt
@@ -145,6 +122,8 @@ then
     rm Ottawa.txt
     unset OTTAWA
   fi
+
+  QUEBECPROVINCE="$(egrep -i "$KEYWORDS_QUEBEC_PROVINCE" newpages.txt | egrep -iv "$KEYWORDS_QUEBEC_PROVINCE_EXCLUDE")"
 
   if [ "$QUEBECPROVINCE" != "" ];
   then
@@ -156,6 +135,8 @@ then
     unset QUEBECPROVINCE
   fi
 
+  QUEBECCITY="$(egrep -i "$KEYWORDS_QUEBEC_CITY" newpages.txt)"
+
   if [ "$QUEBECCITY" != "" ];
   then
     printf "%s" "$QUEBECCITY" > QuebecCity.txt
@@ -165,6 +146,8 @@ then
     rm QuebecCity.txt
     unset QUEBECCITY
   fi
+
+  MONTREAL="$(egrep -i "$KEYWORDS_MONTREAL" newpages.txt)"
 
   if [ "$MONTREAL" != "" ];
   then
@@ -176,6 +159,8 @@ then
     unset MONTREAL
   fi
 
+  NOVASCOTIA="$(egrep -i "$KEYWORDS_NOVASCOTIA" newpages.txt | egrep -iv "$KEYWORDS_NOVASCOTIA_EXCLUDE")"
+
   if [ "$NOVASCOTIA" != "" ];
   then
     printf "%s" "$NOVASCOTIA" > NovaScotia.txt
@@ -185,6 +170,8 @@ then
     rm NovaScotia.txt
     unset NOVASCOTIA
   fi
+
+  HALIFAX="$(egrep -i "$KEYWORDS_HALIFAX" newpages.txt)"
 
   if [ "$HALIFAX" != "" ];
   then
@@ -196,6 +183,8 @@ then
     unset HALIFAX
   fi
 
+  NEWBRUNSWICK="$(egrep -i "$KEYWORDS_NEWBRUNSWICK" newpages.txt)"
+
   if [ "$NEWBRUNSWICK" != "" ];
   then
     printf "%s" "$NEWBRUNSWICK" > NewBrunswick.txt
@@ -205,6 +194,8 @@ then
     rm NewBrunswick.txt
     unset NEWBRUNSWICK
   fi
+
+  MANITOBA="$(egrep -i "$KEYWORDS_MANITOBA" newpages.txt | egrep -iv "$KEYWORDS_MANITOBA_EXCLUDE")"
 
   if [ "$MANITOBA" != "" ];
   then
@@ -216,6 +207,8 @@ then
     unset MANITOBA
   fi
 
+  WINNIPEG="$(egrep -i "$KEYWORDS_WINNIPEG" newpages.txt)"
+
   if [ "$WINNIPEG" != "" ];
   then
     printf "%s" "$WINNIPEG" > Winnipeg.txt
@@ -225,6 +218,8 @@ then
     rm Winnipeg.txt
     unset WINNIPEG
   fi
+
+  BRITISHCOLUMBIA="$(egrep -i "$KEYWORDS_BRITISHCOLUMBIA" newpages.txt | egrep -iv "$KEYWORDS_BRITISHCOLUMBIA_EXCLUDE")"
 
   if [ "$BRITISHCOLUMBIA" != "" ];
   then
@@ -236,6 +231,8 @@ then
     unset BRITISHCOLUMBIA
   fi
 
+  VICTORIABC="$(egrep -i "$KEYWORDS_VICTORIABC" newpages.txt)"
+
   if [ "$VICTORIABC" != "" ];
   then
     printf "%s" "$VICTORIABC" > VictoriaBC.txt
@@ -245,6 +242,8 @@ then
     rm VictoriaBC.txt
     unset VICTORIABC
   fi
+
+  VANCOUVER="$(egrep -i "$KEYWORDS_VANCOUVER" newpages.txt)"
 
   if [ "$VANCOUVER" != "" ];
   then
@@ -256,6 +255,8 @@ then
     unset VANCOUVER
   fi
 
+  PRINCEEDWARDISLAND="$(egrep -i "$KEYWORDS_PRINCEEDWARDISLAND" newpages.txt)"
+
   if [ "$PRINCEEDWARDISLAND" != "" ];
   then
     printf "%s" "$PRINCEEDWARDISLAND" > PrinceEdwardIsland.txt
@@ -265,6 +266,8 @@ then
     rm PrinceEdwardIsland.txt
     unset PRINCEEDWARDISLAND
   fi
+
+  SASKATCHEWAN="$(egrep -i "$KEYWORDS_SASKATCHEWAN" newpages.txt | egrep -iv "$KEYWORDS_SASKATCHEWAN_EXCLUDE")"
 
   if [ "$SASKATCHEWAN" != "" ];
   then
@@ -276,6 +279,8 @@ then
     unset SASKATCHEWAN
   fi
 
+  REGINA="$(egrep -i "$KEYWORDS_REGINA" newpages.txt | egrep -iv "$KEYWORDS_REGINA_EXCLUDE")"
+
   if [ "$REGINA" != "" ];
   then
     printf "%s" "$REGINA" > Regina.txt
@@ -285,6 +290,8 @@ then
     rm Regina.txt
     unset REGINA
   fi
+
+  SASKATOON="$(egrep -i "$KEYWORDS_SASKATOON" newpages.txt)"
 
   if [ "$SASKATOON" != "" ];
   then
@@ -296,6 +303,8 @@ then
     unset SASKATOON
   fi
 
+  ALBERTA="$(egrep -i "$KEYWORDS_ALBERTA" newpages.txt | egrep -iv "$KEYWORDS_ALBERTA_EXCLUDE")"
+
   if [ "$ALBERTA" != "" ];
   then
     printf "%s" "$ALBERTA" > Alberta.txt
@@ -305,6 +314,8 @@ then
     rm Alberta.txt
     unset ALBERTA
   fi
+
+  EDMONTON="$(egrep -i "$KEYWORDS_EDMONTON" newpages.txt)"
 
   if [ "$EDMONTON" != "" ];
   then
@@ -316,6 +327,8 @@ then
     unset EDMONTON
   fi
 
+  CALGARY="$(egrep -i "$KEYWORDS_CALGARY" newpages.txt)"
+
   if [ "$CALGARY" != "" ];
   then
     printf "%s" "$CALGARY" > Calgary.txt
@@ -325,6 +338,8 @@ then
     rm Calgary.txt
     unset CALGARY
   fi
+
+  NEWFOUNDLANDANDLABRADOR="$(egrep -i "$KEYWORDS_NEWFOUNDLANDANDLABRADOR" newpages.txt | egrep -iv "$KEYWORDS_NEWFOUNDLANDANDLABRADOR_EXCLUDE")"
 
   if [ "$NEWFOUNDLANDANDLABRADOR" != "" ];
   then
@@ -336,6 +351,8 @@ then
     unset NEWFOUNDLANDANDLABRADOR
   fi
 
+  NORTHWESTTERRITORIES="$(egrep -i "$KEYWORDS_NORTHWESTTERRITORIES" newpages.txt | egrep -iv "$KEYWORDS_NORTHWESTTERRITORIES_EXCLUDE")"
+
   if [ "$NORTHWESTTERRITORIES" != "" ];
   then
     printf "%s" "$NORTHWESTTERRITORIES" > NorthwestTerritories.txt
@@ -345,6 +362,8 @@ then
     rm NorthwestTerritories.txt
     unset NORTHWESTTERRITORIES
   fi
+
+  YELLOWKNIFE="$(egrep -i "$KEYWORDS_YELLOWKNIFE" newpages.txt)"
 
   if [ "$YELLOWKNIFE" != "" ];
   then
@@ -356,6 +375,8 @@ then
     unset YELLOWKNIFE
   fi
 
+  YUKON="$(egrep -i "$KEYWORDS_YUKON" newpages.txt | egrep -iv "$KEYWORDS_YUKON_EXCLUDE")"
+
   if [ "$YUKON" != "" ];
   then
     printf "%s" "$YUKON" > Yukon.txt
@@ -365,6 +386,8 @@ then
     rm Yukon.txt
     unset YUKON
   fi
+
+  NUNAVUT="$(egrep -i "$KEYWORDS_NUNAVUT" newpages.txt)"
 
   if [ "$NUNAVUT" != "" ];
   then
@@ -376,9 +399,6 @@ then
     unset NUNAVUT
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Canada\n"
-  fi
+  debug_end "Canada"
 
 fi

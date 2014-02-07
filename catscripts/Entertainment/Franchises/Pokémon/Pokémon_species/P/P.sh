@@ -1,424 +1,517 @@
 #!/bin/bash
-egrep -i 'Pachirisu' newpages.txt >> Pachirisu.txt
-egrep -i 'Palkia' newpages.txt >> Palkia.txt
-egrep -i 'Palpitoad' newpages.txt >> Palpitoad.txt
-egrep -i 'Panpour' newpages.txt >> Panpour.txt
-egrep -i 'Pansage' newpages.txt >> Pansage.txt
-egrep -i 'Pansear' newpages.txt >> Pansear.txt
-egrep -i 'Paras\b' newpages.txt >> Paras.txt
-egrep -i 'Parasect' newpages.txt >> Parasect.txt
-egrep -i 'Patrat' newpages.txt >> Patrat.txt
-egrep -i 'Pawniard' newpages.txt >> Pawniard.txt
-egrep -i 'Pelipper' newpages.txt >> Pelipper.txt
-egrep -i 'Persian\b' newpages.txt | egrep -iv 'empire|language|speak|cat|kitten|gulf|language|religion|in Persian\]\]|capital|leader|war|Persian ruler' >> Persian.txt
-egrep -i 'Petilil' newpages.txt >> Petilil.txt
-egrep -i 'Phanpy' newpages.txt >> Phanpy.txt
-egrep -i 'Phione' newpages.txt >> Phione.txt
-egrep -i 'Pichu' newpages.txt >> Pichu.txt
-egrep -i 'Pidgeot\b' newpages.txt >> Pidgeot.txt
-egrep -i 'Pidgeotto' newpages.txt >> Pidgeotto.txt
-egrep -i 'Pidgey' newpages.txt >> Pidgey.txt
-egrep -i 'Pignite' newpages.txt >> Pignite.txt
-egrep -i 'Pikachu' newpages.txt >> Pikachu.txt
-egrep -i 'Piloswine' newpages.txt >> Piloswine.txt
-egrep -i 'Pineco\b' newpages.txt >> Pineco.txt
-egrep -i 'Pinsir' newpages.txt >> Pinsir.txt
-egrep -i 'Piplup' newpages.txt >> Piplup.txt
-egrep -i 'Plusle' newpages.txt >> Plusle.txt
-egrep -i 'Politoed' newpages.txt >> Politoed.txt
-egrep -i 'Poliwag' newpages.txt >> Poliwag.txt
-egrep -i 'Poliwhirl' newpages.txt >> Poliwhirl.txt
-egrep -i 'Poliwrath' newpages.txt >> Poliwrath.txt
-egrep -i 'Ponyta\b' newpages.txt >> Ponyta.txt
-egrep -i 'Poochyena' newpages.txt >> Poochyena.txt
-egrep -i 'Porygon' newpages.txt >> Porygon.txt
-egrep -i 'Porygon-Z' newpages.txt >> Porygon-Z.txt
-egrep -i 'Porygon2' newpages.txt >> Porygon2.txt
-egrep -i 'Primeape' newpages.txt >> Primeape.txt
-egrep -i 'Prinplup' newpages.txt >> Prinplup.txt
-egrep -i 'Probopass' newpages.txt >> Probopass.txt
-egrep -i 'Psyduck' newpages.txt >> Psyduck.txt
-egrep -i 'Pupitar' newpages.txt >> Pupitar.txt
-egrep -i 'Purrloin' newpages.txt >> Purrloin.txt
-egrep -i 'Purugly' newpages.txt >> Purugly.txt
 
-Pachirisu=`stat --print=%s Pachirisu.txt`
-Palkia=`stat --print=%s Palkia.txt`
-Palpitoad=`stat --print=%s Palpitoad.txt`
-Panpour=`stat --print=%s Panpour.txt`
-Pansage=`stat --print=%s Pansage.txt`
-Pansear=`stat --print=%s Pansear.txt`
-Paras=`stat --print=%s Paras.txt`
-Parasect=`stat --print=%s Parasect.txt`
-Patrat=`stat --print=%s Patrat.txt`
-Pawniard=`stat --print=%s Pawniard.txt`
-Pelipper=`stat --print=%s Pelipper.txt`
-Persian=`stat --print=%s Persian.txt`
-Petilil=`stat --print=%s Petilil.txt`
-Phanpy=`stat --print=%s Phanpy.txt`
-Phione=`stat --print=%s Phione.txt`
-Pichu=`stat --print=%s Pichu.txt`
-Pidgeot=`stat --print=%s Pidgeot.txt`
-Pidgeotto=`stat --print=%s Pidgeotto.txt`
-Pidgey=`stat --print=%s Pidgey.txt`
-Pignite=`stat --print=%s Pignite.txt`
-Pikachu=`stat --print=%s Pikachu.txt`
-Piloswine=`stat --print=%s Piloswine.txt`
-Pineco=`stat --print=%s Pineco.txt`
-Pinsir=`stat --print=%s Pinsir.txt`
-Piplup=`stat --print=%s Piplup.txt`
-Plusle=`stat --print=%s Plusle.txt`
-Politoed=`stat --print=%s Politoed.txt`
-Poliwag=`stat --print=%s Poliwag.txt`
-Poliwhirl=`stat --print=%s Poliwhirl.txt`
-Poliwrath=`stat --print=%s Poliwrath.txt`
-Ponyta=`stat --print=%s Ponyta.txt`
-Poochyena=`stat --print=%s Poochyena.txt`
-Porygon=`stat --print=%s Porygon.txt`
-PorygonZ=`stat --print=%s Porygon-Z.txt`
-Porygon2=`stat --print=%s Porygon2.txt`
-Primeape=`stat --print=%s Primeape.txt`
-Prinplup=`stat --print=%s Prinplup.txt`
-Probopass=`stat --print=%s Probopass.txt`
-Psyduck=`stat --print=%s Psyduck.txt`
-Pupitar=`stat --print=%s Pupitar.txt`
-Purrloin=`stat --print=%s Purrloin.txt`
-Purugly=`stat --print=%s Purugly.txt`
+KEYWORDS_PACHIRISU="Pachirisu"
+KEYWORDS_PALKIA="Palkia"
+KEYWORDS_PALPITOAD="Palpitoad"
+KEYWORDS_PANPOUR="Panpour"
+KEYWORDS_PANSAGE="Pansage"
+KEYWORDS_PANSEAR="Pansear"
+KEYWORDS_PARAS="Paras\b"
+KEYWORDS_PARASECT="Parasect"
+KEYWORDS_PATRAT="Patrat"
+KEYWORDS_PAWNIARD="Pawniard"
+KEYWORDS_PELIPPER="Pelipper"
+KEYWORDS_PERSIAN="Persian\b"
+KEYWORDS_PERSIAN_EXCLUDE="empire|language|speak|cat|kitten|gulf|language|religion|in(| )Persian$|capital|leader|war|Persian(| )ruler"
+KEYWORDS_PETILIL="Petilil"
+KEYWORDS_PHANPY="Phanpy"
+KEYWORDS_PHIONE="Phione"
+KEYWORDS_PICHU="Pichu"
+KEYWORDS_PIDGEOT="Pidgeot\b"
+KEYWORDS_PIDGEOTTO="Pidgeot(|t)o"
+KEYWORDS_PIDGEY="Pidgey"
+KEYWORDS_PIGNITE="Pignite"
+KEYWORDS_PIKACHU="Pikachu"
+KEYWORDS_PILOSWINE="Piloswine"
+KEYWORDS_PINECO="Pineco\b"
+KEYWORDS_PINSIR="Pinsir"
+KEYWORDS_PIPLUP="Piplup"
+KEYWORDS_PLUSLE="Plusle"
+KEYWORDS_POLITOED="Politoed"
+KEYWORDS_POLIWAG="Poliwag"
+KEYWORDS_POLIWHIRL="Poliwhirl"
+KEYWORDS_POLIWRATH="Poliwrath"
+KEYWORDS_PONYTA="Ponyta\b"
+KEYWORDS_POOCHYENA="Poochyena"
+KEYWORDS_PORYGON="Porygon"
+KEYWORDS_PORYGONZ="Porygon-Z"
+KEYWORDS_PORYGON2="Porygon2"
+KEYWORDS_PRIMEAPE="Primeape"
+KEYWORDS_PRINPLUP="Prinplup"
+KEYWORDS_PROBOPASS="Probopass"
+KEYWORDS_PSYDUCK="Psyduck"
+KEYWORDS_PUPITAR="Pupitar"
+KEYWORDS_PURRLOIN="Purrloin"
+KEYWORDS_PURUGLY="Purugly"
 
-if [ $Pachirisu -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Pachirisu.txt"
-  export CATNAME="Pachirisu"
-  $CATEGORIZE
+
+  debug_start "Pokemon 'P' scripts"
+
+  PACHIRISU="$(egrep -i "$KEYWORDS_PACHIRISU" newpages.txt)"
+  PALKIA="$(egrep -i "$KEYWORDS_PALKIA" newpages.txt)"
+  PALPITOAD="$(egrep -i "$KEYWORDS_PALPITOAD" newpages.txt)"
+  PANPOUR="$(egrep -i "$KEYWORDS_PANPOUR" newpages.txt)"
+  PANSAGE="$(egrep -i "$KEYWORDS_PANSAGE" newpages.txt)"
+  PANSEAR="$(egrep -i "$KEYWORDS_PANSEAR" newpages.txt)"
+  PARAS="$(egrep -i "$KEYWORDS_PARAS" newpages.txt)"
+  PARASECT="$(egrep -i "$KEYWORDS_PARASECT" newpages.txt)"
+  PATRAT="$(egrep -i "$KEYWORDS_PATRAT" newpages.txt)"
+  PAWNIARD="$(egrep -i "$KEYWORDS_PAWNIARD" newpages.txt)"
+  PELIPPER="$(egrep -i "$KEYWORDS_PELIPPER" newpages.txt)"
+  PERSIAN="$(egrep -i "$KEYWORDS_PERSIAN" newpages.txt | egrep -iv "$KEYWORDS_PERSIAN_EXCLUDE")"
+  PETILIL="$(egrep -i "$KEYWORDS_PETILIL" newpages.txt)"
+  PHANPY="$(egrep -i "$KEYWORDS_PHANPY" newpages.txt)"
+  PHIONE="$(egrep -i "$KEYWORDS_PHIONE" newpages.txt)"
+  PICHU="$(egrep -i "$KEYWORDS_PICHU" newpages.txt)"
+  PIDGEOT="$(egrep -i "$KEYWORDS_PIDGEOT" newpages.txt)"
+  PIDGEOTTO="$(egrep -i "$KEYWORDS_PIDGEOTTO" newpages.txt)"
+  PIDGEY="$(egrep -i "$KEYWORDS_PIDGEY" newpages.txt)"
+  PIGNITE="$(egrep -i "$KEYWORDS_PIGNITE" newpages.txt)"
+  PIKACHU="$(egrep -i "$KEYWORDS_PIKACHU" newpages.txt)"
+  PILOSWINE="$(egrep -i "$KEYWORDS_PILOSWINE" newpages.txt)"
+  PINECO="$(egrep -i "$KEYWORDS_PINECO" newpages.txt)"
+  PINSIR="$(egrep -i "$KEYWORDS_PINSIR" newpages.txt)"
+  PIPLUP="$(egrep -i "$KEYWORDS_PIPLUP" newpages.txt)"
+  PLUSLE="$(egrep -i "$KEYWORDS_PLUSLE" newpages.txt)"
+  POLITOED="$(egrep -i "$KEYWORDS_POLITOED" newpages.txt)"
+  POLIWAG="$(egrep -i "$KEYWORDS_POLIWAG" newpages.txt)"
+  POLIWHIRL="$(egrep -i "$KEYWORDS_POLIWHIRL" newpages.txt)"
+  POLIWRATH="$(egrep -i "$KEYWORDS_POLIWRATH" newpages.txt)"
+  PONYTA="$(egrep -i "$KEYWORDS_PONYTA" newpages.txt)"
+  POOCHYENA="$(egrep -i "$KEYWORDS_POOCHYENA" newpages.txt)"
+  PORYGON="$(egrep -i "$KEYWORDS_PORYGON" newpages.txt)"
+  PORYGONZ="$(egrep -i "$KEYWORDS_PORYGONZ" newpages.txt)"
+  PORYGON2="$(egrep -i "$KEYWORDS_PORYGON2" newpages.txt)"
+  PRIMEAPE="$(egrep -i "$KEYWORDS_PRIMEAPE" newpages.txt)"
+  PRINPLUP="$(egrep -i "$KEYWORDS_PRINPLUP" newpages.txt)"
+  PROBOPASS="$(egrep -i "$KEYWORDS_PROBOPASS" newpages.txt)"
+  PSYDUCK="$(egrep -i "$KEYWORDS_PSYDUCK" newpages.txt)"
+  PUPITAR="$(egrep -i "$KEYWORDS_PUPITAR" newpages.txt)"
+  PURRLOIN="$(egrep -i "$KEYWORDS_PURRLOIN" newpages.txt)"
+  PURUGLY="$(egrep -i "$KEYWORDS_PURUGLY" newpages.txt)"
+
+  if [ "$PACHIRISU" != "" ];
+  then
+    printf "%s" "$PACHIRISU" > Pachirisu.txt
+    export CATFILE="Pachirisu.txt"
+    export CATNAME="Pachirisu"
+    $CATEGORIZE
+    rm Pachirisu.txt
+    unset PACHIRISU
+  fi
+
+  if [ "$PALKIA" != "" ];
+  then
+    printf "%s" "$PALKIA" > Palkia.txt
+    export CATFILE="Palkia.txt"
+    export CATNAME="Palkia"
+    $CATEGORIZE
+    rm Palkia.txt
+    unset PALKIA
+  fi
+
+  if [ "$PALPITOAD" != "" ];
+  then
+    printf "%s" "$PALPITOAD" > Palpitoad.txt
+    export CATFILE="Palpitoad.txt"
+    export CATNAME="Palpitoad"
+    $CATEGORIZE
+    rm Palpitoad.txt
+    unset PALPITOAD
+  fi
+
+  if [ "$PANPOUR" != "" ];
+  then
+    printf "%s" "$PANPOUR" > Panpour.txt
+    export CATFILE="Panpour.txt"
+    export CATNAME="Panpour"
+    $CATEGORIZE
+    rm Panpour.txt
+    unset PANPOUR
+  fi
+
+  if [ "$PANSAGE" != "" ];
+  then
+    printf "%s" "$PANSAGE" > Pansage.txt
+    export CATFILE="Pansage.txt"
+    export CATNAME="Pansage"
+    $CATEGORIZE
+    rm Pansage.txt
+    unset PANSAGE
+  fi
+
+  if [ "$PANSEAR" != "" ];
+  then
+    printf "%s" "$PANSEAR" > Pansear.txt
+    export CATFILE="Pansear.txt"
+    export CATNAME="Pansear"
+    $CATEGORIZE
+    rm Pansear.txt
+    unset PANSEAR
+  fi
+
+  if [ "$PARAS" != "" ];
+  then
+    printf "%s" "$PARAS" > Paras.txt
+    export CATFILE="Paras.txt"
+    export CATNAME="Paras"
+    $CATEGORIZE
+    rm Paras.txt
+    unset PARAS
+  fi
+  
+  if [ "$PARASECT" != "" ];
+  then
+    printf "%s" "$PARASECT" > Parasect.txt
+    export CATFILE="Parasect.txt"
+    export CATNAME="Parasect"
+    $CATEGORIZE
+    rm Parasect.txt
+    unset PARASECT
+  fi
+
+  if [ "$PATRAT" != "" ];
+  then
+    printf "%s" "$PATRAT" > Patrat.txt
+    export CATFILE="Patrat.txt"
+    export CATNAME="Patrat"
+    $CATEGORIZE
+    rm Patrat.txt
+    unset PATRAT
+  fi
+
+  if [ "$PAWNIARD" != "" ];
+  then
+    printf "%s" "$PAWNIARD" > Pawniard.txt
+    export CATFILE="Pawniard.txt"
+    export CATNAME="Pawniard"
+    $CATEGORIZE
+    rm Pawniard.txt
+    unset PAWNIARD
+  fi
+
+  if [ "$PELIPPER" != "" ];
+  then
+    printf "%s" "$PELIPPER" > Pelipper.txt
+    export CATFILE="Pelipper.txt"
+    export CATNAME="Pelipper"
+    $CATEGORIZE
+    rm Pelipper.txt
+    unset PELIPPER
+  fi
+
+  if [ "$PERSIAN" != "" ];
+  then
+    printf "%s" "$PERSIAN" > Persian.txt
+    export CATFILE="Persian.txt"
+    export CATNAME="Persian"
+    $CATEGORIZE
+    rm Persian.txt
+    unset PERSIAN
+  fi
+
+  if [ "$PETILIL" != "" ];
+  then
+    printf "%s" "$PETILIL" > Petilil.txt
+    export CATFILE="Petilil.txt"
+    export CATNAME="Petilil"
+    $CATEGORIZE
+    rm Petilil.txt
+    unset PETILIL
+  fi
+
+  if [ "$PHANPY" != "" ];
+  then
+    printf "%s" "$PHANPY" > Phanpy.txt
+    export CATFILE="Phanpy.txt"
+    export CATNAME="Phanpy"
+    $CATEGORIZE
+    rm Phanpy.txt
+    unset PHANPY
+  fi
+
+  if [ "$PHIONE" != "" ];
+  then
+    printf "%s" "$PHIONE" > Phione.txt
+    export CATFILE="Phione.txt"
+    export CATNAME="Phione"
+    $CATEGORIZE
+    rm Phione.txt
+    unset PHIONE
+  fi
+
+  if [ "$PICHU" != "" ];
+  then
+    printf "%s" "$PICHU" > Pichu.txt
+    export CATFILE="Pichu.txt"
+    export CATNAME="Pichu"
+    $CATEGORIZE
+    rm Pichu.txt
+    unset PICHU
+  fi
+
+  if [ "$PIDGEOT" != "" ];
+  then
+    printf "%s" "$PIDGEOT" > Pidgeot.txt
+    export CATFILE="Pidgeot.txt"
+    export CATNAME="Pidgeot"
+    $CATEGORIZE
+    rm Pidgeot.txt
+    unset PIDGEOT
+  fi
+
+  if [ "$PIDGEOTTO" != "" ];
+  then
+    printf "%s" "$PIDGEOTTO" > Pidgeotto.txt
+    export CATFILE="Pidgeotto.txt"
+    export CATNAME="Pidgeotto"
+    $CATEGORIZE
+    rm Pidgeotto.txt
+    unset PIDGEOTTO
+  fi
+
+  if [ "$PIDGEY" != "" ];
+  then
+    printf "%s" "$PIDGEY" > Pidgey.txt
+    export CATFILE="Pidgey.txt"
+    export CATNAME="Pidgey"
+    $CATEGORIZE
+    rm Pidgey.txt
+    unset PIDGEY
+  fi
+
+  if [ "$PIGNITE" != "" ];
+  then
+    printf "%s" "$PIGNITE" > Pignite.txt
+    export CATFILE="Pignite.txt"
+    export CATNAME="Pignite"
+    $CATEGORIZE
+    rm Pignite.txt
+    unset PIGNITE
+  fi
+
+  if [ "$PIKACHU" != "" ];
+  then
+    printf "%s" "$PIKACHU" > Pikachu.txt
+    export CATFILE="Pikachu.txt"
+    export CATNAME="Pikachu"
+    $CATEGORIZE
+    rm Pikachu.txt
+    unset PIKACHU
+  fi
+
+  if [ "$PILOSWINE" != "" ];
+  then
+    printf "%s" "$PILOSWINE" > Piloswine.txt
+    export CATFILE="Piloswine.txt"
+    export CATNAME="Piloswine"
+    $CATEGORIZE
+    rm Piloswine.txt
+    unset PILOSWINE
+  fi
+
+  if [ "$PINECO" != "" ];
+  then
+    printf "%s" "$PINECO" > Pineco.txt
+    export CATFILE="Pineco.txt"
+    export CATNAME="Pineco"
+    $CATEGORIZE
+    rm Pineco.txt
+    unset PINECO
+  fi
+
+  if [ "$PINSIR" != "" ];
+  then
+    printf "%s" "$PINSIR" > Pinsir.txt
+    export CATFILE="Pinsir.txt"
+    export CATNAME="Pinsir"
+    $CATEGORIZE
+    rm Pinsir.txt
+    unset PINSIR
+  fi
+
+  if [ "$PIPLUP" != "" ];
+  then
+    printf "%s" "$PIPLUP" > Piplup.txt
+    export CATFILE="Piplup.txt"
+    export CATNAME="Piplup"
+    $CATEGORIZE
+    rm Piplup.txt
+    unset PIPLUP
+  fi
+
+  if [ "$PLUSLE" != "" ];
+  then
+    printf "%s" "$PLUSLE" > Plusle.txt
+    export CATFILE="Plusle.txt"
+    export CATNAME="Plusle"
+    $CATEGORIZE
+    rm Plusle.txt
+    unset PLUSLE
+  fi
+
+  if [ "$POLITOED" != "" ];
+  then
+    printf "%s" "$POLITOED" > Politoed.txt
+    export CATFILE="Politoed.txt"
+    export CATNAME="Politoed"
+    $CATEGORIZE
+    rm Politoed.txt
+    unset POLITOED
+  fi
+
+  if [ "$POLIWAG" != "" ];
+  then
+    printf "%s" "$POLIWAG" > Poliwag.txt
+    export CATFILE="Poliwag.txt"
+    export CATNAME="Poliwag"
+    $CATEGORIZE
+    rm Poliwag.txt
+    unset POLIWAG
+  fi
+
+  if [ "$POLIWHIRL" != "" ];
+  then
+    printf "%s" "$POLIWHIRL" > Poliwhirl.txt
+    export CATFILE="Poliwhirl.txt"
+    export CATNAME="Poliwhirl"
+    $CATEGORIZE
+    rm Poliwhirl.txt
+    unset POLIWHIRL
+  fi
+
+  if [ "$POLIWRATH" != "" ];
+  then
+    printf "%s" "$POLIWRATH" > Poliwrath.txt
+    export CATFILE="Poliwrath.txt"
+    export CATNAME="Poliwrath"
+    $CATEGORIZE
+    rm Poliwrath.txt
+    unset POLIWRATH
+  fi
+
+  if [ "$PONYTA" != "" ];
+  then
+    printf "%s" "$PONYTA" > Ponyta.txt
+    export CATFILE="Ponyta.txt"
+    export CATNAME="Ponyta"
+    $CATEGORIZE
+    rm Ponyta.txt
+    unset PONYTA
+  fi
+
+  if [ "$POOCHYENA" != "" ];
+  then
+    printf "%s" "$POOCHYENA" > Poochyena.txt
+    export CATFILE="Poochyena.txt"
+    export CATNAME="Poochyena"
+    $CATEGORIZE
+    rm Poochyena.txt
+    unset POOCHYENA
+  fi
+
+  if [ "$PORYGON" != "" ];
+  then
+    printf "%s" "$PORYGON" > Porygon.txt
+    export CATFILE="Porygon.txt"
+    export CATNAME="Porygon"
+    $CATEGORIZE
+    rm Porygon.txt
+    unset PORYGON
+  fi
+
+  if [ "$PORYGONZ" != "" ];
+  then
+    printf "%s" "$PORYGONZ" > Porygon-Z.txt
+    export CATFILE="Porygon-Z.txt"
+    export CATNAME="Porygon-Z"
+    $CATEGORIZE
+    rm Porygon-Z.txt
+    unset PORYGONZ
+  fi
+
+  if [ "$PORYGON2" != "" ];
+  then
+    printf "%s" "$PORYGON2" > Porygon2.txt
+    export CATFILE="Porygon2.txt"
+    export CATNAME="Porygon2"
+    $CATEGORIZE
+    rm Porygon2.txt
+    unset PORYGON2
+  fi
+
+  if [ "$PRIMEAPE" != "" ];
+  then
+    printf "%s" "$PRIMEAPE" > Primeape.txt
+    export CATFILE="Primeape.txt"
+    export CATNAME="Primeape"
+    $CATEGORIZE
+    rm Primeape.txt
+    unset PRIMEAPE
+  fi
+
+  if [ "$PRINPLUP" != "" ];
+  then
+    printf "%s" "$PRINPLUP" > Prinplup.txt
+    export CATFILE="Prinplup.txt"
+    export CATNAME="Prinplup"
+    $CATEGORIZE
+    rm Prinplup.txt
+    unset PRINPLUP
+  fi
+
+  if [ "$PROBOPASS" != "" ];
+  then
+    printf "%s" "$PROBOPASS" > Probopass.txt
+    export CATFILE="Probopass.txt"
+    export CATNAME="Probopass"
+    $CATEGORIZE
+    rm Probopass.txt
+    unset PROBOPASS
+  fi
+
+  if [ "$PSYDUCK" != "" ];
+  then
+    printf "%s" "$PSYDUCK" > Psyduck.txt
+    export CATFILE="Psyduck.txt"
+    export CATNAME="Psyduck"
+    $CATEGORIZE
+    rm Psyduck.txt
+    unset PSYDUCK
+  fi
+
+  if [ "$PUPITAR" != "" ];
+  then
+    printf "%s" "$PUPITAR" > Pupitar.txt
+    export CATFILE="Pupitar.txt"
+    export CATNAME="Pupitar"
+    $CATEGORIZE
+    rm Pupitar.txt
+    unset PUPITAR
+  fi
+
+  if [ "$PURRLOIN" != "" ];
+  then
+    printf "%s" "$PURRLOIN" > Purrloin.txt
+    export CATFILE="Purrloin.txt"
+    export CATNAME="Purrloin"
+    $CATEGORIZE
+    rm Purrloin.txt
+    unset PURRLOIN
+  fi
+
+  if [ "$PURUGLY" != "" ];
+  then
+    printf "%s" "$PURUGLY" > Purugly.txt
+    export CATFILE="Purugly.txt"
+    export CATNAME="Purugly"
+    $CATEGORIZE
+    rm Purugly.txt
+    unset PURUGLY
+  fi
+
+  debug_end "Pokemon 'P' scripts"
+
 fi
-
-if [ $Palkia -ne 0 ];
-then
-  export CATFILE="Palkia.txt"
-  export CATNAME="Palkia"
-  $CATEGORIZE
-fi
-
-if [ $Palpitoad -ne 0 ];
-then
-  export CATFILE="Palpitoad.txt"
-  export CATNAME="Palpitoad"
-  $CATEGORIZE
-fi
-
-if [ $Panpour -ne 0 ];
-then
-  export CATFILE="Panpour.txt"
-  export CATNAME="Panpour"
-  $CATEGORIZE
-fi
-
-if [ $Pansage -ne 0 ];
-then
-  export CATFILE="Pansage.txt"
-  export CATNAME="Pansage"
-  $CATEGORIZE
-fi
-
-if [ $Pansear -ne 0 ];
-then
-  export CATFILE="Pansear.txt"
-  export CATNAME="Pansear"
-  $CATEGORIZE
-fi
-
-if [ $Paras -ne 0 ];
-then
-  export CATFILE="Paras.txt"
-  export CATNAME="Paras"
-  $CATEGORIZE
-fi
-
-if [ $Parasect -ne 0 ];
-then
-  export CATFILE="Parasect.txt"
-  export CATNAME="Parasect"
-  $CATEGORIZE
-fi
-
-if [ $Patrat -ne 0 ];
-then
-  export CATFILE="Patrat.txt"
-  export CATNAME="Patrat"
-  $CATEGORIZE
-fi
-
-if [ $Pawniard -ne 0 ];
-then
-  export CATFILE="Pawniard.txt"
-  export CATNAME="Pawniard"
-  $CATEGORIZE
-fi
-
-if [ $Pelipper -ne 0 ];
-then
-  export CATFILE="Pelipper.txt"
-  export CATNAME="Pelipper"
-  $CATEGORIZE
-fi
-
-if [ $Persian -ne 0 ];
-then
-  export CATFILE="Persian.txt"
-  export CATNAME="Persian"
-  $CATEGORIZE
-fi
-
-if [ $Petilil -ne 0 ];
-then
-  export CATFILE="Petilil.txt"
-  export CATNAME="Petilil"
-  $CATEGORIZE
-fi
-
-if [ $Phanpy -ne 0 ];
-then
-  export CATFILE="Phanpy.txt"
-  export CATNAME="Phanpy"
-  $CATEGORIZE
-fi
-
-if [ $Phione -ne 0 ];
-then
-  export CATFILE="Phione.txt"
-  export CATNAME="Phione"
-  $CATEGORIZE
-fi
-
-if [ $Pichu -ne 0 ];
-then
-  export CATFILE="Pichu.txt"
-  export CATNAME="Pichu"
-  $CATEGORIZE
-fi
-
-if [ $Pidgeot -ne 0 ];
-then
-  export CATFILE="Pidgeot.txt"
-  export CATNAME="Pidgeot"
-  $CATEGORIZE
-fi
-
-if [ $Pidgeotto -ne 0 ];
-then
-  export CATFILE="Pidgeotto.txt"
-  export CATNAME="Pidgeotto"
-  $CATEGORIZE
-fi
-
-if [ $Pidgey -ne 0 ];
-then
-  export CATFILE="Pidgey.txt"
-  export CATNAME="Pidgey"
-  $CATEGORIZE
-fi
-
-if [ $Pignite -ne 0 ];
-then
-  export CATFILE="Pignite.txt"
-  export CATNAME="Pignite"
-  $CATEGORIZE
-fi
-
-if [ $Pikachu -ne 0 ];
-then
-  export CATFILE="Pikachu.txt"
-  export CATNAME="Pikachu"
-  $CATEGORIZE
-fi
-
-if [ $Piloswine -ne 0 ];
-then
-  export CATFILE="Piloswine.txt"
-  export CATNAME="Piloswine"
-  $CATEGORIZE
-fi
-
-if [ $Pineco -ne 0 ];
-then
-  export CATFILE="Pineco.txt"
-  export CATNAME="Pineco"
-  $CATEGORIZE
-fi
-
-if [ $Pinsir -ne 0 ];
-then
-  export CATFILE="Pinsir.txt"
-  export CATNAME="Pinsir"
-  $CATEGORIZE
-fi
-
-if [ $Piplup -ne 0 ];
-then
-  export CATFILE="Piplup.txt"
-  export CATNAME="Piplup"
-  $CATEGORIZE
-fi
-
-if [ $Plusle -ne 0 ];
-then
-  export CATFILE="Plusle.txt"
-  export CATNAME="Plusle"
-  $CATEGORIZE
-fi
-
-if [ $Politoed -ne 0 ];
-then
-  export CATFILE="Politoed.txt"
-  export CATNAME="Politoed"
-  $CATEGORIZE
-fi
-
-if [ $Poliwag -ne 0 ];
-then
-  export CATFILE="Poliwag.txt"
-  export CATNAME="Poliwag"
-  $CATEGORIZE
-fi
-
-if [ $Poliwhirl -ne 0 ];
-then
-  export CATFILE="Poliwhirl.txt"
-  export CATNAME="Poliwhirl"
-  $CATEGORIZE
-fi
-
-if [ $Poliwrath -ne 0 ];
-then
-  export CATFILE="Poliwrath.txt"
-  export CATNAME="Poliwrath"
-  $CATEGORIZE
-fi
-
-if [ $Ponyta -ne 0 ];
-then
-  export CATFILE="Ponyta.txt"
-  export CATNAME="Ponyta"
-  $CATEGORIZE
-fi
-
-if [ $Poochyena -ne 0 ];
-then
-  export CATFILE="Poochyena.txt"
-  export CATNAME="Poochyena"
-  $CATEGORIZE
-fi
-
-if [ $Porygon -ne 0 ];
-then
-  export CATFILE="Porygon.txt"
-  export CATNAME="Porygon"
-  $CATEGORIZE
-fi
-
-if [ $PorygonZ -ne 0 ];
-then
-  export CATFILE="Porygon-Z.txt"
-  export CATNAME="Porygon-Z"
-  $CATEGORIZE
-fi
-
-if [ $Porygon2 -ne 0 ];
-then
-  export CATFILE="Porygon2.txt"
-  export CATNAME="Porygon2"
-  $CATEGORIZE
-fi
-
-if [ $Primeape -ne 0 ];
-then
-  export CATFILE="Primeape.txt"
-  export CATNAME="Primeape"
-  $CATEGORIZE
-fi
-
-if [ $Prinplup -ne 0 ];
-then
-  export CATFILE="Prinplup.txt"
-  export CATNAME="Prinplup"
-  $CATEGORIZE
-fi
-
-if [ $Probopass -ne 0 ];
-then
-  export CATFILE="Probopass.txt"
-  export CATNAME="Probopass"
-  $CATEGORIZE
-fi
-
-if [ $Psyduck -ne 0 ];
-then
-  export CATFILE="Psyduck.txt"
-  export CATNAME="Psyduck"
-  $CATEGORIZE
-fi
-
-if [ $Pupitar -ne 0 ];
-then
-  export CATFILE="Pupitar.txt"
-  export CATNAME="Pupitar"
-  $CATEGORIZE
-fi
-
-if [ $Purrloin -ne 0 ];
-then
-  export CATFILE="Purrloin.txt"
-  export CATNAME="Purrloin"
-  $CATEGORIZE
-fi
-
-if [ $Purugly -ne 0 ];
-then
-  export CATFILE="Purugly.txt"
-  export CATNAME="Purugly"
-  $CATEGORIZE
-fi
-
-
-rm Pachirisu.txt
-rm Palkia.txt
-rm Palpitoad.txt
-rm Panpour.txt
-rm Pansage.txt
-rm Pansear.txt
-rm Paras.txt
-rm Parasect.txt
-rm Patrat.txt
-rm Pawniard.txt
-rm Pelipper.txt
-rm Persian.txt
-rm Petilil.txt
-rm Phanpy.txt
-rm Phione.txt
-rm Pichu.txt
-rm Pidgeot.txt
-rm Pidgeotto.txt
-rm Pidgey.txt
-rm Pignite.txt
-rm Pikachu.txt
-rm Piloswine.txt
-rm Pineco.txt
-rm Pinsir.txt
-rm Piplup.txt
-rm Plusle.txt
-rm Politoed.txt
-rm Poliwag.txt
-rm Poliwhirl.txt
-rm Poliwrath.txt
-rm Ponyta.txt
-rm Poochyena.txt
-rm Porygon.txt
-rm Porygon-Z.txt
-rm Porygon2.txt
-rm Primeape.txt
-rm Prinplup.txt
-rm Probopass.txt
-rm Psyduck.txt
-rm Pupitar.txt
-rm Purrloin.txt
-rm Purugly.txt

@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'Smallpox' newpages.txt >> Smallpox.txt
+KEYWORDS_SMALLPOX="Small(| )pox"
 
-SMALLPOX=`stat --print=%s Smallpox.txt`
-
-if [ $SMALLPOX -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Smallpox.txt"
-  export CATNAME="Smallpox"
-  $CATEGORIZE
-fi
 
-rm Smallpox.txt
+  debug_start "Smallpox"
+
+  SMALLPOX="$(egrep -i "$KEYWORDS_SMALLPOX" newpages.txt)"
+
+  if [ "$SMALLPOX" != "" ];
+  then
+    printf "%s" "$SMALLPOX" > Smallpox.txt
+    export CATFILE="Smallpox.txt"
+    export CATNAME="Smallpox"
+    $CATEGORIZE
+    rm Smallpox.txt
+    unset SMALLPOX
+  fi
+
+  debug_end "Smallpox"
+
+fi

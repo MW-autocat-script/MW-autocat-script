@@ -11,7 +11,7 @@ egrep -i '\bFlute(s|)' newpages.txt | egrep -iv 'azure flute|Pok(e|é)(| )flute|
 egrep -i 'Guitar' newpages.txt | egrep -iv 'hero' >> Guitar.txt
 egrep -i "$KEYWORDS_HARP" newpages.txt | egrep -iv "harp seal">> Harp.txt
 egrep -i 'Piano' newpages.txt >> Piano.txt
-egrep -i 'on a recorder|on the recorder\]\]|for recorder\]\]|notes.+recorder|recorder.+notes' newpages.txt >> Recorder.txt
+egrep -i 'on a recorder|on the recorder$|for recorder$|notes.+recorder|recorder.+notes' newpages.txt >> Recorder.txt
 egrep -i 'Saxophone' newpages.txt >> Saxophone.txt
 egrep -i 'Violin' newpages.txt >> Violin.txt
 egrep -i "$KEYWORDS_VIOLA" newpages.txt >> Viola.txt

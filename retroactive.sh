@@ -22,6 +22,25 @@ echo $$ > $PIDFILE
 export CATEGORIZE="./util/Categorize.sh"
 #GET http://cfaj.freeshell.org/ipaddr.cgi > address.txt
 
+debug_start(){
+  local x="$1"
+  if [ "$DEBUG" == "yes" ] || [ "$DEBUG" == "y" ]; 
+  then
+    printf "Starting %s\n" "$x"
+  fi
+}
+
+debug_end(){
+  local y="$1"
+  if [ "$DEBUG" == "yes" ] || [ "$DEBUG" == "y" ]; 
+  then
+    printf "Finishing %s\n" "$y"
+  fi
+}
+
+export -f debug_start
+export -f debug_end  
+
 printf "Fetching all pages from wiki. This may take a long time on larger wikis.\n"
 
 python $PYWIKIPEDIADIR/pagegenerators.py -start:. -pt:1 |sed s'|  [0-9][0-9][0-9][0-9][0-9][0-9]: ||'|sed s'|  [0-9][0-9][0-9][0-9][0-9]: ||'|sed s'|  [0-9][0-9][0-9][0-9]: ||'  | sed s'|  [0-9][0-9][0-9]: ||' | sed s'|  [0-9][0-9]: ||' | sed s'|  [0-9]: ||' > newpages.txt

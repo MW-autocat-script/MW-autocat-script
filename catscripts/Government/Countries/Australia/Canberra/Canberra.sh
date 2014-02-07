@@ -1,14 +1,25 @@
 #!/bin/bash
 
-egrep -i 'Canberra' newpages.txt >> Canberra.txt
+KEYWORDS_CANBERRA="Canberra"
+KEYWORDS_CANBERRA_ALL="$KEYWORDS_CANBERRA"
 
-CANBERRA=`stat --print=%s Canberra.txt`
-
-if [ $CANBERRA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Canberra.txt"
-  export CATNAME="Canberra"
-  $CATEGORIZE
-fi
 
-rm Canberra.txt
+  debug_start "Canberra"
+
+  CANBERRA="$(egrep -i "$KEYWORDS_CANBERRA" newpages.txt)"
+
+  if [ "$CANBERRA" != "" ];
+  then
+    printf "%s" "$CANBERRA" > Canberra.txt
+    export CATFILE="Canberra.txt"
+    export CATNAME="Canberra"
+    $CATEGORIZE
+    rm Canberra.txt
+    unset CANBERRA
+  fi
+
+  debug_end "Canberra"
+
+fi

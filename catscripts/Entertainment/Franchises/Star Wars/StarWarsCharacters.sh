@@ -30,10 +30,7 @@ KEYWORDS_VENTRESS="Asajj|Ventress"
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Star Wars characters\n"
-  fi
+  debug_start "Star Wars characters"
 
   CADBANE="$(egrep -i "$KEYWORDS_CADBANE" newpages.txt)"
   CHEWBACCA="$(egrep -i "$KEYWORDS_CHEWBACCA" newpages.txt)"
@@ -197,6 +194,8 @@ then
     export CATFILE="R2D2.txt"
     export CATNAME="R2-D2"
     $CATEGORIZE
+    rm R2D2.txt
+    unset R2D2
   fi
 
   if [ "$REVAN" != "" ];
@@ -319,9 +318,6 @@ then
     unset VENTRESS
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Star Wars characters\n"
-  fi
+  debug_end "Star Wars characters"
 
 fi

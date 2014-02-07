@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'Studyladder|Study ladder|study lader|studdy ladder|studdyladder' newpages.txt > Studyladder.txt
+KEYWORDS_STUDYLADDER="Stud(|d)(|d)y(| )lad(|d)(|d)(|d)er"
 
-STUDYLADDER=`stat --print=%s Studyladder.txt`
-
-if [ $STUDYLADDER -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Studyladder.txt"
-  export CATNAME="Studyladder"
-  $CATEGORIZE
-fi
 
-rm Studyladder.txt
+  debug_start "Studyladder"
+
+  STUDYLADDER="$(egrep -i "$KEYWORDS_STUDYLADDER" newpages.txt)"
+
+  if [ "$STUDYLADDER" != "" ];
+  then
+    printf "%s" "$STUDYLADDER" > Studyladder.txt
+    export CATFILE="Studyladder.txt"
+    export CATNAME="Studyladder"
+    $CATEGORIZE
+    rm Studyladder.txt
+    unset STUDYLADDER
+  fi
+
+  debug_end "Studyladder"
+
+fi
