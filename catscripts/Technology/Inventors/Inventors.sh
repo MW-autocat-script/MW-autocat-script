@@ -18,20 +18,22 @@ KEYWORDS_INVENTORS_ALL="$KEYWORDS_INVENTORS|$KEYWORDS_INVENTORS_EXCLUDE|$KEYWORD
 if [ "$1" == "" ]; #Normal operation
 then
 
-  INVENTORS=`egrep -i "$KEYWORDS_INVENTORS|$KEYWORDS_INVENTORS_OTHER" newpages.txt | egrep -iv "$KEYWORDS_INVENTORS_EXCLUDE"`
-  BABBAGE=`egrep -i "$KEYWORDS_BABBAGE" newpages.txt`
-  BELL=`egrep -i "$KEYWORDS_ALEXANDERBELL" newpages.txt`
-  BENZ=`egrep -i "$KEYWORDS_BENZ" newpages.txt`
-  FRANKLIN=`egrep -i "$KEYWORDS_BENFRANKLIN" newpages.txt`
-  CARVER=`egrep -i "$KEYWORDS_GEORGEWASHINGTONCARVER" newpages.txt`
-  DAVINCI=`egrep -i "$KEYWORDS_DAVINCI" newpages.txt`
-  EDISON=`egrep -i "$KEYWORDS_EDISON" newpages.txt`
-  TESLA=`egrep -i "$KEYWORDS_TESLA" newpages.txt | egrep -iv "$KEYWORDS_TESLA_EXCLUDE"`
-  WHITNEY=`egrep -i "$KEYWORDS_ELIWHITNEY" newpages.txt`
+  debug_start "Inventors"
+
+  INVENTORS="$(egrep -i "$KEYWORDS_INVENTORS|$KEYWORDS_INVENTORS_OTHER" newpages.txt | egrep -iv "$KEYWORDS_INVENTORS_EXCLUDE")"
+  BABBAGE="$(egrep -i "$KEYWORDS_BABBAGE" newpages.txt)"
+  BELL="$(egrep -i "$KEYWORDS_ALEXANDERBELL" newpages.txt)"
+  BENZ="$(egrep -i "$KEYWORDS_BENZ" newpages.txt)"
+  FRANKLIN="$(egrep -i "$KEYWORDS_BENFRANKLIN" newpages.txt)"
+  CARVER="$(egrep -i "$KEYWORDS_GEORGEWASHINGTONCARVER" newpages.txt)"
+  DAVINCI="$(egrep -i "$KEYWORDS_DAVINCI" newpages.txt)"
+  EDISON="$(egrep -i "$KEYWORDS_EDISON" newpages.txt)"
+  TESLA="$(egrep -i "$KEYWORDS_TESLA" newpages.txt | egrep -iv "$KEYWORDS_TESLA_EXCLUDE")"
+  WHITNEY="$(egrep -i "$KEYWORDS_ELIWHITNEY" newpages.txt)"
 
   if [ "$INVENTORS" != "" ];
   then
-    egrep -i "$KEYWORDS_INVENTORS" newpages.txt | egrep -iv "$KEYWORDS_INVENTORS_EXCLUDE" > Inventors.txt
+    printf "%s" "$INVENTORS" > Inventors.txt
     export CATFILE="Inventors.txt"
     export CATNAME="Inventors"
     $CATEGORIZE
@@ -41,7 +43,7 @@ then
 
   if [ "$BABBAGE"  != "" ];
   then
-    egrep -i "$KEYWORDS_BABBAGE" newpages.txt > CharlesBabbage.txt
+    printf "%s" "$BABBAGE" > CharlesBabbage.txt
     export CATFILE="CharlesBabbage.txt"
     export CATNAME="Charles Babbage"
     $CATEGORIZE
@@ -51,7 +53,7 @@ then
 
   if [ "$BELL" != "" ];
   then
-    egrep -i "$KEYWORDS_ALEXANDERBELL" newpages.txt > AlexanderGrahamBell.txt
+    printf "%s" "$BELL" > AlexanderGrahamBell.txt
     export CATFILE="AlexanderGrahamBell.txt"
     export CATNAME="Alexander Graham Bell"
     $CATEGORIZE
@@ -61,7 +63,7 @@ then
 
   if [ "$BENZ" != "" ];
   then
-    egrep -i "$KEYWORDS_BENZ" newpages.txt > KarlBenz.txt
+    printf "%s" "$BENZ" > KarlBenz.txt
     export CATFILE="KarlBenz.txt"
     export CATNAME="Karl Benz"
     $CATEGORIZE
@@ -71,7 +73,7 @@ then
 
   if [ "$FRANKLIN" != "" ];
   then
-    egrep -i "$KEYWORDS_BENFRANKLIN" newpages.txt > BenjaminFranklin.txt
+    printf "%s" "$FRANKLIN" > BenjaminFranklin.txt
     export CATFILE="BenjaminFranklin.txt"
     export CATNAME="Benjamin Franklin"
     $CATEGORIZE
@@ -81,7 +83,7 @@ then
 
   if [ "$CARVER" != "" ];
   then
-    egrep -i "$KEYWORDS_GEORGEWASHINGTONCARVER" newpages.txt > GeorgeWashingtonCarver.txt
+    printf "%s" "$CARVER" > GeorgeWashingtonCarver.txt
     export CATFILE="GeorgeWashingtonCarver.txt"
     export CATNAME="George Washington Carver"
     $CATEGORIZE
@@ -91,7 +93,7 @@ then
 
   if [ "$DAVINCI" != "" ];
   then
-    egrep -i "$KEYWORDS_DAVINCI" newpages.txt > LeonardoDaVinci.txt
+    printf "%s" "$DAVINCI" > LeonardoDaVinci.txt
     export CATFILE="LeonardoDaVinci.txt"
     export CATNAME="Leonardo da Vinci"
     $CATEGORIZE
@@ -101,17 +103,17 @@ then
 
   if [ "$EDISON" != "" ];
   then
-    egrep -i "$KEYWORDS_EDISON" newpages.txt > ThomasEdison.txt
+    printf "%s" "$EDISON" > ThomasEdison.txt
     export CATFILE="ThomasEdison.txt"
     export CATNAME="Thomas Edison"
     $CATEGORIZE
-    rm Edison.txt
+    rm ThomasEdison.txt
     unset EDISON
   fi
 
   if [ "$TESLA" != "" ];
   then
-    egrep -i "$KEYWORDS_TESLA" newpages.txt | egrep -iv "$KEYWORDS_TESLA_EXCLUDE" > NikolaTesla.txt
+    printf "%s" "$TESLA" > NikolaTesla.txt
     export CATFILE="NikolaTesla.txt"
     export CATNAME="Nikola Tesla"
     $CATEGORIZE
@@ -121,11 +123,14 @@ then
 
   if [ "$WHITNEY" != "" ];
   then
-    egrep -i "$KEYWORDS_ELIWHITNEY" newpages.txt > EliWhitney.txt
+    printf "%s" "$WHITNEY" > EliWhitney.txt
     export CATFILE="EliWhitney.txt"
     export CATNAME="Eli Whitney"
     $CATEGORIZE
     rm EliWhitney.txt
     unset WHITNEY
   fi
+
+  debug_end "Inventors"
+
 fi

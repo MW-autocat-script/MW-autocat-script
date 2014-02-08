@@ -1,44 +1,61 @@
 #!/bin/bash 
 
-egrep -i 'Manganese' newpages.txt >> Manganese.txt
-egrep -i 'Technetium' newpages.txt >> Technetium.txt
-egrep -i 'Rhenium' newpages.txt >> Rhenium.txt
-egrep -i 'Bohrium' newpages.txt >> Bohrium.txt
+KEYWORDS_MANGANESE="Manganese"
+KEYWORDS_TECHNETIUM="Technetium"
+KEYWORDS_RHENIUM="Rhenium"
+KEYWORDS_BOHRIUM="Bohrium"
+KEYWORDS_GROUP7_ELEMENTS="$KEYWORDS_MANGANESE|$KEYWORDS_TECHNETIUM|$KEYWORDS_RHENIUM|$KEYWORDS_BOHRIUM"
 
-MANGANESE=`stat --print=%s Manganese.txt`
-TECHNETIUM=`stat --print=%s Technetium.txt`
-RHENIUM=`stat --print=%s Rhenium.txt`
-BOHRIUM=`stat --print=%s Bohrium.txt`
-
-if [ $MANGANESE -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Manganese.txt"
-  export CATNAME="Manganese"
-  $CATEGORIZE
-fi
 
-if [ $TECHNETIUM -ne 0 ];
-then
-  export CATFILE="Technetium.txt"
-  export CATNAME="Technetium"
-  $CATEGORIZE
-fi
+  debug_start "Group 7 elements"
 
-if [ $RHENIUM -ne 0 ];
-then
-  export CATFILE="Rhenium.txt"
-  export CATNAME="Rhenium"
-  $CATEGORIZE
-fi
+  MANGANESE="$(egrep -i "$KEYWORDS_MANGANESE" newpages.txt)"
+  TECHNETIUM="$(egrep -i "$KEYWORDS_TECHNETIUM" newpages.txt)"
+  RHENIUM="$(egrep -i "$KEYWORDS_RHENIUM" newpages.txt)"
+  BOHRIUM="$(egrep -i "$KEYWORDS_BOHRIUM" newpages.txt)"
 
-if [ $BOHRIUM -ne 0 ];
-then
-  export CATFILE="Bohrium.txt"
-  export CATNAME="Bohrium"
-  $CATEGORIZE
-fi
+  if [ "$MANGANESE" != "" ];
+  then
+    printf "%s" "$MANGANESE" > Manganese.txt
+    export CATFILE="Manganese.txt"
+    export CATNAME="Manganese"
+    $CATEGORIZE
+    rm Manganese.txt
+    unset MANGANESE
+  fi
 
-rm Manganese.txt
-rm Technetium.txt
-rm Rhenium.txt
-rm Bohrium.txt
+  if [ "$TECHNETIUM" != "" ];
+  then
+    printf "%s" "$TECHNETIUM" > Technetium.txt
+    export CATFILE="Technetium.txt"
+    export CATNAME="Technetium"
+    $CATEGORIZE
+    rm Technetium.txt
+    unset TECHNETIUM
+  fi
+
+  if [ "$RHENIUM" != "" ];
+  then
+    printf "%s" "$RHENIUM" > Rhenium.txt
+    export CATFILE="Rhenium.txt"
+    export CATNAME="Rhenium"
+    $CATEGORIZE
+    rm Rhenium.txt
+    unset RHENIUM
+  fi
+
+  if [ "$BOHRIUM" != "" ];
+  then
+    printf "%s" "$BOHRIUM" > Bohrium.txt
+    export CATFILE="Bohrium.txt"
+    export CATNAME="Bohrium"
+    $CATEGORIZE
+    rm Bohrium.txt
+    unset BOHRIUM
+  fi
+
+  debug_end "Group 7 elements"
+
+fi

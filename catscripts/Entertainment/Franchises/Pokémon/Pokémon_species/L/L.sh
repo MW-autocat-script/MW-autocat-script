@@ -1,19 +1,36 @@
 #!/bin/bash
-egrep -i 'Lairon' newpages.txt >> Lairon.txt
-egrep -i 'Lampent' newpages.txt >> Lampent.txt
-egrep -i 'Landorus' newpages.txt >> Landorus.txt
-egrep -i 'Lanturn' newpages.txt >> Lanturn.txt
-egrep -i 'Lapras' newpages.txt >> Lapras.txt
-egrep -i 'Larvesta' newpages.txt >> Larvesta.txt
-egrep -i 'Larvitar' newpages.txt >> Larvitar.txt
-egrep -i 'Latias' newpages.txt >> Latias.txt
-egrep -i 'Latios' newpages.txt >> Latios.txt
-egrep -i 'Leafeon' newpages.txt >> Leafeon.txt
-egrep -i 'Leavanny' newpages.txt >> Leavanny.txt
-egrep -i 'Ledian' newpages.txt >> Ledian.txt
-egrep -i 'Ledyba' newpages.txt >> Ledyba.txt
-egrep -i 'Lickilicky' newpages.txt >> Lickilicky.txt
-egrep -i 'Lickitung' newpages.txt >> Lickitung.txt
+
+KEYWORDS_LAIRON="Lairon"
+KEYWORDS_LAMPENT="Lampent"
+KEYWORDS_LANDORUS="Landorus"
+KEYWORDS_LANTURN="Lanturn"
+KEYWORDS_LAPRAS="Lapras"
+KEYWORDS_LARVESTA="Larvesta"
+KEYWORDS_LARVITAR="Larvitar"
+KEYWORDS_LATIAS="Latias"
+KEYWORDS_LATIOS="Latios"
+KEYWORDS_LEAFEON="Leafeon"
+KEYWORDS_LEAVANNY="Leavanny"
+KEYWORDS_LEDIAN="Ledian"
+KEYWORDS_LEDYBA="Ledyba"
+KEYWORDS_LICKILICKY="Lickilicky"
+KEYWORDS_LICKITUNG="Lickitung"
+
+egrep -i "$KEYWORDS_LAIRON" newpages.txt >> Lairon.txt
+egrep -i "$KEYWORDS_LAMPENT" newpages.txt >> Lampent.txt
+egrep -i "$KEYWORDS_LANDORUS" newpages.txt >> Landorus.txt
+egrep -i "$KEYWORDS_LANTURN" newpages.txt >> Lanturn.txt
+egrep -i "$KEYWORDS_LAPRAS" newpages.txt >> Lapras.txt
+egrep -i "$KEYWORDS_LARVESTA" newpages.txt >> Larvesta.txt
+egrep -i "$KEYWORDS_LARVITAR" newpages.txt >> Larvitar.txt
+egrep -i "$KEYWORDS_LATIAS" newpages.txt >> Latias.txt
+egrep -i "$KEYWORDS_LATIOS" newpages.txt >> Latios.txt
+egrep -i "$KEYWORDS_LEAFEON" newpages.txt >> Leafeon.txt
+egrep -i "$KEYWORDS_LEAVANNY" newpages.txt >> Leavanny.txt
+egrep -i "$KEYWORDS_LEDIAN" newpages.txt >> Ledian.txt
+egrep -i "$KEYWORDS_LEDYBA" newpages.txt >> Ledyba.txt
+egrep -i "$KEYWORDS_LICKILICKY" newpages.txt >> Lickilicky.txt
+egrep -i "$KEYWORDS_LICKITUNG" newpages.txt >> Lickitung.txt
 egrep -i 'Liepard' newpages.txt >> Liepard.txt
 egrep -i 'Lileep' newpages.txt >> Lileep.txt
 egrep -i 'Lilligant' newpages.txt >> Lilligant.txt
