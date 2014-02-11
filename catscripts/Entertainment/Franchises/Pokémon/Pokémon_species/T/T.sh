@@ -1,4 +1,21 @@
 #!/bin/bash
+
+KEYWORDS_TAILLOW="Taillow"
+KEYWORDS_TANGELA="Tangela"
+KEYWORDS_TANGROWTH="Tangrowth"
+KEYWORDS_TAUROS="Tauros"
+KEYWORDS_TEDDIURSA="Teddiursa"
+KEYWORDS_TENTACOOL="Tentacool"
+KEYWORDS_TENTACRUEL="Tentacruel"
+KEYWORDS_TEPIG="Tepig"
+KEYWORDS_THROH="Throh"
+KEYWORDS_THUNDURUS="Thundurus"
+KEYWORDS_TIMBURR="Timburr"
+KEYWORDS_TIRTOUGA="Tirtouga"
+KEYWORDS_TOGEKISS="Togekiss"
+KEYWORDS_TOGEPI="Togepi"
+KEYWORDS_TOGETIC="Togetic"
+
 egrep -i 'Taillow' newpages.txt >> Taillow.txt
 egrep -i 'Tangela' newpages.txt >> Tangela.txt
 egrep -i 'Tangrowth' newpages.txt >> Tangrowth.txt

@@ -1,5 +1,10 @@
 #!/bin/bash
 
+export SPORTSDIR="./catscripts/Lifestyle/Sports"
+
+. $SPORTSDIR/Autoracing.sh
+. $SPORTSDIR/Olympics.sh
+
 KEYWORDS_SOCCER="soccer|footballer"
 KEYWORDS_CRONALDO="Cristiano(| )Romaldo|\bC(\.|-| )(| )ronaldo"
 KEYWORDS_LMESSI="\bMessi(|s)\b"
@@ -300,7 +305,3 @@ then
   fi
 
 fi
-
-export CURRENTDIR="./catscripts/Lifestyle/Sports"
-
-$CURRENTDIR/Autoracing.sh
