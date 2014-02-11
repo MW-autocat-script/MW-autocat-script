@@ -1,14 +1,25 @@
 #!/bin/bash
 
-egrep -i 'Malaysia\b' newpages.txt >> Malaysia.txt
+KEYWORDS_MALAYSIA="Malaysia\b"
+KEYWORDS_MALAYSIA_ALL="$KEYWORDS_MALAYSIA"
 
-MALAYSIA=`stat --print=%s Malaysia.txt`
-
-if [ $MALAYSIA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Malaysia.txt"
-  export CATNAME="Malaysia"
-  $CATEGORIZE
-fi
 
-rm Malaysia.txt
+  debug_start "Malaysia"
+
+  MALAYSIA="$(egrep -i "$KEYWORDS_MALAYSIA" newpages.txt)"
+
+  if [ "$MALAYSIA" != "" ];
+  then
+    printf "%s" "$KEYWORDS_MALAYSIA" > Malaysia.txt
+    export CATFILE="Malaysia.txt"
+    export CATNAME="Malaysia"
+    $CATEGORIZE
+    rm Malaysia.txt
+    unset MALAYSIA
+  fi
+
+  debug_end "Malaysia"
+
+fi

@@ -1,14 +1,25 @@
 #!/bin/bash
 
-egrep -i 'Hondura(s|n)' newpages.txt >> Honduras.txt
+KEYWORDS_HONDURAS="Hondura(s|n)"
+KEYWORDS_HONDURAS_ALL="$KEYWORDS_HONDURAS"
 
-HONDURAS=`stat --print=%s Honduras.txt`
-
-if [ $HONDURAS -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Honduras.txt"
-  export CATNAME="Honduras"
-  $CATEGORIZE
-fi
 
-rm Honduras.txt
+  debug_start "Honduras"
+
+  HONDURAS="$(egrep -i "$KEYWORDS_HONDURAS" newpages.txt)"
+
+  if [ "$HONDURAS" != "" ];
+  then
+    printf "%s" "$HONDURAS" > Honduras.txt
+    export CATFILE="Honduras.txt"
+    export CATNAME="Honduras"
+    $CATEGORIZE
+    rm Honduras.txt
+    unset HONDURAS
+  fi
+
+  debug_end "Honduras"
+
+fi

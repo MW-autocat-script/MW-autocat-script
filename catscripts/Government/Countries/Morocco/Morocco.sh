@@ -1,14 +1,26 @@
 #!/bin/bash
 
-egrep -i 'Morocco|Moroccan' newpages.txt >> Morocco.txt
+KEYWORDS_MOROCCO="Morocco|Moroccan"
+KEYWORDS_MOROCCO_ALL="$KEYWORDS_MOROCCO"
 
-MOROCCO=`stat --print=%s Morocco.txt`
-
-if [ $MOROCCO -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Morocco.txt"
-  export CATNAME="Morocco"
-  $CATEGORIZE
+  
+  debug_start "Morocco"
+
+  MOROCCO="$(egrep -i "$KEYWORDS_MOROCCO" newpages.txt)"
+
+  if [ "$MOROCCO" != "" ];
+  then
+    printf "%s" "$MOROCCO" > Morocco.txt
+    export CATFILE="Morocco.txt"
+    export CATNAME="Morocco"
+    $CATEGORIZE
+    rm Morocco.txt
+    unset MOROCCO
+  fi
+
+  debug_end "Morocco"
+
 fi
 
-rm Morocco.txt
