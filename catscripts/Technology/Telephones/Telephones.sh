@@ -7,8 +7,9 @@ KEYWORDS_IPHONE="\bi(| )phone"
 KEYWORDS_NOKIA="Nokia"
 KEYWORDS_LGSCRIPT="LG(| )Script"
 KEYWORDS_SMS="\bSMS\b|text(| )messag(e|ing)|texting|sexting"
+KEYWORDS_SNAPCHAT="Snap(| )chat"
 
-KEYWORDS_CELLPHONES_EXCLUDE="$KEYWORDS_IPHONE|$KEYWORDS_NOKIA|$KEYWORDS_LGSCRIPT|$KEYWORDS_SMS"
+KEYWORDS_CELLPHONES_EXCLUDE="$KEYWORDS_IPHONE|$KEYWORDS_NOKIA|$KEYWORDS_LGSCRIPT|$KEYWORDS_SMS|$KEYWORDS_SNAPCHAT"
 KEYWORDS_CELLPHONES_ALL="$KEYWORDS_CELLPHONES|$KEYWORDS_IPHONE|$KEYWORDS_NOKIA|$KEYWORDS_LGSCRIPT|$KEYWORDS_SMS"
 KEYWORDS_TELEPHONES_EXCLUDE="$KEYWORDS_CELLPHONES_ALL|$KEYWORDS_CELLPHONES_EXCLUDE"
 
@@ -16,10 +17,7 @@ KEYWORDS_TELEPHONES_EXCLUDE="$KEYWORDS_CELLPHONES_ALL|$KEYWORDS_CELLPHONES_EXCLU
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Telephones\n"
-  fi
+  debug_start "Snapchat"
 
   TELEPHONES="$(egrep -i "$KEYWORDS_TELEPHONES" newpages.txt | egrep -iv "$KEYWORDS_TELEPHONES_EXCLUDE")"
   CELLPHONES="$(egrep -i "$KEYWORDS_CELLPHONES" newpages.txt | egrep -iv "$KEYWORDS_CELLPHONES_EXCLUDE")"
@@ -27,6 +25,7 @@ then
   NOKIA="$(egrep -i "$KEYWORDS_NOKIA" newpages.txt)"
   LGSCRIPT="$(egrep -i "$KEYWORDS_LGSCRIPT" newpages.txt)"
   SMS="$(egrep -i "$KEYWORDS_SMS" newpages.txt)"
+  SNAPCHAT="$(egrep -i "$KEYWORDS_SNAPCHAT" newpages.txt)"
 
   if [ "$TELEPHONES" != "" ];
   then
@@ -88,9 +87,16 @@ then
     unset SMS
   fi
 
-  if [ "$DEBUG" == "yes" ];
+  if [ "$SNAPCHAT" != "" ];
   then
-    printf "Finishing Telephones\n"
+    printf "%s" "$SNAPCHAT" > Snapchat.txt
+    export CATFILE="Snapchat.txt"
+    export CATNAME="Snapchat"
+    $CATEGORIZE
+    rm Snapchat.txt
+    unset SNAPCHAT
   fi
+
+  debug_end "Snapchat"
 
 fi

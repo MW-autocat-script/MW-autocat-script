@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_ACTIVEDIRECTORY="Active(| )Directory"
+KEYWORDS_ACTIVEDIRECTORY="Active(| )Directory|domain(| )controller|Windows(| )domain"
 KEYWORDS_WINDOWS98="Windows(| )98|Win98"
 KEYWORDS_WINDOWSNT="Windows(| )NT"
 KEYWORDS_WINDOWS2000="Windows(| )2000|Win2000|W2k\b"
