@@ -9,16 +9,16 @@ KEYWORDS_DATASTORAGE="Data(| )storage|(USB|Flash)(| )drive|memory(| )stick|SD(| 
 KEYWORDS_FLOPPY="Floppy(| )(disk|drive)|(o|i)n(| )a(| )floppy"
 KEYWORDS_HARD_DRIVE="Hard (disk|drive)|\bSSD|solid(| )state(| )drive"
 KEYWORDS_DATASTORAGE_EXCLUDE="$KEYWORDS_HARD_DRIVE|$KEYWORDS_FLOPPY"
+KEYWORDS_LAPTOPS="lap(| )top|net(| )book|note(| )book(| )(computer|PC)|Toshiba(| )Satellite"
+KEYWORDS_MACBOOKS="Mac(| )book"
+KEYWORDS_LAPTOPS_EXCLUDE="$KEYWORDS_MACBOOKS"
 KEYWORDS_COMPUTER_HARDWARE="Device(| )driver|Computer(| )hardware|adapter(| )card|\bUSB|\bPCI\b|expansion(| )bus" #Stuff to put in the parent category
-KEYWORDS_COMPUTER_HARDWARE_EXCLUDE="$KEYWORDS_DATASTORAGE|$KEYWORDS_DATASTORAGE_EXCLUDE|$KEYWORDS_MICROPROCESSOR|$KEYWORDS_MOTHERBOARD|$KEYWORDS_PRINTER|$KEYWORDS_SOUND_CARDS|$KEYWORDS_VIDEO_CARDS"
+KEYWORDS_COMPUTER_HARDWARE_EXCLUDE="$KEYWORDS_DATASTORAGE|$KEYWORDS_DATASTORAGE_EXCLUDE|$KEYWORDS_MICROPROCESSOR|$KEYWORDS_MOTHERBOARD|$KEYWORDS_PRINTER|$KEYWORDS_SOUND_CARDS|$KEYWORDS_VIDEO_CARDS|$KEYWORDS_LAPTOPS|$KEYWORDS_MACBOOKS"
 
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Computer hardware\n"
-  fi
+  debug_start "Computer hardware"
 
   MOTHERBOARDS="$(egrep -i "$KEYWORDS_MOTHERBOARD" newpages.txt)"
   VIDEOCARDS="$(egrep -i "$KEYWORDS_VIDEO_CARDS" newpages.txt)"
@@ -28,6 +28,8 @@ then
   DATASTORAGE="$(egrep -i "$KEYWORDS_DATASTORAGE" newpages.txt | egrep -iv "$KEYWORDS_DATASTORAGE_EXCLUDE")"
   HARDDRIVE="$(egrep -i "$KEYWORDS_HARD_DRIVE" newpages.txt)"
   FLOPPY="$(egrep -i "$KEYWORDS_FLOPPY" newpages.txt)"
+  LAPTOPS="$(egrep -i "$KEYWORDS_LAPTOPS" newpages.txt | egrep -iv "$KEYWORDS_MACBOOKS")"
+  MACBOOKS="$(egrep -i "$KEYWORDS_MACBOOKS" newpages.txt)"
   HARDWARE="$(egrep -i "$KEYWORDS_COMPUTER_HARDWARE" newpages.txt | egrep -iv "$KEYWORDS_COMPUTER_HARDWARE_EXCLUDE")"
 
   if [ "$MOTHERBOARDS" != "" ];
@@ -110,6 +112,26 @@ then
     unset FLOPPY
   fi
 
+  if [ "$LAPTOPS" != "" ];
+  then
+    printf "%s" "$LAPTOPS" > Laptops.txt
+    export CATFILE="Laptops.txt"
+    export CATNAME="Laptops"
+    $CATEGORIZE
+    rm Laptops.txt
+    unset LAPTOPS
+  fi
+
+  if [ "$MACBOOKS" != "" ];
+  then
+    printf "%s" "$MACBOOKS" > Macbooks.txt
+    export CATFILE="Macbooks.txt"
+    export CATNAME="Macbooks"
+    $CATEGORIZE
+    rm Macbooks.txt
+    unset MACBOOKS
+  fi
+
   if [ "$HARDWARE" != "" ];
   then
     printf "%s" "$HARDWARE" > ComputerHardware.txt
@@ -120,9 +142,6 @@ then
     unset HARDWARE
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Computer hardware\n"
-  fi
+  debug_end "Computer hardware"
 
 fi
