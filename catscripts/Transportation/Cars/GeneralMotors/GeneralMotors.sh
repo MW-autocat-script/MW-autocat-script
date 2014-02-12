@@ -15,6 +15,10 @@ KEYWORDS_CHEVROLETCOBALT="Chev(rolet|y)(| )Cobalt|[0-9]{2,}(| )Cobalt" #Chevrole
 KEYWORDS_CHEVROLETCORVETTE="Corvette"
 KEYWORDS_CHEVROLETCARS="$KEYWORDS_CHEVROLETAGILE|$KEYWORDS_CHEVROLETAVEO|$KEYWORDS_CHEVROLETBERETTA|$KEYWORDS_CHEVROLETCAMARO|$KEYWORDS_CHEVROLETCAPRICE|$KEYWORDS_CHEVROLETCAVALIER|$KEYWORDS_CHEVROLETCELTA|$KEYWORDS_CHEVROLETCOBALT|$KEYWORDS_CHEVROLETCORVETTE"
 
+#Cadillac (all for now)
+
+KEYWORDS_CADILLAC="Cadillac"
+
 if [ "$1" == "" ];
 then
   
@@ -118,6 +122,18 @@ then
     $CATEGORIZE
     rm Corvette.txt
     unset CORVETTE
+  fi
+
+  CADILLAC="$(egrep -i "$KEYWORDS_CADILLAC" newpages.txt)"
+
+  if [ "$CADILLAC" != "" ];
+  then
+    printf "%s" "$CADILLAC" > Cadillac.txt
+    export CATFILE="Cadillac.txt"
+    export CATNAME="Cadillac"
+    $CATEGORIZE
+    rm Cadillac.txt
+    unset CADILLAC
   fi
 
   debug_end "General Motors"
