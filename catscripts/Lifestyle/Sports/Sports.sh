@@ -3,6 +3,7 @@
 export SPORTSDIR="./catscripts/Lifestyle/Sports"
 
 . $SPORTSDIR/Autoracing.sh
+. $SPORTSDIR/Iceskating.sh
 . $SPORTSDIR/Olympics.sh
 
 KEYWORDS_SOCCER="soccer|footballer"
