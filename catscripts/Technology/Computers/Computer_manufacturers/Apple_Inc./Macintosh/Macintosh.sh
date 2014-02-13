@@ -1,15 +1,27 @@
 #!/bin/bash
 
-egrep -i 'Apple Macintosh|Mac(| )Pro|Mac(| )Book|\bi(| )book|Power(| )Mac|\bi(| )Mac' newpages.txt >> Macintosh.txt
-egrep -i 'on a mac\b|my mac\b|for a mac\b' newpages.txt >> Macintosh.txt
+. ./catscripts/Technology/Computers/Computer_hardware/Computerhardware.sh norun
 
-MACINTOSH=`stat --print=%s Macintosh.txt`
+KEYWORDS_MACINTOSH="Apple(| )Macintosh|\bibook|Power(| )Mac|\bi(| )Mac|on(| )a(| )mac|\bmy(| )mac\b|for(| )a(| )mac\b"
+KEYWORDS_MACINTOSH_EXCLUDE="$KEYWORDS_MACBOOKS"
 
-if [ $MACINTOSH -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Macintosh.txt"
-  export CATNAME="Macintosh"
-  $CATEGORIZE
-fi
 
-rm Macintosh.txt
+  debug_start "Macintosh"
+
+  MACINTOSH="$(egrep -i "$KEYWORDS_MACINTOSH" newpages.txt | egrep -iv "$KEYWORDS_MACINTOSH_EXCLUDE")"
+
+  if [ "$MACINTOSH" != "" ];
+  then
+    printf "%s" "$MACINTOSH" > Macintosh.txt
+    export CATFILE="Macintosh.txt"
+    export CATNAME="Macintosh"
+    $CATEGORIZE
+    rm Macintosh.txt
+    unset MACINTOSH
+  fi
+
+  debug_end "Macintosh"
+
+fi
