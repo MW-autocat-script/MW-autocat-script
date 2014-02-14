@@ -4,7 +4,7 @@ KEYWORDS_WIRELESS="wire(| )less(| )(router|network|card|Ethernet)|\bWLAN(|s)\b|D
 
 KEYWORDS_WIRED="Ethernet|Category(| )(3|4|5|6|7)(e|)(| )cable|RJ(| |-)45|network(| )cable"
 
-KEYWORDS_NETWORK_OTHER="Computer(| )network|\b(WAN|LAN|VLAN)(|s)\b|\bNIC(|s)\b|DHCP|network(| )admin|\bBOOTP|PXE|\bDNS(|SEC)\b|\bDDoS\b|\bTCP\b|\bIPX\b|IP(| )address|OSPF|EIGRP|network(| )interface|Intranet|default(| )gateway|subnet|netmask|i(p|f)config|port(| )forward|IPSEC"
+KEYWORDS_NETWORK_OTHER="Computer(| )network|\b(WAN|LAN|VLAN)(|s)\b|\bNIC(|s)\b|DHCP|network(| )admin|\bBOOTP|PXE|\bDNS(|SEC)\b|\bDDoS\b|\bTCP\b|\bIPX\b|IP(| )address|OSPF|EIGRP|network(| )interface|Intranet|default(| )gateway|subnet|netmask|i(p|f)config|port(| )forward|IPSEC|MAC(| )address"
 
 KEYWORDS_NETWORK="$KEYWORDS_WIRED|$KEYWORDS_WIRELESS|$KEYWORDS_NETWORK_OTHER"
 
@@ -23,18 +23,15 @@ KEYWORDS_NETWORK_ALL="$KEYWORDS_NETWORK|$KEYWORDS_BLUETOOTH|$KEYWORDS_FTP|$KEYWO
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Computer networking\n"
-  fi
+  debug_start "Computer networking"
 
-  NETWORK=`egrep -i "$KEYWORDS_NETWORK" newpages.txt | egrep -iv "$KEYWORDS_NETWORK_EXCLUDE"`
-  TELNET=`egrep -i "$KEYWORDS_TELNET" newpages.txt`
-  SSH=`egrep -i "$KEYWORDS_SSH" newpages.txt`
-  FTP=`egrep -i "$KEYWORDS_FTP" newpages.txt`
-  VOIP=`egrep -i "$KEYWORDS_VOIP" newpages.txt | egrep -iv "$KEYWORDS_VOIP_EXCLUDE"`
-  SKYPE=`egrep -i "$KEYWORDS_SKYPE" newpages.txt`
-  BLUETOOTH=`egrep -i "$KEYWORDS_BLUETOOTH" newpages.txt`
+  NETWORK="$(egrep -i "$KEYWORDS_NETWORK" newpages.txt | egrep -iv "$KEYWORDS_NETWORK_EXCLUDE")"
+  TELNET="$(egrep -i "$KEYWORDS_TELNET" newpages.txt)"
+  SSH="$(egrep -i "$KEYWORDS_SSH" newpages.txt)"
+  FTP="$(egrep -i "$KEYWORDS_FTP" newpages.txt)"
+  VOIP="$(egrep -i "$KEYWORDS_VOIP" newpages.txt | egrep -iv "$KEYWORDS_VOIP_EXCLUDE")"
+  SKYPE="$(egrep -i "$KEYWORDS_SKYPE" newpages.txt)"
+  BLUETOOTH="$(egrep -i "$KEYWORDS_BLUETOOTH" newpages.txt)"
 
   if [ "$NETWORK" != "" ];
   then
@@ -106,9 +103,6 @@ then
     unset BLUETOOTH
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Computer networking\n"
-  fi
+  debug_end "Computer networking"
 
 fi

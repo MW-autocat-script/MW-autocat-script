@@ -10,7 +10,7 @@ export SPORTSDIR="./catscripts/Lifestyle/Sports"
 . $SPORTSDIR/Snowboarding.sh
 
 KEYWORDS_SOCCER="soccer|footballer"
-KEYWORDS_CRONALDO="Cristiano(| )Romaldo|\bC(\.|-| )(| )ronaldo"
+KEYWORDS_CRONALDO="Cristiano(| )Ronaldo|\bC(\.|-| )(| )ronaldo"
 KEYWORDS_LMESSI="\bMessi(|s)\b"
 KEYWORDS_SOCCER_EXCLUDE="$KEYWORDS_CRONALDO|$KEYWORDS_LMESSI"
 
