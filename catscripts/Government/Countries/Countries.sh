@@ -120,6 +120,7 @@ $COUNTRYDIR/Sweden/Sweden.sh
 $COUNTRYDIR/Switzerland/Switzerland.sh
 $COUNTRYDIR/Tanzia/Tanzia.sh
 $COUNTRYDIR/Tunisia/Tunisia.sh
+$COUNTRYDIR/Turkey/Turkey.sh
 $COUNTRYDIR/Wales/Wales.sh
 $COUNTRYDIR/Uganda/Uganda.sh
 $COUNTRYDIR/United_Arab_Emirates/UAE.sh
