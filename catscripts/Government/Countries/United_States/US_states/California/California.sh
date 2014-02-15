@@ -5,17 +5,20 @@ KEYWORDS_LOSANGELES="Los(| )Angeles"
 KEYWORDS_SACRAMENTO="Sacramento"
 KEYWORDS_SANDIEGO="San(| )Diego"
 KEYWORDS_SANFRANCISCO="San(| )Francisco"
-KEYWORDS_CALIFORNIA_EXCLUDE="$KEYWORDS_LOSANGELES|$KEYWORDS_SACRAMENTO|$KEYWORDS_SANDIEGO|$KEYWORDS_SANFRANCISCO"
+KEYWORDS_UCLA="\bUCLA|University(| )of(| )California(|,)(| )Los(| )Angeles"
+KEYWORDS_LOSANGELES_EXCLUDE="$KEYWORDS_UCLA"
+KEYWORDS_CALIFORNIA_EXCLUDE="$KEYWORDS_LOSANGELES|$KEYWORDS_SACRAMENTO|$KEYWORDS_SANDIEGO|$KEYWORDS_SANFRANCISCO|$KEYWORDS_UCLA"
 
 CALIFORNIA=`egrep -i "$KEYWORDS_CALIFORNIA" newpages.txt | egrep -iv "$KEYWORDS_CALIFORNIA_EXCLUDE"`
-LOSANGELES=`egrep -i "$KEYWORDS_LOSANGELES" newpages.txt`
+LOSANGELES=`egrep -i "$KEYWORDS_LOSANGELES" newpages.txt | egrep -iv "$KEYWORDS_LOSANGELES_EXCLUDE"`
 SACRAMENTO=`egrep -i "$KEYWORDS_SACRAMENTO" newpages.txt`
 SANDIEGO=`egrep -i "$KEYWORDS_SANDIEGO" newpages.txt`
 SANFRANCISCO=`egrep -i "$KEYWORDS_SANFRANCISCO" newpages.txt`
+UCLA="$(egrep -i "$KEYWORDS_UCLA" newpages.txt)"
 
 if [ "$CALIFORNIA" != "" ];
 then
-  egrep -i "$KEYWORDS_CALIFORNIA" newpages.txt | egrep -iv "$KEYWORDS_CALIFORNIA_EXCLUDE" > California.txt
+  printf "%s" "$CALIFORNIA" > California.txt
   export CATFILE="California.txt"
   export CATNAME="California"
   $CATEGORIZE
@@ -25,7 +28,7 @@ fi
 
 if [ "$LOSANGELES" != "" ];
 then
-  egrep -i "$KEYWORDS_LOSANGELES" newpages.txt > LosAngeles.txt
+  printf "%s" "$LOSANGELES" > LosAngeles.txt
   export CATFILE="LosAngeles.txt"
   export CATNAME="Los Angeles"
   $CATEGORIZE
@@ -35,7 +38,7 @@ fi
 
 if [ "$SACRAMENTO" != "" ];
 then
-  egrep -i "$KEYWORDS_SACRAMENTO" newpages.txt > Sacramento.txt
+  printf "%s" "$SACRAMENTO" > Sacramento.txt
   export CATFILE="Sacramento.txt"
   export CATNAME="Sacramento"
   $CATEGORIZE
@@ -45,7 +48,7 @@ fi
 
 if [ "$SANDIEGO" != "" ];
 then
-  egrep -i "$KEYWORDS_SANDIEGO" newpages.txt > SanDiego.txt
+  printf "%s" "$SANDIEGO" > SanDiego.txt
   export CATFILE="SanDiego.txt"
   export CATNAME="San Diego"
   $CATEGORIZE
@@ -55,10 +58,20 @@ fi
 
 if [ "$SANFRANCISCO" != "" ];
 then
-  egrep -i "$KEYWORDS_SANFRANCISCO" newpages.txt > SanFrancisco.txt
+  printf "%s" "$SANFRANCISCO" > SanFrancisco.txt
   export CATFILE="SanFrancisco.txt"
   export CATNAME="San Francisco"
   $CATEGORIZE
   rm SanFrancisco.txt
   unset SANFRANCISCO
+fi
+
+if  "$UCLA" != "" ];
+then
+  printf "%s" "$UCLA" > UCLA.txt
+  export CATFILE="UCLA.txt"
+  export CATNAME="UCLA"
+  $CATEGORIZE
+  rm UCLA.txt
+  unset ICLA
 fi
