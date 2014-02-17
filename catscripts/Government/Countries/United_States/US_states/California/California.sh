@@ -66,7 +66,7 @@ then
   unset SANFRANCISCO
 fi
 
-if  "$UCLA" != "" ];
+if [ "$UCLA" != "" ];
 then
   printf "%s" "$UCLA" > UCLA.txt
   export CATFILE="UCLA.txt"

@@ -8,3 +8,4 @@
 ./catscripts/Entertainment/Music/Bands/Nickelback.sh
 ./catscripts/Entertainment/Music/Bands/One_Direction.sh
 ./catscripts/Entertainment/Music/Bands/The_Beatles.sh
+. ./catscripts/Entertainment/Music/Bands/TheBlackEyedPeas.sh
