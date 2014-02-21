@@ -5,17 +5,18 @@ then
   printf "Starting Entertainment\n" 
 fi
 
-CURRENTDIR="./catscripts/Entertainment"
+ENTERTAINMENTDIR="./catscripts/Entertainment"
 
-$CURRENTDIR/Actors_and_actresses/Actors.sh
-$CURRENTDIR/Board_games/BoardGames.sh
-$CURRENTDIR/Video_games/VideoGames.sh
-$CURRENTDIR/Franchises/Franchises.sh
-$CURRENTDIR/Cartoons/Cartoons.sh
-$CURRENTDIR/Music/Music.sh
-$CURRENTDIR/Movies/Movies.sh
-$CURRENTDIR/Puzzles/Puzzles.sh
-$CURRENTDIR/Television_series/Televisionseries.sh
+$ENTERTAINMENTDIR/Actors_and_actresses/Actors.sh
+$ENTERTAINMENTDIR/Board_games/BoardGames.sh
+$ENTERTAINMENTDIR/Video_games/VideoGames.sh
+$ENTERTAINMENTDIR/Franchises/Franchises.sh
+$ENTERTAINMENTDIR/Cartoons/Cartoons.sh
+$ENTERTAINMENTDIR/Music/Music.sh
+$ENTERTAINMENTDIR/Movies/Movies.sh
+$ENTERTAINMENTDIR/Puzzles/Puzzles.sh
+. $ENTERTAINMENTDIR/Professional_wrestling/ProfessionalWrestling.sh
+$ENTERTAINMENTDIR/Television_series/Televisionseries.sh
 
 if [ "$DEBUG" == "yes" ];
 then

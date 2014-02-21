@@ -1,0 +1,46 @@
+#!/bin/bash
+
+PROFESSIONALWRESTLINGDIR="./catscripts/Entertainment/Professional_wrestling"
+
+KEYWORDS_PROFESSIONALWRESTLING="Pro(|fessional)(| )wrestling"
+
+if [ "$1" == "" ];
+then
+
+  debug_start "Professional wrestling"
+
+  . $PROFESSIONALWRESTLINGDIR/Professional_wrestlers/ProfessionalWrestlers.sh #KEYWORDS_PROFESSIONALWRESTLERS_ALL
+
+  KEYWORDS_PROFESSIONALWRESTLING_EXCLUDE="$KEYWORDS_PROFESSIONALWRESTLERS_ALL"
+  KEYWORDS_PROFESSIONALWRESTLING_ALL="$KEYWORDS_PROFESSIONALWRESTLING|$KEYWORDS_PROFESSIONALWRESTLERS_ALL"
+
+  PROFESSIONALWRESTLING="$(egrep -i "$KEYWORDS_PROFESSIONALWRESTLING" newpages.txt | egrep -iv "$KEYWORDS_PROFESSIONALWRESTLING_EXCLUDE" )"
+
+  if [ "$PROFESSIONALWRESTLING" != "" ];
+  then
+    printf "%s" "$PROFESSIONALWRESTLING" > ProfessionalWrestling.txt
+    export CATFILE="ProfessionalWrestling.txt"
+    export CATNAME="Professional wrestling"
+    $CATEGORIZE
+    rm ProfessionalWrestling.txt
+    unset PROFESSIONALWRESTLING
+  fi
+
+  debug_end "Professional wrestling"
+
+fi
+
+if [ "$1" != "" ];
+then
+
+  . $PROFESSIONALWRESTLINGDIR/Professional_wrestlers/ProfessionalWrestlers.sh  norun #KEYWORDS_PROFESSIONALWRESTLERS_ALL
+
+  KEYWORDS_PROFESSIONALWRESTLING_EXCLUDE="$KEYWORDS_PROFESSIONALWRESTLERS_ALL"
+  KEYWORDS_PROFESSIONALWRESTLING_ALL="$KEYWORDS_PROFESSIONALWRESTLING|$KEYWORDS_PROFESSIONALWRESTLERS_ALL"
+
+fi
+
+
+
+
+  
