@@ -6,3 +6,4 @@
 . ./catscripts/Maintenance/Period.sh
 ./catscripts/Maintenance/Pornography.sh
 ./catscripts/Maintenance/Noninterrogative.sh
+. ./catscripts/Maintenance/nostartint.sh
