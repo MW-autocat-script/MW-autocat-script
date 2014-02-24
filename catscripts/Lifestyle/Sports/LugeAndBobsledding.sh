@@ -8,7 +8,7 @@ then
   
   debug_start "Luge and bobsledding"
 
-  LUGEANDBOBSLED="$(egrep -i "$KEYWORDS_BOBLSED|$KEYWORDS_LUGE" nwpages.txt)"
+  LUGEANDBOBSLED="$(egrep -i "$KEYWORDS_BOBLSED|$KEYWORDS_LUGE" newpages.txt)"
 
   if [ "$LUGEANDBOBSLED" != "" ];
   then
