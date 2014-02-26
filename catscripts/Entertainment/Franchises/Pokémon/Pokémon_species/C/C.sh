@@ -372,12 +372,12 @@ then
 
   if [ "$CHINGLING" != "" ];
   then
-    printf "$CHINCHOU" > Chinchou.txt
+    printf "$CHINGLING" > Chingling.txt
     export CATFILE="Chingling.txt"
     export CATNAME="Chingling"
     $CATEGORIZE
-    rm Chinchou.txt
-    unset CHINCHOU
+    rm Chingling.txt
+    unset CHINGLING
   fi
 
   if [ "$CINCCINO" != "" ];
