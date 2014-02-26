@@ -35,6 +35,7 @@ KEYWORDS_SEISMITOAD="Seismitoad"
 KEYWORDS_SEVIPER="Seviper"
 KEYWORDS_SEWADDLE="Sewaddle"
 KEYWORDS_SHARPEDO="Sharpedo"
+KEYWORDS_SHAYMIN="Shaymin"
 KEYWORDS_SHEDINJA="Shedinja"
 KEYWORDS_SHELGON="Shelgon"
 KEYWORDS_SHELMET="Shelmet"
@@ -132,6 +133,7 @@ then
   SEVIPER=`egrep -i "$KEYWORDS_SEVIPER" newpages.txt`
   SEWADDLE=`egrep -i "$KEYWORDS_SEWADDLE" newpages.txt`
   SHARPEDO=`egrep -i "$KEYWORDS_SHARPEDO" newpages.txt`
+  SHAYMIN="$(egrep -i "$KEYWORDS_SHAYMIN" newpages.txt)"
   SHEDINJA=`egrep -i "$KEYWORDS_SHEDINJA" newpages.txt`
   SHELGON=`egrep -i "$KEYWORDS_SHELGON" newpages.txt`
   SHELMET=`egrep -i "$KEYWORDS_SHELMET" newpages.txt`
@@ -354,6 +356,12 @@ then
   then
     printf "$SHARPEDO" > Sharpedo.txt
     export_category SHARPEDO Sharpedo
+  fi
+
+  if [ "$SHAYMIN" != "" ];
+  then
+    printf "$SHAYMIN" > Shaymin.txt
+    export_category SHAYMIN Shaymin
   fi
 
   if [ "$SHEDINJA" != "" ];
