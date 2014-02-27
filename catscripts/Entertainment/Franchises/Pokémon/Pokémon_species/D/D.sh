@@ -88,7 +88,7 @@ then
   then
     printf "%s" "$DARKRAI" > Darkrai.txt
     export CATFILE="Darkrai.txt"
-    export CATNAME=""
+    export CATNAME="Darkrai"
     $CATEGORIZE
     rm Darkrai.txt
     unset DARKRAI
