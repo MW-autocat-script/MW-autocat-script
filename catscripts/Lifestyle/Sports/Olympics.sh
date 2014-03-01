@@ -15,7 +15,7 @@ then
   
   SOCHI2014="$(egrep -i "$KEYWORDS_SOCHI2014" newpages.txt)"
 
-  if [ "$1" != "" ];
+  if [ "$SOCHI2014" != "" ];
   then
     printf "%s" "$SOCHI2014" > Sochi2014.txt
     export CATFILE="Sochi2014.txt"
