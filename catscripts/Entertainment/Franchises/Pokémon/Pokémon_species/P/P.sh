@@ -17,6 +17,7 @@ KEYWORDS_PETILIL="Petilil"
 KEYWORDS_PHANPY="Phanpy"
 KEYWORDS_PHIONE="Phione"
 KEYWORDS_PICHU="Pichu"
+KEYWORDS_PIDOVE="P(e|i)dove"
 KEYWORDS_PIDGEOT="Pidgeot\b"
 KEYWORDS_PIDGEOTTO="Pidgeot(|t)o"
 KEYWORDS_PIDGEY="Pidgey"
@@ -68,6 +69,7 @@ then
   PIDGEOT="$(egrep -i "$KEYWORDS_PIDGEOT" newpages.txt)"
   PIDGEOTTO="$(egrep -i "$KEYWORDS_PIDGEOTTO" newpages.txt)"
   PIDGEY="$(egrep -i "$KEYWORDS_PIDGEY" newpages.txt)"
+  PIDOVE="$(egrep -i "$KEYWORDS_PIDOVE" newpages.txt)"
   PIGNITE="$(egrep -i "$KEYWORDS_PIGNITE" newpages.txt)"
   PIKACHU="$(egrep -i "$KEYWORDS_PIKACHU" newpages.txt)"
   PILOSWINE="$(egrep -i "$KEYWORDS_PILOSWINE" newpages.txt)"
@@ -280,6 +282,16 @@ then
     $CATEGORIZE
     rm Pidgey.txt
     unset PIDGEY
+  fi
+
+  if [ "$PIDOVE" != "" ];
+  then
+    printf "%s" "$PIDOVE" > Pidove.txt
+    export CATFILE="Pidove.txt"
+    export CATNAME="Pidove"
+    $CATEGORIZE
+    rm Pidove.txt
+    unset PIDOVE
   fi
 
   if [ "$PIGNITE" != "" ];
