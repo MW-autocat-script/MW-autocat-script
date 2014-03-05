@@ -604,7 +604,7 @@ then
     export_category SPINARAK Spinarak
   fi
 
-  if [ "$SPINARAK" != "" ];
+  if [ "$SPINDA" != "" ];
   then
     printf "$SPINDA" > Spinda.txt
     export_category SPINDA Spinda
