@@ -18,15 +18,15 @@ then
   $CARTOONDIR/Johnny_Test/JohnnyTest.sh
   $CARTOONDIR/Kim_Possible/KimPossible.sh
   $CARTOONDIR/Looney_Tunes/LooneyTunes.sh
-  $CARTOONDIR/My_Little_Pony\:_Friendship_Is_Magic/MLP.sh
+  $CARTOONDIR/My_Little_Pony_Friendship_Is_Magic/MLP.sh
   $CARTOONDIR/Naruto/Naruto.sh
   $CARTOONDIR/One_Piece/OnePiece.sh #KEYWORDS_ONEPIECE
   $CARTOONDIR/Pokémon_anime/PokémonAnime.sh
-  $CARTOONDIR/South\ Park/SouthPark.sh
-  $CARTOONDIR/Danny\ Phantom/DannyPhantom.sh
-  $CARTOONDIR/SpongeBob\ SquarePants/SpongeBobSquarePants.sh
-  $CARTOONDIR/Star_Wars\:_The_Clone_Wars/CloneWars.sh
-  $CARTOONDIR/The\ Simpsons/TheSimpsons.sh
+  $CARTOONDIR/South_Park/SouthPark.sh
+  $CARTOONDIR/Danny_Phantom/DannyPhantom.sh
+  $CARTOONDIR/SpongeBob_SquarePants/SpongeBobSquarePants.sh
+  $CARTOONDIR/Star_Wars_The_Clone_Wars/CloneWars.sh
+  $CARTOONDIR/The_Simpsons/TheSimpsons.sh
 
   CARTOONS="$(egrep -i "$KEYWORDS_CARTOONS_OTHER" newpages.txt)"
 
