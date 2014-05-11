@@ -7,7 +7,7 @@ debug_start "Cartoons and anime"
 if [ "$1" == "" ];
 then
 
-  KEYWORDS_CARTOONS_OTHER="Attack(| )on(| )Titan"
+  KEYWORDS_CARTOONS_OTHER="Attack(| )on(| )Titan|kaze(| )no(| )stigma|\btrigun|Hetalia|Bubblegum(| )(Crisis|Crash)|Blood\+"
 
   $CARTOONDIR/American_Dad/AmericanDad.sh
   $CARTOONDIR/Avatar_The_Last_Airbender/Avatar.sh
