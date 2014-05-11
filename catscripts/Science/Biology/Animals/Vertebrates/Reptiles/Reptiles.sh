@@ -109,6 +109,8 @@ then
     export CATFILE="Crocodiles.txt"
     export CATNAME="Crocodiles"
     $CATEGORIZE
+    rm Crocodiles.txt
+    unset CROCODILES
   fi
 
   if [ "$ALLIGATORS" != "" ];

@@ -12,15 +12,15 @@ KEYWORDS_MIAMI_EXCLUDE="CSI(:|| )Miami|Miami(| )Dolphins|Miami(| )Marlins|Miami(
 if [ "$1" == "" ]; #Normal operation
 then
 
-  FLORIDA=`egrep -i "$KEYWORDS_FLORIDA" newpages.txt | egrep -iv "$KEYWORDS_FLORIDA_EXCLUDE"`
-  ORLANDO=`egrep -i "$KEYWORDS_ORLANDO" newpages.txt | egrep -iv "$KEYWORDS_ORLANDO_EXCLUDE"`
-  MIAMI=`egrep -i "$KEYWORDS_MIAMI" newpages.txt | egrep -iv "$KEYWORDS_MIAMI_EXCLUDE"`
-  TAMPA=`egrep -i "$KEYWORDS_TAMPA" newpages.txt`
-  EVERGLADES=`egrep -i "$KEYWORDS_EVERGLADES" newpages.txt`
+  FLORIDA="$(egrep -i "$KEYWORDS_FLORIDA" newpages.txt | egrep -iv "$KEYWORDS_FLORIDA_EXCLUDE")"
+  ORLANDO="$(egrep -i "$KEYWORDS_ORLANDO" newpages.txt | egrep -iv "$KEYWORDS_ORLANDO_EXCLUDE")"
+  MIAMI="$(egrep -i "$KEYWORDS_MIAMI" newpages.txt | egrep -iv "$KEYWORDS_MIAMI_EXCLUDE")"
+  TAMPA="$(egrep -i "$KEYWORDS_TAMPA" newpages.txt)"
+  EVERGLADES="$(egrep -i "$KEYWORDS_EVERGLADES" newpages.txt)"
 
   if [ "$FLORIDA" != "" ];
   then
-    printf "$FLORIDA" > Florida.txt
+    printf "%s" "$FLORIDA" > Florida.txt
     export CATFILE="Florida.txt"
     export CATNAME="Florida"
     $CATEGORIZE
@@ -30,7 +30,7 @@ then
 
   if [ "$MIAMI" != "" ];
   then
-    printf "$MIAMI" > Miami.txt
+    printf "%s" "$MIAMI" > Miami.txt
     export CATFILE="Miami.txt"
     export CATNAME="Miami"
     $CATEGORIZE
@@ -40,7 +40,7 @@ then
 
   if [ "$ORLANDO" != "" ];
   then
-    printf "$ORLANDO" > Orlando.txt
+    printf "%s" "$ORLANDO" > Orlando.txt
     export CATFILE="Orlando.txt"
     export CATNAME="Orlando"
     $CATEGORIZE
@@ -50,7 +50,7 @@ then
 
   if [ "$TAMPA" != "" ];
   then
-    printf "$TAMPA" > Tampa.txt
+    printf "%s" "$TAMPA" > Tampa.txt
     export CATFILE="Tampa.txt"
     export CATNAME="Tampa"
     $CATEGORIZE
@@ -60,11 +60,11 @@ then
 
   if [ "$EVERGLADES" != "" ];
   then
-    printf "$EVERGLADES" > Everglades.txt
+    printf "%s" "$EVERGLADES" > Everglades.txt
     export CATFILE="Everglades.txt"
     export CATNAME="Everglades"
     $CATEGORIZE
-    rm Evergaldes.txt
+    rm Everglades.txt
     unset EVERGLADES
   fi
 
