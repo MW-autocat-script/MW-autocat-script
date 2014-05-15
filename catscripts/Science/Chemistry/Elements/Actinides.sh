@@ -22,30 +22,27 @@ KEYWORDS_ACTINIDESERIES_ALL="$KEYWORDS_ACTINIUM|$KEYWORDS_AMERICIUM|$KEYWORDS_BE
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Actinide series\n"
-  fi
+  debug_start "Actinide series"
 
-  ACTINIUM=`egrep -i "$KEYWORDS_ACTINIUM" newpages.txt`
-  THORIUM=`egrep -i "$KEYWORDS_THORIUM" newpages.txt | egrep -iv "$KEYWORDS_THORIUM_EXCLUDE"`
-  PROTACTINIUM=`egrep -i "$KEYWORDS_PROTACTINIUM" newpages.txt`
-  URANIUM=`egrep -i "$KEYWORDS_URANIUM" newpages.txt`
-  NEPTUNIUM=`egrep -i "$KEYWORDS_NEPTUNIUM" newpages.txt`
-  PLUTONIUM=`egrep -i "$KEYWORDS_PLUTONIUM" newpages.txt | egrep -iv "$KEYWORDS_PLUTONIUM_EXCLUDE"`
-  AMERCIUM=`egrep -i "$KEYWORDS_AMERICIUM" newpages.txt`
-  CURIUM=`egrep -i "$KEYWORDS_CURIUM" newpages.txt`
-  BERKELIUM=`egrep -i "$KEYWORDS_BERKELIUM" newpages.txt`
-  CALIFORNIUM=`egrep -i "$KEYWORDS_CALIFORNIUM" newpages.txt`
-  EINSTEINIUM=`egrep -i "$KEYWORDS_EINSTEINIUM" newpages.txt`
-  FERMIUM=`egrep -i "$KEYWORDS_FERMIUM" newpages.txt`
-  MENDELEVIUM=`egrep -i "$KEYWORDS_MENDELEVIUM" newpages.txt`
-  NOBELIUM=`egrep -i "$KEYWORDS_NOBELIUM" newpages.txt `
-  LAWRENCIUM=`egrep -i "$KEYWORDS_LAWRENCIUM" newpages.txt`
+  ACTINIUM=$(egrep -i "$KEYWORDS_ACTINIUM" newpages.txt)
+  THORIUM=$(egrep -i "$KEYWORDS_THORIUM" newpages.txt | egrep -iv "$KEYWORDS_THORIUM_EXCLUDE")
+  PROTACTINIUM=$(egrep -i "$KEYWORDS_PROTACTINIUM" newpages.txt)
+  URANIUM=$(egrep -i "$KEYWORDS_URANIUM" newpages.txt)
+  NEPTUNIUM=$(egrep -i "$KEYWORDS_NEPTUNIUM" newpages.txt)
+  PLUTONIUM=$(egrep -i "$KEYWORDS_PLUTONIUM" newpages.txt | egrep -iv "$KEYWORDS_PLUTONIUM_EXCLUDE")
+  AMERCIUM=$(egrep -i "$KEYWORDS_AMERICIUM" newpages.txt)
+  CURIUM=$(egrep -i "$KEYWORDS_CURIUM" newpages.txt)
+  BERKELIUM=$(egrep -i "$KEYWORDS_BERKELIUM" newpages.txt)
+  CALIFORNIUM=$(egrep -i "$KEYWORDS_CALIFORNIUM" newpages.txt)
+  EINSTEINIUM=$(egrep -i "$KEYWORDS_EINSTEINIUM" newpages.txt)
+  FERMIUM=$(egrep -i "$KEYWORDS_FERMIUM" newpages.txt)
+  MENDELEVIUM=$(egrep -i "$KEYWORDS_MENDELEVIUM" newpages.txt)
+  NOBELIUM=$(egrep -i "$KEYWORDS_NOBELIUM" newpages.txt )
+  LAWRENCIUM=$(egrep -i "$KEYWORDS_LAWRENCIUM" newpages.txt)
 
   if [ "$ACTINIUM" != "" ] ;
   then
-    printf "$ACTINIUM" > Actinium.txt
+    printf "%s" "$ACTINIUM" > Actinium.txt
     export CATFILE="Actinium.txt"
     export CATNAME="Actinium"
     $CATEGORIZE
@@ -55,7 +52,7 @@ then
 
   if [ "$THORIUM" != "" ] ;
   then
-    printf "$THORIUM" > Thorium.txt
+    printf "%s" "$THORIUM" > Thorium.txt
     export CATFILE="Thorium.txt"
     export CATNAME="Thorium"
     $CATEGORIZE
@@ -75,7 +72,7 @@ then
 
   if [ "$URANIUM" != "" ] ;
   then
-    printf "$URANIUM" > Uranium.txt
+    printf "%s" "$URANIUM" > Uranium.txt
     export CATFILE="Uranium.txt"
     export CATNAME="Uranium"
     $CATEGORIZE
@@ -85,7 +82,7 @@ then
 
   if [ "$NEPTUNIUM" != "" ] ;
   then
-    printf "$NEPTUNIUM" > Neptunium.txt
+    printf "%s" "$NEPTUNIUM" > Neptunium.txt
     export CATFILE="Neptunium.txt"
     export CATNAME="Neptunium"
     $CATEGORIZE
@@ -95,7 +92,7 @@ then
 
   if [ "$PLUTONIUM" != "" ] ;
   then
-    printf "$PLUTONIUM" > Plutonium.txt
+    printf "%s" "$PLUTONIUM" > Plutonium.txt
     export CATFILE="Plutonium.txt"
     export CATNAME="Plutonium"
     $CATEGORIZE
@@ -105,7 +102,7 @@ then
 
   if [ "$AMERCIUM" != "" ] ;
   then
-    printf "$AMERCIUM" > Americium.txt
+    printf "%s" "$AMERCIUM" > Americium.txt
     export CATFILE="Americium.txt"
     export CATNAME="Americium"
     $CATEGORIZE
@@ -115,7 +112,7 @@ then
 
   if [ "$CURIUM" != "" ] ;
   then
-    printf "$CURIUM" > Curium.txt
+    printf "%s" "$CURIUM" > Curium.txt
     export CATFILE="Curium.txt"
     export CATNAME="Curium"
     $CATEGORIZE
@@ -125,7 +122,7 @@ then
 
   if [ "$BERKELIUM" != "" ] ;
   then
-    printf "$BERKELIUM" > Berkelium.txt
+    printf "%s" "$BERKELIUM" > Berkelium.txt
     export CATFILE="Berkelium.txt"
     export CATNAME="Berkelium"
     $CATEGORIZE
@@ -135,7 +132,7 @@ then
 
   if [ "$CALIFORNIUM" != "" ] ;
   then
-    printf "$CALIFORNIUM" > Californium.txt
+    printf "%s" "$CALIFORNIUM" > Californium.txt
     export CATFILE="Californium.txt"
     export CATNAME="Californium"
     $CATEGORIZE
@@ -145,7 +142,7 @@ then
 
   if [ "$EINSTEINIUM" != "" ] ;
   then
-    printf "$EINSTEINIUM" > Einsteinium.txt
+    printf "%s" "$EINSTEINIUM" > Einsteinium.txt
     export CATFILE="Einsteinium.txt"
     export CATNAME="Einsteinium"
     $CATEGORIZE
@@ -155,7 +152,7 @@ then
 
   if [ "$FERMIUM" != "" ] ;
   then
-    printf "$FERMIUM" > Fermium.txt
+    printf "%s" "$FERMIUM" > Fermium.txt
     export CATFILE="Fermium.txt"
     export CATNAME="Fermium"
     $CATEGORIZE
@@ -165,7 +162,7 @@ then
 
   if [ "$MENDELEVIUM" != "" ] ;
   then
-    printf "$MENDELEVIUM" > Mendelevium.txt
+    printf "%s" "$MENDELEVIUM" > Mendelevium.txt
     export CATFILE="Mendelevium.txt"
     export CATNAME="Mendelevium"
     $CATEGORIZE
@@ -175,7 +172,7 @@ then
 
   if [ "$NOBELIUM" != "" ] ;
   then
-    printf "$NOBELIUM" > Nobelium.txt
+    printf "%s" "$NOBELIUM" > Nobelium.txt
     export CATFILE="Nobelium.txt"
     export CATNAME="Nobelium"
     $CATEGORIZE
@@ -185,7 +182,7 @@ then
 
   if [ "$LAWRENCIUM" != "" ] ;
   then
-    printf "$LAWRENCIUM" > Lawrencium.txt
+    printf "%s" "$LAWRENCIUM" > Lawrencium.txt
     export CATFILE="Lawrencium.txt"
     export CATNAME="Lawrencium"
     $CATEGORIZE
@@ -193,9 +190,6 @@ then
     unset LAWRENCIUM
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Actinide series\n"
-  fi
+  debug_end "Actinide series"
 
 fi

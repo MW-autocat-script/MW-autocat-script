@@ -1,64 +1,90 @@
 #!/bin/bash 
 
-egrep -i '\bFluorine' newpages.txt | egrep -iv 'Fluorine \b.+(ate|ide|ite)' >> Fluorine.txt
-egrep -i 'Chlorine' newpages.txt | egrep -iv 'Chlorine \b.+(ate|ide|ite)' >> Chlorine.txt
-egrep -i '\bBromine' newpages.txt | egrep -iv 'Bromine \b.+(ate|ide|ite)' >> Bromine.txt
-egrep -i 'Iodine' newpages.txt | egrep -iv 'Iodine \b.+(ate|ide|ite)' >> Iodine.txt
-egrep -i '\bAstatine' newpages.txt | egrep -iv 'Astatine \b.+(ate|ide|ite)' >> Astatine.txt
-egrep -i 'Ununseptium' newpages.txt | egrep -iv 'Ununseptium \b.+(ate|ide|ite)' >> Ununseptium.txt
+KEYWORDS_FLUORINE="\bFluorine"
+KEYWORDS_FLUORINE_EXCLUDE="Fluorine \b.+(ate|ide|ite)"
+KEYWORDS_CHLORINE="Chlorine"
+KEYWORDS_CHLORINE_EXCLUDE="Chlorine \b.+(ate|ide|ite)"
+KEYWORDS_BROMINE="\bBromine"
+KEYWORDS_BROMINE_EXCLUDE="Bromine \b.+(ate|ide|ite)"
+KEYWORDS_IODINE="iodine"
+KEYWORDS_IODINE_EXCLUDE="Iodine \b.+(ate|ide|ite)"
+KEYWORDS_ASTATINE="\bAstatine"
+KEYWORDS_ASTATINE_EXCLUDE="Astatine \b.+(ate|ide|ite)"
+KEYWORDS_UNUNSEPTIUM="Ununseptium"
+KEYWORDS_UNUNSEPTIUM_EXCLUDE="Ununseptium \b.+(ate|ide|ite)"
 
-FLUORINE=`stat --print=%s Fluorine.txt`
-CHLORINE=`stat --print=%s Chlorine.txt`
-BROMINE=`stat --print=%s Bromine.txt`
-IODINE=`stat --print=%s Iodine.txt`
-ASTATINE=`stat --print=%s Astatine.txt`
-UNUNSEPTIUM=`stat --print=%s Ununseptium.txt`
-
-if [ $FLUORINE -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Fluorine.txt"
-  export CATNAME="Fluorine"
-  $CATEGORIZE
-fi
 
-if [ $CHLORINE -ne 0 ];
-then
-  export CATFILE="Chlorine.txt"
-  export CATNAME="Chlorine"
-  $CATEGORIZE
-fi
+  debug_start "Group 17"
 
-if [ $BROMINE -ne 0 ];
-then
-  export CATFILE="Bromine.txt"
-  export CATNAME="Bromine"
-  $CATEGORIZE
-fi
+  FLUORINE=$(egrep -i "$KEYWORDS_FLUORINE" newpages.txt | egrep -iv "$KEYWORDS_FLUORINE_EXCLUDE")
+  CHLORINE=$(egrep -i "$KEYWORDS_CHLORINE" newpages.txt | egrep -iv "$KEYWORDS_CHLORINE_EXCLUDE")
+  BROMINE=$(egrep -i "$KEYWORDS_BROMINE" newpages.txt | egrep -iv "$KEYWORDS_BROMINE_EXCLUDE")
+  IODINE=$(egrep -i "$KEYWORDS_IODINE" newpages.txt | egrep -iv "$KEYWORDS_IODINE_EXCLUDE")
+  ASTATINE=$(egrep -i "$KEYWORDS_ASTATINE" newpages.txt | egrep -iv "$KEYWORDS_ASTATINE_EXCLUDE")
+  UNUNSEPTIUM=$(egrep -i "$KEYWORDS_UNUNSEPTIUM" newpages.txt | egrep -iv "$KEYWORDS_UNUNSEPTIUM_EXCLUDE")
 
-if [ $IODINE -ne 0 ];
-then
-  export CATFILE="Iodine.txt"
-  export CATNAME="Iodine"
-  $CATEGORIZE
-fi
+  if [ "$FLUORINE" != "" ];
+  then
+    printf "%s" "$FLUORINE" > Fluorine.txt
+    export CATFILE="Fluorine.txt"
+    export CATNAME="Fluorine"
+    $CATEGORIZE
+    rm Fluorine.txt
+    unset FLUORINE
+  fi
 
-if [ $ASTATINE -ne 0 ];
-then
-  export CATFILE="Astatine.txt"
-  export CATNAME="Astatine"
-  $CATEGORIZE
-fi
+  if [ "$CHLORINE" != "" ];
+  then
+    printf "%s" "$CHLORINE" > Chlorine.txt
+    export CATFILE="Chlorine.txt"
+    export CATNAME="Chlorine"
+    $CATEGORIZE
+    rm Chlorine.txt
+    unset CHLORINE
+  fi
 
-if [ $UNUNSEPTIUM -ne 0 ];
-then
-  export CATFILE="Ununseptium.txt"
-  export CATNAME="Ununseptium"
-  $CATEGORIZE
-fi
+  if [ "$BROMINE" != "" ];
+  then
+    printf "%s" "$BROMINE" > Bromine.txt
+    export CATFILE="Bromine.txt"
+    export CATNAME="Bromine"
+    $CATEGORIZE
+    rm Bromine.txt
+    unset BROMINE
+  fi
 
-rm Fluorine.txt
-rm Chlorine.txt
-rm Bromine.txt
-rm Iodine.txt
-rm Astatine.txt
-rm Ununseptium.txt
+  if [ "$IODINE" != "" ];
+  then
+    printf "%s" "$IODINE" > Iodine.txt
+    export CATFILE="Iodine.txt"
+    export CATNAME="Iodine"
+    $CATEGORIZE
+    rm Iodine.txt
+    unset IODINE
+  fi
+
+  if [ "$ASTATINE" != "" ];
+  then
+    printf "%s" "$ASTATINE" > Astatine.txt
+    export CATFILE="Astatine.txt"
+    export CATNAME="Astatine"
+    $CATEGORIZE
+    rm Astatine.txt
+    unset ASTATINE
+  fi
+
+  if [ "$UNUNSEPTIUM" != "" ];
+  then
+    printf "%s" "$UNUNSEPTIUM" > Ununseptium.txt
+    export CATFILE="Ununseptium.txt"
+    export CATNAME="Ununseptium"
+    $CATEGORIZE
+    rm Ununseptium.txt
+    unset UNUNSEPTIUM
+  fi
+
+  debug_end "Group 17 elements"
+
+fi

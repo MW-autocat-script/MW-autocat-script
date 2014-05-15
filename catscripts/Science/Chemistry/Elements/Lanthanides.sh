@@ -20,10 +20,7 @@ KEYWORDS_LANTHANIDE_ELEMENTS="$KEYWORDS_LANTHANUM|$KEYWORDS_CERIUM|$KEYWORDS_PRA
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Lanthanide group\n"
-  fi
+  debug_start "Lanthanide group"
 
   LANTHANUM="$(egrep -i "$KEYWORDS_LANTHANUM" newpages.txt)"
   CERIUM="$(egrep -i "$KEYWORDS_CERIUM" newpages.txt)"
@@ -191,9 +188,6 @@ then
     unset LUTETIUM
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Lanthanide group\n"
-  fi
+  debug_end "Lanthanide group"
 
 fi
