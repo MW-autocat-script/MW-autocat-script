@@ -15,10 +15,7 @@ KEYWORDS_GROUP6_ELEMENTS="$KEYWORDS_CHROMIUM|$KEYWORDS_MOLYBDENUM|$KEYWORDS_TUNG
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Group 6 elements\n"
-  fi
+  debug_start "Group 6 elements"
 
   CHROMIUM="$(egrep -i "$KEYWORDS_CHROMIUM" newpages.txt | egrep -iv "$KEYWORDS_CHROMIUM_EXCLUDE")"
   MOLYBDENUM="$(egrep -i "$KEYWORDS_MOLYBDENUM" newpages.txt)"
@@ -65,9 +62,6 @@ then
     unset SEABORGIUM
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Group 6 elements\n"
-  fi
+  debug_end "Group 6 elements"
 
 fi

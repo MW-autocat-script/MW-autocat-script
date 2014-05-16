@@ -10,10 +10,7 @@ KEYWORDS_GROUP4_ELEMENTS="$KEYWORDS_TITANIUM|$KEYWORDS_ZIRCONIUM|$KEYWORDS_HAFNI
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Group 4 elements\n"
-  fi
+  debug_start "Group 4 elements"
 
   TITANIUM="$(egrep -i "$KEYWORDS_TITANIUM" newpages.txt | egrep -iv "$KEYWORDS_TITANIUM_EXCLUDE")"
   ZIRCONIUM="$(egrep -i "$KEYWORDS_ZIRCONIUM" newpages.txt)"
@@ -60,9 +57,6 @@ then
     unset RUTHERFORDIUM
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Group 4 elements\n"
-  fi
+  debug_end "Group 4 elements"
 
 fi

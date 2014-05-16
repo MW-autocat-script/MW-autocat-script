@@ -1,64 +1,90 @@
 #!/bin/bash 
 
-egrep -i 'Beryllium' newpages.txt | egrep -iv 'beryllium \b.+(ate|ide|ite)' >> Beryllium.txt
-egrep -i 'Magnesium' newpages.txt | egrep -iv 'Magnesium \b.+(ate|ide|ite)' >> Magnesium.txt
-egrep -i 'Calcium' newpages.txt | egrep -iv 'Calcium \b.+(ate|ide|ite)' >> Calcium.txt
-egrep -i 'Strontium' newpages.txt | egrep -iv 'Strontium \b.+(ate|ide|ite)' >> Strontium.txt
-egrep -i 'Barium' newpages.txt | egrep -iv 'Barium \b.+(ate|ide|ite)' >> Barium.txt
-egrep -i 'Radium' newpages.txt | egrep -iv 'Radium \b.+(ate|ide|ite)' >> Radium.txt
+KEYWORDS_BERYLLIUM="Beryllium"
+KEYWORDS_BERYLLIUM_EXCLUDE="beryllium \b.+(ate|ide|ite)"
+KEYWORDS_MAGNESIUM="Magnesium"
+KEYWORDS_MAGNESIUM_EXCLUDE="Magnesium \b.+(ate|ide|ite)"
+KEYWORDS_CALCIUM="Calcium"
+KEYWORDS_CALCIUM_EXCLUDE="Calcium \b.+(ate|ide|ite)"
+KEYWORDS_STRONTIUM="Strontium"
+KEYWORDS_STRONTIUM_EXCLUDE="Strontium \b.+(ate|ide|ite)"
+KEYWORDS_BARIUM="Barium"
+KEYWORDS_BARIUM_EXCLUDE="Barium \b.+(ate|ide|ite)"
+KEYWORDS_RADIUM="Radium"
+KEYWORDS_RADIUM_EXCLUDE="Radium \b.+(ate|ide|ite)"
 
-BERYLLIUM=`stat --print=%s Beryllium.txt`
-MAGNESIUM=`stat --print=%s Magnesium.txt`
-CALCIUM=`stat --print=%s Calcium.txt`
-STRONTIUM=`stat --print=%s Strontium.txt`
-BARIUM=`stat --print=%s Barium.txt`
-RADIUM=`stat --print=%s Radium.txt`
-
-if [ $BERYLLIUM -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Beryllium.txt"
-  export CATNAME="Beryllium"
-  $CATEGORIZE
-fi
 
-if [ $MAGNESIUM -ne 0 ];
-then
-  export CATFILE="Magnesium.txt"
-  export CATNAME="Magnesium"
-  $CATEGORIZE
-fi
+  debug_start "Group 2 elements"
 
-if [ $CALCIUM -ne 0 ];
-then
-  export CATFILE="Calcium.txt"
-  export CATNAME="Calcium"
-  $CATEGORIZE
-fi
+  BERYLLIUM=$(egrep -i "$KEYWORDS_BERYLLIUM" newpages.txt | egrep -iv "$KEYWORDS_BERYLLIUM_EXCLUDE")
+  MAGNESIUM=$(egrep -i "$KEYWORDS_MAGNESIUM" newpages.txt | egrep -iv "$KEYWORDS_MAGNESIUM_EXCLUDE")
+  CALCIUM=$(egrep -i "$KEYWORDS_CALCIUM" newpages.txt | egrep -iv "$KEYWORDS_CALCIUM_EXCLUDE")
+  STRONTIUM=$(egrep -i "$KEYWORDS_STRONTIUM" newpages.txt | egrep -iv "$KEYWORDS_STRONTIUM_EXCLUDE")
+  BARIUM=$(egrep -i "$KEYWORDS_BARIUM" newpages.txt | egrep -iv "$KEYWORDS_BARIUM_EXCLUDE")
+  RADIUM=$(egrep -i "$KEYWORDS_RADIUM" newpages.txt | egrep -iv "$KEYWORDS_RADIUM_EXCLUDE")
 
-if [ $STRONTIUM -ne 0 ];
-then
-  export CATFILE="Strontium.txt"
-  export CATNAME="Strontium"
-  $CATEGORIZE
-fi
+  if [ "$BERYLLIUM" != "" ];
+  then
+    printf "%s" "$BERYLLIUM" > Beryllium.txt
+    export CATFILE="Beryllium.txt"
+    export CATNAME="Beryllium"
+    $CATEGORIZE
+    rm Beryllium.txt
+    unset BERYLLIUM
+  fi
 
-if [ $BARIUM -ne 0 ];
-then
-  export CATFILE="Barium.txt"
-  export CATNAME="Barium"
-  $CATEGORIZE
-fi
+  if [ "$MAGNESIUM" != "" ];
+  then
+    printf "%s" "$MAGNESIUM" > Magnesium.txt
+    export CATFILE="Magnesium.txt"
+    export CATNAME="Magnesium"
+    $CATEGORIZE
+    rm Magnesium.txt
+    unset MAGNESIUM
+  fi
 
-if [ $RADIUM -ne 0 ];
-then
-  export CATFILE="Radium.txt"
-  export CATNAME="Radium"
-  $CATEGORIZE
-fi
+  if [ "$CALCIUM" != "" ];
+  then
+    printf "%s" "$CALCIUM" > Calcium.txt
+    export CATFILE="Calcium.txt"
+    export CATNAME="Calcium"
+    $CATEGORIZE
+    rm Calcium.txt
+    unset CALCIUM
+  fi
 
-rm Beryllium.txt
-rm Magnesium.txt
-rm Calcium.txt
-rm Strontium.txt
-rm Barium.txt
-rm Radium.txt
+  if [ "$STRONTIUM" != "" ];
+  then
+    printf "%s" "$STRONTIUM" > Strontium.txt
+    export CATFILE="Strontium.txt"
+    export CATNAME="Strontium"
+    $CATEGORIZE
+    rm Strontium.txt
+    unset STRONTIUM
+  fi
+
+  if [ "$BARIUM" != "" ];
+  then
+    printf "%s" "$BARIUM" > Barium.txt
+    export CATFILE="Barium.txt"
+    export CATNAME="Barium"
+    $CATEGORIZE
+    rm Barium.txt
+    unset BARIUM
+  fi
+
+  if [ "$RADIUM" != "" ];
+  then
+    printf "%s" "$RADIUM" > Radium.txt
+    export CATFILE="Radium.txt"
+    export CATNAME="Radium"
+    $CATEGORIZE
+    rm Radium.txt
+    unset RADIUM
+  fi
+
+  debug_end "Group 2 elements"
+
+fi

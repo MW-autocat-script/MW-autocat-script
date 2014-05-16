@@ -13,10 +13,7 @@ KEYWORDS_UNUNENNIUM="Ununennium"
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Group 1 elements\n"
-  fi
+  debug_start "Group 1 elements"
 
   HYDROGEN="$(egrep -i "$KEYWORDS_HYDROGEN" newpages.txt)"
   LITHIUM="$(egrep -i "$KEYWORDS_LITHIUM" newpages.txt)"
@@ -107,9 +104,6 @@ then
     unset UUE
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Group 1 elements\n"
-  fi
+  debug_end "Group 1 elements"
 
 fi

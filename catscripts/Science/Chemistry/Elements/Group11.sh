@@ -1,44 +1,62 @@
 #!/bin/bash 
 
-egrep -i "Silver\b|Silver's|Silvers\b" newpages.txt | egrep -iv 'Pokemon|Pokémon|Soul(| )Silver|Silver Surfer|Silverado|Rune(| )Scape|Hedgehog|(Dragon Age|DragonAge)|MHFU|Monster Hunter|medal|membership|silverlight|Silverstone|(get|catch).+in silver$|penny|nickel|dime|quarter|dollar|gorilla|quicksilver|Silver Sable|Long John|hair|Ron Silver|Silver bells|Silver fern|silver certificate|free silver' > Silver.txt
-egrep -i 'Copper' newpages.txt >> Copper.txt
-egrep -i "\bGold\b|\bGold's" newpages.txt | egrep -iv "Pokemon|Pokémon|Heart(| )Gold|medal|Gold Rush|Gold Coast|chocobo|Rune(| )Scape|Yugioh|win gold|Warcraft|membership|\bDBZ|minecraft|Xbox|(Dragon Age|DragonAge)|Resident Evil|Last Remnant|Fallout|Monster Hunter|Call of Duty|MW2|Halo 3|Club Penguin|MHFU|penny|nickel|dime|quarter|dollar|hair|(get|catch).+in gold$|Olympi(c|an)|black gold|Gold.+Roger|Gold fish|ribbon|gold chest" >> Gold.txt
-egrep -i 'Roentgenium' newpages.txt >> Roentgenium.txt
+KEYWORDS_SILVER="Silver\b|Silver's|Silvers\b"
+KEYWORDS_SILVER_EXCLUDE="Pokemon|Pokémon|Soul(| )Silver|Silver Surfer|Silverado|Rune(| )Scape|Hedgehog|(Dragon Age|DragonAge)|MHFU|Monster Hunter|medal|membership|silverlight|Silverstone|(get|catch).+in silver$|penny|nickel|dime|quarter|dollar|gorilla|quicksilver|Silver Sable|Long John|hair|Ron Silver|Silver bells|Silver fern|silver certificate|free silver"
+KEYWORDS_COPPER="Copper"
+KEYWORDS_GOLD="\bGold\b|\bGold's"
+KEYWORDS_GOLD_EXCLUDE="Pokemon|Pokémon|Heart(| )Gold|medal|Gold Rush|Gold Coast|chocobo|Rune(| )Scape|Yugioh|win gold|Warcraft|membership|\bDBZ|minecraft|Xbox|(Dragon Age|DragonAge)|Resident Evil|Last Remnant|Fallout|Monster Hunter|Call of Duty|MW2|Halo 3|Club Penguin|MHFU|penny|nickel|dime|quarter|dollar|hair|(get|catch).+in gold$|Olympi(c|an)|black gold|Gold.+Roger|Gold fish|ribbon|gold chest"
+KEYWORDS_ROENTGENIUM="Roentgenium"
 
-SILVER=`stat --print=%s Silver.txt`
-COPPER=`stat --print=%s Copper.txt`
-GOLD=`stat --print=%s Gold.txt`
-ROENTGENIUM=`stat --print=%s Roentgenium.txt`
-
-if [ $SILVER -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Silver.txt"
-  export CATNAME="Silver"
-  $CATEGORIZE
-fi
 
-if [ $COPPER -ne 0 ];
-then
-  export CATFILE="Copper.txt"
-  export CATNAME="Copper"
-  $CATEGORIZE
-fi
+  debug_start "Group 11 elements"
 
-if [ $GOLD -ne 0 ];
-then
-  export CATFILE="Gold.txt"
-  export CATNAME="Gold"
-  $CATEGORIZE
-fi
+  SILVER=$(egrep -i "$KEYWORDS_SILVER" newpages.txt | egrep -i "$KEYWORDS_SILVER_EXCLUDE")
+  COPPER=$(egrep -i "$KEYWORDS_COPPER" newpages.txt)
+  GOLD=$(egrep -i "$KEYWORDS_GOLD" newpages.txt | egrep -i "$KEYWORDS_GOLD_EXCLUDE")
+  ROENTGENIUM=$(egrep -i "$KEYWORDS_ROENTGENIUM" newpages.txt)
 
-if [ $ROENTGENIUM -ne 0 ];
-then
-  export CATFILE="Roentgenium.txt"
-  export CATNAME="Roentgenium"
-  $CATEGORIZE
-fi
+  if [ "$SILVER" != "" ];
+  then
+    printf "%s" "$SILVER" > Silver.txt
+    export CATFILE="Silver.txt"
+    export CATNAME="Silver"
+    $CATEGORIZE
+    rm Silver.txt
+    unset SILVER
+  fi
 
-rm Silver.txt
-rm Copper.txt
-rm Gold.txt
-rm Roentgenium.txt
+  if [ "$COPPER" != "" ];
+  then
+    printf "%s" "$COPPER" > Copper.txt
+    export CATFILE="Copper.txt"
+    export CATNAME="Copper"
+    $CATEGORIZE
+    rm Copper.txt
+    unset COPPER
+  fi
+
+  if [ "$GOLD" != "" ];
+  then
+    printf "%s" "$GOLD" > Gold.txt
+    export CATFILE="Gold.txt"
+    export CATNAME="Gold"
+    $CATEGORIZE
+    rm Gold.txt
+    unset GOLD
+  fi
+
+  if [ "$ROENTGENIUM" != "" ];
+  then
+    printf "%s" "$ROENTGENIUM" > Roentgenium.txt
+    export CATFILE="Roentgenium.txt"
+    export CATNAME="Roentgenium"
+    $CATEGORIZE
+    rm Roentgenium.txt
+    unset ROENTGENIUM
+  fi
+
+  debug_end "Group 11 elements"
+
+fi

@@ -7,10 +7,7 @@ KEYWORDS_GROUP3_ELEMENTS="$KEYWORDS_SCANDIUM|$KEYWORDS_YTTRIUM"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Group 3 elements\n"
-  fi
+  debug_start "Group 3 elements"
 
   SCANDIUM="$(egrep -i "$KEYWORDS_SCANDIUM" newpages.txt)"
   YTTRIUM="$(egrep -i "$KEYWORDS_YTTRIUM" newpages.txt)"
@@ -35,9 +32,6 @@ then
     unset YTTRIUM
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Group 3 elements\n"
-  fi
+  debug_end "Group 3 elements"
 
 fi

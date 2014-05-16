@@ -1,44 +1,62 @@
 #!/bin/bash 
 
-egrep -i 'Mercury' newpages.txt | egrep -i 'atom|proton|neutron|electron|\bion|melt|boil|metal|vapor|magnet|element|compound|toxic|molecule|electricity|conduct' | egrep -iv 'planet Mercury' >> MercuryElement.txt
-egrep -i 'Zinc' newpages.txt >> Zinc.txt
-egrep -i 'Cadmium' newpages.txt >> Cadmium.txt
-egrep -i 'Copernicium' newpages.txt >> Copernicium.txt
+KEYWORDS_MERCURY="Mercury"
+KEYWORDS_MERCURY_SECONDARY="atom|proton|neutron|electron|\bion|melt|boil|metal|vapor|magnet|element|compound|toxic|molecule|electricity|conduct"
+KEYWORDS_MERCURY_EXCLUDE="planet Mercury"
+KEYWORDS_ZINC="Zinc"
+KEYWORDS_CADMIUM="Cadmium"
+KEYWORDS_COPERNICIUM="Copernicium"
 
-MERCURY=`stat --print=%s MercuryElement.txt`
-ZINC=`stat --print=%s Zinc.txt`
-CADMIUM=`stat --print=%s Cadmium.txt`
-COPERNICIUM=`stat --print=%s Copernicium.txt`
-
-if [ $MERCURY -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="MercuryElement.txt"
-  export CATNAME="Mercury (element)"
-  $CATEGORIZE
-fi
 
-if [ $ZINC -ne 0 ];
-then
-  export CATFILE="Zinc.txt"
-  export CATNAME="Zinc"
-  $CATEGORIZE
-fi
+  debug_start "Group 12 elements"
 
-if [ $CADMIUM -ne 0 ];
-then
-  export CATFILE="Cadmium.txt"
-  export CATNAME="Cadmium"
-  $CATEGORIZE
-fi
+  MERCURY=$(egrep -i "$KEYWORDS_MERCURY" newpages.txt | egrep -i "$KEYWORDS_MERCURY_SECONDARY" | egrep -iv "$KEYWORDS_MERCURY_EXCLUDE")
+  ZINC=$(egrep -i "$KEYWORDS_ZINC" newpages.txt)
+  CADMIUM=$(egrep -i "$KEYWORDS_CADMIUM" newpages.txt)
+  COPERNICIUM=$(egrep -i "$KEYWORDS_COPERNICIUM" newpages.txt)
 
-if [ $COPERNICIUM -ne 0 ];
-then
-  export CATFILE="Copernicium.txt"
-  export CATNAME="Copernicium"
-  $CATEGORIZE
-fi
+  if [ "$MERCURY" != "" ];
+  then
+    printf "%s" "$MERCURY" > MercuryElement.txt
+    export CATFILE="MercuryElement.txt"
+    export CATNAME="Mercury (element)"
+    $CATEGORIZE
+    rm MercuryElement.txt
+    unset MERCURY
+  fi
 
-rm MercuryElement.txt
-rm Zinc.txt
-rm Cadmium.txt
-rm Copernicium.txt
+  if [ "$ZINC" != "" ];
+  then
+    printf "%s" "$ZINC" > Zinc.txt
+    export CATFILE="Zinc.txt"
+    export CATNAME="Zinc"
+    $CATEGORIZE
+    rm Zinc.txt
+    unset ZINC
+  fi
+
+  if [ "$CADMIUM" != "" ];
+  then
+    printf "%s" "$CADMIUM" > Cadmium.txt
+    export CATFILE="Cadmium.txt"
+    export CATNAME="Cadmium"
+    $CATEGORIZE
+    rm Cadmium.txt
+    unset CADMIUM
+  fi
+
+  if [ "$COPERNICIUM" != "" ];
+  then
+    printf "%s" "$COPERNICIUM" > Copernicium.txt
+    export CATFILE="Copernicium.txt"
+    export CATNAME="Copernicium"
+    $CATEGORIZE
+    rm Copernicium.txt
+    unset COPERNICIUM
+  fi
+
+  debug_end "Group 12 elements"
+
+fi

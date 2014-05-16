@@ -1,64 +1,89 @@
 #!/bin/bash 
 
-egrep -i '\bCarbon\b|\bCarbons\b' newpages.txt | egrep -iv 'Carbon \b.+(ate|ide|ite)|Need For Speed|\bNFS' >> Carbon.txt
-egrep -i 'Silicon' newpages.txt | egrep -iv 'Silicon \b.+(ate|ide|ite)|Silicon Valley' >> Silicon.txt
-egrep -i 'Germanium' newpages.txt | egrep -iv 'Germanium \b.+(ate|ide|ite)' >> Germanium.txt
-egrep -i '\bTin\b' newpages.txt | egrep -iv 'Tin \b.+(ate|ide|ite)|Tin Man|Tin Tower|RuneScape' >> Tin.txt
-egrep -i 'Lead' newpages.txt | egrep -i 'atom|proton|neutron|electron|\bion|melt|boil|metal|vapor|magnet|element|compound|toxic|molecule|electricity|conduct|poison|lead weight' >> Lead.txt
-egrep -i 'Flerovium' newpages.txt | egrep -iv 'Flerovium \b.+(ate|ide|ite)' >> Flerovium.txt
+KEYWORDS_CARBON="\bCarbon\b|\bCarbons\b"
+KEYWORDS_CARBON_EXCLUDE="Carbon \b.+(ate|ide|ite)|Need For Speed|\bNFS"
+KEYWORDS_SILICON="Silicon"
+KEYWORDS_SILICON_EXCLUDE="Silicon \b.+(ate|ide|ite)|Silicon Valley"
+KEYWORDS_GERMANIUM="Germanium"
+KEYWORDS_GERMANIUM_EXCLUDE="Germanium \b.+(ate|ide|ite)"
+KEYWORDS_TIN="\bTin\b"
+KEYWORDS_TIN_EXCLUDE="Tin \b.+(ate|ide|ite)|Tin Man|Tin Tower|RuneScape"
+KEYWORDS_LEAD="\blead.+(atom|proton|neutron|electron|\bion|melt|boil|metal|vapor|magnet|element|compound|toxic|molecule|electricity|conduct|poison|lead weight)|(atom|proton|neutron|electron|\bion|melt|boil|metal|vapor|magnet|element|compound|toxic|molecule|electricity|conduct|poison|lead weight).+\blead"
+KEYWORDS_FLEROVIUM="Flerovium"
+KEYWORDS_FLEROVIUM_EXCLUDE="Flerovium \b.+(ate|ide|ite)"
 
-CARBON=`stat --print=%s Carbon.txt`
-SILICON=`stat --print=%s Silicon.txt`
-GERMANIUM=`stat --print=%s Germanium.txt`
-TIN=`stat --print=%s Tin.txt`
-LEAD=`stat --print=%s Lead.txt`
-FLEROVIUM=`stat --print=%s Flerovium.txt`
-
-if [ $CARBON -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Carbon.txt"
-  export CATNAME="Carbon"
-  $CATEGORIZE
-fi
 
-if [ $SILICON -ne 0 ];
-then
-  export CATFILE="Silicon.txt"
-  export CATNAME="Silicon"
-  $CATEGORIZE
-fi
+  debug_start "Group 14 elements"
 
-if [ $GERMANIUM -ne 0 ];
-then
-  export CATFILE="Germanium.txt"
-  export CATNAME="Germanium"
-  $CATEGORIZE
-fi
+  CARBON=$(egrep -i "$KEYWORDS_CARBON" newpages.txt | egrep -iv "$KEYWORDS_CARBON_EXCLUDE")
+  SILICON=$(egrep -i "$KEYWORDS_SILICON" newpages.txt | egrep -iv "$KEYWORDS_SILICON_EXCLUDE")
+  GERMANIUM=$(egrep -i "$KEYWORDS_GERMANIUM" newpages.txt | egrep -iv "$KEYWORDS_GERMANIUM_EXCLUDE")
+  TIN=$(egrep -i "$KEYWORDS_TIN" newpages.txt | egrep -iv "$KEYWORDS_TIN_EXCLUDE")
+  LEAD=$(egrep -i "$KEYWORDS_LEAD" newpages.txt)
+  FLEROVIUM=$(egrep -i "$KEYWORDS_FLEROVIUM" newpages.txt | egrep -iv "$KEYWORDS_FLEROVIUM_EXCLUDE")
 
-if [ $TIN -ne 0 ];
-then
-  export CATFILE="Tin.txt"
-  export CATNAME="Tin"
-  $CATEGORIZE
-fi
+  if [ "$CARBON" != "" ];
+  then
+    printf "%s" "$CARBON" > Carbon.txt
+    export CATFILE="Carbon.txt"
+    export CATNAME="Carbon"
+    $CATEGORIZE
+    rm Carbon.txt
+    unset CARBON
+  fi
 
-if [ $LEAD -ne 0 ];
-then
-  export CATFILE="Lead.txt"
-  export CATNAME="Lead"
-  $CATEGORIZE
-fi
+  if [ "$SILICON" != "" ];
+  then
+    printf "%s" "$SILICON" > Silicon.txt
+    export CATFILE="Silicon.txt"
+    export CATNAME="Silicon"
+    $CATEGORIZE
+    rm Silicon.txt
+    unset SILICON
+  fi
 
-if [ $FLEROVIUM -ne 0 ];
-then
-  export CATFILE="Flerovium.txt"
-  export CATNAME="Flerovium"
-  $CATEGORIZE
-fi
+  if [ "$GERMANIUM" != "" ];
+  then
+    printf "%s" "$GERMANIUM" > Germanium.txt
+    export CATFILE="Germanium.txt"
+    export CATNAME="Germanium"
+    $CATEGORIZE
+    rm Germanium.txt
+    unset GERMANIUM
+  fi
 
-rm Carbon.txt
-rm Silicon.txt
-rm Germanium.txt
-rm Tin.txt
-rm Lead.txt
-rm Flerovium.txt
+  if [ "$TIN" != "" ];
+  then
+    printf "%s" "$TIN" > Tin.txt
+    export CATFILE="Tin.txt"
+    export CATNAME="Tin"
+    $CATEGORIZE
+    rm Tin.txt
+    unset TIN
+  fi
+
+  if [ "$LEAD" != "" ];
+  then
+    printf "%s" "$LEAD" > Lead.txt
+    export CATFILE="Lead.txt"
+    export CATNAME="Lead"
+    $CATEGORIZE
+    rm Lead.txt
+    unset LEAD
+  fi
+
+  if [ "$FLEROVIUM" != "" ];
+  then
+    printf "%s" "$FLEROVIUM" > Flerovium.txt
+    export CATFILE="Flerovium.txt"
+    export CATNAME="Flerovium"
+    $CATEGORIZE
+    rm Flerovium.txt
+    unset FLEROVIUM
+  fi
+
+  debug_end "Group 14 elements"
+
+fi

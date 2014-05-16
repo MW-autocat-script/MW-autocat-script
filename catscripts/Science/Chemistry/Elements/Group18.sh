@@ -1,74 +1,99 @@
 #!/bin/bash 
 
-egrep -i '(\bNeon\b|\bNeons\b)' newpages.txt |egrep -iv '(Dodge|Plymouth) Neon|[0-9]{2,} Neon' >> Neon.txt
-egrep -i '\bHelium' newpages.txt >> Helium.txt
-egrep -i '\bArgon\b|\bArgons\b' newpages.txt >> Argon.txt
-egrep -i 'Krypton' newpages.txt | egrep -iv 'Kryptonite|Superman|planet Krypton|Kryptonian' >> Krypton.txt
-egrep -i '\bXenon' newpages.txt | egrep -iv 'LG Xenon' >> Xenon.txt
-egrep -i '\bRadon' newpages.txt >> Radon.txt
-egrep -i 'Ununoctium' newpages.txt >> Ununoctium.txt
+KEYWORDS_NEON="(\bNeon\b|\bNeons\b)"
+KEYWORDS_NEON_EXCLUDE="(Dodge|Plymouth) Neon|[0-9]{2,} Neon"
+KEYWORDS_HELIUM="\bHelium"
+KEYWORDS_ARGON="\bArgon\b|\bArgons\b"
+KEYWORDS_KRYPTON="Krypton"
+KEYWORDS_KRYPTON_EXCLUDE="Kryptonite|Superman|planet Krypton|Kryptonian"
+KEYWORDS_XENON="\bXenon"
+KEYWORDS_XENON_EXCLUDE="LG Xenon"
+KEYWORDS_RADON="\bRadon"
+KEYWORDS_UNUNOCTIUM="Ununoctium"
 
-NEON=`stat --print=%s Neon.txt`
-HELIUM=`stat --print=%s Helium.txt`
-ARGON=`stat --print=%s Argon.txt`
-KRYPTON=`stat --print=%s Krypton.txt`
-XENON=`stat --print=%s Xenon.txt`
-RADON=`stat --print=%s Radon.txt`
-UNUNOCTIUM=`stat --print=%s Ununoctium.txt`
-
-if [ $NEON -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Neon.txt"
-  export CATNAME="Neon"
-  $CATEGORIZE
-fi
 
-if [ $HELIUM -ne 0 ];
-then
-  export CATFILE="Helium.txt"
-  export CATNAME="Helium"
-  $CATEGORIZE
-fi
+  debug_start "Group 18 elements"
 
-if [ $ARGON -ne 0 ];
-then
-  export CATFILE="Argon.txt"
-  export CATNAME="Argon"
-  $CATEGORIZE
-fi
+  NEON=$(egrep -i "$KEYWORDS_NEON" newpages.txt | egrep -iv "$KEYWORDS_NEON_EXCLUDE")
+  HELIUM=$(egrep -i "$KEYWORDS_HELIUM" newpages.txt)
+  ARGON=$(egrep -i "$KEYWORDS_ARGON" newpages.txt)
+  KRYPTON=$(egrep -i "$KEYWORDS_KRYPTON" newpages.txt | egrep -iv "$KEYWORDS_KRYPTON_EXCLUDE")
+  XENON=$(egrep -i "$KEYWORDS_XENON" newpages.txt | egrep -iv "$KEYWORDS_XENON_EXCLUDE")
+  RADON=$(egrep -i "$KEYWORDS_RADON" newpages.txt)
+  UNUNOCTIUM=$(egrep -i "$KEYWORDS_UNUNOCTIUM" newpages.txt)
 
-if [ $KRYPTON -ne 0 ];
-then
-  export CATFILE="Krypton.txt"
-  export CATNAME="Krypton"
-  $CATEGORIZE
-fi
+  if [ "$NEON" != "" ];
+  then
+    printf "%s" "$NEON" > Neon.txt
+    export CATFILE="Neon.txt"
+    export CATNAME="Neon"
+    $CATEGORIZE
+    rm Neon.txt
+    unset NEON
+  fi
 
-if [ $XENON -ne 0 ];
-then
-  export CATFILE="Xenon.txt"
-  export CATNAME="Xenon"
-  $CATEGORIZE
-fi
+  if [ "$HELIUM" != "" ];
+  then
+    printf "%s" "$HELIUM" > Helium.txt
+    export CATFILE="Helium.txt"
+    export CATNAME="Helium"
+    $CATEGORIZE
+    rm Helium.txt
+    unset HELIUM
+  fi
 
-if [ $RADON -ne 0 ];
-then
-  export CATFILE="Radon.txt"
-  export CATNAME="Radon"
-  $CATEGORIZE
-fi
+  if [ "$ARGON" != "" ];
+  then
+    printf "%s" "$ARGON" > Argon.txt
+    export CATFILE="Argon.txt"
+    export CATNAME="Argon"
+    $CATEGORIZE
+    rm Argon.txt
+    unset ARGON
+  fi
 
-if [ $UNUNOCTIUM -ne 0 ];
-then
-  export CATFILE="Ununoctium.txt"
-  export CATNAME="Ununoctium"
-  $CATEGORIZE
-fi
+  if [ "$KRYPTON" != "" ];
+  then
+    printf "%s" "$KRYPTON" > Krypton.txt
+    export CATFILE="Krypton.txt"
+    export CATNAME="Krypton"
+    $CATEGORIZE
+    rm Krypton.txt
+    unset KRYPTON
+  fi
 
-rm Neon.txt
-rm Helium.txt
-rm Argon.txt
-rm Krypton.txt
-rm Xenon.txt
-rm Radon.txt
-rm Ununoctium.txt
+  if [ "$XENON" != "" ];
+  then
+    printf "%s" "$XENON" > Xenon.txt
+    export CATFILE="Xenon.txt"
+    export CATNAME="Xenon"
+    $CATEGORIZE
+    rm Xenon.txt
+    unset XENON
+  fi
+
+  if [ "$RADON" != "" ];
+  then
+    printf "%s" "$RADON" > Radon.txt
+    export CATFILE="Radon.txt"
+    export CATNAME="Radon"
+    $CATEGORIZE
+    rm Radon.txt
+    unset RADON
+  fi
+
+  if [ "$UNUNOCTIUM" != "" ];
+  then
+    printf "%s" "$UNUNOCTIUM" > Ununoctium.txt
+    export CATFILE="Ununoctium.txt"
+    export CATNAME="Ununoctium"
+    $CATEGORIZE
+    rm Ununoctium.txt
+    unset UNUNOCTIUM
+  fi
+
+  debug_end "Group 18 elements"
+
+fi

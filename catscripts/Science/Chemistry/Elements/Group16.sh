@@ -1,64 +1,90 @@
 #!/bin/bash 
 
-egrep -i '\bOxygen' newpages.txt | egrep -iv 'Oxygen \b.+(ate|ide|ite)|channel|network|oxygen sensor|oxygen tank' >> Oxygen.txt
-egrep -i 'Sulfur' newpages.txt | egrep -iv 'Sulfur \b.+(ate|ide|ite)' >> Sulfur.txt
-egrep -i 'Selenium' newpages.txt | egrep -iv 'Selenium \b.+(ate|ide|ite)' >> Selenium.txt
-egrep -i 'Tellurium' newpages.txt | egrep -iv 'Tellurium \b.+(ate|ide|ite)' >> Tellurium.txt
-egrep -i 'Polonium' newpages.txt | egrep -iv 'Polonium \b.+(ate|ide|ite)' >> Polonium.txt
-egrep -i 'Livermorium' newpages.txt | egrep -iv 'Livermorium \b.+(ate|ide|ite)' >> Livermorium.txt
+KEYWORDS_OXYGEN="\bOxygen"
+KEYWORDS_OXYGEN_EXCLUDE="Oxygen \b.+(ate|ide|ite)|channel|network|oxygen sensor|oxygen tank"
+KEYWORDS_SULFUR="Sulfur|sulphur"
+KEYWORDS_SULFUR_EXCLUDE="Sulfur \b.+(ate|ide|ite)"
+KEYWORDS_SELENIUM="Selenium"
+KEYWORDS_SELENIUM_EXCLUDE="Selenium \b.+(ate|ide|ite)"
+KEYWORDS_TELLURIUM="Tellurium"
+KEYWORDS_TELLURIUM_EXCLUDE="Tellurium \b.+(ate|ide|ite)"
+KEYWORDS_POLONIUM="Polonium"
+KEYWORDS_POLONIUM_EXCLUDE="Polonium \b.+(ate|ide|ite)"
+KEYWORDS_LIVERMORIUM="Livermorium"
+KEYWORDS_LIVERMORIUM_EXCLUDE="Livermorium \b.+(ate|ide|ite)"
 
-OXYGEN=`stat --print=%s Oxygen.txt`
-SULFUR=`stat --print=%s Sulfur.txt`
-SELENIUM=`stat --print=%s Selenium.txt`
-TELLURIUM=`stat --print=%s Tellurium.txt`
-POLONIUM=`stat --print=%s Polonium.txt`
-LIVERMORIUM=`stat --print=%s Livermorium.txt`
-
-if [ $OXYGEN -ne 0 ];
+if [ "$1" != "" ];
 then
-  export CATFILE="Oxygen.txt"
-  export CATNAME="Oxygen"
-  $CATEGORIZE
-fi
 
-if [ $SULFUR -ne 0 ];
-then
-  export CATFILE="Sulfur.txt"
-  export CATNAME="Sulfur"
-  $CATEGORIZE
-fi
+  debug_start "Group 16 elements"
 
-if [ $SELENIUM -ne 0 ];
-then
-  export CATFILE="Selenium.txt"
-  export CATNAME="Selenium"
-  $CATEGORIZE
-fi
+  OXYGEN=$(egrep -i "$KEYWORDS_OXYGEN" newpages.txt | egrep -iv "$KEYWORDS_OXYGEN_EXCLUDE")
+  SULFUR=$(egrep -i "$KEYWORDS_SULFUR" newpages.txt | egrep -iv "$KEYWORDS_SULFUR_EXCLUDE")
+  SELENIUM=$(egrep -i "$KEYWORDS_SELENIUM" newpages.txt | egrep -iv "$KEYWORDS_SELENIUM_EXCLUDE")
+  TELLURIUM=$(egrep -i "$KEYWORDS_TELLURIUM" newpages.txt | egrep -iv "$KEYWORDS_TELLURIUM_EXCLUDE")
+  POLONIUM=$(egrep -i "$KEYWORDS_POLONIUM" newpages.txt | egrep -iv "$KEYWORDS_POLONIUM_EXCLUDE")
+  LIVERMORIUM=$(egrep -i "$KEYWORDS_LIVERMORIUM" newpages.txt | egrep -i "$KEYWORDS_LIVERMORIUM_EXCLUDE")
 
-if [ $TELLURIUM -ne 0 ];
-then
-  export CATFILE="Tellurium.txt"
-  export CATNAME="Tellurium"
-  $CATEGORIZE
-fi
+  if [ "$OXYGEN" != "" ];
+  then
+    printf "%s" "$OXYGEN" > Oxygen.txt
+    export CATFILE="Oxygen.txt"
+    export CATNAME="Oxygen"
+    $CATEGORIZE
+    rm Oxygen.txt
+    unset OXYGEN
+  fi
 
-if [ $POLONIUM -ne 0 ];
-then
-  export CATFILE="Polonium.txt"
-  export CATNAME="Polonium"
-  $CATEGORIZE
-fi
+  if [ "$SULFUR" != "" ];
+  then
+    printf "%s" "$SULFUR" > Sulfur.txt
+    export CATFILE="Sulfur.txt"
+    export CATNAME="Sulfur"
+    $CATEGORIZE
+    rm Sulfur.txt
+    unset SULFUR
+  fi
 
-if [ $LIVERMORIUM -ne 0 ];
-then
-  export CATFILE="Livermorium.txt"
-  export CATNAME="Livermorium"
-  $CATEGORIZE
-fi
+  if [ "$SELENIUM" != "" ];
+  then
+    printf "%s" "$SELENIUM" > Selenium.txt
+    export CATFILE="Selenium.txt"
+    export CATNAME="Selenium"
+    $CATEGORIZE
+    rm Selenium.txt
+    unset SELENIUM
+  fi
 
-rm Oxygen.txt
-rm Sulfur.txt
-rm Selenium.txt
-rm Tellurium.txt
-rm Polonium.txt
-rm Livermorium.txt
+  if [ "$TELLURIUM" != "" ];
+  then
+    printf "%s" "$TELLURIUM" > Tellurium.txt
+    export CATFILE="Tellurium.txt"
+    export CATNAME="Tellurium"
+    $CATEGORIZE
+    rm Tellurium.txt
+    unset TELLURIUM
+  fi
+
+  if [ "$POLONIUM" != "" ];
+  then
+    printf "%s" "$POLONIUM" > Polonium.txt
+    export CATFILE="Polonium.txt"
+    export CATNAME="Polonium"
+    $CATEGORIZE
+    rm Polonium.txt
+    unset POLONIUM
+  fi
+
+  if [ "$LIVERMORIUM" != "" ];
+  then
+    printf "%s" "$LIVERMORIUM" > Livermorium.txt
+    export CATFILE="Livermorium.txt"
+    export CATNAME="Livermorium"
+    $CATEGORIZE
+    rm Livermorium.txt
+    unset LIVERMORIUM
+  fi
+
+  debug_end "Group 16 elements"
+
+fi

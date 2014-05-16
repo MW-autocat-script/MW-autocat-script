@@ -1,44 +1,62 @@
 #!/bin/bash 
 
-egrep -i 'Nickel' newpages.txt | egrep -iv 'penny|dime|quarter|cent|dollar|nickel bag|on the nickel|[0-9]{1,}.+nickel|worth|buffalo|poptropica|mint|a nickel\b|coin|Nickelodeon|Nickelback' >> Nickel.txt
-egrep -i 'Palladium' newpages.txt >> Palladium.txt
-egrep -i 'Platinum' newpages.txt | egrep -iv "record|album|go platinum|Pokemon|Pok'mon|Pokémon|platinum card|platinum medal|Mass Effect" >> Platinum.txt
-egrep -i 'Darmstadtium' newpages.txt >> Darmstadtium.txt
+KEYWORDS_NICKEL="Nickel"
+KEYWORDS_NICKEL_EXCLUDE="penny|dime|quarter|cent|dollar|nickel bag|on the nickel|[0-9]{1,}.+nickel|worth|buffalo|poptropica|mint|a nickel\b|coin|Nickelodeon|Nickelback"
+KEYWORDS_PALLADIUM="Palladium"
+KEYWORDS_PLATINUM="Platinum"
+KEYWORDS_PLATINUM_EXCLUDE="record|album|go platinum|Pokemon|Pok'mon|Pokémon|platinum card|platinum medal|Mass Effect"
+KEYWORDS_DARMSTADTIUM="Darmstadtium"
 
-NICKEL=`stat --print=%s Nickel.txt`
-PALLADIUM=`stat --print=%s Palladium.txt`
-PLATINUM=`stat --print=%s Platinum.txt`
-DARMSTADTIUM=`stat --print=%s Darmstadtium.txt`
-
-if [ $NICKEL -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Nickel.txt"
-  export CATNAME="Nickel"
-  $CATEGORIZE
-fi
 
-if [ $PALLADIUM -ne 0 ];
-then
-  export CATFILE="Palladium.txt"
-  export CATNAME="Palladium"
-  $CATEGORIZE
-fi
+  debug_start "Group 10 elements"
 
-if [ $PLATINUM -ne 0 ];
-then
-  export CATFILE="Platinum.txt"
-  export CATNAME="Platinum"
-  $CATEGORIZE
-fi
+  NICKEL=$(egrep -i "$KEYWORDS_NICKEL" newpages.txt | egrep -iv "$KEYWORDS_NICKEL_EXCLUDE")
+  PALLADIUM=$(egrep -i "$KEYWORDS_PALLADIUM" newpages.txt)
+  PLATINUM=$(egrep -i "$KEYWORDS_PLATINUM" newpages.txt | egrep -iv "$KEYWORDS_PLATINUM_EXCLUDE")
+  DARMSTADTIUM=$(egrep -i "$KEYWORDS_DARMSTADTIUM" newpages.txt)
 
-if [ $DARMSTADTIUM -ne 0 ];
-then
-  export CATFILE="Darmstadtium.txt"
-  export CATNAME="Darmstadtium"
-  $CATEGORIZE
-fi
+  if [ "$NICKEL" != "" ];
+  then
+    printf "%s" "$NICKEL" > Nickel.txt
+    export CATFILE="Nickel.txt"
+    export CATNAME="Nickel"
+    $CATEGORIZE
+    rm Nickel.txt
+    unset NICKEL
+  fi
 
-rm Nickel.txt
-rm Palladium.txt
-rm Platinum.txt
-rm Darmstadtium.txt
+  if [ "$PALLADIUM" != "" ];
+  then
+    printf "%s" "$PALLADIUM" > Palladium.txt
+    export CATFILE="Palladium.txt"
+    export CATNAME="Palladium"
+    $CATEGORIZE
+    rm Palladium.txt
+    unset PALLADIUM
+  fi
+
+  if [ "$PLATINUM" != "" ];
+  then
+    printf "%s" "$PLATINUM" > Platinum.txt
+    export CATFILE="Platinum.txt"
+    export CATNAME="Platinum"
+    $CATEGORIZE
+    rm Platinum.txt
+    unset PLATINUM
+  fi
+
+  if [ "$DARMSTADTIUM" != "" ];
+  then
+    printf "%s" "$DARMSTADTIUM" > Darmstadtium.txt
+    export CATFILE="Darmstadtium.txt"
+    export CATNAME="Darmstadtium"
+    $CATEGORIZE
+    rm Darmstadtium.txt
+    unset DARMSTADTIUM
+  fi
+
+  debug_end "Group 10 elements"
+
+fi
