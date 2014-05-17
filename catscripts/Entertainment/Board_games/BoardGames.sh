@@ -9,13 +9,13 @@ KEYWORDS_BOARDGAMES_EXCLUDE="$KEYWORDS_CHESS|$KEYWORDS_CHECKERS"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  BOARDGAMES=`egrep -i "$KEYWORDS_BOARDGAMES" newpages.txt | egrep -iv "$KEYWORDS_BOARDGAMES_EXCLUDE"`
-  CHESS=`egrep -i "$KEYWORDS_CHESS" newpages.txt | egrep -iv "$KEYWORDS_CHESS_EXCLUDE"`
-  CHECKERS=`egrep -i "$KEYWORDS_CHECKERS" newpages.txt`
+  BOARDGAMES=$(egrep -i "$KEYWORDS_BOARDGAMES" newpages.txt | egrep -iv "$KEYWORDS_BOARDGAMES_EXCLUDE")
+  CHESS=$(egrep -i "$KEYWORDS_CHESS" newpages.txt | egrep -iv "$KEYWORDS_CHESS_EXCLUDE")
+  CHECKERS=$(egrep -i "$KEYWORDS_CHECKERS" newpages.txt)
 
   if [ "$BOARDGAMES" != "" ];
   then
-    egrep -i "$KEYWORDS_BOARDGAMES" newpages.txt | egrep -iv "$KEYWORDS_BOARDGAMES_EXCLUDE" > Boardgames.txt
+    printf "%s" "$BOARDGAMES" > Boardgames.txt
     export CATFILE="Boardgames.txt"
     export CATNAME="Board games"
     $CATEGORIZE
@@ -25,7 +25,7 @@ then
 
   if [ "$CHESS" != "" ];
   then
-    egrep -i "$KEYWORDS_CHESS" newpages.txt | egrep -iv "$KEYWORDS_CHESS_EXCLUDE" > Chess.txt
+    printf "%s" "$CHESS" > Chess.txt
     export CATFILE="Chess.txt"
     export CATNAME="Chess"
     $CATEGORIZE
@@ -35,7 +35,7 @@ then
 
   if [ "$CHECKERS" != "" ];
   then
-    egrep -i "$KEYWORDS_CHECKERS" newpages.txt > Checkers.txt
+    printf "%s" "$CHECKERS" > Checkers.txt
     export CATFILE="Checkers.txt"
     export CATNAME="Checkers"
     $CATEGORIZE

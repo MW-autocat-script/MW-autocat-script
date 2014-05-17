@@ -34,34 +34,34 @@ KEYWORDS_POKEMONSPECIES_A="$KEYWORDS_ABOMASNOW|$KEYWORDS_ABRA|$KEYWORDS_ABSOL|$K
 if [ "$1" == "" ];
 then
 
-  ABOMASNOW=`egrep -i "$KEYWORDS_ABOMASNOW" newpages.txt`
-  ABRA=`egrep -i "$KEYWORDS_ABRA" newpages.txt` 
-  ABSOL=`egrep -i "$KEYWORDS_ABSOL" newpages.txt` 
-  ACCELGOR=`egrep -i "$KEYWORDS_ACCELGOR" newpages.txt` 
-  AERODACTYL=`egrep -i "$KEYWORDS_AERODACTYL" newpages.txt`
-  AGGRON=`egrep -i "$KEYWORDS_AGGRON" newpages.txt` 
-  AIPOM=`egrep -i "$KEYWORDS_AIPOM" newpages.txt` 
-  ALAKAZAM=`egrep -i "$KEYWORDS_ALAKAZAM" newpages.txt` 
-  ALOMOMOLA=`egrep -i "$KEYWORDS_ALOMOMOLA" newpages.txt` 
-  ALTARIA=`egrep -i "$KEYWORDS_ALTARIA" newpages.txt` 
-  AMBIPOM=`egrep -i "$KEYWORDS_AMBIPOM" newpages.txt` 
-  AMOONGUSS=`egrep -i "$KEYWORDS_AMOONGUSS" newpages.txt` 
-  AMPHAROS=`egrep -i "$KEYWORDS_AMPHAROS" newpages.txt` 
-  ANORITH=`egrep -i "$KEYWORDS_ANORITH" newpages.txt` 
-  ARBOK=`egrep -i "$KEYWORDS_ARBOK" newpages.txt` 
-  ARCANINE=`egrep -i "$KEYWORDS_ARCANINE" newpages.txt` 
-  ARCEUS=`egrep -i "$KEYWORDS_ARCEUS" newpages.txt` 
-  ARCHEN=`egrep -i "$KEYWORDS_ARCHEN" newpages.txt` 
-  ARCHEOPS=`egrep -i "$KEYWORDS_ARCHEOPS" newpages.txt` 
-  ARIADOS=`egrep -i "$KEYWORDS_ARIADOS" newpages.txt` 
-  ARMALDO=`egrep -i "$KEYWORDS_ARMALDO" newpages.txt` 
-  ARON=`egrep -i "$KEYWORDS_ARON" newpages.txt` 
-  ARTICUNO=`egrep -i "$KEYWORDS_ARTICUNO" newpages.txt` 
-  AUDINO=`egrep -i "$KEYWORDS_AUDINO" newpages.txt` 
-  AXEW=`egrep -i "$KEYWORDS_AXEW" newpages.txt` 
-  AZELF=`egrep -i "$KEYWORDS_AZELF" newpages.txt` 
-  AZUMARILL=`egrep -i "$KEYWORDS_AZUMARILL" newpages.txt` 
-  AZURILL=`egrep -i "$KEYWORDS_AZURILL" newpages.txt`
+  ABOMASNOW=$(egrep -i "$KEYWORDS_ABOMASNOW" newpages.txt)
+  ABRA=$(egrep -i "$KEYWORDS_ABRA" newpages.txt) 
+  ABSOL=$(egrep -i "$KEYWORDS_ABSOL" newpages.txt) 
+  ACCELGOR=$(egrep -i "$KEYWORDS_ACCELGOR" newpages.txt) 
+  AERODACTYL=$(egrep -i "$KEYWORDS_AERODACTYL" newpages.txt)
+  AGGRON=$(egrep -i "$KEYWORDS_AGGRON" newpages.txt) 
+  AIPOM=$(egrep -i "$KEYWORDS_AIPOM" newpages.txt) 
+  ALAKAZAM=$(egrep -i "$KEYWORDS_ALAKAZAM" newpages.txt) 
+  ALOMOMOLA=$(egrep -i "$KEYWORDS_ALOMOMOLA" newpages.txt) 
+  ALTARIA=$(egrep -i "$KEYWORDS_ALTARIA" newpages.txt) 
+  AMBIPOM=$(egrep -i "$KEYWORDS_AMBIPOM" newpages.txt) 
+  AMOONGUSS=$(egrep -i "$KEYWORDS_AMOONGUSS" newpages.txt) 
+  AMPHAROS=$(egrep -i "$KEYWORDS_AMPHAROS" newpages.txt) 
+  ANORITH=$(egrep -i "$KEYWORDS_ANORITH" newpages.txt) 
+  ARBOK=$(egrep -i "$KEYWORDS_ARBOK" newpages.txt) 
+  ARCANINE=$(egrep -i "$KEYWORDS_ARCANINE" newpages.txt) 
+  ARCEUS=$(egrep -i "$KEYWORDS_ARCEUS" newpages.txt) 
+  ARCHEN=$(egrep -i "$KEYWORDS_ARCHEN" newpages.txt) 
+  ARCHEOPS=$(egrep -i "$KEYWORDS_ARCHEOPS" newpages.txt) 
+  ARIADOS=$(egrep -i "$KEYWORDS_ARIADOS" newpages.txt) 
+  ARMALDO=$(egrep -i "$KEYWORDS_ARMALDO" newpages.txt) 
+  ARON=$(egrep -i "$KEYWORDS_ARON" newpages.txt) 
+  ARTICUNO=$(egrep -i "$KEYWORDS_ARTICUNO" newpages.txt) 
+  AUDINO=$(egrep -i "$KEYWORDS_AUDINO" newpages.txt) 
+  AXEW=$(egrep -i "$KEYWORDS_AXEW" newpages.txt) 
+  AZELF=$(egrep -i "$KEYWORDS_AZELF" newpages.txt) 
+  AZUMARILL=$(egrep -i "$KEYWORDS_AZUMARILL" newpages.txt) 
+  AZURILL=$(egrep -i "$KEYWORDS_AZURILL" newpages.txt)
 
   if [ "$DEBUG" == "yes" ];
   then

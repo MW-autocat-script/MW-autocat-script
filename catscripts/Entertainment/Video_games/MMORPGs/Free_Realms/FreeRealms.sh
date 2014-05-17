@@ -4,7 +4,7 @@ export KEYWORDS_MMORPG_FREEREALMS="Free(| )Realms"
 
 egrep -i "$KEYWORDS_MMORPG_FREEREALMS" newpages.txt > FreeRealms.txt
 
-FREEREALMS=`stat --print=%s FreeRealms.txt`
+FREEREALMS=$(stat --print=%s FreeRealms.txt)
 
 if [ $FREEREALMS -ne 0 ];
 then	

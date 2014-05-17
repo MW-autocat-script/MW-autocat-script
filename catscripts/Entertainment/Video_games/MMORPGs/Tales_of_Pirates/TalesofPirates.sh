@@ -4,7 +4,7 @@ export KEYWORDS_MMORPG_PIRATES="Tales(| )of(| )Pirates"
 
 egrep -i "$KEYWORDS_MMORPG_PIRATES" newpages.txt >> TalesofPirates.txt
 
-PIRATES=`stat --print=%s TalesofPirates.txt`
+PIRATES=$(stat --print=%s TalesofPirates.txt)
 
 if [ $PIRATES -ne 0 ];
 then

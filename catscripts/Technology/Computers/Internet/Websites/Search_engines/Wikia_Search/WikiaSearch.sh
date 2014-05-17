@@ -7,7 +7,7 @@ then
 
   egrep -i "$KEYWORDS_WIKIASEARCH" newpages.txt >> WikiaSearch.txt
 
-  WIKIASEARCH=`stat --print=%s WikiaSearch.txt`
+  WIKIASEARCH=$(stat --print=%s WikiaSearch.txt)
 
   if [ $WIKIASEARCH -ne 0 ];
   then

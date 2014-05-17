@@ -5,7 +5,7 @@ KEYWORDS_COMPUTER_SECURITY_EXCLUDE="anti(|-)(| )virus|\bTroy|Greek|Trojan(| )War
 
 egrep -i "$KEYWORDS_COMPUTER_SECURITY" newpages.txt | egrep -iv "$KEYWORDS_COMPUTER_SECURITY_EXCLUDE" >> ComputerSecurity.txt
 
-SECURITY=`stat --print=%s ComputerSecurity.txt`
+SECURITY=$(stat --print=%s ComputerSecurity.txt)
 
 if [ $SECURITY -ne 0 ];
 then

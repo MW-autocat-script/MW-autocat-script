@@ -2,7 +2,7 @@
 
 egrep -i 'Barbados|Barbadoan' newpages.txt >> Barbados.txt
 
-BARBADOS=`stat --print=%s Barbados.txt`
+BARBADOS=$(stat --print=%s Barbados.txt)
 
 if [ $BARBADOS -ne 0 ];
 then

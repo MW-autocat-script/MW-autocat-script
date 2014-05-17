@@ -5,7 +5,7 @@ KEYWORDS_NICKELBACK="Nick(el|le)back"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  NICKELBACK=`egrep -i "$KEYWORDS_NICKELBACK" newpages.txt`
+  NICKELBACK=$(egrep -i "$KEYWORDS_NICKELBACK" newpages.txt)
 
   if [ "$NICKELBACK" != "" ];
   then

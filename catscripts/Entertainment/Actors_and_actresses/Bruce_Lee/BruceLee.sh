@@ -5,7 +5,7 @@ KEYWORDS_ACTOR_BRUCELEE="Bruce(| )Lee"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  BRUCELEE=`egrep -i "$KEYWORDS_ACTOR_BRUCELEE" newpages.txt`
+  BRUCELEE=$(egrep -i "$KEYWORDS_ACTOR_BRUCELEE" newpages.txt)
 
   if [ "$BRUCELEE" != "" ];
   then

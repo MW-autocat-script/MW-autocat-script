@@ -2,7 +2,7 @@
 
 egrep -i 'Australia' newpages.txt | egrep -iv 'Canberra|Sydney|Melbourne' >> Australia.txt
 
-AUSTRALIA=`stat --print=%s Australia.txt`
+AUSTRALIA=$(stat --print=%s Australia.txt)
 
 if [ $AUSTRALIA -ne 0 ];
 then

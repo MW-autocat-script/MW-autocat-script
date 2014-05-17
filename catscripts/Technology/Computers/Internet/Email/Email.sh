@@ -12,8 +12,8 @@ then
     printf "Starting Email\n"
   fi
 
-  EMAIL=`egrep -i "$KEYWORDS_EMAIL" newpages.txt | egrep -iv "$KEYWORDS_GMAIL"`
-  GMAIL=`egrep -i "$KEYWORDS_GMAIL" newpages.txt`
+  EMAIL=$(egrep -i "$KEYWORDS_EMAIL" newpages.txt | egrep -iv "$KEYWORDS_GMAIL")
+  GMAIL=$(egrep -i "$KEYWORDS_GMAIL" newpages.txt)
 
   if [ "$EMAIL" != "" ];
   then

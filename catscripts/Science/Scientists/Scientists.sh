@@ -6,11 +6,11 @@ egrep -i 'Leonardo da Vinci' newpages.txt >> LeonardoDaVinci.txt
 egrep -i 'Marie Curie' newpages.txt >> MarieCurie.txt
 egrep -i 'Isaac Newton' newpages.txt >> IsaacNewton.txt
 
-HAWKING=`stat --print=%s StephenHawking.txt`
-DARWIN=`stat --print=%s CharlesDarwin.txt`
-DAVINCI=`stat --print=%s LeonardoDaVinci.txt`
-CURIE=`stat --print=%s MarieCurie.txt`
-NEWTON=`stat --print=%s IsaacNewton.txt`
+HAWKING=$(stat --print=%s StephenHawking.txt)
+DARWIN=$(stat --print=%s CharlesDarwin.txt)
+DAVINCI=$(stat --print=%s LeonardoDaVinci.txt)
+CURIE=$(stat --print=%s MarieCurie.txt)
+NEWTON=$(stat --print=%s IsaacNewton.txt)
 
 if [ $HAWKING -ne 0 ];
 then

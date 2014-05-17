@@ -4,7 +4,7 @@ KEYWORDS_XBOX360="X(|-)box(| )360"
 
 egrep -i "$KEYWORDS_XBOX360" newpages.txt >> Xbox360.txt
 
-X360=`stat --print=%s Xbox360.txt`
+X360=$(stat --print=%s Xbox360.txt)
 
 if [ $X360 -ne 0 ];
 then

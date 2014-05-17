@@ -2,7 +2,7 @@
 
 egrep -i 'Costa(| )Rica' newpages.txt >> CostaRica.txt
 
-COSTARICA=`stat --print=%s CostaRica.txt`
+COSTARICA=$(stat --print=%s CostaRica.txt)
 
 if [ $COSTARICA -ne 0 ];
 then

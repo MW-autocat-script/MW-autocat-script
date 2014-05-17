@@ -72,31 +72,31 @@ egrep -i "Acura|$KEYWORDS_ACURA_CL|$KEYWORDS_ACURA_CSX|$KEYWORDS_ACURA_EL|$KEYWO
 
 #Stat brands
 
-HONDA=`stat --print=%s Honda.txt`
-ACURA=`stat --print=%s Acura.txt`
+HONDA=$(stat --print=%s Honda.txt)
+ACURA=$(stat --print=%s Acura.txt)
 
 #Stat ATVs
 
-SPORTRAX=`stat --print=%s HondaSportrax.txt`
+SPORTRAX=$(stat --print=%s HondaSportrax.txt)
 
 #Stat cars
 
-ACCORD=`stat --print=%s HondaAccord.txt`
-CIVIC=`stat --print=%s HondaCivic.txt`
-ELEMENT=`stat --print=%s HondaElement.txt`
-INTEGRA=`stat --print=%s HondaIntegra.txt`
-PASSPORT=`stat --print=%s HondaPassport.txt`
-PRELUDE=`stat --print=%s HondaPrelude.txt`
-ACURATL=`stat --print=%s AcuraTL.txt`
+ACCORD=$(stat --print=%s HondaAccord.txt)
+CIVIC=$(stat --print=%s HondaCivic.txt)
+ELEMENT=$(stat --print=%s HondaElement.txt)
+INTEGRA=$(stat --print=%s HondaIntegra.txt)
+PASSPORT=$(stat --print=%s HondaPassport.txt)
+PRELUDE=$(stat --print=%s HondaPrelude.txt)
+ACURATL=$(stat --print=%s AcuraTL.txt)
 
 #Stat SUVs
 
-PILOT=`stat --print=%s HondaPilot.txt`
-CRV=`stat --print=%s HondaCRV.txt`
+PILOT=$(stat --print=%s HondaPilot.txt)
+CRV=$(stat --print=%s HondaCRV.txt)
 
 #Stat vans
 
-ODYSSEY=`stat --print=%s HondaOdyssey.txt`
+ODYSSEY=$(stat --print=%s HondaOdyssey.txt)
 
 #Categorize brands
 

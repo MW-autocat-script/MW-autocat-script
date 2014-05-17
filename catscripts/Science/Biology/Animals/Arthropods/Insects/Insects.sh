@@ -11,7 +11,7 @@ then
     printf "Starting Insects\n"
   fi
 
-  ANTS=`egrep -i "$KEYWORDS_ANTS" newpages.txt`
+  ANTS=$(egrep -i "$KEYWORDS_ANTS" newpages.txt)
 
   if [ "$ANTS" != "" ];
   then

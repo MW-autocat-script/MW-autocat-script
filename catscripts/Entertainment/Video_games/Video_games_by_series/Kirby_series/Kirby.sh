@@ -10,7 +10,7 @@ then
     printf "Starting Kirby series\n"
   fi
 
-  KIRBY=`egrep -i "$KEYWORDS_KIRBY" newpages.txt`
+  KIRBY=$(egrep -i "$KEYWORDS_KIRBY" newpages.txt)
 
   if [ "$KIRBY" != "" ];
   then

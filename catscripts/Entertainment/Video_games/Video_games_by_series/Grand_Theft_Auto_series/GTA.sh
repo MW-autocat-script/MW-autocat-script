@@ -30,18 +30,18 @@ egrep -i "$KEYWORDS_GTATLAD" newpages.txt >> Damned.txt
 egrep -i "$KEYWORDS_GTATBOGT" newpages.txt >> GayTony.txt
 
 
-SERIES=`stat --print=%s GTA.txt`
-GTA2=`stat --print=%s GTA2.txt`
-GTA3=`stat --print=%s GrandTheftAuto3.txt`
-VICECITY=`stat --print=%s ViceCity.txt`
-ANDREAS=`stat --print=%s SanAndreas.txt`
-LIBSTORIES=`stat --print=%s LibertyCityStories.txt`
-VICESTORIES=`stat --print=%s ViceCityStories.txt`
-GTA4=`stat --print=%s GrandTheftAuto4.txt`
-GTA5=`stat --print=%s GrandTheftAuto5.txt`
-CHINATOWN=`stat --print=%s ChinaTown.txt`
-DAMNED=`stat --print=%s Damned.txt`
-TONY=`stat --print=%s GayTony.txt`
+SERIES=$(stat --print=%s GTA.txt)
+GTA2=$(stat --print=%s GTA2.txt)
+GTA3=$(stat --print=%s GrandTheftAuto3.txt)
+VICECITY=$(stat --print=%s ViceCity.txt)
+ANDREAS=$(stat --print=%s SanAndreas.txt)
+LIBSTORIES=$(stat --print=%s LibertyCityStories.txt)
+VICESTORIES=$(stat --print=%s ViceCityStories.txt)
+GTA4=$(stat --print=%s GrandTheftAuto4.txt)
+GTA5=$(stat --print=%s GrandTheftAuto5.txt)
+CHINATOWN=$(stat --print=%s ChinaTown.txt)
+DAMNED=$(stat --print=%s Damned.txt)
+TONY=$(stat --print=%s GayTony.txt)
 
 if [ $SERIES -ne 0 ];
 then

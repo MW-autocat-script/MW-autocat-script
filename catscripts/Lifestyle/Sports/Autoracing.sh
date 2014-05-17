@@ -7,8 +7,8 @@ KEYWORDS_AUTORACING_EXCLUDE="$KEYWORDS_NASCAR"
 egrep -i "$KEYWORDS_AUTORACING" newpages.txt | egrep -iv "$KEYWORDS_AUTORACING_EXCLUDE" >> AutoRacing.txt
 egrep -i "$KEYWORDS_NASCAR" newpages.txt >> NASCAR.txt
 
-AUTORACING=`stat --print=%s AutoRacing.txt`
-NASCAR=`stat --print=%s NASCAR.txt`
+AUTORACING=$(stat --print=%s AutoRacing.txt)
+NASCAR=$(stat --print=%s NASCAR.txt)
 
 if [ $AUTORACING -ne 0 ];
 then

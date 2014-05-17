@@ -3,8 +3,8 @@
 egrep -i 'Cancer' newpages.txt | egrep -iv 'Lung(| )cancer|Breast(| )cancer|leukemia|Tropic of Cancer|Cancer the Crab|Zodiac|Horoscope|Terry Fox' > Cancer.txt
 egrep -i 'Terry Fox' newpages.txt >> TerryFox.txt
 
-CANCER=`stat --print=%s Cancer.txt`
-TERRYFOX=`stat --print=%s TerryFox.txt`
+CANCER=$(stat --print=%s Cancer.txt)
+TERRYFOX=$(stat --print=%s TerryFox.txt)
 
 if [ $CANCER -ne 0 ];
 then

@@ -3,7 +3,7 @@
 egrep -i 'New(| )Zealand' newpages.txt >> NewZealand.txt
 egrep -i ' NZ\b' newpages.txt >> NewZealand.txt
 
-NEWZEALAND=`stat --print=%s NewZealand.txt`
+NEWZEALAND=$(stat --print=%s NewZealand.txt)
 
 if [ $NEWZEALAND -ne 0 ];
 then

@@ -2,7 +2,7 @@
 
 egrep -i '\bAltima' newpages.txt >> NissanAltima.txt
 
-ALTIMA=`stat --print=%s NissanAltima.txt`
+ALTIMA=$(stat --print=%s NissanAltima.txt)
 
 if [ $ALTIMA -ne 0 ];
 then

@@ -75,55 +75,52 @@ KEYWORDS_USPRESIDENT_ALL="$KEYWORDS_USPRESIDENT|$KEYWORDS_USPRESIDENT_EXCLUDE"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting US Presidents\n"
-  fi
+  debug_start "US Presidents"
 
-  PRESIDENT=`egrep -i "$KEYWORDS_USPRESIDENT" newpages.txt | egrep -iv "$KEYWORDS_USPRESIDENT_EXCLUDE"`
-  WASHINGTON=`egrep -i "$KEYWORDS_GEORGEWASHINGTON" newpages.txt | egrep -iv "$KEYWORDS_GEORGEWASHINGTON_EXCLUDE"`
-  JOHNADAMS=`egrep -i "$KEYWORDS_JOHNADAMS" newpages.txt`
-  JEFFERSON=`egrep -i "$KEYWORDS_THOMASJEFFERSON" newpages.txt`
-  MADISON=`egrep -i "$KEYWORDS_JAMESMADISON" newpages.txt`
-  MONROE=`egrep -i "$KEYWORDS_JAMESMONROE" newpages.txt`
-  QUINCY=`egrep -i "$KEYWORDS_JOHNQUINCYADAMS" newpages.txt`
-  JACKSON=`egrep -i "$KEYWORDS_ANDREWJACKSON" newpages.txt`
-  BUREN=`egrep -i "$KEYWORDS_MARTINVANBUREN" newpages.txt`
-  WHARRISON=`egrep -i "$KEYWORDS_WILLIAMHHARRISON" newpages.txt`
-  TYLER=`egrep -i "$KEYWORDS_JOHNTYLER" newpages.txt`
-  POLK=`egrep -i "$KEYWORDS_JAMESKPOLK" newpages.txt`
-  TAYLOR=`egrep -i "$KEYWORDS_ZACHARYTAYLOR" newpages.txt`
-  FILLMORE=`egrep -i "$KEYWORDS_MILLARDFILLMORE" newpages.txt`
-  PIERCE=`egrep -i "$KEYWORDS_FRANKLINPIERCE" newpages.txt`
-  BUCHANAN=`egrep -i "$KEYWORDS_JAMESBUCHANAN" newpages.txt`
-  LINCOLN=`egrep -i "$KEYWORDS_ABRAHAMLINCOLN" newpages.txt`
-  JOHNSON=`egrep -i "$KEYWORDS_ANDREWJOHNSON" newpages.txt`
-  GRANT=`egrep -i "$KEYWORDS_ULYSSESSGRANT" newpages.txt`
-  HAYES=`egrep -i "$KEYWORDS_RUTHERFORDBHAYES" newpages.txt`
-  GARFIELD=`egrep -i "$KEYWORDS_JAMESGARFIELD" newpages.txt`
-  ARTHUR=`egrep -i "$KEYWORDS_CHESTERAARTHUR" newpages.txt`
-  CLEVELAND=`egrep -i "$KEYWORDS_GROVERCLEVELAND" newpages.txt`
-  HARRISON=`egrep -i "$KEYWORDS_BENJAMINHARRISON" newpages.txt`
-  MCKINLEY=`egrep -i "$KEYWORDS_WILLIAMMCKINLEY" newpages.txt`
-  THEODORE=`egrep -i "$KEYWORDS_THEODOREROOSEVELT" newpages.txt`
-  TAFT=`egrep -i "$KEYWORDS_WILLIAMHOWARDTAFT" newpages.txt`
-  WILSON=`egrep -i "$KEYWORDS_WOODROWWILSON" newpages.txt`
-  HARDING=`egrep -i "$KEYWORDS_WARRENHARDING" newpages.txt`
-  COOLIDGE=`egrep -i "$KEYWORDS_CALVINCOOLIDGE" newpages.txt`
-  HOOVER=`egrep -i "$KEYWORDS_HERBERTHOOVER" newpages.txt`
-  FDR=`egrep -i "$KEYWORDS_FRANKLINDROOSEVELT" newpages.txt`
-  TRUMAN=`egrep -i "$KEYWORDS_HARRYTRUMAN" newpages.txt`
-  EISENHOWER=`egrep -i "$KEYWORDS_DWIGHTEISENHOWER" newpages.txt`
-  KENNEDY=`egrep -i "$KEYWORDS_JOHNFKENNEDY" newpages.txt`
-  LBJ=`egrep -i "$KEYWORDS_LYNDONJOHNSON" newpages.txt`
-  NIXON=`egrep -i "$KEYWORDS_RICHARDNIXON" newpages.txt`
-  FORD=`egrep -i "$KEYWORDS_GERALDFORD" newpages.txt`
-  CARTER=`egrep -i "$KEYWORDS_JAMESCARTER" newpages.txt`
-  REAGAN=`egrep -i "$KEYWORDS_RONALDREAGAN" newpages.txt`
-  GHWBUSH=`egrep -i "$KEYWORDS_GEORGEHWBUSH" newpages.txt`
-  CLINTON=`egrep -i "$KEYWORDS_BILLCLINTON" newpages.txt`
-  GWBUSH=`egrep -i "$KEYWORDS_GEORGEWBUSH" newpages.txt`
-  OBAMA=`egrep -i "$KEYWORDS_BARACKOBAMA" newpages.txt | egrep -iv "$KEYWORDS_BARACKOBAMA_EXCLUDE"`
+  PRESIDENT=$(egrep -i "$KEYWORDS_USPRESIDENT" newpages.txt | egrep -iv "$KEYWORDS_USPRESIDENT_EXCLUDE")
+  WASHINGTON=$(egrep -i "$KEYWORDS_GEORGEWASHINGTON" newpages.txt | egrep -iv "$KEYWORDS_GEORGEWASHINGTON_EXCLUDE")
+  JOHNADAMS=$(egrep -i "$KEYWORDS_JOHNADAMS" newpages.txt)
+  JEFFERSON=$(egrep -i "$KEYWORDS_THOMASJEFFERSON" newpages.txt)
+  MADISON=$(egrep -i "$KEYWORDS_JAMESMADISON" newpages.txt)
+  MONROE=$(egrep -i "$KEYWORDS_JAMESMONROE" newpages.txt)
+  QUINCY=$(egrep -i "$KEYWORDS_JOHNQUINCYADAMS" newpages.txt)
+  JACKSON=$(egrep -i "$KEYWORDS_ANDREWJACKSON" newpages.txt)
+  BUREN=$(egrep -i "$KEYWORDS_MARTINVANBUREN" newpages.txt)
+  WHARRISON=$(egrep -i "$KEYWORDS_WILLIAMHHARRISON" newpages.txt)
+  TYLER=$(egrep -i "$KEYWORDS_JOHNTYLER" newpages.txt)
+  POLK=$(egrep -i "$KEYWORDS_JAMESKPOLK" newpages.txt)
+  TAYLOR=$(egrep -i "$KEYWORDS_ZACHARYTAYLOR" newpages.txt)
+  FILLMORE=$(egrep -i "$KEYWORDS_MILLARDFILLMORE" newpages.txt)
+  PIERCE=$(egrep -i "$KEYWORDS_FRANKLINPIERCE" newpages.txt)
+  BUCHANAN=$(egrep -i "$KEYWORDS_JAMESBUCHANAN" newpages.txt)
+  LINCOLN=$(egrep -i "$KEYWORDS_ABRAHAMLINCOLN" newpages.txt)
+  JOHNSON=$(egrep -i "$KEYWORDS_ANDREWJOHNSON" newpages.txt)
+  GRANT=$(egrep -i "$KEYWORDS_ULYSSESSGRANT" newpages.txt)
+  HAYES=$(egrep -i "$KEYWORDS_RUTHERFORDBHAYES" newpages.txt)
+  GARFIELD=$(egrep -i "$KEYWORDS_JAMESGARFIELD" newpages.txt)
+  ARTHUR=$(egrep -i "$KEYWORDS_CHESTERAARTHUR" newpages.txt)
+  CLEVELAND=$(egrep -i "$KEYWORDS_GROVERCLEVELAND" newpages.txt)
+  HARRISON=$(egrep -i "$KEYWORDS_BENJAMINHARRISON" newpages.txt)
+  MCKINLEY=$(egrep -i "$KEYWORDS_WILLIAMMCKINLEY" newpages.txt)
+  THEODORE=$(egrep -i "$KEYWORDS_THEODOREROOSEVELT" newpages.txt)
+  TAFT=$(egrep -i "$KEYWORDS_WILLIAMHOWARDTAFT" newpages.txt)
+  WILSON=$(egrep -i "$KEYWORDS_WOODROWWILSON" newpages.txt)
+  HARDING=$(egrep -i "$KEYWORDS_WARRENHARDING" newpages.txt)
+  COOLIDGE=$(egrep -i "$KEYWORDS_CALVINCOOLIDGE" newpages.txt)
+  HOOVER=$(egrep -i "$KEYWORDS_HERBERTHOOVER" newpages.txt)
+  FDR=$(egrep -i "$KEYWORDS_FRANKLINDROOSEVELT" newpages.txt)
+  TRUMAN=$(egrep -i "$KEYWORDS_HARRYTRUMAN" newpages.txt)
+  EISENHOWER=$(egrep -i "$KEYWORDS_DWIGHTEISENHOWER" newpages.txt)
+  KENNEDY=$(egrep -i "$KEYWORDS_JOHNFKENNEDY" newpages.txt)
+  LBJ=$(egrep -i "$KEYWORDS_LYNDONJOHNSON" newpages.txt)
+  NIXON=$(egrep -i "$KEYWORDS_RICHARDNIXON" newpages.txt)
+  FORD=$(egrep -i "$KEYWORDS_GERALDFORD" newpages.txt)
+  CARTER=$(egrep -i "$KEYWORDS_JAMESCARTER" newpages.txt)
+  REAGAN=$(egrep -i "$KEYWORDS_RONALDREAGAN" newpages.txt)
+  GHWBUSH=$(egrep -i "$KEYWORDS_GEORGEHWBUSH" newpages.txt)
+  CLINTON=$(egrep -i "$KEYWORDS_BILLCLINTON" newpages.txt)
+  GWBUSH=$(egrep -i "$KEYWORDS_GEORGEWBUSH" newpages.txt)
+  OBAMA=$(egrep -i "$KEYWORDS_BARACKOBAMA" newpages.txt | egrep -iv "$KEYWORDS_BARACKOBAMA_EXCLUDE")
 
   if [ "$PRESIDENT" != "" ];
   then
@@ -565,10 +562,6 @@ then
     unset OBAMA
   fi
 
-
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing US Presidents\n"
-  fi
+  debug_end "US Presidents"
 
 fi

@@ -2,7 +2,7 @@
 
 egrep -i '.+in Navajo$]|Navajo word for' newpages.txt >> EnglishtoNavajo.txt
 
-ENGLISHTONAVAJO=`stat --print=%s EnglishtoNavajo.txt`
+ENGLISHTONAVAJO=$(stat --print=%s EnglishtoNavajo.txt)
 
 if [ $ENGLISHTONAVAJO -ne 0 ];
 then

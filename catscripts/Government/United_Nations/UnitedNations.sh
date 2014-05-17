@@ -2,7 +2,7 @@
 
 egrep -i 'United Nations|^U\.N(|\.)| U\.N(|\.) ' newpages.txt > UnitedNations.txt
 
-UNITED=`stat --print=%s UnitedNations.txt`
+UNITED=$(stat --print=%s UnitedNations.txt)
 
 if [ $UNITED -ne 0 ];
 then

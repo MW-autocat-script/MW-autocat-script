@@ -10,7 +10,7 @@ then
     printf "Starting Côte d'Ivoire\n"
   fi
 
-  COTEDIVOIRE=`egrep -i "$KEYWORDS_COTEDIVOIRE" newpages.txt`
+  COTEDIVOIRE=$(egrep -i "$KEYWORDS_COTEDIVOIRE" newpages.txt)
 
   if [ "$COTEDIVOIRE" != "" ];
   then

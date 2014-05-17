@@ -5,8 +5,8 @@
 egrep -i 'Carbon(| )dioxide' newpages.txt >> CarbonDioxide.txt
 egrep -i 'Carbon(| )monoxide' newpages.txt >> CarbonMonoxide.txt
 
-CO=`stat --print=%s CarbonMonoxide.txt`
-COTWO=`stat --print=%s CarbonDioxide.txt`
+CO=$(stat --print=%s CarbonMonoxide.txt)
+COTWO=$(stat --print=%s CarbonDioxide.txt)
 
 if [ $CO -ne 0 ];
 then

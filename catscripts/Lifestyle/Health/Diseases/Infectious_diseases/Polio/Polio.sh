@@ -10,7 +10,7 @@ then
     printf "Starting Polio\n"
   fi
 
-  POLIO=`egrep -i "$KEYWORDS_POLIO" newpages.txt`
+  POLIO=$(egrep -i "$KEYWORDS_POLIO" newpages.txt)
 
   if [ "$POLIO" != "" ];
   then

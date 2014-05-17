@@ -8,10 +8,10 @@ if [ "$1" == "" ];
 then
 
   egrep -i "$KEYWORDS_NEVADA" newpages.txt | egrep -iv "$KEYWORDS_NEVADA_EXCLUDE" >> Nevada.txt
-  egrep -i "KEYWORDS_LASVEGAS" newpages.txt >> LasVegas.txt
+  egrep -i "$KEYWORDS_LASVEGAS" newpages.txt >> LasVegas.txt
 
-  NEVADA=`stat --print=%s Nevada.txt`
-  LASVEGAS=`stat --print=%s LasVegas.txt`
+  NEVADA=$(stat --print=%s Nevada.txt)
+  LASVEGAS=$(stat --print=%s LasVegas.txt)
 
   if [ $NEVADA -ne 0 ];
   then

@@ -24,14 +24,14 @@ egrep -i "$KEYWORDS_CODGHOSTS" newpages.txt >> Ghosts.txt
 egrep -i "$KEYWORDS_CALLOFDUTYSERIES" newpages.txt | egrep -iv "$KEYWORDS_CALLOFDUTYSERIES_EXCLUDE" >> CallofDuty.txt
 egrep "$KEYWORDS_CALLOFDUTYSERIES_CASESENSITIVE" newpages.txt | egrep -v "$KEYWORDS_CALLOFDUTYSERIES_CASESENSITIVE_EXCLUDE" >> CallofDuty.txt
 
-CALLOFDUTY=`stat --print=%s CallofDuty.txt`
-MODERN=`stat --print=%s COD4.txt`
-WORLDATWAR=`stat --print=%s WorldAtWar.txt`
-MW2=`stat --print=%s ModernWarfare2.txt`
-BLACKOPS=`stat --print=%s BlackOps.txt`
-MW3=`stat --print=%s ModernWarfare3.txt`
-BO2=`stat --print=%s BlackOps2.txt`
-GHOSTS=`stat --print=%s Ghosts.txt`
+CALLOFDUTY=$(stat --print=%s CallofDuty.txt)
+MODERN=$(stat --print=%s COD4.txt)
+WORLDATWAR=$(stat --print=%s WorldAtWar.txt)
+MW2=$(stat --print=%s ModernWarfare2.txt)
+BLACKOPS=$(stat --print=%s BlackOps.txt)
+MW3=$(stat --print=%s ModernWarfare3.txt)
+BO2=$(stat --print=%s BlackOps2.txt)
+GHOSTS=$(stat --print=%s Ghosts.txt)
 
 if [ $CALLOFDUTY -ne 0 ];
 then

@@ -54,29 +54,29 @@ KEYWORDS_HOCKEY_EXCLUDE="ield hockey|street hockey|indoor hockey|$KEYWORDS_NHL"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  SOCCER="$(egrep -i "$KEYWORDS_SOCCER" newpages.txt | egrep -iv "$KEYWORDS_SOCCER_EXCLUDE")"
-  CRONALDO="$(egrep -i "$KEYWORDS_CRONALDO" newpages.txt)"
-  LMESSI="$(egrep -i "$KEYWORDS_LMESSI" newpages.txt)"
-  TENNIS=`egrep -i "$KEYWORDS_TENNIS" newpages.txt| egrep -iv "$KEYWORDS_TENNIS_EXCLUDE"`
-  PINGPONG=`egrep -i "$KEYWORDS_PINGPONG" newpages.txt`
-  BADMINTON=`egrep -i "$KEYWORDS_BADMINTON" newpages.txt`
-  VOLLEYBALL=`egrep -i "$KEYWORDS_VOLLEYBALL" newpages.txt`
-  SOFTBALL=`egrep -i "$KEYWORDS_SOFTBALL" newpages.txt`
-  HOCKEY=`egrep -i "$KEYWORDS_HOCKEY" newpages.txt | egrep -iv "$KEYWORDS_NHL"`
-  NHL=`egrep -i "$KEYWORDS_NHL" newpages.txt`
-  BASKETBALL=`egrep -i "$KEYWORDS_BASKETBALL" newpages.txt | egrep -iv "$KEYWORDS_BASKETBALL_EXCLUDE"`
-  NBA=`egrep -i "$KEYWORDS_NBA" newpages.txt | egrep -iv "$KEYWORDS_NBA_EXCLUDE"`
-  CHICAGOBULLS=`egrep -i "$KEYWORDS_CHICAGOBULLS" newpages.txt`
-  MIAMIHEAT=`egrep -i "$KEYWORDS_MIAMIHEAT" newpages.txt`
-  MICHAELJORDAN=`egrep -i "$KEYWORDS_MICHAELJORDAN" newpages.txt`
-  SHAQUILLEONEAL=`egrep -i "$KEYWORDS_SHAQUILLEONEAL" newpages.txt`
-  KOBEBRYANT=`egrep -i "$KEYWORDS_KOBEBRYANT" newpages.txt`
-  BASEBALL=`egrep -i "$KEYWORDS_BASEBALL" newpages.txt | egrep -iv "$KEYWORDS_BASEBALL_EXCLUDE"`
-  MLB=`egrep -i "$KEYWORDS_MLB" newpages.txt | egrep -iv "$KEYWORDS_MLB_EXCLUDE"`
-  BABERUTH=`egrep -i "$KEYWORDS_BABERUTH" newpages.txt`
-  JACKIEROBINSON=`egrep -i "$KEYWORDS_JACKIEROBINSON" newpages.txt`
-  ATLANTABRAVES=`egrep -i "$KEYWORDS_ATLANTA_BRAVES" newpages.txt`
-  MIAMIMARLINS=`egrep -i "$KEYWORDS_MIAMI_MARLINS" newpages.txt`
+  SOCCER=$(egrep -i "$KEYWORDS_SOCCER" newpages.txt | egrep -iv "$KEYWORDS_SOCCER_EXCLUDE")
+  CRONALDO=$(egrep -i "$KEYWORDS_CRONALDO" newpages.txt)
+  LMESSI=$(egrep -i "$KEYWORDS_LMESSI" newpages.txt)
+  TENNIS=$(egrep -i "$KEYWORDS_TENNIS" newpages.txt| egrep -iv "$KEYWORDS_TENNIS_EXCLUDE")
+  PINGPONG=$(egrep -i "$KEYWORDS_PINGPONG" newpages.txt)
+  BADMINTON=$(egrep -i "$KEYWORDS_BADMINTON" newpages.txt)
+  VOLLEYBALL=$(egrep -i "$KEYWORDS_VOLLEYBALL" newpages.txt)
+  SOFTBALL=$(egrep -i "$KEYWORDS_SOFTBALL" newpages.txt)
+  HOCKEY=$(egrep -i "$KEYWORDS_HOCKEY" newpages.txt | egrep -iv "$KEYWORDS_NHL")
+  NHL=$(egrep -i "$KEYWORDS_NHL" newpages.txt)
+  BASKETBALL=$(egrep -i "$KEYWORDS_BASKETBALL" newpages.txt | egrep -iv "$KEYWORDS_BASKETBALL_EXCLUDE")
+  NBA=$(egrep -i "$KEYWORDS_NBA" newpages.txt | egrep -iv "$KEYWORDS_NBA_EXCLUDE")
+  CHICAGOBULLS=$(egrep -i "$KEYWORDS_CHICAGOBULLS" newpages.txt)
+  MIAMIHEAT=$(egrep -i "$KEYWORDS_MIAMIHEAT" newpages.txt)
+  MICHAELJORDAN=$(egrep -i "$KEYWORDS_MICHAELJORDAN" newpages.txt)
+  SHAQUILLEONEAL=$(egrep -i "$KEYWORDS_SHAQUILLEONEAL" newpages.txt)
+  KOBEBRYANT=$(egrep -i "$KEYWORDS_KOBEBRYANT" newpages.txt)
+  BASEBALL=$(egrep -i "$KEYWORDS_BASEBALL" newpages.txt | egrep -iv "$KEYWORDS_BASEBALL_EXCLUDE")
+  MLB=$(egrep -i "$KEYWORDS_MLB" newpages.txt | egrep -iv "$KEYWORDS_MLB_EXCLUDE")
+  BABERUTH=$(egrep -i "$KEYWORDS_BABERUTH" newpages.txt)
+  JACKIEROBINSON=$(egrep -i "$KEYWORDS_JACKIEROBINSON" newpages.txt)
+  ATLANTABRAVES=$(egrep -i "$KEYWORDS_ATLANTA_BRAVES" newpages.txt)
+  MIAMIMARLINS=$(egrep -i "$KEYWORDS_MIAMI_MARLINS" newpages.txt)
 
   if [ "$SOCCER" != "" ];
   then

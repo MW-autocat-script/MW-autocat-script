@@ -39,23 +39,23 @@ then
   egrep -i "$KEYWORDS_FROSLASS" newpages.txt >> Froslass.txt
   egrep -i "$KEYWORDS_FURRET" newpages.txt >> Furret.txt
 
-  Farfetchd=`stat --print=%s Farfetchd.txt`
-  Fearow=`stat --print=%s Fearow.txt`
-  Feebas=`stat --print=%s Feebas.txt`
-  Feraligatr=`stat --print=%s Feraligatr.txt`
-  Ferroseed=`stat --print=%s Ferroseed.txt`
-  Ferrothorn=`stat --print=%s Ferrothorn.txt`
-  Finneon=`stat --print=%s Finneon.txt`
-  Flaaffy=`stat --print=%s Flaaffy.txt`
-  Flareon=`stat --print=%s Flareon.txt`
-  Floatzel=`stat --print=%s Floatzel.txt`
-  Flygon=`stat --print=%s Flygon.txt`
-  Foongus=`stat --print=%s Foongus.txt`
-  Forretress=`stat --print=%s Forretress.txt`
-  Fraxure=`stat --print=%s Fraxure.txt`
-  Frillish=`stat --print=%s Frillish.txt`
-  Froslass=`stat --print=%s Froslass.txt`
-  Furret=`stat --print=%s Furret.txt`
+  Farfetchd=$(stat --print=%s Farfetchd.txt)
+  Fearow=$(stat --print=%s Fearow.txt)
+  Feebas=$(stat --print=%s Feebas.txt)
+  Feraligatr=$(stat --print=%s Feraligatr.txt)
+  Ferroseed=$(stat --print=%s Ferroseed.txt)
+  Ferrothorn=$(stat --print=%s Ferrothorn.txt)
+  Finneon=$(stat --print=%s Finneon.txt)
+  Flaaffy=$(stat --print=%s Flaaffy.txt)
+  Flareon=$(stat --print=%s Flareon.txt)
+  Floatzel=$(stat --print=%s Floatzel.txt)
+  Flygon=$(stat --print=%s Flygon.txt)
+  Foongus=$(stat --print=%s Foongus.txt)
+  Forretress=$(stat --print=%s Forretress.txt)
+  Fraxure=$(stat --print=%s Fraxure.txt)
+  Frillish=$(stat --print=%s Frillish.txt)
+  Froslass=$(stat --print=%s Froslass.txt)
+  Furret=$(stat --print=%s Furret.txt)
 
   if [ $Farfetchd -ne 0 ];
   then

@@ -47,161 +47,161 @@ then
   egrep -i "$KEYWORDS_EXPLOUD" newpages.txt >> Exploud.txt
 
 
-  Eelektrik=`stat --print=%s Eelektrik.txt`
-  Eelektross=`stat --print=%s Eelektross.txt`
-  Eevee=`stat --print=%s Eevee.txt`
-  Ekans=`stat --print=%s Ekans.txt`
-  Electabuzz=`stat --print=%s Electabuzz.txt`
-  Electivire=`stat --print=%s Electivire.txt`
-  Electrike=`stat --print=%s Electrike.txt`
-  Electrode=`stat --print=%s Electrode.txt`
-  Elekid=`stat --print=%s Elekid.txt`
-  Elgyem=`stat --print=%s Elgyem.txt`
-  Emboar=`stat --print=%s Emboar.txt`
-  Emolga=`stat --print=%s Emolga.txt`
-  Empoleon=`stat --print=%s Empoleon.txt`
-  Entei=`stat --print=%s Entei.txt`
-  Escavalier=`stat --print=%s Escavalier.txt`
-  Espeon=`stat --print=%s Espeon.txt`
-  Excadrill=`stat --print=%s Excadrill.txt`
-  Exeggcute=`stat --print=%s Exeggcute.txt`
-  Exeggutor=`stat --print=%s Exeggutor.txt`
-  Exploud=`stat --print=%s Exploud.txt`
+  EELEKTRIK=$(stat --print=%s Eelektrik.txt)
+  EELEKTROSS=$(stat --print=%s Eelektross.txt)
+  EEVEE=$(stat --print=%s Eevee.txt)
+  EKANS=$(stat --print=%s Ekans.txt)
+  ELECTABUZZ=$(stat --print=%s Electabuzz.txt)
+  ELECTIVIRE=$(stat --print=%s Electivire.txt)
+  ELECTRIKE=$(stat --print=%s Electrike.txt)
+  ELECTRODE=$(stat --print=%s Electrode.txt)
+  ELEKID=$(stat --print=%s Elekid.txt)
+  ELGYEM=$(stat --print=%s Elgyem.txt)
+  EMBOAR=$(stat --print=%s Emboar.txt)
+  EMOLGA=$(stat --print=%s Emolga.txt)
+  EMPOLEON=$(stat --print=%s Empoleon.txt)
+  ENTEI=$(stat --print=%s Entei.txt)
+  ESCAVALIER=$(stat --print=%s Escavalier.txt)
+  ESPEON=$(stat --print=%s Espeon.txt)
+  EXCADRILL=$(stat --print=%s Excadrill.txt)
+  EXEGGCUTE=$(stat --print=%s Exeggcute.txt)
+  EXEGGUTOR=$(stat --print=%s Exeggutor.txt)
+  EXPLOUD=$(stat --print=%s Exploud.txt)
 
-  if [ $Eelektrik -ne 0 ];
+  if [ $EELEKTRIK -ne 0 ];
   then
     export CATFILE="Eelektrik.txt"
     export CATNAME="Eelektrik"
     $CATEGORIZE
   fi
 
-  if [ $Eelektross -ne 0 ];
+  if [ $EELEKTROSS -ne 0 ];
   then
     export CATFILE="Eelektross.txt"
     export CATNAME="Eelektross"
     $CATEGORIZE
   fi
 
-  if [ $Eevee -ne 0 ];
+  if [ $EEVEE -ne 0 ];
   then
     export CATFILE="Eevee.txt"
     export CATNAME="Eevee"
     $CATEGORIZE
   fi
 
-  if [ $Ekans -ne 0 ];
+  if [ $EKANS -ne 0 ];
   then
     export CATFILE="Ekans.txt"
     export CATNAME="Ekans"
     $CATEGORIZE
   fi
 
-  if [ $Electabuzz -ne 0 ];
+  if [ $ELECTABUZZ -ne 0 ];
   then
     export CATFILE="Electabuzz.txt"
     export CATNAME="Electabuzz"
     $CATEGORIZE
   fi
 
-  if [ $Electivire -ne 0 ];
+  if [ $ELECTIVIRE -ne 0 ];
   then
     export CATFILE="Electivire.txt"
     export CATNAME="Electivire"
     $CATEGORIZE
   fi
 
-  if [ $Electrike -ne 0 ];
+  if [ $ELECTRIKE -ne 0 ];
   then
     export CATFILE="Electrike.txt"
     export CATNAME="Electrike"
     $CATEGORIZE
   fi
 
-  if [ $Electrode -ne 0 ];
+  if [ $ELECTRODE -ne 0 ];
   then
     export CATFILE="Electrode.txt"
     export CATNAME="Electrode"
     $CATEGORIZE
   fi
 
-  if [ $Elekid -ne 0 ];
+  if [ $ELEKID -ne 0 ];
   then
     export CATFILE="Elekid.txt"
     export CATNAME="Elekid"
     $CATEGORIZE
   fi
 
-  if [ $Elgyem -ne 0 ];
+  if [ $ELGYEM -ne 0 ];
   then
     export CATFILE="Elgyem.txt"
     export CATNAME="Elgyem"
     $CATEGORIZE
   fi
 
-  if [ $Emboar -ne 0 ];
+  if [ $EMBOAR -ne 0 ];
   then
     export CATFILE="Emboar.txt"
     export CATNAME="Emboar"
     $CATEGORIZE
   fi
 
-  if [ $Emolga -ne 0 ];
+  if [ $EMOLGA -ne 0 ];
   then
     export CATFILE="Emolga.txt"
     export CATNAME="Emolga"
     $CATEGORIZE
   fi
 
-  if [ $Empoleon -ne 0 ];
+  if [ $EMPOLEON -ne 0 ];
   then
     export CATFILE="Empoleon.txt"
     export CATNAME="Empoleon"
     $CATEGORIZE
   fi
 
-  if [ $Entei -ne 0 ];
+  if [ $ENTEI -ne 0 ];
   then
     export CATFILE="Entei.txt"
     export CATNAME="Entei"
     $CATEGORIZE
   fi
 
-  if [ $Escavalier -ne 0 ];
+  if [ $ESCAVALIER -ne 0 ];
   then
     export CATFILE="Escavalier.txt"
     export CATNAME="Escavalier"
     $CATEGORIZE
   fi
 
-  if [ $Espeon -ne 0 ];
+  if [ $ESPEON -ne 0 ];
   then
     export CATFILE="Espeon.txt"
     export CATNAME="Espeon"
     $CATEGORIZE
   fi
 
-  if [ $Excadrill -ne 0 ];
+  if [ $EXCADRILL -ne 0 ];
   then
     export CATFILE="Excadrill.txt"
     export CATNAME="Excadrill"
     $CATEGORIZE
   fi
 
-  if [ $Exeggcute -ne 0 ];
+  if [ $EXEGGCUTE -ne 0 ];
   then
     export CATFILE="Exeggcute.txt"
     export CATNAME="Exeggcute"
     $CATEGORIZE
   fi
 
-  if [ $Exeggutor -ne 0 ];
+  if [ $EXEGGUTOR -ne 0 ];
   then
     export CATFILE="Exeggutor.txt"
     export CATNAME="Exeggutor"
     $CATEGORIZE
   fi
 
-  if [ $Exploud -ne 0 ];
+  if [ $EXPLOUD -ne 0 ];
   then
     export CATFILE="Exploud.txt"
     export CATNAME="Exploud"

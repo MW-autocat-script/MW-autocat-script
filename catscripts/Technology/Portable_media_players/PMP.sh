@@ -2,7 +2,7 @@
 
 egrep -i 'MP(3|4) player|portable media player' newpages.txt | egrep -iv 'iPod|\bZune' > PMP.txt
 
-PMP=`stat --print=%s PMP.txt`
+PMP=$(stat --print=%s PMP.txt)
 
 if [ $PMP -ne 0 ];
 then

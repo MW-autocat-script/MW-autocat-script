@@ -5,7 +5,7 @@ KEYWORDS_ACTRESS_SANDRABULLOCK="Sandra(| )Bullock"
 if [ "$1" == "" ];
 then
 
-  BULLOCK=`egrep -i "$KEYWORDS_ACTRESS_SANDRABULLOCK" newpages.txt`
+  BULLOCK=$(egrep -i "$KEYWORDS_ACTRESS_SANDRABULLOCK" newpages.txt)
 
   if [ "$BULLOCK" != "" ];
   then

@@ -2,7 +2,7 @@
 
 egrep -i '\bIceland' newpages.txt | egrep -iv 'Icelandic' > Iceland.txt
 
-ICELAND=`stat --print=%s Iceland.txt`
+ICELAND=$(stat --print=%s Iceland.txt)
 
 if [ $ICELAND -ne 0 ];
 then

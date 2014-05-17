@@ -10,7 +10,7 @@ then
     printf "Starting Mali\n"
   fi
 
-  MALI=`egrep -i "$KEYWORDS_MALI" newpages.txt`
+  MALI=$(egrep -i "$KEYWORDS_MALI" newpages.txt)
 
   if [ "$MALI" != "" ];
   then

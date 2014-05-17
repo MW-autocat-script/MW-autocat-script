@@ -5,7 +5,7 @@ KEYWORDS_ARKANSAS="Arkansas"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  ARKANSAS=`egrep -i "$KEYWORDS_ARKANSAS" newpages.txt`
+  ARKANSAS=$(egrep -i "$KEYWORDS_ARKANSAS" newpages.txt)
 
   if [ "$ARKANSAS" != "" ];
   then

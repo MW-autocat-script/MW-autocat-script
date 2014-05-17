@@ -12,14 +12,14 @@ KEYWORDS_SPARTA_EXCLUDE_CASESENSITVE="SPARTAN"
 KEYWORDS_ANCIENTGREECE_EXCLUDE="$KEYWORDS_SPARTA|$KEYWORDS_ATHENS|$KEYWORDS_ANCIENTGREEKOLYMPICS"
 KEYWORDS_GREECE_EXCLUDE="$KEYWORDS_ANCIENTGREECE|$KEYWORDS_ATHENS|$KEYWORDS_SPARTA"
 
-GREECE=`egrep -i "$KEYWORDS_GREECE" newpages.txt | egrep -iv "$KEYWORDS_GREECE_EXCLUDE"`
-ANCIENT=`egrep -i "$KEYWORDS_ANCIENTGREECE" newpages.txt | egrep -iv "$KEYWORDS_ANCIENTGREECE_EXCLUDE"`
-ATHENS=`egrep -i "$KEYWORDS_ATHENS" newpages.txt | egrep -iv "$KEYWORDS_ATHENS_EXCLUDE"`
-SPARTA=`egrep -i "$KEYWORDS_SPARTA" newpages.txt | egrep -iv "$KEYWORDS_SPARTA_EXCLUDE" | egrep -v "$KEYWORDS_SPARTA_EXCLUDE_CASESENSITVE"`
+GREECE=$(egrep -i "$KEYWORDS_GREECE" newpages.txt | egrep -iv "$KEYWORDS_GREECE_EXCLUDE")
+ANCIENT=$(egrep -i "$KEYWORDS_ANCIENTGREECE" newpages.txt | egrep -iv "$KEYWORDS_ANCIENTGREECE_EXCLUDE")
+ATHENS=$(egrep -i "$KEYWORDS_ATHENS" newpages.txt | egrep -iv "$KEYWORDS_ATHENS_EXCLUDE")
+SPARTA=$(egrep -i "$KEYWORDS_SPARTA" newpages.txt | egrep -iv "$KEYWORDS_SPARTA_EXCLUDE" | egrep -v "$KEYWORDS_SPARTA_EXCLUDE_CASESENSITVE")
 
 if [ "$GREECE" != "" ];
 then
-  egrep -i "$KEYWORDS_GREECE" newpages.txt | egrep -iv "$KEYWORDS_GREECE_EXCLUDE" > Greece.txt
+  printf "%s" "$GREECE" > Greece.txt
   export CATFILE="Greece.txt"
   export CATNAME="Greece"
   $CATEGORIZE
@@ -29,7 +29,7 @@ fi
 
 if [ "$ANCIENT" != "" ];
 then
-  egrep -i "$KEYWORDS_ANCIENTGREECE" newpages.txt | egrep -iv "$KEYWORDS_ANCIENTGREECE_EXCLUDE" > Ancient.txt
+  printf "%s" "$ANCIENT" > Ancient.txt
   export CATFILE="Ancient.txt"
   export CATNAME="Ancient Greece"
   $CATEGORIZE
@@ -39,7 +39,7 @@ fi
 
 if [ "$ATHENS" != "" ];
 then
-  egrep -i "$KEYWORDS_ATHENS" newpages.txt | egrep -iv "$KEYWORDS_ATHENS_EXCLUDE" > Athens.txt
+  printf "%s" "$ATHENS" > Athens.txt
   export CATFILE="Athens.txt"
   export CATNAME="Athens"
   $CATEGORIZE
@@ -49,7 +49,7 @@ fi
 
 if [ "$SPARTA" != "" ];
 then
-  egrep -i "$KEYWORDS_SPARTA" newpages.txt | egrep -iv "$KEYWORDS_SPARTA_EXCLUDE" | egrep -v "$KEYWORDS_SPARTA_EXCLUDE_CASESENSITVE" > Sparta.txt
+  printf "%s" "$SPARTA" > Sparta.txt
   export CATFILE="Sparta.txt"
   export CATNAME="Sparta"
   $CATEGORIZE

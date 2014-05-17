@@ -10,7 +10,7 @@ then
     printf "Starting OpenBSD\n"
   fi
 
-  OPENBSD=`egrep -i "$KEYWORDS_OPENBSD" newpages.txt`
+  OPENBSD=$(egrep -i "$KEYWORDS_OPENBSD" newpages.txt)
 
   if [ "$OPENBSD" != "" ];
   then

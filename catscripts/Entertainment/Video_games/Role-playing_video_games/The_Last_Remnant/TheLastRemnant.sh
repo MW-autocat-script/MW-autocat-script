@@ -2,7 +2,7 @@
 
 egrep -i 'The(| )Last(| )Remnant' newpages.txt >> TheLastRemant.txt
 
-REMNANT=`stat --print=%s TheLastRemant.txt`
+REMNANT=$(stat --print=%s TheLastRemant.txt)
 
 if [ $REMNANT -ne 0 ];
 then

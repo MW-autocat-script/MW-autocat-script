@@ -17,10 +17,10 @@ then
     printf "Starting France\n"
   fi
 
-  FRANCE=`egrep -i "$KEYWORDS_FRANCE" newpages.txt | egrep -iv "$KEYWORDS_FRANCE_EXCLUDE"`
-  PARIS=`egrep -i "$KEYWORDS_PARIS" newpages.txt | egrep -iv "$KEYWORDS_PARIS_EXCLUDE"`
-  TAHITI=`egrep -i "$KEYWORDS_TAHITI" newpages.txt`
-  FRENCHREVOLUTION=`egrep -i "$KEYWORDS_FRENCH_REVOLUTION" newpages.txt`
+  FRANCE=$(egrep -i "$KEYWORDS_FRANCE" newpages.txt | egrep -iv "$KEYWORDS_FRANCE_EXCLUDE")
+  PARIS=$(egrep -i "$KEYWORDS_PARIS" newpages.txt | egrep -iv "$KEYWORDS_PARIS_EXCLUDE")
+  TAHITI=$(egrep -i "$KEYWORDS_TAHITI" newpages.txt)
+  FRENCHREVOLUTION=$(egrep -i "$KEYWORDS_FRENCH_REVOLUTION" newpages.txt)
 
   if [ "$FRANCE" != "" ];
   then

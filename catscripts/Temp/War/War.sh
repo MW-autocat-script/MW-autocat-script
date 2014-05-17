@@ -3,8 +3,8 @@
 egrep -i 'World War (1|I)\b|\bWW(| )I\b|\bww(| )1\b' newpages.txt >> WorldWarI.txt
 egrep -i 'Wordl War (2|II)\b|\bWW(| )II\b|\bww(| )2\b' newpages.txt >> WorldWarII.txt
 
-WWONE=`stat --print=%s WorldWarI.txt`
-WWTWO=`stat --print=%s WorldWarII.txt`
+WWONE=$(stat --print=%s WorldWarI.txt)
+WWTWO=$(stat --print=%s WorldWarII.txt)
 
 if [ $WWONE -ne 0 ];
 then

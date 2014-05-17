@@ -11,7 +11,7 @@ then
   fi
 
 
-  KENYA=`egrep -i "$KEYWORDS_KENYA" newpages.txt`
+  KENYA=$(egrep -i "$KEYWORDS_KENYA" newpages.txt)
 
   if [ "$KENYA" != "" ];
   then

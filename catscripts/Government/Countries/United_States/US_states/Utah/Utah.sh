@@ -9,8 +9,8 @@ then
   egrep -i "$KEYWORDS_UTAH" newpages.txt | egrep -iv "$KEYWORDS_UTAH_EXCLUDE" > Utah.txt
   egrep -i "$KEYWORDS_SALTLAKECITY" newpages.txt > SaltLakeCity.txt
 
-  UTAH=`stat --print=%s Utah.txt`
-  SALTLAKECITY=`stat --print=%s SaltLakeCity.txt`
+  UTAH=$(stat --print=%s Utah.txt)
+  SALTLAKECITY=$(stat --print=%s SaltLakeCity.txt)
 
   if [ $UTAH -ne 0 ];
   then

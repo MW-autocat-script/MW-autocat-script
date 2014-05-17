@@ -7,8 +7,8 @@ KEYWORDS_SEXUALITY_EXCLUDE="$KEYWORDS_MASTURBATION|Gay(| )Tony|\bgaynor\b"
 egrep -i "$KEYWORDS_SEXUALITY" newpages.txt | egrep -iv "$KEYWORDS_SEXUALITY_EXCLUDE" >> Sexuality.txt
 egrep -i "$KEYWORDS_MASTURBATION" newpages.txt >> Masturbation.txt
 
-SEXUALITY=`stat --print=%s Sexuality.txt`
-MASTURBATION=`stat --print=%s Masturbation.txt`
+SEXUALITY=$(stat --print=%s Sexuality.txt)
+MASTURBATION=$(stat --print=%s Masturbation.txt)
 
 if [ $SEXUALITY -ne 0 ];
 then

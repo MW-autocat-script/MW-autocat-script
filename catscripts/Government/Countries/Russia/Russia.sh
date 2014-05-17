@@ -13,11 +13,11 @@ KEYWORDS_SOVIET_EXCLUDE="$KEYWORDS_STALIN"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  RUSSIA=`egrep -i "$KEYWORDS_RUSSIA" newpages.txt | egrep -iv "$KEYWORDS_RUSSIA_EXCLUDE"`
-  MOSCOW=`egrep -i "$KEYWORDS_MOSCOW" newpages.txt | egrep -iv "$KEYWORDS_MOSCOW_EXCLUDE"`
-  SOVIET=`egrep -i "$KEYWORDS_SOVIET" newpages.txt | egrep -iv "$KEYWORDS_SOVIET_EXCLUDE"`
-  STALIN=`egrep -i "$KEYWORDS_STALIN" newpages.txt`
-  LENIN=`egrep -i "$KEYWORDS_LENIN" newpages.txt | egrep -iv "$KEYWORDS_LENIN_EXCLUDE"`
+  RUSSIA=$(egrep -i "$KEYWORDS_RUSSIA" newpages.txt | egrep -iv "$KEYWORDS_RUSSIA_EXCLUDE")
+  MOSCOW=$(egrep -i "$KEYWORDS_MOSCOW" newpages.txt | egrep -iv "$KEYWORDS_MOSCOW_EXCLUDE")
+  SOVIET=$(egrep -i "$KEYWORDS_SOVIET" newpages.txt | egrep -iv "$KEYWORDS_SOVIET_EXCLUDE")
+  STALIN=$(egrep -i "$KEYWORDS_STALIN" newpages.txt)
+  LENIN=$(egrep -i "$KEYWORDS_LENIN" newpages.txt | egrep -iv "$KEYWORDS_LENIN_EXCLUDE")
 
   if [ "$RUSSIA" != "" ];
   then

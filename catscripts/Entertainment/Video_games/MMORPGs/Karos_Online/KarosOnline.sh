@@ -4,7 +4,7 @@ export KEYWORDS_MMORPG_KAROS="\bKaros\b"
 
 egrep -i "$KEYWORDS_MMORPG_KAROS" newpages.txt >> KarosOnline.txt
 
-KAROS=`stat --print=%s KarosOnline.txt`
+KAROS=$(stat --print=%s KarosOnline.txt)
 
 if [ $KAROS -ne 0 ];
 then

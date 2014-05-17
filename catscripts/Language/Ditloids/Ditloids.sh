@@ -10,7 +10,7 @@ then
     printf "Starting Ditloids\n"
   fi
 
-  DITLOIDS=`egrep -i "$KEYWORDS_DITLOIDS" newpages.txt`
+  DITLOIDS=$(egrep -i "$KEYWORDS_DITLOIDS" newpages.txt)
 
   if [ "$DITLOIDS" != "" ];
   then

@@ -10,7 +10,7 @@ then
     printf "Starting Moldova\n"
   fi
 
-  MOLDOVA=`egrep -i "$KEYWORDS_MOLDOVA" newpages.txt`
+  MOLDOVA=$(egrep -i "$KEYWORDS_MOLDOVA" newpages.txt)
 
   if [ "$MOLDOVA" != "" ];
   then

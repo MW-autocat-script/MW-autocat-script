@@ -3,7 +3,7 @@
 
 egrep -i 'SpongeBob|sponge bob|SquarePants|Krusty Krab|Patrick Star|Sandy Cheeks|(Eugene|Mr(|\.)) Krabs' newpages.txt >> SpongeBobSquarePants.txt
 
-SPONGEBOB=`stat --print=%s SpongeBobSquarePants.txt`
+SPONGEBOB=$(stat --print=%s SpongeBobSquarePants.txt)
 
 if [ $SPONGEBOB -ne 0 ];
 then

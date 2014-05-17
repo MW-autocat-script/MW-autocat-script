@@ -5,7 +5,7 @@ KEYWORDS_NINTENDO_WII_EXCLUDE="\bWii(| )U\b|\bWii(| )Sports|\bWii(| )Fit|\bWii(|
 
 egrep -i "$KEYWORDS_NINTENDO_WII" newpages.txt | egrep -iv "$KEYWORDS_NINTENDO_WII_EXCLUDE" >> NintendoWii.txt
 
-WII=`stat --print=%s NintendoWii.txt`
+WII=$(stat --print=%s NintendoWii.txt)
 
 if [ $WII -ne 0 ];
 then

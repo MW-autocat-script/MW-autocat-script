@@ -10,7 +10,7 @@ then
     printf "Starting Brunei\n"
   fi
 
-  BRUNEI=`egrep -i "$KEYWORDS_BRUNEI" newpages.txt`
+  BRUNEI=$(egrep -i "$KEYWORDS_BRUNEI" newpages.txt)
 
   if [ "$BRUNEI" != "" ];
   then

@@ -10,7 +10,7 @@ then
     printf "Starting Asthma\n"
   fi
 
-  ASTHMA=`egrep -i "$KEYWORDS_ASTHMA" newpages.txt`
+  ASTHMA=$(egrep -i "$KEYWORDS_ASTHMA" newpages.txt)
 
   if [ "$ASTHMA" != "" ];
   then

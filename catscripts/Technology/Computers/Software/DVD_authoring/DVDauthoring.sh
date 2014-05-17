@@ -9,7 +9,7 @@ then
 
   egrep -i "$KEYWORDS_DVDAUTHORING_ALL" newpages.txt >> Authoring.txt
 
-  AUTHORING=`stat --print=%s Authoring.txt`
+  AUTHORING=$(stat --print=%s Authoring.txt)
 
   if [ $AUTHORING -ne 0 ];
   then

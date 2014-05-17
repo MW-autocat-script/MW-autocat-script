@@ -6,10 +6,10 @@ egrep -i "Great(| )Wall(| )of(| )China" newpages.txt >> GreatWall.txt
 egrep -i "Beijing" newpages.txt >> Beijing.txt
 egrep -i "Hong(| )Kong" newpages.txt >> HongKong.txt 
 
-CHINA=`stat --print=%s China.txt`
-WALL=`stat --print=%s GreatWall.txt`
-BEIJING=`stat --print=%s Beijing.txt`
-HONGKONG=`stat --print=%s HongKong.txt`
+CHINA=$(stat --print=%s China.txt)
+WALL=$(stat --print=%s GreatWall.txt)
+BEIJING=$(stat --print=%s Beijing.txt)
+HONGKONG=$(stat --print=%s HongKong.txt)
 
 if [ $CHINA -ne 0 ];
 then

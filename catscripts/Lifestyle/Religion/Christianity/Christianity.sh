@@ -21,13 +21,13 @@ then
     printf "Starting Christianity\n"
   fi
 
-  CHRISTIANITY=`egrep -i "$KEYWORDS_CHRISTIANITY" newpages.txt | egrep -iv "$KEYWORDS_CHRISTIANITY_EXCLUDE"`
-  ANGLICAN=`egrep -i "$KEYWORDS_ANGLICAN" newpages.txt`
-  CATHOLICISM=`egrep -i "$KEYWORDS_CATHOLICISM" newpages.txt | egrep -iv "$KEYWORDS_CATHOLICISM_EXCLUDE"`
-  LUTHERANISM=`egrep -i "$KEYWORDS_LUTHERANISM" newpages.txt | egrep -iv "$KEYWORDS_LUTHERANISM_EXCLUDE"`
-  MORMONISM=`egrep -i "$KEYWORDS_MORMONISM" newpages.txt`
-  AMISH=`egrep -i "$KEYWORDS_AMISH" newpages.txt`
-  CHRISTMAS=`egrep -i "$KEYWORDS_CHRISTMAS" newpages.txt`
+  CHRISTIANITY=$(egrep -i "$KEYWORDS_CHRISTIANITY" newpages.txt | egrep -iv "$KEYWORDS_CHRISTIANITY_EXCLUDE")
+  ANGLICAN=$(egrep -i "$KEYWORDS_ANGLICAN" newpages.txt)
+  CATHOLICISM=$(egrep -i "$KEYWORDS_CATHOLICISM" newpages.txt | egrep -iv "$KEYWORDS_CATHOLICISM_EXCLUDE")
+  LUTHERANISM=$(egrep -i "$KEYWORDS_LUTHERANISM" newpages.txt | egrep -iv "$KEYWORDS_LUTHERANISM_EXCLUDE")
+  MORMONISM=$(egrep -i "$KEYWORDS_MORMONISM" newpages.txt)
+  AMISH=$(egrep -i "$KEYWORDS_AMISH" newpages.txt)
+  CHRISTMAS=$(egrep -i "$KEYWORDS_CHRISTMAS" newpages.txt)
 
 
   if [ "$CHRISTIANITY" != "" ];

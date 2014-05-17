@@ -37,11 +37,11 @@ egrep -i "$KEYWORDS_HAMSTERS" newpages.txt >> Hamsters.txt #Search hamsters
 egrep -i "$KEYWORDS_GERBILS" newpages.txt >> Gerbils.txt #search gerbils
 egrep -i "$KEYWORDS_GUINEA_PIGS" newpages.txt >> GuineaPigs.txt #Search guinea pigs
 
-DOGS=`stat --print=%s Dogs.txt` #stat dogs
-GOLDFISH=`stat --print=%s Goldfish.txt` #stat goldfish
-HAMSTERS=`stat --print=%s Hamsters.txt` #stat hamsters
-GERBILS=`stat --print=%s Gerbils.txt` #stat gerbils
-GUINEAPIGS=`stat --print=%s GuineaPigs.txt` #stat Guinea pigs
+DOGS=$(stat --print=%s Dogs.txt) #stat dogs
+GOLDFISH=$(stat --print=%s Goldfish.txt) #stat goldfish
+HAMSTERS=$(stat --print=%s Hamsters.txt) #stat hamsters
+GERBILS=$(stat --print=%s Gerbils.txt) #stat gerbils
+GUINEAPIGS=$(stat --print=%s GuineaPigs.txt) #stat Guinea pigs
 
 #Categorize dogs
 

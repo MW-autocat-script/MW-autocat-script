@@ -25,18 +25,18 @@ then
     printf "Starting Windows scripts\n"
   fi
 
-  ACTIVEDIRECTORY=`egrep -i "$KEYWORDS_ACTIVEDIRECTORY" newpages.txt`
-  WINDOWS98=`egrep -i "$KEYWORDS_WINDOWS98" newpages.txt`
-  WINDOWS2000=`egrep -i "$KEYWORDS_WINDOWS2000" newpages.txt`
-  WINDOWSXP=`egrep -i "$KEYWORDS_WINDOWSXP" newpages.txt`
-  WINDOWS2003=`egrep -i "$KEYWORDS_WINDOWSSERVER2003" newpages.txt`
-  WINDOWSVISTA=`egrep -i "$KEYWORDS_WINDOWSVISTA" newpages.txt`
-  WINDOWS7=`egrep -i "$KEYWORDS_WINDOWS7" newpages.txt`
-  WINDOWS2008=`egrep -i "$KEYWORDS_WINDOWSSERVER2008" newpages.txt`
-  WINDOWS8=`egrep -i "$KEYWORDS_WINDOWS8" newpages.txt`
-  WINDOWSNT=`egrep -i "$KEYWORDS_WINDOWSNT" newpages.txt`
-  WINDOWS=`egrep -i "$KEYWORDS_WINDOWS" newpages.txt | egrep -iv "$KEYWORDS_WINDOWS_EXCLUDE"`
-  WINDOWSCASE=`egrep "$KEYWORDS_WINDOWSCASESENSITIVE" newpages.txt | egrep -iv "$KEYWORDS_WINDOWS_EXCLUDE"`
+  ACTIVEDIRECTORY=$(egrep -i "$KEYWORDS_ACTIVEDIRECTORY" newpages.txt)
+  WINDOWS98=$(egrep -i "$KEYWORDS_WINDOWS98" newpages.txt)
+  WINDOWS2000=$(egrep -i "$KEYWORDS_WINDOWS2000" newpages.txt)
+  WINDOWSXP=$(egrep -i "$KEYWORDS_WINDOWSXP" newpages.txt)
+  WINDOWS2003=$(egrep -i "$KEYWORDS_WINDOWSSERVER2003" newpages.txt)
+  WINDOWSVISTA=$(egrep -i "$KEYWORDS_WINDOWSVISTA" newpages.txt)
+  WINDOWS7=$(egrep -i "$KEYWORDS_WINDOWS7" newpages.txt)
+  WINDOWS2008=$(egrep -i "$KEYWORDS_WINDOWSSERVER2008" newpages.txt)
+  WINDOWS8=$(egrep -i "$KEYWORDS_WINDOWS8" newpages.txt)
+  WINDOWSNT=$(egrep -i "$KEYWORDS_WINDOWSNT" newpages.txt)
+  WINDOWS=$(egrep -i "$KEYWORDS_WINDOWS" newpages.txt | egrep -iv "$KEYWORDS_WINDOWS_EXCLUDE")
+  WINDOWSCASE=$(egrep "$KEYWORDS_WINDOWSCASESENSITIVE" newpages.txt | egrep -iv "$KEYWORDS_WINDOWS_EXCLUDE")
 
 
   if [ "$ACTIVEDIRECTORY" != "" ];

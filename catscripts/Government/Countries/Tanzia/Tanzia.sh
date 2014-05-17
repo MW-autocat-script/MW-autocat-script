@@ -11,7 +11,7 @@ then
     printf "Starting Tanzia\n"
   fi
 
-  TANZIA=`egrep -i "$KEYWORDS_TANZIA" newpages.txt`
+  TANZIA=$(egrep -i "$KEYWORDS_TANZIA" newpages.txt)
 
   if [ "$TANZIA" != "" ];
   then

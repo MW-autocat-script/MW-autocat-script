@@ -10,7 +10,7 @@ then
     printf "Starting Argentina\n"
   fi
 
-  ARGENTINA=`egrep -i "$KEYWORDS_ARGENTINA" newpages.txt`
+  ARGENTINA=$(egrep -i "$KEYWORDS_ARGENTINA" newpages.txt)
 
   if [ "$ARGENTINA" != "" ];
   then

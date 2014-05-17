@@ -2,7 +2,7 @@
 
 egrep -i 'El(| )Salvador' newpages.txt >> ElSalvador.txt
 
-ELSALVADOR=`stat --print=%s ElSalvador.txt`
+ELSALVADOR=$(stat --print=%s ElSalvador.txt)
 
 if [ $ELSALVADOR -ne 0 ];
 then

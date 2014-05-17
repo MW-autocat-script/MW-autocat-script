@@ -8,13 +8,13 @@ egrep -i 'Ford Mustang|[0-9]{2,4} Mustang' newpages.txt >> FordMustang.txt
 egrep -i 'Ford Contour|[0-9]{2,4} Contour' newpages.txt >> FordContour.txt
 #egrep -i 'Mondeo' newpages.txt >> Ford.txt #No category exists and currently insufficient number of questions to create
 
-FORD=`stat --print=%s Ford.txt`
-TAURUS=`stat --print=%s FordTaurus.txt`
-ESCORT=`stat --print=%s FordEscort.txt`
-FOCUS=`stat --print=%s FordFocus.txt`
-MUSTANG=`stat --print=%s FordMustang.txt`
-CONTOUR=`stat --print=%s FordContour.txt`
-#MONDEO=`stat --print=%s FordMondeo.txt`
+FORD=$(stat --print=%s Ford.txt)
+TAURUS=$(stat --print=%s FordTaurus.txt)
+ESCORT=$(stat --print=%s FordEscort.txt)
+FOCUS=$(stat --print=%s FordFocus.txt)
+MUSTANG=$(stat --print=%s FordMustang.txt)
+CONTOUR=$(stat --print=%s FordContour.txt)
+#MONDEO=$(stat --print=%s FordMondeo.txt)
 
 if [ $FORD -ne 0 ];
 then

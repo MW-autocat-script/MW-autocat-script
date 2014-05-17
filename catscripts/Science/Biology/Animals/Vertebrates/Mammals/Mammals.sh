@@ -4,7 +4,7 @@ CURRENTDIR="./catscripts/Science/Biology/Animals/Vertebrates/Mammals"
 
 egrep -i 'mammal' newpages.txt | egrep -iv 'Dolphin' >> Mammals.txt
 
-MAMMALS=`stat --print=%s Mammals.txt`
+MAMMALS=$(stat --print=%s Mammals.txt)
 
 if [ $MAMMALS -ne 0 ];
 then

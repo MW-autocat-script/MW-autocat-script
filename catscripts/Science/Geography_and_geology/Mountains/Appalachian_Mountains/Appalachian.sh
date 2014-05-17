@@ -7,7 +7,7 @@ then
   
   egrep -i "$KEYWORDS_APPALACHIAN" newpages.txt >> Appalachian.txt
 
-  APPALACHIAN=`stat --print=%s Appalachian.txt`
+  APPALACHIAN=$(stat --print=%s Appalachian.txt)
 
   if [ $APPALACHIAN -ne 0 ];
   then

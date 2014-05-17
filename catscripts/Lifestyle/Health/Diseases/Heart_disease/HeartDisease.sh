@@ -2,7 +2,7 @@
 
 egrep -i 'heart(| )disease' newpages.txt >> HeartDisease.txt
 
-HEARTDISEASE=`stat --print=%s HeartDisease.txt`
+HEARTDISEASE=$(stat --print=%s HeartDisease.txt)
 
 if [ $HEARTDISEASE -ne 0 ];
 then

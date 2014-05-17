@@ -4,7 +4,7 @@ KEYWORDS_PORSCHE="Porsche"
 
 egrep -i "$KEYWORDS_PORSCHE" newpages.txt >> Porsche.txt
 
-PORSCHE=`stat --print=%s Porsche.txt`
+PORSCHE=$(stat --print=%s Porsche.txt)
 
 if [ $PORSCHE -ne 0 ];
 then

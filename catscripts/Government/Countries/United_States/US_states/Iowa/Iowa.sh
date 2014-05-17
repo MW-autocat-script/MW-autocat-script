@@ -10,7 +10,7 @@ then
     printf "Starting Iowa\n"
   fi
 
-  IOWA=`egrep -i "$KEYWORDS_IOWA" newpages.txt`
+  IOWA=$(egrep -i "$KEYWORDS_IOWA" newpages.txt)
 
   if [ "$IOWA" != "" ];
   then

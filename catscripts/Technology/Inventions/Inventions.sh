@@ -5,7 +5,7 @@ KEYWORDS_INVENTIONS="Who invented [a-z]{1,}$|Who invented the [a-z]{1,}|(When|Wh
 if [ "$1" == "" ];
 then
 
-  INVENTIONS=`egrep -i "$KEYWORDS_INVENTIONS" newpages.txt`
+  INVENTIONS=$(egrep -i "$KEYWORDS_INVENTIONS" newpages.txt)
 
   if [ "$DEBUG" == "yes" ];
   then

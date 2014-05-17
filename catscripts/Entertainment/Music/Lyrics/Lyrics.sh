@@ -11,7 +11,7 @@ then
     printf "Starting Lyrics\n"
   fi
 
-  LYRICS=`egrep -i "$KEYWORDS_LYRICS" newpages.txt`
+  LYRICS=$(egrep -i "$KEYWORDS_LYRICS" newpages.txt)
 
   if [ "$LYRICS" != "" ];
   then

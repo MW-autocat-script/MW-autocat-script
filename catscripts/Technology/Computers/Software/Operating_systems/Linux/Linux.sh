@@ -16,18 +16,18 @@ KEYWORDS_LINUX_ALL="$KEYWORDS_LINUX|$KEYWORDS_LINUX_OTHER|$KEYWORDS_LINUX_EXCLUD
 if [ "$1" == "" ]; #Nortmal operation
 then
 
-  LINUX=`egrep -i "$KEYWORDS_LINUX|$KEYWORDS_LINUX_OTHER" newpages.txt | egrep -iv "$KEYWORDS_LINUX_EXCLUDE"`
-  DEBIAN=`egrep -i "$KEYWORDS_DEBIAN" newpages.txt`
-  OPENSUSE=`egrep -i "$KEYWORDS_OPENSUSE" newpages.txt`
-  UBUNTU=`egrep -i "$KEYWORDS_UBUNTU" newpages.txt`
-  COLINUX=` egrep -i "$KEYWORDS_COLINUX" newpages.txt`
-  FEDORA=`egrep -i "$KEYWORDS_FEDORA" newpages.txt`
-  MINT=`egrep -i "$KEYWORDS_LINUXMINT" newpages.txt`
-  ANDROID=`egrep -i "$KEYWORDS_GOOGLEANDROID" newpages.txt & egrep "$KEYWORDS_GOOGLEANDROID_CASESENSITIVE" newpages.txt`
+  LINUX=$(egrep -i "$KEYWORDS_LINUX|$KEYWORDS_LINUX_OTHER" newpages.txt | egrep -iv "$KEYWORDS_LINUX_EXCLUDE")
+  DEBIAN=$(egrep -i "$KEYWORDS_DEBIAN" newpages.txt)
+  OPENSUSE=$(egrep -i "$KEYWORDS_OPENSUSE" newpages.txt)
+  UBUNTU=$(egrep -i "$KEYWORDS_UBUNTU" newpages.txt)
+  COLINUX=$( egrep -i "$KEYWORDS_COLINUX" newpages.txt)
+  FEDORA=$(egrep -i "$KEYWORDS_FEDORA" newpages.txt)
+  MINT=$(egrep -i "$KEYWORDS_LINUXMINT" newpages.txt)
+  ANDROID=$(egrep -i "$KEYWORDS_GOOGLEANDROID" newpages.txt & egrep "$KEYWORDS_GOOGLEANDROID_CASESENSITIVE" newpages.txt)
 
   if [ "$LINUX" != "" ];
   then
-    egrep -i "$KEYWORDS_LINUX|$KEYWORDS_LINUX_OTHER" newpages.txt | egrep -iv "$KEYWORDS_LINUX_EXCLUDE" > Linux.txt
+    printf "%s" "$LINUX" > Linux.txt
     export CATFILE="Linux.txt"
     export CATNAME="Linux"
     $CATEGORIZE
@@ -37,7 +37,7 @@ then
 
   if [ "$DEBIAN" != "" ];
   then
-    egrep -i "$KEYWORDS_DEBIAN" newpages.txt > Debian.txt 
+    printf "%s" "$DEBIAN" > Debian.txt 
     export CATFILE="Debian.txt"
     export CATNAME="Debian"
     $CATEGORIZE
@@ -47,7 +47,7 @@ then
 
   if [ "$OPENSUSE" != "" ];
   then
-    egrep -i "$KEYWORDS_OPENSUSE" newpages.txt > OpenSUSE.txt
+    printf "%s" "$OPENSUSE" > OpenSUSE.txt
     export CATFILE="OpenSUSE.txt"
     export CATNAME="OpenSUSE"
     $CATEGORIZE
@@ -57,7 +57,7 @@ then
 
   if [ "$UBUNTU" != "" ];
   then
-    egrep -i "$KEYWORDS_UBUNTU" newpages.txt > Ubuntu.txt
+    printf "%s" "$UBUNTU" > Ubuntu.txt
     export CATFILE="Ubuntu.txt"
     export CATNAME="Ubuntu"
     $CATEGORIZE
@@ -67,7 +67,7 @@ then
 
   if [ "$COLINUX" != "" ];
   then
-    egrep -i "$KEYWORDS_COLINUX" newpages.txt > CoLinux.txt
+    printf "%s" "$COLINUX" > CoLinux.txt
     export CATFILE="coLinux.txt"
     export CATNAME="coLinux"
     $CATEGORIZE
@@ -77,7 +77,7 @@ then
 
   if [ "$FEDORA" != "" ];
   then
-    egrep -i "$KEYWORDS_FEDORA" newpages.txt > FedoraLinux.txt
+    printf "%s" "$FEDORA" > FedoraLinux.txt
     export CATFILE="FedoraLinux.txt"
     export CATNAME="Fedora Linux"
     $CATEGORIZE
@@ -87,7 +87,7 @@ then
 
   if [ "$MINT" != "" ];
   then
-    egrep -i "$KEYWORDS_LINUXMINT" newpages.txt > LinuxMint.txt
+    printf "%s" "$MINT" > LinuxMint.txt
     export CATFILE="LinuxMint.txt"
     export CATNAME="Linux Mint"
     $CATEGORIZE
@@ -97,8 +97,7 @@ then
 
   if [ "$ANDROID" != "" ];
   then
-    egrep -i "$KEYWORDS_GOOGLEANDROID" newpages.txt > GoogleAndroid.txt
-    egrep "$KEYWORDS_GOOGLEANDROID_CASESENSITIVE" newpages.txt >> GoogleAndroid.txt
+    printf "%s" "$ANDROID" > GoogleAndroid.txt
     export CATFILE="GoogleAndroid.txt"
     export CATNAME="Google Android"
     $CATEGORIZE

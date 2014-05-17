@@ -2,7 +2,7 @@
 
 KEYWORDS_ARIZONA="Arizona"
 
-ARIZONA=`egrep -i "$KEYWORDS_ARIZONA" newpages.txt`
+ARIZONA=$(egrep -i "$KEYWORDS_ARIZONA" newpages.txt)
 
 if [ "$ARIZONA" != "" ];
 then

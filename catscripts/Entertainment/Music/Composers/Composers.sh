@@ -7,11 +7,11 @@ egrep -i 'Beethoven'  newpages.txt | egrep -iv 'Bernard|breed|dog' >> LudwigVanB
 egrep -i 'Aaron Copland' newpages.txt >> AaronCopland.txt
 egrep -i 'Igor Stravinsky' newpages.txt >> IgorStravinsky.txt
 
-BACH=`stat --print=%s Bach.txt`
-MOZART=`stat --print=%s WolfgangAmadeusMozart.txt`
-BEETHOVEN=`stat --print=%s LudwigVanBeethoven.txt`
-COPLAND=`stat --print=%s AaronCopland.txt`
-STRAVINSKY=`stat --print=%s IgorStravinsky.txt`
+BACH=$(stat --print=%s Bach.txt)
+MOZART=$(stat --print=%s WolfgangAmadeusMozart.txt)
+BEETHOVEN=$(stat --print=%s LudwigVanBeethoven.txt)
+COPLAND=$(stat --print=%s AaronCopland.txt)
+STRAVINSKY=$(stat --print=%s IgorStravinsky.txt)
 
 if [ $BACH -ne 0 ];
 then

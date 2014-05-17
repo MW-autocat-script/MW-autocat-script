@@ -10,7 +10,7 @@ then
     printf "Starting Wicca\n"
   fi
 
-  WICCA=`egrep -i "$KEYWORDS_WICCA" newpages.txt`
+  WICCA=$(egrep -i "$KEYWORDS_WICCA" newpages.txt)
 
   if [ "$WICCA" != "" ];
   then

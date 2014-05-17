@@ -5,7 +5,7 @@ KEYWORDS_INDIANA_EXCLUDE="Indiana(| )County|Indiana(| )University|Indiana(| )Jon
 
 egrep -i "$KEYWORDS_INDIANA" newpages.txt | egrep -iv "$KEYWORDS_INDIANA_EXCLUDE" >> Indiana.txt
 
-INDIANA=`stat --print=%s Indiana.txt`
+INDIANA=$(stat --print=%s Indiana.txt)
 
 if [ $INDIANA -ne 0 ];
 then

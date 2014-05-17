@@ -9,9 +9,9 @@ egrep -i "$KEYWORDS_SWITZERLAND" newpages.txt | egrep -iv "$KEYWORDS_SWITZERLAND
 egrep -i "$KEYWORDS_GENEVA" newpages.txt >> Geneva.txt
 egrep -i "$KEYWORDS_ZURICH" newpages.txt >> Zurich.txt
 
-SWITZERLAND=`stat --print=%s Switzerland.txt`
-GENEVA=`stat --print=%s Geneva.txt`
-ZURICH=`stat --print=%s Zurich.txt`
+SWITZERLAND=$(stat --print=%s Switzerland.txt)
+GENEVA=$(stat --print=%s Geneva.txt)
+ZURICH=$(stat --print=%s Zurich.txt)
 
 if [ $SWITZERLAND -ne 0 ];
 then

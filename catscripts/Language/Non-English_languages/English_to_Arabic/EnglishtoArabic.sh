@@ -2,7 +2,7 @@
 
 egrep -i 'Arabic word for|How do you say .+ in Arabic' newpages.txt >> EnglishtoArabic.txt
 
-ARABIC=`stat --print=%s EnglishtoArabic.txt`
+ARABIC=$(stat --print=%s EnglishtoArabic.txt)
 
 if [ $ARABIC -ne 0 ];
 then

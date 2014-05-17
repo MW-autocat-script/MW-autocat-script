@@ -11,7 +11,7 @@ then
     printf "Starting Montana\n"
   fi
 
-  MONTANA=`egrep -i "$KEYWORDS_MONTANA" newpages.txt | egrep -iv "$KEYWORDS_MONTANA_EXCLUDE"`
+  MONTANA=$(egrep -i "$KEYWORDS_MONTANA" newpages.txt | egrep -iv "$KEYWORDS_MONTANA_EXCLUDE")
 
   if [ "$MONTANA" != "" ];
   then

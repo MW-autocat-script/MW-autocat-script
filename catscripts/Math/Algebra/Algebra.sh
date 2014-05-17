@@ -4,7 +4,7 @@ KEYWORDS_ALGEBRA="Algebra"
 
 egrep -i "$KEYWORDS_ALGEBRA" newpages.txt >> Algebra.txt
 
-ALGEBRA=`stat --print=%s Algebra.txt`
+ALGEBRA=$(stat --print=%s Algebra.txt)
 
 if [ $ALGEBRA -ne 0 ];
 then

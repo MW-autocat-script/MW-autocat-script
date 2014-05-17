@@ -11,7 +11,7 @@ then
     printf "Starting Scientology\n"
   fi
 
-  SCIENTOLOGY=`egrep -i "$KEYWORDS_SCIENTOLOGY" newpages.txt`
+  SCIENTOLOGY=$(egrep -i "$KEYWORDS_SCIENTOLOGY" newpages.txt)
 
   if [ "$SCIENTOLOGY" != "" ];
   then

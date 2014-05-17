@@ -2,7 +2,7 @@
 
 KEYWORDS_ALASKA="Alaska|Seward's(| )icebox"
 
-ALASKA=`egrep -i "$KEYWORDS_ALASKA" newpages.txt`
+ALASKA=$(egrep -i "$KEYWORDS_ALASKA" newpages.txt)
 
 if [ "$ALASKA" != "" ];
 then

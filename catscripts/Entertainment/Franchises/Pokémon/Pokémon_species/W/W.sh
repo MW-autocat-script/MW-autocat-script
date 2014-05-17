@@ -21,27 +21,27 @@ egrep -i 'Wormadam' newpages.txt >> Wormadam.txt
 egrep -i 'Wurmple' newpages.txt >> Wurmple.txt
 egrep -i 'Wynaut' newpages.txt >> Wynaut.txt
 
-Wailmer=`stat --print=%s Wailmer.txt`
-Wailord=`stat --print=%s Wailord.txt`
-Walrein=`stat --print=%s Walrein.txt`
-Wartortle=`stat --print=%s Wartortle.txt`
-Watchog=`stat --print=%s Watchog.txt`
-Weavile=`stat --print=%s Weavile.txt`
-Weedle=`stat --print=%s Weedle.txt`
-Weepinbell=`stat --print=%s Weepinbell.txt`
-Weezing=`stat --print=%s Weezing.txt`
-Whimsicott=`stat --print=%s Whimsicott.txt`
-Whirlipede=`stat --print=%s Whirlipede.txt`
-Whiscash=`stat --print=%s Whiscash.txt`
-Whismur=`stat --print=%s Whismur.txt`
-Wigglytuff=`stat --print=%s Wigglytuff.txt`
-Wingull=`stat --print=%s Wingull.txt`
-Wobbuffet=`stat --print=%s Wobbuffet.txt`
-Woobat=`stat --print=%s Woobat.txt`
-Wooper=`stat --print=%s Wooper.txt`
-Wormadam=`stat --print=%s Wormadam.txt`
-Wurmple=`stat --print=%s Wurmple.txt`
-Wynaut=`stat --print=%s Wynaut.txt`
+Wailmer=$(stat --print=%s Wailmer.txt)
+Wailord=$(stat --print=%s Wailord.txt)
+Walrein=$(stat --print=%s Walrein.txt)
+Wartortle=$(stat --print=%s Wartortle.txt)
+Watchog=$(stat --print=%s Watchog.txt)
+Weavile=$(stat --print=%s Weavile.txt)
+Weedle=$(stat --print=%s Weedle.txt)
+Weepinbell=$(stat --print=%s Weepinbell.txt)
+Weezing=$(stat --print=%s Weezing.txt)
+Whimsicott=$(stat --print=%s Whimsicott.txt)
+Whirlipede=$(stat --print=%s Whirlipede.txt)
+Whiscash=$(stat --print=%s Whiscash.txt)
+Whismur=$(stat --print=%s Whismur.txt)
+Wigglytuff=$(stat --print=%s Wigglytuff.txt)
+Wingull=$(stat --print=%s Wingull.txt)
+Wobbuffet=$(stat --print=%s Wobbuffet.txt)
+Woobat=$(stat --print=%s Woobat.txt)
+Wooper=$(stat --print=%s Wooper.txt)
+Wormadam=$(stat --print=%s Wormadam.txt)
+Wurmple=$(stat --print=%s Wurmple.txt)
+Wynaut=$(stat --print=%s Wynaut.txt)
 
 if [ $Wailmer -ne 0 ];
 then

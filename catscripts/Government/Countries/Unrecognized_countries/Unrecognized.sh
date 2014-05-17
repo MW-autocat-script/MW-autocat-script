@@ -5,7 +5,7 @@ egrep -i 'Sealand' newpages.txt >> Unrecognized.txt
 egrep -i 'Seborga' newpages.txt >> Unrecognized.txt
 egrep -i 'micronation' newpages.txt >> Unrecognized.txt
 
-UNRECOGNIZED=`stat --print=%s Unrecognized.txt`
+UNRECOGNIZED=$(stat --print=%s Unrecognized.txt)
 
 if [ $UNRECOGNIZED -ne 0 ];
 then

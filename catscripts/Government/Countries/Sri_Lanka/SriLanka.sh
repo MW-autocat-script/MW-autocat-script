@@ -2,7 +2,7 @@
 
 egrep -i 'Sri(| )Lanka|Ceylon' newpages.txt >> SriLanka.txt
 
-SRILANKA=`stat --print=%s SriLanka.txt`
+SRILANKA=$(stat --print=%s SriLanka.txt)
 
 if [ $SRILANKA -ne 0 ];
 then

@@ -2,7 +2,7 @@
 
 egrep -i 'Indonesia(|s)\b|Sulawesi' newpages.txt >> Indonesia.txt
 
-INDONESIA=`stat --print=%s Indonesia.txt`
+INDONESIA=$(stat --print=%s Indonesia.txt)
 
 if [ $INDONESIA -ne 0 ];
 then

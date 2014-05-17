@@ -8,9 +8,9 @@ egrep -i "$KEYWORDS_EGYPT" newpages.txt | egrep -iv "$KEYWORDS_ANCIENTEGYPYT|$KE
 egrep -i "$KEYWORDS_ANCIENTEGYPYT" newpages.txt >> AncientEgypt.txt
 egrep -i "$KEYWORDS_NILERIVER" newpages.txt >> NileRiver.txt
 
-EGYPT=`stat --print=%s Egypt.txt`
-ANCIENT=`stat --print=%s AncientEgypt.txt`
-NILE=`stat --print=%s NileRiver.txt`
+EGYPT=$(stat --print=%s Egypt.txt)
+ANCIENT=$(stat --print=%s AncientEgypt.txt)
+NILE=$(stat --print=%s NileRiver.txt)
 
 if [ $EGYPT -ne 0 ];
 then

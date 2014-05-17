@@ -2,7 +2,7 @@
 
 egrep -i 'The(| )Clone(| )Wars' newpages.txt >> TheCloneWars.txt
 
-CLONEWARS=`stat --print=%s TheCloneWars.txt`
+CLONEWARS=$(stat --print=%s TheCloneWars.txt)
 
 if [ $CLONEWARS -ne 0 ];
 then

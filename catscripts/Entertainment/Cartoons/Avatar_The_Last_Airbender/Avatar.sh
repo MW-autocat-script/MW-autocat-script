@@ -11,7 +11,7 @@ then
     printf "Starting Avatar: The Last Airbender\n"
   fi
 
-  AVATAR=`egrep -i "$KEYWORDS_AIRBENDER" newpages.txt | egrep -iv "$KEYWORDS_AIRBENDER_EXCLUDE"`
+  AVATAR=$(egrep -i "$KEYWORDS_AIRBENDER" newpages.txt | egrep -iv "$KEYWORDS_AIRBENDER_EXCLUDE")
 
   if [ "$AVATAR" != "" ];
   then

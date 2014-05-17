@@ -10,9 +10,9 @@ KEYWORDS_CHICAGO_EXCLUDE="Chicago(| )Bulls"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  ILLINOIS=`egrep -i "$KEYWORDS_ILLINOIS" newpages.txt | egrep -iv "$KEYWORDS_ILLINOIS_EXCLUDE"`
-  SPRINGFIELD=`egrep -i "$KEYWORDS_SPRINGFIELD" newpages.txt`
-  CHICAGO=`egrep -i "$KEYWORDS_CHICAGO" newpages.txt | egrep -iv "$KEYWORDS_CHICAGO_EXCLUDE"`
+  ILLINOIS=$(egrep -i "$KEYWORDS_ILLINOIS" newpages.txt | egrep -iv "$KEYWORDS_ILLINOIS_EXCLUDE")
+  SPRINGFIELD=$(egrep -i "$KEYWORDS_SPRINGFIELD" newpages.txt)
+  CHICAGO=$(egrep -i "$KEYWORDS_CHICAGO" newpages.txt | egrep -iv "$KEYWORDS_CHICAGO_EXCLUDE")
 
   if [ "$ILLINOIS" != "" ];
   then

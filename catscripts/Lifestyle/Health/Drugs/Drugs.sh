@@ -27,11 +27,11 @@ egrep -i '\bLSD\b' newpages.txt >> IllegalDrugs.txt
 egrep -i 'Cocaine|smoke crack|crack(| )pipe' newpages.txt >> Cocaine.txt
 egrep -i 'marijuana|(buy|smoke|inhale).+(weed|pot\b|a joint)|cannabis|cannabinol' newpages.txt >> Marijuana.txt
 
-DRUGS=`stat --print=%s Drugs.txt`
-MEDICATION=`stat --print=%s Medication.txt`
-ILLEGAL=`stat --print=%s IllegalDrugs.txt`
-COCAINE=`stat --print=%s Cocaine.txt`
-MARIJUANA=`stat --print=%s Marijuana.txt`
+DRUGS=$(stat --print=%s Drugs.txt)
+MEDICATION=$(stat --print=%s Medication.txt)
+ILLEGAL=$(stat --print=%s IllegalDrugs.txt)
+COCAINE=$(stat --print=%s Cocaine.txt)
+MARIJUANA=$(stat --print=%s Marijuana.txt)
 
 if [ $DRUGS -ne 0 ];
 then

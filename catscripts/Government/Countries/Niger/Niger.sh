@@ -11,7 +11,7 @@ then
     printf "Starting Niger\n"
   fi
 
-  NIGER=`egrep -i "$KEYWORDS_NIGER" newpages.txt`
+  NIGER=$(egrep -i "$KEYWORDS_NIGER" newpages.txt)
 
   if [ "$NIGER" != "" ];
   then

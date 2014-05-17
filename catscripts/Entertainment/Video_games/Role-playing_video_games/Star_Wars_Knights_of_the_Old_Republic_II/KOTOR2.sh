@@ -2,7 +2,7 @@
 
 egrep -i 'Knights(| )of(| )the(| )Old(| )Republic(| )(II|2)|KOTOR(| )(2|II)' newpages.txt >> KOTOR2.txt
 
-KOTOR2=`stat --print=%s KOTOR2.txt`
+KOTOR2=$(stat --print=%s KOTOR2.txt)
 
 if [ $KOTOR2 -ne 0 ];
 then

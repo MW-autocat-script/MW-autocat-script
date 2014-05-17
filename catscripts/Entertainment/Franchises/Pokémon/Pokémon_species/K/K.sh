@@ -22,28 +22,28 @@ egrep -i 'Krokorok' newpages.txt >> Krokorok.txt
 egrep -i 'Kyogre' newpages.txt >> Kyogre.txt
 egrep -i 'Kyurem' newpages.txt >> Kyurem.txt
 
-Kabuto=`stat --print=%s Kabuto.txt`
-Kabutops=`stat --print=%s Kabutops.txt`
-Kadabra=`stat --print=%s Kadabra.txt`
-Kakuna=`stat --print=%s Kakuna.txt`
-Kangaskhan=`stat --print=%s Kangaskhan.txt`
-Karrablast=`stat --print=%s Karrablast.txt`
-Kecleon=`stat --print=%s Kecleon.txt`
-Keldeo=`stat --print=%s Keldeo.txt`
-Kingdra=`stat --print=%s Kingdra.txt`
-Kingler=`stat --print=%s Kingler.txt`
-Kirlia=`stat --print=%s Kirlia.txt`
-Klang=`stat --print=%s Klang.txt`
-Klink=`stat --print=%s Klink.txt`
-Klinklang=`stat --print=%s Klinklang.txt`
-Koffing=`stat --print=%s Koffing.txt`
-Krabby=`stat --print=%s Krabby.txt`
-Kricketot=`stat --print=%s Kricketot.txt`
-Kricketune=`stat --print=%s Kricketune.txt`
-Krookodile=`stat --print=%s Krookodile.txt`
-Krokorok=`stat --print=%s Krokorok.txt`
-Kyogre=`stat --print=%s Kyogre.txt`
-Kyurem=`stat --print=%s Kyurem.txt`
+Kabuto=$(stat --print=%s Kabuto.txt)
+Kabutops=$(stat --print=%s Kabutops.txt)
+Kadabra=$(stat --print=%s Kadabra.txt)
+Kakuna=$(stat --print=%s Kakuna.txt)
+Kangaskhan=$(stat --print=%s Kangaskhan.txt)
+Karrablast=$(stat --print=%s Karrablast.txt)
+Kecleon=$(stat --print=%s Kecleon.txt)
+Keldeo=$(stat --print=%s Keldeo.txt)
+Kingdra=$(stat --print=%s Kingdra.txt)
+Kingler=$(stat --print=%s Kingler.txt)
+Kirlia=$(stat --print=%s Kirlia.txt)
+Klang=$(stat --print=%s Klang.txt)
+Klink=$(stat --print=%s Klink.txt)
+Klinklang=$(stat --print=%s Klinklang.txt)
+Koffing=$(stat --print=%s Koffing.txt)
+Krabby=$(stat --print=%s Krabby.txt)
+Kricketot=$(stat --print=%s Kricketot.txt)
+Kricketune=$(stat --print=%s Kricketune.txt)
+Krookodile=$(stat --print=%s Krookodile.txt)
+Krokorok=$(stat --print=%s Krokorok.txt)
+Kyogre=$(stat --print=%s Kyogre.txt)
+Kyurem=$(stat --print=%s Kyurem.txt)
 
 if [ $Kabuto -ne 0 ];
 then

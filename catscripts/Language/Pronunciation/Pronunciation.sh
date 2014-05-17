@@ -11,7 +11,7 @@ then
     printf "Starting Pronunciation\n"
   fi
 
-  PRONUNCIATION=`egrep -i "$KEYWORDS_PRONUNCIATION" newpages.txt`
+  PRONUNCIATION=$(egrep -i "$KEYWORDS_PRONUNCIATION" newpages.txt)
 
   if [ "$PRONUNCIATION" != "" ];
   then

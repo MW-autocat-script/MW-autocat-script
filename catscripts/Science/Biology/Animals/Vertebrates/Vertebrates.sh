@@ -6,7 +6,7 @@ export KEYWORDS_VERTEBRATE="fish|amphibian|mammal|bird|reptile"
 
 #egrep -i 'vertebrate' newpages.txt | egrep -iv "$KEYWORDS_VERTEBRATE" >> Vertebrates.txt
 
-#VERTEBRATES=`stat --print=%s Vertebrates.txt`
+#VERTEBRATES=$(stat --print=%s Vertebrates.txt)
 
 #if [ $VERTEBRATES -ne 0 ];
 #then

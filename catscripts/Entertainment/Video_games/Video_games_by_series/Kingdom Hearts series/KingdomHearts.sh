@@ -6,11 +6,11 @@ egrep -i 'Kingdom Hearts (3\b|III\b)|Kingdom Hearts(3\b|III\b)|KH(3\b|III\b)|KH 
 egrep -i 'Chain of Memories|KH:COM|\bKHCOM\b|\bKH COM\b' newpages.txt >> ChainOfMemories.txt
 egrep -i 'Birth by Sleep|KH:BBS|KHBBS|KH BBS' newpages.txt >> BirthBySleep.txt
   
-KINGDOMHEARTSSERIES=`stat --print=%s KingdomHeartsSeries.txt`
-KINGDOMHEARTSII=`stat --print=%s KingdomHeartsII.txt`
-KINGDOMHEARTSIII=`stat --print=%s KingdomHeartsIII.txt`
-CHAINOFMEMORIES=`stat --print=%s ChainOfMemories.txt`
-BIRTHBYSLEEP=`stat --print=%s BirthBySleep.txt`
+KINGDOMHEARTSSERIES=$(stat --print=%s KingdomHeartsSeries.txt)
+KINGDOMHEARTSII=$(stat --print=%s KingdomHeartsII.txt)
+KINGDOMHEARTSIII=$(stat --print=%s KingdomHeartsIII.txt)
+CHAINOFMEMORIES=$(stat --print=%s ChainOfMemories.txt)
+BIRTHBYSLEEP=$(stat --print=%s BirthBySleep.txt)
 
 if [ $KINGDOMHEARTSSERIES -ne 0 ];
 then

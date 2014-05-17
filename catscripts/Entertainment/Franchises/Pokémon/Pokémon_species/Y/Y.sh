@@ -12,9 +12,9 @@ then
     printf "Starting Pokemon Y script\n"
   fi
 
-  YAMASK=`egrep -i "$KEYWORDS_YAMASK" newpages.txt`
-  YANMA=`egrep -i "$KEYWORDS_YANMA" newpages.txt`
-  YANMEGA=`egrep -i "$KEYWORDS_YANMEGA" newpages.txt`
+  YAMASK=$(egrep -i "$KEYWORDS_YAMASK" newpages.txt)
+  YANMA=$(egrep -i "$KEYWORDS_YANMA" newpages.txt)
+  YANMEGA=$(egrep -i "$KEYWORDS_YANMEGA" newpages.txt)
 
   if [ "$YAMASK" != "" ];
   then

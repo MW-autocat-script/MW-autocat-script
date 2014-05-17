@@ -10,7 +10,7 @@ KEYWORDS_SEARCHENGINES_EXCLUDE="$KEYWORDS_GOOGLE|$KEYWORDS_WIKIASEARCH"
 
 egrep -i "$KEYWORDS_SEARCHENGINES" newpages.txt | egrep -iv "$KEYWORDS_SEARCHENGINES_EXCLUDE" >> Searchengines.txt
 
-SEARCHENGINES=`stat --print=%s Searchengines.txt`
+SEARCHENGINES=$(stat --print=%s Searchengines.txt)
 
 if [ $SEARCHENGINES -ne 0 ];
 then

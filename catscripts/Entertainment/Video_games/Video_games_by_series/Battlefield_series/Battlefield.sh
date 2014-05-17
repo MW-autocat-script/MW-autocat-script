@@ -12,7 +12,7 @@ egrep -i 'Battlefield Play4Free' newpages.txt >> Battlefieldseries.txt
 egrep -i 'Battlefield 3' newpages.txt >> Battlefieldseries.txt
 egrep -i 'Battlefield 4' newpages.txt >> Battlefieldseries.txt
 
-BATTLEFIELD=`stat --print=%s Battlefieldseries.txt`
+BATTLEFIELD=$(stat --print=%s Battlefieldseries.txt)
 
 if [ $BATTLEFIELD -ne 0 ];
 then

@@ -19,21 +19,21 @@ egrep -i 'Final(| )Fantasy(| )(13|\bXIII\b)|\bFF(| )(13|XIII\b)' newpages.txt >>
 
 
 
-FFSERIES=`stat --print=%s FinalFantasyseries.txt`
-FF2=`stat --print=%s FinalFantasy2.txt`
-FF3=`stat --print=%s FinalFantasy3.txt`
-FF4=`stat --print=%s FinalFantasy4.txt`
-FF5=`stat --print=%s FinalFantasy5.txt`
-FF6=`stat --print=%s FinalFantasy6.txt`
-FF7=`stat --print=%s FinalFantasy7.txt`
-FF8=`stat --print=%s FinalFantasy8.txt`
-FF9=`stat --print=%s FinalFantasy9.txt`
-FF10=`stat --print=%s FinalFantasy10.txt`
-FFX2=`stat --print=%s FinalFantasyX-2.txt`
-FF11=`stat --print=%s FinalFantasy11.txt`
-FF12=`stat --print=%s FinalFantasy12.txt`
-FF13=`stat --print=%s FinalFantasy13.txt`
-ADVENT=`stat --print=%s AdventChildren.txt`
+FFSERIES=$(stat --print=%s FinalFantasyseries.txt)
+FF2=$(stat --print=%s FinalFantasy2.txt)
+FF3=$(stat --print=%s FinalFantasy3.txt)
+FF4=$(stat --print=%s FinalFantasy4.txt)
+FF5=$(stat --print=%s FinalFantasy5.txt)
+FF6=$(stat --print=%s FinalFantasy6.txt)
+FF7=$(stat --print=%s FinalFantasy7.txt)
+FF8=$(stat --print=%s FinalFantasy8.txt)
+FF9=$(stat --print=%s FinalFantasy9.txt)
+FF10=$(stat --print=%s FinalFantasy10.txt)
+FFX2=$(stat --print=%s FinalFantasyX-2.txt)
+FF11=$(stat --print=%s FinalFantasy11.txt)
+FF12=$(stat --print=%s FinalFantasy12.txt)
+FF13=$(stat --print=%s FinalFantasy13.txt)
+ADVENT=$(stat --print=%s AdventChildren.txt)
 
 
 if [ $FFSERIES -ne 0 ];

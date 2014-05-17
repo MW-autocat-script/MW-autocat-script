@@ -2,7 +2,7 @@
 
 egrep -i 'LittleBigPlanet|Little Big Planet|\bLBP\b' newpages.txt >> LittleBigPlanet.txt
 
-PLANET=`stat --print=%s LittleBigPlanet.txt`
+PLANET=$(stat --print=%s LittleBigPlanet.txt)
 
 if [ $PLANET -ne 0 ];
 then

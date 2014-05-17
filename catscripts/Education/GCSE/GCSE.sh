@@ -11,7 +11,7 @@ then
     printf "Starting GCSE\n"
   fi
 
-  GCSE=`egrep -i "$KEYWORDS_GCSE" newpages.txt`
+  GCSE=$(egrep -i "$KEYWORDS_GCSE" newpages.txt)
 
   if [ "$GCSE" != "" ];
   then

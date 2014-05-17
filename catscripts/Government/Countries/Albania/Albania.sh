@@ -8,7 +8,7 @@ fi
 
 egrep -i 'Albania' newpages.txt >> Albania.txt
 
-ALBANIA=`stat --print=%s Albania.txt`
+ALBANIA=$(stat --print=%s Albania.txt)
 
 if [ $ALBANIA -ne 0 ];
 then

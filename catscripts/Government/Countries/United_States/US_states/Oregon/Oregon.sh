@@ -2,7 +2,7 @@
 
 egrep -i 'Oregon' newpages.txt | egrep -iv 'Oregon Trail' >> Oregon.txt
 
-OREGON=`stat --print=%s Oregon.txt`
+OREGON=$(stat --print=%s Oregon.txt)
 
 if [ $OREGON -ne 0 ];
 then

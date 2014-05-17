@@ -3,8 +3,8 @@
 egrep -i 'Northern(| )Ireland' newpages.txt | egrep -iv 'Belfast' >> NorthernIreland.txt
 egrep -i 'Belfast' newpages.txt >> Belfast.txt
 
-NIRELAND=`stat --print=%s NorthernIreland.txt`
-BELFAST=`stat --print=%s Belfast.txt`
+NIRELAND=$(stat --print=%s NorthernIreland.txt)
+BELFAST=$(stat --print=%s Belfast.txt)
 
 if [ $NIRELAND -ne 0 ];
 then

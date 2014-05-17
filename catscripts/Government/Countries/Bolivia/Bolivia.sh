@@ -11,7 +11,7 @@ then
     printf "Starting Bolivia\n"
   fi
 
-  BOLIVIA=`egrep -i "$KEYWORDS_BOLIVIA" newpages.txt`
+  BOLIVIA=$(egrep -i "$KEYWORDS_BOLIVIA" newpages.txt)
 
   if [ "$BOLIVIA" != "" ];
   then

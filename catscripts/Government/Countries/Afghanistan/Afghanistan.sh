@@ -7,7 +7,7 @@ fi
 
 egrep -i 'Afghani(|stan)' newpages.txt | egrep -iv 'Afghanistan War|war in Afghanistan' >> Afghanistan.txt
 
-AFGHANISTAN=`stat --print=%s Afghanistan.txt`
+AFGHANISTAN=$(stat --print=%s Afghanistan.txt)
 
 if [ $AFGHANISTAN -ne 0 ];
 then

@@ -12,7 +12,7 @@ then
   fi
 
 
-  ANTONYMS=`egrep -i "$KEYWORDS_ANTONYMS" newpages.txt`
+  ANTONYMS=$(egrep -i "$KEYWORDS_ANTONYMS" newpages.txt)
 
   if [ "$ANTONYMS" != "" ];
   then

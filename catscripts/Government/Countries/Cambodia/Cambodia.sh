@@ -2,7 +2,7 @@
 
 egrep -i 'Cambodia\b|Khmer Rouge|Phnom Penh' newpages.txt >> Cambodia.txt
 
-CAMBODIA=`stat --print=%s Cambodia.txt`
+CAMBODIA=$(stat --print=%s Cambodia.txt)
 
 if [ $CAMBODIA -ne 0 ];
 then

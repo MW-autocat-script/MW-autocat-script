@@ -14,10 +14,10 @@ then
   egrep -i "$KEYWORDS_GOOGLEMAPS" newpages.txt >> GoogleMaps.txt
   egrep -i "$KEYWORDS_GOOGLEEARTH" newpages.txt >> GoogleEarth.txt
   
-  GOOGLE=`stat --print=%s Google.txt`
-  YOUTUBE=`stat --print=%s YouTube.txt`
-  GOOGLEMAPS=`stat --print=%s GoogleMaps.txt`
-  GOOGLEEARTH=`stat --print=%s GoogleEarth.txt`
+  GOOGLE=$(stat --print=%s Google.txt)
+  YOUTUBE=$(stat --print=%s YouTube.txt)
+  GOOGLEMAPS=$(stat --print=%s GoogleMaps.txt)
+  GOOGLEEARTH=$(stat --print=%s GoogleEarth.txt)
 
   if [ $GOOGLE -ne 0 ];
   then

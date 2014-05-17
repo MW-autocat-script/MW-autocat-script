@@ -4,7 +4,7 @@ CURRENTDIR="./catscripts/Science/Biology/Animals/Arthropods"
 
 egrep -i 'arthropod' newpages.txt | egrep -iv 'arachnid|\bant(|s)\b' >> Arthropods.txt
 
-ARTHROPODS=`stat --print=%s Arthropods.txt`
+ARTHROPODS=$(stat --print=%s Arthropods.txt)
 
 if [ $ARTHROPODS -ne 0 ];
 then

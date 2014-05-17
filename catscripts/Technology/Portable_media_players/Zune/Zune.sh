@@ -10,7 +10,7 @@ then
     printf "Starting Zune\n"
   fi
 
-  ZUNE=`egrep -i "$KEYWORDS_ZUNE" newpages.txt`
+  ZUNE=$(egrep -i "$KEYWORDS_ZUNE" newpages.txt)
 
   if [ "$ZUNE" != "" ];
   then

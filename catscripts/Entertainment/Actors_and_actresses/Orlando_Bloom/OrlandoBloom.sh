@@ -5,7 +5,7 @@ KEYWORDS_ACTOR_ORLANDOBLOOM="Orlando(| )Bloom"
 if [ "$1" == "" ];
 then
 
-  ORLANDOBLOOM=`egrep -i "$KEYWORDS_ACTOR_ORLANDOBLOOM" newpages.txt`
+  ORLANDOBLOOM=$(egrep -i "$KEYWORDS_ACTOR_ORLANDOBLOOM" newpages.txt)
 
   if [ "$ORLANDOBLOOM" != "" ];
   then

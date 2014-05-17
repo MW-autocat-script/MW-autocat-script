@@ -5,7 +5,7 @@ KEYWORDS_MONGOLIA="Mongolia"
 if [ "$1" == "" ]; #Normal operation
 then
   
-  MONGOLIA=`egrep -i "$KEYWORDS_MONGOLIA" newpages.txt`
+  MONGOLIA=$(egrep -i "$KEYWORDS_MONGOLIA" newpages.txt)
 
   if [ "$MONGOLIA" != "" ];
   then

@@ -10,7 +10,7 @@ then
     printf "Starting Maine\n"
   fi
 
-  MAINE=`egrep -i "$KEYWORDS_MAINE" newpages.txt`
+  MAINE=$(egrep -i "$KEYWORDS_MAINE" newpages.txt)
 
   if [ "$MAINE" != "" ];
   then

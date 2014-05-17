@@ -37,25 +37,20 @@ KEYWORDS_INTERROGATIVE="$KEYWORDS_WHO|$KEYWORDS_WHAT|$KEYWORDS_WHERE|$KEYWORDS_W
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Non-interrogative question search\n"
-  fi
+  debug_start "Non-interrogative question search"
 
-  NONINT=`egrep -iv "$KEYWORDS_INTERROGATIVE" newpages.txt`
+  NONINT=$(egrep -iv "$KEYWORDS_INTERROGATIVE" newpages.txt)
 
   if [ "$NONINT" != "" ];
   then
-    printf "$NONINT" > noninterrogative.txt
+    printf "%s" "$NONINT" > noninterrogative.txt
     export CATFILE="noninterrogative.txt"
     export CATNAME="Page titles lacking an interrogative word"
     $CATEGORIZE
     rm noninterrogative.txt
+    unset NONINT
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Non-interrogative question search\n"
-  fi
+  debug_end "Non-interrogative question search"
 
 fi

@@ -2,7 +2,7 @@
 
 egrep -i 'Dominican(| )Republic' newpages.txt >> DominicanRepublic.txt
 
-DOMINICAN=`stat --print=%s DominicanRepublic.txt`
+DOMINICAN=$(stat --print=%s DominicanRepublic.txt)
 
 if [ $DOMINICAN -ne 0 ];
 then

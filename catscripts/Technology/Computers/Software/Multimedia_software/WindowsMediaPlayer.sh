@@ -10,7 +10,7 @@ then
     printf "Starting Windows Media Player\n"
   fi
 
-  WMP=`egrep -i "$KEYWORDS_WINDOWSMEDIAPLAYER" newpages.txt`
+  WMP=$(egrep -i "$KEYWORDS_WINDOWSMEDIAPLAYER" newpages.txt)
 
   if [ "$WMP" != "" ];
   then

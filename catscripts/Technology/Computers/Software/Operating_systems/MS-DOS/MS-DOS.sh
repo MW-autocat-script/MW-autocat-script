@@ -7,11 +7,11 @@ KEYWORDS_MSDOS_CASESENSITIVE_EXCLUDE="DoS"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  MSDOS=`egrep -i "$KEYWORDS_MSDOS" newpages.txt | egrep -iv "$KEYWORDS_MSDOS_EXCLUDE" | egrep -v "$KEYWORDS_MSDOS_CASESENSITIVE_EXCLUDE"`
+  MSDOS=$(egrep -i "$KEYWORDS_MSDOS" newpages.txt | egrep -iv "$KEYWORDS_MSDOS_EXCLUDE" | egrep -v "$KEYWORDS_MSDOS_CASESENSITIVE_EXCLUDE")
 
   if [ "$MSDOS" != "" ];
   then
-    egrep -i "$KEYWORDS_MSDOS" newpages.txt | egrep -iv "$KEYWORDS_MSDOS_EXCLUDE" | egrep -v "$KEYWORDS_MSDOS_CASESENSITIVE_EXCLUDE" > MS-DOS.txt
+    printf "%s" "$MSDOS" > MS-DOS.txt
     export CATFILE="MS-DOS.txt"
     export CATNAME="MS-DOS"
     $CATEGORIZE

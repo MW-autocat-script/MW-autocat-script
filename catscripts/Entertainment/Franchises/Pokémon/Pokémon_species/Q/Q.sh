@@ -12,9 +12,9 @@ then
     printf "Starting Pokemon Q scripts\n"
   fi
 
-  QUAGSIRE=`egrep -i "$KEYWORDS_QUAGSIRE" newpages.txt`
-  QUILAVA=`egrep -i "$KEYWORDS_QUILAVA" newpages.txt`
-  QWILFISH=`egrep -i "$KEYWORDS_QWILFISH" newpages.txt`
+  QUAGSIRE=$(egrep -i "$KEYWORDS_QUAGSIRE" newpages.txt)
+  QUILAVA=$(egrep -i "$KEYWORDS_QUILAVA" newpages.txt)
+  QWILFISH=$(egrep -i "$KEYWORDS_QWILFISH" newpages.txt)
 
   if [ "$QUAGSIRE" != "" ];
   then

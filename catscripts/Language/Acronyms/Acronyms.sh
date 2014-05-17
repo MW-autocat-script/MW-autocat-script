@@ -10,7 +10,7 @@ then
     printf "Starting Acronyms\n" 
   fi
 
-  ACRONYMS=`egrep -i "$KEYWORDS_ACRONYMS" newpages.txt`
+  ACRONYMS=$(egrep -i "$KEYWORDS_ACRONYMS" newpages.txt)
 
   if [ "$ACRONYMS" != "" ];
   then

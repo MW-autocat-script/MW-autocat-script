@@ -7,7 +7,7 @@ then
   
   egrep -i "$KEYWORDS_FACEBOOK" newpages.txt >> Facebook.txt
 
-  FACEBOOK=`stat --print=%s Facebook.txt`
+  FACEBOOK=$(stat --print=%s Facebook.txt)
 
   if [ $FACEBOOK -ne 0 ];
   then

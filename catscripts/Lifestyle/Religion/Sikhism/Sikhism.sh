@@ -11,7 +11,7 @@ then
     printf "Starting Sikhism\n"
   fi
 
-  SIKHISM=`egrep -i "$KEYWORDS_SIKHISM" newpages.txt`
+  SIKHISM=$(egrep -i "$KEYWORDS_SIKHISM" newpages.txt)
 
   if [ "$SIKHISM" != "" ];
   then

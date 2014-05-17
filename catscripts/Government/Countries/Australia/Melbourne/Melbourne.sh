@@ -2,7 +2,7 @@
 
 egrep -i 'Melbourne' newpages.txt | egrep -iv 'Melbourne(|,) Fl' >> Melbourne.txt
 
-MELBOURNE=`stat --print=%s Melbourne.txt`
+MELBOURNE=$(stat --print=%s Melbourne.txt)
 
 if [ $MELBOURNE -ne 0 ];
 then

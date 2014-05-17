@@ -4,13 +4,10 @@ KEYWORDS_ADVANTAGES="What(| )are(| )(the|)(| )(adva(|n)tage|disadva(|n)tage)|Wha
 
 if [ "$1" == "" ];
 then
-  
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Advantages and disadvantages\n"
-  fi
 
-  ADVANTAGES=`egrep -i "$KEYWORDS_ADVANTAGES" newpages.txt`
+  debug_start "Advantages and disadvantages"
+
+  ADVANTAGES=$(egrep -i "$KEYWORDS_ADVANTAGES" newpages.txt)
 
   if [ "$ADVANTAGES" != "" ];
   then
@@ -22,9 +19,7 @@ then
     unset ADVANTAGES
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Advantages and disadvantages\n"
+  debug_end "Advantages and disadvantages"
   fi
 
 fi

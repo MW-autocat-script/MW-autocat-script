@@ -11,8 +11,8 @@ then
     printf "Starting Definitions\n" 
   fi
 
-  DEFINITIONS=`egrep -i "$KEYWORDS_DEFINITIONS" newpages.txt`
-  NAMEMEANINGS=`egrep -i "$KEYWORDS_NAMES" newpages.txt`
+  DEFINITIONS=$(egrep -i "$KEYWORDS_DEFINITIONS" newpages.txt)
+  NAMEMEANINGS=$(egrep -i "$KEYWORDS_NAMES" newpages.txt)
 
   if [ "$DEFINITIONS" != "" ];
   then

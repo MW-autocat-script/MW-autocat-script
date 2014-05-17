@@ -7,7 +7,7 @@ then
 
   egrep -i "$KEYWORDS_FREEBSD" newpages.txt >> FreeBSD.txt
 
-  FREEBSD=`stat --print=%s FreeBSD.txt`
+  FREEBSD=$(stat --print=%s FreeBSD.txt)
 
   if [ $FREEBSD -ne 0 ];
   then

@@ -22,7 +22,7 @@ RELIGIONDIR="./catscripts/Lifestyle/Religion"
 
 egrep -i 'religion|religious' newpages.txt | egrep -iv "$KEYWORDS_CHRISTIANITY_ALL|$KEYWORDS_JUDAISM_ALL|Shinto|Sikh|god|buddhism|buddhist|hindu|jain(|s|ism)\b|islam|Muslim|Prophet (Muhammed|Muhammad)|$KEYWORDS_SCIENTOLOGY_ALL|$KEYWORDS_WICCA" >> Religion.txt
 
-RELIGION=`stat --print=%s Religion.txt`
+RELIGION=$(stat --print=%s Religion.txt)
 
 if [ $RELIGION -ne 0 ];
 then

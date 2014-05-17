@@ -4,7 +4,7 @@ export KEYWORDS_MOVIES_THELIONKING="Lion(| )King|Simba|Mufasa|\bNala|Sarabi|Sara
 
 egrep -i "$KEYWORDS_MOVIES_THELIONKING" newpages.txt >> TheLionKing.txt
 
-LIONKING=`stat --print=%s TheLionKing.txt`
+LIONKING=$(stat --print=%s TheLionKing.txt)
 
 if [ $LIONKING -ne 0 ];
 then

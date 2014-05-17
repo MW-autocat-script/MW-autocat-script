@@ -5,10 +5,10 @@ egrep -i 'i(| )pod touch' newpages.txt > iPodtouch.txt
 egrep -i 'i(| )pod nano' newpages.txt > iPodnano.txt
 egrep -i 'i(| )pod shuffle' newpages.txt >> iPodshuffle.txt
 
-IPODS=`stat --print=%s iPods.txt`
-TOUCH=`stat --print=%s iPodtouch.txt`
-NANO=`stat --print=%s iPodnano.txt`
-SHUFFLE=`stat --print=%s iPodshuffle.txt`
+IPODS=$(stat --print=%s iPods.txt)
+TOUCH=$(stat --print=%s iPodtouch.txt)
+NANO=$(stat --print=%s iPodnano.txt)
+SHUFFLE=$(stat --print=%s iPodshuffle.txt)
 
 if [ $IPODS -ne 0 ];
 then

@@ -38,7 +38,7 @@ export KEYWORDS_MMORPG="$KEYWORDS_MMORPG_AQW|$KEYWORDS_MMORPG_ANARCHY|$KEYWORDS_
 
 egrep -i "MMORPG" newpages.txt | egrep -iv "$KEYWORDS_MMORPG" >> MMORPG.txt
 
-MMORPG=`stat --print=%s MMORPG.txt`
+MMORPG=$(stat --print=%s MMORPG.txt)
 
 if [ $MMORPG -ne 0 ];
 then

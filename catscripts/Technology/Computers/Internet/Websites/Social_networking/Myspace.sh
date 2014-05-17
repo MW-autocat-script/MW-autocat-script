@@ -7,7 +7,7 @@ then
   
   egrep -i "$KEYWORDS_MYSPACE" newpages.txt >> Myspace.txt
 
-  MYSPACE=`stat --print=%s Myspace.txt`
+  MYSPACE=$(stat --print=%s Myspace.txt)
 
   if [ $MYSPACE -ne 0 ];
   then

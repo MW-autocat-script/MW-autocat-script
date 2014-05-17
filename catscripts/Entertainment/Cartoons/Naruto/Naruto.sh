@@ -10,7 +10,7 @@ then
     printf "Starting Naruto\n"
   fi
   
-  NARUTO=`egrep -i "$KEYWORDS_NARUTO" newpages.txt`
+  NARUTO=$(egrep -i "$KEYWORDS_NARUTO" newpages.txt)
 
   if [ "$NARUTO" != "" ];
   then

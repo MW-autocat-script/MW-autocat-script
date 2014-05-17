@@ -7,12 +7,12 @@ egrep -i 'Star Wars.+Episode (4|IV\b)|A New Hope' newpages.txt >>  EpisodeIV.txt
 egrep -i 'Star Wars.+Episode (5|\bV\b)|Empire Strikes Back' newpages.txt >>  EpisodeV.txt
 egrep -i 'Star Wars.+Episode (6|\bVI\b)|Return of the Jedi|\bROTJ\b' newpages.txt >>  EpisodeVI.txt
 
-EPISODEI=`stat --print=%s EpisodeI.txt`
-EPISODEII=`stat --print=%s EpisodeII.txt`
-EPISODEIII=`stat --print=%s EpisodeIII.txt`
-EPISODEIV=`stat --print=%s EpisodeIV.txt`
-EPISODEV=`stat --print=%s EpisodeV.txt`
-EPISODEVI=`stat --print=%s EpisodeVI.txt`
+EPISODEI=$(stat --print=%s EpisodeI.txt)
+EPISODEII=$(stat --print=%s EpisodeII.txt)
+EPISODEIII=$(stat --print=%s EpisodeIII.txt)
+EPISODEIV=$(stat --print=%s EpisodeIV.txt)
+EPISODEV=$(stat --print=%s EpisodeV.txt)
+EPISODEVI=$(stat --print=%s EpisodeVI.txt)
 
 if [ $EPISODEI -ne 0 ];
 then

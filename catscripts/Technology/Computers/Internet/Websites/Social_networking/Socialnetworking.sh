@@ -14,7 +14,7 @@ KEYWORDS_SOCIALNETWORKING_EXCLUDE="$KEYWORDS_FACEBOOK|$KEYWORDS_GAIAONLINE|$KEYW
 
 egrep -i "$KEYWORDS_SOCIALNETWORKING" newpages.txt | egrep -iv "$KEYWORDS_SOCIALNETWORKING_EXCLUDE" >> Socialnetworking.txt
 
-SOCIALNETWORK=`stat --print=%s Socialnetworking.txt`
+SOCIALNETWORK=$(stat --print=%s Socialnetworking.txt)
 
 if [ $SOCIALNETWORK -ne 0 ];
 then

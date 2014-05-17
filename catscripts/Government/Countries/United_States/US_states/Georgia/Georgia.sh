@@ -8,8 +8,8 @@ KEYWORDS_GEORGIA_EXCLUDE="Republic(| )of(| )Georgia|$KEYWORDS_ATLANTA"
 egrep -i "$KEYWORDS_GEORGIA" newpages.txt | egrep -iv "$KEYWORDS_GEORGIA_EXCLUDE" >> Georgia.txt
 egrep -i "$KEYWORDS_ATLANTA" newpages.txt | egrep -iv "$KEYWORDS_ATLANTA_EXCLUDE" >> Atlanta.txt
 
-GEORGIA=`stat --print=%s Georgia.txt`
-ATLANTA=`stat --print=%s Atlanta.txt`
+GEORGIA=$(stat --print=%s Georgia.txt)
+ATLANTA=$(stat --print=%s Atlanta.txt)
 
 if [ $GEORGIA -ne 0 ];
 then

@@ -17,7 +17,7 @@ then
   egrep -i "$KEYWORDS_TELEVISIONSERIES"  newpages.txt | egrep -iv "$KEYWORDS_TELEVISIONSERIES_EXCLUDE" >> Series.txt
 
 
-  SERIES=`stat --print=%s Series.txt`
+  SERIES=$(stat --print=%s Series.txt)
 
   if [ $SERIES -ne 0 ];
   then

@@ -11,7 +11,7 @@ then
     printf "Starting Lesotho\n"
   fi
 
-  LESOTHO=`egrep -i "$KEYWORDS_LESOTHO" newpages.txt`
+  LESOTHO=$(egrep -i "$KEYWORDS_LESOTHO" newpages.txt)
 
   if [ "$LESOTHO" != "" ];
   then

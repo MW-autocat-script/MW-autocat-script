@@ -2,7 +2,7 @@
 
 egrep -i 'Dolphin' newpages.txt | egrep -iv 'Miami Dolphin|emulator' >> Dolphins.txt
 
-DOLPHIN=`stat --print=%s Dolphins.txt`
+DOLPHIN=$(stat --print=%s Dolphins.txt)
 
 if [ $DOLPHIN -ne 0 ];
 then

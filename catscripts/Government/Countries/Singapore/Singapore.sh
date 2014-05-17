@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'Singapore' newpages.txt >> Singapore.txt
+KEYWORDS_SINGAPORE="Singapore"
 
-SINGAPORE=`stat --print=%s Singapore.txt`
-
-if [ $SINGAPORE -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Singapore.txt"
-  export CATNAME="Singapore"
-  $CATEGORIZE
-fi
+  
+  debug_start "Singapore"
 
-rm Singapore.txt
+  SINGAPORE=$(egrep -i "$KEYWORDS_SINGAPORE" newpages.txt)
+
+  if [ "$SINGAPORE" != "" ];
+  then
+    printf "%s" "$SINGAPORE" > Singapore.txt
+    export CATFILE="Singapore.txt"
+    export CATNAME="Singapore"
+    $CATEGORIZE
+    rm Singapore.txt
+    unset SINGAPORE
+  fi
+
+  debug_end "Singapore"
+
+fi

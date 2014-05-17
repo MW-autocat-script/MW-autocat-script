@@ -7,7 +7,7 @@ SOUTHPARK_EPISODES="Make(| )Love(|,)(| )Not(| )Warcraft|Good(| )Times(| )With We
 
 egrep -i "South(| )Park|Matt(| )Stone|Trey(| )Parker|Matt.+\bTrey|\bTrey.+Matt|Jesus and Pals|Mysterion|$SOUTHPARK_CHARACTERS|$SOUTHPARK_EPISODES|$SOUTHPARK_MUSIC" newpages.txt >> SouthPark.txt
 
-SOUTHPARK=`stat --print=%s SouthPark.txt`
+SOUTHPARK=$(stat --print=%s SouthPark.txt)
 
 if [ $SOUTHPARK -ne 0 ];
 then

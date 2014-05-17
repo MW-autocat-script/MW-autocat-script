@@ -2,7 +2,7 @@
 
 egrep -i 'Hunger Game|Peeta|Everdeen|Katniss|Haymitch|Nightlock' newpages.txt >> TheHungerGames.txt
 
-HUNGER=`stat --print=%s TheHungerGames.txt`
+HUNGER=$(stat --print=%s TheHungerGames.txt)
 
 if [ $HUNGER -ne 0 ];
 then

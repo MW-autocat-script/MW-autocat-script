@@ -11,7 +11,7 @@ then
     printf "Starting Freeciv\n"
   fi
 
-  FREECIV=`egrep -i "$KEYWORDS_FREECIV" newpages.txt`
+  FREECIV=$(egrep -i "$KEYWORDS_FREECIV" newpages.txt)
 
   if [ "$FREECIV" != "" ];
   then

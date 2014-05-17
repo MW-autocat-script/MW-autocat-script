@@ -4,9 +4,9 @@ egrep -i 'England|British' newpages.txt | egrep -iv 'British Isles|London|Church
 egrep -i 'London' newpages.txt | egrep -iv 'Jack London' >> London.txt #Jack London was an American author
 egrep -i 'Stonehenge' newpages.txt >> Stonehenge.txt
 
-ENGLAND=`stat --print=%s England.txt`
-LONDON=`stat --print=%s London.txt`
-STONEHENGE=`stat --print=%s Stonehenge.txt`
+ENGLAND=$(stat --print=%s England.txt)
+LONDON=$(stat --print=%s London.txt)
+STONEHENGE=$(stat --print=%s Stonehenge.txt)
 
 if [ $ENGLAND -ne 0 ];
 then

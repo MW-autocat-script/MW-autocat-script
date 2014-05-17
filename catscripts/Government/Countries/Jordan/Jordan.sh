@@ -4,7 +4,7 @@ KEYWORDS_JORDAN="(king|queen|prince(|ss)).+ of Jordan|Jordanian|(kingdom|country
 
 egrep -i "$KEYWORDS_JORDAN" newpages.txt >> Jordan.txt
 
-JORDAN=`stat --print=%s Jordan.txt`
+JORDAN=$(stat --print=%s Jordan.txt)
 
 if [ $JORDAN -ne 0 ];
 then

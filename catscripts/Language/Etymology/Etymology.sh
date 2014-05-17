@@ -12,8 +12,8 @@ then
   fi
     
 
-  ETYMOLOGY=`egrep -i "$KEYWORDS_ETYMOLOGY" newpages.txt | egrep -iv "$KEYWORDS_NAMEORIGINS"`
-  ORIGINS=`egrep -i "$KEYWORDS_NAMEORIGINS" newpages.txt`
+  ETYMOLOGY=$(egrep -i "$KEYWORDS_ETYMOLOGY" newpages.txt | egrep -iv "$KEYWORDS_NAMEORIGINS")
+  ORIGINS=$(egrep -i "$KEYWORDS_NAMEORIGINS" newpages.txt)
 
   if [ "$ETYMOLOGY" != "" ];
   then

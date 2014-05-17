@@ -10,7 +10,7 @@ then
     printf "Starting Iran\n"
   fi
 
-  IRAN=`egrep -i "$KEYWORDS_IRAN" newpages.txt`
+  IRAN=$(egrep -i "$KEYWORDS_IRAN" newpages.txt)
 
   if [ "$IRAN" != "" ];
   then

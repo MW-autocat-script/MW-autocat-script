@@ -14,15 +14,15 @@ KEYWORDS_HOBBIES_EXCLUDE="$KEYWORDS_SEWING|$KEYWORDS_KNITTING|$KEYWORDS_PHOTOGRA
 if [ "$1" == "" ]; #Normal operation
 then
 
-  HOBBIES=`egrep -i "$KEYWORDS_HOBBIES" newpages.txt | egrep -iv "$KEYWORDS_HOBBIES_EXCLUDE"`
-  SEWING=`egrep -i "$KEYWORDS_SEWING" newpages.txt | egrep -iv "$KEYWORDS_SEWING_EXCLUDE"`
-  KNITTING=`egrep -i "$KEYWORDS_KNITTING" newpages.txt`
-  PHOTOGRAPHY=`egrep -i "$KEYWORDS_PHOTOGRAPHY" newpages.txt | egrep -iv "$KEYWORDS_PHOTOGRAPHY_EXCLUDE"`
-  BASEBALLCARDS=`egrep -i "$KEYWORDS_BASEBALLCARDS" newpages.txt`
+  HOBBIES=$(egrep -i "$KEYWORDS_HOBBIES" newpages.txt | egrep -iv "$KEYWORDS_HOBBIES_EXCLUDE")
+  SEWING=$(egrep -i "$KEYWORDS_SEWING" newpages.txt | egrep -iv "$KEYWORDS_SEWING_EXCLUDE")
+  KNITTING=$(egrep -i "$KEYWORDS_KNITTING" newpages.txt)
+  PHOTOGRAPHY=$(egrep -i "$KEYWORDS_PHOTOGRAPHY" newpages.txt | egrep -iv "$KEYWORDS_PHOTOGRAPHY_EXCLUDE")
+  BASEBALLCARDS=$(egrep -i "$KEYWORDS_BASEBALLCARDS" newpages.txt)
 
   if [ "$HOBBIES" != "" ];
   then
-    egrep -i "$KEYWORDS_HOBBIES" newpages.txt | egrep -iv "$KEYWORDS_HOBBIES_EXCLUDE" > Hobbies.txt
+    printf "%s" "$HOBBIES" > Hobbies.txt
     export CATFILE="Hobbies.txt"
     export CATNAME="Hobbies"
     $CATEGORIZE
@@ -32,7 +32,7 @@ then
 
   if [ "$SEWING" != "" ];
   then
-    egrep -i "$KEYWORDS_SEWING" newpages.txt | egrep -iv "$KEYWORDS_SEWING_EXCLUDE" > Sewing.txt
+    printf "%s" "$SEWING" > Sewing.txt
     export CATFILE="Sewing.txt"
     export CATNAME="Sewing"
     $CATEGORIZE
@@ -42,7 +42,7 @@ then
 
   if [ "$KNITTING" != "" ];
   then
-    egrep -i "$KEYWORDS_KNITTING" newpages.txt > Knitting.txt
+    printf "%s" "$KNITTING" > Knitting.txt
     export CATFILE="Knitting.txt"
     export CATNAME="Knitting"
     $CATEGORIZE
@@ -52,7 +52,7 @@ then
 
   if [ "$PHOTOGRAPHY" != "" ];
   then
-    egrep -i "$KEYWORDS_PHOTOGRAPHY" newpages.txt > Photography.txt
+    printf "%s" "$PHOTOGRAPHY" > Photography.txt
     export CATFILE="Photography.txt"
     export CATNAME="Photography"
     $CATEGORIZE
@@ -62,7 +62,7 @@ then
 
   if [ "$BASEBALLCARDS" != "" ];
   then
-    egrep -i "$KEYWORDS_BASEBALLCARDS" newpages.txt > Baseballcards.txt
+    printf "%s" "$BASEBALLCARDS" > Baseballcards.txt
     export CATFILE="Baseballcards.txt"
     export CATNAME="Baseball cards"
     $CATEGORIZE

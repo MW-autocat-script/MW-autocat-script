@@ -17,18 +17,18 @@ egrep -i 'Violin' newpages.txt >> Violin.txt
 egrep -i "$KEYWORDS_VIOLA" newpages.txt >> Viola.txt
 egrep -i "$KEYWORDS_XYLOPHONE" newpages.txt >> Xylophone.txt
 
-CELLO=`stat --print=%s Cello.txt`
-CLARINET=`stat --print=%s Clarinet.txt`
-DRUMS=`stat --print=%s Drums.txt`
-FLUTE=`stat --print=%s Flute.txt`
-GUITAR=`stat --print=%s Guitar.txt`
-HARP=`stat --print=%s Harp.txt`
-PIANO=`stat --print=%s Piano.txt`
-RECORDER=`stat --print=%s Recorder.txt`
-SAXOPHONE=`stat --print=%s Saxophone.txt`
-VIOLIN=`stat --print=%s Violin.txt`
-VIOLA=`stat --print=%s Viola.txt`
-XYLOPHONE=`stat --print=%s Xylophone.txt`
+CELLO=$(stat --print=%s Cello.txt)
+CLARINET=$(stat --print=%s Clarinet.txt)
+DRUMS=$(stat --print=%s Drums.txt)
+FLUTE=$(stat --print=%s Flute.txt)
+GUITAR=$(stat --print=%s Guitar.txt)
+HARP=$(stat --print=%s Harp.txt)
+PIANO=$(stat --print=%s Piano.txt)
+RECORDER=$(stat --print=%s Recorder.txt)
+SAXOPHONE=$(stat --print=%s Saxophone.txt)
+VIOLIN=$(stat --print=%s Violin.txt)
+VIOLA=$(stat --print=%s Viola.txt)
+XYLOPHONE=$(stat --print=%s Xylophone.txt)
 
 if [ $CELLO -ne 0 ];
 then

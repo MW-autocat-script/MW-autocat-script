@@ -2,7 +2,7 @@
 
 egrep -i 'North(| )Carolina' newpages.txt >> NorthCarolina.txt
 
-NORTHCAROLINA=`stat --print=%s NorthCarolina.txt`
+NORTHCAROLINA=$(stat --print=%s NorthCarolina.txt)
 
 if [ $NORTHCAROLINA -ne 0 ];
 then

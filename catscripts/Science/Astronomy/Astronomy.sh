@@ -8,7 +8,7 @@ $CURRENTDIR/Moon/Moon.sh
 
 egrep -i 'Asteroid' newpages.txt | egrep -iv 'download|game' >> Asteroids.txt
 
-ASTEROIDS=`stat --print=%s Asteroids.txt`
+ASTEROIDS=$(stat --print=%s Asteroids.txt)
 
 if [ $ASTEROIDS -ne 0 ];
 then

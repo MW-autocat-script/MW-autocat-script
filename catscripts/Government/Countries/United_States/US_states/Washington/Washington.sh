@@ -11,7 +11,7 @@ then
     printf "Starting Washington\n"
   fi
 
-  WASHINGTON=`egrep -i "$KEYWORDS_WASHINGTON" newpages.txt | egrep -iv "$KEYWORDS_WASHINGTON_EXCLUDE"`
+  WASHINGTON=$(egrep -i "$KEYWORDS_WASHINGTON" newpages.txt | egrep -iv "$KEYWORDS_WASHINGTON_EXCLUDE")
 
   if [ "$WASHINGTON" != "" ];
   then

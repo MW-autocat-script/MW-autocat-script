@@ -5,7 +5,7 @@ KEYWORDS_DOCTORWHO="Doctor(| )Who|Dr(|\.)(| )Who|[0-9]{1,2}(th|st|rd|nd)(| )doct
 if [ "$1" == "" ]; #Normal operation
 then
 
-  DOCTORWHO=`egrep -i "$KEYWORDS_DOCTORWHO" newpages.txt`
+  DOCTORWHO=$(egrep -i "$KEYWORDS_DOCTORWHO" newpages.txt)
 
   if [ "$DEBUG" == "yes" ];
   then

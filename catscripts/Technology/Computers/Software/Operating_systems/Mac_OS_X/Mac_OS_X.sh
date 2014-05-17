@@ -7,7 +7,7 @@ if [ "$1" == "" ]; #Normal operation
 then
   egrep -i "$KEYWORDS_MACOS" newpages.txt >> MacOSX.txt
 
-  MACOS=`stat --print=%s MacOSX.txt`
+  MACOS=$(stat --print=%s MacOSX.txt)
 
   if [ $MACOS -ne 0 ];
   then

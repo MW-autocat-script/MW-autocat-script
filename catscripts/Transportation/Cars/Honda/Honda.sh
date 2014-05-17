@@ -5,10 +5,10 @@ egrep -i 'Honda Civic|Hondacivic|[0123456789]{1,} Civic' newpages.txt > HondaCiv
 egrep -i 'Honda Passport|Hondapassport|[0-9]{1,} Passport' newpages.txt > HondaPassport.txt
 egrep -i 'Honda Element|Hondaelement|[0-9]{1,} Element\b' newpages.txt > HondaElement.txt
 
-ACCORD=`stat --print=%s HondaAccord.txt`
-CIVIC=`stat --print=%s HondaCivic.txt`
-PASSPORT=`stat --print=%s HondaPassport.txt`
-ELEMENT=`stat --print=%s HondaElement.txt`
+ACCORD=$(stat --print=%s HondaAccord.txt)
+CIVIC=$(stat --print=%s HondaCivic.txt)
+PASSPORT=$(stat --print=%s HondaPassport.txt)
+ELEMENT=$(stat --print=%s HondaElement.txt)
 
 if [ $ACCORD -ne 0 ];
 then

@@ -4,7 +4,7 @@ export KEYWORDS_MMORPG_ANARCHY="Anarchy(| )Online"
 
 egrep -i "$KEYWORDS_MMORPG_ANARCHY" newpages.txt >> AnarchyOnline.txt
 
-ANARCHY=`stat --print=%s AnarchyOnline.txt`
+ANARCHY=$(stat --print=%s AnarchyOnline.txt)
 
 if [ $ANARCHY -ne 0 ];
 then

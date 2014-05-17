@@ -5,7 +5,7 @@ KEYWORDS_AUSTRIA_ALL="$KEYWORDS_AUSTRIA"
 
 egrep -i "$KEYWORDS_AUSTRIA" newpages.txt >> Austria.txt
 
-AUSTRIA=`stat --print=%s Austria.txt`
+AUSTRIA=$(stat --print=%s Austria.txt)
 
 if [ $AUSTRIA -ne 0 ];
 then

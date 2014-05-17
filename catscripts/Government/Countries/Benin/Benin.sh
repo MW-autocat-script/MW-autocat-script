@@ -10,7 +10,7 @@ then
     printf "Starting Benin\n"
   fi
 
-  BENIN=`egrep -i "$KEYWORDS_BENIN" newpages.txt`
+  BENIN=$(egrep -i "$KEYWORDS_BENIN" newpages.txt)
 
   if [ "$BENIN" != "" ];
   then

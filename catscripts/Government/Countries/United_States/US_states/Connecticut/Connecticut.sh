@@ -2,7 +2,7 @@
 
 KEYWORDS_CONNECTICUT="Connecticut|Hartford|, CT\b"
 
-CONNECTICUT=`egrep -i "$KEYWORDS_CONNECTICUT" newpages.txt`
+CONNECTICUT=$(egrep -i "$KEYWORDS_CONNECTICUT" newpages.txt)
 
 if [ "$CONNECTICUT" != "" ];
 then

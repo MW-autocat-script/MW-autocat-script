@@ -4,7 +4,7 @@ KEYWORDS_PLAYSTATION_NETWORK="Play(| )Station(| )(Network|Store)|\bPSN\b"
 
 egrep -i "$KEYWORDS_PLAYSTATION_NETWORK" newpages.txt >> PlayStationNetwork.txt
 
-PSN=`stat --print=%s PlayStationNetwork.txt`
+PSN=$(stat --print=%s PlayStationNetwork.txt)
 
 if [ $PSN -ne 0 ];
 then

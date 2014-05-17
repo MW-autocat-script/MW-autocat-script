@@ -10,7 +10,7 @@ then
     printf "Starting Sign language\n"
   fi
 
-  SIGN=`egrep -i "$KEYWORDS_SIGNLANGUAGE" newpages.txt`
+  SIGN=$(egrep -i "$KEYWORDS_SIGNLANGUAGE" newpages.txt)
 
   if [ "$SIGN" != "" ];
   then

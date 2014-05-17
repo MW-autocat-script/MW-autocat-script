@@ -9,11 +9,11 @@ then
     printf "Starting Adam Sandler\n" 
   fi
 
-  SANDLER=`egrep -i "$KEYWORDS_ACTOR_ADAMSANDLER" newpages.txt`
+  SANDLER=$(egrep -i "$KEYWORDS_ACTOR_ADAMSANDLER" newpages.txt)
 
   if [ "$SANDLER" != "" ];
   then
-    egrep -i "$KEYWORDS_ACTOR_ADAMSANDLER" newpages.txt > AdamSandler.txt
+    printf "%s" "$SANDLER" > AdamSandler.txt
     export CATFILE="AdamSandler.txt"
     export CATNAME="Adam Sandler"
     $CATEGORIZE

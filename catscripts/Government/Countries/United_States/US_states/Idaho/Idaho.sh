@@ -4,7 +4,7 @@ KEYWORDS_IDAHO="idaho|\bin ID\b|, ID\b"
 
 egrep -i "$KEYWORDS_IDAHO" newpages.txt >> Idaho.txt
 
-IDAHO=`stat --print=%s Idaho.txt`
+IDAHO=$(stat --print=%s Idaho.txt)
 
 if [ $IDAHO -ne 0 ];
 then

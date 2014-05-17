@@ -11,14 +11,14 @@ KEYWORDS_WEBBROWSER_ALL="$KEYWORDS_WEBBROWSER|$KEYWORDS_WEBBROWSER_EXCLUDE|$KEYW
 if [ "$1" == "" ]; #Normal operation
 then
 
-  IEXPLORER=`egrep -i "$KEYWORDS_INTERNETEXPLORER" newpages.txt`
-  FIREFOX=`egrep -i "$KEYWORDS_FIREFOX" newpages.txt`
-  CHROME=`egrep -i "$KEYWORDS_GOOGLECHROME" newpages.txt`
-  BROWSERS=`egrep -i "$KEYWORDS_WEBBROWSER|$KEYWORDS_WEBBROWSER_OTHER" newpages.txt | egrep -iv "$KEYWORDS_WEBBROWSER_EXCLUDE"`
+  IEXPLORER=$(egrep -i "$KEYWORDS_INTERNETEXPLORER" newpages.txt)
+  FIREFOX=$(egrep -i "$KEYWORDS_FIREFOX" newpages.txt)
+  CHROME=$(egrep -i "$KEYWORDS_GOOGLECHROME" newpages.txt)
+  BROWSERS=$(egrep -i "$KEYWORDS_WEBBROWSER|$KEYWORDS_WEBBROWSER_OTHER" newpages.txt | egrep -iv "$KEYWORDS_WEBBROWSER_EXCLUDE")
 
   if [ "$IEXPLORER" != "" ];
   then
-    egrep -i "$KEYWORDS_INTERNETEXPLORER" newpages.txt > InternetExplorer.txt
+    printf "%s" "$IEXPLORER" > InternetExplorer.txt
     export CATFILE="InternetExplorer.txt"
     export CATNAME="Internet Explorer"
     $CATEGORIZE
@@ -28,7 +28,7 @@ then
 
   if [ "$FIREFOX" != "" ];
   then
-    egrep -i "$KEYWORDS_FIREFOX" newpages.txt > MozillaFirefox.txt
+    printf "%s" "$FIREFOX" > MozillaFirefox.txt
     export CATFILE="MozillaFirefox.txt"
     export CATNAME="Mozilla Firefox"
     $CATEGORIZE
@@ -38,7 +38,7 @@ then
 
   if [ "$CHROME" != "" ];
   then
-    egrep -i "$KEYWORDS_GOOGLECHROME" newpages.txt > GoogleChrome.txt
+    printf "%s" "$CHROME" > GoogleChrome.txt
     export CATFILE="GoogleChrome.txt"
     export CATNAME="Google Chrome"
     $CATEGORIZE
@@ -48,7 +48,7 @@ then
 
   if [ "$BROWSERS" != "" ];
   then
-    egrep -i "$KEYWORDS_WEBBROWSER|$KEYWORDS_WEBBROWSER_OTHER" newpages.txt | egrep -iv "$KEYWORDS_WEBBROWSER_EXCLUDE" > Webbrowsers.txt
+    printf "%s" "$BROWSERS" > Webbrowsers.txt
     export CATFILE="Webbrowsers.txt"
     export CATNAME="Web browsers"
     $CATEGORIZE

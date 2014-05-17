@@ -2,7 +2,7 @@
 
 egrep -i 'Roman numeral' newpages.txt >> RomanNumerals.txt
 
-NUMERALS=`stat --print=%s RomanNumerals.txt`
+NUMERALS=$(stat --print=%s RomanNumerals.txt)
 
 if [ $NUMERALS -ne 0 ];
 then

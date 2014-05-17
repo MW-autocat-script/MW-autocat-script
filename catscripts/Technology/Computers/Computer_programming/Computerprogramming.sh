@@ -10,7 +10,7 @@ KEYWORDS_COMPUTERPROGRAMMING_EXCLUDE="C\+\+|SQL"
 
 egrep -i "$KEYWORDS_COMPUTERPROGRAMMING" newpages.txt | egrep -iv "$KEYWORDS_COMPUTERPROGRAMMING_EXCLUDE" > Computerprogramming.txt
 
-PROGRAMMING=`stat --print=%s Computerprogramming.txt`
+PROGRAMMING=$(stat --print=%s Computerprogramming.txt)
 
 if [ $PROGRAMMING -ne 0 ];
 then

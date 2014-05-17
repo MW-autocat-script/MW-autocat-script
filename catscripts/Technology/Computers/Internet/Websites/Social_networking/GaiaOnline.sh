@@ -7,7 +7,7 @@ then
   
   egrep -i "$KEYWORDS_GAIAONLINE" newpages.txt >> GaiaOnline.txt
 
-  GAIAONLINE=`stat --print=%s GaiaOnline.txt`
+  GAIAONLINE=$(stat --print=%s GaiaOnline.txt)
 
   if [ $GAIAONLINE -ne 0 ];
   then

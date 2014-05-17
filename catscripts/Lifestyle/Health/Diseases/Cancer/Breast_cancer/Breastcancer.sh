@@ -2,7 +2,7 @@
 
 egrep -i 'Breast(| )cancer' newpages.txt > Breastcancer.txt
 
-BREASTCANCER=`stat --print=%s Breastcancer.txt`
+BREASTCANCER=$(stat --print=%s Breastcancer.txt)
 
 if [ $BREASTCANCER -ne 0 ];
 then

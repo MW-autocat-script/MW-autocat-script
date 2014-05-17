@@ -46,10 +46,10 @@ egrep -i "$KEYWORDS_SCION" newpages.txt >> Scion.txt
 
 #Stat cars
 
-AVALON=`stat --print=%s ToyotaAvalon.txt`
-CAMRY=`stat --print=%s ToyotaCamry.txt`
-COROLLA=`stat --print=%s ToyotaCorolla.txt`
-PRIUS=`stat --print=%s ToyotaPrius.txt`
+AVALON=$(stat --print=%s ToyotaAvalon.txt)
+CAMRY=$(stat --print=%s ToyotaCamry.txt)
+COROLLA=$(stat --print=%s ToyotaCorolla.txt)
+PRIUS=$(stat --print=%s ToyotaPrius.txt)
 
 #Stat SUVs
 
@@ -57,8 +57,8 @@ PRIUS=`stat --print=%s ToyotaPrius.txt`
 
 #Stat brands
 
-LEXUS=`stat --print=%s Lexus.txt`
-SCION=`stat --print=%s Scion.txt`
+LEXUS=$(stat --print=%s Lexus.txt)
+SCION=$(stat --print=%s Scion.txt)
 
 #Categorize cars
 

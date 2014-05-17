@@ -13,9 +13,9 @@ then
     printf "Starting Hawaii\n"
   fi
 
-  HAWAII=`egrep -i "$KEYWORDS_HAWAII" newpages.txt | egrep -iv "$KEYWORDS_HAWAII_EXCLUDE"`
-  HONOLULU=`egrep -i "$KEYWORDS_HONOLULU" newpages.txt`
-  PEARLHARBOR=`egrep -i "$KEYWORDS_PEARLHARBOR" newpages.txt`
+  HAWAII=$(egrep -i "$KEYWORDS_HAWAII" newpages.txt | egrep -iv "$KEYWORDS_HAWAII_EXCLUDE")
+  HONOLULU=$(egrep -i "$KEYWORDS_HONOLULU" newpages.txt)
+  PEARLHARBOR=$(egrep -i "$KEYWORDS_PEARLHARBOR" newpages.txt)
 
   if [ "$HAWAII" != "" ];
   then

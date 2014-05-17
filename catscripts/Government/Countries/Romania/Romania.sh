@@ -12,7 +12,7 @@ then
     printf "Starting Romania\n"
   fi
 
-  ROMANIA=`egrep -i "$KEYWORDS_ROMANIA" newpages.txt | egrep -iv "$KEYWORDS_ROMANIA_EXCLUDE"`
+  ROMANIA=$(egrep -i "$KEYWORDS_ROMANIA" newpages.txt | egrep -iv "$KEYWORDS_ROMANIA_EXCLUDE")
 
   if [ "$ROMANIA" != "" ];
   then

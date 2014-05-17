@@ -13,8 +13,8 @@ then
     printf "Starting Islam\n"
   fi
 
-  ISLAM=`egrep -i "$KEYWORDS_ISLAM" newpages.txt | egrep -iv "$KEYWORDS_ISLAM_EXCLUDE"`
-  RAMADAN=`egrep -i "$KEYWORDS_RAMADAN" newpages.txt`
+  ISLAM=$(egrep -i "$KEYWORDS_ISLAM" newpages.txt | egrep -iv "$KEYWORDS_ISLAM_EXCLUDE")
+  RAMADAN=$(egrep -i "$KEYWORDS_RAMADAN" newpages.txt)
 
   if [ "$ISLAM" != "" ];
   then

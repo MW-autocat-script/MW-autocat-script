@@ -7,7 +7,7 @@ then
   
   egrep -i "$KEYWORDS_TWITTER" newpages.txt >> Twitter.txt
 
-  TWITTER=`stat --print=%s Twitter.txt`
+  TWITTER=$(stat --print=%s Twitter.txt)
 
   if [ $TWITTER -ne 0 ];
   then

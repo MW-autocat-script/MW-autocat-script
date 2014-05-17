@@ -9,14 +9,14 @@ egrep -i 'Monster Hunter Freedom 2|\bMHF2\b' newpages.txt >> MonsterHunterFreedo
 egrep -i 'Monster Hunter Frontier' newpages.txt >> MonsterHunterFrontier.txt
 egrep -i 'Monster Hunter (Tri|3)|\bMH3' newpages.txt >> MonsterHunterTri.txt
 
-SERIES=`stat --print=%s MonsterHunterSeries.txt`
-HUNTER=`stat --print=%s MonsterHunter.txt`
-MH2=`stat --print=%s MH2.txt`
-FREEDOM=`stat --print=%s MonsterHunterFreedom.txt`
-MHFU=`stat --print=%s MonsterHunterFreedomUnite.txt`
-MHF2=`stat --print=%s MonsterHunterFreedom2.txt`
-FRONTIER=`stat --print=%s MonsterHunterFrontier.txt`
-TRI=`stat --print=%s MonsterHunterTri.txt`
+SERIES=$(stat --print=%s MonsterHunterSeries.txt)
+HUNTER=$(stat --print=%s MonsterHunter.txt)
+MH2=$(stat --print=%s MH2.txt)
+FREEDOM=$(stat --print=%s MonsterHunterFreedom.txt)
+MHFU=$(stat --print=%s MonsterHunterFreedomUnite.txt)
+MHF2=$(stat --print=%s MonsterHunterFreedom2.txt)
+FRONTIER=$(stat --print=%s MonsterHunterFrontier.txt)
+TRI=$(stat --print=%s MonsterHunterTri.txt)
 
 if [ $SERIES -ne 0 ];
 then

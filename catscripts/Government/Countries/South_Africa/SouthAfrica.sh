@@ -6,8 +6,8 @@ KEYWORDS_NELSONMANDELA="Mandela"
 egrep -i "$KEYWORDS_SOUTHAFRICA" newpages.txt | egrep -iv "$KEYWORDS_NELSONMANDELA" >> SouthAfrica.txt
 egrep -i "$KEYWORDS_NELSONMANDELA" newpages.txt >> NelsonMandela.txt
 
-SOUTHAFRICA=`stat --print=%s SouthAfrica.txt`
-MANDELA=`stat --print=%s NelsonMandela.txt`
+SOUTHAFRICA=$(stat --print=%s SouthAfrica.txt)
+MANDELA=$(stat --print=%s NelsonMandela.txt)
 
 if [ $SOUTHAFRICA -ne 0 ];
 then

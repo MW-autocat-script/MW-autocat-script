@@ -4,7 +4,7 @@ KEYWORDS_ADDITION="What is [0-9]{1,}(|(/|\.)[0-9]{1,}) (plus|\+) [0-9]{1,}(|(/|\
 
 egrep -i "$KEYWORDS_ADDITION" newpages.txt >> Addition.txt
 
-ADDITION=`stat --print=%s Addition.txt`
+ADDITION=$(stat --print=%s Addition.txt)
 
 if [ $ADDITION -ne 0 ];
 then

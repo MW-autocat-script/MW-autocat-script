@@ -25,31 +25,31 @@ egrep -i 'Roserade' newpages.txt >> Roserade.txt
 egrep -i 'Rotom' newpages.txt >> Rotom.txt
 egrep -i 'Rufflet' newpages.txt >> Rufflet.txt
 
-Raichu=`stat --print=%s Raichu.txt`
-Raikou=`stat --print=%s Raikou.txt`
-Ralts=`stat --print=%s Ralts.txt`
-Rampardos=`stat --print=%s Rampardos.txt`
-Rapidash=`stat --print=%s Rapidash.txt`
-Raticate=`stat --print=%s Raticate.txt`
-Rattata=`stat --print=%s Rattata.txt`
-Rayquaza=`stat --print=%s Rayquaza.txt`
-Regice=`stat --print=%s Regice.txt`
-Regigigas=`stat --print=%s Regigigas.txt`
-Regirock=`stat --print=%s Regirock.txt`
-Registeel=`stat --print=%s Registeel.txt`
-Relicanth=`stat --print=%s Relicanth.txt`
-Remoraid=`stat --print=%s Remoraid.txt`
-Reshiram=`stat --print=%s Reshiram.txt`
-Reuniclus=`stat --print=%s Reuniclus.txt`
-Rhydon=`stat --print=%s Rhydon.txt`
-Rhyhorn=`stat --print=%s Rhyhorn.txt`
-Rhyperior=`stat --print=%s Rhyperior.txt`
-Riolu=`stat --print=%s Riolu.txt`
-Roggenrola=`stat --print=%s Roggenrola.txt`
-Roselia=`stat --print=%s Roselia.txt`
-Roserade=`stat --print=%s Roserade.txt`
-Rotom=`stat --print=%s Rotom.txt`
-Rufflet=`stat --print=%s Rufflet.txt`
+Raichu=$(stat --print=%s Raichu.txt)
+Raikou=$(stat --print=%s Raikou.txt)
+Ralts=$(stat --print=%s Ralts.txt)
+Rampardos=$(stat --print=%s Rampardos.txt)
+Rapidash=$(stat --print=%s Rapidash.txt)
+Raticate=$(stat --print=%s Raticate.txt)
+Rattata=$(stat --print=%s Rattata.txt)
+Rayquaza=$(stat --print=%s Rayquaza.txt)
+Regice=$(stat --print=%s Regice.txt)
+Regigigas=$(stat --print=%s Regigigas.txt)
+Regirock=$(stat --print=%s Regirock.txt)
+Registeel=$(stat --print=%s Registeel.txt)
+Relicanth=$(stat --print=%s Relicanth.txt)
+Remoraid=$(stat --print=%s Remoraid.txt)
+Reshiram=$(stat --print=%s Reshiram.txt)
+Reuniclus=$(stat --print=%s Reuniclus.txt)
+Rhydon=$(stat --print=%s Rhydon.txt)
+Rhyhorn=$(stat --print=%s Rhyhorn.txt)
+Rhyperior=$(stat --print=%s Rhyperior.txt)
+Riolu=$(stat --print=%s Riolu.txt)
+Roggenrola=$(stat --print=%s Roggenrola.txt)
+Roselia=$(stat --print=%s Roselia.txt)
+Roserade=$(stat --print=%s Roserade.txt)
+Rotom=$(stat --print=%s Rotom.txt)
+Rufflet=$(stat --print=%s Rufflet.txt)
 
 if [ $Raichu -ne 0 ];
 then

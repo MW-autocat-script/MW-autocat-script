@@ -5,7 +5,7 @@ KEYWORDS_ACTOR_SEANPENN="Sean(| )Penn"
 if [ "$1" == "" ];
 then
 
-  SEANPENN=`egrep -i "$KEYWORDS_ACTOR_SEANPENN" newpages.txt`
+  SEANPENN=$(egrep -i "$KEYWORDS_ACTOR_SEANPENN" newpages.txt)
 
   if [ "$SEANPENN" != "" ];
   then

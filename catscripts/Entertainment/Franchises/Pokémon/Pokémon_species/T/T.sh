@@ -49,38 +49,38 @@ egrep -i 'Typhlosion' newpages.txt >> Typhlosion.txt
 egrep -i 'Tyranitar' newpages.txt >> Tyranitar.txt
 egrep -i 'Tyrogue' newpages.txt >> Tyrogue.txt
 
-Taillow=`stat --print=%s Taillow.txt`
-Tangela=`stat --print=%s Tangela.txt`
-Tangrowth=`stat --print=%s Tangrowth.txt`
-Tauros=`stat --print=%s Tauros.txt`
-Teddiursa=`stat --print=%s Teddiursa.txt`
-Tentacool=`stat --print=%s Tentacool.txt`
-Tentacruel=`stat --print=%s Tentacruel.txt`
-Tepig=`stat --print=%s Tepig.txt`
-Throh=`stat --print=%s Throh.txt`
-Thundurus=`stat --print=%s Thundurus.txt`
-Timburr=`stat --print=%s Timburr.txt`
-Tirtouga=`stat --print=%s Tirtouga.txt`
-Togekiss=`stat --print=%s Togekiss.txt`
-Togepi=`stat --print=%s Togepi.txt`
-Togetic=`stat --print=%s Togetic.txt`
-Torchic=`stat --print=%s Torchic.txt`
-Torkoal=`stat --print=%s Torkoal.txt`
-Tornadus=`stat --print=%s Tornadus.txt`
-Torterra=`stat --print=%s Torterra.txt`
-Totodile=`stat --print=%s Totodile.txt`
-Toxicroak=`stat --print=%s Toxicroak.txt`
-Tranquill=`stat --print=%s Tranquill.txt`
-Trapinch=`stat --print=%s Trapinch.txt`
-Treecko=`stat --print=%s Treecko.txt`
-Tropius=`stat --print=%s Tropius.txt`
-Trubbish=`stat --print=%s Trubbish.txt`
-Turtwig=`stat --print=%s Turtwig.txt`
-Tympole=`stat --print=%s Tympole.txt`
-Tynamo=`stat --print=%s Tynamo.txt`
-Typhlosion=`stat --print=%s Typhlosion.txt`
-Tyranitar=`stat --print=%s Tyranitar.txt`
-Tyrogue=`stat --print=%s Tyrogue.txt`
+Taillow=$(stat --print=%s Taillow.txt)
+Tangela=$(stat --print=%s Tangela.txt)
+Tangrowth=$(stat --print=%s Tangrowth.txt)
+Tauros=$(stat --print=%s Tauros.txt)
+Teddiursa=$(stat --print=%s Teddiursa.txt)
+Tentacool=$(stat --print=%s Tentacool.txt)
+Tentacruel=$(stat --print=%s Tentacruel.txt)
+Tepig=$(stat --print=%s Tepig.txt)
+Throh=$(stat --print=%s Throh.txt)
+Thundurus=$(stat --print=%s Thundurus.txt)
+Timburr=$(stat --print=%s Timburr.txt)
+Tirtouga=$(stat --print=%s Tirtouga.txt)
+Togekiss=$(stat --print=%s Togekiss.txt)
+Togepi=$(stat --print=%s Togepi.txt)
+Togetic=$(stat --print=%s Togetic.txt)
+Torchic=$(stat --print=%s Torchic.txt)
+Torkoal=$(stat --print=%s Torkoal.txt)
+Tornadus=$(stat --print=%s Tornadus.txt)
+Torterra=$(stat --print=%s Torterra.txt)
+Totodile=$(stat --print=%s Totodile.txt)
+Toxicroak=$(stat --print=%s Toxicroak.txt)
+Tranquill=$(stat --print=%s Tranquill.txt)
+Trapinch=$(stat --print=%s Trapinch.txt)
+Treecko=$(stat --print=%s Treecko.txt)
+Tropius=$(stat --print=%s Tropius.txt)
+Trubbish=$(stat --print=%s Trubbish.txt)
+Turtwig=$(stat --print=%s Turtwig.txt)
+Tympole=$(stat --print=%s Tympole.txt)
+Tynamo=$(stat --print=%s Tynamo.txt)
+Typhlosion=$(stat --print=%s Typhlosion.txt)
+Tyranitar=$(stat --print=%s Tyranitar.txt)
+Tyrogue=$(stat --print=%s Tyrogue.txt)
 
 if [ $Taillow -ne 0 ];
 then

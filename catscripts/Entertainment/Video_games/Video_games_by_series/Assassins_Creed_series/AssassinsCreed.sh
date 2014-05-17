@@ -4,9 +4,9 @@ egrep -i "Assassin('|)s(| )Creed" newpages.txt | egrep -iv "Assassin('|)s(| )Cre
 egrep -i "Assassin('|)s(| )Creed(| )(2|II\b)" newpages.txt >> Two.txt
 egrep -i "Assassin('|)s(| )Creed(| )(3|III\b)" newpages.txt >> Three.txt
 
-SERIES=`stat --print=%s Series.txt`
-TWO=`stat --print=%s Two.txt`
-THREE=`stat --print=%s Three.txt`
+SERIES=$(stat --print=%s Series.txt)
+TWO=$(stat --print=%s Two.txt)
+THREE=$(stat --print=%s Three.txt)
 
 if [ $SERIES -ne 0 ];
 then

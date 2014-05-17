@@ -5,7 +5,7 @@ KEYWORDS_PS1_EXCLUDE="Play(| )Station(| )(2|3|4|5|6|7|8|9|10|Network)|\bPSN\b|Pl
 
 egrep -i "$KEYWORDS_PS1" newpages.txt | egrep -iv "$KEYWORDS_PS1_EXCLUDE" > PlayStation.txt
 
-PS1=`stat --print=%s PlayStation.txt`
+PS1=$(stat --print=%s PlayStation.txt)
 
 if [ $PS1 -ne 0 ];
 then

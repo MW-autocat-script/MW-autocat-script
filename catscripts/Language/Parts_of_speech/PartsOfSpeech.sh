@@ -11,7 +11,7 @@ then
     printf "Starting Parts of Speech\n"
   fi
 
-  SPEECH=`egrep -i "$KEYWORDS_PARTSOFSPEECH" newpages.txt`
+  SPEECH=$(egrep -i "$KEYWORDS_PARTSOFSPEECH" newpages.txt)
 
   if [ "$SPEECH" != "" ];
   then

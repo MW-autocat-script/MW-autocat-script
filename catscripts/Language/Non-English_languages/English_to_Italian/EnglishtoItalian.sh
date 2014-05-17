@@ -5,7 +5,7 @@ egrep -i '[abcdefghijklmopqrstuvwxyz]{1,} in Italian' newpages.txt >> EnglishtoI
 egrep -i "What('s| is) the Italian word for" newpages.txt >> EnglishtoItalian.txt
 egrep -i 'How to say.+in Italian' newpages.txt >> EnglishtoItalian.txt
 
-ENGLISHTOITALIAN=`stat --print=%s EnglishtoItalian.txt`
+ENGLISHTOITALIAN=$(stat --print=%s EnglishtoItalian.txt)
 
 if [ $ENGLISHTOITALIAN -ne 0 ];
 then

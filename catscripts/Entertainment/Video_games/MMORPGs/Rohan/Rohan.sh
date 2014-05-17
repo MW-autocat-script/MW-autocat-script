@@ -6,7 +6,7 @@ if [ "$1" == "" ];
 then
   egrep -i "$KEYWORDS_MMORPG_ROHAN" newpages.txt > Rohan.txt
   
-  ROHAN=`stat --print=%s Rohan.txt`
+  ROHAN=$(stat --print=%s Rohan.txt)
 
   if [ $ROHAN -ne 0 ];
   then

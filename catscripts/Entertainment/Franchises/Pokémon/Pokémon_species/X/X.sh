@@ -10,7 +10,7 @@ then
     printf "Starting Pokemon X scripts\n"
   fi
 
-  XATU=`egrep -i "$KEYWORDS_XATU" newpages.txt`
+  XATU=$(egrep -i "$KEYWORDS_XATU" newpages.txt)
 
   if [ "$XATU" != "" ];
   then

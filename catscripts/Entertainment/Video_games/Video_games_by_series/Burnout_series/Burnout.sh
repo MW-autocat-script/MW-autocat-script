@@ -9,14 +9,14 @@ egrep -i 'Burnout(| )Dominator' newpages.txt >> BurnoutDominator.txt
 egrep -i 'Burnout(| )Paradise' newpages.txt >> BurnoutParadise.txt
 egrep -i 'Burnout(| )Crash' newpages.txt >> BurnoutCrash.txt
 
-BURNOUT=`stat --print=%s Burnout.txt`
-TWO=`stat --print=%s Burnout2.txt`
-THREE=`stat --print=%s Burnout3.txt`
-REVENGE=`stat --print=%s BurnoutRevenge.txt`
-LEGENDS=`stat --print=%s BurnoutLegends.txt`
-DOMINATOR=`stat --print=%s BurnoutDominator.txt`
-PARADISE=`stat --print=%s BurnoutParadise.txt`
-CRASH=`stat --print=%s BurnoutCrash.txt`
+BURNOUT=$(stat --print=%s Burnout.txt)
+TWO=$(stat --print=%s Burnout2.txt)
+THREE=$(stat --print=%s Burnout3.txt)
+REVENGE=$(stat --print=%s BurnoutRevenge.txt)
+LEGENDS=$(stat --print=%s BurnoutLegends.txt)
+DOMINATOR=$(stat --print=%s BurnoutDominator.txt)
+PARADISE=$(stat --print=%s BurnoutParadise.txt)
+CRASH=$(stat --print=%s BurnoutCrash.txt)
 
 if [ $BURNOUT -ne 0 ];
 then

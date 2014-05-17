@@ -3,8 +3,8 @@
 egrep -i 'Sydney(,|)(| )Australia|Sydney Harbo(u|)r|Australia.+Sydney|Sydney.+Australia' newpages.txt | egrep -iv 'Sydney Opera House' >> Sydney.txt
 egrep -i 'Sydney(| )Opera(| )House' newpages.txt >> SydneyOperaHouse.txt
 
-SYDNEY=`stat --print=%s Sydney.txt`
-OPERA=`stat --print=%s SydneyOperaHouse.txt`
+SYDNEY=$(stat --print=%s Sydney.txt)
+OPERA=$(stat --print=%s SydneyOperaHouse.txt)
 
 if [ $SYDNEY -ne 0 ];
 then

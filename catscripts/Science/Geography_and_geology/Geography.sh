@@ -14,9 +14,9 @@ then
   egrep -i "$KEYWORDS_EARTHQUAKES" newpages.txt > Earthquakes.txt
   egrep -i "$KEYWORDS_GEOLOGY|$KEYWORDS_GEOGRAPHY" newpages.txt | egrep -iv "$KEYWORDS_GEOLOGY_EXCLUDE" > Geology.txt
 
-  GEOLOGY=`stat --print=%s Geology.txt`
-  VOLCANOES=`stat --print=%s Volcanoes.txt`
-  EARTHQUAKES=`stat --print=%s Earthquakes.txt`
+  GEOLOGY=$(stat --print=%s Geology.txt)
+  VOLCANOES=$(stat --print=%s Volcanoes.txt)
+  EARTHQUAKES=$(stat --print=%s Earthquakes.txt)
 
   if [ $GEOLOGY -ne 0 ];
   then

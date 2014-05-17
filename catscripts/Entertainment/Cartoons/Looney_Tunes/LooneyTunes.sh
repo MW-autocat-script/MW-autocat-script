@@ -4,7 +4,7 @@ KEYWORDS_LOONEYTUNES="Bugs(| )Bunny|What(|')s(| )up(|,)Doc|Elmer(| )Fudd|Porky(|
 
 egrep -i "$KEYWORDS_LOONEYTUNES" newpages.txt >> LooneyTunes.txt
 
-LOONEY=`stat --print=%s LooneyTunes.txt`
+LOONEY=$(stat --print=%s LooneyTunes.txt)
 
 if [ $LOONEY -ne 0 ];
 then

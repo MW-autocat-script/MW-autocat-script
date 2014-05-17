@@ -2,7 +2,7 @@
 
 egrep -i 'Lithuania' newpages.txt >> Lithuania.txt
 
-LITHUANIA=`stat --print=%s Lithuania.txt`
+LITHUANIA=$(stat --print=%s Lithuania.txt)
 
 if [ $LITHUANIA -ne 0 ];
 then

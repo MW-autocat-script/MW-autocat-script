@@ -2,7 +2,7 @@
 
 egrep -i 'New(| )Mexico|New(| )Mexican' newpages.txt >> NewMexico.txt
 
-NEWMEXICO=`stat --print=%s NewMexico.txt`
+NEWMEXICO=$(stat --print=%s NewMexico.txt)
 
 if [ $NEWMEXICO -ne 0 ];
 then

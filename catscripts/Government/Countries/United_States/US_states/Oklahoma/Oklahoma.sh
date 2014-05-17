@@ -7,8 +7,8 @@ KEYWORDS_OKLAHOMA_EXCLUDE="$KEYWORDS_OKLAHOMACITY"
 if [ "$1"  == "" ]; #Normal operation
 then
 
-  OKLAHOMA=`egrep -i "$KEYWORDS_OKLAHOMA" newpages.txt | egrep -iv "$KEYWORDS_OKLAHOMA_EXCLUDE"`
-  OKCITY=`egrep -i "$KEYWORDS_OKLAHOMACITY" newpages.txt`
+  OKLAHOMA=$(egrep -i "$KEYWORDS_OKLAHOMA" newpages.txt | egrep -iv "$KEYWORDS_OKLAHOMA_EXCLUDE")
+  OKCITY=$(egrep -i "$KEYWORDS_OKLAHOMACITY" newpages.txt)
 
   if [ "$OKLAHOMA" != "" ];
   then

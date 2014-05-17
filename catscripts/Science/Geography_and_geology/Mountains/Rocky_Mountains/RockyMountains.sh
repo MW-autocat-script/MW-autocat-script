@@ -8,7 +8,7 @@ then
   
   egrep -i "$KEYWORDS_ROCKYMOUNTAINS" newpages.txt | egrep -iv "$KEYWORDS_ROCKYMOUNTAINS_EXCLUDE" >> RockyMountains.txt
 
-  ROCKYMOUNTAINS=`stat --print=%s RockyMountains.txt`
+  ROCKYMOUNTAINS=$(stat --print=%s RockyMountains.txt)
 
   if [ $ROCKYMOUNTAINS -ne 0 ];
   then

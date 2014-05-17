@@ -7,8 +7,8 @@ KEYWORDS_WALES_EXCLUDE="$KEYWORDS_CARDIFF|Jim(|bo|my)(| )Wales|New(| )South(| )W
 egrep -i "$KEYWORDS_WALES" newpages.txt | egrep -iv "$KEYWORDS_WALES_EXCLUDE" >> Wales.txt
 egrep -i "$KEYWORDS_CARDIFF" newpages.txt >> Cardiff.txt
 
-WALES=`stat --print=%s Wales.txt`
-CARDIFF=`stat --print=%s Cardiff.txt`
+WALES=$(stat --print=%s Wales.txt)
+CARDIFF=$(stat --print=%s Cardiff.txt)
 
 if [ $WALES -ne 0 ];
 then

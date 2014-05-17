@@ -16,9 +16,9 @@ then
   egrep -i "$KEYWORDS_VIDEOEDITING_OTHER" newpages.txt >> Videoediting.txt
   egrep -i "$KEYWORDS_VIDEOEDITING" newpages.txt | egrep -iv "$KEYWORDS_VIDEOEDITING_EXCLUDE" >> Videoediting.txt
 
-  WMM=`stat --print=%s WindowsMovieMaker.txt`
-  PREMIERE=`stat --print=%s AdobePremierePro.txt`
-  VIDEO=`stat --print=%s Videoediting.txt`
+  WMM=$(stat --print=%s WindowsMovieMaker.txt)
+  PREMIERE=$(stat --print=%s AdobePremierePro.txt)
+  VIDEO=$(stat --print=%s Videoediting.txt)
 
   if [ $VIDEO -ne 0 ];
   then

@@ -20,26 +20,26 @@ egrep -i 'Voltorb' newpages.txt >> Voltorb.txt
 egrep -i 'Vullaby' newpages.txt >> Vullaby.txt
 egrep -i 'Vulpix' newpages.txt >> Vulpix.txt
 
-Vanillish=`stat --print=%s Vanillish.txt`
-Vanilluxe=`stat --print=%s Vanilluxe.txt`
-Vanillite=`stat --print=%s Vanillite.txt`
-Vaporeon=`stat --print=%s Vaporeon.txt`
-Venipede=`stat --print=%s Venipede.txt`
-Venomoth=`stat --print=%s Venomoth.txt`
-Venonat=`stat --print=%s Venonat.txt`
-Venusaur=`stat --print=%s Venusaur.txt`
-Vespiquen=`stat --print=%s Vespiquen.txt`
-Vibrava=`stat --print=%s Vibrava.txt`
-Victini=`stat --print=%s Victini.txt`
-Victreebel=`stat --print=%s Victreebel.txt`
-Vigoroth=`stat --print=%s Vigoroth.txt`
-Vileplume=`stat --print=%s Vileplume.txt`
-Virizion=`stat --print=%s Virizion.txt`
-Volbeat=`stat --print=%s Volbeat.txt`
-Volcarona=`stat --print=%s Volcarona.txt`
-Voltorb=`stat --print=%s Voltorb.txt`
-Vullaby=`stat --print=%s Vullaby.txt`
-Vulpix=`stat --print=%s Vulpix.txt`
+Vanillish=$(stat --print=%s Vanillish.txt)
+Vanilluxe=$(stat --print=%s Vanilluxe.txt)
+Vanillite=$(stat --print=%s Vanillite.txt)
+Vaporeon=$(stat --print=%s Vaporeon.txt)
+Venipede=$(stat --print=%s Venipede.txt)
+Venomoth=$(stat --print=%s Venomoth.txt)
+Venonat=$(stat --print=%s Venonat.txt)
+Venusaur=$(stat --print=%s Venusaur.txt)
+Vespiquen=$(stat --print=%s Vespiquen.txt)
+Vibrava=$(stat --print=%s Vibrava.txt)
+Victini=$(stat --print=%s Victini.txt)
+Victreebel=$(stat --print=%s Victreebel.txt)
+Vigoroth=$(stat --print=%s Vigoroth.txt)
+Vileplume=$(stat --print=%s Vileplume.txt)
+Virizion=$(stat --print=%s Virizion.txt)
+Volbeat=$(stat --print=%s Volbeat.txt)
+Volcarona=$(stat --print=%s Volcarona.txt)
+Voltorb=$(stat --print=%s Voltorb.txt)
+Vullaby=$(stat --print=%s Vullaby.txt)
+Vulpix=$(stat --print=%s Vulpix.txt)
 
 if [ $Vanillish -ne 0 ];
 then

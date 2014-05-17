@@ -6,7 +6,7 @@ egrep -i '[abcdefghijklmopqrstuvwxyz]{1,} in German\b' newpages.txt >> Englishto
 egrep -i 'What is the German word for' newpages.txt >> EnglishtoGerman.txt
 egrep -i 'How to say.+in German' newpages.txt >> EnglishtoGerman.txt
 
-ENGLISHTOGERMAN=`stat --print=%s EnglishtoGerman.txt`
+ENGLISHTOGERMAN=$(stat --print=%s EnglishtoGerman.txt)
 
 if [ $ENGLISHTOGERMAN -ne 0 ];
 then

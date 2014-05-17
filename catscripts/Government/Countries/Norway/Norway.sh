@@ -7,7 +7,7 @@ KEYWORDS_NORWAY_EXCLUDE="$KEYWORDS_VIKINGS"
 
 egrep -i "$KEYWORDS_NORWAY" newpages.txt | egrep -iv "$KEYWORDS_NORWAY_EXCLUDE" > Norway.txt
 
-NORWAY=`stat --print=%s Norway.txt`
+NORWAY=$(stat --print=%s Norway.txt)
 
 if [ $NORWAY -ne 0 ];
 then

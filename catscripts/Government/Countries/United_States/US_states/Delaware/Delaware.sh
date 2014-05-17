@@ -2,7 +2,7 @@
 
 KEYWORDS_DELAWARE="Delaware"
 
-DELAWARE=`egrep -i "$KEYWORDS_DELAWARE" newpages.txt`
+DELAWARE=$(egrep -i "$KEYWORDS_DELAWARE" newpages.txt)
 
 if [ "$DELAWARE" != "" ];
 then

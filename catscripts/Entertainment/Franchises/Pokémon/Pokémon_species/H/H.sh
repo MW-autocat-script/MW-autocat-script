@@ -23,29 +23,29 @@ egrep -i 'Huntail' newpages.txt >> Huntail.txt
 egrep -i 'Hydreigon' newpages.txt >> Hydreigon.txt
 egrep -i 'Hypno\b' newpages.txt >> Hypno.txt
 
-Happiny=`stat --print=%s Happiny.txt`
-Hariyama=`stat --print=%s Hariyama.txt`
-Haunter=`stat --print=%s Haunter.txt`
-Haxorus=`stat --print=%s Haxorus.txt`
-Heatmor=`stat --print=%s Heatmor.txt`
-Heatran=`stat --print=%s Heatran.txt`
-Heracross=`stat --print=%s Heracross.txt`
-Herdier=`stat --print=%s Herdier.txt`
-Hippopotas=`stat --print=%s Hippopotas.txt`
-Hippowdon=`stat --print=%s Hippowdon.txt`
-Hitmonchan=`stat --print=%s Hitmonchan.txt`
-Hitmonlee=`stat --print=%s Hitmonlee.txt`
-Hitmontop=`stat --print=%s Hitmontop.txt`
-HoOh=`stat --print=%s Ho-Oh.txt`
-Honchkrow=`stat --print=%s Honchkrow.txt`
-Hoothoot=`stat --print=%s Hoothoot.txt`
-Hoppip=`stat --print=%s Hoppip.txt`
-Horsea=`stat --print=%s Horsea.txt`
-Houndoom=`stat --print=%s Houndoom.txt`
-Houndour=`stat --print=%s Houndour.txt`
-Huntail=`stat --print=%s Huntail.txt`
-Hydreigon=`stat --print=%s Hydreigon.txt`
-Hypno=`stat --print=%s Hypno.txt`
+Happiny=$(stat --print=%s Happiny.txt)
+Hariyama=$(stat --print=%s Hariyama.txt)
+Haunter=$(stat --print=%s Haunter.txt)
+Haxorus=$(stat --print=%s Haxorus.txt)
+Heatmor=$(stat --print=%s Heatmor.txt)
+Heatran=$(stat --print=%s Heatran.txt)
+Heracross=$(stat --print=%s Heracross.txt)
+Herdier=$(stat --print=%s Herdier.txt)
+Hippopotas=$(stat --print=%s Hippopotas.txt)
+Hippowdon=$(stat --print=%s Hippowdon.txt)
+Hitmonchan=$(stat --print=%s Hitmonchan.txt)
+Hitmonlee=$(stat --print=%s Hitmonlee.txt)
+Hitmontop=$(stat --print=%s Hitmontop.txt)
+HoOh=$(stat --print=%s Ho-Oh.txt)
+Honchkrow=$(stat --print=%s Honchkrow.txt)
+Hoothoot=$(stat --print=%s Hoothoot.txt)
+Hoppip=$(stat --print=%s Hoppip.txt)
+Horsea=$(stat --print=%s Horsea.txt)
+Houndoom=$(stat --print=%s Houndoom.txt)
+Houndour=$(stat --print=%s Houndour.txt)
+Huntail=$(stat --print=%s Huntail.txt)
+Hydreigon=$(stat --print=%s Hydreigon.txt)
+Hypno=$(stat --print=%s Hypno.txt)
 
 if [ $Happiny -ne 0 ];
 then

@@ -2,7 +2,7 @@
 
 egrep -i 'Family Guy|Peter Griffin|Lois Griffin|Meg Griffin|Chris Griffin|Stewie Griffin|Brian Griffin' newpages.txt >> FamilyGuy.txt
 
-FAMILYGUY=`stat --print=%s FamilyGuy.txt`
+FAMILYGUY=$(stat --print=%s FamilyGuy.txt)
 
 if [ $FAMILYGUY -ne 0 ];
 then

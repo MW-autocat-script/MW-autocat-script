@@ -7,9 +7,9 @@ egrep -i 'The(| )Elder(| )Scrolls' newpages.txt | egrep -iv "$KEYWORDS_OBLIVION|
 egrep -i "$KEYWORDS_SKYRIM" newpages.txt >> Skyrim.txt
 egrep -i "$KEYWORDS_OBLIVION" newpages.txt >> Oblivion.txt
 
-SCROLLS=`stat --print=%s TheElderScrolls.txt`
-SKYRIM=`stat --print=%s Skyrim.txt`
-OBLIVION=`stat --print=%s Oblivion.txt`
+SCROLLS=$(stat --print=%s TheElderScrolls.txt)
+SKYRIM=$(stat --print=%s Skyrim.txt)
+OBLIVION=$(stat --print=%s Oblivion.txt)
 
 if [ $SCROLLS -ne 0 ];
 then

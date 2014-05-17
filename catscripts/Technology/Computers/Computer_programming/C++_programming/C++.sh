@@ -10,7 +10,7 @@ then
     printf "Starting C++\n"
   fi
 
-  CPLUSPLUS=`egrep -i "$KEYWORDS_CPLUSPLUS" newpages.txt`
+  CPLUSPLUS=$(egrep -i "$KEYWORDS_CPLUSPLUS" newpages.txt)
 
   if [ "$CPLUSPLUS" != "" ];
   then

@@ -7,7 +7,7 @@ then
   
   egrep -i "$KEYWORDS_ANDES" newpages.txt >> Andes.txt
 
-  ANDES=`stat --print=%s Andes.txt`
+  ANDES=$(stat --print=%s Andes.txt)
 
   if [ $ANDES -ne 0 ];
   then

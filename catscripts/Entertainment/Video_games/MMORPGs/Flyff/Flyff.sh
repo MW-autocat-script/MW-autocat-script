@@ -4,7 +4,7 @@ export KEYWORDS_MMORPG_FLYFF="Flyff"
 
 egrep -i "$KEYWORDS_MMORPG_FLYFF" newpages.txt >> Flyff.txt
 
-FLYFF=`stat --print=%s Flyff.txt`
+FLYFF=$(stat --print=%s Flyff.txt)
 
 if [ $FLYFF -ne 0 ];
 then

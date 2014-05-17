@@ -2,7 +2,7 @@
 
 egrep -i 'Lung(| )cancer' newpages.txt > Lungcancer.txt
 
-LUNGCANCER=`stat --print=%s Lungcancer.txt`
+LUNGCANCER=$(stat --print=%s Lungcancer.txt)
 
 if [ $LUNGCANCER -ne 0 ];
 then

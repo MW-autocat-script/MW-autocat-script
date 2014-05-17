@@ -4,7 +4,7 @@ KEYWORDS_WOOZWORLD="Wooz(| )world"
 
 egrep -i "$KEYWORDS_WOOZWORLD" newpages.txt > Woozworld.txt
 
-WOOZWORLD=`stat --print=%s Woozworld.txt`
+WOOZWORLD=$(stat --print=%s Woozworld.txt)
 
 if [ $WOOZWORLD -ne 0 ];
 then

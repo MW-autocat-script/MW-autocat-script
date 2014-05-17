@@ -13,10 +13,10 @@ then
     printf "Starting Pokemon I script\n"
   fi
 
-  IGGLYBUFF=`egrep -i "$KEYWORDS_IGGLYBUFF" newpages.txt`
-  ILLUMISE=`egrep -i "$KEYWORDS_ILLUMISE" newpages.txt`
-  INFERNAPE=`egrep -i "$KEYWORDS_INFERNAPE" newpages.txt`
-  IVYSAUR=`egrep -i "$KEYWORDS_IVYSAUR" newpages.txt`
+  IGGLYBUFF=$(egrep -i "$KEYWORDS_IGGLYBUFF" newpages.txt)
+  ILLUMISE=$(egrep -i "$KEYWORDS_ILLUMISE" newpages.txt)
+  INFERNAPE=$(egrep -i "$KEYWORDS_INFERNAPE" newpages.txt)
+  IVYSAUR=$(egrep -i "$KEYWORDS_IVYSAUR" newpages.txt)
 
   if [ "$IGGLYBUFF" != "" ];
   then

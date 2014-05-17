@@ -5,10 +5,10 @@ egrep -i 'The Sims 3|Sims 3|Sims3' newpages.txt >> TheSims3.txt
 egrep -i 'MySims|The Sims Wii' newpages.txt >> MySims.txt
 egrep -i 'The Sims' newpages.txt | egrep -iv 'Sims 2|Sims2|Sims 3|Sims3|Sims Wii|Simswii' >> TheSimsSeries.txt
 
-SIMS2=`stat --print=%s TheSims2.txt`
-SIMS3=`stat --print=%s TheSims3.txt`
-MYSIMS=`stat --print=%s MySims.txt`
-SERIES=`stat --print=%s TheSimsSeries.txt`
+SIMS2=$(stat --print=%s TheSims2.txt)
+SIMS3=$(stat --print=%s TheSims3.txt)
+MYSIMS=$(stat --print=%s MySims.txt)
+SERIES=$(stat --print=%s TheSimsSeries.txt)
 
 if [ $SIMS2 -ne 0 ];
 then

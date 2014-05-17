@@ -14,7 +14,7 @@ then
 
   egrep -i "$KEYWORDS_OFFICEAPPLICATIONS|$KEYWORDS_OFFICEAPPLICATIONS_OTHER" newpages.txt | egrep -iv "$KEYWORDS_OFFICEAPPLICATIONS_EXCLUDE" >> Officeapps.txt
 
-  APPS=`stat --print=%s Officeapps.txt`
+  APPS=$(stat --print=%s Officeapps.txt)
 
   if [ $APPS -ne 0 ];
   then

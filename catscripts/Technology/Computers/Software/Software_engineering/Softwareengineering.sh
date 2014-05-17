@@ -5,11 +5,11 @@ KEYWORDS_SOFTWAREENGINEERING="Software(| )(engineer|design|develop)"
 if [ "$1" ==  "" ]; #Normal operation
 then
   
-  SOFTWAREENG=`egrep -i "$KEYWORDS_SOFTWAREENGINEERING" newpages.txt`
+  SOFTWAREENG=$(egrep -i "$KEYWORDS_SOFTWAREENGINEERING" newpages.txt)
 
   if [ "$SOFTWAREENG" != "" ];
   then
-    egrep -i "$KEYWORDS_SOFTWAREENGINEERING" newpages.txt > Softwareengineering.txt
+    printf "%s" "$SOFTWAREENG" > Softwareengineering.txt
     export CATFILE="Softwareengineering.txt"
     export CATNAME="Software engineering"
     $CATEGORIZE

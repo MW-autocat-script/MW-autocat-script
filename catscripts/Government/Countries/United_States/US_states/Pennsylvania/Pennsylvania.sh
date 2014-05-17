@@ -4,9 +4,9 @@ egrep -i 'Pennsylvania|Pennsylvannia|Pennnsylvania|Pensylvania|Pensylvannia' new
 egrep -i 'Pittsburgh' newpages.txt | egrep -iv "Steelers|Penguins|Pirates" >> Pittsburgh.txt  
 egrep -i 'Philadelphia' newpages.txt | egrep -iv 'Eagles' >> Philadelphia.txt
 
-PENNSYLVANIA=`stat --print=%s Pennsylvania.txt`
-PITTSBURGH=`stat --print=%s Pittsburgh.txt`
-PHILADELPHIA=`stat --print=%s Philadelphia.txt`
+PENNSYLVANIA=$(stat --print=%s Pennsylvania.txt)
+PITTSBURGH=$(stat --print=%s Pittsburgh.txt)
+PHILADELPHIA=$(stat --print=%s Philadelphia.txt)
 
 if [ $PENNSYLVANIA -ne 0 ];
 then

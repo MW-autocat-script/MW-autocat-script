@@ -4,7 +4,7 @@ export KEYWORDS_MMORPG_AQW="(AdventureQuest|Adventure Quest)(World(|s)| World(|s
 
 egrep -i "$KEYWORDS_MMORPG_AQW" newpages.txt >> AdventureQuestWorlds.txt
 
-AQW=`stat --print=%s AdventureQuestWorlds.txt`
+AQW=$(stat --print=%s AdventureQuestWorlds.txt)
 
 if [ $AQW -ne 0 ];
 then

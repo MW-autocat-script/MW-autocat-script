@@ -50,11 +50,11 @@ then
   KEYWORDS_ACTOR_INCLUDE="Jet(| )Li\b|Jason(| )Statham|Robin(| )Williams|Steve(| )McQueen"
 
 
-  ACTORS=`egrep -i "\bactor|actress|$KEYWORDS_ACTOR_INCLUDE" newpages.txt | egrep -iv "$KEYWORDS_ACTOR|$KEYWORDS_ACTRESS|$KEYWORDS_ACTRESS_EXEMPT"`
+  ACTORS=$(egrep -i "\bactor|actress|$KEYWORDS_ACTOR_INCLUDE" newpages.txt | egrep -iv "$KEYWORDS_ACTOR|$KEYWORDS_ACTRESS|$KEYWORDS_ACTRESS_EXEMPT")
 
   if [ "$ACTORS" != "" ];
   then
-    egrep -i "\bactor|actress|$KEYWORDS_ACTOR_INCLUDE" newpages.txt | egrep -iv "$KEYWORDS_ACTOR|$KEYWORDS_ACTRESS|$KEYWORDS_ACTRESS_EXEMPT" > Actors.txt
+    printf "%s" "$ACTORS" > Actors.txt
     export CATFILE="Actors.txt"
     export CATNAME="Actors and actresses"
     $CATEGORIZE

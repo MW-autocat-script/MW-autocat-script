@@ -6,7 +6,7 @@ KEYWORDS_SPELLING="How (to|do you) spell (|\"|')[a-z]{1,}(|\"|')$"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  SPELLING=`egrep -i "$KEYWORDS_SPELLING" newpages.txt`
+  SPELLING=$(egrep -i "$KEYWORDS_SPELLING" newpages.txt)
 
   if [ "$SPELLING" != "" ];
   then

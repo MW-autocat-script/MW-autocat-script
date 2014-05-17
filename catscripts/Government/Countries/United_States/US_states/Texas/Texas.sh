@@ -17,10 +17,10 @@ then
     printf "Starting Texas\n"
   fi
 
-  TEXAS=`egrep -i "$KEYWORDS_TEXAS" newpages.txt | egrep -iv "$KEYWORDS_TEXAS_EXCLUDE"`
-  DALLAS=`egrep -i "$KEYWORDS_DALLAS" newpages.txt | egrep -iv "$KEYWORDS_DALLAS_EXCLUDE"`
-  HOUSTON=`egrep -i "$KEYWORDS_HOUSTON" newpages.txt | egrep -iv "$KEYWORDS_HOUSTON_EXCLUDE"`
-  SANANTONIO=`egrep -i "$KEYWORDS_SANANTONIO" newpages.txt`
+  TEXAS=$(egrep -i "$KEYWORDS_TEXAS" newpages.txt | egrep -iv "$KEYWORDS_TEXAS_EXCLUDE")
+  DALLAS=$(egrep -i "$KEYWORDS_DALLAS" newpages.txt | egrep -iv "$KEYWORDS_DALLAS_EXCLUDE")
+  HOUSTON=$(egrep -i "$KEYWORDS_HOUSTON" newpages.txt | egrep -iv "$KEYWORDS_HOUSTON_EXCLUDE")
+  SANANTONIO=$(egrep -i "$KEYWORDS_SANANTONIO" newpages.txt)
 
   if [ "$TEXAS" != "" ];
   then

@@ -4,7 +4,7 @@ KEYWORDS_N64="Nintendo(| )64|\bN64"
 
 egrep -i "$KEYWORDS_N64" newpages.txt >> Nintendo64.txt
 
-N64=`stat --print=%s Nintendo64.txt`
+N64=$(stat --print=%s Nintendo64.txt)
 
 if [ $N64 -ne 0 ];
 then

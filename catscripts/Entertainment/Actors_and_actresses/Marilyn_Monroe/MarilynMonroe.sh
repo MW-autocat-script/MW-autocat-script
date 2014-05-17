@@ -5,7 +5,7 @@ KEYWORDS_ACTRESS_MARILYNMONROE="Marilyn(| )Monroe"
 if [ "$1" == "" ];
 then
 
-  MARILYNMONROE=`egrep -i "$KEYWORDS_ACTRESS_MARILYNMONROE" newpages.txt`
+  MARILYNMONROE=$(egrep -i "$KEYWORDS_ACTRESS_MARILYNMONROE" newpages.txt)
 
   if [ "$MARILYNMONROE" != "" ];
   then

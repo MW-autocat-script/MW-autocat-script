@@ -11,7 +11,7 @@ then
 
 egrep -i "$KEYWORDS_MMORPG_RUNESCAPE" newpages.txt >> RuneScape.txt
 
-RUNESCAPE=`stat --print=%s RuneScape.txt`
+RUNESCAPE=$(stat --print=%s RuneScape.txt)
 
 if [ $RUNESCAPE -ne 0 ];
 then

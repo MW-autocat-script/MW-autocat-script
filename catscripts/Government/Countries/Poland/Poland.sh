@@ -8,9 +8,9 @@ egrep -i "$KEYWORDS_POLAND" newpages.txt | egrep -iv "$KEYWORDS_AUSCHWITZ|$KEYWO
 egrep -i "$KEYWORDS_WARSAW" newpages.txt >> Warsaw.txt
 egrep -i "$KEYWORDS_AUSCHWITZ" newpages.txt >> Auschwitz.txt
 
-POLAND=`stat --print=%s Poland.txt`
-WARSAW=`stat --print=%s Warsaw.txt`
-AUSCHWITZ=`stat --print=%s Auschwitz.txt`
+POLAND=$(stat --print=%s Poland.txt)
+WARSAW=$(stat --print=%s Warsaw.txt)
+AUSCHWITZ=$(stat --print=%s Auschwitz.txt)
 
 if [ $POLAND -ne 0 ];
 then

@@ -4,8 +4,8 @@ egrep -i 'Philippine|Phillipine|Philipine|Phillippine|Luzon' newpages.txt | egre
 egrep -i 'PNPA|Philippine National Police Academy' newpages.txt > PNPA.txt
 egrep -i '(pnp\b.+neuro|neuro.+pnp)' newpages.txt >> PNPA.txt
 
-PHILIPPINES=`stat --print=%s Philippines.txt`
-PNPA=`stat --print=%s PNPA.txt`
+PHILIPPINES=$(stat --print=%s Philippines.txt)
+PNPA=$(stat --print=%s PNPA.txt)
 
 if [ $PHILIPPINES -ne 0 ];
 then

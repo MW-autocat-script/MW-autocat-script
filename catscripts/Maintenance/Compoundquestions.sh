@@ -16,7 +16,7 @@ then
     printf "Starting Compound questions\n"
   fi
 
-  COMPOUNDQUESTION=`egrep -i "$KEYWORDS_COMPOUNDQUESTION" newpages.txt`
+  COMPOUNDQUESTION=$(egrep -i "$KEYWORDS_COMPOUNDQUESTION" newpages.txt)
 
   if [ "$COMPOUNDQUESTION" != "" ];
   then

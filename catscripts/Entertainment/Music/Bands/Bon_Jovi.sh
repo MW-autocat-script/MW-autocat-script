@@ -4,7 +4,7 @@ export KEYWORDS_BANDS_BONJOVI="Bon(| )Jovi"
 
 egrep -i "$KEYWORDS_BANDS_BONJOVI" newpages.txt | egrep -iv "Jon(| )Bon(| )Jovi" >> BonJovi.txt
 
-BONJOVI=`stat --print=%s BonJovi.txt`
+BONJOVI=$(stat --print=%s BonJovi.txt)
 
 if [ $BONJOVI -ne 0 ];
 then

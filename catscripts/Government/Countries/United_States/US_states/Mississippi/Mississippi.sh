@@ -5,7 +5,7 @@ KEYWORDS_MISSISSIPPI="Mississippi"
 
 egrep -i "$KEYWORDS_MISSISSIPPI" newpages.txt >> Mississippi.txt
 
-MISSISSIPPI=`stat --print=%s Mississippi.txt`
+MISSISSIPPI=$(stat --print=%s Mississippi.txt)
 
 if [ $MISSISSIPPI -ne 0 ];
 then

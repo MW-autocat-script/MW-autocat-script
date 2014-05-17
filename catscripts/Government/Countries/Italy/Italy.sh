@@ -21,14 +21,14 @@ then
     printf "Starting Italy\n"
   fi
 
-  ITALY=`egrep -i "$KEYWORDS_ITALY" newpages.txt | egrep -iv "$KEYWORDS_ITALY_EXCLUDE"`
-  ROME=`egrep -i "$KEYWORDS_ROME" newpages.txt | egrep -iv "$KEYWORDS_ROME_EXCLUDE"`
-  ANCIENTROME=`egrep -i "$KEYWORDS_ANCIENTROME" newpages.txt | egrep -iv "$KEYWORDS_ANCIENTROME_EXCLUDE"`
-  PISA=`egrep -i "$KEYWORDS_PISA" newpages.txt`
-  POMPEII=`egrep -i "$KEYWORDS_POMPEII" newpages.txt`
-  JCAESAR=`egrep -i "$KEYWORDS_JULIUSCAESAR" newpages.txt`
-  VENICE=`egrep -i "$KEYWORDS_VENICE" newpages.txt`
-  MILAN=`egrep -i "$KEYWORDS_MILAN" newpages.txt`
+  ITALY=$(egrep -i "$KEYWORDS_ITALY" newpages.txt | egrep -iv "$KEYWORDS_ITALY_EXCLUDE")
+  ROME=$(egrep -i "$KEYWORDS_ROME" newpages.txt | egrep -iv "$KEYWORDS_ROME_EXCLUDE")
+  ANCIENTROME=$(egrep -i "$KEYWORDS_ANCIENTROME" newpages.txt | egrep -iv "$KEYWORDS_ANCIENTROME_EXCLUDE")
+  PISA=$(egrep -i "$KEYWORDS_PISA" newpages.txt)
+  POMPEII=$(egrep -i "$KEYWORDS_POMPEII" newpages.txt)
+  JCAESAR=$(egrep -i "$KEYWORDS_JULIUSCAESAR" newpages.txt)
+  VENICE=$(egrep -i "$KEYWORDS_VENICE" newpages.txt)
+  MILAN=$(egrep -i "$KEYWORDS_MILAN" newpages.txt)
 
   if [ "$ITALY" != "" ];
   then

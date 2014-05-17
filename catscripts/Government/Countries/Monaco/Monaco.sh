@@ -12,7 +12,7 @@ then
     printf "Starting Monaco\n"
   fi
 
-  MONACO=`egrep -i "$KEYWORDS_MONACO" newpages.txt | egrep -iv "$KEYWORDS_MONACO_EXCLUDE"`
+  MONACO=$(egrep -i "$KEYWORDS_MONACO" newpages.txt | egrep -iv "$KEYWORDS_MONACO_EXCLUDE")
 
   if [ "$MONACO" != "" ];
   then

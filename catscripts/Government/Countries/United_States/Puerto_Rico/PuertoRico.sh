@@ -10,7 +10,7 @@ then
     printf "Starting Puerto Rico\n"
   fi
 
-  PUERTORICO=`egrep -i "$KEYWORDS_PUERTORICO" newpages.txt`
+  PUERTORICO=$(egrep -i "$KEYWORDS_PUERTORICO" newpages.txt)
 
   if [ "$PUERTORICO" != "" ];
   then

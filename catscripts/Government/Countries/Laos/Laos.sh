@@ -10,7 +10,7 @@ then
     printf "Starting Laos\n"
   fi
 
-  LAOS=`egrep -i "$KEYWORDS_LAOS" newpages.txt`
+  LAOS=$(egrep -i "$KEYWORDS_LAOS" newpages.txt)
 
   if [ "$LAOS" != "" ];
   then

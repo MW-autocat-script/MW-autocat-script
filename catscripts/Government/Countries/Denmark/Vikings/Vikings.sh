@@ -7,7 +7,7 @@ if [ "$1" == "" ];
 then
   egrep -i "$KEYWORDS_VIKINGS" newpages.txt | egrep -iv "$KEYWORDS_VIKINGS_EXCLUDE" >> Vikings.txt
 
-  VIKINGS=`stat --print=%s Vikings.txt`
+  VIKINGS=$(stat --print=%s Vikings.txt)
 
   if [ $VIKINGS -ne 0 ];
   then

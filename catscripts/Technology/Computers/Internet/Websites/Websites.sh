@@ -5,10 +5,10 @@ egrep -i '\bWikia\b' newpages.txt | egrep -iv 'Wikia Search'  >> Wikia.txt
 egrep -i '\bWikianswers\b|wiki answers' newpages.txt >> Wikianswers.txt
 egrep -i 'Wikipedia' newpages.txt >> Wikipedia.txt
 
-YOUTUBE=`stat --print=%s YouTube.txt`
-WIKIA=`stat --print=%s Wikia.txt`
-WIKIANSWERS=`stat --print=%s Wikianswers.txt`
-WIKIPEDIA=`stat --print=%s Wikipedia.txt`
+YOUTUBE=$(stat --print=%s YouTube.txt)
+WIKIA=$(stat --print=%s Wikia.txt)
+WIKIANSWERS=$(stat --print=%s Wikianswers.txt)
+WIKIPEDIA=$(stat --print=%s Wikipedia.txt)
 
 
 if [ $YOUTUBE -ne 0 ];

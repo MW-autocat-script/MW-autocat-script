@@ -7,12 +7,12 @@ egrep -i 'Saints(| )Row 2' newpages.txt >> SaintsRow2.txt
 egrep -i 'Saints(| )Row' newpages.txt | egrep -i 'The Third|Saints(| )Row(| )(III|3)' >> SaintsRow3.txt
 egrep -i 'Saints(| )Row(| )(4|IV)' newpages.txt >> SaintsRow4.txt
 
-MINECRAFT=`stat --print=%s Minecraft.txt`
-TEKKIT=`stat --print=%s Tekkit.txt`
-SAINTSROW=`stat --print=%s SaintsRow.txt`
-ROW2=`stat --print=%s SaintsRow2.txt`
-THETHIRD=`stat --print=%s SaintsRow3.txt`
-ROW4=`stat --print=%s SaintsRow4.txt`
+MINECRAFT=$(stat --print=%s Minecraft.txt)
+TEKKIT=$(stat --print=%s Tekkit.txt)
+SAINTSROW=$(stat --print=%s SaintsRow.txt)
+ROW2=$(stat --print=%s SaintsRow2.txt)
+THETHIRD=$(stat --print=%s SaintsRow3.txt)
+ROW4=$(stat --print=%s SaintsRow4.txt)
 
 if [ $MINECRAFT -ne 0 ];
 then

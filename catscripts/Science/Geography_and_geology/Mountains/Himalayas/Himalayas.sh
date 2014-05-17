@@ -10,8 +10,8 @@ then
   egrep -i "$KEYWORDS_HIMALAYAS" newpages.txt | egrep -iv "$KEYWORDS_HIMALAYAS_EXCLUDE" >> Himalayas.txt
   egrep -i "$KEYWORDS_MOUNT_EVEREST" newpages.txt >> MountEverest.txt
 
-  HIMALAYAS=`stat --print=%s Himalayas.txt`
-  EVEREST=`stat --print=%s MountEverest.txt`
+  HIMALAYAS=$(stat --print=%s Himalayas.txt)
+  EVEREST=$(stat --print=%s MountEverest.txt)
 
   if [ $HIMALAYAS -ne 0 ];
   then

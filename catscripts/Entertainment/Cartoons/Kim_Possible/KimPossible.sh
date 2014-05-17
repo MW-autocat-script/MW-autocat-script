@@ -2,7 +2,7 @@
 
 egrep -i 'Kim(| )Possible' newpages.txt >> KimPossible.txt
 
-KIMPOSSIBLE=`stat --print=%s KimPossible.txt`
+KIMPOSSIBLE=$(stat --print=%s KimPossible.txt)
 
 if [ $KIMPOSSIBLE -ne 0 ];
 then

@@ -11,7 +11,7 @@ then
     printf "Starting Rhyming\n"
   fi
 
-  RHYMES=`egrep -i "$KEYWORDS_RHYMING" newpages.txt | egrep -iv "$KEYWORDS_RHYMING_EXCLUDE"`
+  RHYMES=$(egrep -i "$KEYWORDS_RHYMING" newpages.txt | egrep -iv "$KEYWORDS_RHYMING_EXCLUDE")
 
   if [ "$RHYMES" != "" ];
   then

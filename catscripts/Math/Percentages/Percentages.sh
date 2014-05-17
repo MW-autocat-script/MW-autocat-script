@@ -7,7 +7,7 @@ egrep -i '^What( is|s) [0-9]{1,}(| )% of [0-9]{1,}' newpages.txt >> Percentages.
 egrep -i 'What percent of [0-9]{1,} is [0-9]{1,}' newpages.txt >> Percentages.txt
 
 
-PERCENTAGES=`stat --print=%s Percentages.txt`
+PERCENTAGES=$(stat --print=%s Percentages.txt)
 
 if [ $PERCENTAGES -ne 0 ];
 then

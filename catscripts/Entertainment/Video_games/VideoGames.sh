@@ -2,7 +2,7 @@
 
 egrep -i 'Moshi Monsters|moshimonsters|moshling|furnando|furando|meowford|dustbin beaver|dustbinbeaver|dustin beaver|meowford' newpages.txt > MoshiMonsters.txt
 
-MOSHIMONSTERS=`stat --print=%s MoshiMonsters.txt`
+MOSHIMONSTERS=$(stat --print=%s MoshiMonsters.txt)
 
 if [ $MOSHIMONSTERS -ne 0 ];
 then
