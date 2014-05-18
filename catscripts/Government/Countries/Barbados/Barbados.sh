@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'Barbados|Barbadoan' newpages.txt >> Barbados.txt
+KEYWORDS_BARBADOS="Barbados|Barbadoan"
 
-BARBADOS=$(stat --print=%s Barbados.txt)
-
-if [ $BARBADOS -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Barbados.txt"
-  export CATNAME="Barbados"
-  $CATEGORIZE
-fi
 
-rm Barbados.txt
+  debug_start "Barbados"
+
+  BARBADOS=$(egrep -i "$KEYWORDS_BARBADOS" newpages.txt)
+
+  if [ "$BARBADOS" != "" ];
+  then
+    printf "%s" "$BARBADOS" > Barbados.txt
+    export CATFILE="Barbados.txt"
+    export CATNAME="Barbados"
+    $CATEGORIZE
+    rm Barbados.txt
+    unset BARBADOS
+  fi
+
+  debug_end "Barbados"
+
+fi

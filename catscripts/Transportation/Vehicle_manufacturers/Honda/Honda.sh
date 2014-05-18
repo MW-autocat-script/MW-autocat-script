@@ -42,187 +42,184 @@ KEYWORDS_HONDA_ODYSSEY="Honda(| )Odyssey|[0-9]{1,}(| )Odyssey"
 
 KEYWORDS_ACURA="Acura\b|$KEYWORDS_ACURA_CSX|$KEYWORDS_ACURA_EL|$KEYWORDS_ACURA_ILX|$KEYWORDS_ACURA_MDX|$KEYWORDS_ACURA_NLX|$KEYWORDS_ACURA_RDX|$KEYWORDS_ACURA_RL|$KEYWORDS_ACURA_RLX|$KEYWORDS_ACURA_SLX|$KEYWORDS_ACURA_TSX|$KEYWORDS_ACURA_VIGOR|$KEYWORDS_ACURA_ZDX"
 
-#Search ATVs
+KEYWORDS_HONDA="\bHonda"
+KEYWORDS_HONDA_EXCLUDE="$KEYWORDS_HONDA_CARS|$KEYWORDS_HONDA_SUV|$KEYWORDS_HONDA_ODYSSEY|$KEYWORDS_HONDA_SPORTRAX"
+KEYWORDS_ACURA="Acura|$KEYWORDS_ACURA_CL|$KEYWORDS_ACURA_CSX|$KEYWORDS_ACURA_EL|$KEYWORDS_ACURA_ILX|$KEYWORDS_ACURA_MDX|$KEYWORDS_ACURA_NLX|$KEYWORDS_ACURA_RDX|$KEYWORDS_ACURA_RL|$KEYWORDS_ACURA_RLX|$KEYWORDS_ACURA_SLX|$KEYWORDS_ACURA_TSX|$KEYWORDS_ACURA_VIGOR|$KEYWORDS_ACURA_ZDX"
+KEYWORDS_ACURA_EXCLUDE="$KEYWORDS_ACURA_TL|$KEYWORDS_HONDA_INTEGRA"
 
-egrep -i "$KEYWORDS_HONDA_SPORTRAX" newpages.txt > HondaSportrax.txt
-
-#Search cars
-
-egrep -i "$KEYWORDS_HONDA_ACCORD" newpages.txt > HondaAccord.txt
-egrep -i "$KEYWORDS_HONDA_CIVIC" newpages.txt > HondaCivic.txt
-egrep -i "$KEYWORDS_HONDA_ELEMENT" newpages.txt > HondaElement.txt
-egrep -i "$KEYWORDS_HONDA_INTEGRA" newpages.txt > HondaIntegra.txt
-egrep -i "$KEYWORDS_HONDA_PASSPORT" newpages.txt > HondaPassport.txt
-egrep -i "$KEYWORDS_HONDA_PRELUDE" newpages.txt > HondaPrelude.txt
-egrep -i "$KEYWORDS_ACURA_TL" newpages.txt > AcuraTL.txt
-
-#Search SUVs
-
-egrep -i "$KEYWORDS_HONDA_PILOT" newpages.txt > HondaPilot.txt
-egrep -i "$KEYWORDS_HONDA_CRV" newpages.txt > HondaCRV.txt
-
-#Search vans
-
-egrep -i "$KEYWORDS_HONDA_ODYSSEY" newpages.txt > HondaOdyssey.txt
-
-#Search brands
-
-egrep -i "\bHonda" newpages.txt | egrep -iv "$KEYWORDS_HONDA_CARS|$KEYWORDS_HONDA_SUV|$KEYWORDS_HONDA_ODYSSEY|$KEYWORDS_HONDA_SPORTRAX" > Honda.txt
-egrep -i "Acura|$KEYWORDS_ACURA_CL|$KEYWORDS_ACURA_CSX|$KEYWORDS_ACURA_EL|$KEYWORDS_ACURA_ILX|$KEYWORDS_ACURA_MDX|$KEYWORDS_ACURA_NLX|$KEYWORDS_ACURA_RDX|$KEYWORDS_ACURA_RL|$KEYWORDS_ACURA_RLX|$KEYWORDS_ACURA_SLX|$KEYWORDS_ACURA_TSX|$KEYWORDS_ACURA_VIGOR|$KEYWORDS_ACURA_ZDX" newpages.txt | egrep -iv "$KEYWORDS_ACURA_TL|$KEYWORDS_HONDA_INTEGRA" > Acura.txt
-
-#Stat brands
-
-HONDA=$(stat --print=%s Honda.txt)
-ACURA=$(stat --print=%s Acura.txt)
-
-#Stat ATVs
-
-SPORTRAX=$(stat --print=%s HondaSportrax.txt)
-
-#Stat cars
-
-ACCORD=$(stat --print=%s HondaAccord.txt)
-CIVIC=$(stat --print=%s HondaCivic.txt)
-ELEMENT=$(stat --print=%s HondaElement.txt)
-INTEGRA=$(stat --print=%s HondaIntegra.txt)
-PASSPORT=$(stat --print=%s HondaPassport.txt)
-PRELUDE=$(stat --print=%s HondaPrelude.txt)
-ACURATL=$(stat --print=%s AcuraTL.txt)
-
-#Stat SUVs
-
-PILOT=$(stat --print=%s HondaPilot.txt)
-CRV=$(stat --print=%s HondaCRV.txt)
-
-#Stat vans
-
-ODYSSEY=$(stat --print=%s HondaOdyssey.txt)
-
-#Categorize brands
-
-if [ $HONDA -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Honda.txt"
-  export CATNAME="Honda"
-  $CATEGORIZE
+
+  debug_start "Honda"
+
+  #Search brands
+
+  HONDA=$(egrep -i "$KEYWORDS_HONDA" newpages.txt | egrep -iv "$KEYWORDS_HONDA_EXCLUDE")
+  ACURA=$(egrep -i "$KEYWORDS_ACURA" newpages.txt | egrep -iv "$KEYWORDS_ACURA_EXCLUDE")
+
+  #Search ATVs
+
+  SPORTRAX=$(egrep -i "$KEYWORDS_HONDA_SPORTRAX" newpages.txt)
+
+  #Search cars
+
+  ACCORD=$(egrep -i "$KEYWORDS_HONDA_ACCORD" newpages.txt)
+  CIVIC=$(egrep -i "$KEYWORDS_HONDA_CIVIC" newpages.txt)
+  ELEMENT=$(egrep -i "$KEYWORDS_HONDA_ELEMENT" newpages.txt)
+  INTEGRA=$(egrep -i "$KEYWORDS_HONDA_INTEGRA" newpages.txt)
+  PASSPORT=$(egrep -i "$KEYWORDS_HONDA_PASSPORT" newpages.txt)
+  PRELUDE=$(egrep -i "$KEYWORDS_HONDA_PRELUDE" newpages.txt)
+  ACURATL=$(egrep -i "$KEYWORDS_ACURA_TL" newpages.txt)
+
+  #Search SUVs
+
+  PILOT=$(egrep -i "$KEYWORDS_HONDA_PILOT" newpages.txt)
+  CRV=$(egrep -i "$KEYWORDS_HONDA_CRV" newpages.txt)
+
+  #Search vans
+
+  ODYSSEY=$(egrep -i "$KEYWORDS_HONDA_ODYSSEY" newpages.txt)
+
+  #Categorize brands
+
+  if [ "$HONDA" != "" ];
+  then
+    printf "%s" "$HONDA" > Honda.txt
+    export CATFILE="Honda.txt"
+    export CATNAME="Honda"
+    $CATEGORIZE
+    rm Honda.txt
+    unset HONDA
+  fi
+
+  if [ "$ACURA" != "" ];
+  then
+    printf "%s" "$ACURA" > Acura.txt
+    export CATFILE="Acura.txt"
+    export CATNAME="Acura"
+    $CATEGORIZE
+    rm Acura.txt
+    unset ACURA
+  fi
+
+  #Categorize ATVs
+
+  if [ "$SPORTRAX" != "" ];
+  then
+    printf "%s" "$SPORTRAX" > HondaSportrax.txt
+    export CATFILE="HondaSportrax.txt"
+    export CATNAME="Honda Sportrax"
+    $CATEGORIZE
+    rm HondaSportrax.txt
+    unset SPORTRAX
+  fi
+
+  #Categorize cars
+
+  if [ "$ACCORD" != "" ];
+  then
+    printf "%s" "$ACCORD" > HondaAccord.txt
+    export CATFILE="HondaAccord.txt"
+    export CATNAME="Honda Accord"
+    $CATEGORIZE
+    rm HondaAccord.txt
+    unset ACCORD
+  fi
+
+  if [ "$CIVIC" != "" ];
+  then
+    printf "%s" "$CIVIC" > HondaCivic.txt
+    export CATFILE="HondaCivic.txt"
+    export CATNAME="Honda Civic"
+    $CATEGORIZE
+    rm HondaCivic.txt
+    unset CIVIC
+  fi
+
+  if [ "$ELEMENT" != "" ];
+  then
+    printf "%s" "$ELEMENT" > HondaElement.txt
+    export CATFILE="HondaElement.txt"
+    export CATNAME="Honda Element"
+    $CATEGORIZE
+    rm HondaElement.txt
+    unset ELEMENT
+  fi
+
+  if [ "$INTEGRA" != "" ];
+  then
+    printf "%s" "$INTEGRA" > HondaIntegra.txt
+    export CATFILE="HondaIntegra.txt"
+    export CATNAME="Honda Integra"
+    $CATEGORIZE
+    rm HondaIntegra.txt
+    unset INTEGRA
+  fi
+
+  if [ "$PASSPORT" != "" ];
+  then
+    printf "%s" "$PASSPORT" > HondaPassport.txt
+    export CATFILE="HondaPassport.txt"
+    export CATNAME="Honda Passport"
+    $CATEGORIZE
+    rm HondaPassport.txt
+    unset PASSPORT
+  fi
+
+  if [ "$PRELUDE" != "" ];
+  then
+    printf "%s" "$PRELUDE" > HondaPrelude.txt
+    export CATFILE="HondaPrelude.txt"
+    export CATNAME="Honda Prelude"
+    $CATEGORIZE
+    rm HondaPrelude.txt
+    unset PRELUDE
+  fi
+
+  if [ "$ACURATL" != "" ];
+  then
+    printf "%s" "$ACURATL" > AcuraTL.txt
+    export CATFILE="AcuraTL.txt"
+    export CATNAME="Acura TL"
+    $CATEGORIZE
+    rm AcuraTL.txt
+    unset ACURATL
+  fi
+
+  #Categorize SUVs
+
+  if [ "$CRV" != "" ];
+  then
+    printf "%s" "$CRV" > HondaCRV.txt
+    export CATFILE="HondaCRV.txt"
+    export CATNAME="Honda CR-V"
+    $CATEGORIZE
+    rm HondaCRV.txt
+    unset CRV
+  fi
+
+  if [ "$PILOT" != "" ];
+  then
+    printf "%s" "$PILOT" > HondaPilot.txt
+    export CATFILE="HondaPilot.txt"
+    export CATNAME="Honda Pilot"
+    $CATEGORIZE
+    rm HondaPilot.txt
+    unset PILOT
+  fi
+
+  #Categorize vans
+
+  if [ "$ODYSSEY" != "" ];
+  then
+    printf "%s" "$ODYSSEY" > HondaOdyssey.txt
+    export CATFILE="HondaOdyssey.txt"
+    export CATNAME="Honda Odyssey"
+    $CATEGORIZE
+    rm HondaOdyssey.txt
+    unset ODYSSEY
+  fi
+
+  debug_end "Honda"
+
 fi
-
-if [ $ACURA -ne 0 ];
-then
-  export CATFILE="Acura.txt"
-  export CATNAME="Acura"
-  $CATEGORIZE
-fi
-
-#Categorize ATVs
-
-if [ $SPORTRAX -ne 0 ];
-then
-  export CATFILE="HondaSportrax.txt"
-  export CATNAME="Honda Sportrax"
-  $CATEGORIZE
-fi
-
-#Categorize cars
-
-if [ $ACCORD -ne 0 ];
-then
-  export CATFILE="HondaAccord.txt"
-  export CATNAME="Honda Accord"
-  $CATEGORIZE
-fi
-
-if [ $CIVIC -ne 0 ];
-then
-  export CATFILE="HondaCivic.txt"
-  export CATNAME="Honda Civic"
-  $CATEGORIZE
-fi
-
-if [ $ELEMENT -ne 0 ];
-then
-  export CATFILE="HondaElement.txt"
-  export CATNAME="Honda Element"
-  $CATEGORIZE
-fi
-
-if [ $INTEGRA -ne 0 ];
-then
-  export CATFILE="HondaIntegra.txt"
-  export CATNAME="Honda Integra"
-  $CATEGORIZE
-fi
-
-if [ $PASSPORT -ne 0 ];
-then
-  export CATFILE="HondaPassport.txt"
-  export CATNAME="Honda Passport"
-  $CATEGORIZE
-fi
-
-if [ $PRELUDE -ne 0 ];
-then
-  export CATFILE="HondaPrelude.txt"
-  export CATNAME="Honda Prelude"
-  $CATEGORIZE
-fi
-
-if [ $ACURATL -ne 0 ];
-then
-  export CATFILE="AcuraTL.txt"
-  export CATNAME="Acura TL"
-  $CATEGORIZE
-fi
-
-#Categorize SUVs
-
-if [ $CRV -ne 0 ];
-then
-  export CATFILE="HondaCRV.txt"
-  export CATNAME="Honda CR-V"
-  $CATEGORIZE
-fi
-
-if [ $PILOT -ne 0 ];
-then
-  export CATFILE="HondaPilot.txt"
-  export CATNAME="Honda Pilot"
-  $CATEGORIZE
-fi
-
-#Categorize vans
-
-if [ $ODYSSEY -ne 0 ];
-then
-  export CATFILE="HondaOdyssey.txt"
-  export CATNAME="Honda Odyssey"
-  $CATEGORIZE
-fi
-
-#Cleanup brands
-
-rm Honda.txt
-rm Acura.txt
-
-#Cleanup ATVs
-
-rm HondaSportrax.txt
-
-#Cleanup cars 
-
-rm HondaAccord.txt
-rm HondaCivic.txt
-rm HondaElement.txt
-rm HondaIntegra.txt
-rm HondaPassport.txt
-rm HondaPrelude.txt
-rm AcuraTL.txt
-
-#Cleanup SUVs
-
-rm HondaCRV.txt
-rm HondaPilot.txt
-
-#Cleanup vans
-
-rm HondaOdyssey.txt

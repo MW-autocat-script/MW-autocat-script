@@ -1,14 +1,25 @@
 #!/bin/bash
 #Script for the children's cartoon Danny Phantom
-egrep -i 'Danny Phantom|dannyphantom' newpages.txt >> DannyPhantom.txt
 
-DANNYPHANTOM=$(stat --print=%s DannyPhantom.txt)
+KEYWORDS_DANNYPHANTOM="Danny(| )Phantom"
 
-if [ $DANNYPHANTOM -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="DannyPhantom.txt"
-  export CATNAME="Danny Phantom"
-  $CATEGORIZE
-fi
 
-rm DannyPhantom.txt
+  debug_start "Danny Phantom"
+
+  DANNYPHANTOM=$(egrep -i "$KEYWORDS_DANNYPHANTOM" newpages.txt)
+
+  if [ "$DANNYPHANTOM" != "" ];
+  then
+    printf "%s" "$DANNYPHANTOM" > DannyPhantom.txt
+    export CATFILE="DannyPhantom.txt"
+    export CATNAME="Danny Phantom"
+    $CATEGORIZE
+    rm DannyPhantom.txt
+    unset DANNYPHANTOM
+  fi
+
+  debug_end "Danny Phantom"
+
+fi

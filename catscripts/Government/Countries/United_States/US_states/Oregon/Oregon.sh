@@ -1,14 +1,25 @@
 #!/bin/bash
 
-egrep -i 'Oregon' newpages.txt | egrep -iv 'Oregon Trail' >> Oregon.txt
+KEYWORDS_OREGON="Oregon"
+KEYWORDS_OREGON_EXCLUDE="Oregon(| )Trail"
 
-OREGON=$(stat --print=%s Oregon.txt)
-
-if [ $OREGON -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Oregon.txt"
-  export CATNAME="Oregon"
-  $CATEGORIZE
-fi
 
-rm Oregon.txt
+  debug_start "Oregon"
+
+  OREGON=$(egrep -i "$KEYWORDS_OREGON" newpages.txt | egrep -iv "$KEYWORDS_OREGON_EXCLUDE")
+
+  if [ "$OREGON" != "" ];
+  then
+    printf "%s" "$OREGON" > Oregon.txt
+    export CATFILE="Oregon.txt"
+    export CATNAME="Oregon"
+    $CATEGORIZE
+    rm Oregon.txt
+    unset OREGON
+  fi
+
+  debug_end "Oregon"
+
+fi

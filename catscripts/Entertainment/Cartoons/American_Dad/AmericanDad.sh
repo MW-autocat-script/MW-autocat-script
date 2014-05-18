@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'American Dad|Stan Smith|Francine Smith|Steve Smith|Hayley Smith' newpages.txt >> AmericanDad.txt
+KEYWORDS_AMERICANDAD="American(| )Dad|(Stan|Francine|Steve|Hayley)(| )Smith"
 
-AMERICANDAD=$(stat --print=%s AmericanDad.txt)
-
-if [ $AMERICANDAD -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="AmericanDad.txt"
-  export CATNAME="American Dad"
-  $CATEGORIZE
-fi
 
-rm AmericanDad.txt
+  debug_start "American Dad"
+
+  AMERICANDAD=$(egrep -i "$KEYWORDS_AMERICANDAD" newpages.txt)
+
+  if [ "$AMERICANDAD" != "" ];
+  then
+    printf "%s" "$AMERICANDAD" > AmericanDad.txt
+    export CATFILE="AmericanDad.txt"
+    export CATNAME="American Dad"
+    $CATEGORIZE
+    rm AmericanDad.txt
+    unset AMERICANDAD
+  fi
+
+  debug_end "American Dad"
+
+fi

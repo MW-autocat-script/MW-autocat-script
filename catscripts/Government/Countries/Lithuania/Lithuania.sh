@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'Lithuania' newpages.txt >> Lithuania.txt
+KEYWORDS_LITHUANIA="Lithuania"
 
-LITHUANIA=$(stat --print=%s Lithuania.txt)
-
-if [ $LITHUANIA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Lithuania.txt"
-  export CATNAME="Lithuania"
-  $CATEGORIZE
-fi
 
-rm Lithuania.txt
+  debug_start "Lithuania"
+
+  LITHUANIA=$(egrep -i "$KEYWORDS_LITHUANIA" newpages.txt)
+
+  if [ "$LITHUANIA" != "" ];
+  then
+    printf "%s" "$LITHUANIA" > Lithuania.txt
+    export CATFILE="Lithuania.txt"
+    export CATNAME="Lithuania"
+    $CATEGORIZE
+    rm Lithuania.txt
+    unset LITHUANIA
+  fi
+
+  debug_end "Lithuania"
+
+fi
