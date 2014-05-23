@@ -1,234 +1,288 @@
 #!/bin/bash
-egrep -i 'Happiny' newpages.txt >> Happiny.txt
-egrep -i 'Hariyama' newpages.txt >> Hariyama.txt
-egrep -i 'Haunter' newpages.txt >> Haunter.txt
-egrep -i 'Haxorus' newpages.txt >> Haxorus.txt
-egrep -i 'Heatmor' newpages.txt >> Heatmor.txt
-egrep -i 'Heatran' newpages.txt >> Heatran.txt
-egrep -i 'Heracross' newpages.txt >> Heracross.txt
-egrep -i 'Herdier' newpages.txt >> Herdier.txt
-egrep -i 'Hippopotas' newpages.txt >> Hippopotas.txt
-egrep -i 'Hippowdon' newpages.txt >> Hippowdon.txt
-egrep -i 'Hitmonchan' newpages.txt >> Hitmonchan.txt
-egrep -i 'Hitmonlee' newpages.txt >> Hitmonlee.txt
-egrep -i 'Hitmontop' newpages.txt >> Hitmontop.txt
-egrep -i 'Ho-Oh' newpages.txt >> Ho-Oh.txt
-egrep -i 'Honchkrow' newpages.txt >> Honchkrow.txt
-egrep -i 'Hoothoot' newpages.txt >> Hoothoot.txt
-egrep -i 'Hoppip' newpages.txt >> Hoppip.txt
-egrep -i 'Horsea' newpages.txt >> Horsea.txt
-egrep -i 'Houndoom' newpages.txt >> Houndoom.txt
-egrep -i 'Houndour' newpages.txt >> Houndour.txt
-egrep -i 'Huntail' newpages.txt >> Huntail.txt
-egrep -i 'Hydreigon' newpages.txt >> Hydreigon.txt
-egrep -i 'Hypno\b' newpages.txt >> Hypno.txt
 
-Happiny=$(stat --print=%s Happiny.txt)
-Hariyama=$(stat --print=%s Hariyama.txt)
-Haunter=$(stat --print=%s Haunter.txt)
-Haxorus=$(stat --print=%s Haxorus.txt)
-Heatmor=$(stat --print=%s Heatmor.txt)
-Heatran=$(stat --print=%s Heatran.txt)
-Heracross=$(stat --print=%s Heracross.txt)
-Herdier=$(stat --print=%s Herdier.txt)
-Hippopotas=$(stat --print=%s Hippopotas.txt)
-Hippowdon=$(stat --print=%s Hippowdon.txt)
-Hitmonchan=$(stat --print=%s Hitmonchan.txt)
-Hitmonlee=$(stat --print=%s Hitmonlee.txt)
-Hitmontop=$(stat --print=%s Hitmontop.txt)
-HoOh=$(stat --print=%s Ho-Oh.txt)
-Honchkrow=$(stat --print=%s Honchkrow.txt)
-Hoothoot=$(stat --print=%s Hoothoot.txt)
-Hoppip=$(stat --print=%s Hoppip.txt)
-Horsea=$(stat --print=%s Horsea.txt)
-Houndoom=$(stat --print=%s Houndoom.txt)
-Houndour=$(stat --print=%s Houndour.txt)
-Huntail=$(stat --print=%s Huntail.txt)
-Hydreigon=$(stat --print=%s Hydreigon.txt)
-Hypno=$(stat --print=%s Hypno.txt)
+KEYWORDS_HAPPINY="Happiny"
+KEYWORDS_HARIYAMA="Hariyama"
+KEYWORDS_HAUNTER="Haunter"
+KEYWORDS_HAXORUS="Haxorus"
+KEYWORDS_HEATMOR="Heatmor"
+KEYWORDS_HEATRAN="Heatran"
+KEYWORDS_HERACROSS="Heracross"
+KEYWORDS_HERDIER="Herdier"
+KEYWORDS_HIPPOPOTAS="Hippopotas"
+KEYWORDS_HIPPOWDON="Hippowdon"
+KEYWORDS_HITMONCHAN="Hitmonchan"
+KEYWORDS_HITMONLEE="Hitmonlee"
+KEYWORDS_HITMONTOP="Hitmontop"
+KEYWORDS_HOOH="Ho-Oh"
+KEYWORDS_HONCHKROW="Honchkrow"
+KEYWORDS_HOOTHOOT="Hoothoot"
+KEYWORDS_HOPPIP="Hoppip"
+KEYWORDS_HORSEA="Horsea"
+KEYWORDS_HOUNDOOM="Houndoom"
+KEYWORDS_HOUNDOUR="Houndour"
+KEYWORDS_HUNTAIL="Huntail"
+KEYWORDS_HYDREIGON="Hydreigon"
+KEYWORDS_HYPNO="Hypno\b"
 
-if [ $Happiny -ne 0 ];
+if [ "$1" == "" ];
 then
-   export CATFILE="Happiny.txt"
-   export CATNAME="Happiny"
-   $CATEGORIZE
+
+  debug_start "Pokemon H species"
+
+  HAPPINY=$(egrep -i "$KEYWORDS_HAPPINY" newpages.txt)
+  HARIYAMA=$(egrep -i "$KEYWORDS_HARIYAMA" newpages.txt)
+  HAUNTER=$(egrep -i "$KEYWORDS_HAUNTER" newpages.txt)
+  HAXORUS=$(egrep -i "$KEYWORDS_HAXORUS" newpages.txt)
+  HEATMOR=$(egrep -i "$KEYWORDS_HEATMOR" newpages.txt)
+  HEATRAN=$(egrep -i "$KEYWORDS_HEATRAN" newpages.txt)
+  HERACROSS=$(egrep -i "$KEYWORDS_HERACROSS" newpages.txt)
+  HERDIER=$(egrep -i "$KEYWORDS_HERDIER" newpages.txt)
+  HIPPOPOTAS=$(egrep -i "$KEYWORDS_HIPPOPOTAS" newpages.txt)
+  HIPPOWDON=$(egrep -i "$KEYWORDS_HIPPOWDON" newpages.txt)
+  HITMONCHAN=$(egrep -i "$KEYWORDS_HITMONCHAN" newpages.txt)
+  HITMONLEE=$(egrep -i "$KEYWORDS_HITMONLEE" newpages.txt)
+  HITMONTOP=$(egrep -i "$KEYWORDS_HITMONTOP" newpages.txt)
+  HOOH=$(egrep -i "$KEYWORDS_HOOH" newpages.txt)
+  HONCHKROW=$(egrep -i "$KEYWORDS_HONCHKROW" newpages.txt)
+  HOOTHOOT=$(egrep -i "$KEYWORDS_HOOTHOOT" newpages.txt)
+  HOPPIP=$(egrep -i "$KEYWORDS_HOPPIP" newpages.txt)
+  HORSEA=$(egrep -i "$KEYWORDS_HORSEA" newpages.txt)
+  HOUNDOOM=$(egrep -i "$KEYWORDS_HOUNDOOM" newpages.txt)
+  HOUNDOUR=$(egrep -i "$KEYWORDS_HOUNDOUR" newpages.txt)
+  HUNTAIL=$(egrep -i "$KEYWORDS_HUNTAIL" newpages.txt)
+  HYDREIGON=$(egrep -i "$KEYWORDS_HYDREIGON" newpages.txt)
+  HYPNO=$(egrep -i "$KEYWORDS_HYPNO" newpages.txt)
+
+  if [ "$HAPPINY" != "" ];
+  then
+    printf "%s" "$HAPPINY" > Happiny.txt
+    export CATFILE="Happiny.txt"
+    export CATNAME="Happiny"
+    $CATEGORIZE
+    rm Happiny.txt
+    unset HAPPINY
+  fi
+
+  if [ "$HARIYAMA" != "" ];
+  then
+    printf "%s" "$HARIYAMA" > Hariyama.txt
+    export CATFILE="Hariyama.txt"
+    export CATNAME="Hariyama"
+    $CATEGORIZE
+    rm Hariyama.txt
+    unset HARIYAMA
+  fi
+
+  if [ "$HAUNTER" != "" ];
+  then
+    printf "%s" "$HAUNTER" > Haunter.txt
+    export CATFILE="Haunter.txt"
+    export CATNAME="Haunter"
+    $CATEGORIZE
+    rm Haunter.txt
+    unset HAUNTER
+  fi
+
+  if [ "$HAXORUS" != "" ];
+  then
+    printf "%s" "$HAXORUS" > Haxorus.txt
+    export CATFILE="Haxorus.txt"
+    export CATNAME="Haxorus"
+    $CATEGORIZE
+    rm Haxorus.txt
+    unset HAXORUS
+  fi
+
+  if [ "$HEATMOR" != "" ];
+  then
+    printf "%s" "$HEATMOR" > Heatmor.txt
+    export CATFILE="Heatmor.txt"
+    export CATNAME="Heatmor"
+    $CATEGORIZE
+    rm Heatmor.txt
+    unset HEATMOR
+  fi
+
+  if [ "$HEATRAN" != "" ];
+  then
+    printf "%s" "$HEATRAN" > Heatran.txt
+    export CATFILE="Heatran.txt"
+    export CATNAME="Heatran"
+    $CATEGORIZE
+    rm Heatran.txt
+    unset HEATRAN
+  fi
+
+  if [ "$HERACROSS" != "" ];
+  then
+    printf "%s" "$HERACROSS" > Heracross.txt
+    export CATFILE="Heracross.txt"
+    export CATNAME="Heracross"
+    $CATEGORIZE
+    rm Heracross.txt
+    unset HERACROSS
+  fi
+
+  if [ "$HERDIER" != "" ];
+  then
+    printf "%s" "$HERDIER" > Herdier.txt
+    export CATFILE="Herdier.txt"
+    export CATNAME="Herdier"
+    $CATEGORIZE
+    rm Herdier.txt
+    unset HERDIER
+  fi
+
+  if [ "$HIPPOPOTAS" != "" ];
+  then
+    printf "%s" "$HIPPOPOTAS" > Hippopotas.txt
+    export CATFILE="Hippopotas.txt"
+    export CATNAME="Hippopotas"
+    $CATEGORIZE
+    rm Hippopotas.txt
+    unset HIPPOPOTAS
+  fi
+
+  if [ "$HIPPOWDON" != "" ];
+  then
+    printf "%s" "$HIPPOWDON" > Hippowdon.txt
+    export CATFILE="Hippowdon.txt"
+    export CATNAME="Hippowdon"
+    $CATEGORIZE
+    rm Hippowdon.txt
+    unset HIPPOWDON
+  fi
+
+  if [ "$HITMONCHAN" != "" ];
+  then
+    printf "%s" "$HITMONCHAN" > Hitmonchan.txt
+    export CATFILE="Hitmonchan.txt"
+    export CATNAME="Hitmonchan"
+    $CATEGORIZE
+    rm Hitmonchan.txt
+    unset HITMONCHAN
+  fi
+
+  if [ "$HITMONLEE" != "" ];
+  then
+    printf "%s" "$HITMONLEE" > Hitmonlee.txt
+    export CATFILE="Hitmonlee.txt"
+    export CATNAME="Hitmonlee"
+    $CATEGORIZE
+    rm Hitmonlee.txt
+    unset HITMONLEE
+  fi
+
+  if [ "$HITMONTOP" != "" ];
+  then
+    printf "%s" "$HITMONTOP" > Hitmontop.txt
+    export CATFILE="Hitmontop.txt"
+    export CATNAME="Hitmontop"
+    $CATEGORIZE
+    rm Hitmontop.txt
+    unset HITMONTOP
+  fi
+
+  if [ "$HOOH" != "" ];
+  then
+    printf "%s" "$HOOH" > Ho-Oh.txt
+    export CATFILE="Ho-Oh.txt"
+    export CATNAME="Ho-Oh"
+    $CATEGORIZE
+    rm Ho-Oh.txt
+    unset HOOH
+  fi
+
+  if [ "$HONCHKROW" != "" ];
+  then
+    printf "%s" "$HONCHKROW" > Honchkrow.txt
+    export CATFILE="Honchkrow.txt"
+    export CATNAME="Honchkrow"
+    $CATEGORIZE
+    rm Honchkrow.txt
+    unset HONCHKROW
+  fi
+
+  if [ "$HOOTHOOT" != "" ];
+  then
+    printf "%s" "$HOOTHOOT" > Hoothoot.txt
+    export CATFILE="Hoothoot.txt"
+    export CATNAME="Hoothoot"
+    $CATEGORIZE
+    rm Hoothoot.txt
+    unset HOOTHOOT
+  fi
+
+  if [ "$HOPPIP" != "" ];
+  then
+    printf "%s" "$HOPPIP" > Hoppip.txt
+    export CATFILE="Hoppip.txt"
+    export CATNAME="Hoppip"
+    $CATEGORIZE
+    rm Hoppip.txt
+    unset HOPPIP
+  fi
+
+  if [ "$HORSEA" != "" ];
+  then
+    printf "%s" "$HORSEA" > Horsea.txt
+    export CATFILE="Horsea.txt"
+    export CATNAME="Horsea"
+    $CATEGORIZE
+    rm Horsea.txt
+    unset HORSEA
+  fi
+
+  if [ "$HOUNDOOM" != "" ];
+  then
+    printf "%s" "$HOUNDOOM" > Houndoom.txt
+    export CATFILE="Houndoom.txt"
+    export CATNAME="Houndoom"
+    $CATEGORIZE
+    rm Houndoom.txt
+    unset HOUNDOOM
+  fi
+
+  if [ "$HOUNDOUR" != "" ];
+  then
+    printf "%s" "$HOUNDOUR" > Houndour.txt
+    export CATFILE="Houndour.txt"
+    export CATNAME="Houndour"
+    $CATEGORIZE
+    rm Houndour.txt
+    unset HOUNDOUR
+  fi
+
+  if [ "$HUNTAIL" != "" ];
+  then
+    printf "%s" "$HUNTAIL" > Huntail.txt
+    export CATFILE="Huntail.txt"
+    export CATNAME="Huntail"
+    $CATEGORIZE
+    rm Huntail.txt
+    unset HUNTAIL
+  fi
+
+  if [ "$HYDREIGON" != "" ];
+  then
+    printf "%s" "$HYDREIGON" > Hydreigon.txt
+    export CATFILE="Hydreigon.txt"
+    export CATNAME="Hydreigon"
+    $CATEGORIZE
+    rm Hydreigon.txt
+    unset HYDREIGON
+  fi
+
+  if [ "$HYPNO" != "" ];
+  then
+    printf "%s" "$HYPNO" > Hypno.txt
+    export CATFILE="Hypno.txt"
+    export CATNAME="Hypno"
+    $CATEGORIZE
+    rm Hypno.txt
+    unset HYPNO
+  fi
+
+  debug_end "Pokemon H species"
+
 fi
-
-if [ $Hariyama -ne 0 ];
-then
-   export CATFILE="Hariyama.txt"
-   export CATNAME="Hariyama"
-   $CATEGORIZE
-fi
-
-if [ $Haunter -ne 0 ];
-then
-   export CATFILE="Haunter.txt"
-   export CATNAME="Haunter"
-   $CATEGORIZE
-fi
-
-if [ $Haxorus -ne 0 ];
-then
-   export CATFILE="Haxorus.txt"
-   export CATNAME="Haxorus"
-   $CATEGORIZE
-fi
-
-if [ $Heatmor -ne 0 ];
-then
-   export CATFILE="Heatmor.txt"
-   export CATNAME="Heatmor"
-   $CATEGORIZE
-fi
-
-if [ $Heatran -ne 0 ];
-then
-   export CATFILE="Heatran.txt"
-   export CATNAME="Heatran"
-   $CATEGORIZE
-fi
-
-if [ $Heracross -ne 0 ];
-then
-   export CATFILE="Heracross.txt"
-   export CATNAME="Heracross"
-   $CATEGORIZE
-fi
-
-if [ $Herdier -ne 0 ];
-then
-   export CATFILE="Herdier.txt"
-   export CATNAME="Herdier"
-   $CATEGORIZE
-fi
-
-if [ $Hippopotas -ne 0 ];
-then
-   export CATFILE="Hippopotas.txt"
-   export CATNAME="Hippopotas"
-   $CATEGORIZE
-fi
-
-if [ $Hippowdon -ne 0 ];
-then
-   export CATFILE="Hippowdon.txt"
-   export CATNAME="Hippowdon"
-   $CATEGORIZE
-fi
-
-if [ $Hitmonchan -ne 0 ];
-then
-   export CATFILE="Hitmonchan.txt"
-   export CATNAME="Hitmonchan"
-   $CATEGORIZE
-fi
-
-if [ $Hitmonlee -ne 0 ];
-then
-   export CATFILE="Hitmonlee.txt"
-   export CATNAME="Hitmonlee"
-   $CATEGORIZE
-fi
-
-if [ $Hitmontop -ne 0 ];
-then
-   export CATFILE="Hitmontop.txt"
-   export CATNAME="Hitmontop"
-   $CATEGORIZE
-fi
-
-if [ $HoOh -ne 0 ];
-then
-   export CATFILE="Ho-Oh.txt"
-   export CATNAME="Ho-Oh"
-   $CATEGORIZE
-fi
-
-if [ $Honchkrow -ne 0 ];
-then
-   export CATFILE="Honchkrow.txt"
-   export CATNAME="Honchkrow"
-   $CATEGORIZE
-fi
-
-if [ $Hoothoot -ne 0 ];
-then
-   export CATFILE="Hoothoot.txt"
-   export CATNAME="Hoothoot"
-   $CATEGORIZE
-fi
-
-if [ $Hoppip -ne 0 ];
-then
-   export CATFILE="Hoppip.txt"
-   export CATNAME="Hoppip"
-   $CATEGORIZE
-fi
-
-if [ $Horsea -ne 0 ];
-then
-   export CATFILE="Horsea.txt"
-   export CATNAME="Horsea"
-   $CATEGORIZE
-fi
-
-if [ $Houndoom -ne 0 ];
-then
-   export CATFILE="Houndoom.txt"
-   export CATNAME="Houndoom"
-   $CATEGORIZE
-fi
-
-if [ $Houndour -ne 0 ];
-then
-   export CATFILE="Houndour.txt"
-   export CATNAME="Houndour"
-   $CATEGORIZE
-fi
-
-if [ $Huntail -ne 0 ];
-then
-   export CATFILE="Huntail.txt"
-   export CATNAME="Huntail"
-   $CATEGORIZE
-fi
-
-if [ $Hydreigon -ne 0 ];
-then
-   export CATFILE="Hydreigon.txt"
-   export CATNAME="Hydreigon"
-   $CATEGORIZE
-fi
-
-if [ $Hypno -ne 0 ];
-then
-   export CATFILE="Hypno.txt"
-   export CATNAME="Hypno"
-   $CATEGORIZE
-fi
-
-
-rm Happiny.txt
-rm Hariyama.txt
-rm Haunter.txt
-rm Haxorus.txt
-rm Heatmor.txt
-rm Heatran.txt
-rm Heracross.txt
-rm Herdier.txt
-rm Hippopotas.txt
-rm Hippowdon.txt
-rm Hitmonchan.txt
-rm Hitmonlee.txt
-rm Hitmontop.txt
-rm Ho-Oh.txt
-rm Honchkrow.txt
-rm Hoothoot.txt
-rm Hoppip.txt
-rm Horsea.txt
-rm Houndoom.txt
-rm Houndour.txt
-rm Huntail.txt
-rm Hydreigon.txt
-rm Hypno.txt

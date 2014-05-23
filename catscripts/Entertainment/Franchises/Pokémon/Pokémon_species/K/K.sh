@@ -1,224 +1,277 @@
 #!/bin/bash
-egrep -i 'Kabuto\b' newpages.txt >> Kabuto.txt
-egrep -i 'Kabutops' newpages.txt >> Kabutops.txt
-egrep -i 'Kadabra' newpages.txt >> Kadabra.txt
-egrep -i 'Kakuna' newpages.txt >> Kakuna.txt
-egrep -i 'Kangaskhan' newpages.txt >> Kangaskhan.txt
-egrep -i 'Karrablast' newpages.txt >> Karrablast.txt
-egrep -i 'Kecleon' newpages.txt >> Kecleon.txt
-egrep -i 'Keldeo' newpages.txt >> Keldeo.txt
-egrep -i 'Kingdra' newpages.txt >> Kingdra.txt
-egrep -i 'Kingler' newpages.txt >> Kingler.txt
-egrep -i 'Kirlia' newpages.txt >> Kirlia.txt
-egrep -i 'Klang' newpages.txt >> Klang.txt
-egrep -i 'Klink' newpages.txt >> Klink.txt
-egrep -i 'Klinklang' newpages.txt >> Klinklang.txt
-egrep -i 'Koffing' newpages.txt >> Koffing.txt
-egrep -i 'Krabby' newpages.txt  | egrep -iv 'Krabby patt(y|ies)' >> Krabby.txt
-egrep -i 'Kricketot' newpages.txt >> Kricketot.txt
-egrep -i 'Kricketune' newpages.txt >> Kricketune.txt
-egrep -i 'Krookodile' newpages.txt >> Krookodile.txt
-egrep -i 'Krokorok' newpages.txt >> Krokorok.txt
-egrep -i 'Kyogre' newpages.txt >> Kyogre.txt
-egrep -i 'Kyurem' newpages.txt >> Kyurem.txt
 
-Kabuto=$(stat --print=%s Kabuto.txt)
-Kabutops=$(stat --print=%s Kabutops.txt)
-Kadabra=$(stat --print=%s Kadabra.txt)
-Kakuna=$(stat --print=%s Kakuna.txt)
-Kangaskhan=$(stat --print=%s Kangaskhan.txt)
-Karrablast=$(stat --print=%s Karrablast.txt)
-Kecleon=$(stat --print=%s Kecleon.txt)
-Keldeo=$(stat --print=%s Keldeo.txt)
-Kingdra=$(stat --print=%s Kingdra.txt)
-Kingler=$(stat --print=%s Kingler.txt)
-Kirlia=$(stat --print=%s Kirlia.txt)
-Klang=$(stat --print=%s Klang.txt)
-Klink=$(stat --print=%s Klink.txt)
-Klinklang=$(stat --print=%s Klinklang.txt)
-Koffing=$(stat --print=%s Koffing.txt)
-Krabby=$(stat --print=%s Krabby.txt)
-Kricketot=$(stat --print=%s Kricketot.txt)
-Kricketune=$(stat --print=%s Kricketune.txt)
-Krookodile=$(stat --print=%s Krookodile.txt)
-Krokorok=$(stat --print=%s Krokorok.txt)
-Kyogre=$(stat --print=%s Kyogre.txt)
-Kyurem=$(stat --print=%s Kyurem.txt)
+KEYWORDS_KABUTO="Kabuto\b"
+KEYWORDS_KABUTOPS="Kabutops"
+KEYWORDS_KADABRA="Kadabra"
+KEYWORDS_KAKUNA="Kakuna"
+KEYWORDS_KANGASKHAN="Kangaskhan"
+KEYWORDS_KARRABLAST="Karrablast"
+KEYWORDS_KECLEON="Kecleon"
+KEYWORDS_KELDEO="Keldeo"
+KEYWORDS_KINGDRA="Kingdra"
+KEYWORDS_KINGLER="Kingler"
+KEYWORDS_KIRLIA="Kirlia"
+KEYWORDS_KLANG="Klang"
+KEYWORDS_KLINK="Klink"
+KEYWORDS_KLINKLANG="Klinklang"
+KEYWORDS_KOFFING="Koffing"
+KEYWORDS_KRABBY="Krabby"
+KEYWORDS_KRABBY_EXCLUDE="Krabby(| )patt(y|ies)"
+KEYWORDS_KRICKETOT="Kricketot"
+KEYWORDS_KRICKETUNE="Kricketune"
+KEYWORDS_KROOKODILE="Krookodile"
+KEYWORDS_KROKOROK="Krokorok"
+KEYWORDS_KYOGRE="Kyogre"
+KEYWORDS_KYUREM="Kyurem"
 
-if [ $Kabuto -ne 0 ];
+if [ "$1" == "" ];
 then
-   export CATFILE="Kabuto.txt"
-   export CATNAME="Kabuto"
-   $CATEGORIZE
+
+  debug_start "Pokemon K species"
+
+  KABUTO=$(egrep -i "$KEYWORDS_KABUTO" newpages.txt)
+  KABUTOPS=$(egrep -i "$KEYWORDS_KABUTOPS" newpages.txt)
+  KADABRA=$(egrep -i "$KEYWORDS_KADABRA" newpages.txt)
+  KAKUNA=$(egrep -i "$KEYWORDS_KAKUNA" newpages.txt)
+  KANGASKHAN=$(egrep -i "$KEYWORDS_KANGASKHAN" newpages.txt)
+  KARRABLAST=$(egrep -i "$KEYWORDS_KARRABLAST" newpages.txt)
+  KECLEON=$(egrep -i "$KEYWORDS_KECLEON" newpages.txt)
+  KELDEO=$(egrep -i "$KEYWORDS_KELDEO" newpages.txt)
+  KINGDRA=$(egrep -i "$KEYWORDS_KINGDRA" newpages.txt)
+  KINGLER=$(egrep -i "$KEYWORDS_KINGLER" newpages.txt)
+  KIRLIA=$(egrep -i "$KEYWORDS_KIRLIA" newpages.txt)
+  KLANG=$(egrep -i "$KEYWORDS_KLANG" newpages.txt)
+  KLINK=$(egrep -i "$KEYWORDS_KLINK" newpages.txt)
+  KLINKLANG=$(egrep -i "$KEYWORDS_KLINKLANG" newpages.txt)
+  KOFFING=$(egrep -i "$KEYWORDS_KOFFING" newpages.txt)
+  KRABBY=$(egrep -i "$KEYWORDS_KRABBY" newpages.txt | egrep -iv "$KEYWORDS_KRABBY_EXCLUDE")
+  KRICKETOT=$(egrep -i "$KEYWORDS_KRICKETOT" newpages.txt)
+  KRICKETUNE=$(egrep -i "$KEYWORDS_KRICKETUNE" newpages.txt)
+  KROOKODILE=$(egrep -i "$KEYWORDS_KROOKODILE" newpages.txt)
+  KROKOROK=$(egrep -i "$KEYWORDS_KROKOROK" newpages.txt)
+  KYOGRE=$(egrep -i "$KEYWORDS_KYOGRE" newpages.txt)
+  KYUREM=$(egrep -i "$KEYWORDS_KYUREM" newpages.txt)
+
+  if [ "$KABUTO" != "" ];
+  then
+    printf "%s" "$KABUTO" > Kabuto.txt
+    export CATFILE="Kabuto.txt"
+    export CATNAME="Kabuto"
+    $CATEGORIZE
+    rm Kabuto.txt
+    unset KABUTO
+  fi
+
+  if [ "$KABUTOPS" != "" ];
+  then
+    printf "%s" "$KABUTOPS" > Kabutops.txt
+    export CATFILE="Kabutops.txt"
+    export CATNAME="Kabutops"
+    $CATEGORIZE
+    rm Kabutops.txt
+    unset KABUTOPS
+  fi
+
+  if [ "$KADABRA" != "" ];
+  then
+    printf "%s" "$KADABRA" > Kadabra.txt
+    export CATFILE="Kadabra.txt"
+    export CATNAME="Kadabra"
+    $CATEGORIZE
+    rm Kadabra.txt
+    unset KADABRA
+  fi
+
+  if [ "$KAKUNA" != "" ];
+  then
+    printf "%s" "$KAKUNA" > Kakuna.txt
+    export CATFILE="Kakuna.txt"
+    export CATNAME="Kakuna"
+    $CATEGORIZE
+    rm Kakuna.txt
+    unset KAKUNA
+  fi
+
+  if [ "$KANGASKHAN" != "" ];
+  then
+    printf "%s" "$KANGASKHAN" > Kangaskhan.txt
+    export CATFILE="Kangaskhan.txt"
+    export CATNAME="Kangaskhan"
+    $CATEGORIZE
+    rm Kangaskhan.txt
+    unset KANGASKHAN
+  fi
+
+  if [ "$KARRABLAST" != "" ];
+  then
+    printf "%s" "$KARRABLAST" > Karrablast.txt
+    export CATFILE="Karrablast.txt"
+    export CATNAME="Karrablast"
+    $CATEGORIZE
+    rm Karrablast.txt
+    unset KARRABLAST
+  fi
+
+  if [ "$KECLEON" != "" ];
+  then
+    printf "%s" "$KECLEON" > Kecleon.txt
+    export CATFILE="Kecleon.txt"
+    export CATNAME="Kecleon"
+    $CATEGORIZE
+    rm Kecleon.txt
+    unset KECLEON
+  fi
+
+  if [ "$KELDEO" != "" ];
+  then
+    printf "%s" "$KELDEO" > Keldeo.txt
+    export CATFILE="Keldeo.txt"
+    export CATNAME="Keldeo"
+    $CATEGORIZE
+    rm Keldeo.txt
+    unset KELDEO
+  fi
+
+  if [ "$KINGDRA" != "" ];
+  then
+    printf "%s" "$KINGDRA" > Kingdra.txt
+    export CATFILE="Kingdra.txt"
+    export CATNAME="Kingdra"
+    $CATEGORIZE
+    rm Kingdra.txt
+    unset KINGDRA
+  fi
+
+  if [ "$KINGLER" != "" ];
+  then
+    printf "%s" "$KINGLER" > Kingler.txt
+    export CATFILE="Kingler.txt"
+    export CATNAME="Kingler"
+    $CATEGORIZE
+    rm Kingler.txt
+    unset KINGLER
+  fi
+
+  if [ "$KIRLIA" != "" ];
+  then
+    printf "%s" "$KIRLIA" > Kirlia.txt
+    export CATFILE="Kirlia.txt"
+    export CATNAME="Kirlia"
+    $CATEGORIZE
+    rm Kirlia.txt
+    unset KIRLIA
+  fi
+
+  if [ "$KLANG" != "" ];
+  then
+    printf "%s" "$KLANG" > Klang.txt
+    export CATFILE="Klang.txt"
+    export CATNAME="Klang"
+    $CATEGORIZE
+    rm Klang.txt
+    unset KLANG
+  fi
+
+  if [ "$KLINK" != "" ];
+  then
+    printf "%s" "$KLINK" > Klink.txt
+    export CATFILE="Klink.txt"
+    export CATNAME="Klink"
+    $CATEGORIZE
+    rm Klink.txt
+    unset KLINK
+  fi
+
+  if [ "$KLINKLANG" != "" ];
+  then
+    printf "%s" "$KLINKLANG" > Klinklang.txt
+    export CATFILE="Klinklang.txt"
+    export CATNAME="Klinklang"
+    $CATEGORIZE
+    rm Klinklang.txt
+    unset KLINKLANG
+  fi
+
+  if [ "$KOFFING" != "" ];
+  then
+    printf "%s" "$KOFFING" > Koffing.txt
+    export CATFILE="Koffing.txt"
+    export CATNAME="Koffing"
+    $CATEGORIZE
+    rm Koffing.txt
+    unset KOFFING
+  fi
+
+  if [ "$KRABBY" != "" ];
+  then
+    printf "%s" "$KRABBY" > Krabby.txt
+    export CATFILE="Krabby.txt"
+    export CATNAME="Krabby"
+    $CATEGORIZE
+    rm Krabby.txt
+    unset KRABBY
+  fi
+
+  if [ "$KRICKETOT" != "" ];
+  then
+    printf "%s" "$KRICKETOT" > Kricketot.txt
+    export CATFILE="Kricketot.txt"
+    export CATNAME="Kricketot"
+    $CATEGORIZE
+    rm Kricketot.txt
+    unset KRICKETOT
+  fi
+
+  if [ "$KRICKETUNE" != "" ];
+  then
+    printf "%s" "$KRICKETUNE" > Kricketune.txt
+    export CATFILE="Kricketune.txt"
+    export CATNAME="Kricketune"
+    $CATEGORIZE
+    rm Kricketune.txt
+    unset KRICKETUNE
+  fi
+
+  if [ "$KROOKODILE" != "" ];
+  then
+    printf "%s" "$KROOKODILE" > Krookodile.txt
+    export CATFILE="Krookodile.txt"
+    export CATNAME="Krookodile"
+    $CATEGORIZE
+    rm Krookodile.txt
+    unset KROOKODILE
+  fi
+
+  if [ "$KROKOROK" != "" ];
+  then
+    printf "%s" "$KROKOROK" > Krokorok.txt
+    export CATFILE="Krokorok.txt"
+    export CATNAME="Krokorok"
+    $CATEGORIZE
+    rm Krokorok.txt
+    unset KROKOROK
+  fi
+
+  if [ "$KYOGRE" != "" ];
+  then
+    printf "%s" "$KYOGRE" > Kyogre.txt
+    export CATFILE="Kyogre.txt"
+    export CATNAME="Kyogre"
+    $CATEGORIZE
+    rm Kyogre.txt
+    unset KYOGRE
+  fi
+
+  if [ "$KYUREM" != "" ];
+  then
+    printf "%s" "$KYUREM" > Kyurem.txt
+    export CATFILE="Kyurem.txt"
+    export CATNAME="Kyurem"
+    $CATEGORIZE
+    rm Kyurem.txt
+    unset KYUREM
+  fi
+
+  debug_end "Pokemon K scripts"
+
 fi
-
-if [ $Kabutops -ne 0 ];
-then
-   export CATFILE="Kabutops.txt"
-   export CATNAME="Kabutops"
-   $CATEGORIZE
-fi
-
-if [ $Kadabra -ne 0 ];
-then
-   export CATFILE="Kadabra.txt"
-   export CATNAME="Kadabra"
-   $CATEGORIZE
-fi
-
-if [ $Kakuna -ne 0 ];
-then
-   export CATFILE="Kakuna.txt"
-   export CATNAME="Kakuna"
-   $CATEGORIZE
-fi
-
-if [ $Kangaskhan -ne 0 ];
-then
-   export CATFILE="Kangaskhan.txt"
-   export CATNAME="Kangaskhan"
-   $CATEGORIZE
-fi
-
-if [ $Karrablast -ne 0 ];
-then
-   export CATFILE="Karrablast.txt"
-   export CATNAME="Karrablast"
-   $CATEGORIZE
-fi
-
-if [ $Kecleon -ne 0 ];
-then
-   export CATFILE="Kecleon.txt"
-   export CATNAME="Kecleon"
-   $CATEGORIZE
-fi
-
-if [ $Keldeo -ne 0 ];
-then
-   export CATFILE="Keldeo.txt"
-   export CATNAME="Keldeo"
-   $CATEGORIZE
-fi
-
-if [ $Kingdra -ne 0 ];
-then
-   export CATFILE="Kingdra.txt"
-   export CATNAME="Kingdra"
-   $CATEGORIZE
-fi
-
-if [ $Kingler -ne 0 ];
-then
-   export CATFILE="Kingler.txt"
-   export CATNAME="Kingler"
-   $CATEGORIZE
-fi
-
-if [ $Kirlia -ne 0 ];
-then
-   export CATFILE="Kirlia.txt"
-   export CATNAME="Kirlia"
-   $CATEGORIZE
-fi
-
-if [ $Klang -ne 0 ];
-then
-   export CATFILE="Klang.txt"
-   export CATNAME="Klang"
-   $CATEGORIZE
-fi
-
-if [ $Klink -ne 0 ];
-then
-   export CATFILE="Klink.txt"
-   export CATNAME="Klink"
-   $CATEGORIZE
-fi
-
-if [ $Klinklang -ne 0 ];
-then
-   export CATFILE="Klinklang.txt"
-   export CATNAME="Klinklang"
-   $CATEGORIZE
-fi
-
-if [ $Koffing -ne 0 ];
-then
-   export CATFILE="Koffing.txt"
-   export CATNAME="Koffing"
-   $CATEGORIZE
-fi
-
-if [ $Krabby -ne 0 ];
-then
-   export CATFILE="Krabby.txt"
-   export CATNAME="Krabby"
-   $CATEGORIZE
-fi
-
-if [ $Kricketot -ne 0 ];
-then
-   export CATFILE="Kricketot.txt"
-   export CATNAME="Kricketot"
-   $CATEGORIZE
-fi
-
-if [ $Kricketune -ne 0 ];
-then
-   export CATFILE="Kricketune.txt"
-   export CATNAME="Kricketune"
-   $CATEGORIZE
-fi
-
-if [ $Krookodile -ne 0 ];
-then
-   export CATFILE="Krookodile.txt"
-   export CATNAME="Krookodile"
-   $CATEGORIZE
-fi
-
-if [ $Krokorok -ne 0 ];
-then
-   export CATFILE="Krokorok.txt"
-   export CATNAME="Krokorok"
-   $CATEGORIZE
-fi
-
-if [ $Kyogre -ne 0 ];
-then
-   export CATFILE="Kyogre.txt"
-   export CATNAME="Kyogre"
-   $CATEGORIZE
-fi
-
-if [ $Kyurem -ne 0 ];
-then
-   export CATFILE="Kyurem.txt"
-   export CATNAME="Kyurem"
-   $CATEGORIZE
-fi
-
-
-rm Kabuto.txt
-rm Kabutops.txt
-rm Kadabra.txt
-rm Kakuna.txt
-rm Kangaskhan.txt
-rm Karrablast.txt
-rm Kecleon.txt
-rm Keldeo.txt
-rm Kingdra.txt
-rm Kingler.txt
-rm Kirlia.txt
-rm Klang.txt
-rm Klink.txt
-rm Klinklang.txt
-rm Koffing.txt
-rm Krabby.txt
-rm Kricketot.txt
-rm Kricketune.txt
-rm Krookodile.txt
-rm Krokorok.txt
-rm Kyogre.txt
-rm Kyurem.txt
