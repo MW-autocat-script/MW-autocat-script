@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'Sri(| )Lanka|Ceylon' newpages.txt >> SriLanka.txt
+KEYWORDS_SRILANKA="Sri(| )Lanka|Ceylon"
 
-SRILANKA=$(stat --print=%s SriLanka.txt)
-
-if [ $SRILANKA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="SriLanka.txt"
-  export CATNAME="Sri Lanka"
-  $CATEGORIZE
-fi
+  
+  debug_start "Sri Lanka"
 
-rm SriLanka.txt
+  SRILANKA=$(egrep -i "$KEYWORDS_SRILANKA" newpages.txt)
+
+  if [ "$SRILANKA" != "" ];
+  then
+    printf "%s" "$SRILANKA" > SriLanka.txt
+    export CATFILE="SriLanka.txt"
+    export CATNAME="Sri Lanka"
+    $CATEGORIZE
+    rm SriLanka.txt
+    unset SRILANKA
+  fi
+
+  debug_end "Sri Lanka"
+
+fi

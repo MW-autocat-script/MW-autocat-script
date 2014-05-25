@@ -1,14 +1,25 @@
 #!/bin/bash
 
-egrep -i 'Ethiopia|Ghadafi|Abyssinia' newpages.txt >> Ethiopia.txt
+KEYWORDS_ETHIOPIA="Ethiopia|Ghadafi|Abyssinia"
+KEYWORDS_ETHIOPIA_ALL="$KEYWORDS_ETHIOPIA"
 
-ETHIOPIA=$(stat --print=%s Ethiopia.txt)
-
-if [ $ETHIOPIA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Ethiopia.txt"
-  export CATNAME="Ethiopia"
-  $CATEGORIZE
-fi
+  
+  debug_start "Ethiopia"
 
-rm Ethiopia.txt
+  ETHIOPIA=$(egrep -i "$KEYWORDS_ETHIOPIA" newpages.txt)
+
+  if [ "$ETHIOPIA" != "" ];
+  then
+    printf "%s" "$ETHIOPIA" > Ethiopia.txt
+    export CATFILE="Ethiopia.txt"
+    export CATNAME="Ethiopia"
+    $CATEGORIZE
+    rm Ethiopia.txt
+    unset ETHIOPIA
+  fi
+
+  debug_end "Ethiopia"
+
+fi

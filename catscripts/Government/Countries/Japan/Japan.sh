@@ -1,44 +1,62 @@
 #!/bin/bash
 
-egrep -i 'Japan\b' newpages.txt | egrep -iv 'Tokyo|Hiroshima|Kyoto|Nagasaki' >> Japan.txt
-egrep -i 'Tokyo|Kyoto' newpages.txt >> Tokyo.txt
-egrep -i 'Hiroshima' newpages.txt >> Hiroshima.txt
-egrep -i 'Nagasaki' newpages.txt >> Nagasaki.txt
+KEYWORDS_JAPAN="Japan\b"
+KEYWORDS_TOKYO="Tokyo|Kyoto"
+KEYWORDS_HIROSHIMA="Hiroshima"
+KEYWORDS_NAGASAKI="Nagasaki"
+KEYWORDS_JAPAN_EXCLUDE="$KEYWORDS_TOKYO|$KEYWORDS_HIROSHIMA|$KEYWORDS_NAGASAKI"
+KEYWORDS_JAPAN_ALL="$KEYWORDS_JAPAN|$KEYWORDS_HIROSHIMA|$KEYWORDS_NAGASAKI|$KEYWORDS_TOKYO"
 
-JAPAN=$(stat --print=%s Japan.txt)
-TOKYO=$(stat --print=%s Tokyo.txt)
-HIROSHIMA=$(stat --print=%s Hiroshima.txt)
-NAGASAKI=$(stat --print=%s Nagasaki.txt)
-
-if [ $JAPAN -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Japan.txt"
-  export CATNAME="Japan"
-  $CATEGORIZE
-fi
+  
+  debug_start "Japan"
 
-if [ $TOKYO -ne 0 ];
-then
-  export CATFILE="Tokyo.txt"
-  export CATNAME="Tokyo"
-  $CATEGORIZE
-fi
+  JAPAN=$(egrep -i "$KEYWORDS_JAPAN" newpages.txt | egrep -iv "$KEYWORDS_JAPAN_EXCLUDE")
+  TOKYO=$(egrep -i "$KEYWORDS_TOKYO" newpages.txt)
+  HIROSHIMA=$(egrep -i "$KEYWORDS_HIROSHIMA" newpages.txt)
+  NAGASAKI=$(egrep -i "$KEYWORDS_NAGASAKI" newpages.txt)
 
-if [ $HIROSHIMA -ne 0 ];
-then
-  export CATFILE="Hiroshima.txt"
-  export CATNAME="Hiroshima"
-  $CATEGORIZE
-fi
+  if [ "$JAPAN" != "" ];
+  then
+    printf "%s" "$JAPAN" > Japan.txt
+    export CATFILE="Japan.txt"
+    export CATNAME="Japan"
+    $CATEGORIZE
+    rm Japan.txt
+    unset JAPAN
+  fi
 
-if [ $NAGASAKI -ne 0 ];
-then
-  export CATFILE="Nagasaki.txt"
-  export CATNAME="Nagasaki"
-  $CATEGORIZE
-fi
+  if [ "$TOKYO" != "" ];
+  then
+    printf "%s" "$TOKYO" > Tokyo.txt
+    export CATFILE="Tokyo.txt"
+    export CATNAME="Tokyo"
+    $CATEGORIZE
+    rm Tokyo.txt
+    unset TOKYO
+  fi
 
-rm Japan.txt
-rm Tokyo.txt
-rm Hiroshima.txt
-rm Nagasaki.txt
+  if [ "$HIROSHIMA" != "" ];
+  then
+    printf "%s" "$HIROSHIMA" > Hiroshima.txt
+    export CATFILE="Hiroshima.txt"
+    export CATNAME="Hiroshima"
+    $CATEGORIZE
+    rm Hiroshima.txt
+    unset HIROSHIMA
+  fi
+
+  if [ "$NAGASAKI" != "" ];
+  then
+    printf "%s" "$NAGASAKI" > Nagasaki.txt
+    export CATFILE="Nagasaki.txt"
+    export CATNAME="Nagasaki"
+    $CATEGORIZE
+    rm Nagasaki.txt
+    unset NAGASAKI
+  fi
+
+  debug_end "Japan"
+
+fi

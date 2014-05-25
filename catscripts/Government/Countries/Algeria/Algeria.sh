@@ -1,25 +1,24 @@
 #!/bin/bash
 
+KEYWORDS_ALGERIA="Algeria"
 
-if [ "$DEBUG" == "yes" ];
+if [ "$1" == "" ];
 then
-  printf "Starting Algeria\n" 
-fi
 
-egrep -i 'Algeria' newpages.txt >> Algeria.txt
+  debug_start "Algeria"
 
-ALGERIA=$(stat --print=%s Algeria.txt)
+  ALGERIA=$(egrep -i "$KEYWORDS_ALGERIA" newpages.txt)
 
-if [ $ALGERIA -ne 0 ];
-then
-  export CATFILE="Algeria.txt"
-  export CATNAME="Algeria"
-  $CATEGORIZE
-fi
+  if [ "$ALGERIA" != "" ];
+  then
+    printf "%s" "$ALGERIA" > Algeria.txt
+    export CATFILE="Algeria.txt"
+    export CATNAME="Algeria"
+    $CATEGORIZE
+    rm Algeria.txt
+    unset ALGERIA
+  fi
 
-rm Algeria.txt
+  debug_end "Algeria"
 
-if [ "$DEBUG" == "yes" ];
-then
-  printf "Finishing Algeria\n" 
 fi

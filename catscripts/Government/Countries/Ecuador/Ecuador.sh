@@ -1,16 +1,25 @@
 #!/bin/bash
 
-export KEYWORDS_ECUADOR="Ecuador"
+KEYWORDS_ECUADOR="Ecuador"
+KEYWORDS_ECUADOR_ALL="$KEYWORDS_ECUADOR"
 
-egrep -i "$KEYWORDS_ECUADOR" newpages.txt >> Ecuador.txt
-
-ECUADOR=$(stat --print=%s Ecuador.txt)
-
-if [ $ECUADOR -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Ecuador.txt"
-  export CATNAME="Ecuador"
-  $CATEGORIZE
-fi
 
-rm Ecuador.txt
+  debug_start "Ecuador"
+
+  ECUADOR=$(egrep -i "$KEYWORDS_ECUADOR" newpages.txt)
+
+  if [ "$ECUADOR" != "" ];
+  then
+    printf "%s" "$ECUADOR" > Ecuador.txt
+    export CATFILE="Ecuador.txt"
+    export CATNAME="Ecuador"
+    $CATEGORIZE
+    rm Ecuador.txt
+    unset ECUADOR
+  fi
+
+  debug_end "Ecuador"
+
+fi

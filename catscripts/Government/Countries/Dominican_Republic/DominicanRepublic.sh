@@ -1,14 +1,25 @@
 #!/bin/bash
 
-egrep -i 'Dominican(| )Republic' newpages.txt >> DominicanRepublic.txt
+KEYWORDS_DOMINICANREPUBLIC="Dominican(| )Republic"
+KEYWORDS_DOMINICANREPUBLIC_ALL="$KEYWORDS_DOMINICANREPUBLIC"
 
-DOMINICAN=$(stat --print=%s DominicanRepublic.txt)
-
-if [ $DOMINICAN -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="DominicanRepublic.txt"
-  export CATNAME="Dominican Republic"
-  $CATEGORIZE
-fi
 
-rm DominicanRepublic.txt
+  debug_start "Dominican Republic"
+
+  DOMINICAN=$(egrep -i "$KEYWORDS_DOMINICANREPUBLIC" newpages.txt)
+
+  if [ "$DOMINICAN" != "" ];
+  then
+    printf "%s" "$DOMINICAN" > DominicanRepublic.txt
+    export CATFILE="DominicanRepublic.txt"
+    export CATNAME="Dominican Republic"
+    $CATEGORIZE
+    rm DominicanRepublic.txt
+    unset DOMINICAN
+  fi
+
+  debug_start "Dominican Republic"
+
+fi

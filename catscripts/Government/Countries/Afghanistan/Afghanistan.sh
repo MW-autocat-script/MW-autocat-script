@@ -1,24 +1,25 @@
 #!/bin/bash
 
-if [ "$DEBUG" == "yes" ];
+KEYWORDS_AFGHANISTAN="Afghani(|stan)"
+KEYWORDS_AFGHANISTAN_EXCLUDE="Afghanistan War|war in Afghanistan"
+
+if [ "$1" == "" ];
 then
-  printf "Starting Afghanistan\n" 
-fi
 
-egrep -i 'Afghani(|stan)' newpages.txt | egrep -iv 'Afghanistan War|war in Afghanistan' >> Afghanistan.txt
+  debug_start "Afghanistan"
 
-AFGHANISTAN=$(stat --print=%s Afghanistan.txt)
+  AFGHANISTAN=$(egrep -i "$KEYWORDS_AFGHANISTAN" newpages.txt | egrep -iv "$KEYWORDS_AFGHANISTAN_EXCLUDE")
 
-if [ $AFGHANISTAN -ne 0 ];
-then
-  export CATFILE="Afghanistan.txt"
-  export CATNAME="Afghanistan"
-  $CATEGORIZE
-fi
+  if [ "$AFGHANISTAN" != "" ];
+  then
+    printf "%s" "$AFGHANISTAN" > Afghanistan.txt
+    export CATFILE="Afghanistan.txt"
+    export CATNAME="Afghanistan"
+    $CATEGORIZE
+    rm Afghanistan.txt
+    unset AFGHANISTAN
+  fi
 
-rm Afghanistan.txt
+  debug_end "Afghanistan"
 
-if [ "$DEBUG" == "yes" ];
-then
-  printf "Finishing Afghanistan\n" 
 fi

@@ -1,31 +1,48 @@
 #!/bin/bash
 
 
-. ./catscripts/Government/Countries/Denmark/Vikings/Vikings.sh
-
-KEYWORDS_DENMARK="Denmark"
-KEYWORDS_GREENLAND="Greenland"
-KEYWORDS_DENMARK_EXCLUDE="$KEYWORDS_VIKINGS|$KEYWORDS_GREENLAND"
-
-egrep -i "$KEYWORDS_DENMARK" newpages.txt | egrep -iv "$KEYWORDS_DENMARK_EXCLUDE" >> Denmark.txt
-egrep -i "$KEYWORDS_GREENLAND" newpages.txt >> Greenland.txt
-
-DENMARK=$(stat --print=%s Denmark.txt)
-GREENLAND=$(stat --print=%s Greenland.txt)
-
-if [ $DENMARK -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Denmark.txt"
-  export CATNAME="Denmark"
-  $CATEGORIZE
-fi
 
-if [ $GREENLAND -ne 0 ];
-then
-  export CATFILE="Greenland.txt"
-  export CATNAME="Greenland"
-  $CATEGORIZE
-fi
+  debug_start "Denmark"
 
-rm Denmark.txt
-rm Greenland.txt
+  . ./catscripts/Government/Countries/Denmark/Vikings/Vikings.sh #KEYWORDS_VIKINGS
+
+  KEYWORDS_DENMARK="Denmark"
+  KEYWORDS_GREENLAND="Greenland"
+  KEYWORDS_DENMARK_EXCLUDE="$KEYWORDS_VIKINGS|$KEYWORDS_GREENLAND"
+
+  DENMARK=$(egrep -i "$KEYWORDS_DENMARK" newpages.txt | egrep -iv "$KEYWORDS_DENMARK_EXCLUDE")
+  GREENLAND=$(egrep -i "$KEYWORDS_GREENLAND" newpages.txt)
+
+  if [ "$DENMARK" != "" ];
+  then
+    printf "%s" "$DENMARK" > Denmark.txt
+    export CATFILE="Denmark.txt"
+    export CATNAME="Denmark"
+    $CATEGORIZE
+    rm Denmark.txt
+    unset DENMARK
+  fi
+
+  if [ "$GREENLAND" != "" ];
+  then
+    printf "%s" "$GREENLAND" > Greenland.txt
+    export CATFILE="Greenland.txt"
+    export CATNAME="Greenland"
+    $CATEGORIZE
+    rm Greenland.txt
+    unset GREENLAND
+  fi
+
+  debug_end "Denmark"
+
+else
+
+  . ./catscripts/Government/Countries/Denmark/Vikings/Vikings.sh norun #KEYWORDS_VIKINGS
+
+  KEYWORDS_DENMARK="Denmark"
+  KEYWORDS_GREENLAND="Greenland"
+  KEYWORDS_DENMARK_EXCLUDE="$KEYWORDS_VIKINGS|$KEYWORDS_GREENLAND"
+
+fi

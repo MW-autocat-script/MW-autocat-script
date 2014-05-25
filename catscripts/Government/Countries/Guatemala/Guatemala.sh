@@ -1,14 +1,25 @@
 #!/bin/bash
 
-egrep -i 'Guatemala|Guatamala' newpages.txt >> Guatemala.txt
+KEYWORDS_GUATEMALA="Guat(a|e)mala"
+KEYWORDS_GUATEMALA_ALL="$KEYWORDS_GUATEMALA"
 
-GUATEMALA=$(stat --print=%s Guatemala.txt)
-
-if [ $GUATEMALA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Guatemala.txt"
-  export CATNAME="Guatemala"
-  $CATEGORIZE
-fi
+  
+  debug_start "Guatemala"
 
-rm Guatemala.txt
+  GUATEMALA=$(egrep -i "$KEYWORDS_GUATEMALA" newpages.txt)
+
+  if [ "$GUATEMALA" != "" ];
+  then
+    printf "%s" "$GUATEMALA" > Guatemala.txt
+    export CATFILE="Guatemala.txt"
+    export CATNAME="Guatemala"
+    $CATEGORIZE
+    rm Guatemala.txt
+    unset GUATEMALA
+  fi
+
+  debug_end "Guatemala"
+
+fi

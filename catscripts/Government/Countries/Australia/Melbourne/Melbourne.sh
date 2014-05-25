@@ -1,14 +1,26 @@
 #!/bin/bash
 
-egrep -i 'Melbourne' newpages.txt | egrep -iv 'Melbourne(|,) Fl' >> Melbourne.txt
+KEYWORDS_MELBOURNE="Melbourne"
+KEYWORDS_MELBOURNE_EXCLUDE="Melbourne(|,) Fl"
+KEYWORDS_MELBOURNE_ALL="$KEYWORDS_MELBOURNE"
 
-MELBOURNE=$(stat --print=%s Melbourne.txt)
-
-if [ $MELBOURNE -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Melbourne.txt"
-  export CATNAME="Melbourne, Australia"
-  $CATEGORIZE
-fi
+  
+  debug_start "Melbourne, Australia"
 
-rm Melbourne.txt
+  MELBOURNE=$(egrep -i "$KEYWORDS_MELBOURNE" newpages.txt | egrep -iv "$KEYWORDS_MELBOURNE_EXCLUDE")
+
+  if [ "$MELBOURNE" != "" ];
+  then
+    printf "%s" "$MELBOURNE" > Melbourne.txt
+    export CATFILE="Melbourne.txt"
+    export CATNAME="Melbourne, Australia"
+    $CATEGORIZE
+    rm Melbourne.txt
+    unset MELBOURNE
+  fi
+
+  debug_end "Melbourne, Australia"
+
+fi

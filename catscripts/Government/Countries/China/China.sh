@@ -1,45 +1,76 @@
 #!/bin/bash
 
-egrep -i "People(|')s(| )Republic(| )of(| )China" newpages.txt >> China.txt
-egrep -i 'China' newpages.txt | egrep -iv 'Republic(| )of(| )China|fine(| )china|antique(| )china|Great(| )Wall(| )of(| )China|Beijing|Hong(| )Kong|China(| )town' >> China.txt #There are two "Republics of China". If one is not named  explicitly, presume the question is about the People's Republic, as it is larger and more internationally recognized
-egrep -i "Great(| )Wall(| )of(| )China" newpages.txt >> GreatWall.txt
-egrep -i "Beijing" newpages.txt >> Beijing.txt
-egrep -i "Hong(| )Kong" newpages.txt >> HongKong.txt 
+KEYWORDS_CHINA="People(|')s(| )Republic(| )of(| )China"
+KEYWORDS_CHINA_SECONDARY="China"
+KEYWORDS_HONGKONG="Hong(| )Kong"
+KEYWORDS_BEIJING="Beijing"
+KEYWORDS_GREATWALL="Great(| )Wall(| )of(| )China"
+KEYWORDS_CHINA_SECONDARY_EXCLUDE="Republic(| )of(| )China|fine(| )china|antique(| )china|China(| )town|$KEYWORDS_HONGKONG|$KEYWORDS_BEIJING|$KEYWORDS_GREATWALL"
+KEYWORDS_CHINA_ALL="$KEYWORDS_CHINA|$KEYWORDS_CHINA_SECONDARY|$KEYWORDS_HONGKONG|$KEYWORDS_BEIJING|$KEYWORDS_GREATWALL"
 
-CHINA=$(stat --print=%s China.txt)
-WALL=$(stat --print=%s GreatWall.txt)
-BEIJING=$(stat --print=%s Beijing.txt)
-HONGKONG=$(stat --print=%s HongKong.txt)
 
-if [ $CHINA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="China.txt"
-  export CATNAME="China"
-  $CATEGORIZE
+  
+  debug_start "China"
+
+  CHINA=$(egrep -i "$KEYWORDS_CHINA" newpages.txt)
+  CHINASECONDARY=$(egrep -i "$KEYWORDS_CHINA_SECONDARY" newpages.txt | egrep -iv "$KEYWORDS_CHINA_SECONDARY_EXCLUDE")
+  WALL=$(egrep -i "$KEYWORDS_GREATWALL" newpages.txt)
+  BEIJING=$(egrep -i "$KEYWORDS_BEIJING" newpages.txt)
+  HONGKONG=$(egrep -i "$KEYWORDS_HONGKONG" newpages.txt)
+
+  if [ "$CHINA" != "" ];
+  then
+    printf "%s" "$CHINA" > China.txt
+    export CATFILE="China.txt"
+    export CATNAME="China"
+    $CATEGORIZE
+    rm China.txt
+    unset CHINA
+  fi
+
+  if [ "$CHINASECONDARY" != "" ];
+  then
+    printf "%s" "$CHINASECONDARY" > China.txt
+    export CATFILE="China.txt"
+    export CATNAME="China"
+    $CATEGORIZE
+    rm China.txt
+    unset CHINASECONDARY
+  fi
+
+  if [ "$WALL" != "" ];
+  then
+    printf "%s" "$WALL" > GreatWall.txt
+    export CATFILE="GreatWall.txt"
+    export CATNAME="Great Wall of China"
+    $CATEGORIZE
+    rm GreatWall.txt
+    unset WALL
+  fi
+
+  if [ "$BEIJING" != "" ];
+  then
+    printf "%s" "$BEIJING" > Beijing.txt
+    export CATFILE="Beijing.txt"
+    export CATNAME="Beijing"
+    $CATEGORIZE
+    rm Beijing.txt
+    unset BEIJING
+  fi
+
+  if [ "$HONGKONG" != "" ];
+  then
+    printf "%s" "$HONGKONG" > HongKong.txt
+    export CATFILE="HongKong.txt"
+    export CATNAME="Hong Kong"
+    $CATEGORIZE
+    rm HongKong.txt
+    unset HONGKONG
+  fi
+
+  debug_end "China"
+
 fi
 
-if [ $WALL -ne 0 ];
-then
-  export CATFILE="GreatWall.txt"
-  export CATNAME="Great Wall of China"
-  $CATEGORIZE
-fi
-
-if [ $BEIJING -ne 0 ];
-then
-  export CATFILE="Beijing.txt"
-  export CATNAME="Beijing"
-  $CATEGORIZE
-fi
-
-if [ $HONGKONG -ne 0 ];
-then
-  export CATFILE="HongKong.txt"
-  export CATNAME="Hong Kong"
-  $CATEGORIZE
-fi
-
-rm China.txt
-rm GreatWall.txt
-rm Beijing.txt
-rm HongKong.txt

@@ -1,14 +1,25 @@
 #!/bin/bash
 
-egrep -i 'Costa(| )Rica' newpages.txt >> CostaRica.txt
+KEYWORDS_COSTARICA="Costa(| )Rica"
+KEYWORDS_COSTARICA_ALL="$KEYWORDS_COSTARICA"
 
-COSTARICA=$(stat --print=%s CostaRica.txt)
-
-if [ $COSTARICA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="CostaRica.txt"
-  export CATNAME="Costa Rica"
-  $CATEGORIZE
-fi
+  
+  debug_start "Costa Rica"
 
-rm CostaRica.txt
+  COSTARICA=$(egrep -i "$KEYWORDS_COSTARICA" newpages.txt)
+
+  if [ "$COSTARICA" != "" ];
+  then
+    printf "%s" "$COSTARICA" > CostaRica.txt
+    export CATFILE="CostaRica.txt"
+    export CATNAME="Costa Rica"
+    $CATEGORIZE
+    rm CostaRica.txt
+    unset COSTARICA
+  fi
+
+  debug_end "Costa Rica"
+
+fi

@@ -1,34 +1,52 @@
 #!/bin/bash
 
-egrep -i 'Pennsylvania|Pennsylvannia|Pennnsylvania|Pensylvania|Pensylvannia' newpages.txt | egrep -iv 'Pittsburgh|Philadelphia' >> Pennsylvania.txt
-egrep -i 'Pittsburgh' newpages.txt | egrep -iv "Steelers|Penguins|Pirates" >> Pittsburgh.txt  
-egrep -i 'Philadelphia' newpages.txt | egrep -iv 'Eagles' >> Philadelphia.txt
+KEYWORDS_PENNSYLVANIA="Pe(|n)nsylva(|n)nia|Pennslyvania"
+KEYWORDS_PITTSBURGH="Pittsburgh"
+KEYWORDS_PITTSBURGH_EXCLUDE="Steelers|Penguins|Pirates"
+KEYWORDS_PHILADELPHIA="Philadelphia"
+KEYWORDS_PHILADELPHIA_EXCLUDE="Eagles"
+KEYWORDS_PENNSYLVANIA_EXCLUDE="$KEYWORDS_PHILADELPHIA|$KEYWORDS_PITTSBURGH"
+KEYWORDS_PENNSYLVANIA_ALL="$KEYWORDS_PENNSYLVANIA|$KEYWORDS_PHILADELPHIA|$KEYWORDS_PITTSBURGH"
 
-PENNSYLVANIA=$(stat --print=%s Pennsylvania.txt)
-PITTSBURGH=$(stat --print=%s Pittsburgh.txt)
-PHILADELPHIA=$(stat --print=%s Philadelphia.txt)
-
-if [ $PENNSYLVANIA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Pennsylvania.txt"
-  export CATNAME="Pennsylvania"
-  $CATEGORIZE
-fi
 
-if [ $PITTSBURGH -ne 0 ];
-then
-  export CATFILE="Pittsburgh.txt"
-  export CATNAME="Pittsburgh"
-  $CATEGORIZE
-fi
+  debug_start "Pennsylvania"
 
-if [ $PHILADELPHIA -ne 0 ];
-then
-  export CATFILE="Philadelphia.txt"
-  export CATNAME="Philadelphia"
-  $CATEGORIZE
-fi
+  PENNSYLVANIA=$(egrep -i "$KEYWORDS_PENNSYLVANIA" newpages.txt | egrep -iv "$KEYWORDS_PENNSYLVANIA_EXCLUDE")
+  PITTSBURGH=$(egrep -i "$KEYWORDS_PITTSBURGH" newpages.txt | egrep -iv "$KEYWORDS_PITTSBURGH_EXCLUDE")
+  PHILADELPHIA=$(egrep -i "$KEYWORDS_PHILADELPHIA" newpages.txt | egrep -iv "$KEYWORDS_PHILADELPHIA_EXCLUDE")
 
-rm Pittsburgh.txt
-rm Pennsylvania.txt
-rm Philadelphia.txt
+  if [ "$PENNSYLVANIA" != "" ];
+  then
+    printf "%s" "$PENNSYLVANIA" > Pennsylvania.txt
+    export CATFILE="Pennsylvania.txt"
+    export CATNAME="Pennsylvania"
+    $CATEGORIZE
+    rm Pennsylvania.txt
+    unset PENNSYLVANIA
+  fi
+
+  if [ "$PITTSBURGH" != "" ];
+  then
+    printf "%s" "$PITTSBURGH" > Pittsburgh.txt
+    export CATFILE="Pittsburgh.txt"
+    export CATNAME="Pittsburgh"
+    $CATEGORIZE
+    rm Pittsburgh.txt
+    unset PITTSBURGH
+  fi
+
+  if [ "$PHILADELPHIA" != "" ];
+  then
+    printf "%s" "$PHILADELPHIA" > Philadelphia.txt
+    export CATFILE="Philadelphia.txt"
+    export CATNAME="Philadelphia"
+    $CATEGORIZE
+    rm Philadelphia.txt
+    unset PHILADELPHIA
+  fi
+
+  debug_end "Pennsylvania"
+
+fi

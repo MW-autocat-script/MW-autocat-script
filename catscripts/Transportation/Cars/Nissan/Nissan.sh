@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i '\bAltima' newpages.txt >> NissanAltima.txt
+KEYWORDS_NISSANALTIMA="\bAltima"
 
-ALTIMA=$(stat --print=%s NissanAltima.txt)
-
-if [ $ALTIMA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="NissanAltima"
-  export CATNAME="Nissan Altima"
-  $CATEGORIZE
-fi
 
-rm NissanAltima.txt
+  debug_start "Nissan Altima"
+
+  ALTIMA=$(egrep -i "$KEYWORDS_NISSANALTIMA" newpages.txt)
+
+  if [ "$ALTIMA" != "" ];
+  then
+    printf "%s" "$ALTIMA" > NissanAltima.txt
+    export CATFILE="NissanAltima"
+    export CATNAME="Nissan Altima"
+    $CATEGORIZE
+    rm NissanAltima.txt
+    unset ALTIMA
+  fi
+
+  debug_end "Nissan Altima"
+
+fi

@@ -3,15 +3,21 @@
 KEYWORDS_AUSTRIA="Austria"
 KEYWORDS_AUSTRIA_ALL="$KEYWORDS_AUSTRIA"
 
-egrep -i "$KEYWORDS_AUSTRIA" newpages.txt >> Austria.txt
-
-AUSTRIA=$(stat --print=%s Austria.txt)
-
-if [ $AUSTRIA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Austria.txt"
-  export CATNAME="Austria"
-  $CATEGORIZE
-fi
+  
+  debug_start "Austria"
 
-rm Austria.txt
+  AUSTRIA=$(egrep -i "$KEYWORDS_AUSTRIA" newpages.txt)
+
+  if [ "$AUSTRIA" != "" ];
+  then
+    printf "%s" "$AUSTRIA" > Austria.txt
+    export CATFILE="Austria.txt"
+    export CATNAME="Austria"
+    $CATEGORIZE
+    rm Austria.txt
+    unset AUSTRIA
+  fi
+
+fi

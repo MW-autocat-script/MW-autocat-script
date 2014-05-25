@@ -5,16 +5,21 @@ export KEYWORDS_VIKINGS_EXCLUDE="Minnesota(| )Vikings"
 
 if [ "$1" == "" ];
 then
-  egrep -i "$KEYWORDS_VIKINGS" newpages.txt | egrep -iv "$KEYWORDS_VIKINGS_EXCLUDE" >> Vikings.txt
 
-  VIKINGS=$(stat --print=%s Vikings.txt)
+  debug_start "Vikings"
 
-  if [ $VIKINGS -ne 0 ];
+  VIKINGS=$(egrep -i "$KEYWORDS_VIKINGS" newpages.txt | egrep -iv "$KEYWORDS_VIKINGS_EXCLUDE")
+
+  if [ "$VIKINGS" != "" ];
   then
+    printf "%s" "$VIKINGS" > Vikings.txt
     export CATFILE="Vikings.txt"
     export CATNAME="Vikings"
     $CATEGORIZE
+    rm Vikings.txt
+    unset VIKINGS
   fi
 
-  rm Vikings.txt
+  debug_end "Vikings"
+
 fi

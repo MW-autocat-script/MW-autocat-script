@@ -1,14 +1,25 @@
 #!/bin/bash
 
-egrep -i 'Cambodia\b|Khmer Rouge|Phnom Penh' newpages.txt >> Cambodia.txt
+KEYWORDS_CAMBODIA="Cambodia\b|Khmer(| )Rouge|Phnom(| )Penh"
+KEYWORDS_CAMBODIA_ALL="$KEYWORDS_CAMBODIA"
 
-CAMBODIA=$(stat --print=%s Cambodia.txt)
-
-if [ $CAMBODIA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Cambodia.txt"
-  export CATNAME="Cambodia"
-  $CATEGORIZE
-fi
+  
+  debug_start "Cambodia"
 
-rm Cambodia.txt
+  CAMBODIA=$(egrep -i "$KEYWORDS_CAMBODIA" newpages.txt)
+
+  if [ "$CAMBODIA" != "" ];
+  then
+    printf "%s" "$CAMBODIA" > Cambodia.txt
+    export CATFILE="Cambodia.txt"
+    export CATNAME="Cambodia"
+    $CATEGORIZE
+    rm Cambodia.txt
+    unset CAMBODIA
+  fi
+
+  debug_end "Cambodia"
+
+fi

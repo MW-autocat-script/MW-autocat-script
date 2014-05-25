@@ -1,14 +1,25 @@
 #!/bin/bash
 
-egrep -i 'El(| )Salvador' newpages.txt >> ElSalvador.txt
+KEYWORDS_ELSALVADOR="El(| )Salvador"
+KEYWORDS_ELSALVADOR_ALL="$KEYWORDS_ELSALVADOR"
 
-ELSALVADOR=$(stat --print=%s ElSalvador.txt)
-
-if [ $ELSALVADOR -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="ElSalvador.txt"
-  export CATNAME="El Salvador"
-  $CATEGORIZE
-fi
+  
+  debug_start "El Salvador"
 
-rm ElSalvador.txt
+  ELSALVADOR=$(egrep -i "$KEYWORDS_ELSALVADOR" newpages.txt)
+
+  if [ "$ELSALVADOR" != "" ];
+  then
+    printf "%s" "$ELSALVADOR" > ElSalvador.txt
+    export CATFILE="ElSalvador.txt"
+    export CATNAME="El Salvador"
+    $CATEGORIZE
+    rm ElSalvador.txt
+    unset ELSALVADOR
+  fi
+
+  debug_end "El Salvador"
+
+fi
