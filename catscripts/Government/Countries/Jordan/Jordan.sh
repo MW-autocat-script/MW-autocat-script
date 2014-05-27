@@ -1,16 +1,25 @@
 #!/bin/bash
 
 KEYWORDS_JORDAN="(king|queen|prince(|ss)).+ of Jordan|Jordanian|(kingdom|country|flag|government) of Jordan"
+KEYWORDS_JORDAN_ALL="$KEYWORDS_JORDAN"
 
-egrep -i "$KEYWORDS_JORDAN" newpages.txt >> Jordan.txt
-
-JORDAN=$(stat --print=%s Jordan.txt)
-
-if [ $JORDAN -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Jordan.txt"
-  export CATNAME="Jordan"
-  $CATEGORIZE
-fi
 
-rm Jordan.txt
+  debug_start "Jordan"
+
+  JORDAN=$(egrep -i "$KEYWORDS_JORDAN" newpages.txt)
+
+  if [ "$JORDAN" != "" ];
+  then
+    printf "%s" "$JORDAN" > Jordan.txt
+    export CATFILE="Jordan.txt"
+    export CATNAME="Jordan"
+    $CATEGORIZE
+    rm Jordan.txt
+    unset JORDAN
+  fi
+
+  denug_end "Jordan"
+
+fi

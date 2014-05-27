@@ -1,14 +1,26 @@
 #!/bin/bash
 
-egrep -i '\bIceland' newpages.txt | egrep -iv 'Icelandic' > Iceland.txt
+KEYWORDS_ICELAND="\bIceland"
+KEYWORDS_ICELAND_EXCLUDE="Icelandic"
+KEYWORDS_ICELAND_ALL="$KEYWORDS_ICELAND"
 
-ICELAND=$(stat --print=%s Iceland.txt)
-
-if [ $ICELAND -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Iceland.txt"
-  export CATNAME="Iceland"
-  $CATEGORIZE
-fi
+  
+  debug_start "Iceland"
 
-rm Iceland.txt
+  ICELAND=$(egrep -i "$KEYWORDS_ICELAND" newpages.txt | egrep -iv "$KEYWORDS_ICELAND_EXCLUDE")
+
+  if [ "$ICELAND" != "" ];
+  then
+    printf "%s" "$ICELAND" > Iceland.txt
+    export CATFILE="Iceland.txt"
+    export CATNAME="Iceland"
+    $CATEGORIZE
+    rm Iceland.txt
+    unset ICELAND
+  fi
+
+  debug_end "Iceland"
+
+fi

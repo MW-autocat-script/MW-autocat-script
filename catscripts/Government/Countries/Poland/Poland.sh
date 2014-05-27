@@ -3,36 +3,47 @@
 KEYWORDS_POLAND="Poland"
 KEYWORDS_WARSAW="Warsaw"
 KEYWORDS_AUSCHWITZ="Auschwitz|Oświęcim"
+KEYWORDS_POLAND_EXCLUDE="$KEYWORDS_WARSAW|$KEYWORDS_AUSCHWITZ"
 
-egrep -i "$KEYWORDS_POLAND" newpages.txt | egrep -iv "$KEYWORDS_AUSCHWITZ|$KEYWORDS_WARSAW" >> Poland.txt
-egrep -i "$KEYWORDS_WARSAW" newpages.txt >> Warsaw.txt
-egrep -i "$KEYWORDS_AUSCHWITZ" newpages.txt >> Auschwitz.txt
-
-POLAND=$(stat --print=%s Poland.txt)
-WARSAW=$(stat --print=%s Warsaw.txt)
-AUSCHWITZ=$(stat --print=%s Auschwitz.txt)
-
-if [ $POLAND -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Poland.txt"
-  export CATNAME="Poland"
-  $CATEGORIZE
-fi
+  
+  debug_start "Poland"
 
-if [ $WARSAW -ne 0 ];
-then
-  export CATFILE="Warsaw.txt"
-  export CATNAME="Warsaw"
-  $CATEGORIZE
-fi
+  POLAND=$(egrep -i "$KEYWORDS_POLAND" newpages.txt | egrep -iv "$KEYWORDS_POLAND_EXCLUDE")
+  WARSAW=$(egrep -i "$KEYWORDS_WARSAW" newpages.txt)
+  AUSCHWITZ=$(egrep -i "$KEYWORDS_AUSCHWITZ" newpages.txt)
 
-if [ $AUSCHWITZ -ne 0 ];
-then
-  export CATFILE="Auschwitz.txt"
-  export CATNAME="Auschwitz"
-  $CATEGORIZE
-fi
+  if [ "$POLAND" != "" ];
+  then
+    printf "%s" "$POLAND" > Poland.txt
+    export CATFILE="Poland.txt"
+    export CATNAME="Poland"
+    $CATEGORIZE
+    rm Poland.txt
+    unset POLAND
+  fi
 
-rm Poland.txt
-rm Warsaw.txt
-rm Auschwitz.txt
+  if [ "$WARSAW" != "" ];
+  then
+    printf "%s" "$WARSAW" > Warsaw.txt
+    export CATFILE="Warsaw.txt"
+    export CATNAME="Warsaw"
+    $CATEGORIZE
+    rm Warsaw.txt
+    unset WARSAW
+  fi
+
+  if [ "$AUSCHWITZ" != "" ];
+  then
+    printf "%s" "$AUSCHWITZ" > Auschwitz.txt
+    export CATFILE="Auschwitz.txt"
+    export CATNAME="Auschwitz"
+    $CATEGORIZE
+    rm Auschwitz.txt
+    unset AUSCHWITZ
+  fi
+
+  debug_end "Poland"
+
+fi

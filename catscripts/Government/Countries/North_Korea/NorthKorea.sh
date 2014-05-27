@@ -1,14 +1,25 @@
 #!/bin/bash
 
-egrep -i 'North(| )Korea|Pyongyang|Kim Jong(-| )Il|Kim Il(-| )Song|Kim Jong(-| )un' newpages.txt >> NorthKorea.txt
+KEYWORDS_NORTHKOREA="North(| )Korea|Pyongyang|Kim Jong(-| )Il|Kim Il(-| )Song|Kim Jong(-| )un"
+KEYWORDS_NORTHKOREA_ALL="$KEYWORDS_NORTHKOREA"
 
-NKOREA=$(stat --print=%s NorthKorea.txt)
-
-if [ $NKOREA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="NorthKorea.txt"
-  export CATNAME="North Korea"
-  $CATEGORIZE
-fi
 
-rm NorthKorea.txt
+  debug_start "North Korea"
+
+  NKOREA=$(egrep -i "$KEYWORDS_NORTHKOREA" newpages.txt)
+
+  if [ "$NKOREA" != "" ];
+  then
+    printf "%s" "$NKOREA" > NorthKorea.txt
+    export CATFILE="NorthKorea.txt"
+    export CATNAME="North Korea"
+    $CATEGORIZE
+    rm NorthKorea.txt
+    unset NKOREA
+  fi
+
+  debug_end "North Korea"
+
+fi

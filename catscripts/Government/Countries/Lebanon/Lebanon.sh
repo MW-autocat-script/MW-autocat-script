@@ -1,14 +1,26 @@
 #!/bin/bash
 
-egrep -i 'Lebanon' newpages.txt | egrep -iv 'New Jersey|\bNJ\b|bologna|baloney' >> Lebanon.txt
+KEYWORDS_LEBANON="Lebanon"
+KEYWORDS_LEBANON_EXCLUDE="New Jersey|\bNJ\b|bologna|baloney"
+KEYWORDS_LEBANON_ALL="$KEYWORDS_LEBANON"
 
-LEBANON=$(stat --print=%s Lebanon.txt)
-
-if [ $LEBANON -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Lebanon.txt"
-  export CATNAME="Lebanon"
-  $CATEGORIZE
-fi
 
-rm Lebanon.txt
+  debug_start "Lebanon"
+
+  LEBANON=$(egrep -i "$KEYWORDS_LEBANON" newpages.txt | egrep -iv "$KEYWORDS_LEBANON_EXCLUDE")
+
+  if [ "$LEBANON" != "" ];
+  then
+    printf "%s" "$LEBANON" > Lebanon.txt
+    export CATFILE="Lebanon.txt"
+    export CATNAME="Lebanon"
+    $CATEGORIZE
+    rm Lebanon.txt
+    unset LEBANON
+  fi
+
+  denug_end "Lebanon"
+
+fi

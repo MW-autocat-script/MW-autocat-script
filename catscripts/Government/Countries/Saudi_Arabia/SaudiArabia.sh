@@ -1,44 +1,62 @@
 #!/bin/bash
 
-egrep -i 'Saudi(| )Arabia' newpages.txt | egrep -iv 'Mecca|Riyadh|Medina' >> SaudiArabia.txt
-egrep -i 'Mecca' newpages.txt >> Mecca.txt
-egrep -i 'Medina' newpages.txt >> Medina.txt
-egrep -i 'Riyadh' newpages.txt >> Riyadh.txt
+KEYWORDS_SAUDIARABIA="Saudi(| )Arabia"
+KEYWORDS_MECCA="Mecca"
+KEYWORDS_MEDINA="Medina"
+KEYWORDS_RIYADH="Riyadh"
+KEYWORDS_SAUDIARABIA_EXCLUDE="$KEYWORDS_MECCA|$KEYWORDS_MEDINA|$KEYWORDS_RIYADH"
+KEYWORDS_SAUDIARABIA_ALL="$KEYWORDS_SAUDIARABIA|$KEYWORDS_MECCA|$KEYWORDS_MEDINA|$KEYWORDS_RIYADH"
 
-SAUDIARABIA=$(stat --print=%s SaudiArabia.txt)
-MECCA=$(stat --print=%s Mecca.txt)
-MEDINA=$(stat --print=%s Medina.txt)
-RIYADH=$(stat --print=%s Riyadh.txt)
-
-if [ $SAUDIARABIA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="SaudiArabia.txt"
-  export CATNAME="Saudi Arabia"
-  $CATEGORIZE
-fi
+  
+  debug_start "Saudi Arabia"
 
-if [ $MECCA -ne 0 ];
-then
-  export CATFILE="Mecca.txt"
-  export CATNAME="Mecca"
-  $CATEGORIZE
-fi
+  SAUDIARABIA=$(egrep -i "$KEYWORDS_SAUDIARABIA" newpages.txt | egrep -iv "$KEYWORDS_SAUDIARABIA_EXCLUDE")
+  MECCA=$(egrep -i "$KEYWORDS_MECCA" newpages.txt)
+  MEDINA=$(egrep -i "$KEYWORDS_MEDINA" newpages.txt)
+  RIYADH=$(egrep -i "$KEYWORDS_RIYADH" newpages.txt)
 
-if [ $MEDINA -ne 0 ];
-then
-  export CATFILE="Medina.txt"
-  export CATNAME="Medina"
-  $CATEGORIZE
-fi
+  if [ "$SAUDIARABIA" != "" ];
+  then
+    printf "%s" "$SAUDIARABIA" > SaudiArabia.txt
+    export CATFILE="SaudiArabia.txt"
+    export CATNAME="Saudi Arabia"
+    $CATEGORIZE
+    rm SaudiArabia.txt
+    unset SAUDIARABIA
+  fi
 
-if [ $RIYADH -ne 0 ];
-then
-  export CATFILE="Riyadh.txt"
-  export CATNAME="Riyadh"
-  $CATEGORIZE
-fi
+  if [ "$MECCA" != "" ];
+  then
+    printf "%s" "$MECCA" > Mecca.txt
+    export CATFILE="Mecca.txt"
+    export CATNAME="Mecca"
+    $CATEGORIZE
+    rm Mecca.txt
+    unset MECCA
+  fi
 
-rm SaudiArabia.txt
-rm Mecca.txt
-rm Medina.txt
-rm Riyadh.txt
+  if [ "$MEDINA" != "" ];
+  then
+    printf "%s" "$MEDINA" > Medina.txt
+    export CATFILE="Medina.txt"
+    export CATNAME="Medina"
+    $CATEGORIZE
+    rm Medina.txt
+    unset MEDINA
+  fi
+
+  if [ "$RIYADH" != "" ];
+  then
+    printf "%s" "$RIYADH" > Riyadh.txt
+    export CATFILE="Riyadh.txt"
+    export CATNAME="Riyadh"
+    $CATEGORIZE
+    rm Riyadh.txt
+    unset RIYADH
+  fi
+
+  debug_end "Saudi Arabia"
+
+fi

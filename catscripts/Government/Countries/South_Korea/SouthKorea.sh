@@ -1,15 +1,27 @@
 #!/bin/bash
 
-egrep -i 'South Korea|Seoul' newpages.txt >> SouthKorea.txt
-egrep -i 'Korea\b' newpages.txt | egrep -iv 'North(| )Korea' >> SouthKorea.txt #Questions that ask about "Korea" are probably referring to South Korea
+KEYWORDS_SOUTHKOREA="South(| )Korea|Seoul"
+KEYWORDS_SOUTHKOREA_SECONDARY="Korea\b"
+KEYWORDS_SOUTHKOREA_SECONDARY_EXCLUDE="North(| )Korea" #Questions that ask about "Korea" are probably referring to South Korea
+KEYWORDS_SOUTHKOREA_ALL="$KEYWORDS_SOUTHKOREA"
 
-SKOREA=$(stat --print=%s SouthKorea.txt)
-
-if [ $SKOREA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="SouthKorea.txt"
-  export CATNAME="South Korea"
-  $CATEGORIZE
-fi
+  
+  debug_start "South Korea"
 
-rm SouthKorea.txt
+  SKOREA=$(egrep -i "$KEYWORDS_SOUTHKOREA" newpages.txt && egrep -i "$KEYWORDS_SOUTHKOREA_SECONDARY" newpages.txt | egrep -iv "$KEYWORDS_SOUTHKOREA_SECONDARY_EXCLUDE")
+
+  if [ "$SKOREA" != "" ];
+  then
+    printf "%s" "$SKOREA" > SouthKorea.txt
+    export CATFILE="SouthKorea.txt"
+    export CATNAME="South Korea"
+    $CATEGORIZE
+    rm SouthKorea.txt
+    unset SKOREA
+  fi
+
+  debug_end "South Korea"
+
+fi

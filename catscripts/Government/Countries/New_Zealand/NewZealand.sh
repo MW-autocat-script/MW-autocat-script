@@ -1,15 +1,25 @@
 #!/bin/bash
 
-egrep -i 'New(| )Zealand' newpages.txt >> NewZealand.txt
-egrep -i ' NZ\b' newpages.txt >> NewZealand.txt
+KEYWORDS_NEWZEALAND="New(| )Zealand|\bNZ\b"
+KEYWORDS_NEWZEALAND_ALL="$KEYWORDS_NEWZEALAND"
 
-NEWZEALAND=$(stat --print=%s NewZealand.txt)
-
-if [ $NEWZEALAND -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="NewZealand.txt"
-  export CATNAME="New Zealand"
-  $CATEGORIZE
-fi
 
-rm NewZealand.txt
+  debug_start "New Zealand"
+
+  NEWZEALAND=$(egrep -i "$KEYWORDS_NEWZEALAND" newpages.txt)
+
+  if [ "$NEWZEALAND" != "" ];
+  then
+    printf "%s" "$NEWZEALAND" > NewZealand.txt
+    export CATFILE="NewZealand.txt"
+    export CATNAME="New Zealand"
+    $CATEGORIZE
+    rm NewZealand.txt
+    unset NEWZEALAND
+  fi
+
+  debug_end "New Zealand"
+
+fi

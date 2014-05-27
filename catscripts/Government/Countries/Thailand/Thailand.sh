@@ -1,24 +1,39 @@
 #!/bin/bash
 
-egrep -i 'Thailand' newpages.txt | egrep -iv 'Bangkok' >> Thailand.txt
-egrep -i 'Bankok' newpages.txt | egrep -iv 'Mafia Wars|Bankok Dangerous' >> Bangkok.txt
+KEYWORDS_THAILAND="Thailand"
+KEYWORDS_BANGKOK="Bangkok"
+KEYWORDS_THAILAND_EXCLUDE="$KEYWORDS_BANGKOK"
+KEYWORDS_BANGKOK_EXCLUDE="Mafia(| )Wars|Bankok(| )Dangerous"
+KEYWORDS_THAILAND_ALL="$KEYWORDS_THAILAND|$KEYWORDS_BANGKOK"
 
-THAILAND=$(stat --print=%s Thailand.txt)
-BANGKOK=$(stat --print=%s Bangkok.txt)
-
-if [ $THAILAND -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Thailand.txt"
-  export CATNAME="Thailand"
-  $CATEGORIZE
-fi
 
-if [ $BANGKOK -ne 0 ];
-then
-  export CATFILE="Bangkok.txt"
-  export CATNAME="Bangkok"
-  $CATEGORIZE
-fi
+  debug_start "Thailand"
 
-rm Thailand.txt
-rm Bangkok.txt
+  THAILAND=$(egrep -i "$KEYWORDS_THAILAND" newpages.txt | egrep -iv "$KEYWORDS_THAILAND_EXCLUDE")
+  BANGKOK=$(egrep -i "$KEYWORDS_BANGKOK" newpages.txt | egrep -iv "$KEYWORDS_BANGKOK_EXCLUDE")
+
+  if [ "$THAILAND" != "" ];
+  then
+    printf "%s" "$THAILAND" > Thailand.txt
+    export CATFILE="Thailand.txt"
+    export CATNAME="Thailand"
+    $CATEGORIZE
+    rm Thailand.txt
+    unset THAILAND
+  fi
+
+  if [ "$BANGKOK" != "" ];
+  then
+    printf "%s" "$BANGKOK" > Bangkok.txt
+    export CATFILE="Bangkok.txt"
+    export CATNAME="Bangkok"
+    $CATEGORIZE
+    rm Bangkok.txt
+    unset BANGKOK
+  fi
+
+  debug_end "Thailand"
+
+fi
