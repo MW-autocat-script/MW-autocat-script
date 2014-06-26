@@ -1,15 +1,25 @@
 #!/bin/bash
 #Categorization script for the adult cartoon The Simpsons
 
-egrep -i 'The Simpsons|(Homer|Marge|Lisa|Bart(|olomew)|Maggie) Simpson|Homer.+Marge|Marge.+Homer|Bart.+Lisa|Lisa.+Bart|Ned Flanders' newpages.txt >> TheSimpsons.txt
+KEYWORDS_THESIMPSONS="The(| )Simpsons|(Homer|Marge|Lisa|Bart(|holomew)|Maggie)(| )Simpson|Homer.+Marge|Marge.+Homer|Bart.+Lisa|Lisa.+Bart|Ned(| )Flanders"
 
-SIMPSONS=$(stat --print=%s TheSimpsons.txt)
-
-if [ $SIMPSONS -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="TheSimpsons.txt"
-  export CATNAME="The Simpsons"
-  $CATEGORIZE
-fi
 
-rm TheSimpsons.txt
+  debug_start "The Simpsons"
+
+  SIMPSONS=$(egrep -i "$KEYWORDS_THESIMPSONS" newpages.txt)
+
+  if [ "$SIMPSONS" != "" ];
+  then
+    printf "%s" "$SIMPSONS" > TheSimpsons.txt
+    export CATFILE="TheSimpsons.txt"
+    export CATNAME="The Simpsons"
+    $CATEGORIZE
+    rm TheSimpsons.txt
+    unset SIMPSONS
+  fi
+
+  debug_end "The Simpsons"
+
+fi

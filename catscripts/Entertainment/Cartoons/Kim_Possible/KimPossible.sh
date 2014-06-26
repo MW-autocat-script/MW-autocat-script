@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'Kim(| )Possible' newpages.txt >> KimPossible.txt
+KEYWORDS_KIMPOSSIBLE="Kim(| )Possible"
 
-KIMPOSSIBLE=$(stat --print=%s KimPossible.txt)
-
-if [ $KIMPOSSIBLE -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="KimPossible.txt"
-  export CATNAME="Kim Possible"
-  $CATEGORIZE
-fi
 
-rm KimPossible.txt
+  debug_start "Kim Possible"
+
+  KIMPOSSIBLE=$(egrep -i "$KEYWORDS_KIMPOSSIBLE" newpages.txt)
+
+  if [ "$KIMPOSSIBLE" != "" ];
+  then
+    printf "%s" "$KIMPOSSIBLE" > KimPossible.txt
+    export CATFILE="KimPossible.txt"
+    export CATNAME="Kim Possible"
+    $CATEGORIZE
+    rm KimPossible.txt
+    unset KIMPOSSIBLE
+  fi
+
+  debug_end "Kim Possible"
+
+fi

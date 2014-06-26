@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'The(| )Clone(| )Wars' newpages.txt >> TheCloneWars.txt
+KEYWORDS_CLONEWARS="The(| )Clone(| )Wars"
 
-CLONEWARS=$(stat --print=%s TheCloneWars.txt)
-
-if [ $CLONEWARS -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="TheCloneWars.txt"
-  export CATNAME="Star Wars: The Clone Wars"
-  $CATEGORIZE
-fi
 
-rm TheCloneWars.txt
+  debug_start "Star Wars: The Clone Wars"
+
+  CLONEWARS=$(egrep -i "$KEYWORDS_CLONEWARS" newpages.txt)
+
+  if [ "$CLONEWARS" != "" ];
+  then
+    printf "%s" "$CLONEWARS" > TheCloneWars.txt
+    export CATFILE="TheCloneWars.txt"
+    export CATNAME="Star Wars: The Clone Wars"
+    $CATEGORIZE
+    rm TheCloneWars.txt
+    unset CLONEWARS
+  fi
+
+  debug_end "Star Wars: The Clone Wars"
+
+fi

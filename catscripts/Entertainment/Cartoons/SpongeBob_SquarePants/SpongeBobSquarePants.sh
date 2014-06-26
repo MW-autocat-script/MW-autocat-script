@@ -1,15 +1,25 @@
 #!/bin/bash
 #Categorization script for the children's cartoon SpongeBob SquarePants
 
-egrep -i 'SpongeBob|sponge bob|SquarePants|Krusty Krab|Patrick Star|Sandy Cheeks|(Eugene|Mr(|\.)) Krabs' newpages.txt >> SpongeBobSquarePants.txt
+KEYWORDS_SPONGEBOB="SpongeBob|sponge bob|SquarePants|Krusty Krab|Patrick Star|Sandy Cheeks|(Eugene|Mr(|\.)) Krabs"
 
-SPONGEBOB=$(stat --print=%s SpongeBobSquarePants.txt)
-
-if [ $SPONGEBOB -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="SpongeBobSquarePants.txt"
-  export CATNAME="SpongeBob SquarePants"
-  $CATEGORIZE
-fi
 
-rm SpongeBobSquarePants.txt
+  debug_start "SpongeBob SquarePants"
+
+  SPONGEBOB=$(egrep -i "$KEYWORDS_SPONGEBOB" newpages.txt)
+
+  if [ "$SPONGEBOB" != "" ];
+  then
+    printf "%s" "$SPONGEBOB" > SpongeBobSquarePants.txt
+    export CATFILE="SpongeBobSquarePants.txt"
+    export CATNAME="SpongeBob SquarePants"
+    $CATEGORIZE
+    rm SpongeBobSquarePants.txt
+    unset SPONGEBOB
+  fi
+
+  debug_end "SpongeBob SquarePants"
+
+fi

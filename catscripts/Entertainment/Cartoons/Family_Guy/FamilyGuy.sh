@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'Family Guy|Peter Griffin|Lois Griffin|Meg Griffin|Chris Griffin|Stewie Griffin|Brian Griffin' newpages.txt >> FamilyGuy.txt
+KEYWORDS_FAMILYGUY="Family(| )Guy|(Peter|Lois|Meg|Chris|Stewie|Brian)(| )Griffin"
 
-FAMILYGUY=$(stat --print=%s FamilyGuy.txt)
-
-if [ $FAMILYGUY -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="FamilyGuy.txt"
-  export CATNAME="Family Guy"
-  $CATEGORIZE
-fi
+  
+  debug_start "Family Guy"
 
-rm FamilyGuy.txt
+  FAMILYGUY=$(egrep -i "$KEYWORDS_FAMILYGUY" newpages.txt)
+
+  if [ "$FAMILYGUY" != "" ];
+  then
+    printf "%s" "$FAMIlYGUY" > FamilyGuy.txt
+    export CATFILE="FamilyGuy.txt"
+    export CATNAME="Family Guy"
+    $CATEGORIZE
+    rm FamilyGuy.txt
+    unset FAMILYGUY
+  fi
+
+  debug_end "Family Guy"
+
+fi
