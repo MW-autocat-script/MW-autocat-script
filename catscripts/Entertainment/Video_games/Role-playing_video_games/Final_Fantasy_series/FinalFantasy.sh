@@ -1,145 +1,198 @@
 #!/bin/bash
 
-egrep -i 'Final(| )Fantasy(| )(1\b|I\b)|Final Fantasy series' newpages.txt >> FinalFantasyseries.txt #There isn't a category for the first game yet
-egrep -i 'Final Fantasy (2|II\b)' newpages.txt >> FinalFantasy2.txt
-egrep -i 'Final Fantasy (3|III\b)' newpages.txt >> FinalFantasy3.txt
-egrep -i 'Final Fantasy (4|IV\b)|\bFF(| )IV\b' newpages.txt >> FinalFantasy4.txt
-egrep -i 'Final Fantasy (5|\bV\b)|\bFF(| )V\b' newpages.txt >> FinalFantasy5.txt
-egrep -i 'Final Fantasy (6|\bVI\b)|\bFF(| )VI\b' newpages.txt >> FinalFantasy6.txt
-egrep -i 'Final(| )Fantasy(| )(7|\bVII\b)|\bFF(| )VII\b' newpages.txt | egrep -iv 'Before Crisis|Crisis Core|Dirge of Cerberus|Advent Children' >> FinalFantasy7.txt
-egrep -i 'Advent(| )Children' newpages.txt >> AdventChildren.txt
-egrep -i 'Final Fantasy (8|\bVIII\b)|\bFF(| )VIII\b' newpages.txt >> FinalFantasy8.txt
-egrep -i 'Final Fantasy (9|\bIX\b)|\bFF(| )IX\b' newpages.txt >> FinalFantasy9.txt
-egrep -i 'Final Fantasy (10|\bX\b)|\bFF(| )X\b|blitzball' newpages.txt | egrep -iv 'Final Fantasy X-2|FF(| )X-2' >> FinalFantasy10.txt
-egrep -i 'Final Fantasy (10-2|\bX-2\b)|\bFF(| )X-2\b' newpages.txt >> FinalFantasyX-2.txt
-egrep -i 'Final Fantasy (11|\bXI\b)|\bFF(| )(XI|11)\b' newpages.txt >> FinalFantasy11.txt
-egrep -i 'Final Fantasy (12|\bXII\b)|\bFF(| )(12|XII)\b' newpages.txt >> FinalFantasy12.txt
-egrep -i 'Final(| )Fantasy(| )(13|\bXIII\b)|\bFF(| )(13|XIII\b)' newpages.txt >> FinalFantasy13.txt
+KEYWORDS_FINALFANTASY="Final(| )Fantasy"
+KEYWORDS_FINALFANTASY2="$KEYWORDS_FINALFANTASY(| )(2|II\b)|\bFF(| )2\b"
+KEYWORDS_FINALFANTASY3="$KEYWORDS_FINALFANTASY(| )(3|III\b)|\bFF(| )(3|III)\b"
+KEYWORDS_FINALFANTASY4="$KEYWORDS_FINALFANTASY(| )(4|IV\b)|\bFF(| )(IV|4)\b"
+KEYWORDS_FINALFANTASY5="$KEYWORDS_FINALFANTASY(| )(5|V\b)|\bFF(| )(V|5)\b"
+KEYWORDS_FINALFANTASY6="$KEYWORDS_FINALFANTASY(| )(6|VI\b)|\bFF(| )(VI|6)\b"
+KEYWORDS_FINALFANTASY7="$KEYWORDS_FINALFANTASY(| )(7|VII\b)|\bFF(| )(VII|7)\b"
+KEYWORDS_FINALFANTASY8="$KEYWORDS_FINALFANTASY(| )(8|VIII\b)|\bFF(| )(VIII|8)\b"
+KEYWORDS_FINALFANTASY9="$KEYWORDS_FINALFANTASY(| )(9|IX\b)|\bFF(| )(IX|9)\b"
+KEYWORDS_FINALFANTASYX="$KEYWORDS_FINALFANTASY(| )(10|X\b)|\bFF(| )(X|10)\b|blitzball"
+KEYWORDS_FINALFANTASYX2="$KEYWORDS_FINALFANTASY(| )X-2|\bFF(| )X-2"
+KEYWORDS_FINALFANTASY11="$KEYWORDS_FINALFANTASY(| )(11|XI\b)|\bFF(| )(XI|11)\b"
+KEYWORDS_FINALFANTASY12="$KEYWORDS_FINALFANTASY(| )(12|XII\b)|\bFF(| )(XII|12)\b"
+KEYWORDS_FINALFANTASY13="$KEYWORDS_FINALFANTASY(| )(13|XII\b)|\bFF(| )(XIII|13)\b"
+KEYWORDS_ADVENTCHILDREN="Advent(| )Children"
 
 
+KEYWORDS_FINALFANTASY7_EXCLUDE="Before(| )Crisis|Crisis(| )Core|Dirge(| )of(| )Cerberus|$KEYWORDS_ADVENTCHILDREN"
+KEYWORDS_FINALFANTASYX_EXCLUDE="$KEYWORDS_FINALFANTASYX2"
+KEYWORDS_FINALFANTASY_EXCLUDE="$KEYWORDS_FINALFANTASY2|$KEYWORDS_FINALFANTASY3|$KEYWORDS_FINALFANTASY4|$KEYWORDS_FINALFANTASY5|$KEYWORDS_FINALFANTASY6|$KEYWORDS_FINALFANTASY6|$KEYWORDS_FINALFANTASY7|$KEYWORDS_FINALFANTASY8|$KEYWORDS_FINALFANTASY9|$KEYWORDS_FINALFANTASYX|$KEYWORDS_FINALFANTASYX2|$KEYWORDS_FINALFANTASY11|$KEYWORDS_FINALFANTASY12|$KEYWORDS_FINALFANTASY13"
 
-
-FFSERIES=$(stat --print=%s FinalFantasyseries.txt)
-FF2=$(stat --print=%s FinalFantasy2.txt)
-FF3=$(stat --print=%s FinalFantasy3.txt)
-FF4=$(stat --print=%s FinalFantasy4.txt)
-FF5=$(stat --print=%s FinalFantasy5.txt)
-FF6=$(stat --print=%s FinalFantasy6.txt)
-FF7=$(stat --print=%s FinalFantasy7.txt)
-FF8=$(stat --print=%s FinalFantasy8.txt)
-FF9=$(stat --print=%s FinalFantasy9.txt)
-FF10=$(stat --print=%s FinalFantasy10.txt)
-FFX2=$(stat --print=%s FinalFantasyX-2.txt)
-FF11=$(stat --print=%s FinalFantasy11.txt)
-FF12=$(stat --print=%s FinalFantasy12.txt)
-FF13=$(stat --print=%s FinalFantasy13.txt)
-ADVENT=$(stat --print=%s AdventChildren.txt)
-
-
-if [ $FFSERIES -ne 0 ];
+if [ "$1" == "" ]; #Normal run
 then
-  export CATFILE="FinalFantasyseries.txt"
-  export CATNAME="Final Fantasy series"
-  $CATEGORIZE
-fi
 
-if [ $FF2 -ne 0 ];
-then
-  export CATFILE="FinalFantasy2.txt"
-  export CATNAME="Final Fantasy II"
-  $CATEGORIZE
-fi
+  debug_start "Final Fantasy series"
 
-if [ $FF3 -ne 0 ];
-then
-  export CATFILE="FinalFantasy3.txt"
-  export CATNAME="Final Fantasy III"
-  $CATEGORIZE
-fi
+  FFSERIES=$(egrep -i "$KEYWORDS_FINALFANTASY" newpages.txt | egrep -iv "$KEYWORDS_FINALFANTASY_EXCLUDE")
+  FF2=$(egrep -i "$KEYWORDS_FINALFANTASY2" newpages.txt)
+  FF3=$(egrep -i "$KEYWORDS_FINALFANTASY3" newpages.txt)
+  FF4=$(egrep -i "$KEYWORDS_FINALFANTASY4" newpages.txt)
+  FF5=$(egrep -i "$KEYWORDS_FINALFANTASY5" newpages.txt)
+  FF6=$(egrep -i "$KEYWORDS_FINALFANTASY6" newpages.txt)
+  FF7=$(egrep -i "$KEYWORDS_FINALFANTASY7" newpages.txt | egrep -iv "$KEYWORDS_FINALFANTASY7_EXCLUDE")
+  FF8=$(egrep -i "$KEYWORDS_FINALFANTASY8" newpages.txt)
+  FF9=$(egrep -i "$KEYWORDS_FINALFANTASY9" newpages.txt)
+  FF10=$(egrep -i "$KEYWORDS_FINALFANTASYX" newpages.txt | egrep -iv "$KEYWORDS_FINALFANTASYX_EXCLUDE")
+  FFX2=$(egrep -i "$KEYWORDS_FINALFANTASYX2" newpages.txt)
+  FF11=$(egrep -i "$KEYWORDS_FINALFANTASY11" newpages.txt)
+  FF12=$(egrep -i "$KEYWORDS_FINALFANTASY12" newpages.txt)
+  FF13=$(egrep -i "$KEYWORDS_FINALFANTASY13" newpages.txt)
+  ADVENT=$(egrep -i "$KEYWORDS_ADVENTCHILDREN" newpages.txt)
 
-if [ $FF4 -ne 0 ];
-then
-  export CATFILE="FinalFantasy4.txt"
-  export CATNAME="Final Fantasy IV"
-  $CATEGORIZE
-fi
 
-if [ $FF5 -ne 0 ];
-then
-  export CATFILE="FinalFantasy5.txt"
-  export CATNAME="Final Fantasy V"
-  $CATEGORIZE
-fi
+  if [ "$FFSERIES" != "" ];
+  then
+    printf "%s" "$FFSERIES" > FinalFantasyseries.txt
+    export CATFILE="FinalFantasyseries.txt"
+    export CATNAME="Final Fantasy series"
+    $CATEGORIZE
+    rm FinalFantasyseries.txt
+    unset FFSERIES
+  fi
 
-if [ $FF6 -ne 0 ];
-then
-  export CATFILE="FinalFantasy6.txt"
-  export CATNAME="Final Fantasy VI"
-  $CATEGORIZE
-fi
+  if [ "$FF2" != "" ];
+  then
+    printf "%s" "$FF2" > FinalFantasy2.txt
+    export CATFILE="FinalFantasy2.txt"
+    export CATNAME="Final Fantasy II"
+    $CATEGORIZE
+    rm FinalFantasy2.txt
+    unset FF2
+  fi
 
-if [ $FF7 -ne 0 ];
-then
-  export CATFILE="FinalFantasy7.txt"
-  export CATNAME="Final Fantasy VII"
-  $CATEGORIZE
-fi
+  if [ "$FF3" != "" ];
+  then
+    printf "%s" "$FF3" > FinalFantasy3.txt
+    export CATFILE="FinalFantasy3.txt"
+    export CATNAME="Final Fantasy III"
+    $CATEGORIZE
+    rm FinalFantasy3.txt
+    unset FF3
+  fi
 
-if [ $FF8 -ne 0 ];
-then
-  export CATFILE="FinalFantasy9.txt"
-  export CATNAME="Final Fantasy IX"
-  $CATEGORIZE
-fi
+  if [ "$FF4" != "" ];
+  then
+    printf "%s" "$FF4" > FinalFantasy4.txt
+    export CATFILE="FinalFantasy4.txt"
+    export CATNAME="Final Fantasy IV"
+    $CATEGORIZE
+    rm FinalFantasy4.txt
+    unset FF4.txt
+  fi
 
-if [ $FF9 -ne 0 ];
-then
-  export CATFILE="FinalFantasy9.txt"
-  export CATNAME="Final Fantasy IX"
-  $CATEGORIZE
-fi
+  if [ "$FF5" != "" ];
+  then
+    printf "%s" "$FF5" > FinalFantasy5.txt
+    export CATFILE="FinalFantasy5.txt"
+    export CATNAME="Final Fantasy V"
+    $CATEGORIZE
+    rm FinalFantasy5.txt
+    unset FF5
+  fi
 
-if [ $FF10 -ne 0 ];
-then
-  export CATFILE="FinalFantasy10.txt"
-  export CATNAME="Final Fantasy X"
-  $CATEGORIZE
-fi
+  if [ "$FF6" != "" ];
+  then
+    printf "%s" "$FF6" > FinalFantasy6.txt
+    export CATFILE="FinalFantasy6.txt"
+    export CATNAME="Final Fantasy VI"
+    $CATEGORIZE
+    rm FinalFantasy6.txt
+    unset FF6
+  fi
 
-if [ $FFX2 -ne 0 ];
-then
-  export CATFILE="FinalFantasyX-2.txt"
-  export CATNAME="Final Fantasy X-2"
-  $CATEGORIZE
-fi
+  if [ "$FF7" != "" ];
+  then
+    printf "%s" "$FF7" > FinalFantasy7.txt
+    export CATFILE="FinalFantasy7.txt"
+    export CATNAME="Final Fantasy VII"
+    $CATEGORIZE
+    rm FinalFantasy7.txt
+    unset FF7
+  fi
 
-if [ $FF11 -ne 0 ];
-then
-  export CATFILE="FinalFantasy11.txt"
-  export CATNAME="Final Fantasy XI"
-  $CATEGORIZE
-fi
+  if [ "$FF8" != "" ];
+  then
+    printf "%s" "$FF8" > FinalFantasy8.txt
+    export CATFILE="FinalFantasy8.txt"
+    export CATNAME="Final Fantasy VIII"
+    $CATEGORIZE
+    rm FinalFantasy8.txt
+    unset FF8
+  fi
 
-if [ $FF12 -ne 0 ];
-then
-  export CATFILE="FinalFantasy12.txt"
-  export CATNAME="Final Fantasy XII"
-  $CATEGORIZE
-fi
+  if [ "$FF9" != "" ];
+  then
+    printf "%s" "$FF9" > FinalFantasy9.txt
+    export CATFILE="FinalFantasy9.txt"
+    export CATNAME="Final Fantasy IX"
+    $CATEGORIZE
+    rm FinalFantasy9.txt
+    unset FF9
+  fi
 
-if [ $FF13 -ne 0 ];
-then
-   export CATFILE="FinalFantasy13.txt"
-   export CATNAME="Final Fantasy XIII"
-   $CATEGORIZE
-fi
+  if [ "$FF10" != "" ];
+  then
+    printf "%s" "$FF10" > FinalFantasyX.txt
+    export CATFILE="FinalFantasy10.txt"
+    export CATNAME="Final Fantasy X"
+    $CATEGORIZE
+    rm FinalFantasyX.txt
+    unset FF10
+  fi
 
-if [ $ADVENT -ne 0 ];
-then
-  export CATFILE="AdventChildren.txt"
-  export CATNAME="Final Fantasy VII: Advent Children"
-  $CATEGORIZE
-fi
+  if [ "$FFX2" != "" ];
+  then
+    printf "%s" "$FFX2" > FinalFantasyX-2.txt
+    export CATFILE="FinalFantasyX-2.txt"
+    export CATNAME="Final Fantasy X-2"
+    $CATEGORIZE
+    rm FinalFantasyX-2.txt
+    unset FFX2
+  fi
 
-rm FinalFantasy*.txt #Screw it :)
-rm AdventChildren.txt
+  if [ "$FF11" != "" ];
+  then
+    printf "%s" "$FF11" > FinalFantasy11.txt
+    export CATFILE="FinalFantasy11.txt"
+    export CATNAME="Final Fantasy XI"
+    $CATEGORIZE
+    rm FinalFantasy11.txt
+    unset FF11
+  fi
+
+  if [ "$FF12" != "" ];
+  then
+    printf "%s" "$FF12" > FinalFantasy12.txt
+    export CATFILE="FinalFantasy12.txt"
+    export CATNAME="Final Fantasy XII"
+    $CATEGORIZE
+    rm FinalFantasy12.txt
+    unset FF12
+  fi
+
+  if [ "$FF13" != "" ];
+  then
+    printf "%s" "$FF13" > FinalFantasy13.txt
+    export CATFILE="FinalFantasy13.txt"
+    export CATNAME="Final Fantasy XIII"
+    $CATEGORIZE
+    rm FinalFantasy13.txt
+    unset FF13
+  fi
+
+  if [ "$ADVENT" != "" ];
+  then
+    printf "%s" "$ADVENT" > AdventChildren.txt
+    export CATFILE="AdventChildren.txt"
+    export CATNAME="Final Fantasy VII: Advent Children"
+    $CATEGORIZE
+    rm AdventChildren.txt
+    unset ADVENT
+  fi
+
+  debug_end "Final Fantasy series"
+
+fi
