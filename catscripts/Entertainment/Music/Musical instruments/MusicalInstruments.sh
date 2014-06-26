@@ -1,128 +1,170 @@
 #!/bin/bash
 
+KEYWORDS_CELLO="\bCello(|s)\b"
+KEYWORDS_CLARINET="Clarinet"
+KEYWORDS_DRUMS="Drum|\bBongo"
+KEYWORDS_DRUMS_EXCLUDE="ear(| )drum|brake|chicken|turkey"
+KEYWORDS_FLUTE="\bFlute(|s)"
+KEYWORDS_FLUTE_EXCLUDE="(azelf|azure)(| )flute|Pok(e|é)(| )flute|Pokémon|Pokemon"
+KEYWORDS_GUITAR="Guitar"
+KEYWORDS_GUITAR_EXCLUDE="Guitar(| )Hero"
 KEYWORDS_HARP="\bharp(|s)\b"
+KEYWORDS_HARP_EXCLUDE="harp(| )seal"
+KEYWORDS_PIANO="Piano"
+KEYWORDS_RECORDER="on(| )(a|the)(| )recorder|for recorder$|notes.+recorder|recorder.+notes"
+KEYWORDS_SAXOPHONE="Saxophone"
 KEYWORDS_VIOLA="\bViola(|s)\b|Violist"
+KEYWORDS_VIOLIN="Violin"
 KEYWORDS_XYLOPHONE="Xylophon(e|ist)"
 
-egrep -i 'Cello\b' newpages.txt | egrep -iv 'Monticello|Nontecello' >> Cello.txt
-egrep -i 'Clarinet' newpages.txt >> Clarinet.txt
-egrep -i 'Drum|\bBongo' newpages.txt | egrep -iv 'ear(| )drums|brake|chicken|turkey' >> Drums.txt
-egrep -i '\bFlute(s|)' newpages.txt | egrep -iv 'azure flute|Pok(e|é)(| )flute|Pokémon|Pokemon|azelf flute' >> Flute.txt
-egrep -i 'Guitar' newpages.txt | egrep -iv 'hero' >> Guitar.txt
-egrep -i "$KEYWORDS_HARP" newpages.txt | egrep -iv "harp seal">> Harp.txt
-egrep -i 'Piano' newpages.txt >> Piano.txt
-egrep -i 'on a recorder|on the recorder$|for recorder$|notes.+recorder|recorder.+notes' newpages.txt >> Recorder.txt
-egrep -i 'Saxophone' newpages.txt >> Saxophone.txt
-egrep -i 'Violin' newpages.txt >> Violin.txt
-egrep -i "$KEYWORDS_VIOLA" newpages.txt >> Viola.txt
-egrep -i "$KEYWORDS_XYLOPHONE" newpages.txt >> Xylophone.txt
+KEYWORDS_MUSICALINSTRUMENT="Musical(| )instrument"
+KEYWORDS_MUSICALINSTRUMENT_EXCLUDE="$KEYWORDS_CELLO|$KEYWORDS_CLARINET|$KEYWORDS_DRUMS|$KEYWORDS_FLUTE|$KEYWORDS_GUITAR|$KEYWORDS_HARP|$KEYWORDS_PIANO|$KEYWORDS_RECORDER|$KEYWORDS_SAXOPHONE|$KEYWORDS_VIOLA|$KEYWORDS_VIOLIN|$KEYWORDS_XYLOPHONE"
 
-CELLO=$(stat --print=%s Cello.txt)
-CLARINET=$(stat --print=%s Clarinet.txt)
-DRUMS=$(stat --print=%s Drums.txt)
-FLUTE=$(stat --print=%s Flute.txt)
-GUITAR=$(stat --print=%s Guitar.txt)
-HARP=$(stat --print=%s Harp.txt)
-PIANO=$(stat --print=%s Piano.txt)
-RECORDER=$(stat --print=%s Recorder.txt)
-SAXOPHONE=$(stat --print=%s Saxophone.txt)
-VIOLIN=$(stat --print=%s Violin.txt)
-VIOLA=$(stat --print=%s Viola.txt)
-XYLOPHONE=$(stat --print=%s Xylophone.txt)
-
-if [ $CELLO -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Cello.txt"
-  export CATNAME="Cello"
-  $CATEGORIZE
-fi
 
-if [ $CLARINET -ne 0 ];
-then
-  export CATFILE="Clarinet.txt"
-  export CATNAME="Clarinet"
-  $CATEGORIZE
-fi
+  CELLO=$(egrep -i "$KEYWORDS_CELLO" newpages.txt)
+  CLARINET=$(egrep -i "$KEYWORDS_CLARINET" newpages.txt)
+  DRUMS=$(egrep -i "$KEYWORDS_DRUMS" newpages.txt | egrep -iv "$KEYWORDS_DRUMS_EXCLUDE")
+  FLUTE=$(egrep -i "$KEYWORDS_FLUTE" newpages.txt | egrep -iv "$KEYWORDS_FLUTE_EXCLUDE")
+  GUITAR=$(egrep -i "$KEYWORDS_GUITAR" newpages.txt | egrep -iv "$KEYWORDS_GUITAR_EXCLUDE")
+  HARP=$(egrep -i "$KEYWORDS_HARP" newpages.txt | egrep -iv "$KEYWORDS_HARP_EXCLUDE")
+  PIANO=$(egrep -i "$KEYWORDS_PIANO" newpages.txt)
+  RECORDER=$(egrep -i "$KEYWORDS_RECORDER" newpages.txt)
+  SAXOPHONE=$(egrep -i "$KEYWORDS_SAXOPHONE" newpages.txt)
+  VIOLIN=$(egrep -i "$KEYWORDS_VIOLIN" newpages.txt)
+  VIOLA=$(egrep -i "$KEYWORDS_VIOLA" newpages.txt)
+  XYLOPHONE=$(egrep -i "$KEYWORDS_XYLOPHONE" newpages.txt)
+  INSTRUMENTS=$(egrep -i "$KEYWORDS_MUSICALINSTRUMENT" newpages.txt | egrep -iv "$KEYWORDS_MUSICALINSTRUMENT_EXCLUDE")
 
-if [ $DRUMS -ne 0 ];
-then
-  export CATFILE="Drums.txt"
-  export CATNAME="Drums"
-  $CATEGORIZE
-fi
+  if [ "$CELLO" != "" ];
+  then
+    printf "%s" "$CELLO" > Cello.txt
+    export CATFILE="Cello.txt"
+    export CATNAME="Cello"
+    $CATEGORIZE
+    rm Cello.txt
+    unset CELLO
+  fi
 
-if [ $FLUTE -ne 0 ];
-then
-  export CATFILE="Flute.txt"
-  export CATNAME="Flute"
-  $CATEGORIZE
-fi
+  if [ "$CLARINET" != "" ];
+  then
+    printf "%s" "$CLARINET" > Clarinet.txt
+    export CATFILE="Clarinet.txt"
+    export CATNAME="Clarinet"
+    $CATEGORIZE
+    rm Clarinet.txt
+    unset CLARINET
+  fi
 
-if [ $GUITAR -ne 0 ];
-then
-  export CATFILE="Guitar.txt"
-  export CATNAME="Guitar"
-  $CATEGORIZE
-fi
+  if [ "$DRUMS" != "" ];
+  then
+    printf "%s" "$DRUMS" > Drums.txt
+    export CATFILE="Drums.txt"
+    export CATNAME="Drums"
+    $CATEGORIZE
+    rm Drums.txt
+    unset DRUMS
+  fi
 
-if [ $HARP -ne 0 ];
-then
-  export CATFILE="Harp.txt"
-  export CATNAME="Harp"
-  $CATEGORIZE
-fi
+  if [ "$FLUTE" != "" ];
+  then
+    printf "%s" "$FLUTE" > Flute.txt
+    export CATFILE="Flute.txt"
+    export CATNAME="Flute"
+    $CATEGORIZE
+    rm Flute.txt
+    unset FLUTE
+  fi
 
-if [ $PIANO -ne 0 ];
-then
-  export CATFILE="Piano.txt"
-  export CATNAME="Piano"
-  $CATEGORIZE
-fi
+  if [ "$GUITAR" != "" ];
+  then
+    printf "%s" "$GUITAR" > Guitar.txt
+    export CATFILE="Guitar.txt"
+    export CATNAME="Guitar"
+    $CATEGORIZE
+    rm Guitar.txt
+    unset GUITAR
+  fi
 
-if [ $RECORDER -ne 0 ];
-then
-  export CATFILE="Recorder.txt"
-  export CATNAME="Recorder (musical instrument)"
-  $CATEGORIZE
-fi
+  if [ "$HARP" != "" ];
+  then
+    printf "%s" "$HARP" > Harp.txt
+    export CATFILE="Harp.txt"
+    export CATNAME="Harp"
+    $CATEGORIZE
+    rm Harp.txt
+    unset HARP
+  fi
 
-if [ $SAXOPHONE -ne 0 ];
-then
-  export CATFILE="Saxophone.txt"
-  export CATNAME="Saxophone"
-  $CATEGORIZE
-fi
+  if [ "$PIANO" != "" ];
+  then
+    printf "%s" "$PIANO" > Piano.txt
+    export CATFILE="Piano.txt"
+    export CATNAME="Piano"
+    $CATEGORIZE
+    rm Piano.txt
+    unset PIANO
+  fi
 
-if [ $VIOLIN -ne 0 ];
-then
-  export CATFILE="Violin.txt"
-  export CATNAME="Violin"
-  $CATEGORIZE
-fi
+  if [ "$RECORDER" != "" ];
+  then
+    printf "%s" "$RECORDER" > Recorder.txt
+    export CATFILE="Recorder.txt"
+    export CATNAME="Recorder (musical instrument)"
+    $CATEGORIZE
+    rm Recorder.txt
+    unset RECORDER
+  fi
 
-if [ $VIOLA -ne 0 ];
-then
-  export CATFILE="Viola.txt"
-  export CATNAME="Viola"
-  $CATEGORIZE
-fi
+  if [ "$SAXOPHONE" != "" ];
+  then
+    printf "%s" "$SAXOPHONE" > Saxophone.txt
+    export CATFILE="Saxophone.txt"
+    export CATNAME="Saxophone"
+    $CATEGORIZE
+    rm Saxophone.txt
+    unset SAXOPHONE
+  fi
 
-if [ $XYLOPHONE -ne 0 ];
-then
-  export CATFILE="Xylophone.txt"
-  export CATNAME="Xylophone"
-  $CATEGORIZE
-fi
+  if [ "$VIOLIN" != "" ];
+  then
+    printf "%s" "$VIOLIN" > Violin.txt
+    export CATFILE="Violin.txt"
+    export CATNAME="Violin"
+    $CATEGORIZE
+    rm Violin.txt
+    unset VIOLIN
+  fi
 
-rm Cello.txt
-rm Clarinet.txt
-rm Drums.txt
-rm Flute.txt
-rm Guitar.txt
-rm Harp.txt
-rm Piano.txt
-rm Recorder.txt
-rm Saxophone.txt
-rm Violin.txt
-rm Viola.txt
-rm Xylophone.txt
+  if [ "$VIOLA" != "" ];
+  then
+    printf "%s" "$VIOLA" > Viola.txt
+    export CATFILE="Viola.txt"
+    export CATNAME="Viola"
+    $CATEGORIZE
+    rm Viola.txt
+    unset VIOLA
+  fi
+
+  if [ "$XYLOPHONE" != "" ];
+  then
+    printf "%s" "$XYLOPHONE" > Xylophone.txt
+    export CATFILE="Xylophone.txt"
+    export CATNAME="Xylophone"
+    $CATEGORIZE
+    rm Xylophone.txt
+    unset XYLOPHONE
+  fi
+
+  if [ "$INSTRUMENTS" != "" ];
+  then
+    printf "%s" "$INSTRUMENTS" > Instruments.txt
+    export CATFILE="Instruments.txt"
+    export CATNAME="Musical instruments"
+    $CATEGORIZE
+    rm Instruments.txt
+    unset INSTRUMENTS
+  fi
+
+fi
