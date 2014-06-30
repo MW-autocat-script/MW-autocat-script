@@ -14,86 +14,101 @@ KEYWORDS_CALLOFDUTYSERIES_EXCLUDE="$KEYWORDS_COD4|$KEYWORDS_CODWAW|$KEYWORDS_COD
 KEYWORDS_CALLOFDUTYSERIES_CASESENSITIVE="CoD"
 KEYWORDS_CALLOFDUTYSERIES_CASESENSITIVE_EXCLUDE="CoD(| )[0-9]{1,}" 
 
-egrep -i "$KEYWORDS_COD4" newpages.txt | egrep -iv "$KEYWORDS_COD4_EXCLUDE" >> COD4.txt
-egrep -i "$KEYWORDS_CODWAW" newpages.txt >> WorldAtWar.txt
-egrep -i "$KEYWORDS_CODMW2" newpages.txt >> ModernWarfare2.txt
-egrep -i "$KEYWORDS_CODBO" newpages.txt | egrep -iv "$KEYWORDS_CODBO_EXCLUDE" >> BlackOps.txt
-egrep -i "$KEYWORDS_CODMW3" newpages.txt >> ModernWarfare3.txt
-egrep -i "$KEYWORDS_CODBO2" newpages.txt >> BlackOps2.txt
-egrep -i "$KEYWORDS_CODGHOSTS" newpages.txt >> Ghosts.txt
-egrep -i "$KEYWORDS_CALLOFDUTYSERIES" newpages.txt | egrep -iv "$KEYWORDS_CALLOFDUTYSERIES_EXCLUDE" >> CallofDuty.txt
-egrep "$KEYWORDS_CALLOFDUTYSERIES_CASESENSITIVE" newpages.txt | egrep -v "$KEYWORDS_CALLOFDUTYSERIES_CASESENSITIVE_EXCLUDE" >> CallofDuty.txt
-
-CALLOFDUTY=$(stat --print=%s CallofDuty.txt)
-MODERN=$(stat --print=%s COD4.txt)
-WORLDATWAR=$(stat --print=%s WorldAtWar.txt)
-MW2=$(stat --print=%s ModernWarfare2.txt)
-BLACKOPS=$(stat --print=%s BlackOps.txt)
-MW3=$(stat --print=%s ModernWarfare3.txt)
-BO2=$(stat --print=%s BlackOps2.txt)
-GHOSTS=$(stat --print=%s Ghosts.txt)
-
-if [ $CALLOFDUTY -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="CallofDuty.txt"
-  export CATNAME="Call of Duty series"
-  $CATEGORIZE
+
+  debug_start "Call of Duty series"
+
+  CALLOFDUTY=$(egrep -i "$KEYWORDS_CALLOFDUTYSERIES" newpages.txt | egrep -iv "$KEYWORDS_CALLOFDUTYSERIES_EXCLUDE" && egrep "$KEYWORDS_CALLOFDUTYSERIES_CASESENSITIVE" newpages.txt | egrep -v "$KEYWORDS_CALLOFDUTYSERIES_CASESENSITIVE_EXCLUDE")
+  MODERN=$(egrep -i "$KEYWORDS_COD4" newpages.txt | egrep -iv "$KEYWORDS_COD4_EXCLUDE")
+  WORLDATWAR=$(egrep -i "$KEYWORDS_CODWAW" newpages.txt)
+  MW2=$(egrep -i "$KEYWORDS_CODMW2" newpages.txt)
+  BLACKOPS=$(egrep -i "$KEYWORDS_CODBO" newpages.txt | egrep -iv "$KEYWORDS_CODBO_EXCLUDE")
+  MW3=$(egrep -i "$KEYWORDS_CODMW3" newpages.txt)
+  BO2=$(egrep -i "$KEYWORDS_CODBO2" newpages.txt)
+  GHOSTS=$(egrep -i "$KEYWORDS_CODGHOSTS" newpages.txt)
+
+  if [ "$CALLOFDUTY" != "" ];
+  then
+    printf "%s" "$CALLOFDUTY" > CallofDuty.txt
+    export CATFILE="CallofDuty.txt"
+    export CATNAME="Call of Duty series"
+    $CATEGORIZE
+    rm CallofDuty.txt
+    unset CALLOFDUTY
+  fi
+
+  if [ "$MODERN" != "" ];
+  then
+    printf "%s" "$MODERN" > COD4.txt
+    export CATFILE="COD4.txt"
+    export CATNAME="Call of Duty 4: Modern Warfare"
+    $CATEGORIZE
+    rm COD4.txt
+    unset COD4.txt
+  fi
+
+  if [ "$WORLDATWAR" != "" ];
+  then
+    printf "%s" "$WORLDATWAR" > WorldAtWar.txt
+    export CATFILE="WorldAtWar.txt"
+    export CATNAME="Call of Duty: World at War"
+    $CATEGORIZE
+    rm WorldAtWar.txt
+    unset WORLDATWAR
+  fi
+
+  if [ "$MW2" != "" ];
+  then
+    printf "%s" "$MW2" > ModernWarfare2.txt
+    export CATFILE="ModernWarfare2.txt"
+    export CATNAME="Call of Duty: Modern Warfare 2"
+    $CATEGORIZE
+    rm ModernWarfare2.txt
+    unset MW2
+  fi
+
+  if [ "$BLACKOPS" != "" ];
+  then
+    printf "%s" "$BLACKOPS" > BlackOps.txt
+    export CATFILE="BlackOps.txt"
+    export CATNAME="Call of Duty: Black Ops"
+    $CATEGORIZE
+    rm BlackOps.txt
+    unset BLACKOPS
+  fi
+
+  if [ "$MW3" != "" ];
+  then
+    printf "%s" "$MW3" > ModernWarfare3.txt
+    export CATFILE="ModernWarfare3.txt"
+    export CATNAME="Call of Duty: Modern Warfare 3"
+    $CATEGORIZE
+    rm ModernWarfare3.txt
+    unset MW3
+  fi
+
+  if [ "$BO2" != "" ];
+  then
+    printf "%s" "$BO2" > BlackOps2.txt
+    export CATFILE="BlackOps2.txt"
+    export CATNAME="Call of Duty: Black Ops II"
+    $CATEGORIZE
+    rm BlackOps2.txt
+    unset BO2
+  fi
+
+  if [ "$GHOSTS" != "" ];
+  then
+    printf "%s" "$GHOSTS" > Ghosts.txt
+    export CATFILE="Ghosts.txt"
+    export CATNAME="Call of Duty: Ghosts"
+    $CATEGORIZE
+    rm Ghosts.txt
+    unset GHOSTS
+  fi
+
+  debug_end "Call of Duty series"
+
 fi
 
-if [ $MODERN -ne 0 ];
-then
-  export CATFILE="COD4.txt"
-  export CATNAME="Call of Duty 4: Modern Warfare"
-  $CATEGORIZE
-fi
-
-if [ $WORLDATWAR -ne 0 ];
-then
-  export CATFILE="WorldAtWar.txt"
-  export CATNAME="Call of Duty: World at War"
-  $CATEGORIZE
-fi
-
-if [ $MW2 -ne 0 ];
-then
-  export CATFILE="ModernWarfare2.txt"
-  export CATNAME="Call of Duty: Modern Warfare 2"
-  $CATEGORIZE
-fi
-
-if [ $BLACKOPS -ne 0 ];
-then
-  export CATFILE="BlackOps.txt"
-  export CATNAME="Call of Duty: Black Ops"
-  $CATEGORIZE
-fi
-
-if [ $MW3 -ne 0 ];
-then
-  export CATFILE="ModernWarfare3.txt"
-  export CATNAME="Call of Duty: Modern Warfare 3"
-  $CATEGORIZE
-fi
-
-if [ $BO2 -ne 0 ];
-then
-  export CATFILE="BlackOps2.txt"
-  export CATNAME="Call of Duty: Black Ops II"
-  $CATEGORIZE
-fi
-
-if [ $GHOSTS -ne 0 ];
-then
-  export CATFILE="Ghosts.txt"
-  export CATNAME="Call of Duty: Ghosts"
-  $CATEGORIZE
-fi
-
-rm CallofDuty.txt
-rm COD4.txt
-rm WorldAtWar.txt
-rm ModernWarfare2.txt
-rm ModernWarfare3.txt
-rm BlackOps.txt
-rm BlackOps2.txt
-rm Ghosts.txt
