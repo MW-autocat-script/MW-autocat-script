@@ -2,15 +2,23 @@
 
 KEYWORDS_METALLICA="Metallica"
 
-egrep -i "$KEYWORDS_METALLICA" newpages.txt >> Metallica.txt
-
-METALLICA=$(stat --print=%s Metallica.txt)
-
-if [ $METALLICA -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Metallica.txt"
-  export CATNAME="Metallica"
-  $CATEGORIZE
-fi
 
-rm Metallica.txt
+  debug_start "Metallica"
+
+  METALLICA=$(egrep -i "$KEYWORDS_METALLICA" newpages.txt)
+
+  if [ "$METALLICA" != "" ];
+  then
+    printf "%s" "$METALLICA" > Metallica.txt
+    export CATFILE="Metallica.txt"
+    export CATNAME="Metallica"
+    $CATEGORIZE
+    rm Metallica.txt
+    unset METALLICA
+  fi
+
+  debug_end "Metallica"
+
+fi

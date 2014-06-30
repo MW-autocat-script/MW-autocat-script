@@ -1,14 +1,23 @@
 #!/bin/bash
 
-egrep -i 'United Nations|^U\.N(|\.)| U\.N(|\.) ' newpages.txt > UnitedNations.txt
+KEYWORDS_UNITEDNATIONS="United(| )Nations|\bU(|\.)N(|\.)\b"
 
-UNITED=$(stat --print=%s UnitedNations.txt)
-
-if [ $UNITED -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="UnitedNations.txt"
-  export CATNAME="United Nations"
-  $CATEGORIZE
-fi
 
-rm UnitedNations.txt
+  debug_start "United Nations"
+
+  UNITED=$(egrep -i "$KEYWORDS_UNITEDNATIONS" newpages.txt)
+
+  if [ "$UNITED" != "" ];
+  then
+    printf "%s" "$UNITED" > UnitedNations.txt
+    export CATFILE="UnitedNations.txt"
+    export CATNAME="United Nations"
+    $CATEGORIZE
+    rm UnitedNations.txt
+  fi
+
+  debug_end "United Nations"
+
+fi

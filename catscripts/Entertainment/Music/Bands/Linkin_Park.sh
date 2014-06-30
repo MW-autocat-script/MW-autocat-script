@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i "Linkin('|)(| )Park" newpages.txt >> LinkinPark.txt
+KEYWORDS_LINKINPARK="Linkin('|)(| )Park"
 
-LINKIN=$(stat --print=%s LinkinPark.txt)
-
-if [ $LINKIN -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="LinkinPark.txt"
-  export CATNAME="Linkin Park"
-  $CATEGORIZE
-fi
 
-rm LinkinPark.txt
+  debug_start "Linkin' Park"
+
+  LINKIN=$(egrep -i "$KEYWORDS_LINKINPARK" newpages.txt)
+
+  if [ "$LINKIN" != "" ];
+  then
+    printf "%s" "$LINKIN" > LinkinPark.txt
+    export CATFILE="LinkinPark.txt"
+    export CATNAME="Linkin Park"
+    $CATEGORIZE
+    rm LinkinPark.txt
+    unset LINKIN
+  fi
+
+  debug_end "Linkin' Park"
+
+fi

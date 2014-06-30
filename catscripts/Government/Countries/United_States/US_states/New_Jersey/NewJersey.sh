@@ -1,14 +1,22 @@
 #!/bin/bash
 
-egrep -i 'New(| )Jersey' newpages.txt >> NewJersey.txt
+KEYWORDS_NEWJERSEY="New(| )Jersey"
 
-NEWJERSEY=$(stat --print=%s NewJersey.txt)
-
-if [ $NEWJERSEY -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="NewJersey.txt"
-  export CATNAME="New Jersey"
-  $CATEGORIZE
-fi
 
-rm NewJersey.txt
+  NEWJERSEY=$(egrep -i "$KEYWORDS_NEWJERSEY" newpages.txt)
+
+  if [ "$NEWJERSEY" != "" ];
+  then
+    printf "%s" "$NEWJERSEY" > NewJersey.txt
+    export CATFILE="NewJersey.txt"
+    export CATNAME="New Jersey"
+    $CATEGORIZE
+    rm NewJersey.txt
+    unset NEWJERSEY
+  fi
+
+  debug_end "New Jersey"
+
+fi

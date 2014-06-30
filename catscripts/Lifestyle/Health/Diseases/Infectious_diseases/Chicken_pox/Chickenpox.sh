@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'chicken(| )pox' newpages.txt >> Chickenpox.txt
+KEYWORDS_CHICKENPOX="chicken(| )pox"
 
-CHICKENPOX=$(stat --print=%s Chickenpox.txt)
-
-if [ $CHICKENPOX -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Chickenpox.txt"
-  export CATNAME="Chicken pox"
-  $CATEGORIZE
-fi
 
-rm Chickenpox.txt
+  debug_start "Chicken pox"
+
+  CHICKENPOX=$(egrep -i "$KEYWORDS_CHICKENPOX" newpages.txt)
+
+  if [ "$CHICKENPOX" != "" ];
+  then
+    printf "%s" "$CHICKENPOX" > Chickenpox.txt
+    export CATFILE="Chickenpox.txt"
+    export CATNAME="Chicken pox"
+    $CATEGORIZE
+    rm Chickenpox.txt
+    unset CHICKENPOX
+  fi
+
+  debug_end "Chicken pox"
+
+fi
