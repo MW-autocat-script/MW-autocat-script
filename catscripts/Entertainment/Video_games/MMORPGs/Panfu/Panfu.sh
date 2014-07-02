@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_PANFU="Panfu"
 
-egrep -i "$KEYWORDS_MMORPG_PANFU" newpages.txt >> Panfu.txt
-
-PANFU=$(stat --print=%s Panfu.txt)
-
-if [ $PANFU -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Panfu.txt"
-  export CATNAME="Panfu"
-  $CATEGORIZE
-fi
+  
+  debug_start "Panfu"
 
-rm Panfu.txt
+  PANFU=$(egrep -i "$KEYWORDS_MMORPG_PANFU" newpages.txt)
+
+  if [ "$PANFU" != "" ];
+  then
+    printf "%s" "$PANFU" > Panfu.txt
+    export CATFILE="Panfu.txt"
+    export CATNAME="Panfu"
+    $CATEGORIZE
+    rm Panfu.txt
+    unset PANFU
+  fi
+
+  debug_end "Panfu"
+
+fi

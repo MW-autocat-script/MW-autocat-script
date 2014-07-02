@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'Breast(| )cancer' newpages.txt > Breastcancer.txt
+KEYWORDS_BREASTCANCER="Breast(| )cancer"
 
-BREASTCANCER=$(stat --print=%s Breastcancer.txt)
-
-if [ $BREASTCANCER -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Breastcancer.txt"
-  export CATNAME="Breast cancer"
-  $CATEGORIZE
-fi
 
-rm Breastcancer.txt
+  debug_start "Breast cancer"
+
+  BREASTCANCER=$(egrep -i "$KEYWORDS_BREASTCANCER" newpages.txt)
+
+  if [ "$BREASTCANCER" != "" ];
+  then
+    printf "%s" "$BREASTCANCER" > Breastcancer.txt
+    export CATFILE="Breastcancer.txt"
+    export CATNAME="Breast cancer"
+    $CATEGORIZE
+    rm Breastcancer.txt
+    unset BREASTCANCER
+  fi
+
+  debug_end "Breast cancer"
+
+fi

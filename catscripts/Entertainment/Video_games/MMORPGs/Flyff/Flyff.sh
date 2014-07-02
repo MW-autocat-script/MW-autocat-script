@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_FLYFF="Flyff"
 
-egrep -i "$KEYWORDS_MMORPG_FLYFF" newpages.txt >> Flyff.txt
-
-FLYFF=$(stat --print=%s Flyff.txt)
-
-if [ $FLYFF -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Flyff.txt"
-  export CATNAME="Flyff"
-  $CATEGORIZE
-fi
 
-rm Flyff.txt
+  debug_start "Flyff"
+
+  FLYFF=$(egrep -i "$KEYWORDS_MMORPG_FLYFF" newpages.txt)
+
+  if [ "$FLYFF" != "" ];
+  then
+    printf "%s" "$FLYFF" > Flyff.txt
+    export CATFILE="Flyff.txt"
+    export CATNAME="Flyff"
+    $CATEGORIZE
+    rm Flyff.txt
+    unset FLYFF
+  fi
+
+  debug_end "Flyff"
+
+fi

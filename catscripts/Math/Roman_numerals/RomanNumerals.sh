@@ -1,14 +1,24 @@
 #!/bin/bash 
 
-egrep -i 'Roman numeral' newpages.txt >> RomanNumerals.txt
+KEYWORDS_ROMANNUMERALS="Roman(| )numeral"
 
-NUMERALS=$(stat --print=%s RomanNumerals.txt)
-
-if [ $NUMERALS -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="RomanNumerals.txt"
-  export CATNAME="Roman numerals"
-  $CATEGORIZE
-fi
 
-rm RomanNumerals.txt
+  debug_start "Roman numerals"
+
+  NUMERALS=$(egrep -i "$KEYWORDS_ROMANNUMERALS" newpages.txt)
+
+  if [ "$NUMERALS" != "" ];
+  then
+    printf "%s" "$NUMERALS" > RomanNumerals.txt
+    export CATFILE="RomanNumerals.txt"
+    export CATNAME="Roman numerals"
+    $CATEGORIZE
+    rm RomanNumerals.txt
+    unset NUMERALS
+  fi
+
+  debug_end "Roman numerals"
+
+fi

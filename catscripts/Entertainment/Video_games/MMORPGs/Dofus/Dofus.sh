@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_DOFUS="Dofus"
 
-egrep -i "$KEYWORDS_MMORPG_DOFUS" newpages.txt >> Dofus.txt
-
-DOFUS=$(stat --print=%s Dofus.txt)
-
-if [ $DOFUS -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Dofus.txt"
-  export CATNAME="Dofus"
-  $CATEGORIZE
-fi
 
-rm Dofus.txt
+  debug_start "Dofus"
+
+  DOFUS=$(egrep -i "$KEYWORDS_MMORPG_DOFUS" newpages.txt)
+
+  if [ "$DOFUS" != "" ];
+  then
+    printf "%s" "$DOFUS" > Dofus.txt
+    export CATFILE="Dofus.txt"
+    export CATNAME="Dofus"
+    $CATEGORIZE
+    rm Dofus.txt
+    unset DOFUS
+  fi
+
+  debug_start "Dofus"
+
+fi

@@ -2,15 +2,23 @@
 
 KEYWORDS_PORSCHE="Porsche"
 
-egrep -i "$KEYWORDS_PORSCHE" newpages.txt >> Porsche.txt
-
-PORSCHE=$(stat --print=%s Porsche.txt)
-
-if [ $PORSCHE -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Porsche.txt"
-  export CATNAME="Porsche"
-  $CATEGORIZE
-fi
 
-rm Porsche.txt
+  debug_start "Porsche"
+
+  PORSCHE=$(egrep -i "$KEYWORDS_PORSCHE" newpages.txt)
+
+  if [ "$PORSCHE" != "" ];
+  then
+    printf "%s" "$PORSCHE" > Porsche.txt
+    export CATFILE="Porsche.txt"
+    export CATNAME="Porsche"
+    $CATEGORIZE
+    rm Porsche.txt
+    unset PORSCHE
+  fi
+
+  debug_end "Porsche"
+
+fi

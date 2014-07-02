@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'New(| )Mexico|New(| )Mexican' newpages.txt >> NewMexico.txt
+KEYWORDS_NEWMEXICO="New(| )Mexic(o|an)"
 
-NEWMEXICO=$(stat --print=%s NewMexico.txt)
-
-if [ $NEWMEXICO -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="NewMexico.txt"
-  export CATNAME="New Mexico"
-  $CATEGORIZE
-fi
 
-rm NewMexico.txt
+  debug_start "New Mexico"
+
+  NEWMEXICO=$(egrep -i "$KEYWORDS_NEWMEXICO" newpages.txt)
+
+  if [ "$NEWMEXICO" != "" ];
+  then
+    printf "%s" "$NEWMEXICO" > NewMexico.txt
+    export CATFILE="NewMexico.txt"
+    export CATNAME="New Mexico"
+    $CATEGORIZE
+    rm NewMexico.txt
+    unset NEWMEXICO
+  fi
+
+  debug_end "New Mexico"
+
+fi

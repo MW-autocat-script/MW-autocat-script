@@ -1,14 +1,25 @@
 #!/bin/bash
 
-egrep -i 'Dolphin' newpages.txt | egrep -iv 'Miami Dolphin|emulator' >> Dolphins.txt
+KEYWORDS_DOLPHINS="Dolphin"
+KEYWORDS_DOLPHINS_EXCLUDE="Miami(| )Dolphin|emulator"
 
-DOLPHIN=$(stat --print=%s Dolphins.txt)
-
-if [ $DOLPHIN -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Dolphins.txt"
-  export CATNAME="Dolphins"
-  $CATEGORIZE
-fi
 
-rm Dolphins.txt
+  debug_start "Dolphins"
+
+  DOLPHIN=$(egrep -i "$KEYWORDS_DOLPHINS" newpages.txt | egrep -iv "$KEYWORDS_DOLPHINS_EXCLUDE")
+
+  if [ "$DOLPHIN" != "" ];
+  then
+    printf "%s" "$DOLPHIN" > Dolphins.txt
+    export CATFILE="Dolphins.txt"
+    export CATNAME="Dolphins"
+    $CATEGORIZE
+    rm Dolphins.txt
+    unset DOLPHIN
+  fi
+
+  debug_end "Dolphins"
+
+fi

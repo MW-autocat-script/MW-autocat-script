@@ -2,15 +2,23 @@
 
 KEYWORDS_SCOTLAND="Scotland"
 
-egrep -i "$KEYWORDS_SCOTLAND" newpages.txt >> Scotland.txt
-
-SCOTLAND=$(stat --print=%s Scotland.txt)
-
-if [ $SCOTLAND -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Scotland.txt"
-  export CATNAME="Scotland"
-  $CATEGORIZE
-fi
 
-rm Scotland.txt
+  debug_start "Scotland"
+
+  SCOTLAND=$(egrep -i "$KEYWORDS_SCOTLAND" newpages.txt)
+
+  if [ "$SCOTLAND" != "" ];
+  then
+    printf "%s" "$SCOTLAND" > Scotland.txt
+    export CATFILE="Scotland.txt"
+    export CATNAME="Scotland"
+    $CATEGORIZE
+    rm Scotland.txt
+    unset SCOTLAND
+  fi
+
+  debug_end "Scotland"
+
+fi
