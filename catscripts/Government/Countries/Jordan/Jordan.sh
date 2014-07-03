@@ -20,6 +20,6 @@ then
     unset JORDAN
   fi
 
-  denug_end "Jordan"
+  debug_end "Jordan"
 
 fi

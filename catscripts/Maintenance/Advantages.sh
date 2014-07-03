@@ -11,7 +11,7 @@ then
 
   if [ "$ADVANTAGES" != "" ];
   then
-    printf "$ADVANTAGES" > Advantages.txt
+    printf "%s" "$ADVANTAGES" > Advantages.txt
     export CATFILE="Advantages.txt"
     export CATNAME="Advantages and disadvantages"
     $CATEGORIZE
@@ -20,6 +20,5 @@ then
   fi
 
   debug_end "Advantages and disadvantages"
-  fi
 
 fi

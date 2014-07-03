@@ -21,6 +21,6 @@ then
     unset LEBANON
   fi
 
-  denug_end "Lebanon"
+  debug_end "Lebanon"
 
 fi
