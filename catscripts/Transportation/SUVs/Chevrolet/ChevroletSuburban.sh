@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'Chev(y|rolet)(| )Suburban|[0-9]{2,}(| )Suburban' newpages.txt >> Suburban.txt
+KEYWORDS_CHEVROLETSUBURBAN="Chev(y|rolet)(| )Suburban|[0-9]{2,}Suburban"
 
-SUBURBAN=$(stat --print=%s Suburban.txt)
-
-if [ $SUBURBAN -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Suburban.txt"
-  export CATNAME="Chevrolet Suburban"
-  $CATEGORIZE
-fi
 
-rm Suburban.txt
+  debug_start "Chevrolet Suburban"
+
+  SUBURBAN=$(egrep -i "$KEYWORDS_CHEVROLETSUBURBAN" newpages.txt)
+
+  if [ "$SUBURBAN" != "" ];
+  then
+    printf "%s" "$SUBURBAN" > Suburban.txt
+    export CATFILE="Suburban.txt"
+    export CATNAME="Chevrolet Suburban"
+    $CATEGORIZE
+    rm Suburban.txt
+    unset SUBURBAN
+  fi
+
+  debug_end "Chevrolet Suburban"
+
+fi

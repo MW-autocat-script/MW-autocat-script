@@ -2,15 +2,23 @@
 
 KEYWORDS_LOUISIANA="Lou(|i)siana"
 
-egrep -i "$KEYWORDS_LOUISIANA" newpages.txt >> Louisiana.txt
-
-LOUISIANA=$(stat --print=%s Louisiana.txt)
-
-if [ $LOUISIANA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Louisiana.txt"
-  export CATNAME="Louisiana"
-  $CATEGORIZE
-fi
 
-rm Louisiana.txt
+  debug_start "Louisiana"
+
+  LOUISIANA=$(egrep -i "$KEYWORDS_LOUISIANA" newpages.txt)
+
+  if [ "$LOUISIANA" != "" ];
+  then
+    printf "%s" "$LOUISIANA" > Louisiana.txt
+    export CATFILE="Louisiana.txt"
+    export CATNAME="Louisiana"
+    $CATEGORIZE
+    rm Louisiana.txt
+    unset LOUISIANA
+  fi
+
+  debug_end "Louisiana"
+
+fi

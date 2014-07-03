@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'Arabic word for|How do you say .+ in Arabic' newpages.txt >> EnglishtoArabic.txt
+KEYWORDS_ENGLISHTOARABIC="Arabic(| )word(| )for|say.+in(| )Arabic"
 
-ARABIC=$(stat --print=%s EnglishtoArabic.txt)
-
-if [ $ARABIC -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="EnglishtoArabic.txt"
-  export CATNAME="English to Arabic"
-  $CATEGORIZE
-fi
 
-rm EnglishtoArabic.txt
+  debug_start "English to Arabic"
+
+  ARABIC=$(egrep -i "$KEYWORDS_ENGLISHTOARABIC" newpages.txt)
+
+  if [ "$ARABIC" != "" ];
+  then
+    printf "%s" "$ARABIC" > EnglishtoArabic.txt
+    export CATFILE="EnglishtoArabic.txt"
+    export CATNAME="English to Arabic"
+    $CATEGORIZE
+    rm EnglishtoArabic.txt
+    unset ARABIC
+  fi
+
+  debug_end "English to Arabic"
+
+fi

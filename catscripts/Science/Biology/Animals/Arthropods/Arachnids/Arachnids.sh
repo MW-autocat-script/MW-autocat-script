@@ -1,44 +1,63 @@
 #!/bin/bash
 
-egrep -i 'arachnid' newpages.txt | egrep -iv 'spider|tarantula|tick|scorpion' >> Arachnids.txt
-egrep -i 'deer tick' newpages.txt >> Ticks.txt
-egrep -i 'spider|tarantula|daddy( |-)long( |-)leg' newpages.txt | egrep -iv 'spider( ||-)man|Rune(| )Scape|Stronghold of Security|Varrock' >> Spiders.txt
-egrep -i 'scorpion' newpages.txt | egrep -iv 'scorpion king' >> Scorpions.txt
+KEYWORDS_ARACHNIDS="Arachnid"
+KEYWORDS_TICKS="deer(| )tick"
+KEYWORDS_SPIDERS="spider|tarantula|daddy(| |-)long(| |-)leg"
+KEYWORDS_SPIDERS_EXCLUDE="Spider(| |-)Man|Rune(| )Scape|Stronghold(| )of(| )Security|Varrock|spider(| )solitaire"
+KEYWORDS_SCORPIONS="Scorpion"
+KEYWORDS_SCORPIONS_EXCLUDE="scorpion(| )king"
+KEYWORDS_ARACHNIDS_EXCLUDE="$KEYWORDS_TICKS|$KEYWORDS_SPIDERS|$KEYWORDS_SPIDERS_EXCLUDE|$KEYWORDS_SCORPIONS|$KEYWORDS_SCORPIONS_EXCLUDE"
 
-ARACHNIDS=$(stat --print=%s Arachnids.txt)
-TICKS=$(stat --print=%s Ticks.txt)
-SPIDERS=$(stat --print=%s Spiders.txt)
-SCORPIONS=$(stat --print=%s Scorpions.txt)
-
-if [ $ARACHNIDS -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Arachnids.txt"
-  export CATNAME="Arachnids"
-  $CATEGORIZE
-fi
+  
+  debug_start "Arachnids"
 
-if [ $TICKS -ne 0 ];
-then
-  export CATFILE="Ticks.txt"
-  export CATNAME="Ticks"
-  $CATEGORIZE
-fi
+  ARACHNIDS=$(egrep -i "$KEYWORDS_ARACHNIDS" newpages.txt | egrep -iv "$KEYWORDS_ARACHNIDS_EXCLUDE")
+  TICKS=$(egrep -i "$KEYWORDS_TICKS" newpages.txt)
+  SPIDERS=$(egrep -i "$KEYWORDS_SPIDERS" newpages.txt | egrep -iv "$KEYWORDS_SPIDERS_EXCLUDE")
+  SCORPIONS=$(egrep -i "$KEYWORDS_SCORPIONS" newpages.txt | egrep -iv "$KEYWORDS_SCORPIONS_EXCLUDE")
 
-if [ $SPIDERS -ne 0 ];
-then
-  export CATFILE="Spiders.txt"
-  export CATNAME="Spiders"
-  $CATEGORIZE
-fi
+  if [ "$ARACHNIDS" != "" ];
+  then
+    printf "%s" "$ARACHNIDS" > Arachnids.txt
+    export CATFILE="Arachnids.txt"
+    export CATNAME="Arachnids"
+    $CATEGORIZE
+    rm Arachnids.txt
+    unset ARACHNIDS
+  fi
 
-if [ $SCORPIONS -ne 0 ];
-then
-  export CATFILE="Scorpions.txt"
-  export CATNAME="Scorpions"
-  $CATEGORIZE
-fi
+  if [ "$TICKS" != "" ];
+  then
+    printf "%s" "$TICKS" > Ticks.txt
+    export CATFILE="Ticks.txt"
+    export CATNAME="Ticks"
+    $CATEGORIZE
+    rm Ticks.txt
+    unset TICKS
+  fi
 
-rm Arachnids.txt
-rm Ticks.txt
-rm Spiders.txt
-rm Scorpions.txt
+  if [ "$SPIDERS" != "" ];
+  then
+    printf "%s" "$SPIDERS" > Spiders.txt
+    export CATFILE="Spiders.txt"
+    export CATNAME="Spiders"
+    $CATEGORIZE
+    rm Spiders.txt
+    unset SPIDERS
+  fi
+
+  if [ "$SCORPIONS" != "" ];
+  then
+    printf "%s" "$SCORPIONS" > Scorpions.txt
+    export CATFILE="Scorpions.txt"
+    export CATNAME="Scorpions"
+    $CATEGORIZE
+    rm Scorpions.txt
+    unset SCORPIONS
+  fi
+
+  debug_end "Arachnids"
+
+fi

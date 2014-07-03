@@ -2,15 +2,23 @@
 
 KEYWORDS_N64="Nintendo(| )64|\bN64"
 
-egrep -i "$KEYWORDS_N64" newpages.txt >> Nintendo64.txt
-
-N64=$(stat --print=%s Nintendo64.txt)
-
-if [ $N64 -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="Nintendo64.txt"
-  export CATNAME="Nintendo 64"
-  $CATEGORIZE
-fi
+  
+  debug_start "Nintendo 64"
 
-rm Nintendo64.txt
+  N64=$(egrep -i "$KEYWORDS_N64" newpages.txt)
+
+  if [ "$N64" != "" ];
+  then
+    printf "%s" "$N64" > Nintendo64.txt
+    export CATFILE="Nintendo64.txt"
+    export CATNAME="Nintendo 64"
+    $CATEGORIZE
+    rm Nintendo64.txt
+    unset N64
+  fi
+
+  debug_end "Nintendo 64"
+
+fi

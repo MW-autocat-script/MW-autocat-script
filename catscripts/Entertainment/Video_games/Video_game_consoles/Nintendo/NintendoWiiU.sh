@@ -2,15 +2,22 @@
 
 KEYWORDS_NINTENDOWIIU="\bWii(| )U\b"
 
-egrep -i "$KEYWORDS_NINTENDOWIIU" newpages.txt >> NintendoWiiU.txt
-
-WIIU=$(stat --print=%s NintendoWiiU.txt)
-
-if [ $WIIU -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="NintendoWiiU.txt"
-  export CATNAME="Nintendo Wii U"
-  $CATEGORIZE
-fi
 
-rm NintendoWiiU.txt
+  debug_start "Nintendo Wii U"
+
+  WIIU=$(egrep -i "$KEYWORDS_NINTENDOWIIU" newpages.txt)
+
+  if [ "$WIIU" != "" ];
+  then
+    export CATFILE="NintendoWiiU.txt"
+    export CATNAME="Nintendo Wii U"
+    $CATEGORIZE
+    rm NintendoWiiU.txt
+    unset WIIU
+  fi
+
+  debug_end "Nintendo Wii U"
+
+fi

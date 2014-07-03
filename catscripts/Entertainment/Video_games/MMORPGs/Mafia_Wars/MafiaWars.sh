@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_MAFIA="Mafia(| )Wars"
 
-egrep -i "$KEYWORDS_MMORPG_MAFIA" newpages.txt > MafiaWars.txt
-
-MAFIA=$(stat --print=%s MafiaWars.txt)
-
-if [ $MAFIA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="MafiaWars.txt"
-  export CATNAME="Mafia Wars"
-  $CATEGORIZE
-fi
 
-rm MafiaWars.txt
+  debug_start "Mafia Wars"
+
+  MAFIA=$(egrep -i "$KEYWORDS_MMORPG_MAFIA" newpages.txt)
+
+  if [ "$MAFIA" != "" ];
+  then
+    printf "%s" "$MAFIA" > MafiaWars.txt
+    export CATFILE="MafiaWars.txt"
+    export CATNAME="Mafia Wars"
+    $CATEGORIZE
+    rm MafiaWars.txt
+    unset MAFIA
+  fi
+
+  debug_end "Mafia Wars"
+
+fi

@@ -2,15 +2,23 @@
 
 export KEYWORDS_MOVIES_GODZILLA="Godzilla"
 
-egrep -i "$KEYWORDS_MOVIES_GODZILLA" newpages.txt >> Godzilla.txt
-
-GODZILLA=$(stat --print=%s Godzilla.txt)
-
-if [ $GODZILLA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Godzilla.txt"
-  export CATNAME="Godzilla"
-  $CATEGORIZE
-fi
 
-rm Godzilla.txt
+  debug_start "Godzilla"
+
+  GODZILLA=$(egrep -i "$KEYWORDS_MOVIES_GODZILLA" newpages.txt)
+
+  if [ "$GODZILLA" != "" ];
+  then
+    printf "%s" "$GODZILLA" > Godzilla.txt
+    export CATFILE="Godzilla.txt"
+    export CATNAME="Godzilla"
+    $CATEGORIZE
+    rm Godzilla.txt
+    unset GODZILLA
+  fi
+
+  debug_end "Godzilla"
+
+fi

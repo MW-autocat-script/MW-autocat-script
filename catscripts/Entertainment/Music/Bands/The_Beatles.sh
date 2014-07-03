@@ -1,14 +1,25 @@
 #!/bin/bash
 
-egrep -i 'The Beatles' newpages.txt | egrep -iv 'Paul McCartney|John Lennon' > TheBeatles.txt
+KEYWORDS_THEBEATLES="The(| )Beatles"
+KEYWORDS_THEBEATLES_EXCLUDE="Paul(| )McCartney|John(| )Lennon"
 
-BEATLES=$(stat --print=%s TheBeatles.txt)
-
-if [ $BEATLES -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="TheBeatles.txt"
-  export CATNAME="The Beatles"
-  $CATEGORIZE
-fi
 
-rm TheBeatles.txt
+  debug_start "The Beatles"
+
+  BEATLES=$(egrep -i "$KEYWORDS_THEBEATLES" newpages.txt | egrep -iv "$KEYWORDS_THEBEATLES_EXCLUDE")
+
+  if [ "$BEATLES" != "" ];
+  then
+    printf "%s" "$BEATLES" > TheBeatles.txt
+    export CATFILE="TheBeatles.txt"
+    export CATNAME="The Beatles"
+    $CATEGORIZE
+    rm TheBeatles.txt
+    unset BEATLES
+  fi
+
+  debug_end "The Beatles"
+
+fi

@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'Greek word for|How do you say .+ in Greek' newpages.txt >> EnglishtoGreek.txt
+KEYWORDS_ENGLISHTOGREEK="Greek(| )word(| )for|How(| )do(| )you(| )say(| ).+in Greek"
 
-GREEK=$(stat --print=%s EnglishtoGreek.txt)
-
-if [ $GREEK -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="EnglishtoGreek.txt"
-  export CATNAME="English to Greek"
-  $CATEGORIZE
-fi
 
-rm EnglishtoGreek.txt
+  debug_start "English to Greek"
+
+  GREEK=$(egrep -i "$KEYWORDS_ENGLISHTOGREEK" newpages.txt)
+
+  if [ "$GREEK" != "" ];
+  then
+    printf "%s" "$GREEK" > EnglishtoGreek.txt
+    export CATFILE="EnglishtoGreek.txt"
+    export CATNAME="English to Greek"
+    $CATEGORIZE
+    rm EnglishtoGreek.txt
+    unset GREEK
+  fi
+
+  debug_end "English to Greek"
+
+fi

@@ -5,17 +5,20 @@ KEYWORDS_TELEVISIONSERIES_ICARLY="iCarly"
 if [ "$1" == "" ];
 then 
 
-egrep -i "$KEYWORDS_TELEVISIONSERIES_ICARLY" newpages.txt >> iCarly.txt
+  debug_start "iCarly"
 
-ICARLY=$(stat --print=%s iCarly.txt)
+  ICARLY=$(egrep -i "$KEYWORDS_TELEVISIONSERIES_ICARLY" newpages.txt)
 
-if [ $ICARLY -ne 0 ];
-then
-  export CATFILE="iCarly.txt"
-  export CATNAME="iCarly"
-  $CATEGORIZE
-fi
+  if [ "$ICARLY" != "" ];
+  then
+    printf "%s" "$ICARLY" > iCarly.txt
+    export CATFILE="iCarly.txt"
+    export CATNAME="iCarly"
+    $CATEGORIZE
+    rm iCarly.txt
+    unset ICARLY
+  fi
 
-rm iCarly.txt
+  debug_end "iCarly"
 
 fi

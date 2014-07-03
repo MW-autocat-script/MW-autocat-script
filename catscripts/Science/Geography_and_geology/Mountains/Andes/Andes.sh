@@ -5,17 +5,20 @@ KEYWORDS_ANDES="\bAndes"
 if [ "$1" == "" ];
 then
   
-  egrep -i "$KEYWORDS_ANDES" newpages.txt >> Andes.txt
+  debug_start "Andes"
 
-  ANDES=$(stat --print=%s Andes.txt)
+  ANDES=$(egrep -i "$KEYWORDS_ANDES" newpages.txt)
 
-  if [ $ANDES -ne 0 ];
+  if [ "$ANDES" != "" ];
   then
+    printf "%s" "$ANDES" > Andes.txt
     export CATFILE="Andes.txt"
     export CATNAME="Andes"
     $CATEGORIZE
+    rm Andes.txt
+    unset ANDES
   fi
 
-  rm Andes.txt
+  debug_end "Andes"
 
 fi

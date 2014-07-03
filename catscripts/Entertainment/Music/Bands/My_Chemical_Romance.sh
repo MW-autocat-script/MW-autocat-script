@@ -2,15 +2,23 @@
 
 KEYWORDS_MYCHEMICALROMANCE="My(| )Chemical(| )Romance|\bMCR\b"
 
-egrep -i "$KEYWORDS_MYCHEMICALROMANCE" newpages.txt >> MCR.txt
-
-MCR=$(stat --print=%s MCR.txt)
-
-if [ $MCR -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="MCR.txt"
-  export CATNAME="My Chemical Romance"
-  $CATEGORIZE
-fi
 
-rm MCR.txt
+  debug_start "My Chemical Romance"
+
+  MCR=$(egrep -i "$KEYWORDS_MYCHEMICALROMANCE" newpages.txt)
+
+  if [ "$MCR" != "" ];
+  then
+    printf "%s" "$MCR" > MCR.txt
+    export CATFILE="MCR.txt"
+    export CATNAME="My Chemical Romance"
+    $CATEGORIZE
+    rm MCR.txt
+    unset MCR
+  fi
+
+  debug_end "My Chemical Romance"
+
+fi

@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i '.+in French$|French word for' newpages.txt >> EnglishtoFrench.txt
+KEYWORDS_ENGLISHTOFRENCH="\bin(| )French$|French(| )word(| )for"
 
-ETOF=$(stat --print=%s EnglishtoFrench.txt)
-
-if [ $ETOF -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="EnglishtoFrench.txt"
-  export CATNAME="English to French"
-  $CATEGORIZE
-fi
 
-rm EnglishtoFrench.txt
+  debug_start "English to French"
+
+  ETOF=$(egrep -i "$KEYWORDS_ENGLISHTOFRENCH" newpages.txt)
+
+  if [ "$ETOF" != "" ];
+  then
+    printf "%s" "$ETOF" > EnglishtoFrench.txt
+    export CATFILE="EnglishtoFrench.txt"
+    export CATNAME="English to French"
+    $CATEGORIZE
+    rm EnglishtoFrench.txt
+    unset ETOF
+  fi
+
+  debug_end "English to French"
+
+fi

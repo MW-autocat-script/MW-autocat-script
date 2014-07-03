@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_GHOSTX="Ghost(| )X"
 
-egrep -i "$KEYWORDS_MMORPG_GHOSTX" newpages.txt >> GhostX.txt
-
-GHOSTX=$(stat --print=%s GhostX.txt)
-
-if [ $GHOSTX -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="GhostX.txt"
-  export CATNAME="GhostX"
-  $CATEGORIZE
-fi
+  
+  debug_start "GhostX"
 
-rm GhostX.txt
+  GHOSTX=$(egrep -i "$KEYWORDS_MMORPG_GHOSTX" newpages.txt)
+
+  if [ "$GHOSTX" != "" ];
+  then
+    printf "%s" "$GHOSTX" > GhostX.txt
+    export CATFILE="GhostX.txt"
+    export CATNAME="GhostX"
+    $CATEGORIZE
+    rm GhostX.txt
+    unset GHOSTX
+  fi
+
+  debug_end "GhostX"
+
+fi

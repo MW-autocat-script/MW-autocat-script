@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'original Doom|Doom 1|Doom (II\b|2)|Doom (3|III\b)|Doom (4|IV)|Final Doom|PrBoom' newpages.txt >> Doom.txt
+KEYWORDS_DOOMSERIES="original(| )Doom|Doom(| )1|Doom(| )(II\b|2)|Doom(| )(3|III\b)|Doom(| )(4|IV)|Final(| )Doom|PrBoom"
 
-DOOM=$(stat --print=%s Doom.txt)
-
-if [ $DOOM -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Doom.txt"
-  export CATNAME="Doom series"
-  $CATEGORIZE
-fi
 
-rm Doom.txt
+  debug_start "Doom series"
+
+  DOOM=$(egrep -i "$KEYWORDS_DOOMSERIES" newpages.txt)
+
+  if [ "$DOOM" != "" ];
+  then
+    printf "%s" "$DOOM" > Doom.txt
+    export CATFILE="Doom.txt"
+    export CATNAME="Doom series"
+    $CATEGORIZE
+    rm Doom.txt
+    unset DOOM
+  fi
+
+  debug_end "Doom series"
+
+fi

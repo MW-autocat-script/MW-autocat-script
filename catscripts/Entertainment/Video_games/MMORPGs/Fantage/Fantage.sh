@@ -2,15 +2,23 @@
 
 KEYWORDS_MMORPG_FANTAGE="Fantage"
 
-egrep -i "$KEYWORDS_MMORPG_FANTAGE" newpages.txt >> Fantage.txt
-
-FANTAGE=$(stat --print=%s Fantage.txt)
-
-if [ $FANTAGE -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Fantage.txt"
-  export CATNAME="Fantage"
-  $CATEGORIZE
-fi
+  
+  debug_start "Fantage"
 
-rm Fantage.txt
+  FANTAGE=$(egrep -i "$KEYWORDS_MMORPG_FANTAGE" newpages.txt)
+
+  if [ "$FANTAGE" != "" ];
+  then
+    printf "%s" "$FANTAGE" > Fantage.txt
+    export CATFILE="Fantage.txt"
+    export CATNAME="Fantage"
+    $CATEGORIZE
+    rm Fantage.txt
+    unset FANTAGE
+  fi
+
+  debug_end "Fantage"
+
+fi

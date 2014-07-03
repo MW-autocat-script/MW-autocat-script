@@ -2,15 +2,23 @@
 
 KEYWORDS_WOOZWORLD="Wooz(| )world"
 
-egrep -i "$KEYWORDS_WOOZWORLD" newpages.txt > Woozworld.txt
-
-WOOZWORLD=$(stat --print=%s Woozworld.txt)
-
-if [ $WOOZWORLD -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Woozworld.txt"
-  export CATNAME="Woozworld"
-  $CATEGORIZE
-fi
 
-rm Woozworld.txt
+  debug_start "Woozworld"
+
+  WOOZWORLD=$(egrep -i "$KEYWORDS_WOOZWORLD" newpages.txt)
+
+  if [ "$WOOZWORLD" != "" ];
+  then
+    printf "%s" "$WOOZWORLD" > Woozworld.txt
+    export CATFILE="Woozworld.txt"
+    export CATNAME="Woozworld"
+    $CATEGORIZE
+    rm Woozworld.txt
+    unset WOOZWORLD
+  fi
+
+  debug_end "Woozworld"
+
+fi

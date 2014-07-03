@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'The(| )Last(| )Remnant' newpages.txt >> TheLastRemant.txt
+KEYWORDS_THELASTREMNANT="The(| )Last(| )Remnant"
 
-REMNANT=$(stat --print=%s TheLastRemant.txt)
-
-if [ $REMNANT -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="TheLastRemant.txt"
-  export CATNAME="The Last Remnant"
-  $CATEGORIZE
-fi
+  
+  debug_start "The Last Remnant"
 
-rm TheLastRemant.txt
+  REMNANT=$(egrep -i "$KEYWORDS_THELASTREMNANT" newpages.txt)
+
+  if [ "$REMNANT" != "" ];
+  then
+    printf "%s" "$REMNANT" > TheLastRemant.txt
+    export CATFILE="TheLastRemant.txt"
+    export CATNAME="The Last Remnant"
+    $CATEGORIZE
+    rm TheLastRemant.txt
+    unset REMNANT
+  fi
+
+  debug_end "The Last Remnant"
+
+fi

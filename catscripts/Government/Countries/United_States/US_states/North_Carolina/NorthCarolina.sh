@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'North(| )Carolina' newpages.txt >> NorthCarolina.txt
+KEYWORDS_NORTHCAROLINA="North(| )Carolina|, N(|\.)C(|\.)\b"
 
-NORTHCAROLINA=$(stat --print=%s NorthCarolina.txt)
-
-if [ $NORTHCAROLINA -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="NorthCarolina.txt"
-  export CATNAME="North Carolina"
-  $CATEGORIZE
-fi
+  
+  debug_start "North Carolina"
 
-rm NorthCarolina.txt
+  NORTHCAROLINA=$(egrep -i "$KEYWORDS_NORTHCAROLINA" newpages.txt)
+
+  if [ "$NORTHCAROLINA" != "" ];
+  then
+    printf "%s" "$NORTHCAROLINA" > NorthCarolina.txt
+    export CATFILE="NorthCarolina.txt"
+    export CATNAME="North Carolina"
+    $CATEGORIZE
+    rm NorthCarolina.txt
+    unset NORTHCAROLINA
+  fi
+
+  debug_end "North Carolina"
+
+fi

@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'heart(| )disease' newpages.txt >> HeartDisease.txt
+KEYWORDS_HEARTDISEASE="Heart(| )disease"
 
-HEARTDISEASE=$(stat --print=%s HeartDisease.txt)
-
-if [ $HEARTDISEASE -ne 0 ];
+if [ "$1" == "" ]; #Normal operation
 then
-  export CATFILE="HeartDisease.txt"
-  export CATNAME="Heart disease"
-  $CATEGORIZE
-fi
+  
+  debug_start "Heart disease"
 
-rm HeartDisease.txt
+  HEARTDISEASE=$(egrep -i "$KEYWORDS_HEARTDISEASE" newpages.txt)
+
+  if [ "$HEARTDISEASE" != "" ];
+  then
+    printf "%s" "$HEARTDISEASE" > HeartDisease.txt
+    export CATFILE="HeartDisease.txt"
+    export CATNAME="Heart disease"
+    $CATEGORIZE
+    rm HeartDisease.txt
+    unset HEARTDISEASE
+  fi
+
+  debug_end "Heart disease"
+
+fi

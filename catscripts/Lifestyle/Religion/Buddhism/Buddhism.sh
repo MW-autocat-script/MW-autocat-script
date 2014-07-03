@@ -1,14 +1,25 @@
 #!/bin/bash
 
-egrep -i 'Buddhism|Buddhist|Buddha|Dalai Lama|Bodhi' newpages.txt | egrep -iv 'Bodhi Linux' >> Buddhism.txt
+KEYWORDS_BUDDHISM="Buddh(a|ist|ism)|Dalai(| )Lama|Bodhi"
+KEYWORDS_BUDDHISM_EXCLUDE="Bodhi(| )Linux"
 
-BUDDHISM=$(stat --print=%s Buddhism.txt)
-
-if [ $BUDDHISM -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Buddhism.txt"
-  export CATNAME="Buddhism"
-  $CATEGORIZE
-fi
+  
+  debug_start "Buddhism"
 
-rm Buddhism.txt
+  BUDDHISM=$(egrep -i "$KEYWORDS_BUDDHISM" newpages.txt | egrep -iv "$KEYWORDS_BUDDHISM_EXCLUDE")
+
+  if [ "$BUDDHISM" != "" ];
+  then
+    printf "%s" "$BUDDHISM" > Buddhism.txt
+    export CATFILE="Buddhism.txt"
+    export CATNAME="Buddhism"
+    $CATEGORIZE
+    rm Buddhism.txt
+    unset BUDDHISM
+  fi
+
+  debug_end "Buddhism"
+
+fi

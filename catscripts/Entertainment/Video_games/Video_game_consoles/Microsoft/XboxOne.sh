@@ -2,15 +2,23 @@
 
 KEYWORDS_XBOXONE="X(|-)box(| )(1\b|One)"
 
-egrep -i "$KEYWORDS_XBOXONE" newpages.txt >> XboxOne.txt
-
-XBOXONE=$(stat --print=%s XboxOne.txt)
-
-if [ $XBOXONE -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="XboxOne.txt"
-  export CATNAME="Xbox One"
-  $CATEGORIZE
-fi
 
-rm XboxOne.txt
+  debug_start "Xbox One"
+
+  XBOXONE=$(egrep -i "$KEYWORDS_XBOXONE" newpages.txt)
+
+  if [ "$XBOXONE" != "" ];
+  then
+    printf "%s" "$XBOXONE" > XboxOne.txt
+    export CATFILE="XboxOne.txt"
+    export CATNAME="Xbox One"
+    $CATEGORIZE
+    rm XboxOne.txt
+    unset XBOXONE
+  fi
+
+  debug_end "Xbox One"
+
+fi
