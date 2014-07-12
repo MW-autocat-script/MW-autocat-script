@@ -2,15 +2,18 @@
 
 CARTOONDIR="./catscripts/Entertainment/Cartoons"
 
-debug_start "Cartoons and anime"
+
 
 if [ "$1" == "" ];
 then
 
-  KEYWORDS_CARTOONS_OTHER="Attack(| )on(| )Titan|kaze(| )no(| )stigma|\btrigun|Hetalia|Bubblegum(| )(Crisis|Crash)|Blood\+"
+  debug_start "Cartoons and anime"
+
+  KEYWORDS_CARTOONS_OTHER="Attack(| )on(| )Titan|Shingeki(| )no(| )Kyojin|kaze(| )no(| )stigma|\btrigun|Hetalia|Bubblegum(| )(Crisis|Crash)|Blood\+|knights(| )of(| )Sidonia|Sidonia(| )no(| )kishi|Psycho(|-| )Pass|Gungrave|Haruhi(| )Suzumiya|Ch(a|ä)oS;HEAd|Chobits|Chrome(| )Shelled(| )Regios|Cowboy(| )Bebop|\bFLCL\b|Full(| )Metal(| )Panic|Fumoffu|Ghost(| )in(| )the(| )Shell|Eden(| )of(| )the(| )East|Higashi(| )no(| )Eden|Evangelion|Steins;Gate|Vampire(| )Knight|Summer(| )Wars"
 
   $CARTOONDIR/American_Dad/AmericanDad.sh
   $CARTOONDIR/Avatar_The_Last_Airbender/Avatar.sh
+  $CARTOONDIR/Death_Note/DeathNote.sh #KEYWORDS_DEATHNOTE
   $CARTOONDIR/Dora_the_Explorer/Dora.sh
   $CARTOONDIR/Fairy_Tail/FairyTail.sh #KEYWORDS_FAIRYTAIL
   $CARTOONDIR/Family_Guy/FamilyGuy.sh
@@ -32,7 +35,7 @@ then
 
   if [ "$CARTOONS" != "" ];
   then
-    printf "$CARTOONS" > Cartoons.txt
+    printf "%s" "$CARTOONS" > Cartoons.txt
     export CATFILE="Cartoons.txt"
     export CATNAME="Cartoons and anime"
     $CATEGORIZE
@@ -40,6 +43,7 @@ then
     unset CARTOONS
   fi
   
+  debug_end "Cartoons and anime"
 
 fi
 
