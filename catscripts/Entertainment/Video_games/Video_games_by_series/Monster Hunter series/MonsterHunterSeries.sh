@@ -1,84 +1,98 @@
 #!/bin/bash
 
-egrep -i 'Monster Hunter.+series' newpages.txt >> MonsterHunterSeries.txt
-egrep -i 'Monster Hunter' newpages.txt | egrep -iv '2|3|Freedom|Frontier|series|portable|Tri' >> MonsterHunter.txt
-egrep -i 'Monster Hunter 2\b|MH2\b' newpages.txt >> MH2.txt
-egrep -i 'Monster Hunter Freedom' newpages.txt | egrep -iv '2|Unite' >> MonsterHunterFreedom.txt
-egrep -i 'Monster Hunter Freedom Unit.|\bMHFU\b' newpages.txt >> MonsterHunterFreedomUnite.txt #The . instead of an 'e' is intentional
-egrep -i 'Monster Hunter Freedom 2|\bMHF2\b' newpages.txt >> MonsterHunterFreedom2.txt
-egrep -i 'Monster Hunter Frontier' newpages.txt >> MonsterHunterFrontier.txt
-egrep -i 'Monster Hunter (Tri|3)|\bMH3' newpages.txt >> MonsterHunterTri.txt
+KEYWORDS_MONSTERHUNTERSERIES="Monster(| )Hunter"
+KEYWORDS_MONSTERHUNTERTWO="Monster(| )Hunter(| )2\b|MH2\b"
+KEYWORDS_MONSTERHUNTERFREEDOM="Monster(| )Hunter(| )Freedom"
+KEYWORDS_MONSTERHUNTERFREEDOMTWO="Monster(| )Hunter(| )Freedom(| )2|\bMHF2\b"
+KEYWORDS_MONSTERHUNTERFREEDOMUNITE="Monster(| )Hunter(| )Freedom(| )Unit.|\bMHFU\b" #The . instead of an 'e' is intentional
+KEYWORDS_MONSTERHUNTERFREEDOM_EXCLUDE="$KEYWORDS_MONSTERHUNTERFREEDOMTWO|$KEYWORDS_MONSTERHUNTERFREEDOMUNITE"
+KEYWORDS_MONSTERHUNTERFRONTIER="Monster(| )Hunter(| )Frontier"
+KEYWORDS_MONSTERHUNTERTRI="Monster(| )Hunter(| )(Tri|3)|\bMH3"
+KEYWORDS_MONSTERHUNTERSERIES_EXCLUDE="$KEYWORDS_MONSTERHUNTERTWO|$KEYWORDS_MONSTERHUNTERTRI|$KEYWORDS_MONSTERHUNTERFREEDOM|$KEYWORDS_MONSTERHUNTERFREEDOMUNITE|$KEYWORDS_MONSTERHUNTERFREEDOMTWO|$KEYWORDS_MONSTERHUNTERFRONTIER"
 
-SERIES=$(stat --print=%s MonsterHunterSeries.txt)
-HUNTER=$(stat --print=%s MonsterHunter.txt)
-MH2=$(stat --print=%s MH2.txt)
-FREEDOM=$(stat --print=%s MonsterHunterFreedom.txt)
-MHFU=$(stat --print=%s MonsterHunterFreedomUnite.txt)
-MHF2=$(stat --print=%s MonsterHunterFreedom2.txt)
-FRONTIER=$(stat --print=%s MonsterHunterFrontier.txt)
-TRI=$(stat --print=%s MonsterHunterTri.txt)
-
-if [ $SERIES -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="MonsterHunterSeries.txt"
-  export CATNAME="Monster Hunter series"
-  $CATEGORIZE
-fi
 
-if [ $HUNTER -ne 0 ];
-then
-  export CATFILE="MonsterHunter.txt"
-  export CATNAME="Monster Hunter"
-  $CATEGORIZE
-fi
+  debug_start "Monster Hunter series"
 
-if [ $MH2 -ne 0 ];
-then
-  export CATFILE="MH2.txt"
-  export CATNAME="Monster Hunter 2"
-  $CATEGORIZE
-fi
+  SERIES=$(egrep -i "$KEYWORDS_MONSTERHUNTERSERIES" newpages.txt | egrep -iv "$KEYWORDS_MONSTERHUNTERSERIES_EXCLUDE" )
+  MH2=$(egrep -i "$KEYWORDS_MONSTERHUNTERTWO" newpages.txt)
+  FREEDOM=$(egrep -i "$KEYWORDS_MONSTERHUNTERFREEDOM" newpages.txt | egrep -iv "$KEYWORDS_MONSTERHUNTERFREEDOM_EXCLUDE")
+  MHFU=$(egrep -i "$KEYWORDS_MONSTERHUNTERFREEDOMUNITE" newpages.txt)
+  MHF2=$(egrep -i "$KEYWORDS_MONSTERHUNTERFREEDOMTWO" newpages.txt)
+  FRONTIER=$(egrep -i "$KEYWORDS_MONSTERHUNTERFRONTIER" newpages.txt)
+  TRI=$(egrep -i "$KEYWORDS_MONSTERHUNTERTRI" newpages.txt)
 
-if [ $FREEDOM -ne 0 ];
-then
-  export CATFILE="MonsterHunterFreedom.txt"
-  export CATNAME="Monster Hunter Freedom"
-  $CATEGORIZE
-fi
+  if [ "$SERIES" != "" ];
+  then
+    printf "%s" "$SERIES" > MonsterHunterSeries.txt
+    export CATFILE="MonsterHunterSeries.txt"
+    export CATNAME="Monster Hunter series"
+    $CATEGORIZE
+    rm MonsterHunterSeries.txt
+    unset SERIES
+  fi
 
-if [ $MHFU -ne 0 ];
-then
-  export CATFILE="MonsterHunterFreedomUnite.txt"
-  export CATNAME="Monster Hunter Freedom Unite"
-  $CATEGORIZE
-fi
+  if [ "$MH2" != "" ];
+  then
+    printf "%s" "$MH2" > MH2.txt
+    export CATFILE="MH2.txt"
+    export CATNAME="Monster Hunter 2"
+    $CATEGORIZE
+    rm MH2.txt
+    unset MH2
+  fi
 
-if [ $MHF2 -ne 0 ];
-then
-  export CATFILE="MonsterHunterFreedom2.txt"
-  export CATNAME="Monster Hunter Freedom 2"
-  $CATEGORIZE
-fi
+  if [ "$FREEDOM" != "" ];
+  then
+    printf "%s" "$FREEDOM" > MonsterHunterFreedom.txt
+    export CATFILE="MonsterHunterFreedom.txt"
+    export CATNAME="Monster Hunter Freedom"
+    $CATEGORIZE
+    rm MonsterHunterFreedom.txt
+    unset FREEDOM
+  fi
 
-if [ $FRONTIER -ne 0 ];
-then
-  export CATFILE="MonsterHunterFrontier.txt"
-  export CATNAME="Monster Hunter Frontier"
-  $CATEGORIZE
-fi
+  if [ "$MHFU" != "" ];
+  then
+    printf "%s" "$MHFU" > MonsterHunterFreedomUnite.txt
+    export CATFILE="MonsterHunterFreedomUnite.txt"
+    export CATNAME="Monster Hunter Freedom Unite"
+    $CATEGORIZE
+    rm MonsterHunterFreedomUnite.txt
+    unset MHFU
+  fi
 
-if [ $TRI -ne 0 ];
-then
-  export CATFILE="MonsterHunterTri.txt"
-  export CATNAME="Monster Hunter Tri"
-  $CATEGORIZE
-fi
+  if [ "$MHF2" != "" ];
+  then
+    printf "%s" "$MHF2" > MonsterHunterFreedom2.txt
+    export CATFILE="MonsterHunterFreedom2.txt"
+    export CATNAME="Monster Hunter Freedom 2"
+    $CATEGORIZE
+    rm MonsterHunterFreedom2.txt
+    unset MHF2
+  fi
 
-rm MonsterHunterSeries.txt
-rm MonsterHunter.txt
-rm MH2.txt
-rm MonsterHunterFreedom.txt
-rm MonsterHunterFreedom2.txt
-rm MonsterHunterFreedomUnite.txt
-rm MonsterHunterFrontier.txt
-rm MonsterHunterTri.txt
+  if [ "$FRONTIER" != "" ];
+  then
+    printf "%s" "$FRONTIER" > MonsterHunterFrontier.txt
+    export CATFILE="MonsterHunterFrontier.txt"
+    export CATNAME="Monster Hunter Frontier"
+    $CATEGORIZE
+    rm MonsterHunterFrontier.txt
+    unset FRONTIER
+  fi
+
+  if [ "$TRI" != "" ];
+  then
+    printf "%s" "$TRI" > MonsterHunterTri.txt
+    export CATFILE="MonsterHunterTri.txt"
+    export CATNAME="Monster Hunter Tri"
+    $CATEGORIZE
+    rm MonsterHunterTri.txt
+    unset TRI
+  fi
+
+  debug_end "Monster Hunter series"
+
+fi

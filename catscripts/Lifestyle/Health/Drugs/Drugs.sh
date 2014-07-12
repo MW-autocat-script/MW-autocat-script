@@ -1,75 +1,75 @@
 #!/bin/bash
-egrep -i 'drug(|s)\b' newpages.txt | egrep -iv 'prescription|medication|illegal|meth|marijuana|weed|cannabis|cannabinol|pot\b|cocaine|crack|heroin|methadone|speed|\bLSD\b' >> Drugs.txt
-egrep -i 'medication|prescription' newpages.txt >> Medication.txt
-egrep -i 'Ibuprofen|Advil|Tylenol' newpages.txt >> Medication.txt
-egrep -i 'NSAID' newpages.txt >> Medication.txt
-egrep -i 'Asprin' newpages.txt >> Medication.txt
-egrep -i 'Gynera\b' newpages.txt >> Medication.txt
-egrep -i 'quinine' newpages.txt >> Medication.txt
-egrep -i 'Abilify|aripiprazole' newpages.txt >> Medication.txt
-egrep -i 'abiraterone|Zytiga' newpages.txt >> Medication.txt
-egrep -i 'ablavar|gadofosveset' newpages.txt >> Medication.txt
-egrep -i 'Dysport|abobotulinumtoxin' newpages.txt >> Medication.txt
-egrep -i 'Abraxane' newpages.txt >> Medication.txt
-egrep -i 'Absorica|isotretinoin' newpages.txt >> Medication.txt
-egrep -i 'Abstral|fentanyl' newpages.txt >> Medication.txt
-egrep -i 'Campral|acamprosate' newpages.txt >> Medication.txt
-egrep -i 'oxycontin|oxycodone' newpages.txt >> Medication.txt
-egrep -i 'paclitaxel' newpages.txt >> Medication.txt
-egrep -i 'Syndol' newpages.txt >> Medication.txt
-egrep -i 'Adderall' newpages.txt >> Medication.txt
-egrep -i 'Zyban\b|Wellbutrin|Voxra|Budeprion|Prexaton|Elontril|Aplenzin|Bupropion' newpages.txt >> Medication.txt
 
+KEYWORDS_DRUGS="drug(|s)\b"
+KEYWORDS_MEDICATION="medication|prescription|ibuprofen|advil|tylenol|NSAID|asprin|Gynera\b|quinine|Abilify|aripiprazole|abiraterone|Zytiga|ablavar|gadofosveset|dysport|abobotulinumtoxin|Abraxane|Absorica|isotretinoin|Abstral|fentanyl|Campral|acamprosate|oxycontin|oxycodone|paclitaxel|Syndol|Adderall|Zyban\b|Wellbutrin|Voxra|Budeprion|Prexaton|Elontril|Aplenzin|Bupropion"
+KEYWORDS_ILLEGALDRUGS="Illegal(| )drug|\bmeth|methamphetamine|\bLSD\b|methadone|heroin\b"
+KEYWORDS_COCAINE="Cocaine|smoke(| )crack|crack(| )pipe"
+KEYWORDS_MARIJUANA="marijuana|(buy|smoke|inhale).+(weed|pot\b|a joint)|cannabis|cannabinol"
+KEYWORDS_ILLEGALDRUGS_EXCLUDE="$KEYWORDS_COCAINE|$KEYWORDS_MARIJUANA"
+KEYWORDS_ILLEGALDRUGS_ALL="$KEYWORDS_ILLEGALDRUGS|$KEYWORDS_MARIJUANA|$KEYWORDS_COCAINE"
+KEYWORDS_DRUGS_EXCLUDE="$KEYWORDS_MEDICATION|$KEYWORDS_ILLEGALDRUGS_ALL"
 
-egrep -i 'illegal drug' newpages.txt | egrep -iv 'cocaine|marijuana|weed' >> IllegalDrugs.txt
-egrep -i '\bmeth\b|methamphetamine' newpages.txt >> IllegalDrugs.txt
-egrep -i '\bLSD\b' newpages.txt >> IllegalDrugs.txt
-egrep -i 'Cocaine|smoke crack|crack(| )pipe' newpages.txt >> Cocaine.txt
-egrep -i 'marijuana|(buy|smoke|inhale).+(weed|pot\b|a joint)|cannabis|cannabinol' newpages.txt >> Marijuana.txt
-
-DRUGS=$(stat --print=%s Drugs.txt)
-MEDICATION=$(stat --print=%s Medication.txt)
-ILLEGAL=$(stat --print=%s IllegalDrugs.txt)
-COCAINE=$(stat --print=%s Cocaine.txt)
-MARIJUANA=$(stat --print=%s Marijuana.txt)
-
-if [ $DRUGS -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Drugs.txt"
-  export CATNAME="Drugs"
-  $CATEGORIZE
-fi
 
-if [ $MEDICATION -ne 0 ];
-then
-  export CATFILE="Medication.txt"
-  export CATNAME="Medication"
-  $CATEGORIZE
-fi
+  debug_start "Drugs"
 
-if [ $ILLEGAL -ne 0 ];
-then
-  export CATFILE="IllegalDrugs.txt"
-  export CATNAME="Illegal drugs"
-  $CATEGORIZE
-fi
+  DRUGS=$(egrep -i "$KEYWORDS_DRUGS" newpages.txt | egrep -iv "$KEYWORDS_DRUGS_EXCLUDE")
+  MEDICATION=$(egrep -i "$KEYWORDS_MEDICATION" newpages.txt)
+  ILLEGAL=$(egrep -i "$KEYWORDS_ILLEGALDRUGS" newpages.txt | egrep -iv "$KEYWORDS_ILLEGALDRUGS_EXCLUDE")
+  COCAINE=$(egrep -i "$KEYWORDS_COCAINE" newpages.txt)
+  MARIJUANA=$(egrep -i "$KEYWORDS_MARIJUANA" newpages.txt)
 
-if [ $COCAINE -ne 0 ];
-then
-  export CATFILE="Cocaine.txt"
-  export CATNAME="Cocaine"
-  $CATEGORIZE
-fi
+  if [ "$DRUGS" != "" ];
+  then
+    printf "%s" "$DRUGS" > Drugs.txt
+    export CATFILE="Drugs.txt"
+    export CATNAME="Drugs"
+    $CATEGORIZE
+    rm Drugs.txt
+    unset DRUGS
+  fi
 
-if [ $MARIJUANA -ne 0 ];
-then
-  export CATFILE="Marijuana.txt"
-  export CATNAME="Marijuana"
-  $CATEGORIZE
-fi
+  if [ "$MEDICATION" != "" ];
+  then
+    printf "%s" "$MEDICATION" > Medication.txt
+    export CATFILE="Medication.txt"
+    export CATNAME="Medication"
+    $CATEGORIZE
+    rm Medication.txt
+    unset MEDICATION
+  fi
 
-rm Drugs.txt
-rm Medication.txt
-rm IllegalDrugs.txt
-rm Cocaine.txt
-rm Marijuana.txt
+  if [ "$ILLEGAL" != "" ];
+  then
+    printf "%s" "$ILLEGAL" > IllegalDrugs.txt
+    export CATFILE="IllegalDrugs.txt"
+    export CATNAME="Illegal drugs"
+    $CATEGORIZE
+    rm IllegalDrugs.txt
+    unset ILLEGAL
+  fi
+
+  if [ "$COCAINE" != "" ];
+  then
+    printf "%s" "$COCAINE" > Cocaine.txt
+    export CATFILE="Cocaine.txt"
+    export CATNAME="Cocaine"
+    $CATEGORIZE
+    rm Cocaine.txt
+    unset COCAINE
+  fi
+
+  if [ "$MARIJUANA" != "" ];
+  then
+    printf "%s" "$MARIJUANA" > Marijuana.txt
+    export CATFILE="Marijuana.txt"
+    export CATNAME="Marijuana"
+    $CATEGORIZE
+    rm Marijuana.txt
+    unset MARIJUANA
+  fi
+
+  debug_end "Drugs"
+
+fi

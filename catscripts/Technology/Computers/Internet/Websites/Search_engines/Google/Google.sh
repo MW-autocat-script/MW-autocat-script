@@ -9,47 +9,53 @@ KEYWORDS_GOOGLE_EXCLUDE="$KEYWORDS_YOUTUBE|$KEYWORDS_GOOGLEMAPS|$KEYWORDS_GOOGLE
 if [ "$1" == "" ];
 then
   
-  egrep -i "$KEYWORDS_GOOGLE" newpages.txt | egrep -iv "$KEYWORDS_GOOGLE_EXCLUDE" >> Google.txt
-  egrep -i "$KEYWORDS_YOUTUBE" newpages.txt >> YouTube.txt
-  egrep -i "$KEYWORDS_GOOGLEMAPS" newpages.txt >> GoogleMaps.txt
-  egrep -i "$KEYWORDS_GOOGLEEARTH" newpages.txt >> GoogleEarth.txt
+  debug_start "Google"
   
-  GOOGLE=$(stat --print=%s Google.txt)
-  YOUTUBE=$(stat --print=%s YouTube.txt)
-  GOOGLEMAPS=$(stat --print=%s GoogleMaps.txt)
-  GOOGLEEARTH=$(stat --print=%s GoogleEarth.txt)
+  GOOGLE=$(egrep -i "$KEYWORDS_GOOGLE" newpages.txt | egrep -iv "$KEYWORDS_GOOGLE_EXCLUDE")
+  YOUTUBE=$(egrep -i "$KEYWORDS_YOUTUBE" newpages.txt)
+  GOOGLEMAPS=$(egrep -i "$KEYWORDS_GOOGLEMAPS" newpages.txt)
+  GOOGLEEARTH=$(egrep -i "$KEYWORDS_GOOGLEEARTH" newpages.txt)
 
-  if [ $GOOGLE -ne 0 ];
+  if [ "$GOOGLE" != "" ];
   then
+    printf "%s" "$GOOGLE" > Google.txt
     export CATFILE="Google.txt"
     export CATNAME="Google"
     $CATEGORIZE
+    rm Google.txt
+    unset GOOGLE
   fi
 
-  if [ $YOUTUBE -ne 0 ];
+  if [ "$YOUTUBE" != "" ];
   then
+    printf "%s" "$YOUTUBE" > YouTube.txt
     export CATFILE="YouTube.txt"
     export CATNAME="YouTube"
     $CATEGORIZE
+    rm YouTube.txt
+    unset YOUTUBE
   fi
 
-  if [ $GOOGLEMAPS -ne 0 ];
+  if [ "$GOOGLEMAPS" != "" ];
   then
+    printf "%s" "$GOOGLEMAPS" > GoogleMaps.txt
     export CATFILE="GoogleMaps.txt"
     export CATNAME="Google Maps"
     $CATEGORIZE
+    rm GoogleMaps.txt
+    unset GOOGLEMAPS
   fi
 
-  if [ $GOOGLEEARTH -ne 0 ];
+  if [ "$GOOGLEEARTH" != "" ];
   then
+    printf "%s" "$GOOGLEEARTH" > GoogleEarth.txt
     export CATFILE="GoogleEarth.txt"
     export CATNAME="Google Earth"
     $CATEGORIZE
+    rm GoogleEarth.txt
+    unset GOOGLEEARTH
   fi
 
-  rm Google.txt
-  rm YouTube.txt
-  rm GoogleEarth.txt
-  rm GoogleMaps.txt
+  debug_end "Google"
 
 fi

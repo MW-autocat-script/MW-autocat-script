@@ -1,84 +1,109 @@
 #!/bin/bash
 
-egrep 'Burnout' newpages.txt | egrep -iv 'Burnout(| )Paradise' >> Burnout.txt
-egrep -i 'Burnout(| )2' newpages.txt >> Burnout2.txt
-egrep -i 'Burnout(| )3' newpages.txt >> Burnout3.txt
-egrep -i 'Burnout(| )Revenge' newpages.txt >> BurnoutRevenge.txt
-egrep -i 'Burnout(| )Legend' newpages.txt >> BurnoutLegends.txt
-egrep -i 'Burnout(| )Dominator' newpages.txt >> BurnoutDominator.txt
-egrep -i 'Burnout(| )Paradise' newpages.txt >> BurnoutParadise.txt
-egrep -i 'Burnout(| )Crash' newpages.txt >> BurnoutCrash.txt
+KEYWORDS_BURNOUT_CASESENSITIVE="Burnout"
+KEYWORDS_BURNOUTTWO="Burnout(| )2"
+KEYWORDS_BURNOUTTHREE="Burnout(| )3"
+KEYWORDS_BURNOUTREVENGE="Burnout(| )Revenge"
+KEYWORDS_BURNOUTLEGENDS="Burnout(| )Legend"
+KEYWORDS_BURNOUTDOMINATOR="Burnout(| )Dominator"
+KEYWORDS_BURNOUTPARADISE="Burnout(| )Paradise"
+KEYWORDS_BURNOUTCRASH="Burnout(| )Crash"
+KEYWORDS_BURNOUT_EXCLUDE="$KEYWORDS_BURNOUTTWO|$KEYWORDS_BURNOUTTHREE|$KEYWORDS_BURNOUTREVENGE|$KEYWORDS_BURNOUTLEGENDS|$KEYWORDS_BURNOUTDOMINATOR|$KEYWORDS_BURNOUTPARADISE|$KEYWORDS_BURNOUTCRASH"
 
-BURNOUT=$(stat --print=%s Burnout.txt)
-TWO=$(stat --print=%s Burnout2.txt)
-THREE=$(stat --print=%s Burnout3.txt)
-REVENGE=$(stat --print=%s BurnoutRevenge.txt)
-LEGENDS=$(stat --print=%s BurnoutLegends.txt)
-DOMINATOR=$(stat --print=%s BurnoutDominator.txt)
-PARADISE=$(stat --print=%s BurnoutParadise.txt)
-CRASH=$(stat --print=%s BurnoutCrash.txt)
-
-if [ $BURNOUT -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Burnout.txt"
-  export CATNAME="Burnout series"
-  $CATEGORIZE
-fi
 
-if [ $TWO -ne 0 ];
-then
-  export CATFILE="Burnout2.txt"
-  export CATNAME="Burnout series"
-  $CATEGORIZE
-fi
+  debug_start "Burnout series"
 
-if [ $THREE -ne 0 ];
-then
-  export CATFILE="Burnout3.txt"
-  export CATNAME="Burnout series"
-  $CATEGORIZE
-fi
+  BURNOUT=$(egrep "$KEYWORDS_BURNOUT_CASESENSITIVE" newpages.txt | egrep -iv "$KEYWORDS_BURNOUT_EXCLUDE")
+  TWO=$(egrep -i "$KEYWORDS_BURNOUTTWO" newpages.txt)
+  THREE=$(egrep -i "$KEYWORDS_BURNOUTTHREE" newpages.txt)
+  REVENGE=$(egrep -i "$KEYWORDS_BURNOUTREVENGE" newpages.txt)
+  LEGENDS=$(egrep -i "$KEYWORDS_BURNOUTLEGENDS" newpages.txt )
+  DOMINATOR=$(egrep -i "$KEYWORDS_BURNOUTDOMINATOR" newpages.txt)
+  PARADISE=$(egrep -i "$KEYWORDS_BURNOUTPARADISE" newpages.txt)
+  CRASH=$(egrep -i "$KEYWORDS_BURNOUTCRASH" newpages.txt)
 
-if [ $REVENGE -ne 0 ];
-then
-  export CATFILE="BurnoutRevenge.txt"
-  export CATNAME="Burnout series"
-  $CATEGORIZE
-fi
+  if [ "$BURNOUT" != "" ];
+  then
+    printf "%s" "$BURNOUT" > Burnout.txt
+    export CATFILE="Burnout.txt"
+    export CATNAME="Burnout series"
+    $CATEGORIZE
+    rm Burnout.txt
+    unset BURNOUT
+  fi
 
-if [ $LEGENDS -ne 0 ];
-then
-  export CATFILE="BurnoutLegends.txt"
-  export CATNAME="Burnout series"
-  $CATEGORIZE
-fi
+  if [ "$TWO" != "" ];
+  then
+    printf "%s" "$TWO" > Burnout2.txt
+    export CATFILE="Burnout2.txt"
+    export CATNAME="Burnout series"
+    $CATEGORIZE
+    rm Burnout2.txt
+    unset TWO
+  fi
 
-if [ $DOMINATOR -ne 0 ];
-then
-  export CATFILE="BurnoutDominator.txt"
-  export CATNAME="Burnout series"
-  $CATEGORIZE
-fi
+  if [ "$THREE" != "" ];
+  then
+    printf "%s" "$THREE" > Burnout3.txt
+    export CATFILE="Burnout3.txt"
+    export CATNAME="Burnout series"
+    $CATEGORIZE
+    rm Burnout3.txt
+    unset THREE
+  fi
 
-if [ $PARADISE -ne 0 ];
-then
-  export CATFILE="BurnoutParadise.txt"
-  export CATNAME="Burnout Paradise"
-  $CATEGORIZE
-fi
+  if [ "$REVENGE" != "" ];
+  then
+    printf "%s" "$REVENGE" > BurnoutRevenge.txt
+    export CATFILE="BurnoutRevenge.txt"
+    export CATNAME="Burnout series"
+    $CATEGORIZE
+    rm BurnoutRevenge.txt
+    unset REVENGE
+  fi
 
-if [ $CRASH -ne 0 ];
-then
-  export CATFILE="BurnoutCrash.txt"
-  export CATNAME="Burnout series"
-  $CATEGORIZE
-fi
+  if [ "$LEGENDS" != "" ];
+  then
+    printf "%s" "$LEGENDS" > BurnoutLegends.txt
+    export CATFILE="BurnoutLegends.txt"
+    export CATNAME="Burnout series"
+    $CATEGORIZE
+    rm BurnoutLegends.txt
+    unset LEGENDS
+  fi
 
-rm Burnout.txt
-rm Burnout2.txt
-rm Burnout3.txt
-rm BurnoutRevenge.txt
-rm BurnoutLegends.txt
-rm BurnoutDominator.txt
-rm BurnoutParadise.txt
-rm BurnoutCrash.txt
+  if [ "$DOMINATOR" != "" ];
+  then
+    printf "%s" "$DOMINATOR" > BurnoutDominator.txt
+    export CATFILE="BurnoutDominator.txt"
+    export CATNAME="Burnout series"
+    $CATEGORIZE
+    rm BurnoutDominator.txt
+    unset DOMINATOR
+  fi
+
+  if [ "$PARADISE" != "" ];
+  then
+    printf "%s" "$PARADISE" > BurnoutParadise.txt
+    export CATFILE="BurnoutParadise.txt"
+    export CATNAME="Burnout Paradise"
+    $CATEGORIZE
+    rm BurnoutParadise.txt
+    unset PARADISE
+  fi
+
+  if [ "$CRASH" != "" ];
+  then
+    printf "%s" "$CRASH" > BurnoutCrash.txt
+    export CATFILE="BurnoutCrash.txt"
+    export CATNAME="Burnout series"
+    $CATEGORIZE
+    rm BurnoutCrash.txt
+    unset CRASH
+  fi
+
+  debug_end "Burnout series"
+
+fi

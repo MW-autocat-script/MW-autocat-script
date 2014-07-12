@@ -1,19 +1,35 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Science/Biology/Animals/Arthropods"
+ARTHROPODDIR="./catscripts/Science/Biology/Animals/Arthropods"
+KEYWORDS_ARTHROPODS="Arthropod"
 
-egrep -i 'arthropod' newpages.txt | egrep -iv 'arachnid|\bant(|s)\b' >> Arthropods.txt
-
-ARTHROPODS=$(stat --print=%s Arthropods.txt)
-
-if [ $ARTHROPODS -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Arthropods.txt"
-  export CATNAME="Arthropods"
-  $CATEGORIZE
+
+  debug_start "Arthropods"
+
+  . $ARTHROPODDIR/Arachnids/Arachnids.sh
+  . $ARTHROPODDIR/Insects/Insects.sh
+
+  KEYWORDS_ARTHROPODS_EXCLUDE="arachnid|\bant(|s)\b"
+
+  ARTHROPODS=$(egrep -i "$KEYWORDS_ARTHROPODS" newpages.txt | egrep -iv "$KEYWORDS_ARTHROPODS_EXCLUDE")
+
+  if [ "$ARTHROPODS" != "" ];
+  then
+    printf "%s" "$ARTHROPODS" > Arthropods.txt
+    export CATFILE="Arthropods.txt"
+    export CATNAME="Arthropods"
+    $CATEGORIZE
+    rm Arthropods.txt
+    unset ARTHROPODS
+  fi
+
+  debug_end "Arthropods"
+
+else
+
+  . $ARTHROPODDIR/Arachnids/Arachnids.sh norun
+  . $ARTHROPODDIR/Insects/Insects.sh norun
+
 fi
-
-rm Arthropods.txt
-
-$CURRENTDIR/Arachnids/Arachnids.sh
-$CURRENTDIR/Insects/Insects.sh

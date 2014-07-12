@@ -5,10 +5,7 @@ KEYWORDS_LEUKEMIA="Leukemia"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Leukemia\n"
-  fi
+  debug_start "Leukemia"
 
   LEUKEMIA="$(egrep -i "$KEYWORDS_LEUKEMIA" newpages.txt)"
 
@@ -22,9 +19,6 @@ then
     unset LEUKEMIA
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Leukemia\n"
-  fi
+  debug_end "Leukemia"
 
 fi

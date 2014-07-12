@@ -9,17 +9,20 @@ export KEYWORDS_MMORPG_RUNESCAPE="$KEYWORDS_RUNESCAPE_PLACES|$KEYWORDS_RUNESCAPE
 if [ "$1" == "" ];
 then 
 
-egrep -i "$KEYWORDS_MMORPG_RUNESCAPE" newpages.txt >> RuneScape.txt
+  debug_start "RuneScape"
 
-RUNESCAPE=$(stat --print=%s RuneScape.txt)
+  RUNESCAPE=$(egrep -i "$KEYWORDS_MMORPG_RUNESCAPE" newpages.txt)
 
-if [ $RUNESCAPE -ne 0 ];
-then
-  export CATFILE="RuneScape.txt"
-  export CATNAME="RuneScape"
-  $CATEGORIZE
-fi
+  if [ "$RUNESCAPE" != "" ];
+  then
+    printf "%s" "$RUNESCAPE" > RuneScape.txt
+    export CATFILE="RuneScape.txt"
+    export CATNAME="RuneScape"
+    $CATEGORIZE
+    rm RuneScape.txt
+    unset RUNESCAPE
+  fi
 
-rm RuneScape.txt
+  debug_end "RuneScape"
 
 fi

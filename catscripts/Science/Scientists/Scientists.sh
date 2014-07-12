@@ -1,54 +1,72 @@
 #!/bin/bash
 
-egrep -i 'Stephen Hawking' newpages.txt >> StephenHawking.txt
-egrep -i 'Charles Darwin' newpages.txt >> CharlesDarwin.txt
-egrep -i 'Leonardo da Vinci' newpages.txt >> LeonardoDaVinci.txt
-egrep -i 'Marie Curie' newpages.txt >> MarieCurie.txt
-egrep -i 'Isaac Newton' newpages.txt >> IsaacNewton.txt
+KEYWORDS_STEPHENHAWKING="Stephen(| )Hawking"
+KEYWORDS_CHARLESDARWIN="Charles(| )Darwin"
+KEYWORDS_LEONARDODAVINCI="Leonardo(| )da(| )Vinci"
+KEYWORDS_MARIECURIE="Marie(| )Curie"
+KEYWORDS_ISAACNEWTON="Isaac(| )Newton"
 
-HAWKING=$(stat --print=%s StephenHawking.txt)
-DARWIN=$(stat --print=%s CharlesDarwin.txt)
-DAVINCI=$(stat --print=%s LeonardoDaVinci.txt)
-CURIE=$(stat --print=%s MarieCurie.txt)
-NEWTON=$(stat --print=%s IsaacNewton.txt)
-
-if [ $HAWKING -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="StephenHawking.txt"
-  export CATNAME="Stephen Hawking"
-  $CATEGORIZE
-fi
 
-if [ $DARWIN -ne 0 ];
-then
-  export CATFILE="CharlesDarwin"
-  export CATNAME="Charles Darwin"
-  $CATEGORIZE
-fi
+  debug_start "Scientists"
 
-if [ $DAVINCI -ne 0 ];
-then
-  export CATFILE="LeonardoDaVinci.txt"
-  export CATNAME="Leonardo da Vinci"
-  $CATEGORIZE
-fi
+  HAWKING=$(egrep -i "$KEYWORDS_STEPHENHAWKING" newpages.txt)
+  DARWIN=$(egrep -i "$KEYWORDS_CHARLESDARWIN" newpages.txt)
+  DAVINCI=$(egrep -i "$KEYWORDS_LEONARDODAVINCI" newpages.txt)
+  CURIE=$(egrep -i "$KEYWORDS_MARIECURIE" newpages.txt)
+  NEWTON=$(egrep -i "$KEYWORDS_ISAACNEWTON" newpages.txt)
 
-if [ $CURIE -ne 0 ];
-then
-  export CATFILE="MarieCurie.txt"
-  export CATNAME="Marie Curie"
-  $CATEGORIZE
-fi
+  if [ "$HAWKING" != "" ];
+  then
+    printf "%s" "$HAWKING" > StephenHawking.txt
+    export CATFILE="StephenHawking.txt"
+    export CATNAME="Stephen Hawking"
+    $CATEGORIZE
+    rm StephenHawking.txt
+    unset HAWKING
+  fi
 
-if [ $NEWTON -ne 0 ];
-then
-  export CATFILE="IsaacNewton.txt"
-  export CATNAME="Isaac Newton"
-  $CATEGORIZE
-fi
+  if [ "$DARWIN" != "" ];
+  then
+    printf "%s" "$DARWIN" > CharlesDarwin.txt
+    export CATFILE="CharlesDarwin"
+    export CATNAME="Charles Darwin"
+    $CATEGORIZE
+    rm CharlesDarwin.txt
+    unset DARWIN
+  fi
 
-rm StephenHawking.txt
-rm CharlesDarwin.txt
-rm LeonardoDaVinci.txt
-rm MarieCurie.txt
-rm IsaacNewton.txt
+  if [ "$DAVINCI" != "" ];
+  then
+    printf "%s" "$DAVINCI" > LeonardoDaVinci.txt
+    export CATFILE="LeonardoDaVinci.txt"
+    export CATNAME="Leonardo da Vinci"
+    $CATEGORIZE
+    rm LeonardoDaVinci.txt
+    unset DAVINCI
+  fi
+
+  if [ "$CURIE" != "" ];
+  then
+    printf "%s" "$CURIE" > MarieCurie.txt
+    export CATFILE="MarieCurie.txt"
+    export CATNAME="Marie Curie"
+    $CATEGORIZE
+    rm MarieCurie.txt
+    unset CURIE
+  fi
+
+  if [ "$NEWTON" != "" ];
+  then
+    printf "%s" "$NEWTON" > IsaacNewton.txt
+    export CATFILE="IsaacNewton.txt"
+    export CATNAME="Isaac Newton"
+    $CATEGORIZE
+    rm IsaacNewton.txt
+    unset NEWTON
+  fi
+
+  debug_end "Scientists"
+
+fi

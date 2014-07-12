@@ -1,20 +1,32 @@
 #!/bin/bash
 
-egrep -i 'unrecognized countr(y|ies)' newpages.txt | egrep -iv 'Taiwan|Taipei' >> Unrecognized.txt
-egrep -i 'Sealand' newpages.txt >> Unrecognized.txt
-egrep -i 'Seborga' newpages.txt >> Unrecognized.txt
-egrep -i 'micronation' newpages.txt >> Unrecognized.txt
+KEYWORDS_UNRECOGNIZEDCOUNTRIES="unrecognized(| )countr(y|ies)|Sealand|Seborga|micronation"
 
-UNRECOGNIZED=$(stat --print=%s Unrecognized.txt)
-
-if [ $UNRECOGNIZED -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Unrecognized.txt"
-  export CATNAME="Unrecognized countries"
-  $CATEGORIZE
+
+  debug_start "Unrecognized countries"
+
+  . ./catscripts/Government/Countries/Unrecognized_countries/Taiwan/Taiwan.sh #KEYWORDS_TAIWAN
+
+  KEYWORDS_UNRECOGNIZEDCOUNTRIES_EXCLUDE="$KEYWORDS_TAIWAN"
+
+  UNRECOGNIZED=$(egrep -i "$KEYWORDS_UNRECOGNIZEDCOUNTRIES" newpages.txt | egrep -iv "$KEYWORDS_UNRECOGNIZEDCOUNTRIES_EXCLUDE")
+
+  if [ "$UNRECOGNIZED" != "" ];
+  then
+    printf "%s" "$UNRECOGNIZED" > Unrecognized.txt
+    export CATFILE="Unrecognized.txt"
+    export CATNAME="Unrecognized countries"
+    $CATEGORIZE
+    rm Unrecognized.txt
+    unset UNRECOGNIZED
+  fi
+
+  debug_end "Unrecognized countries"
+
+else
+
+  . ./catscripts/Government/Countries/Unrecognized_countries/Taiwan/Taiwan.sh norun #KEYWORDS_TAIWAN
+
 fi
-
-rm Unrecognized.txt
-
-./catscripts/Government/Countries/Unrecognized_countries/Taiwan/Taiwan.sh
-

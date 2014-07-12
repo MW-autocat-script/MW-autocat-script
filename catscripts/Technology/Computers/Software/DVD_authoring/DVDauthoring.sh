@@ -7,17 +7,20 @@ KEYWORDS_DVDAUTHORING_ALL="$KEYWORDS_DVDAUTHORING|$KEYWORDS_DVDAUTHORING_OTHER"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  egrep -i "$KEYWORDS_DVDAUTHORING_ALL" newpages.txt >> Authoring.txt
+  debug_start "DVD authoring"
 
-  AUTHORING=$(stat --print=%s Authoring.txt)
+  AUTHORING=$(egrep -i "$KEYWORDS_DVDAUTHORING_ALL" newpages.txt)
 
-  if [ $AUTHORING -ne 0 ];
+  if [ "$AUTHORING" != "" ];
   then
+    printf "%s" "$AUTHORING" > Authoring.txt
     export CATFILE="Authoring.txt"
     export CATNAME="CD and DVD authoring"
     $CATEGORIZE
+    rm Authoring.txt
+    unset AUTHORING
   fi
 
-  rm Authoring.txt
+  debug_end "DVD authoring"
 
 fi

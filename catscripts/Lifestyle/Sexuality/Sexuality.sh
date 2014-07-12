@@ -4,25 +4,34 @@ KEYWORDS_SEXUALITY="sexuality|sexual orientation|\bgay(|s)\b|lesbian|bi(|-)sexua
 KEYWORDS_MASTURBATION="Masturbat(e|ion)"
 KEYWORDS_SEXUALITY_EXCLUDE="$KEYWORDS_MASTURBATION|Gay(| )Tony|\bgaynor\b"
 
-egrep -i "$KEYWORDS_SEXUALITY" newpages.txt | egrep -iv "$KEYWORDS_SEXUALITY_EXCLUDE" >> Sexuality.txt
-egrep -i "$KEYWORDS_MASTURBATION" newpages.txt >> Masturbation.txt
-
-SEXUALITY=$(stat --print=%s Sexuality.txt)
-MASTURBATION=$(stat --print=%s Masturbation.txt)
-
-if [ $SEXUALITY -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Sexuality.txt"
-  export CATNAME="Sexuality"
-  $CATEGORIZE
-fi
 
-if [ $MASTURBATION -ne 0 ];
-then
-  export CATFILE="Masturbation.txt"
-  export CATNAME="Masturbation"
-  $CATEGORIZE
-fi
+  debug_start "Sexuality"
 
-rm Sexuality.txt
-rm Masturbation.txt
+  SEXUALITY=$(egrep -i "$KEYWORDS_SEXUALITY" newpages.txt | egrep -iv "$KEYWORDS_SEXUALITY_EXCLUDE")
+  MASTURBATION=$(egrep -i "$KEYWORDS_MASTURBATION" newpages.txt)
+
+  if [ "$SEXUALITY" != "" ];
+  then
+    printf "%s" "$SEXUALITY" > Sexuality.txt
+    export CATFILE="Sexuality.txt"
+    export CATNAME="Sexuality"
+    $CATEGORIZE
+    rm Sexuality.txt
+    unset SEXUALITY
+  fi
+
+  if [ "$MASTURBATION" != "" ];
+  then
+    printf "%s" "$MASTURBATION" > Masturbation.txt
+    export CATFILE="Masturbation.txt"
+    export CATNAME="Masturbation"
+    $CATEGORIZE
+    rm Masturbation.txt
+    unset MASTURBATION
+  fi
+
+  debug_end "Masturbation"
+
+fi

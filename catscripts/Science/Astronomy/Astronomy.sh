@@ -1,20 +1,36 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Science/Astronomy"
+ASTRONOMYDIR="./catscripts/Science/Astronomy"
+KEYWORDS_ASTEROIDS="Asteroid"
+KEYWORDS_ASTEROIDS_EXCLUDE="download|game"
 
-$CURRENTDIR/Dwarf_planets/Dwarfplanets.sh
-$CURRENTDIR/Planets/Planets.sh
-$CURRENTDIR/Moon/Moon.sh
-
-egrep -i 'Asteroid' newpages.txt | egrep -iv 'download|game' >> Asteroids.txt
-
-ASTEROIDS=$(stat --print=%s Asteroids.txt)
-
-if [ $ASTEROIDS -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Asteroids.txt"
-  export CATNAME="Asteroids"
-  $CATEGORIZE
-fi
+ 
+  debug_start "Astronomy"
 
-rm Asteroids.txt
+  $ASTRONOMYDIR/Dwarf_planets/Dwarfplanets.sh
+  $ASTRONOMYDIR/Planets/Planets.sh
+  $ASTRONOMYDIR/Moon/Moon.sh
+
+  ASTEROIDS=$(egrep -i "$KEYWORDS_ASTEROIDS" newpages.txt | egrep -iv "$KEYWORDS_ASTEROIDS_EXCLUDE")
+
+  if [ "$ASTEROIDS" != "" ];
+  then
+    printf "%s" "$ASTEROIDS" > Asteroids.txt
+    export CATFILE="Asteroids.txt"
+    export CATNAME="Asteroids"
+    $CATEGORIZE
+    rm Asteroids.txt
+    unset ASTEROIDS
+  fi
+
+  debug_end "Astronomy"
+
+else
+
+  $ASTRONOMYDIR/Dwarf_planets/Dwarfplanets.sh norun
+  $ASTRONOMYDIR/Planets/Planets.sh norun
+  $ASTRONOMYDIR/Moon/Moon.sh norun
+
+fi

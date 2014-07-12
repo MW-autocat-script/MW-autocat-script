@@ -7,18 +7,20 @@ KEYWORDS_BIBLE_EXCLUDE="Goliath(| )(beetle|chronicle)"
 if [ "$1" == "" ];
 then
   
-  egrep -i "$KEYWORDS_BIBLE" newpages.txt| egrep -iv "$KEYWORDS_BIBLE_EXCLUDE" >> TheBible.txt
-  egrep "$KEYWORDS_BIBLE_CASESENSITIVE" newpages.txt | egrep -iv "$KEYWORDS_BIBLE_EXCLUDE" >> TheBible.txt 
+  debug_start "The Bible"
 
-  BIBLE=$(stat --print=%s TheBible.txt)
+  BIBLE=$(egrep -i "$KEYWORDS_BIBLE" newpages.txt| egrep -iv "$KEYWORDS_BIBLE_EXCLUDE" && egrep "$KEYWORDS_BIBLE_CASESENSITIVE" newpages.txt | egrep -iv "$KEYWORDS_BIBLE_EXCLUDE")
 
-  if [ $BIBLE -ne 0 ];
+  if [ "$BIBLE" != "" ];
   then
+    printf "%s" "$BIBLE" > TheBible.txt
     export CATFILE="TheBible.txt"
     export CATNAME="The Bible"
     $CATEGORIZE
+    rm TheBible.txt
+    unset BIBLE
   fi
 
-  rm TheBible.txt
+  debug_end "The Bible"
 
 fi

@@ -1,34 +1,50 @@
 #!/bin/bash
 
-egrep -i 'England|British' newpages.txt | egrep -iv 'British Isles|London|Church of England|New England|Stonehenge|British(| )Columbia' >> England.txt #Since most people don't know the difference between British and English
-egrep -i 'London' newpages.txt | egrep -iv 'Jack London' >> London.txt #Jack London was an American author
-egrep -i 'Stonehenge' newpages.txt >> Stonehenge.txt
+KEYWORDS_ENGLAND="England|British" #Since most people don't know the difference between British and English
+KEYWORDS_LONDON="London"
+KEYWORDS_LONDON_EXCLUDE="Jack(| )London" #Jack London was an American author
+KEYWORDS_STONEHENGE="Stonehenge"
+KEYWORDS_ENGLAND_EXCLUDE="$KEYWORDS_LONDON|$KEYWORDS_STONEHENGE|British(| )Columbia'|New(| )England|Church(| )of(| )England|British(| )Isles"
 
-ENGLAND=$(stat --print=%s England.txt)
-LONDON=$(stat --print=%s London.txt)
-STONEHENGE=$(stat --print=%s Stonehenge.txt)
-
-if [ $ENGLAND -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="England.txt"
-  export CATNAME="England"
-  $CATEGORIZE
-fi
 
-if [ $LONDON -ne 0 ];
-then
-  export CATFILE="London.txt"
-  export CATNAME="London"
-  $CATEGORIZE
-fi
+  debug_start "England"
 
-if [ $STONEHENGE -ne 0 ];
-then
-  export CATFILE="Stonehenge.txt"
-  export CATNAME="Stonehenge"
-  $CATEGORIZE
-fi
+  ENGLAND=$(egrep -i "$KEYWORDS_ENGLAND" newpages.txt | egrep -iv "$KEYWORDS_ENGLAND_EXCLUDE")
+  LONDON=$(egrep -i "$KEYWORDS_LONDON" newpages.txt | egrep -iv "$KEYWORDS_LONDON_EXCLUDE")
+  STONEHENGE=$(egrep -i "$KEYWORDS_STONEHENGE" newpages.txt)
 
-rm England.txt
-rm London.txt
-rm Stonehenge.txt
+  if [ "$ENGLAND" != "" ];
+  then
+    printf "%s" "$ENGLAND" > England.txt
+    export CATFILE="England.txt"
+    export CATNAME="England"
+    $CATEGORIZE
+    rm England.txt
+    unset ENGLAND
+  fi
+
+  if [ "$LONDON" != "" ];
+  then
+    printf "%s" "$LONDON" > London.txt
+    export CATFILE="London.txt"
+    export CATNAME="London"
+    $CATEGORIZE
+    rm London.txt
+    unset LONDON
+  fi
+
+  if [ "$STONEHENGE" != "" ];
+  then
+    printf "%s" "$STONEHENGE" > Stonehenge.txt
+    export CATFILE="Stonehenge.txt"
+    export CATNAME="Stonehenge"
+    $CATEGORIZE
+    rm Stonehenge.txt
+    unset STONEHENGE
+  fi
+
+  debug_end "England"
+
+fi

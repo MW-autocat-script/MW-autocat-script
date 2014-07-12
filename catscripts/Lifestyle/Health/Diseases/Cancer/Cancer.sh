@@ -1,28 +1,55 @@
 #!/bin/bash
 
-egrep -i 'Cancer' newpages.txt | egrep -iv 'Lung(| )cancer|Breast(| )cancer|leukemia|Tropic of Cancer|Cancer the Crab|Zodiac|Horoscope|Terry Fox' > Cancer.txt
-egrep -i 'Terry Fox' newpages.txt >> TerryFox.txt
+KEYWORDS_CANCER="Cancer|carcinoma|carcinoid|malignant(| )tumo(|u)r"
+KEYWORDS_TERRYFOX="Terry(| )Fox"
 
-CANCER=$(stat --print=%s Cancer.txt)
-TERRYFOX=$(stat --print=%s TerryFox.txt)
-
-if [ $CANCER -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Cancer.txt"
-  export CATNAME="Cancer"
-  $CATEGORIZE
+
+  debug_start "Cancer"
+
+  . ./catscripts/Lifestyle/Health/Diseases/Cancer/Lung_cancer/Lungcancer.sh #KEYWORDS_LUNGCANCER
+  . ./catscripts/Lifestyle/Health/Diseases/Cancer/Breast_cancer/Breastcancer.sh #KEYWORDS_BREASTCANCER
+  . ./catscripts/Lifestyle/Health/Diseases/Cancer/Leukemia/Leukemia.sh #KEYWORDS_LEUKEMIA
+
+  KEYWORDS_CANCER_EXCLUDE="$KEYWORDS_LUNGCANCER|$KEYWORDS_LEUKEMIA|$KEYWORDS_BREASTCANCER|$KEYWORDS_TERRYFOX|Tropic(| )of(| )Cancer|Cancer(| )the(| )Crab|Zodiac|Horoscope"
+  KEYWORDS_CANCER_ALL="$KEYWORDS_CANCER|$KEYWORDS_LEUKEMIA|$KEYWORDS_BREASTCANCER|$KEYWORDS_TERRYFOX|$KEYWORDS_LUNGCANCER"
+
+  CANCER=$(egrep -i "$KEYWORDS_CANCER" newpages.txt | egrep -iv "$KEYWORDS_CANCER_EXCLUDE")
+  TERRYFOX=$(egrep -i "$KEYWORDS_TERRYFOX" newpages.txt)
+
+  if [ "$CANCER" != "" ];
+  then
+    printf "%s" "$CANCER" > Cancer.txt
+    export CATFILE="Cancer.txt"
+    export CATNAME="Cancer"
+    $CATEGORIZE
+    rm Cancer.txt
+    unset CANCER
+  fi
+
+  if [ "$TERRYFOX" != "" ];
+  then
+    printf "%s" "$TERRYFOX" > TerryFox.txt
+    export CATFILE="TerryFox.txt"
+    export CATNAME="Terry Fox"
+    $CATEGORIZE
+    rm TerryFox.txt
+    unset TERRYFOX
+  fi
+
+  debug_end "Cancer"
+
+else
+
+  . ./catscripts/Lifestyle/Health/Diseases/Cancer/Lung_cancer/Lungcancer.sh norun #KEYWORDS_LUNGCANCER
+  . ./catscripts/Lifestyle/Health/Diseases/Cancer/Breast_cancer/Breastcancer.sh norun #KEYWORDS_BREASTCANCER
+  . ./catscripts/Lifestyle/Health/Diseases/Cancer/Leukemia/Leukemia.sh norun #KEYWORDS_LEUKEMIA
+
+  KEYWORDS_CANCER_ALL="$KEYWORDS_CANCER|$KEYWORDS_LEUKEMIA|$KEYWORDS_BREASTCANCER|$KEYWORDS_TERRYFOX|$KEYWORDS_LUNGCANCER"
+
 fi
 
-if [ $TERRYFOX -ne 0 ];
-then
-  export CATFILE="TerryFox.txt"
-  export CATNAME="Terry Fox"
-  $CATEGORIZE
-fi
+#This is here to make ShellCheck ignore KEYWORDS_CANCER_ALL, which is used elsewhere
 
-./catscripts/Lifestyle/Health/Diseases/Cancer/Lung_cancer/Lungcancer.sh
-./catscripts/Lifestyle/Health/Diseases/Cancer/Breast_cancer/Breastcancer.sh
-./catscripts/Lifestyle/Health/Diseases/Cancer/Leukemia/Leukemia.sh
-
-rm Cancer.txt
-rm TerryFox.txt
+KEYWORDS_CANCER_ALL="$KEYWORDS_CANCER_ALL"

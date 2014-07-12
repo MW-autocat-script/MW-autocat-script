@@ -1,34 +1,50 @@
 #!/bin/bash
 
-egrep -i 'Dwarf planet' newpages.txt | egrep -iv 'Pluto|Eris' >> Dwarf.txt
-egrep -i "Pluto\b|Plutos" newpages.txt | egrep -iv 'Pluto the Pup' >> Pluto.txt
-egrep -i '\bEris' newpages.txt >> Eris.txt
+KEYWORDS_DWARFPLANET="Dwarf(| )planet"
+KEYWORDS_PLUTO="\bPluto(|s)\b"
+KEYWORDS_PLUTO_EXCLUDE="Pluto(| )the(| )Pup"
+KEYWORDS_ERIS="\bEris"
+KEYWORDS_DWARFPLANET_EXCLUDE="$KEYWORDS_PLUTO|$KEYWORDS_ERIS"
 
-DWARF=$(stat --print=%s Dwarf.txt)
-PLUTO=$(stat --print=%s Pluto.txt)
-ERIS=$(stat --print=%s Eris.txt)
-
-if [ $DWARF -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Dwarf.txt"
-  export CATNAME="Dwarf planets"
-  $CATEGORIZE
-fi
 
-if [ $PLUTO -ne 0 ];
-then
-  export CATFILE="Pluto.txt"
-  export CATNAME="Pluto"
-  $CATEGORIZE
-fi
+  debug_start "Dwarf planets"
 
-if [ $ERIS -ne 0 ];
-then
-  export CATFILE="Eris.txt"
-  export CATNAME="Eris"
-  $CATEGORIZE
-fi
+  DWARF=$(egrep -i "$KEYWORDS_DWARFPLANET" newpages.txt | egrep -iv "$KEYWORDS_DWARFPLANET_EXCLUDE")
+  PLUTO=$(egrep -i "$KEYWORDS_PLUTO" newpages.txt | egrep -iv "$KEYWORDS_PLUTO_EXCLUDE")
+  ERIS=$(egrep -i "$KEYWORDS_ERIS" newpages.txt)
 
-rm Dwarf.txt
-rm Pluto.txt
-rm Eris.txt
+  if [ "$DWARF" != "" ];
+  then
+    printf "%s" "$DWARF" > Dwarf.txt
+    export CATFILE="Dwarf.txt"
+    export CATNAME="Dwarf planets"
+    $CATEGORIZE
+    rm Dwarf.txt
+    unset DWARF
+  fi
+
+  if [ "$PLUTO" != "" ];
+  then
+    printf "%s" "$PLUTO" > Pluto.txt
+    export CATFILE="Pluto.txt"
+    export CATNAME="Pluto"
+    $CATEGORIZE
+    rm Pluto.txt
+    unset PLUTO
+  fi
+
+  if [ "$ERIS" != "" ];
+  then
+    printf "%s" "$ERIS" > Eris.txt
+    export CATFILE="Eris.txt"
+    export CATNAME="Eris"
+    $CATEGORIZE
+    rm Eris.txt
+    unset ERIS
+  fi
+
+  debug_end "Dwarf planets"
+
+fi

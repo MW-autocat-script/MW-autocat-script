@@ -1,18 +1,24 @@
 #!/bin/bash
 
-egrep -i 'How do you say.+in Latin' newpages.txt >> EnglishtoLatin.txt
-egrep -i 'How do you spell.+in Latin' newpages.txt >> EnglishtoLatin.txt
-egrep -i '^[abcdefghijklmopqrstuvwxyz]{1,} in Latin' newpages.txt >> EnglishtoLatin.txt
-egrep -i 'What is the Latin word for' newpages.txt >> EnglishtoLatin.txt
-egrep -i 'How to say.+in Latin' newpages.txt >> EnglishtoLatin.txt
+KEYWORDS_ENGLISHTOLATIN="How(| )(to|do(| )you)(| )(say|spell).+in(| )Latin|What(| )is(| )the(| )Latin(| )word(| )for"
 
-LATIN=$(stat --print=%s EnglishtoLatin.txt)
-
-if [ $LATIN -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="EnglishtoLatin.txt"
-  export CATNAME="English to Latin"
-  $CATEGORIZE
-fi
 
-rm EnglishtoLatin.txt
+  debug_start "English to Latin"
+
+  LATIN=$(egrep -i "$KEYWORDS_ENGLISHTOLATIN" newpages.txt)
+
+  if [ "$LATIN" != "" ];
+  then
+    printf "%s" "$LATIN" > EnglishtoLatin.txt
+    export CATFILE="EnglishtoLatin.txt"
+    export CATNAME="English to Latin"
+    $CATEGORIZE
+    rm EnglishtoLatin.txt
+    unset LATIN
+  fi
+
+  debug_end "English to Latin"
+
+fi

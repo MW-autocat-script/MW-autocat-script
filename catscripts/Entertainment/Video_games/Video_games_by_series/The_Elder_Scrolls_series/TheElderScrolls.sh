@@ -1,37 +1,49 @@
 #!/bin/bash
 
+KEYWORDS_THEELDERSCROLLS="The(| )Elder(| )Scrolls"
 KEYWORDS_SKYRIM="Skyrim|Elder Scrolls (Five|5|V)\b"
 KEYWORDS_OBLIVION="The Elder Scrolls.+Oblivion|\b(i|o)n Oblivion|Elder Scrolls (Four|IV|4)\b"
+KEYWORDS_THEELDERSCROLLS_EXCLUDE="$KEYWORDS_OBLIVION|$KEYWORDS_SKYRIM"
 
-egrep -i 'The(| )Elder(| )Scrolls' newpages.txt | egrep -iv "$KEYWORDS_OBLIVION|$KEYWORDS_SKYRIM" > TheElderScrolls.txt
-egrep -i "$KEYWORDS_SKYRIM" newpages.txt >> Skyrim.txt
-egrep -i "$KEYWORDS_OBLIVION" newpages.txt >> Oblivion.txt
-
-SCROLLS=$(stat --print=%s TheElderScrolls.txt)
-SKYRIM=$(stat --print=%s Skyrim.txt)
-OBLIVION=$(stat --print=%s Oblivion.txt)
-
-if [ $SCROLLS -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="TheElderScrolls.txt"
-  export CATNAME="The Elder Scrolls series"
-  $CATEGORIZE
-fi
 
-if [ $SKYRIM -ne 0 ];
-then
-  export CATFILE="Skyrim.txt"
-  export CATNAME="The Elder Scrolls V: Skyrim"
-  $CATEGORIZE
-fi
+  debug_start "The Elder Scrolls series"
 
-if [ $OBLIVION -ne 0 ];
-then
-  export CATFILE="Oblivion.txt"
-  export CATNAME="The Elder Scrolls IV: Oblivion"
-  $CATEGORIZE
-fi
+  SCROLLS=$(egrep -i "$KEYWORDS_THEELDERSCROLLS" newpages.txt | egrep -iv "$KEYWORDS_THEELDERSCROLLS_EXCLUDE")
+  SKYRIM=$(egrep -i "$KEYWORDS_SKYRIM" newpages.txt)
+  OBLIVION=$(egrep -i "$KEYWORDS_OBLIVION" newpages.txt)
 
-rm TheElderScrolls.txt
-rm Skyrim.txt
-rm Oblivion.txt
+  if [ "$SCROLLS" != "" ];
+  then
+    printf "%s" "$SCROLLS" > Scrolls.txt
+    export CATFILE="Scrolls.txt"
+    export CATNAME="The Elder Scrolls series"
+    $CATEGORIZE
+    rm Scrolls.txt
+    unset SCROLLS
+  fi
+
+  if [ "$SKYRIM" != "" ];
+  then
+    printf "%s" "$SKYRIM" > Skyrim.txt
+    export CATFILE="Skyrim.txt"
+    export CATNAME="The Elder Scrolls V: Skyrim"
+    $CATEGORIZE
+    rm Skyrim.txt
+    unset SKYRIM
+  fi
+
+  if [ "$OBLIVION" != "" ];
+  then
+    printf "%s" "$OBLIVION" > Oblivion.txt
+    export CATFILE="Oblivion.txt"
+    export CATNAME="The Elder Scrolls IV: Oblivion"
+    $CATEGORIZE
+    rm Oblivion.txt
+    unset OBLIVION
+  fi
+
+  debug_end "The Elder Scrolls series"
+
+fi
