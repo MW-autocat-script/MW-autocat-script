@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_FIESTA="Fiesta(| )Online"
 
-egrep -i "$KEYWORDS_MMORPG_FIESTA" newpages.txt >> FiestaOnline.txt
-
-FIESTA=$(stat --print=%s FiestaOnline.txt)
-
-if [ $FIESTA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="FiestaOnline.txt"
-  export CATNAME="Fiesta Online"
-  $CATEGORIZE
-fi
 
-rm FiestaOnline.txt
+  debug_start "Fiesta Online"
+
+  FIESTA=$(egrep -i "$KEYWORDS_MMORPG_FIESTA" newpages.txt)
+
+  if [ "$FIESTA" != "" ];
+  then
+    printf "%s" "$FIESTA" > FiestaOnline.txt
+    export CATFILE="FiestaOnline.txt"
+    export CATNAME="Fiesta Online"
+    $CATEGORIZE
+    rm FiestaOnline.txt
+    unset FIESTA
+  fi
+
+  debug_end "Fiesta Online"
+
+fi

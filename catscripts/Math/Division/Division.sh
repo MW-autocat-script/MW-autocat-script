@@ -1,16 +1,24 @@
 #!/bin/bash
 
-egrep -i '[0-9]{1,} divided by [0-9]{1,}' newpages.txt >> Division.txt
-egrep -i 'What is [0-9]{1,} / [0-9]{1,}' newpages.txt >> Division.txt
-egrep -i '[0-9]{1,} ÷ [0-9]{1,}' newpages.txt >> Division.txt
+KEYWORDS_DIVISION="[0-9]{1,}(| )divided(| )by(| )[0-9]{1,}|What(| )is(| )[0-9]{1,} / [0-9]{1,}|[0-9]{1,}(| )÷(| )[0-9]{1,}"
 
-DIVISION=$(stat --print=%s Division.txt)
-
-if [ $DIVISION -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Division.txt"
-  export CATNAME="Division"
-  $CATEGORIZE
-fi
 
-rm Division.txt
+  debug_start "Division"
+
+  DIVISION=$(egrep -i "$KEYWORDS_DIVISION" newpages.txt)
+
+  if [ "$DIVISION" != "" ];
+  then
+    printf "%s" "$DIVISION" > Division.txt
+    export CATFILE="Division.txt"
+    export CATNAME="Division"
+    $CATEGORIZE
+    rm Division.txt
+    unset DIVISION
+  fi
+
+  debug_end "Division"
+
+fi

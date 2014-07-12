@@ -4,18 +4,21 @@ KEYWORDS_GAIAONLINE="Gaia(| )Online"
 
 if [ "$1" == "" ];
 then
-  
-  egrep -i "$KEYWORDS_GAIAONLINE" newpages.txt >> GaiaOnline.txt
 
-  GAIAONLINE=$(stat --print=%s GaiaOnline.txt)
+  debug_start "Gaia Online"
 
-  if [ $GAIAONLINE -ne 0 ];
+  GAIAONLINE=$(egrep -i "$KEYWORDS_GAIAONLINE" newpages.txt)
+
+  if [ "$GAIAONLINE" != "" ];
   then
+    printf "%s" "$GAIAONLINE" > GaiaOnline.txt
     export CATFILE="GaiaOnline.txt"
     export CATNAME="Gaia Online"
     $CATEGORIZE
+    rm GaiaOnline.txt
+    unset GAIAONLINE
   fi
 
-  rm GaiaOnline.txt
+  debug_end "Gaia Online"
 
 fi

@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_RUNESOFMAGIC="Runes(| )of(| )Magic"
 
-egrep -i "$KEYWORDS_MMORPG_RUNESOFMAGIC" newpages.txt >> RunesofMagic.txt
-
-RUNESOFMAGIC=$(stat --print=%s RunesofMagic.txt)
-
-if [ $RUNESOFMAGIC -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="RunesofMagic.txt"
-  export CATNAME="Runes of Magic"
-  $CATEGORIZE
-fi
 
-rm RunesofMagic.txt
+  debug_start "Runes of Magic"
+
+  RUNESOFMAGIC=$(egrep -i "$KEYWORDS_MMORPG_RUNESOFMAGIC" newpages.txt)
+
+  if [ "$RUNESOFMAGIC" != "" ];
+  then
+    printf "%s" "$RUNESOFMAGIC" > RunesofMagic.txt
+    export CATFILE="RunesofMagic.txt"
+    export CATNAME="Runes of Magic"
+    $CATEGORIZE
+    rm RunesofMagic.txt
+    unset RUNESOFMAGIC
+  fi
+
+  debug_end "Runes of Magic"
+
+fi

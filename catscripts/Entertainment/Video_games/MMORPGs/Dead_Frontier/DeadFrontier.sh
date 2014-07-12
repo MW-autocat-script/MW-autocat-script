@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_FRONTIER="Dead Frontier"
 
-egrep -i "$KEYWORDS_MMORPG_FRONTIER" newpages.txt >> DeadFrontier.txt
-
-FRONTIER=$(stat --print=%s DeadFrontier.txt)
-
-if [ $FRONTIER -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="DeadFrontier.txt"
-  export CATNAME="Dead Frontier"
-  $CATEGORIZE
-fi
 
-rm DeadFrontier.txt
+  debug_start "Dead Frontier"
+
+  FRONTIER=$(egrep -i "$KEYWORDS_MMORPG_FRONTIER" newpages.txt)
+
+  if [ "$FRONTIER" != "" ];
+  then
+    printf "%s" "$FRONTIER" > DeadFrontier.txt
+    export CATFILE="DeadFrontier.txt"
+    export CATNAME="Dead Frontier"
+    $CATEGORIZE
+    rm DeadFrontier.txt
+    unset FRONTIER
+  fi
+
+  debug_end "Dead Frontier"
+
+fi

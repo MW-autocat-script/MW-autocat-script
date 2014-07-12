@@ -1,14 +1,25 @@
 #!/bin/bash
 
-egrep -i "\bMoon\b|\bMoon's|lunar eclipse|solar eclipse" newpages.txt | egrep -iv 'Sailor Moon|Type( |-)Moon|Harvest Moon|moon stone|Twilight|Pokémon|Pokemon|Jacob|Bella|Edward|RuneScape' >> Moon.txt
+KEYWORDS_MOON="\bMoon\b|(lunar|solar|total)(| )eclipse"
+KEYWORDS_MOON_EXCLUDE="Sailor(| )Moon|Type( |-)Moon|Harvest(| )Moon|moon(| )stone|Twilight|Pokémon|Pokemon|Jacob|Bella|Edward|RuneScape"
 
-MOON=$(stat --print=%s Moon.txt)
-
-if [ $MOON -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Moon.txt"
-  export CATNAME="Moon"
-  $CATEGORIZE
-fi
 
-rm Moon.txt
+  debug_start "Moon"
+
+  MOON=$(egrep -i "$KEYWORDS_MOON" newpages.txt | egrep -iv "$KEYWORDS_MOON_EXCLUDE")
+
+  if [ "$MOON" != "" ];
+  then
+    printf "%s" "$MOON" > Moon.txt
+    export CATFILE="Moon.txt"
+    export CATNAME="Moon"
+    $CATEGORIZE
+    rm Moon.txt
+    unset MOON
+  fi
+
+  debug_end "Moon"
+
+fi

@@ -1,18 +1,35 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Science/Biology/Animals/Vertebrates/Mammals"
+MAMMALDIR="./catscripts/Science/Biology/Animals/Vertebrates/Mammals"
+KEYWORDS_MAMMALS="mammal"
 
-egrep -i 'mammal' newpages.txt | egrep -iv 'Dolphin' >> Mammals.txt
-
-MAMMALS=$(stat --print=%s Mammals.txt)
-
-if [ $MAMMALS -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Mammals.txt"
-  export CATNAME="Mammals"
-  $CATEGORIZE
+
+  debug_start "Mammals"
+
+  . $MAMMALDIR/Dolphins/Dolphins.sh #KEYWORDS_DOLPHINS
+
+  KEYWORDS_MAMMALS_EXCLUDE="$KEYWORDS_DOLPHINS"
+
+  MAMMALS=$(egrep -i "$KEYWORDS_MAMMALS" newpages.txt | egrep -iv "$KEYWORDS_MAMMALS_EXCLUDE" )
+
+  if [ "$MAMMALS" != "" ];
+  then
+    printf "%s" "$MAMMALS" > Mammals.txt
+    export CATFILE="Mammals.txt"
+    export CATNAME="Mammals"
+    $CATEGORIZE
+    rm Mammals.txt
+    unset MAMMALS
+  fi
+
+  debug_end "Mammals"
+
+else
+
+  . $MAMMALDIR/Dolphins/Dolphins.sh norun #KEYWORDS_DOLPHINS
+
+  KEYWORDS_MAMMALS_EXCLUDE="$KEYWORDS_DOLPHINS"
+
 fi
-
-rm Mammals.txt
-
-$CURRENTDIR/Dolphins/Dolphins.sh

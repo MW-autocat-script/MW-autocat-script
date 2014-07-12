@@ -7,9 +7,9 @@ then
   
   debug_start "Mindless Behavior"
 
-  MINDLESS="$(egrep -i "$KEYWORDS_MINDLESSBEHAVIOR" newpages.txt)"
+  MINDLESS=$(egrep -i "$KEYWORDS_MINDLESSBEHAVIOR" newpages.txt)
 
-  if [ "$1" == "" ];
+  if [ "$MINDLESS" != "" ];
   then
     printf "%s" "$MINDLESS" > MindlessBehavior.txt
     export CATFILE="MindlessBehavior.txt"

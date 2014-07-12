@@ -2,15 +2,23 @@
 
 export KEYWORDS_BANDS_BONJOVI="Bon(| )Jovi"
 
-egrep -i "$KEYWORDS_BANDS_BONJOVI" newpages.txt | egrep -iv "Jon(| )Bon(| )Jovi" >> BonJovi.txt
-
-BONJOVI=$(stat --print=%s BonJovi.txt)
-
-if [ $BONJOVI -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="BonJovi.txt"
-  export CATNAME="Bon Jovi"
-  $CATEGORIZE
-fi
 
-rm BonJovi.txt
+  debug_start "Bon Jovi"
+
+  BONJOVI=$(egrep -i "$KEYWORDS_BANDS_BONJOVI" newpages.txt | egrep -iv "Jon(| )Bon(| )Jovi")
+
+  if [ "$BONJOVI" != "" ];
+  then
+    printf "%s" "$BONJOVI" > BonJovi.txt
+    export CATFILE="BonJovi.txt"
+    export CATNAME="Bon Jovi"
+    $CATEGORIZE
+    rm BonJovi.txt
+    unset BONJOVI
+  fi
+
+  debug_end "Bon Jovi"
+
+fi

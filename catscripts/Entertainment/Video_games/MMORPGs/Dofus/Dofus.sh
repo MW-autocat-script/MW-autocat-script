@@ -19,6 +19,6 @@ then
     unset DOFUS
   fi
 
-  debug_start "Dofus"
+  debug_end "Dofus"
 
 fi

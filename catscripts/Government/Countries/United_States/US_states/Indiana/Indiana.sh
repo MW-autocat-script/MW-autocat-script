@@ -3,15 +3,23 @@
 KEYWORDS_INDIANA="Indiana"
 KEYWORDS_INDIANA_EXCLUDE="Indiana(| )County|Indiana(| )University|Indiana(| )Jones"
 
-egrep -i "$KEYWORDS_INDIANA" newpages.txt | egrep -iv "$KEYWORDS_INDIANA_EXCLUDE" >> Indiana.txt
-
-INDIANA=$(stat --print=%s Indiana.txt)
-
-if [ $INDIANA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Indiana.txt"
-  export CATNAME="Indiana"
-  $CATEGORIZE
-fi
 
-rm Indiana.txt
+  debug_start "Indiana"
+
+  INDIANA=$(egrep -i "$KEYWORDS_INDIANA" newpages.txt | egrep -iv "$KEYWORDS_INDIANA_EXCLUDE" )
+
+  if [ "$INDIANA" != "" ];
+  then
+    printf "%s" "$INDIANA" > Indiana.txt
+    export CATFILE="Indiana.txt"
+    export CATNAME="Indiana"
+    $CATEGORIZE
+    rm Indiana.txt
+    unset INDIANA
+  fi
+
+  debug_end "Indiana"
+
+fi

@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_POPTROPICA="poptropica|potropica|poptopica"
 
-egrep -i "$KEYWORDS_MMORPG_POPTROPICA" newpages.txt > Poptropica.txt
-
-POPTROPICA=$(stat --print=%s Poptropica.txt)
-
-if [ $POPTROPICA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Poptropica.txt"
-  export CATNAME="Poptropica"
-  $CATEGORIZE
-fi
 
-rm Poptropica.txt
+  debug_start "Poptropica"
+
+  POPTROPICA=$(egrep -i "$KEYWORDS_MMORPG_POPTROPICA" newpages.txt)
+
+  if [ "$POPTROPICA" != "" ];
+  then
+    printf "%s" "$POPTROPICA" > Poptropica.txt
+    export CATFILE="Poptropica.txt"
+    export CATNAME="Poptropica"
+    $CATEGORIZE
+    rm Poptropica.txt
+    unset POPTROPICA
+  fi
+
+  debug_end "Poptropica"
+
+fi

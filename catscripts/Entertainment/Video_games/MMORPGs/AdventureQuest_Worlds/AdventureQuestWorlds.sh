@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_AQW="(AdventureQuest|Adventure Quest)(World(|s)| World(|s))|AQW|Valencia"
 
-egrep -i "$KEYWORDS_MMORPG_AQW" newpages.txt >> AdventureQuestWorlds.txt
-
-AQW=$(stat --print=%s AdventureQuestWorlds.txt)
-
-if [ $AQW -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="AdventureQuestWorlds.txt"
-  export CATNAME="AdventureQuest Worlds"
-  $CATEGORIZE
-fi
 
-rm AdventureQuestWorlds.txt
+  debug_start "AdventureQuest Worlds"
+
+  AQW=$(egrep -i "$KEYWORDS_MMORPG_AQW" newpages.txt)
+
+  if [ "$AQW" != "" ];
+  then
+    printf "%s" "$AQW" > AdventureQuestWorlds.txt
+    export CATFILE="AdventureQuestWorlds.txt"
+    export CATNAME="AdventureQuest Worlds"
+    $CATEGORIZE
+    rm AdventureQuestWorlds.txt
+    unset AQW
+  fi
+
+  debug_end "AdventureQuest Worlds"
+
+fi

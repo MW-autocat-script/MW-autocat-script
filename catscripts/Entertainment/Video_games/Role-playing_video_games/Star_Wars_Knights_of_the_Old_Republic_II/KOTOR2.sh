@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'Knights(| )of(| )the(| )Old(| )Republic(| )(II|2)|KOTOR(| )(2|II)' newpages.txt >> KOTOR2.txt
+KEYWORDS_KOTOR2="Knights(| )of(| )the(| )Old(| )Republic(| )(II|2)|KOTOR(| )(2|II)"
 
-KOTOR2=$(stat --print=%s KOTOR2.txt)
-
-if [ $KOTOR2 -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="KOTOR2.txt"
-  export CATNAME="Star Wars: Knights of the Old Republic II – The Sith Lords"
-  $CATEGORIZE
-fi
 
-rm KOTOR2.txt
+  debug_start "Star Wars: Knights of the Old Republic II – The Sith Lords"
+
+  KOTOR2=$(egrep -i "$KEYWORDS_KOTOR2" newpages.txt)
+
+  if [ "$KOTOR2" != "" ];
+  then
+    printf "%s" "$KOTOR2" > KOTOR2.txt
+    export CATFILE="KOTOR2.txt"
+    export CATNAME="Star Wars: Knights of the Old Republic II – The Sith Lords"
+    $CATEGORIZE
+    rm KOTOR2.txt
+    unset KOTOR2
+  fi
+
+  debug_end "Star Wars: Knights of the Old Republic II – The Sith Lords"
+
+fi

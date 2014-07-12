@@ -5,17 +5,20 @@ KEYWORDS_WIKIASEARCH="Wikia(| )Search"
 if [ "$1" == "" ];
 then
 
-  egrep -i "$KEYWORDS_WIKIASEARCH" newpages.txt >> WikiaSearch.txt
+  debug_start "Wikia Search"
 
-  WIKIASEARCH=$(stat --print=%s WikiaSearch.txt)
+  WIKIASEARCH=$(egrep -i "$KEYWORDS_WIKIASEARCH" newpages.txt)
 
-  if [ $WIKIASEARCH -ne 0 ];
+  if [ "$WIKIASEARCH" != "" ];
   then
+    printf "%s" "$WIKIASEARCH" > WikiaSearch.txt
     export CATFILE="WikiaSearch.txt"
     export CATNAME="Wikia Search"
     $CATEGORIZE
+    rm WikiaSearch.txt
+    unset WIKIASEARCH
   fi
 
-  rm WikiaSearch.txt
+  debug_end "Wikia Search"
 
 fi

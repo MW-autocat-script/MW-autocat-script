@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_MAPLESTORY="Maple(| )Story"
 
-egrep -i "$KEYWORDS_MMORPG_MAPLESTORY" newpages.txt > MapleStory.txt
-
-MAPLESTORY=$(stat --print=%s MapleStory.txt)
-
-if [ $MAPLESTORY -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="MapleStory.txt"
-  export CATNAME="MapleStory"
-  $CATEGORIZE
-fi
+  
+  debug_start "MapleStory"
 
-rm MapleStory.txt
+  MAPLESTORY=$(egrep -i "$KEYWORDS_MMORPG_MAPLESTORY" newpages.txt)
+
+  if [ "$MAPLESTORY" != "" ];
+  then
+    printf "%s" "$MAPLESTORY" > MapleStory.txt
+    export CATFILE="MapleStory.txt"
+    export CATNAME="MapleStory"
+    $CATEGORIZE
+    rm MapleStory.txt
+    unset MAPLESTORY
+  fi
+
+  debug_end "MapleStory"
+
+fi

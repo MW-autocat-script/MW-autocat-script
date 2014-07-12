@@ -5,17 +5,20 @@ KEYWORDS_FREEBSD="Free(| )BSD"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  egrep -i "$KEYWORDS_FREEBSD" newpages.txt >> FreeBSD.txt
+  debug_start "FreeBSD"
 
-  FREEBSD=$(stat --print=%s FreeBSD.txt)
+  FREEBSD=$(egrep -i "$KEYWORDS_FREEBSD" newpages.txt)
 
-  if [ $FREEBSD -ne 0 ];
+  if [ "$FREEBSD" != "" ];
   then
+    printf "%s" "$FREEBSD" > FreeBSD.txt
     export CATFILE="FreeBSD.txt"
     export CATNAME="FreeBSD"
     $CATEGORIZE
+    rm FreeBSD.txt
+    unset FREEBSD
   fi
 
-  rm FreeBSD.txt
+  debug_end "FreeBSD"
 
 fi

@@ -1,16 +1,24 @@
 #!/bin/bash
 
-export KEYWORDS_MMORPG_CABAL="Cabal(| )Online|Altar of Karion"
+export KEYWORDS_MMORPG_CABAL="Cabal(| )Online|Altar(| )of(| )Karion"
 
-egrep -i "$KEYWORDS_MMORPG_CABAL" newpages.txt >> CabalOnline.txt
-
-CABAL=$(stat --print=%s CabalOnline.txt)
-
-if [ $CABAL -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="CabalOnline.txt"
-  export CATNAME="Cabal Online"
-  $CATEGORIZE
-fi
 
-rm CabalOnline.txt
+  debug_start "Cabal Online"
+
+  CABAL=$(egrep -i "$KEYWORDS_MMORPG_CABAL" newpages.txt)
+
+  if [ "$CABAL" != "" ];
+  then
+    printf "%s" "$CABAL" > CabalOnline.txt
+    export CATFILE="CabalOnline.txt"
+    export CATNAME="Cabal Online"
+    $CATEGORIZE
+    rm CabalOnline.txt
+    unset CABAL
+  fi
+
+  debug_end "Cabal Online"
+
+fi

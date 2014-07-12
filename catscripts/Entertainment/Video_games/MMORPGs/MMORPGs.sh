@@ -3,6 +3,8 @@
 #
 #Final Fantasy XI - in Role-playing games/Final Fantasy series
 
+debug_start "MMORPGs"
+
 CURRENTDIR="./catscripts/Entertainment/Video_games/MMORPGs"
 
 . $CURRENTDIR/AdventureQuest_Worlds/AdventureQuestWorlds.sh
@@ -48,3 +50,5 @@ then
 fi
 
 rm MMORPG.txt
+
+debug_end "MMORPGs"

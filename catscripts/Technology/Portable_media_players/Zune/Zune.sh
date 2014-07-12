@@ -5,16 +5,13 @@ KEYWORDS_ZUNE="\bZune"
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Zune\n"
-  fi
+  debug_start "Zune"
 
   ZUNE=$(egrep -i "$KEYWORDS_ZUNE" newpages.txt)
 
   if [ "$ZUNE" != "" ];
   then
-    printf "$ZUNE" > Zune.txt
+    printf "%s" "$ZUNE" > Zune.txt
     export CATFILE="Zune.txt"
     export CATNAME="Zune"
     $CATEGORIZE
@@ -22,9 +19,6 @@ then
     unset ZUNE
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Zune\n"
-  fi
+  debug_end "Zune"
 
 fi

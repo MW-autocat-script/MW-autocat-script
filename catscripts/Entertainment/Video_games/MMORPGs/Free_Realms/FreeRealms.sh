@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_FREEREALMS="Free(| )Realms"
 
-egrep -i "$KEYWORDS_MMORPG_FREEREALMS" newpages.txt > FreeRealms.txt
+if [ "$1" == "" ];
+then
 
-FREEREALMS=$(stat --print=%s FreeRealms.txt)
+  debug_start "Free Realms"
 
-if [ $FREEREALMS -ne 0 ];
-then	
-  export CATFILE="FreeRealms.txt"
-  export CATNAME="Free Realms"
-  $CATEGORIZE
+  FREEREALMS=$(egrep -i "$KEYWORDS_MMORPG_FREEREALMS" newpages.txt)
+
+  if [ "$FREEREALMS" != "" ];
+  then
+    printf "%s" "$FREEREALMS" > FreeRealms.txt
+    export CATFILE="FreeRealms.txt"
+    export CATNAME="Free Realms"
+    $CATEGORIZE
+    rm FreeRealms.txt
+    unset FREEREALMS
+  fi
+
+  debug_end "Free Realms"
+
 fi
-
-rm FreeRealms.txt

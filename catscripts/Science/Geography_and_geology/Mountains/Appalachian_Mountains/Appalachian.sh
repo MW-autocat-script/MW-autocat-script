@@ -5,17 +5,20 @@ KEYWORDS_APPALACHIAN="Appalachian"
 if [ "$1" == "" ];
 then
   
-  egrep -i "$KEYWORDS_APPALACHIAN" newpages.txt >> Appalachian.txt
+  debug_start "Appalachian Mountains"
 
-  APPALACHIAN=$(stat --print=%s Appalachian.txt)
+  APPALACHIAN=$(egrep -i "$KEYWORDS_APPALACHIAN" newpages.txt)
 
-  if [ $APPALACHIAN -ne 0 ];
+  if [ "$APPALACHIAN" != "" ];
   then
+    printf "%s" "$APPALACHIAN" > Appalachian.txt
     export CATFILE="Appalachian.txt"
     export CATNAME="Appalachian Mountains"
     $CATEGORIZE
+    rm Appalachian.txt
+    unset APPALACHIAN
   fi
 
-  rm Appalachian.txt
+  debug_end "Appalachian Mountains"
 
 fi

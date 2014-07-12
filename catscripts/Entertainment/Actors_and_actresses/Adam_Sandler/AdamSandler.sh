@@ -4,10 +4,8 @@ KEYWORDS_ACTOR_ADAMSANDLER="Adam(| )Sandler"
 
 if [ "$1" == "" ]; #Normal operation
 then
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Adam Sandler\n" 
-  fi
+
+  debug_start "Adam Sandler"
 
   SANDLER=$(egrep -i "$KEYWORDS_ACTOR_ADAMSANDLER" newpages.txt)
 
@@ -21,8 +19,6 @@ then
     unset SANDLER
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Adam Sandler\n" 
-  fi
+  debug_end "Adam Sandler"
+
 fi

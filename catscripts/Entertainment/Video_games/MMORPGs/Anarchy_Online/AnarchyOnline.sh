@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_ANARCHY="Anarchy(| )Online"
 
-egrep -i "$KEYWORDS_MMORPG_ANARCHY" newpages.txt >> AnarchyOnline.txt
-
-ANARCHY=$(stat --print=%s AnarchyOnline.txt)
-
-if [ $ANARCHY -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="AnarchyOnline.txt"
-  export CATNAME="Anarchy Online"
-  $CATEGORIZE
-fi
 
-rm AnarchyOnline.txt
+  debug_start "Anarchy Online"
+
+  ANARCHY=$(egrep -i "$KEYWORDS_MMORPG_ANARCHY" newpages.txt)
+
+  if [ "$ANARCHY" != "" ];
+  then
+    printf "%s" "$ANARCHY" > AnarchyOnline.txt
+    export CATFILE="AnarchyOnline.txt"
+    export CATNAME="Anarchy Online"
+    $CATEGORIZE
+    rm AnarchyOnline.txt
+    unset ANARCHY
+  fi
+
+  debug_start "Anarchy Online"
+
+fi

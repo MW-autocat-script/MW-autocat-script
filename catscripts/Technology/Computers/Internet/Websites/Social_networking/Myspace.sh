@@ -4,17 +4,21 @@ KEYWORDS_MYSPACE="Myspace"
 
 if [ "$1" == "" ];
 then
-  
-  egrep -i "$KEYWORDS_MYSPACE" newpages.txt >> Myspace.txt
 
-  MYSPACE=$(stat --print=%s Myspace.txt)
+  debug_start "Myspace"
 
-  if [ $MYSPACE -ne 0 ];
+  MYSPACE=$(egrep -i "$KEYWORDS_MYSPACE" newpages.txt)
+
+  if [ "$MYSPACE" != "" ];
   then
+    printf "%s" "$MYSPACE" > Myspace.txt
     export CATFILE="Myspace.txt"
     export CATNAME="Myspace"
     $CATEGORIZE
+    rm Myspace.txt
+    unset MYSPACE
   fi
   
-  rm Myspace.txt
+  debug_end "Myspace"
+
 fi

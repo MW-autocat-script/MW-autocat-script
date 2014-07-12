@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_WIZARD101="Wizard(|s)(| )101"
 
-egrep -i "$KEYWORDS_MMORPG_WIZARD101" newpages.txt >> Wizard101.txt
-
-WIZARD101=$(stat --print=%s Wizard101.txt)
-
-if [ $WIZARD101 -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Wizard101.txt"
-  export CATNAME="Wizard101"
-  $CATEGORIZE
-fi
 
-rm Wizard101.txt
+  debug_start "Wizard101"
+
+  WIZARD101=$(egrep -i "$KEYWORDS_MMORPG_WIZARD101" newpages.txt)
+
+  if [ "$WIZARD101" != "" ];
+  then
+    printf "%s" "$WIZARD101" > Wizard101.txt
+    export CATFILE="Wizard101.txt"
+    export CATNAME="Wizard101"
+    $CATEGORIZE
+    rm Wizard101.txt
+    unset WIZARD101
+  fi
+
+  debug_end "Wizard101"
+
+fi

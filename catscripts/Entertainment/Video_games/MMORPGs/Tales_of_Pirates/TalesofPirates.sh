@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_PIRATES="Tales(| )of(| )Pirates"
 
-egrep -i "$KEYWORDS_MMORPG_PIRATES" newpages.txt >> TalesofPirates.txt
-
-PIRATES=$(stat --print=%s TalesofPirates.txt)
-
-if [ $PIRATES -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="TalesofPirates.txt"
-  export CATNAME="Tales of Pirates"
-  $CATEGORIZE
-fi
 
-rm TalesofPirates.txt
+  debug_start "Tales of Pirates"
+
+  PIRATES=$(egrep -i "$KEYWORDS_MMORPG_PIRATES" newpages.txt)
+
+  if [ "$PIRATES" != "" ];
+  then
+    printf "%s" "$PIRATES" > TalesofPirates.txt
+    export CATFILE="TalesofPirates.txt"
+    export CATNAME="Tales of Pirates"
+    $CATEGORIZE
+    rm TalesofPirates.txt
+    unset PIRATES
+  fi
+
+  debug_end "Tales of Pirates"
+
+fi

@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'PlayStation 3|Play Station 3|\bPS3|\bPS 3\b|Play(| )Station(| )Eye|Play(| )Station(| )Move' newpages.txt >> PlayStation3.txt
+KEYWORDS_PLAYSTATION3="Play(| )Station(| )3|\bPS(| )3|Play(| )Station(| )Eye|Play(| )Station(| )Move"
 
-PS3=$(stat --print=%s PlayStation3.txt)
-
-if [ $PS3 -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="PlayStation3.txt"
-  export CATNAME="PlayStation 3"
-  $CATEGORIZE
-fi
 
-rm PlayStation3.txt
+  debug_start "PlayStation 3"
+
+  PS3=$(egrep -i "$KEYWORDS_PLAYSTATION3" newpages.txt)
+
+  if [ "$PS3" != "" ];
+  then
+    printf "%s" "$PS3" > PlayStation3.txt
+    export CATFILE="PlayStation3.txt"
+    export CATNAME="PlayStation 3"
+    $CATEGORIZE
+    rm PlayStation3.txt
+    unset PS3
+  fi
+
+  debug_end "PlayStation 3"
+
+fi

@@ -5,17 +5,21 @@ KEYWORDS_MACOS="Mac(| )OS|OS(| )X"
 
 if [ "$1" == "" ]; #Normal operation
 then
-  egrep -i "$KEYWORDS_MACOS" newpages.txt >> MacOSX.txt
 
-  MACOS=$(stat --print=%s MacOSX.txt)
+  debug_start "Mac OS X"
 
-  if [ $MACOS -ne 0 ];
+  MACOS=$(egrep -i "$KEYWORDS_MACOS" newpages.txt)
+
+  if [ "$MACOS" != "" ];
   then
+    printf "%s" "$MACOS" > MacOSX.txt
     export CATFILE="MacOSX.txt"
     export CATNAME="Mac OS X"
     $CATEGORIZE
+    rm MacOSX.txt
+    unset MACOS
   fi
 
-  rm MacOSX.txt
+  debug_end "Mac OS X"
 
 fi

@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'Literacy Planet|LiteracyPlanet|Litracy planet|intrepica|intreprica|interprica|intripeca|lituracy planet|Turtle(| )Knock|Sheep(| )Bounce' newpages.txt > LiteracyPlanet.txt
+KEYWORDS_LITERACYPLANET="Lit(|e|u)r(|a)cy(| )Planet|Intr(i|e)p(r|)ica|Turtle(| )Knock|Sheep(| )Bounce"
 
-LITERACYPLANET=$(stat --print=%s LiteracyPlanet.txt) 
-
-if [ $LITERACYPLANET -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="LiteracyPlanet.txt"
-  export CATNAME="Literacy Planet"
-  $CATEGORIZE
-fi
 
-rm LiteracyPlanet.txt
+  debug_start "Literacy Planet"
+
+  LITERACYPLANET=$(egrep -i "$KEYWORDS_LITERACYPLANET" newpages.txt) 
+
+  if [ "$LITERACYPLANET" != "" ];
+  then
+    printf "%s" "$LITERACYPLANET" > LiteracyPlanet.txt
+    export CATFILE="LiteracyPlanet.txt"
+    export CATNAME="Literacy Planet"
+    $CATEGORIZE
+    rm LiteracyPlanet.txt
+    unset LITERACYPLANET
+  fi
+
+  debug_end "Literacy Planet"
+
+fi

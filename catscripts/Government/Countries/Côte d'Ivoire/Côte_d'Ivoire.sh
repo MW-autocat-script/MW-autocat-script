@@ -5,16 +5,13 @@ KEYWORDS_COTEDIVOIRE="C[oô]te(| )d(|')Ivoire|Ivory(| )Coast"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Côte d'Ivoire\n"
-  fi
+  debug_start "Côte d'Ivoire"
 
   COTEDIVOIRE=$(egrep -i "$KEYWORDS_COTEDIVOIRE" newpages.txt)
 
   if [ "$COTEDIVOIRE" != "" ];
   then
-    printf "$COTEDIVOIRE" > CotedIvoire.txt
+    printf "%s" "$COTEDIVOIRE" > CotedIvoire.txt
     export CATFILE="CotedIvoire.txt"
     export CATNAME="Côte d'Ivoire"
     $CATEGORIZE
@@ -22,10 +19,7 @@ then
     unset COTEDIVOIRE
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Côte d'Ivoire"
-  fi
+  debug_end "Côte d'Ivoire"
 
 fi
 

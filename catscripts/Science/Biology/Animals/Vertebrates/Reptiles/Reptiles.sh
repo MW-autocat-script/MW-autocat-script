@@ -41,10 +41,7 @@ if [ "$1" == "" ];
 then
 
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Reptiles\n"
-  fi
+  debug_start "Reptiles"
 
   REPTILES="$(egrep -i "$KEYWORDS_REPTILES" newpages.txt | egrep -iv "$KEYWORDS_REPTILES_EXCLUDE")"
   TURTLES="$(egrep -i "$KEYWORDS_TURTLES" newpages.txt | egrep -iv "$KEYWORDS_TURTLES_EXCLUDE")"
@@ -223,9 +220,6 @@ then
     unset COBRAS
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Reptiles\n"
-  fi
+  debug_end "Reptiles"
 
 fi

@@ -5,10 +5,7 @@ ACTORDIR="./catscripts/Entertainment/Actors_and_actresses"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Actors and actresses\n" 
-  fi
+  debug_start "Actors and actresses"
 
   . $ACTORDIR/Orlando_Bloom/OrlandoBloom.sh #$KEYWORDS_ACTOR_ORLANDOBLOOM
   . $ACTORDIR/Sandra_Bullock/SandraBullock.sh #$KEYWORDS_ACTRESS_SANDRABULLOCK
@@ -62,9 +59,6 @@ then
     unset ACTORS
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Actors and actresses\n" 
-  fi
+  debug_end "Actors and actresses"
 
 fi

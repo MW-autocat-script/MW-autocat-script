@@ -1,15 +1,25 @@
 #!/bin/bash
 
-egrep -i 'Taiwan|Chinese Taipei' newpages.txt >> Taiwan.txt
-egrep -i 'Republic of China' newpages.txt | egrep -iv "People('|)s Republic of China" >> Taiwan.txt
+KEYWORDS_TAIWAN="Taiwan|Chinese(| )Taipei|Republic(| )of(| )China"
+KEYWORDS_TAIWAN_EXCLUDE="People('|)s(| )Republic(| )of(| )China"
 
-TAIWAN=$(stat --print=%s Taiwan.txt)
-
-if [ $TAIWAN -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Taiwan.txt"
-  export CATNAME="Taiwan"
-  $CATEGORIZE
-fi
 
-rm Taiwan.txt
+  debug_start "Taiwan"
+
+  TAIWAN=$(egrep -i "$KEYWORDS_TAIWAN" newpages.txt | egrep -iv "$KEYWORDS_TAIWAN_EXCLUDE")
+
+  if [ "$TAIWAN" != "" ];
+  then
+    printf "%s" "$TAIWAN" > Taiwan.txt
+    export CATFILE="Taiwan.txt"
+    export CATNAME="Taiwan"
+    $CATEGORIZE
+    rm Taiwan.txt
+    unset TAIWAN
+  fi
+
+  debug_end "Taiwan"
+
+fi

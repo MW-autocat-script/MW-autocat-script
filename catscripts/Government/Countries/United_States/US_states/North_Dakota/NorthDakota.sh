@@ -2,15 +2,23 @@
 
 KEYWORDS_NORTHDAKOTA="North(| )Dakota"
 
-egrep -i "$KEYWORDS_NORTHDAKOTA" newpages.txt >> NorthDakota.txt
-
-NORTHDAKOTA=$(stat --print=%s NorthDakota.txt)
-
-if [ $NORTHDAKOTA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="NorthDakota.txt"
-  export CATNAME="North Dakota"
-  $CATEGORIZE
-fi
 
-rm NorthDakota.txt
+  debug_start "North Dakota"
+
+  NORTHDAKOTA=$(egrep -i "$KEYWORDS_NORTHDAKOTA" newpages.txt)
+
+  if [ "$NORTHDAKOTA" != "" ];
+  then
+    printf "%s" "$NORTHDAKOTA" > NorthDakota.txt
+    export CATFILE="NorthDakota.txt"
+    export CATNAME="North Dakota"
+    $CATEGORIZE
+    rm NorthDakota.txt
+    unset NORTHDAKOTA
+  fi
+
+  debug_end "North Dakota"
+
+fi

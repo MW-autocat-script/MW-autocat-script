@@ -4,18 +4,21 @@ KEYWORDS_TWITTER="Twitter"
 
 if [ "$1" == "" ];
 then
-  
-  egrep -i "$KEYWORDS_TWITTER" newpages.txt >> Twitter.txt
 
-  TWITTER=$(stat --print=%s Twitter.txt)
+  debug_start "Twitter"
 
-  if [ $TWITTER -ne 0 ];
+  TWITTER=$(egrep -i "$KEYWORDS_TWITTER" newpages.txt)
+
+  if [ "$TWITTER" != "" ];
   then
+    printf "%s" "$TWITTER" > Twitter.txt
     export CATFILE="Twitter.txt"
     export CATNAME="Twitter"
     $CATEGORIZE
+    rm Twitter.txt
+    unset TWITTER
   fi
 
-  rm Twitter.txt
+  debug_end "Twitter"
 
 fi

@@ -4,18 +4,21 @@ KEYWORDS_FACEBOOK="Face(| )book"
 
 if [ "$1" == "" ];
 then
-  
-  egrep -i "$KEYWORDS_FACEBOOK" newpages.txt >> Facebook.txt
 
-  FACEBOOK=$(stat --print=%s Facebook.txt)
+  debug_start "Facebook"
 
-  if [ $FACEBOOK -ne 0 ];
+  FACEBOOK=$(egrep -i "$KEYWORDS_FACEBOOK" newpages.txt)
+
+  if [ "$FACEBOOK" != "" ];
   then
+    printf "%s" "$FACEBOOK" > Facebook.txt
     export CATFILE="Facebook.txt"
     export CATNAME="Facebook"
     $CATEGORIZE
+    rm Facebook.txt
+    unset FACEBOOK
   fi
 
-  rm Facebook.txt
+  debug_end "Facebook"
 
 fi

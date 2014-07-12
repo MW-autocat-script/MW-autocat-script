@@ -2,15 +2,23 @@
 
 export KEYWORDS_MOVIES_GHOSTBUSTERS="Ghost(| )buster"
 
-egrep -i "$KEYWORDS_MOVIES_GHOSTBUSTERS" newpages.txt >> Ghostbusters.txt
-
-GHOSTBUSTER=$(stat --print=%s Ghostbusters.txt)
-
-if [ $GHOSTBUSTER -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Ghostbusters.txt"
-  export CATNAME="Ghostbusters"
-  $CATEGORIZE
-fi
 
-rm Ghostbusters.txt
+  debug_start "Ghostbusters" #Who you gonna call? :)
+
+  GHOSTBUSTER=$(egrep -i "$KEYWORDS_MOVIES_GHOSTBUSTERS" newpages.txt)
+
+  if [ "$GHOSTBUSTER" != "" ];
+  then
+    printf "%s" "$GHOSTBUSTER" > Ghostbusters.txt
+    export CATFILE="Ghostbusters.txt"
+    export CATNAME="Ghostbusters"
+    $CATEGORIZE
+    rm Ghostbusters.txt
+    unset GHOSTBUSTER
+  fi
+
+  debug_end "Ghostbusters"
+
+fi

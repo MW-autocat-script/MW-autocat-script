@@ -1,14 +1,24 @@
 #!/bin/bash
 
-egrep -i 'Digimon World ([0-9]{1,}|DS|Dusk|Championship|Data Squad|Dawn|Lost Evolution|Re:Digitize)' newpages.txt >> DigimonWorld.txt
+KEYWORDS_DIGIMONWORLD="Digimon(| )World(| )([0-9]{1,}|DS|Dusk|Championship|Data(| )Squad|Dawn|Lost(| )Evolution|Re:Digitize)"
 
-WORLD=$(stat --print=%s DigimonWorld.txt)
-
-if [ $WORLD -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="DigimonWorld.txt"
-  export CATNAME="Digimon World series"
-  $CATEGORIZE
-fi
 
-rm DigimonWorld.txt
+  debug_start "Digimon World"
+
+  WORLD=$(egrep -i "$KEYWORDS_DIGIMONWORLD" newpages.txt)
+
+  if [ "$WORLD" != "" ];
+  then
+    printf "%s" "$WORLD" > DigimonWorld.txt
+    export CATFILE="DigimonWorld.txt"
+    export CATNAME="Digimon World series"
+    $CATEGORIZE
+    rm DigimonWorld.txt
+    unset WORLD
+  fi
+
+  debug_end "Digimon World"
+
+fi

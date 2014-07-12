@@ -2,15 +2,23 @@
 
 KEYWORDS_NINTENDO_GAMECUBE="Game(| )Cube"
 
-egrep -i "$KEYWORDS_NINTENDO_GAMECUBE" newpages.txt >> NintendoGameCube.txt
-
-GAMECUBE=$(stat --print=%s NintendoGameCube.txt)
-
-if [ $GAMECUBE -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="NintendoGameCube.txt"
-  export CATNAME="Nintendo GameCube"
-  $CATEGORIZE
-fi
 
-rm NintendoGameCube.txt
+  debug_start "Nintendo GameCube"
+
+  GAMECUBE=$(egrep -i "$KEYWORDS_NINTENDO_GAMECUBE" newpages.txt)
+
+  if [ "$GAMECUBE" != "" ];
+  then
+    printf "%s" "$GAMECUBE" > NintendoGameCube.txt
+    export CATFILE="NintendoGameCube.txt"
+    export CATNAME="Nintendo GameCube"
+    $CATEGORIZE
+    rm NintendoGameCube.txt
+    unset GAMECUBE
+  fi
+
+  debug_end "Nintendo GameCube"
+
+fi

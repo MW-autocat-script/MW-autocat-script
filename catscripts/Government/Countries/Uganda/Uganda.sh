@@ -5,10 +5,7 @@ KEYWORDS_UGANDA="Uganda|Kampala"
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Uganda\n"
-  fi
+  debug_start "Uganda"
 
   UGANDA=$(egrep -i "$KEYWORDS_UGANDA" newpages.txt)
 
@@ -22,9 +19,6 @@ then
     unset UGANDA
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Uganda\n"
-  fi
+  debug_end "Uganda"
 
 fi

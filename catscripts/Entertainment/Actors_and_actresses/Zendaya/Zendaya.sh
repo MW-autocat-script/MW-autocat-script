@@ -19,4 +19,6 @@ then
     unset ZENDAYA
   fi
 
+  debug_end "Zendaya"
+
 fi

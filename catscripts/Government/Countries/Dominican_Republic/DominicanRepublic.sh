@@ -20,6 +20,6 @@ then
     unset DOMINICAN
   fi
 
-  debug_start "Dominican Republic"
+  debug_end "Dominican Republic"
 
 fi

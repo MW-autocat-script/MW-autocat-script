@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_CLUBPENGUIN="Club(| )Penguin"
 
-egrep -i "$KEYWORDS_MMORPG_CLUBPENGUIN" newpages.txt >> ClubPenguin.txt
-
-CLUBPENGUIN=$(stat --print=%s ClubPenguin.txt)
-
-if [ $CLUBPENGUIN -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="ClubPenguin.txt"
-  export CATNAME="Club Penguin"
-  $CATEGORIZE
-fi
 
-rm ClubPenguin.txt
+  debug_start "Club Penguin"
+
+  CLUBPENGUIN=$(egrep -i "$KEYWORDS_MMORPG_CLUBPENGUIN" newpages.txt)
+
+  if [ "$CLUBPENGUIN" != "" ];
+  then
+    printf "%s" "$CLUBPENGUIN" > ClubPenguin.txt
+    export CATFILE="ClubPenguin.txt"
+    export CATNAME="Club Penguin"
+    $CATEGORIZE
+    rm ClubPenguin.txt
+    unset CLUBPENGUIN
+  fi
+
+  debug_start "Club Penguin"
+
+fi

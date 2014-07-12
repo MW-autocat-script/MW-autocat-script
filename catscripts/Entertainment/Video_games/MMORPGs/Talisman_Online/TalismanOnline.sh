@@ -2,15 +2,23 @@
 
 export KEYWORDS_MMORPG_TALISMAN="Talisman(| )Online"
 
-egrep -i "$KEYWORDS_MMORPG_TALISMAN" newpages.txt >> TalismanOnline.txt
-
-TALISMAN=$(stat --print=%s TalismanOnline.txt)
-
-if [ $TALISMAN -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="TalismanOnline.txt"
-  export CATNAME="Talisman Online"
-  $CATEGORIZE
-fi
 
-rm TalismanOnline.txt
+  debug_start "Talisman Online"
+
+  TALISMAN=$(egrep -i "$KEYWORDS_MMORPG_TALISMAN" newpages.txt)
+
+  if [ "$TALISMAN" != "" ];
+  then
+    printf "%s" "$TALISMAN" > TalismanOnline.txt
+    export CATFILE="TalismanOnline.txt"
+    export CATNAME="Talisman Online"
+    $CATEGORIZE
+    rm TalismanOnline
+    unset TALISMAN
+  fi
+
+  debug_end "Talisman Online"
+
+fi

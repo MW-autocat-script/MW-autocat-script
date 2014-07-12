@@ -1,19 +1,40 @@
 #!/bin/bash
+PMPDIR="./catscripts/Technology/Portable_media_players"
+KEYWORDS_PMP="MP(3|4)(| )player|portable(| )media(| )player"
 
-egrep -i 'MP(3|4) player|portable media player' newpages.txt | egrep -iv 'iPod|\bZune' > PMP.txt
-
-PMP=$(stat --print=%s PMP.txt)
-
-if [ $PMP -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="PMP.txt"
-  export CATNAME="Portable media players"
-  $CATEGORIZE
+
+  debug_start "Portable media players"
+
+  . $PMPDIR/iPods/iPods.sh #KEYWORDS_IPODS_ALL
+  . $PMPDIR/Zune/Zune.sh #KEYWORDS_ZUNE
+
+  KEYWORDS_PMP_EXCLUDE="$KEYWORDS_IPODS_ALL|$KEYWORDS_ZUNE"
+  KEYWORDS_PMP_ALL="$KEYWORDS_PMP|$KEYWORDS_IPODS_ALL|$KEYWORDS_ZUNE"
+
+  PMP=$(egrep -i "$KEYWORDS_PMP" newpages.txt | egrep -iv "$KEYWORDS_PMP_EXCLUDE")
+
+  if [ "$PMP" != "" ];
+  then
+    printf "%s" "$PMP" > PMP.txt
+    export CATFILE="PMP.txt"
+    export CATNAME="Portable media players"
+    $CATEGORIZE
+    rm PMP.txt
+    unset PMP
+  fi
+
+  debug_end "Portable media players"
+
+else
+
+  . $PMPDIR/iPods/iPods.sh norun #KEYWORDS_IPODS_ALL
+  . $PMPDIR/Zune/Zune.sh norun #KEYWORDS_ZUNE
+
+  KEYWORDS_PMP_ALL="$KEYWORDS_PMP|$KEYWORDS_IPODS_ALL|$KEYWORDS_ZUNE"
+
 fi
 
-rm PMP.txt
-
-CURRENTDIR="./catscripts/Technology/Portable_media_players"
-
-$CURRENTDIR/iPods/iPods.sh
-$CURRENTDIR/Zune/Zune.sh
+#This is here to make ShellCheck not complain about KEYWORDS_PMP_ALL, which is used elsewhere
+KEYWORDS_PMP_ALL="$KEYWORDS_PMP_ALL"

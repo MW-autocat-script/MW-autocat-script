@@ -2,15 +2,23 @@
 
 KEYWORDS_PLAYSTATION_NETWORK="Play(| )Station(| )(Network|Store)|\bPSN\b"
 
-egrep -i "$KEYWORDS_PLAYSTATION_NETWORK" newpages.txt >> PlayStationNetwork.txt
-
-PSN=$(stat --print=%s PlayStationNetwork.txt)
-
-if [ $PSN -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="PlayStationNetwork.txt"
-  export CATNAME="PlayStation Network"
-  $CATEGORIZE
-fi
 
-rm PlayStationNetwork.txt
+  debug_start "PlayStation Network"
+
+  PSN=$(egrep -i "$KEYWORDS_PLAYSTATION_NETWORK" newpages.txt)
+
+  if [ "$PSN" != "" ];
+  then
+    printf "%s" "$PSN" > PlayStationNetwork.txt
+    export CATFILE="PlayStationNetwork.txt"
+    export CATNAME="PlayStation Network"
+    $CATEGORIZE
+    rm PlayStationNetwork.txt
+    unset PSN
+  fi
+
+  debug_end "PlayStation Network"
+
+fi
