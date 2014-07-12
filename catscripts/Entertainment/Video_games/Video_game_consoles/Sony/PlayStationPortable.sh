@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_PSP="\bPSP|Play(| )Station(| )Portable|\bPS Portable"
+KEYWORDS_PSP="\bPSP|Play(| )Station(| )Portable|\bPS(| )Portable"
 
 if [ "$1" == "" ];
 then

@@ -1,18 +1,24 @@
 #!/bin/bash
 
-egrep -i 'How do you say.+in German' newpages.txt >> EnglishtoGerman.txt
-egrep -i 'How do you spell.+in German' newpages.txt >> EnglishtoGerman.txt
-egrep -i '[abcdefghijklmopqrstuvwxyz]{1,} in German\b' newpages.txt >> EnglishtoGerman.txt
-egrep -i 'What is the German word for' newpages.txt >> EnglishtoGerman.txt
-egrep -i 'How to say.+in German' newpages.txt >> EnglishtoGerman.txt
+KEYWORDS_ENGLISHTOGERMAN="How(| )(to|do(| )you)(| )(say|spell).+in(| )German|[abcdefghijklmopqrstuvwxyz]{1,}(| )in(| )German\b|What(| )is(| )the(| )German(| )word(| )for"
 
-ENGLISHTOGERMAN=$(stat --print=%s EnglishtoGerman.txt)
-
-if [ $ENGLISHTOGERMAN -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="EnglishtoGerman.txt"
-  export CATNAME="English to German"
-  $CATEGORIZE
-fi
 
-rm EnglishtoGerman.txt
+  debug_start "English to German"
+
+  ENGLISHTOGERMAN=$(egrep -i "$KEYWORDS_ENGLISHTOGERMAN" newpages.txt)
+
+  if [ "$ENGLISHTOGERMAN" != "" ];
+  then
+    printf "%s" "$ENGLISHTOGERMAN" > EnglishtoGerman.txt
+    export CATFILE="EnglishtoGerman.txt"
+    export CATNAME="English to German"
+    $CATEGORIZE
+    rm EnglishtoGerman.txt
+    unset ENGLISHTOGERMAN
+  fi
+
+  debug_end "English to German"
+
+fi

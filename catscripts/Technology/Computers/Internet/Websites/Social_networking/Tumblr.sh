@@ -5,10 +5,7 @@ KEYWORDS_TUMBLR="Tumblr"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Tumblr\n"
-  fi
+  debug_start "Tumblr"
 
   TUMBLR="$(egrep -i "$KEYWORDS_TUMBLR" newpages.txt)"
 
@@ -22,9 +19,6 @@ then
     unset TUMBLR
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Tumblr\n"
-  fi
+  debug_end "Tumblr"
 
 fi

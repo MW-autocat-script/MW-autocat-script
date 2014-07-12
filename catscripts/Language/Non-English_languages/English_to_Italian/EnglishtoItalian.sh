@@ -1,17 +1,24 @@
 #!/bin/bash
 
-egrep -i 'How (to|do you) (say|spell).+in Italian' newpages.txt >> EnglishtoItalian.txt
-egrep -i '[abcdefghijklmopqrstuvwxyz]{1,} in Italian' newpages.txt >> EnglishtoItalian.txt
-egrep -i "What('s| is) the Italian word for" newpages.txt >> EnglishtoItalian.txt
-egrep -i 'How to say.+in Italian' newpages.txt >> EnglishtoItalian.txt
+KEYWORDS_ENGLISHTOITALIAN="How(| )(do(| )you|to)(| )(say|spell).+in(| )Italian|What((|')s|(| )is)(| )the(| )Italian(| )word(| )for|[abcdefghijklmopqrstuvwxyz]{1,}(| )in(| )Italian"
 
-ENGLISHTOITALIAN=$(stat --print=%s EnglishtoItalian.txt)
-
-if [ $ENGLISHTOITALIAN -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="EnglishtoItalian.txt"
-  export CATNAME="English to Italian"
-  $CATEGORIZE
-fi
 
-rm EnglishtoItalian.txt
+  debug_start "English to Italian"
+
+  ENGLISHTOITALIAN=$(egrep -i "$KEYWORDS_ENGLISHTOITALIAN" newpages.txt)
+
+  if [ "$ENGLISHTOITALIAN" != "" ];
+  then
+    printf "%s" "$ENGLISHTOITALIAN" > EnglishtoItalian.txt
+    export CATFILE="EnglishtoItalian.txt"
+    export CATNAME="English to Italian"
+    $CATEGORIZE
+    rm EnglishtoItalian.txt
+    unset ENGLISHTOITALIAN
+  fi
+
+  debug_end "English to Italian"
+
+fi

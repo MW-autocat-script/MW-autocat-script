@@ -3,25 +3,34 @@
 KEYWORDS_SOUTHAFRICA="South(| )Africa|apartheid"
 KEYWORDS_NELSONMANDELA="Mandela"
 
-egrep -i "$KEYWORDS_SOUTHAFRICA" newpages.txt | egrep -iv "$KEYWORDS_NELSONMANDELA" >> SouthAfrica.txt
-egrep -i "$KEYWORDS_NELSONMANDELA" newpages.txt >> NelsonMandela.txt
-
-SOUTHAFRICA=$(stat --print=%s SouthAfrica.txt)
-MANDELA=$(stat --print=%s NelsonMandela.txt)
-
-if [ $SOUTHAFRICA -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="SouthAfrica.txt"
-  export CATNAME="South Africa"
-  $CATEGORIZE
-fi
 
-if [ $MANDELA -ne 0 ];
-then
-  export CATFILE="NelsonMandela.txt"
-  export CATNAME="Nelson Mandela"
-  $CATEGORIZE
-fi
+  debug_start "South Africa"
 
-rm SouthAfrica.txt
-rm NelsonMandela.txt
+  SOUTHAFRICA=$(egrep -i "$KEYWORDS_SOUTHAFRICA" newpages.txt | egrep -iv "$KEYWORDS_NELSONMANDELA")
+  MANDELA=$(egrep -i "$KEYWORDS_NELSONMANDELA" newpages.txt)
+
+  if [ "$SOUTHAFRICA" != "" ];
+  then
+    printf "%s" "$SOUTHAFRICA" > SouthAfrica.txt
+    export CATFILE="SouthAfrica.txt"
+    export CATNAME="South Africa"
+    $CATEGORIZE
+    rm SouthAfrica.txt
+    unset SOUTHAFRICA
+  fi
+
+  if [ "$MANDELA" != "" ];
+  then
+    printf "%s" "$MANDELA" > NelsonMandela.txt
+    export CATFILE="NelsonMandela.txt"
+    export CATNAME="Nelson Mandela"
+    $CATEGORIZE
+    rm NelsonMandela.txt
+    unset MANDELA
+  fi
+
+  debug_end "South Africa"
+
+fi

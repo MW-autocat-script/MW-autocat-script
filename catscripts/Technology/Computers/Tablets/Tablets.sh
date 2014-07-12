@@ -1,34 +1,49 @@
 #!/bin/bash
 
-egrep -i 'Kindle Fire' newpages.txt >> KindleFire.txt
-egrep -i '\biPad' newpages.txt >> iPad.txt
-egrep -i 'tablet (computer|pc)|Android tablet|Windows 8 tablet' newpages.txt | egrep -iv 'iPad|Kindle Fire' >> Tabletcomputers.txt
+KEYWORDS_KINDLEFIRE="Kindle(| )Fire"
+KEYWORDS_IPAD="\biPad"
+KEYWORDS_TABLETCOMPUTER="Tablet(| )(computer|pc)|Android(| )tablet|Windows(| )8(| )tablet"
+KEYWORDS_TABLETCOMPUTER_EXCLUDE="$KEYWORDS_KINDLEFIRE|$KEYWORDS_IPAD"
 
-KINDLE=$(stat --print=%s KindleFire.txt)
-IPAD=$(stat --print=%s iPad.txt)
-TABLETS=$(stat --print=%s Tabletcomputers.txt)
-
-if [ $KINDLE -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="KindleFire.txt"
-  export CATNAME="Kindle Fire"
-  $CATEGORIZE
-fi
 
-if [ $IPAD -ne 0 ];
-then
-  export CATFILE="iPad.txt"
-  export CATNAME="iPad"
-  $CATEGORIZE
-fi
+  debug_start "Tablet computers"
 
-if [ $TABLETS -ne 0 ];
-then
-  export CATFILE="Tabletcomputers.txt"
-  export CATNAME="Tablet computers"
-  $CATEGORIZE
-fi
+  KINDLE=$(egrep -i "$KEYWORDS_KINDLEFIRE" newpages.txt)
+  IPAD=$(egrep -i "$KEYWORDS_IPAD" newpages.txt)
+  TABLETS=$(egrep -i "$KEYWORDS_TABLETCOMPUTER" newpages.txt | egrep -iv "$KEYWORDS_TABLETCOMPUTER_EXCLUDE")
 
-rm KindleFire.txt
-rm iPad.txt
-rm Tabletcomputers.txt
+  if [ "$KINDLE" != "" ];
+  then
+    printf "%s" "$KINDLE" > KindleFire.txt
+    export CATFILE="KindleFire.txt"
+    export CATNAME="Kindle Fire"
+    $CATEGORIZE
+    rm KindleFire.txt
+    unset KINDLE
+  fi
+
+  if [ "$IPAD" != "" ];
+  then
+    printf "%s" "$IPAD" > iPad.txt
+    export CATFILE="iPad.txt"
+    export CATNAME="iPad"
+    $CATEGORIZE
+    rm iPad.txt
+    unset IPAD
+  fi
+
+  if [ "$TABLETS" != "" ];
+  then
+    printf "%s" "$TABLETS" > Tabletcomputers.txt
+    export CATFILE="Tabletcomputers.txt"
+    export CATNAME="Tablet computers"
+    $CATEGORIZE
+    rm Tabletcomputers.txt
+    unset TABLETS
+  fi
+
+  debug_end "Tablet computers"
+
+fi

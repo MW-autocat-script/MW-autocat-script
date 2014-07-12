@@ -1,44 +1,61 @@
 #!/bin/bash
 
-egrep -i 'The Sims 2|Sims 2|Sims2' newpages.txt >> TheSims2.txt
-egrep -i 'The Sims 3|Sims 3|Sims3' newpages.txt >> TheSims3.txt
-egrep -i 'MySims|The Sims Wii' newpages.txt >> MySims.txt
-egrep -i 'The Sims' newpages.txt | egrep -iv 'Sims 2|Sims2|Sims 3|Sims3|Sims Wii|Simswii' >> TheSimsSeries.txt
+KEYWORDS_THESIMS="The(| )Sims"
+KEYWORDS_THESIMSTWO="Sims(| )2"
+KEYWORDS_THESIMSTHREE="Sims(| )3"
+KEYWORDS_MYSIMS="MySims|The(| )Sims(| )Wii"
+KEYWORDS_THESIMS_EXCLUDE="$KEYWORDS_THESIMSTWO|$KEYWORDS_THESIMSTHREE|$KEYWORDS_MYSIMS"
 
-SIMS2=$(stat --print=%s TheSims2.txt)
-SIMS3=$(stat --print=%s TheSims3.txt)
-MYSIMS=$(stat --print=%s MySims.txt)
-SERIES=$(stat --print=%s TheSimsSeries.txt)
-
-if [ $SIMS2 -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="TheSims2.txt"
-  export CATNAME="The Sims 2"
-  $CATEGORIZE
-fi
 
-if [ $SIMS3 -ne 0 ];
-then
-  export CATFILE="TheSims3.txt"
-  export CATNAME="The Sims 3"
-  $CATEGORIZE
-fi
+  debug_start "The Sims series"
 
-if [ $MYSIMS -ne 0 ];
-then
-  export CATFILE="MySims.txt"
-  export CATNAME="MySims"
-  $CATEGORIZE
-fi
+  SIMS2=$(egrep -i "$KEYWORDS_THESIMSTWO" newpages.txt)
+  SIMS3=$(egrep -i "$KEYWORDS_THESIMSTHREE" newpages.txt)
+  MYSIMS=$(egrep -i "$KEYWORDS_MYSIMS" newpages.txt)
+  SERIES=$(egrep -i "$KEYWORDS_THESIMS" newpages.txt | egrep -iv "$KEYWORDS_THESIMS_EXCLUDE")
 
-if [ $SERIES -ne 0 ];
-then
-  export CATFILE="TheSimsSeries.txt"
-  export CATNAME="The Sims series"
-  $CATEGORIZE
-fi
+  if [ "$SIMS2" != "" ];
+  then
+    printf "%s" "$SIMS2" > TheSims2.txt
+    export CATFILE="TheSims2.txt"
+    export CATNAME="The Sims 2"
+    $CATEGORIZE
+    rm TheSims2.txt
+    unset SIMS2
+  fi
 
-rm TheSims2.txt
-rm TheSims3.txt
-rm MySims.txt
-rm TheSimsSeries.txt
+  if [ "$SIMS3" != "" ];
+  then
+    printf "%s" "$SIMS3" > TheSims3.txt
+    export CATFILE="TheSims3.txt"
+    export CATNAME="The Sims 3"
+    $CATEGORIZE
+    rm TheSims3.txt
+    unset SIMS3
+  fi
+
+  if [ "$MYSIMS" != "" ];
+  then
+    printf "%s" "$MYSIMS" > MySims.txt
+    export CATFILE="MySims.txt"
+    export CATNAME="MySims"
+    $CATEGORIZE
+    rm MySims.txt
+    unset MYSIMS
+  fi
+
+  if [ "$SERIES" != "" ];
+  then
+    printf "%s" "$SERIES" > TheSimsSeries.txt
+    export CATFILE="TheSimsSeries.txt"
+    export CATNAME="The Sims series"
+    $CATEGORIZE
+    rm TheSimsSeries.txt
+    unset SERIES
+  fi
+
+  debug_end "The Sims series"
+
+fi

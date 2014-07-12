@@ -1,20 +1,19 @@
 #!/bin/bash
 
 KEYWORDS_CPLUSPLUS="C\+\+|C Plus Plus"
+KEYWORDS_CPLUSPLUS_ALL="$KEYWORDS_CPLUSPLUS"
+KEYWORDS_CPLUSPLUS_ALL="$KEYWORDS_CPLUSPLUS_ALL"
 
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting C++\n"
-  fi
+  debug_start "C++"
 
   CPLUSPLUS=$(egrep -i "$KEYWORDS_CPLUSPLUS" newpages.txt)
 
   if [ "$CPLUSPLUS" != "" ];
   then
-    printf "$CPLUSPLUS" > CPlusPlus.txt
+    printf "%s" "$CPLUSPLUS" > CPlusPlus.txt
     export CATFILE="CPlusPlus.txt"
     export CATNAME="C++ programming"
     $CATEGORIZE
@@ -22,9 +21,6 @@ then
     unset CPLUSPLUS
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing C++\n"
-  fi
+  debug_end "C++"
 
 fi

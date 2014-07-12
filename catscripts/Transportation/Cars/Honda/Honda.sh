@@ -1,44 +1,60 @@
 #!/bin/bash
 
-egrep -i 'Honda Accord|Hondaaccord|[0123456789]{1,} Accord' newpages.txt > HondaAccord.txt
-egrep -i 'Honda Civic|Hondacivic|[0123456789]{1,} Civic' newpages.txt > HondaCivic.txt
-egrep -i 'Honda Passport|Hondapassport|[0-9]{1,} Passport' newpages.txt > HondaPassport.txt
-egrep -i 'Honda Element|Hondaelement|[0-9]{1,} Element\b' newpages.txt > HondaElement.txt
+KEYWORDS_HONDAACCORD="Honda(| )Accord|[0-9]{2,}(| )Accord"
+KEYWORDS_HONDACIVIC="Honda(| )Civic|[0-9]{2,}(| )Civic"
+KEYWORDS_HONDAPASSPORT="Honda(| )Passport|[0-9]{2,}(| )Passport"
+KEYWORDS_HONDAELEMENT="Honda(| )Element|[0-9]{2,}(| )Element\b"
 
-ACCORD=$(stat --print=%s HondaAccord.txt)
-CIVIC=$(stat --print=%s HondaCivic.txt)
-PASSPORT=$(stat --print=%s HondaPassport.txt)
-ELEMENT=$(stat --print=%s HondaElement.txt)
-
-if [ $ACCORD -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="HondaAccord.txt"
-  export CATNAME="Honda Accord"
-  $CATEGORIZE
-fi
 
-if [ $CIVIC -ne 0 ];
-then
-  export CATFILE="HondaCivic.txt"
-  export CATNAME="Honda Civic"
-  $CATEGORIZE
-fi
+  debug_start "Honda cars"
 
-if [ $PASSPORT -ne 0 ];
-then
-  export CATFILE="HondaPassport.txt"
-  export CATNAME="Honda Passport"
-  $CATEGORIZE
-fi
+  ACCORD=$(egrep -i "$KEYWORDS_HONDAACCORD" newpages.txt)
+  CIVIC=$(egrep -i "$KEYWORDS_HONDACIVIC" newpages.txt)
+  PASSPORT=$(egrep -i "$KEYWORDS_HONDAPASSPORT" newpages.txt)
+  ELEMENT=$(egrep -i "$KEYWORDS_HONDAELEMENT" newpages.txt)
 
-if [ $ELEMENT -ne 0 ];
-then
-  export CATFILE="HondaElement.txt"
-  export CATNAME="Honda Element"
-  $CATEGORIZE
-fi
+  if [ "$ACCORD" != "" ];
+  then
+    printf "%s" "$ACCORD" > HondaAccord.txt
+    export CATFILE="HondaAccord.txt"
+    export CATNAME="Honda Accord"
+    $CATEGORIZE
+    rm HondaAccord.txt
+    unset ACCORD
+  fi
 
-rm HondaAccord.txt
-rm HondaCivic.txt
-rm HondaPassport.txt
-rm HondaElement.txt
+  if [ "$CIVIC" != "" ];
+  then
+    printf "%s" "$CIVIC" > HondaCivic.txt
+    export CATFILE="HondaCivic.txt"
+    export CATNAME="Honda Civic"
+    $CATEGORIZE
+    rm HondaCivic.txt
+    unset CIVIC
+  fi
+
+  if [ "$PASSPORT" != "" ];
+  then
+    printf "%s" "$PASSPORT" > HondaPassport.txt
+    export CATFILE="HondaPassport.txt"
+    export CATNAME="Honda Passport"
+    $CATEGORIZE
+    rm HondaPassport.txt
+    unset PASSPORT
+  fi
+
+  if [ "$ELEMENT" != "" ];
+  then
+    printf "%s" "$ELEMENT" > HondaElement.txt
+    export CATFILE="HondaElement.txt"
+    export CATNAME="Honda Element"
+    $CATEGORIZE
+    rm HondaElement.txt
+    unset ELEMENT
+  fi
+
+  debug_end "Honda cars"
+
+fi

@@ -1,61 +1,85 @@
 #!/bin/bash
 
-egrep -i 'Minecraft|Mine craft' newpages.txt > Minecraft.txt
-egrep -i 'Tekkit' newpages.txt >> Tekkit.txt
-egrep -i 'Saints(| )Row' newpages.txt | egrep -iv 'Saints(| )Row(| )2|The Third|Saints(| )Row(| )(III|3)|Saints(| )Row(| )(4|IV)'  >> SaintsRow.txt
-egrep -i 'Saints(| )Row 2' newpages.txt >> SaintsRow2.txt
-egrep -i 'Saints(| )Row' newpages.txt | egrep -i 'The Third|Saints(| )Row(| )(III|3)' >> SaintsRow3.txt
-egrep -i 'Saints(| )Row(| )(4|IV)' newpages.txt >> SaintsRow4.txt
+KEYWORDS_MINECRAFT="Mine(| )craft"
+KEYWORDS_TEKKIT="Tekkit"
+KEYWORDS_SAINTSROW="Saints(| )Row"
+KEYWORDS_SAINTSROW2="Saints(| )Row(| )2"
+KEYWORDS_SAINTSROW3="Saints(| )Row(| )(|:)(The(| )Third|3)"
+KEYWORDS_SAINTSROW4="Saints(| )Row(| )(4|IV)"
+KEYWORDS_SAINTSROW_EXCLUDE="$KEYWORDS_SAINTSROW2|$KEYWORDS_SAINTSROW3|$KEYWORDS_SAINTSROW4"
 
-MINECRAFT=$(stat --print=%s Minecraft.txt)
-TEKKIT=$(stat --print=%s Tekkit.txt)
-SAINTSROW=$(stat --print=%s SaintsRow.txt)
-ROW2=$(stat --print=%s SaintsRow2.txt)
-THETHIRD=$(stat --print=%s SaintsRow3.txt)
-ROW4=$(stat --print=%s SaintsRow4.txt)
-
-if [ $MINECRAFT -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Minecraft.txt"
-  export CATNAME="Minecraft"
-  $CATEGORIZE
-fi
 
-if [ $TEKKIT -ne 0 ];
-then
-  export CATFILE="Tekkit.txt"
-  export CATNAME="Tekkit"
-  $CATEGORIZE
-fi
+  debug_start "Open-world video games"
 
-if [ $SAINTSROW -ne 0 ];
-then
-  export CATFILE="SaintsRow.txt"
-  export CATNAME="Saints Row"
-  $CATEGORIZE
-fi
+  MINECRAFT=$(egrep -i "$KEYWORDS_MINECRAFT" newpages.txt)
+  TEKKIT=$(egrep -i "$KEYWORDS_TEKKIT" newpages.txt)
+  SAINTSROW=$(egrep -i "$KEYWORDS_SAINTSROW" newpages.txt | egrep -iv "$KEYWORDS_SAINTSROW_EXCLUDE")
+  ROW2=$(egrep -i "$KEYWORDS_SAINTSROW2" newpages.txt)
+  THETHIRD=$(egrep -i "$KEYWORDS_SAINTSROW3" newpages.txt )
+  ROW4=$(egrep -i "$KEYWORDS_SAINTSROW4" newpages.txt)
 
-if [ $ROW2 -ne 0 ];
-then
-  export CATFILE="SaintsRow2.txt"
-  export CATNAME="Saints Row 2"
-  $CATEGORIZE
-fi
+  if [ "$MINECRAFT" != "" ];
+  then
+    printf "%s" "$MINECRAFT" > Minecraft.txt
+    export CATFILE="Minecraft.txt"
+    export CATNAME="Minecraft"
+    $CATEGORIZE
+    rm Minecraft.txt
+    unset MINECRAFT
+  fi
 
-if [ $THETHIRD -ne 0 ];
-then
-  export CATFILE="SaintsRow3.txt"
-  export CATNAME="Saints Row: The Third"
-  $CATEGORIZE
-fi
+  if [ "$TEKKIT" != "" ];
+  then
+    printf "%s" "$TEKKIT" > Tekkit.txt
+    export CATFILE="Tekkit.txt"
+    export CATNAME="Tekkit"
+    $CATEGORIZE
+    rm Tekkit.txt
+    unset TEKKIT
+  fi
 
-if [ $ROW4 -ne 0 ];
-then
-  export CATFILE="SaintsRow4.txt"
-  export CATNAME="Saints Row IV"
-  $CATEGORIZE
-fi
+  if [ "$SAINTSROW" != "" ];
+  then
+    printf "%s" "$SAINTSROW" > SaintsRow.txt
+    export CATFILE="SaintsRow.txt"
+    export CATNAME="Saints Row"
+    $CATEGORIZE
+    rm SaintsRow.txt
+    unset SAINTSROW
+  fi
 
-rm Minecraft.txt
-rm Tekkit.txt
-rm SaintsRow*.txt
+  if [ "$ROW2" != "" ];
+  then
+    printf "%s" "$ROW2" > SaintsRow2.txt
+    export CATFILE="SaintsRow2.txt"
+    export CATNAME="Saints Row 2"
+    $CATEGORIZE
+    rm SaintsRow2.txt
+    unset ROW2
+  fi
+
+  if [ "$THETHIRD" != "" ];
+  then
+    printf "%s" "$THETHIRD" > SaintsRow3.txt
+    export CATFILE="SaintsRow3.txt"
+    export CATNAME="Saints Row: The Third"
+    $CATEGORIZE
+    rm SaintsRow3.txt
+    unset THETHIRD
+  fi
+
+  if [ "$ROW4" != "" ];
+  then
+    printf "%s" "$ROW4" > SaintsRow4.txt
+    export CATFILE="SaintsRow4.txt"
+    export CATNAME="Saints Row IV"
+    $CATEGORIZE
+    rm SaintsRow4.txt
+    unset ROW4
+  fi
+
+  debug_end "Open-world video games"
+
+fi

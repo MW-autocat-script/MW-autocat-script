@@ -1,26 +1,51 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Technology/Computers/Internet/Websites/Social_networking"
-
-. $CURRENTDIR/Facebook.sh
-. $CURRENTDIR/GaiaOnline.sh
-. $CURRENTDIR/Myspace.sh
-. $CURRENTDIR/Twitter.sh
-. $CURRENTDIR/Tumblr.sh
-. $CURRENTDIR/Woozworld.sh
-
+SOCIALNETWORKDIR="./catscripts/Technology/Computers/Internet/Websites/Social_networking"
 KEYWORDS_SOCIALNETWORKING="Social(| )network|social(| )media"
-KEYWORDS_SOCIALNETWORKING_EXCLUDE="$KEYWORDS_FACEBOOK|$KEYWORDS_GAIAONLINE|$KEYWORDS_MYSPACE|$KEYWORDS_TWITTER|$KEYWORDS_WOOZWORLD|$KEYWORDS_TUMBLR"
 
-egrep -i "$KEYWORDS_SOCIALNETWORKING" newpages.txt | egrep -iv "$KEYWORDS_SOCIALNETWORKING_EXCLUDE" >> Socialnetworking.txt
-
-SOCIALNETWORK=$(stat --print=%s Socialnetworking.txt)
-
-if [ $SOCIALNETWORK -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Socialnetworking.txt"
-  export CATNAME="Social networking websites"
-  $CATEGORIZE
+
+  debug_start "Social networking websites"
+
+  . $SOCIALNETWORKDIR/Facebook.sh #KEYWORDS_FACEBOOK
+  . $SOCIALNETWORKDIR/GaiaOnline.sh #KEYWORDS_GAIAONLINE
+  . $SOCIALNETWORKDIR/Myspace.sh #KEYWORDS_MYSPACE
+  . $SOCIALNETWORKDIR/Twitter.sh #KEYWORDS_TWITTER
+  . $SOCIALNETWORKDIR/Tumblr.sh #KEYWORDS_TUMBLR
+  . $SOCIALNETWORKDIR/Woozworld.sh #KEYWORDS_WOOZWORLD
+
+
+  KEYWORDS_SOCIALNETWORKING_EXCLUDE="$KEYWORDS_FACEBOOK|$KEYWORDS_GAIAONLINE|$KEYWORDS_MYSPACE|$KEYWORDS_TWITTER|$KEYWORDS_WOOZWORLD|$KEYWORDS_TUMBLR"
+  KEYWORDS_SOCIALNETWORKING_ALL="$KEYWORDS_SOCIALNETWORKING|$KEYWORDS_FACEBOOK|$KEYWORDS_GAIAONLINE|$KEYWORDS_MYSPACE|$KEYWORDS_TUMBLR|$KEYWORDS_TWITTER|$KEYWORDS_WOOZWORLD"
+
+  SOCIALNETWORK=$(egrep -i "$KEYWORDS_SOCIALNETWORKING" newpages.txt | egrep -iv "$KEYWORDS_SOCIALNETWORKING_EXCLUDE")
+
+  if [ "$SOCIALNETWORK" != "" ];
+  then
+    printf "%s" "$SOCIALNETWORK" > Socialnetworking.txt
+    export CATFILE="Socialnetworking.txt"
+    export CATNAME="Social networking websites"
+    $CATEGORIZE
+    rm Socialnetworking.txt
+    unset SOCIALNETWORK
+  fi
+
+  debug_end "Social networking websites"
+
+else
+
+  . $SOCIALNETWORKDIR/Facebook.sh norun #KEYWORDS_FACEBOOK
+  . $SOCIALNETWORKDIR/GaiaOnline.sh norun #KEYWORDS_GAIAONLINE
+  . $SOCIALNETWORKDIR/Myspace.sh norun #KEYWORDS_MYSPACE
+  . $SOCIALNETWORKDIR/Twitter.sh norun #KEYWORDS_TWITTER
+  . $SOCIALNETWORKDIR/Tumblr.sh norun #KEYWORDS_TUMBLR
+  . $SOCIALNETWORKDIR/Woozworld.sh norun #KEYWORDS_WOOZWORLD
+
+  KEYWORDS_SOCIALNETWORKING_ALL="$KEYWORDS_SOCIALNETWORKING|$KEYWORDS_FACEBOOK|$KEYWORDS_GAIAONLINE|$KEYWORDS_MYSPACE|$KEYWORDS_TUMBLR|$KEYWORDS_TWITTER|$KEYWORDS_WOOZWORLD"
+
 fi
 
-rm Socialnetworking.txt
+#This is to stop ShellCheck from complaining about KEYWORDS_SOCIALNETWORKING_ALL, which is used elsewhere
+
+KEYWORDS_SOCIALNETWORKING_ALL="$KEYWORDS_SOCIALNETWORKING_ALL"

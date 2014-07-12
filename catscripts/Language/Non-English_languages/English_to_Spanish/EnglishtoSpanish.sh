@@ -1,18 +1,24 @@
 #!/bin/bash
 
-egrep -i 'How do you say.+in Spanish' newpages.txt >> EnglishtoSpanish.txt
-egrep -i 'How do you spell.+in Spanish' newpages.txt >> EnglishtoSpanish.txt
-egrep -i '^[[abcdefghijklmopqrstuvwxyz]{1,} in Spanish' newpages.txt >> EnglishtoSpanish.txt
-egrep -i 'What is the Spanish word for' newpages.txt >> EnglishtoSpanish.txt
-egrep -i 'How to say.+in Spanish' newpages.txt >> EnglishtoSpanish.txt
+KEYWORDS_ENGLISHTOSPANISH="How(| )(to|do(| )you)(| )(say|spell).+in(| )Spanish|^[[abcdefghijklmopqrstuvwxyz]{1,}(| )in(| )Spanish|Spanish(| )word(| )for"
 
-SIZEOFENGLISHTOSPANISH=$(stat --print=%s EnglishtoSpanish.txt)
-
-if [ $SIZEOFENGLISHTOSPANISH -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="EnglishtoSpanish.txt"
-  export CATNAME="English to Spanish"
-  $CATEGORIZE
-fi
 
-rm EnglishtoSpanish.txt
+  debug_start "English to Spanish"
+
+  ENGLISHTOSPANISH=$(egrep -i "$KEYWORDS_ENGLISHTOSPANISH" newpages.txt)
+
+  if [ "$ENGLISHTOSPANISH" != "" ];
+  then
+    printf "%s" "$ENGLISHTOSPANISH" > EnglishtoSpanish.txt
+    export CATFILE="EnglishtoSpanish.txt"
+    export CATNAME="English to Spanish"
+    $CATEGORIZE
+    rm EnglishtoSpanish.txt
+    unset ENGLISHTOSPANISH
+  fi
+
+  debug_end "English to Spanish"
+
+fi

@@ -1,55 +1,75 @@
 #!/bin/bash
 #Categorization script for composers of music
 
-egrep -i '\bBach\b' newpages.txt >> Bach.txt
-egrep -i 'Wolfgang|Amadeus|Mozart' newpages.txt | egrep -iv 'Rock Me|Puck' >> WolfgangAmadeusMozart.txt 
-egrep -i 'Beethoven'  newpages.txt | egrep -iv 'Bernard|breed|dog' >> LudwigVanBeethoven.txt
-egrep -i 'Aaron Copland' newpages.txt >> AaronCopland.txt
-egrep -i 'Igor Stravinsky' newpages.txt >> IgorStravinsky.txt
+KEYWORDS_BACH="\bBach\b"
+KEYWORDS_BEETHOVEN="Beethoven"
+KEYWORDS_BEETHOVEN_EXCLUDE="Bernard|breed|dog"
+KEYWORDS_MOZART="Wolfgang|Amadeus|Mozart"
+KEYWORDS_MOZART_EXCLUDE="Rock(| )Me|Puck"
+KEYWORDS_COPLAND="Aaron(| )Copland"
+KEYWORDS_STRAVINSKY="Igor(| )Stravinksy"
 
-BACH=$(stat --print=%s Bach.txt)
-MOZART=$(stat --print=%s WolfgangAmadeusMozart.txt)
-BEETHOVEN=$(stat --print=%s LudwigVanBeethoven.txt)
-COPLAND=$(stat --print=%s AaronCopland.txt)
-STRAVINSKY=$(stat --print=%s IgorStravinsky.txt)
-
-if [ $BACH -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Bach.txt"
-  export CATNAME="Johann Sebastian Bach"
-  $CATEGORIZE
-fi
 
-if [ $MOZART -ne 0 ];
-then
-  export CATFILE="WolfgangAmadeusMozart.txt"
-  export CATNAME="Wolfgang Amadeus Mozart"
-  $CATEGORIZE
-fi
+  debug_start "Composers"
 
-if [ $BEETHOVEN -ne 0 ];
-then
-  export CATFILE="LudwigVanBeethoven.txt"
-  export CATNAME="Ludwig van Beethoven"
-  $CATEGORIZE
-fi
+  BACH=$(egrep -i "$KEYWORDS_BACH" newpages.txt)
+  MOZART=$(egrep -i "$KEYWORDS_MOZART" newpages.txt | egrep -iv "$KEYWORDS_MOZART_EXCLUDE")
+  BEETHOVEN=$(egrep -i "$KEYWORDS_BEETHOVEN"  newpages.txt | egrep -iv "$KEYWORDS_BEETHOVEN_EXCLUDE")
+  COPLAND=$(egrep -i "$KEYWORDS_COPLAND" newpages.txt)
+  STRAVINSKY=$(egrep -i "$KEYWORDS_STRAVINSKY" newpages.txt)
 
-if [ $COPLAND -ne 0 ];
-then
-  export CATFILE="AaronCopland.txt"
-  export CATNAME="Aaron Copland"
-  $CATEGORIZE
-fi
+  if [ "$BACH" != "" ];
+  then
+    printf "%s" "$BACH" > Bach.txt
+    export CATFILE="Bach.txt"
+    export CATNAME="Johann Sebastian Bach"
+    $CATEGORIZE
+    rm Bach.txt
+    unset BACH
+  fi
 
-if [ $STRAVINSKY -ne 0 ];
-then
-  export CATFILE="IgorStravinsky.txt"
-  export CATNAME="Igor Stravinsky"
-  $CATEGORIZE
-fi
+  if [ "$MOZART" != "" ];
+  then
+    printf "%s" "$MOZART" > WolfgangAmadeusMozart.txt
+    export CATFILE="WolfgangAmadeusMozart.txt"
+    export CATNAME="Wolfgang Amadeus Mozart"
+    $CATEGORIZE
+    rm WolfgangAmadeusMozart.txt
+    unset MOZART
+  fi
 
-rm Bach.txt
-rm WolfgangAmadeusMozart.txt
-rm LudwigVanBeethoven.txt
-rm AaronCopland.txt
-rm IgorStravinsky.txt
+  if [ "$BEETHOVEN" != "" ];
+  then
+    printf "%s" "$BEETHOVEN" > LudwigVanBeethoven.txt
+    export CATFILE="LudwigVanBeethoven.txt"
+    export CATNAME="Ludwig van Beethoven"
+    $CATEGORIZE
+    rm LudwigVanBeethoven.txt
+    unset BEETHOVEN
+  fi
+
+  if [ "$COPLAND" != "" ];
+  then
+    printf "%s" "$COPLAND" > AaronCopland.txt
+    export CATFILE="AaronCopland.txt"
+    export CATNAME="Aaron Copland"
+    $CATEGORIZE
+    rm AaronCopland.txt
+    unset COPLAND
+  fi
+
+  if [ "$STRAVINSKY" != "" ];
+  then
+    printf "%s" "$STRAVINSKY" > IgorStravinsky.txt
+    export CATFILE="IgorStravinsky.txt"
+    export CATNAME="Igor Stravinsky"
+    $CATEGORIZE
+    rm IgorStravinsky.txt
+    unset STRAVINSKY
+  fi
+
+  debug_end "Composers"
+
+fi

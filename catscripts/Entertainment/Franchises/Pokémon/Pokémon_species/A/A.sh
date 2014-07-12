@@ -34,6 +34,8 @@ KEYWORDS_POKEMONSPECIES_A="$KEYWORDS_ABOMASNOW|$KEYWORDS_ABRA|$KEYWORDS_ABSOL|$K
 if [ "$1" == "" ];
 then
 
+  debug_start "Pokemon 'A' script"
+
   ABOMASNOW=$(egrep -i "$KEYWORDS_ABOMASNOW" newpages.txt)
   ABRA=$(egrep -i "$KEYWORDS_ABRA" newpages.txt) 
   ABSOL=$(egrep -i "$KEYWORDS_ABSOL" newpages.txt) 
@@ -63,15 +65,9 @@ then
   AZUMARILL=$(egrep -i "$KEYWORDS_AZUMARILL" newpages.txt) 
   AZURILL=$(egrep -i "$KEYWORDS_AZURILL" newpages.txt)
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Pokemon 'A' species\n"
-  fi
-
-
   if [ "$ABOMASNOW" != "" ]; 
   then
-    printf "$ABOMASNOW" > Abomasnow.txt
+    printf "%s" "$ABOMASNOW" > Abomasnow.txt
     export CATFILE="Abomasnow.txt"
     export CATNAME="Abomasnow"
     $CATEGORIZE
@@ -81,7 +77,7 @@ then
 
   if [ "$ABRA" != "" ]; 
   then
-    printf "$ABRA" > Abra.txt
+    printf "%s" "$ABRA" > Abra.txt
     export CATFILE="Abra.txt"
     export CATNAME="Abra"
     $CATEGORIZE
@@ -91,7 +87,7 @@ then
 
   if [ "$ABSOL" != "" ]; 
   then
-    printf "$ABSOL" > Absol.txt
+    printf "%s" "$ABSOL" > Absol.txt
     export CATFILE="Absol.txt"
     export CATNAME="Absol"
     $CATEGORIZE
@@ -101,7 +97,7 @@ then
 
   if [ "$ACCELGOR" != "" ]; 
   then
-    printf "$ACCELGOR" > Accelgor.txt
+    printf "%s" "$ACCELGOR" > Accelgor.txt
     export CATFILE="Accelgor.txt"
     export CATNAME="Accelgor"
     $CATEGORIZE
@@ -111,7 +107,7 @@ then
 
   if [ "$AERODACTYL" != "" ]; 
   then
-    printf "$AERODACTYL" > Aerodactyl.txt
+    printf "%s" "$AERODACTYL" > Aerodactyl.txt
     export CATFILE="Aerodactyl.txt"
     export CATNAME="Aerodactyl"
     $CATEGORIZE
@@ -121,7 +117,7 @@ then
 
   if [ "$AGGRON" != "" ]; 
   then
-    printf "$AGGRON" > Aggron.txt
+    printf "%s" "$AGGRON" > Aggron.txt
     export CATFILE="Aggron.txt"
     export CATNAME="Aggron"
     $CATEGORIZE
@@ -131,7 +127,7 @@ then
 
   if [ "$AIPOM" != "" ]; 
   then
-    printf "$AIPOM" > Aipom.txt
+    printf "%s" "$AIPOM" > Aipom.txt
     export CATFILE="Aipom.txt"
     export CATNAME="Aipom"
     $CATEGORIZE
@@ -141,7 +137,7 @@ then
 
   if [ "$ALAKAZAM" != "" ]; 
   then
-    printf "$ALAKAZAM" > Alakazam.txt
+    printf "%s" "$ALAKAZAM" > Alakazam.txt
     export CATFILE="Alakazam.txt"
     export CATNAME="Alakazam"
     $CATEGORIZE
@@ -151,7 +147,7 @@ then
 
   if [ "$ALOMOMOLA" != "" ]; 
   then
-    printf "$ALOMOMOLA" > Alomomola.txt
+    printf "%s" "$ALOMOMOLA" > Alomomola.txt
     export CATFILE="Alomomola.txt"
     export CATNAME="Alomomola"
     $CATEGORIZE
@@ -161,7 +157,7 @@ then
 
   if [ "$ALTARIA" != "" ]; 
   then
-    printf "$ALTARIA" > Altaria.txt
+    printf "%s" "$ALTARIA" > Altaria.txt
     export CATFILE="Altaria.txt"
     export CATNAME="Altaria"
     $CATEGORIZE
@@ -171,7 +167,7 @@ then
 
   if [ "$AMBIPOM" != "" ]; 
   then
-    printf "$AMBIPOM" > Ambipom.txt
+    printf "%s" "$AMBIPOM" > Ambipom.txt
     export CATFILE="Ambipom.txt"
     export CATNAME="Ambipom"
     $CATEGORIZE
@@ -181,7 +177,7 @@ then
 
   if [ "$AMOONGUSS" != "" ]; 
   then
-    printf "$AMOONGUSS" > Amoonguss.txt
+    printf "%s" "$AMOONGUSS" > Amoonguss.txt
     export CATFILE="Amoonguss.txt"
     export CATNAME="Amoonguss"
     $CATEGORIZE
@@ -191,7 +187,7 @@ then
 
   if [ "$AMPHAROS" != "" ]; 
   then
-    printf "$AMPHAROS" > Ampharos.txt
+    printf "%s" "$AMPHAROS" > Ampharos.txt
     export CATFILE="Ampharos.txt"
     export CATNAME="Ampharos"
     $CATEGORIZE
@@ -201,7 +197,7 @@ then
 
   if [ "$ANORITH" != "" ]; 
   then
-    printf "$ANORITH" > Anorith.txt
+    printf "%s" "$ANORITH" > Anorith.txt
     export CATFILE="Anorith.txt"
     export CATNAME="Anorith"
     $CATEGORIZE
@@ -211,7 +207,7 @@ then
 
   if [ "$ARBOK" != "" ]; 
   then
-    printf "$ARBOK" > Arbok.txt
+    printf "%s" "$ARBOK" > Arbok.txt
     export CATFILE="Arbok.txt"
     export CATNAME="Arbok"
     $CATEGORIZE
@@ -221,7 +217,7 @@ then
 
   if [ "$ARCANINE" != "" ]; 
   then
-    printf "$ARCANINE" > Arcanine.txt
+    printf "%s" "$ARCANINE" > Arcanine.txt
     export CATFILE="Arcanine.txt"
     export CATNAME="Arcanine"
     $CATEGORIZE
@@ -231,7 +227,7 @@ then
 
   if [ "$ARCEUS" != "" ]; 
   then
-    printf "$ARCEUS" > Arceus.txt
+    printf "%s" "$ARCEUS" > Arceus.txt
     export CATFILE="Arceus.txt"
     export CATNAME="Arceus"
     $CATEGORIZE
@@ -241,7 +237,7 @@ then
 
   if [ "$ARCHEN" != "" ]; 
   then
-    printf "$ARCHEN" > Archen.txt
+    printf "%s" "$ARCHEN" > Archen.txt
     export CATFILE="Archen.txt"
     export CATNAME="Archen"
     $CATEGORIZE
@@ -251,7 +247,7 @@ then
 
   if [ "$ARCHEOPS" != "" ]; 
   then
-    printf "$ARCHEOPS" > Archeops.txt
+    printf "%s" "$ARCHEOPS" > Archeops.txt
     export CATFILE="Archeops.txt"
     export CATNAME="Archeops"
     $CATEGORIZE
@@ -261,7 +257,7 @@ then
 
   if [ "$ARIADOS" != "" ]; 
   then
-    printf "$ARIADOS" > Ariados.txt
+    printf "%s" "$ARIADOS" > Ariados.txt
     export CATFILE="Ariados.txt"
     export CATNAME="Ariados"
     $CATEGORIZE
@@ -271,7 +267,7 @@ then
 
   if [ "$ARMALDO" != "" ]; 
   then
-    printf "$ARMALDO" > Armaldo.txt
+    printf "%s" "$ARMALDO" > Armaldo.txt
     export CATFILE="Armaldo.txt"
     export CATNAME="Armaldo"
     $CATEGORIZE
@@ -281,7 +277,7 @@ then
 
   if [ "$ARON" != "" ]; 
   then
-    printf "$ARON" > Aron.txt
+    printf "%s" "$ARON" > Aron.txt
     export CATFILE="Aron.txt"
     export CATNAME="Aron"
     $CATEGORIZE
@@ -291,7 +287,7 @@ then
 
   if [ "$ARTICUNO" != "" ]; 
   then
-    printf "$ARTICUNO" > Articuno.txt
+    printf "%s" "$ARTICUNO" > Articuno.txt
     export CATFILE="Articuno.txt"
     export CATNAME="Articuno"
     $CATEGORIZE
@@ -301,7 +297,7 @@ then
 
   if [ "$AUDINO" != "" ]; 
   then
-    printf "$AUDINO" > Audino.txt
+    printf "%s" "$AUDINO" > Audino.txt
     export CATFILE="Audino.txt"
     export CATNAME="Audino"
     $CATEGORIZE
@@ -311,7 +307,7 @@ then
 
   if [ "$AXEW" != "" ]; 
   then
-    printf "$AXEW" > Axew.txt
+    printf "%s" "$AXEW" > Axew.txt
     export CATFILE="Axew.txt"
     export CATNAME="Axew"
     $CATEGORIZE
@@ -321,7 +317,7 @@ then
 
   if [ "$AZELF" != "" ]; 
   then
-    printf "$AZELF" > Azelf.txt
+    printf "%s" "$AZELF" > Azelf.txt
     export CATFILE="Azelf.txt"
     export CATNAME="Azelf"
     $CATEGORIZE
@@ -331,7 +327,7 @@ then
 
   if [ "$AZUMARILL" != "" ]; 
   then
-    printf "$AZUMARILL" > Azumarill.txt
+    printf "%s" "$AZUMARILL" > Azumarill.txt
     export CATFILE="Azumarill.txt"
     export CATNAME="Azumarill"
     $CATEGORIZE
@@ -341,7 +337,7 @@ then
 
   if [ "$AZURILL" != "" ]; 
   then
-    printf "$AZURILL" > Azurill.txt
+    printf "%s" "$AZURILL" > Azurill.txt
     export CATFILE="Azurill.txt"
     export CATNAME="Azurill"
     $CATEGORIZE
@@ -349,9 +345,6 @@ then
     unset AZURILL
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Pokemon 'A' species\n"
-  fi
+  debug_end "Pokemon 'A' script"
 
 fi

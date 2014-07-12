@@ -1,50 +1,62 @@
 #!/bin/bash
-
+GEOGRAPHYDIR="./catscripts/Science/Geography_and_geology"
 KEYWORDS_GEOGRAPHY="Geography"
 KEYWORDS_GEOLOGY="seismograph|seismology|geology|geological"
 KEYWORDS_VOLCANO="Volcano"
 KEYWORDS_VOLCANO_EXCLUDE="RuneScape"
 KEYWORDS_EARTHQUAKES="Earth(| )quake"
-KEYWORDS_GEOLOGY_EXCLUDE="$KEYWORDS_EARTHQUAKES|$KEYWORDS_VOLCANO"
 
 
-if [ "$1"=="" ];
+if [ "$1" == "" ];
 then
-  egrep -i "$KEYWORDS_VOLCANO" newpages.txt | egrep -iv "$KEYWORDS_VOLCANO_EXCLUDE" > Volcanoes.txt
-  egrep -i "$KEYWORDS_EARTHQUAKES" newpages.txt > Earthquakes.txt
-  egrep -i "$KEYWORDS_GEOLOGY|$KEYWORDS_GEOGRAPHY" newpages.txt | egrep -iv "$KEYWORDS_GEOLOGY_EXCLUDE" > Geology.txt
 
-  GEOLOGY=$(stat --print=%s Geology.txt)
-  VOLCANOES=$(stat --print=%s Volcanoes.txt)
-  EARTHQUAKES=$(stat --print=%s Earthquakes.txt)
+  debug_start "Geography and geology"
 
-  if [ $GEOLOGY -ne 0 ];
+  . $GEOGRAPHYDIR/Mountains/Mountains.sh #KEYWORDS_MOUNTAINS_ALL
+
+  KEYWORDS_GEOLOGY_EXCLUDE="$KEYWORDS_EARTHQUAKES|$KEYWORDS_VOLCANO|$KEYWORDS_MOUNTAINS_ALL"
+
+  GEOLOGY=$(egrep -i "$KEYWORDS_GEOLOGY|$KEYWORDS_GEOGRAPHY" newpages.txt | egrep -iv "$KEYWORDS_GEOLOGY_EXCLUDE")
+  VOLCANOES=$(egrep -i "$KEYWORDS_VOLCANO" newpages.txt | egrep -iv "$KEYWORDS_VOLCANO_EXCLUDE")
+  EARTHQUAKES=$(egrep -i "$KEYWORDS_EARTHQUAKES" newpages.txt)
+
+  if [ "$GEOLOGY" != "" ];
   then
+    printf "%s" "$GEOLOGY" > Geology.txt
     export CATFILE="Geology.txt"
     export CATNAME="Geography and geology"
     $CATEGORIZE
+    rm Geology.txt
+    unset GEOLOGY
   fi
 
-  if [ $EARTHQUAKES -ne 0 ];
+  if [ "$EARTHQUAKES" != "" ];
   then
+    printf "%s" "$EARTHQUAKES" > Earthquakes.txt
     export CATFILE="Earthquakes.txt"
     export CATNAME="Earthquakes"
     $CATEGORIZE
+    rm Earthquakes.txt
+    unset EARTHQUAKES
   fi
 
-  if [ $VOLCANOES -ne 0 ];
+  if [ "$VOLCANOES" != "" ];
   then
+    printf "%s" "$VOLCANOES" > Volcanoes.txt
     export CATFILE="Volcanoes.txt"
     export CATNAME="Volcanoes"
     $CATEGORIZE
+    rm Volcanoes.txt
+    unset VOLCANOES
   fi
 
-  rm Geology.txt
-  rm Volcanoes.txt
-  rm Earthquakes.txt
+  debug_end "Geography and geology"
+
+else
+
+    . $GEOGRAPHYDIR/Mountains/Mountains.sh norun #KEYWORDS_MOUNTAINS_ALL
 
 fi
 
-CURRENTDIR="./catscripts/Science/Geography_and_geology"
 
-. $CURRENTDIR/Mountains/Mountains.sh
+

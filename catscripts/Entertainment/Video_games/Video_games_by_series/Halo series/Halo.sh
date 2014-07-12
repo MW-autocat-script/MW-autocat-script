@@ -1,48 +1,99 @@
 #!/bin/bash
 
-egrep -i 'Halo(|\:) (CE|Combat Evolved|Custom Edition)|Halo 1' newpages.txt >> Halo1.txt
-egrep -i 'Halo 2' newpages.txt >> Halo2.txt
-egrep -i 'Halo 3' newpages.txt | egrep -iv 'ODST' >> Halo3.txt
-egrep -i 'Halo 3(|\:)(| )ODST' newpages.txt >> ODST.txt
-egrep -i 'Halo 4' newpages.txt >> Halo4.txt
-egrep -i 'Halo Wars' newpages.txt >> HaloWars.txt
-egrep -i 'Halo series|Cortana|(Captain|Miranda) Keyes|John(|-)(| )117|ODST' newpages.txt | egrep -iv 'Halo(|\:) (1|2|3|4|Wars|CE|Combat Evolved|Custom Edition)' >> Haloseries.txt
+KEYWORDS_HALOONE="Halo(|\:)(| )(CE|Combat(| )Evolved|Custom(| )Edition)|Halo(| )1"
+KEYWORDS_HALOTWO="Halo(| )2"
+KEYWORDS_HALOTHREE="Halo(| )3"
+KEYWORDS_HALOODST="\bODST"
+KEYWORDS_HALOTHREE_EXCLUDE="$KEYWORDS_HALOODST"
+KEYWORDS_HALOFOUR="Halo(| )4"
+KEYWORDS_HALOWARS="Halo(| )Wars"
+KEYWORDS_HALOSERIES="Halo(| )(game|series)|Cortana|(Captain|Miranda)(| )Keyes|John(|-)(| )117"
+KEYWORDS_HALOSERIES_EXCLUDE="$KEYWORDS_HALOONE|$KEYWORDS_HALOTWO|$KEYWORDS_HALOTHREE|$KEYWORDS_HALOODST|$KEYWORDS_HALOFOUR|$KEYWORDS_HALOWARS"
 
-HALO1=$(stat --print=%s Halo1.txt)
-HALO2=$(stat --print=%s Halo2.txt)
-HALO3=$(stat --print=%s Halo3.txt)
-ODST=$(stat --print=%s ODST.txt)
-HALO4=$(stat --print=%s Halo4.txt)
-HALOWARS=$(stat --print=%s HaloWars.txt)
-SERIES=$(stat --print=%s Haloseries.txt)
-
-if [ $HALO1 -ne 0 ];
+if [ "$1" == "" ];
 then
-	export CATFILE="Halo1.txt"
-	export CATNAME="Halo: Combat Evolved"
-	$CATEGORIZE
-fi
 
-if [ $HALO2 -ne 0 ];
-then
-	export CATFILE="Halo2.txt"
-	export CATNAME="Halo 2"
-	$CATEGORIZE
-fi
+  debug_start "Halo series"
 
-if [ $HALO3 -ne 0 ];
-then
-	export CATFILE="Halo3.txt"
-	export CATNAME="Halo 3"
-	$CATEGORIZE
-fi
+  HALO1=$(egrep -i "$KEYWORDS_HALOONE" newpages.txt)
+  HALO2=$(egrep -i "$KEYWORDS_HALOTWO" newpages.txt)
+  HALO3=$(egrep -i "$KEYWORDS_HALOTHREE" newpages.txt | egrep -iv "$KEYWORDS_HALOTHREE_EXCLUDE")
+  ODST=$(egrep -i "$KEYWORDS_HALOODST" newpages.txt)
+  HALO4=$(egrep -i "$KEYWORDS_HALOFOUR" newpages.txt)
+  HALOWARS=$(egrep -i "$KEYWORDS_HALOWARS" newpages.txt)
+  SERIES=$(egrep -i "$KEYWORDS_HALOSERIES" newpages.txt | egrep -iv "$KEYWORDS_HALOSERIES_EXCLUDE")
 
-if [ $ODST -ne 0 ];
-then
-	export CATFILE="ODST.txt"
-	export CATNAME="Halo 3: ODST"
-	$CATEGORIZE
-fi
+  if [ "$SERIES" != "" ];
+  then
+    printf "%s" "$SERIES" > HaloSeries.txt
+    export CATFILE="HaloSeries.txt"
+    export CATNAME="Halo series"
+    $CATEGORIZE
+    rm HaloSeries.txt
+    unset SERIES
+  fi
 
-rm Halo*.txt
-rm ODST.txt
+
+  if [ "$HALO1" != "" ];
+  then
+    printf "%s" "$HALO1" > Halo1.txt
+    export CATFILE="Halo1.txt"
+    export CATNAME="Halo: Combat Evolved"
+    $CATEGORIZE
+    rm Halo1.txt
+    unset HALO1
+  fi
+
+  if [ "$HALO2" != "" ];
+  then
+    printf "%s" "$HALO2" > Halo2.txt
+    export CATFILE="Halo2.txt"
+    export CATNAME="Halo 2"
+    $CATEGORIZE
+    rm Halo2.txt
+    unset HALO2
+  fi
+
+  if [ "$HALO3" != "" ];
+  then
+    printf "%s" "$HALO3" > Halo3.txt
+    export CATFILE="Halo3.txt"
+    export CATNAME="Halo 3"
+    $CATEGORIZE
+    rm Halo3.txt
+    unset HALO3
+  fi
+
+  if [ "$HALO4" != "" ];
+  then
+    printf "%s" "$HALO4" > Halo4.txt
+    export CATFILE="Halo4.txt"
+    export CATNAME="Halo 4"
+    $CATEGORIZE
+    rm Halo4.txt
+    unset HALO4
+  fi
+
+  if [ "$ODST" != "" ];
+  then
+    printf "%s" "$ODST" > ODST.txt
+    export CATFILE="ODST.txt"
+    export CATNAME="Halo 3: ODST"
+    $CATEGORIZE
+    rm ODST.txt
+    unset ODST
+  fi
+
+  if [ "$HALOWARS" != "" ];
+  then
+    printf "%s" "$HALOWARS" > HaloWars.txt
+    export CATFILE="HaloWars.txt"
+    export CATNAME="Halo Wars"
+    $CATEGORIZE
+    rm HaloWars.txt
+    unset HALOWARS
+  fi
+
+  debug_end "Halo series"
+
+fi

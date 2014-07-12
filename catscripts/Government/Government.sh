@@ -1,17 +1,15 @@
 #!/bin/bash 
+GOVERNMENTDIR="./catscripts/Government"
 
-if [ "$DEBUG" == "yes" ];
+if [ "$1" == "" ];
 then
-  printf "Starting Government\n" 
-fi
 
-CURRENTDIR="./catscripts/Government"
+  debug_start "Government"
 
-$CURRENTDIR/Countries/Countries.sh
-$CURRENTDIR/United_Kingdom/UnitedKingdom.sh
-$CURRENTDIR/United_Nations/UnitedNations.sh
+  . $GOVERNMENTDIR/Countries/Countries.sh
+  . $GOVERNMENTDIR/United_Kingdom/UnitedKingdom.sh
+  . $GOVERNMENTDIR/United_Nations/UnitedNations.sh
 
-if [ "$DEBUG" == "yes" ];
-then
-  printf "Finishing Government\n" 
+  debug_end "Government"
+
 fi

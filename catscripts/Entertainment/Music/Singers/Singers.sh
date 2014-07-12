@@ -44,10 +44,7 @@ KEYWORDS_SINGERS_ALL="$KEYWORDS_SINGERS|$KEYWORDS_SINGERS_AKON|$KEYWORDS_SINGERS
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Singers\n"
-  fi
+  debug_start "Singers"
 
   SINGERS=$(egrep -i "$KEYWORDS_SINGERS" newpages.txt | egrep -iv "$KEYWORDS_SINGERS_EXCLUDE")
   AKON=$(egrep -i "$KEYWORDS_SINGERS_AKON" newpages.txt)
@@ -87,7 +84,7 @@ then
 
   if [ "$SINGERS" != "" ];
   then
-    printf "$SINGERS" > Singers.txt
+    printf "%s" "$SINGERS" > Singers.txt
     export CATFILE="Singers.txt"
     export CATNAME="Singers"
     $CATEGORIZE
@@ -97,7 +94,7 @@ then
 
   if [ "$AKON" != "" ];
   then
-    printf "$AKON" > Akon.txt
+    printf "%s" "$AKON" > Akon.txt
     export CATFILE="Akon.txt"
     export CATNAME="Akon"
     $CATEGORIZE
@@ -107,7 +104,7 @@ then
 
   if [ "$BIEBER" != "" ];
   then
-    printf "$BIEBER" > JustinBieber.txt
+    printf "%s" "$BIEBER" > JustinBieber.txt
     export CATFILE="JustinBieber.txt"
     export CATNAME="Justin Bieber"
     $CATEGORIZE
@@ -117,7 +114,7 @@ then
 
   if [ "$JCASH" != "" ];
   then
-    printf "$JCASH" > JohnnyCash.txt
+    printf "%s" "$JCASH" > JohnnyCash.txt
     export CATFILE="JohnnyCash.txt"
     export CATNAME="Johnny Cash"
     $CATEGORIZE
@@ -127,7 +124,7 @@ then
 
   if [ "$CHARLES" != "" ];
   then
-    printf "$CHARLES" > RayCharles.txt
+    printf "%s" "$CHARLES" > RayCharles.txt
     export CATFILE="RayCharles.txt"
     export CATNAME="Ray Charles"
     $CATEGORIZE
@@ -137,7 +134,7 @@ then
 
   if [ "$MCYRUS" != "" ];
   then
-    printf "$MCYRUS" > MileyCyrus.txt
+    printf "%s" "$MCYRUS" > MileyCyrus.txt
     export CATFILE="MileyCyrus.txt"
     export CATNAME="Miley Cyrus"
     $CATEGORIZE
@@ -147,7 +144,7 @@ then
 
   if [ "$DYLAN" != "" ];
   then
-    printf "$DYLAN" > BobDylan.txt
+    printf "%s" "$DYLAN" > BobDylan.txt
     export CATFILE="BobDylan.txt"
     export CATNAME="Bob Dylan"
     $CATEGORIZE
@@ -157,7 +154,7 @@ then
 
   if [ "$HUDGENS" != "" ];
   then
-    printf "$HUDGENS" > VanessaHudgens.txt
+    printf "%s" "$HUDGENS" > VanessaHudgens.txt
     export CATFILE="VanessaHudgens.txt"
     export CATNAME="Vanessa Hudgens"
     $CATEGORIZE
@@ -167,7 +164,7 @@ then
 
   if [ "$WHOUSTON" != "" ];
   then
-    printf "$WHOUSTON" > WhitneyHouston.txt
+    printf "%s" "$WHOUSTON" > WhitneyHouston.txt
     export CATFILE="WhitneyHouston.txt"
     export CATNAME="Whitney Houston"
     $CATEGORIZE
@@ -177,7 +174,7 @@ then
 
   if [ "$MJACKSON" != "" ];
   then
-    printf "$MJACKSON" > MichaelJackson.txt
+    printf "%s" "$MJACKSON" > MichaelJackson.txt
     export CATFILE="MichaelJackson.txt"
     export CATNAME="Michael Jackson"
     $CATEGORIZE
@@ -187,7 +184,7 @@ then
 
   if [ "$JJONAS" != "" ];
   then
-    printf "$JJONAS" > JoeJonas.txt
+    printf "%s" "$JJONAS" > JoeJonas.txt
     export CATFILE="JoeJonas.txt"
     export CATNAME="Joe Jonas"
     $CATEGORIZE
@@ -197,7 +194,7 @@ then
 
   if [ "$NJONAS" != "" ];
   then
-    printf "$NJONAS" > NickJonas.txt
+    printf "%s" "$NJONAS" > NickJonas.txt
     export CATFILE="NickJonas.txt"
     export CATNAME="Nick Jonas"
     $CATEGORIZE
@@ -207,7 +204,7 @@ then
 
   if [ "$KNOWLES" != "" ];
   then
-    printf "$KNOWLES" > BeyoncéKnowles.txt
+    printf "%s" "$KNOWLES" > BeyoncéKnowles.txt
     export CATFILE="BeyoncéKnowles.txt"
     export CATNAME="Beyoncé Knowles"
     $CATEGORIZE
@@ -217,7 +214,7 @@ then
 
   if [ "$LOVATO" != "" ];
   then
-    printf "$KNOWLES" > DemiLovato.txt
+    printf "%s" "$KNOWLES" > DemiLovato.txt
     export CATFILE="DemiLovato.txt"
     export CATNAME="Demi Lovato"
     $CATEGORIZE
@@ -227,7 +224,7 @@ then
 
   if [ "$LENNON" != "" ];
   then
-    printf "$LENNON" > JohnLennon.txt
+    printf "%s" "$LENNON" > JohnLennon.txt
     export CATFILE="JohnLennon.txt"
     export CATNAME="John Lennon"
     $CATEGORIZE
@@ -237,7 +234,7 @@ then
 
   if [ "$GAGA" != "" ];
   then
-    printf "$GAGA" > LadyGaga.txt
+    printf "%s" "$GAGA" > LadyGaga.txt
     export CATFILE="LadyGaga.txt"
     export CATNAME="Lady Gaga"
     $CATEGORIZE
@@ -247,7 +244,7 @@ then
 
   if [ "$MADONNA" != "" ];
   then
-    printf "$MADONNA" > Madonna.txt
+    printf "%s" "$MADONNA" > Madonna.txt
     export CATFILE="Madonna.txt"
     export CATNAME="Madonna"
     $CATEGORIZE
@@ -257,7 +254,7 @@ then
 
   if [ "$MARLEY" != "" ];
   then
-    printf "$MARLEY" > BobMarley.txt
+    printf "%s" "$MARLEY" > BobMarley.txt
     export CATFILE="BobMarley.txt"
     export CATNAME="Bob Marley"
     $CATEGORIZE
@@ -267,7 +264,7 @@ then
 
   if [ "$BRUNOMARS" != "" ];
   then
-    printf "$BRUNOMARS" > BrunoMars.txt
+    printf "%s" "$BRUNOMARS" > BrunoMars.txt
     export CATFILE="BrunoMars.txt"
     export CATNAME="Bruno Mars"
     $CATEGORIZE
@@ -277,7 +274,7 @@ then
 
   if [ "$MERRYGOLD" != "" ];
   then
-    printf "$MERRYGOLD" > AstonMerrygold.txt
+    printf "%s" "$MERRYGOLD" > AstonMerrygold.txt
     export CATFILE="AstonMerrygold.txt"
     export CATNAME="Aston Merrygold"
     $CATEGORIZE
@@ -287,7 +284,7 @@ then
 
   if [ "$MINAJ" != "" ];
   then
-    printf "$MINAJ" > NickiMinaj.txt
+    printf "%s" "$MINAJ" > NickiMinaj.txt
     export CATFILE="NickiMinaj.txt"
     export CATNAME="Nicki Minaj"
     $CATEGORIZE
@@ -297,7 +294,7 @@ then
 
   if [ "$ELTONJOHN" != "" ];
   then
-    printf "$ELTONJOHN" > EltonJohn.txt
+    printf "%s" "$ELTONJOHN" > EltonJohn.txt
     export CATFILE="EltonJohn.txt"
     export CATNAME="Elton John"
     $CATEGORIZE
@@ -307,7 +304,7 @@ then
 
   if [ "$ELVIS" != "" ];
   then
-    printf "$ELVIS" > ElvisPresley.txt
+    printf "%s" "$ELVIS" > ElvisPresley.txt
     export CATFILE="ElvisPresley.txt"
     export CATNAME="Elvis Presley"
     $CATEGORIZE
@@ -317,7 +314,7 @@ then
 
   if [ "$RAMSAY" != "" ];
   then
-    printf "$RAMSAY" > JoshRamsay.txt
+    printf "%s" "$RAMSAY" > JoshRamsay.txt
     export CATFILE="JoshRamsay.txt"
     export CATNAME="Josh Ramsay"
     $CATEGORIZE
@@ -327,7 +324,7 @@ then
 
   if [ "$RIHANNA" != "" ];
   then
-    printf "$RIHANNA" > Rihanna.txt
+    printf "%s" "$RIHANNA" > Rihanna.txt
     export CATFILE="Rihanna.txt"
     export CATNAME="Rihanna"
     $CATEGORIZE
@@ -337,7 +334,7 @@ then
 
   if [ "$BSPEARS" != "" ];
   then
-    printf "$BSPEARS" > BritneySpears.txt
+    printf "%s" "$BSPEARS" > BritneySpears.txt
     export CATFILE="BritneySpears.txt"
     export CATNAME="Britney Spears"
     $CATEGORIZE
@@ -347,7 +344,7 @@ then
 
   if [ "$SWIFT" != "" ];
   then
-    printf "$SWIFT" > TaylorSwift.txt
+    printf "%s" "$SWIFT" > TaylorSwift.txt
     export CATFILE="TaylorSwift.txt"
     export CATNAME="Taylor Swift"
     $CATEGORIZE
@@ -357,7 +354,7 @@ then
 
   if [ "$TUPAC" != "" ];
   then
-    printf "$TUPAC" > TupacShakur.txt
+    printf "%s" "$TUPAC" > TupacShakur.txt
     export CATFILE="TupacShakur.txt"
     export CATNAME="Tupac Shakur"
     $CATEGORIZE
@@ -367,7 +364,7 @@ then
 
   if [ "$TISDALE" != "" ];
   then
-    printf "$TISDALE" > AshleyTisdale.txt
+    printf "%s" "$TISDALE" > AshleyTisdale.txt
     export CATFILE="AshleyTisdale.txt"
     export CATNAME="Ashley Tisdale"
     $CATEGORIZE
@@ -377,7 +374,7 @@ then
 
   if [ "$LILWAYNE" != "" ];
   then
-    printf "$LILWAYNE" > LilWayne.txt
+    printf "%s" "$LILWAYNE" > LilWayne.txt
     export CATFILE="LilWayne.txt"
     export CATNAME="Lil Wayne"
     $CATEGORIZE
@@ -387,7 +384,7 @@ then
 
   if [ "$EMINEM" != "" ];
   then
-    printf "$EMINEM" > Eminem.txt
+    printf "%s" "$EMINEM" > Eminem.txt
     export CATFILE="Eminem.txt"
     export CATNAME="Eminem"
     $CATEGORIZE
@@ -397,7 +394,7 @@ then
 
   if [ "$WONDER" != "" ];
   then
-    printf "$WONDER" > StevieWonder.txt
+    printf "%s" "$WONDER" > StevieWonder.txt
     export CATFILE="StevieWonder.txt"
     export CATNAME="Stevie Wonder"
     $CATEGORIZE
@@ -407,7 +404,7 @@ then
 
   if [ "$KESHA" != "" ];
   then
-    printf "$KESHA" > Kesha.txt
+    printf "%s" "$KESHA" > Kesha.txt
     export CATFILE="Kesha.txt"
     export CATNAME="Kesha"
     $CATEGORIZE
@@ -417,7 +414,7 @@ then
 
   if [ "$COLE" != "" ];
   then
-    printf "$COLE" > CherylCole.txt
+    printf "%s" "$COLE" > CherylCole.txt
     export CATFILE="CherylCole.txt"
     export CATNAME="Cheryl Cole"
     $CATEGORIZE
@@ -427,7 +424,7 @@ then
 
   if [ "$KATYPERRY" != "" ];
   then
-    printf "$KATYPERRY" > KatyPerry.txt
+    printf "%s" "$KATYPERRY" > KatyPerry.txt
     export CATFILE="KatyPerry.txt"
     export CATNAME="Katy Perry"
     $CATEGORIZE
@@ -435,9 +432,6 @@ then
     unset KATYPERRY
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Singers\n"
-  fi
+  debug_end "Singers"
 
 fi

@@ -42,10 +42,7 @@ KEYWORDS_POKEMONSPECIES_D="$KEYWORDS_DARKRAI|$KEYWORDS_DARMANITAN|$KEYWORDS_DARU
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Pokemon D scripts\n"
-  fi
+  debug_start "Pokemon 'D' script"
 
   DARKRAI="$(egrep -i "$KEYWORDS_DARKRAI" newpages.txt)"
   DARMANITAN="$(egrep -i "$KEYWORDS_DARMANITAN" newpages.txt)"
@@ -434,9 +431,6 @@ then
     unset DWEBBLE
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Pokemon D scripts\n"
-  fi
+  debug_end "Pokemon 'D' script"
 
 fi

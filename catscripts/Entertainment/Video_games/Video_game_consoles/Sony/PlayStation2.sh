@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_PS2="PlayStation 2|Play Station 2|\bPS2|\bPS 2\b"
+KEYWORDS_PS2="Play(| )Station(| )2|\bPS(| )2\b"
 KEYWORDS_PS2_EXCLUDE="PS(| )2(| )(mouse|port|keyboard)"
 
 if [ "$1" == "" ];

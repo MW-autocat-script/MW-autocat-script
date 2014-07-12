@@ -1,16 +1,15 @@
 #!/bin/bash
 
-if [ "$DEBUG" == "yes" ];
+HEALTHDIR="./catscripts/Lifestyle/Health"
+
+if [ "$1" == "" ];
 then
-  printf "Starting Health\n" 
-fi
 
-CURRENTDIR="./catscripts/Lifestyle/Health"
+  debug_start "Health"
 
-$CURRENTDIR/Diseases/Diseases.sh
-$CURRENTDIR/Drugs/Drugs.sh
+  . $HEALTHDIR/Diseases/Diseases.sh
+  . $HEALTHDIR/Drugs/Drugs.sh
 
-if [ "$DEBUG" == "yes" ];
-then
-  printf "Finishing Health\n" 
+  debug_end "Health"
+
 fi

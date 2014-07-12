@@ -1,25 +1,37 @@
 #!/bin/bash
 
-egrep -i 'Philippine|Phillipine|Philipine|Phillippine|Luzon' newpages.txt | egrep -iv 'Philippine National Police Academy|Philippine literature' >> Philippines.txt
-egrep -i 'PNPA|Philippine National Police Academy' newpages.txt > PNPA.txt
-egrep -i '(pnp\b.+neuro|neuro.+pnp)' newpages.txt >> PNPA.txt
+KEYWORDS_PHILIPPINES="Phil(|l)ip(|p)ine|Luzon"
+KEYWORDS_PNPA="PNPA|Philippine(| )National(| )Police(| )Academy"
+KEYWORDS_PHILIPPINES_EXCLUDE="$KEYWORDS_PNPA|Philippine(| )literature"
 
-PHILIPPINES=$(stat --print=%s Philippines.txt)
-PNPA=$(stat --print=%s PNPA.txt)
-
-if [ $PHILIPPINES -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Philippines.txt"
-  export CATNAME="Philippines"
-  $CATEGORIZE
-fi
 
-if [ $PNPA -ne 0 ];
-then
-  export CATFILE="PNPA.txt"
-  export CATNAME="PNPA"
-  $CATEGORIZE
-fi
+  debug_start "Philippines"
 
-rm Philippines.txt
-rm PNPA.txt
+  PHILIPPINES=$(egrep -i "$KEYWORDS_PHILIPPINES" newpages.txt | egrep -iv "$KEYWORDS_PHILIPPINES_EXCLUDE" )
+  PNPA=$(egrep -i "$KEYWORDS_PNPA" newpages.txt)
+
+  if [ "$PHILIPPINES" != "" ];
+  then
+    printf "%s" "$PHILIPPINES" > Philippines.txt
+    export CATFILE="Philippines.txt"
+    export CATNAME="Philippines"
+    $CATEGORIZE
+    rm Philippines.txt
+    unset PHILIPPINES
+  fi
+
+  if [ "$PNPA" != "" ];
+  then
+    printf "%s" "$PNPA" > PNPA.txt
+    export CATFILE="PNPA.txt"
+    export CATNAME="PNPA"
+    $CATEGORIZE
+    rm PNPA.txt
+    unset PNPA
+  fi
+
+  debug_end "Philippines"
+
+fi

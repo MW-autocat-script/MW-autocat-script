@@ -1,34 +1,38 @@
 #!/bin/bash
 
-egrep -i 'Massachusetts' newpages.txt | egrep -iv 'Boston' >> Massachusetts.txt
-egrep -i 'Boston' newpages.txt | egrep -iv 'Boston (creame|creme) pie|Boston Marathon' >> Boston.txt
-egrep -i 'Boston Marathon' newpages.txt >> Boston.txt
+KEYWORDS_MASSACHUSETTS="Massachusetts"
+KEYWORDS_BOSTON="Boston"
+KEYWORDS_BOSTON_EXCLUDE="Boston(| )(creame|creme)(| )pie"
+KEYWORDS_MASSACHUSETTS_EXCLUDE="$KEYWORDS_BOSTON"
 
-MASSACHUSETTS=$(stat --print=%s Massachusetts.txt)
-BOSTON=$(stat --print=%s Boston.txt)
-#MARATHON=$(stat --print=%s BostonMarathon.txt)
-
-if [ $MASSACHUSETTS -ne 0 ];
+if [ "$1" == "" ];
 then
-  export CATFILE="Massachusetts.txt"
-  export CATNAME="Massachusetts"
-  $CATEGORIZE
+
+  debug_start  "Massachusetts"
+
+  MASSACHUSETTS=$(egrep -i "$KEYWORDS_MASSACHUSETTS" newpages.txt | egrep -iv "$KEYWORDS_MASSACHUSETTS_EXCLUDE")
+  BOSTON=$(egrep -i "$KEYWORDS_BOSTON" newpages.txt | egrep -iv "$KEYWORDS_BOSTON_EXCLUDE")
+
+  if [ "$MASSACHUSETTS" != "" ];
+  then
+    printf "%s" "$MASSACHUSETTS" > Massachusetts.txt
+    export CATFILE="Massachusetts.txt"
+    export CATNAME="Massachusetts"
+    $CATEGORIZE
+    rm Massachusetts.txt
+    unset MASSACHUSETTS
+  fi
+
+  if [ "$BOSTON" != "" ];
+  then
+    printf "%s" "$BOSTON" > Boston.txt
+    export CATFILE="Boston.txt"
+    export CATNAME="Boston"
+    $CATEGORIZE
+    rm Boston.txt
+    unset BOSTON
+  fi
+
+  debug_end "Massachusetts"
+
 fi
-
-if [ $BOSTON -ne 0 ];
-then
-  export CATFILE="Boston.txt"
-  export CATNAME="Boston"
-  $CATEGORIZE
-fi
-
-#if [ $MARATHON -ne 0 ];
-#then
-#  export CATFILE="BostonMarathon.txt"
-#  export CATNAME="Boston Marathon"
-#  $CATEGORIZE
-#fi
-
-rm Massachusetts.txt
-rm Boston.txt
-#rm BostonMarathon.txt
