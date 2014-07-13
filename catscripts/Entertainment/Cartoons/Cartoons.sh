@@ -9,7 +9,7 @@ then
 
   debug_start "Cartoons and anime"
 
-  KEYWORDS_CARTOONS_OTHER="Attack(| )on(| )Titan|Shingeki(| )no(| )Kyojin|kaze(| )no(| )stigma|\btrigun|Hetalia|Bubblegum(| )(Crisis|Crash)|Blood\+|knights(| )of(| )Sidonia|Sidonia(| )no(| )kishi|Psycho(|-| )Pass|Gungrave|Haruhi(| )Suzumiya|Ch(a|ä)oS;HEAd|Chobits|Chrome(| )Shelled(| )Regios|Cowboy(| )Bebop|\bFLCL\b|Full(| )Metal(| )Panic|Fumoffu|Ghost(| )in(| )the(| )Shell|Eden(| )of(| )the(| )East|Higashi(| )no(| )Eden|Evangelion|Steins;Gate|Vampire(| )Knight|Summer(| )Wars"
+  KEYWORDS_CARTOONS_OTHER="Attack(| )on(| )Titan|Shingeki(| )no(| )Kyojin|kaze(| )no(| )stigma|\btrigun|Hetalia|Bubblegum(| )(Crisis|Crash)|Blood\+|knights(| )of(| )Sidonia|Sidonia(| )no(| )kishi|Psycho(|-| )Pass|Gungrave|Haruhi(| )Suzumiya|Ch(a|ä)oS;HEAd|Chobits|Chrome(| )Shelled(| )Regios|Cowboy(| )Bebop|\bFLCL\b|Full(| )Metal(| )Panic|Fumoffu|Ghost(| )in(| )the(| )Shell|Eden(| )of(| )the(| )East|Higashi(| )no(| )Eden|Evangelion|Steins;Gate|Summer(| )Wars"
 
   $CARTOONDIR/American_Dad/AmericanDad.sh
   $CARTOONDIR/Avatar_The_Last_Airbender/Avatar.sh
@@ -32,6 +32,7 @@ then
   $CARTOONDIR/SpongeBob_SquarePants/SpongeBobSquarePants.sh
   $CARTOONDIR/Star_Wars_The_Clone_Wars/CloneWars.sh
   $CARTOONDIR/The_Simpsons/TheSimpsons.sh
+  $CARTOONDIR/Vampire_Knight/VampireKnight.sh #KEYWORDS_VAMPIREKNIGHT
 
   CARTOONS="$(egrep -i "$KEYWORDS_CARTOONS_OTHER" newpages.txt)"
 
