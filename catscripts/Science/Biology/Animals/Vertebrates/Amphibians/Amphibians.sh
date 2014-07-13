@@ -39,7 +39,7 @@ then
   then
     printf "%s" "$SALAMANDERS" > Salamanders.txt
     export CATFILE="Salamanders.txt"
-    export CATNAME="Salamander"
+    export CATNAME="Salamanders"
     $CATEGORIZE
     rm Salamanders.txt
     unset SALAMANDERS

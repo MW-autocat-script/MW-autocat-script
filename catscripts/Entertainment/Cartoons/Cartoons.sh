@@ -18,6 +18,7 @@ then
   $CARTOONDIR/Fairy_Tail/FairyTail.sh #KEYWORDS_FAIRYTAIL
   $CARTOONDIR/Family_Guy/FamilyGuy.sh
   $CARTOONDIR/Futurama/Futurama.sh
+  $CARTOONDIR/Gundam_series/Gundam.sh #KEYWORDS_GUNDAM
   $CARTOONDIR/Johnny_Test/JohnnyTest.sh
   $CARTOONDIR/Kim_Possible/KimPossible.sh
   $CARTOONDIR/Looney_Tunes/LooneyTunes.sh
@@ -27,6 +28,7 @@ then
   $CARTOONDIR/Pokémon_anime/PokémonAnime.sh
   $CARTOONDIR/South_Park/SouthPark.sh
   $CARTOONDIR/Danny_Phantom/DannyPhantom.sh
+  $CARTOONDIR/Sailor_Moon/SailorMoon.sh #KEYWORDS_SAILORMOON
   $CARTOONDIR/SpongeBob_SquarePants/SpongeBobSquarePants.sh
   $CARTOONDIR/Star_Wars_The_Clone_Wars/CloneWars.sh
   $CARTOONDIR/The_Simpsons/TheSimpsons.sh
