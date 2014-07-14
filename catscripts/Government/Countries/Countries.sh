@@ -1,9 +1,6 @@
 #!/bin/bash
 
-if [ "$DEBUG" == "yes" ];
-then
-  printf "Starting Countries\n" 
-fi
+debug_start "Countries"
 
 COUNTRYDIR="./catscripts/Government/Countries"
 
@@ -80,6 +77,7 @@ $COUNTRYDIR/Macedonia/Macedonia.sh
 $COUNTRYDIR/Madagascar/Madagascar.sh
 $COUNTRYDIR/Malaysia/Malaysia.sh
 $COUNTRYDIR/Mali/Mali.sh
+$COUNTRYDIR/Mauritius/Mauritius.sh #$KEYWORDS_MAURITIUS
 $COUNTRYDIR/Mexico/Mexico.sh
 $COUNTRYDIR/Moldova/Moldova.sh
 $COUNTRYDIR/Mongolia/Mongolia.sh
@@ -128,7 +126,4 @@ $COUNTRYDIR/United_States/UnitedStates.sh
 $COUNTRYDIR/Unrecognized_countries/Unrecognized.sh
 $COUNTRYDIR/Venezuela/Venezuela.sh
 
-if [ "$DEBUG" == "yes" ];
-then
-  printf "Finishing countries\n" 
-fi
+debug_end "Countries"
