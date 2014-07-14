@@ -5,6 +5,8 @@ KEYWORDS_CHARLESDARWIN="Charles(| )Darwin"
 KEYWORDS_LEONARDODAVINCI="Leonardo(| )da(| )Vinci"
 KEYWORDS_MARIECURIE="Marie(| )Curie"
 KEYWORDS_ISAACNEWTON="Isaac(| )Newton"
+KEYWORDS_GREGORMENDEL="Mendel(|s)\b"
+KEYWORDS_SCIENTISTS_ALL="$KEYWORDS_STEPHENHAWKING|$KEYWORDS_CHARLESDARWIN|$KEYWORDS_LEONARDODAVINCI|$KEYWORDS_MARIECURIE|$KEYWORDS_ISAACNEWTON|$KEYWORDS_GREGORMENDEL"
 
 if [ "$1" == "" ];
 then
@@ -16,6 +18,7 @@ then
   DAVINCI=$(egrep -i "$KEYWORDS_LEONARDODAVINCI" newpages.txt)
   CURIE=$(egrep -i "$KEYWORDS_MARIECURIE" newpages.txt)
   NEWTON=$(egrep -i "$KEYWORDS_ISAACNEWTON" newpages.txt)
+  MENDEL=$(egrep -i "$KEYWORDS_GREGORMENDEL" newpages.txt)
 
   if [ "$HAWKING" != "" ];
   then
@@ -55,6 +58,16 @@ then
     $CATEGORIZE
     rm MarieCurie.txt
     unset CURIE
+  fi
+
+  if [ "$MENDEL" != "" ];
+  then
+    printf "%s" "$MENDEL" > Mendel.txt
+    export CATFILE="Mendel.txt"
+    export CATNAME="Gregor Mendel"
+    $CATEGORIZE
+    rm Mendel.txt
+    unset MENDEL
   fi
 
   if [ "$NEWTON" != "" ];
