@@ -1,12 +1,12 @@
 MW-autocat-script
 =================
 
-This is a bash script wrapper for Pywikipediabot that automatically adds new pages to a specified category based on its title.
+This is a bash script wrapper for Pywikibot that automatically adds new pages to a specified category based on its title.
 
 Installation
 ================
 
-The script directory can be placed anywhere. You will need to edit PYWIKIPEDIADIR in newpagescat.sh to point to the location of Pywikipediabot if you do not have it installed in the root of the Pywikipediabot directory.
+The script directory can be placed anywhere. You will need to edit PYWIKIPEDIADIR in newpagescat.sh to point to the location of Pywikibot if you do not have it installed in the root of the Pywikibot directory.
 
 Detailed Description
 ====================
@@ -22,13 +22,12 @@ Dependencies
 
 This script depends on the following programs / libraries:
 
-* Python (for pywikipediabot)
+* Python (for Pywikibot)
 * bash
 * [expect](http://www.nist.gov/el/msid/expect.cfm)
 * GNU egrep (other versions of egrep may work but I haven't tested them)
-* GNU stat
 
 Bugs / Errata
 ===================
 
-* Pywikipediabot wasn't really meant to run 24/7/365. One side-effect is that if you lose internet connection for some reason, the throttle will constantly increase, meaning it may take a long time after your connection is restored to resume running. Editing throttle.py and replacing throttle.ctrl with /dev/null _should_ help alleviate this. Alternatively, you can try adding _retry_on_fail = False_ to your user-config.py file. This will make the bot stop trying to reconnect until the next iteration.
+* Pywikibot wasn't really meant to run 24/7/365. One side-effect is that if you lose internet connection for some reason, the throttle will constantly increase, meaning it may take a long time after your connection is restored to resume running. Editing throttle.py and replacing throttle.ctrl with /dev/null _should_ help alleviate this. Alternatively, you can try adding _retry_on_fail = False_ to your user-config.py file. This will make the bot stop trying to reconnect until the next iteration.
