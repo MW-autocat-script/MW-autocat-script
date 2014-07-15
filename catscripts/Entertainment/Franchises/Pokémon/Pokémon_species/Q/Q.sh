@@ -7,10 +7,7 @@ KEYWORDS_QWILFISH="Qwilfish"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Pokemon Q scripts\n"
-  fi
+  debug_start "Pokemon Q scripts"
 
   QUAGSIRE=$(egrep -i "$KEYWORDS_QUAGSIRE" newpages.txt)
   QUILAVA=$(egrep -i "$KEYWORDS_QUILAVA" newpages.txt)
@@ -18,7 +15,7 @@ then
 
   if [ "$QUAGSIRE" != "" ];
   then
-    printf "$QUAGSIRE" > Quagsire.txt
+    printf "%s" "$QUAGSIRE" > Quagsire.txt
     export CATFILE="Quagsire.txt"
     export CATNAME="Quagsire"
     $CATEGORIZE
@@ -28,7 +25,7 @@ then
 
   if [ "$QUILAVA" != "" ];
   then
-    printf "$QUILAVA" > Quilava.txt
+    printf "%s" "$QUILAVA" > Quilava.txt
     export CATFILE="Quilava.txt"
     export CATNAME="Quilava"
     $CATEGORIZE
@@ -38,7 +35,7 @@ then
 
   if [ "$QWILFISH" != "" ];
   then
-    printf "$QWILFISH" > Qwilfish.txt
+    printf "%s" "$QWILFISH" > Qwilfish.txt
     export CATFILE="Qwilfish.txt"
     export CATNAME="Qwilfish"
     $CATEGORIZE
@@ -46,9 +43,6 @@ then
     unset QWILFISH
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Pokemon Q scripts\n"
-  fi
+  debug_end "Pokemon Q scripts"
 
 fi
