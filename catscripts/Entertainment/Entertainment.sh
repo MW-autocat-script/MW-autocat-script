@@ -1,9 +1,6 @@
 #!/bin/bash
 
-if [ "$DEBUG" == "yes" ];
-then
-  printf "Starting Entertainment\n" 
-fi
+debug_start "Entertainment"
 
 ENTERTAINMENTDIR="./catscripts/Entertainment"
 
@@ -18,7 +15,4 @@ $ENTERTAINMENTDIR/Puzzles/Puzzles.sh
 . $ENTERTAINMENTDIR/Professional_wrestling/ProfessionalWrestling.sh
 $ENTERTAINMENTDIR/Television_series/Televisionseries.sh
 
-if [ "$DEBUG" == "yes" ];
-then
-  printf "Finished Entertainment\n" 
-fi
+debug_end "Entertainment"

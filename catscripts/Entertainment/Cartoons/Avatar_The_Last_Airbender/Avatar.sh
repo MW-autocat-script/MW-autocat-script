@@ -6,10 +6,7 @@ KEYWORDS_AIRBENDER_EXCLUDE="Momo (Sohma|Hinamori|Adachi)|Bleach"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Avatar: The Last Airbender\n"
-  fi
+  debug_start "Avatar: The Last Airbender"
 
   AVATAR=$(egrep -i "$KEYWORDS_AIRBENDER" newpages.txt | egrep -iv "$KEYWORDS_AIRBENDER_EXCLUDE")
 
@@ -23,9 +20,6 @@ then
     unset AVATAR
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Avatar: The Last Airbender\n"
-  fi
+  debug_end "Avatar: The Last Airbender"
 
 fi

@@ -33,7 +33,7 @@ then
   if [ "$DARWIN" != "" ];
   then
     printf "%s" "$DARWIN" > CharlesDarwin.txt
-    export CATFILE="CharlesDarwin"
+    export CATFILE="CharlesDarwin.txt"
     export CATNAME="Charles Darwin"
     $CATEGORIZE
     rm CharlesDarwin.txt

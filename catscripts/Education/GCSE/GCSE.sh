@@ -6,16 +6,13 @@ KEYWORDS_GCSE_ALL="$KEYWORDS_GCSE"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting GCSE\n"
-  fi
+  debug_start "GCSE"
 
   GCSE=$(egrep -i "$KEYWORDS_GCSE" newpages.txt)
 
   if [ "$GCSE" != "" ];
   then
-    printf "$GCSE" > GCSE.txt
+    printf "%s" "$GCSE" > GCSE.txt
     export CATFILE="GCSE.txt"
     export CATNAME="GCSE"
     $CATEGORIZE
@@ -23,9 +20,6 @@ then
     unset GCSE
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing GCSE\n"
-  fi
+  debug_end "GCSE"
 
 fi

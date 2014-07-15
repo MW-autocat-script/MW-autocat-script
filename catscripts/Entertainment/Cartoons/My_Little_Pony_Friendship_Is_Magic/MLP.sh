@@ -6,10 +6,7 @@ KEYWORDS_MLP="Friendship(| )is(| )Magic|MLP\:(| )FIM|MLP(| )FIM|brony|Rainbow(| 
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting My Little Pony: Friendship Is Magic\n"
-  fi
+  debug_start "My Little Pony: Friendship is Magic"
 
   MLP="$(egrep -i "$KEYWORDS_MLP" newpages.txt)"
 
@@ -23,9 +20,6 @@ then
     unset MLP
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing My Little Pony: Friendship Is Magic\n"
-  fi
+  debug_end "My Little Pony: Friendship is Magic"
 
 fi

@@ -5,16 +5,13 @@ KEYWORDS_NARUTO="Naruto|Hokage"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Naruto\n"
-  fi
+  debug_start "Naruto"
   
   NARUTO=$(egrep -i "$KEYWORDS_NARUTO" newpages.txt)
 
   if [ "$NARUTO" != "" ];
   then
-    printf "$NARUTO" > Naruto.txt
+    printf "%s" "$NARUTO" > Naruto.txt
     export CATFILE="Naruto.txt"
     export CATNAME="Naruto"
     $CATEGORIZE
@@ -22,9 +19,6 @@ then
     unset NARUTO
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Naruto\n"
-  fi
+  debug_end "Naruto"
 
 fi
