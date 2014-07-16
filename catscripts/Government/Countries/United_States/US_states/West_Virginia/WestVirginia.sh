@@ -6,10 +6,7 @@ KEYWORDS_WESTVIRGINIA_ALL="$KEYWORDS_WESTVIRGINIA"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting West Virginia\n"
-  fi
+  debug_start "West Virginia"
 
   WESTVIRGINIA="$(egrep -i "$KEYWORDS_WESTVIRGINIA" newpages.txt)"
 
@@ -23,9 +20,6 @@ then
     unset WESTVIRGINIA
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing West Virginia\n"
-  fi
+  debug_end "West Virginia"
 
 fi

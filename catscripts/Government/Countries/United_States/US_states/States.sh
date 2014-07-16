@@ -2,6 +2,8 @@
 
 USSTATESDIR="./catscripts/Government/Countries/United_States/US_states"
 
+debug_start "US states"
+
 $USSTATESDIR/Alabama/Alabama.sh
 $USSTATESDIR/Alaska/Alaska.sh
 $USSTATESDIR/Arizona/Arizona.sh
@@ -50,3 +52,5 @@ $USSTATESDIR/Washington/Washington.sh
 $USSTATESDIR/West_Virginia/WestVirginia.sh
 $USSTATESDIR/Wisconsin/Wisconsin.sh
 $USSTATESDIR/Wyoming/Wyoming.sh
+
+debug_end "US states"

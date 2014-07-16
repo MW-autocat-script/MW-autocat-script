@@ -11,7 +11,7 @@ then
 
   if [ "$UGANDA" != "" ];
   then
-    printf "$UGANDA" > Uganda.txt
+    printf "%s" "$UGANDA" > Uganda.txt
     export CATFILE="Uganda.txt"
     export CATNAME="Uganda"
     $CATEGORIZE

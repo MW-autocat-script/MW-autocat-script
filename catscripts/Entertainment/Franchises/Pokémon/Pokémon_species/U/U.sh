@@ -9,10 +9,7 @@ KEYWORDS_UXIE="Uxie"
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Pokemon U scripts\n"
-  fi
+  debug_start "Pokemon U scripts"
 
   UMBREON="$(egrep -i "$KEYWORDS_UMBREON" newpages.txt)"
   UNFEZANT="$(egrep -i "$KEYWORDS_UNFEZANT" newpages.txt)"
@@ -70,9 +67,6 @@ then
     unset UXIE
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Pokemon U scripts\n"
-  fi
+  debug_end "Pokemon U scripts"
 
 fi

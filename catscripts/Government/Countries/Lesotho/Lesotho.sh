@@ -6,16 +6,13 @@ KEYWORDS_LESOTHO_ALL="$KEYWORDS_LESOTHO"
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ]; 
-  then
-    printf "Starting Lesotho\n"
-  fi
+  debug_start "Lesotho"
 
   LESOTHO=$(egrep -i "$KEYWORDS_LESOTHO" newpages.txt)
 
   if [ "$LESOTHO" != "" ];
   then
-    printf "$LESOTHO" > Lesotho.txt
+    printf "%s" "$LESOTHO" > Lesotho.txt
     export CATFILE="Lesotho.txt"
     export CATNAME="Lesotho"
     $CATEGORIZE
@@ -23,9 +20,6 @@ then
     unset LESOTHO
   fi
 
-  if [ "$DEBUG" == "yes" ]; 
-  then
-    printf "Finishing Lesotho\n"
-  fi
+  debug_end "Lesotho"
 
 fi

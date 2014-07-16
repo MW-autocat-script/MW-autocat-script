@@ -12,7 +12,7 @@ then
 
   if [ "$AVATAR" != "" ];
   then
-    printf "$AVATAR" > TheLastAirbender.txt
+    printf "%s" "$AVATAR" > TheLastAirbender.txt
     export CATFILE="TheLastAirbender.txt"
     export CATNAME="Avatar: The Last Airbender"
     $CATEGORIZE

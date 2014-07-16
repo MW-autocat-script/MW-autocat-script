@@ -6,16 +6,13 @@ KEYWORDS_BRAZIL_ALL="$KEYWORDS_BRAZIL"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Brazil\n"
-  fi
+  debug_start "Brazil"
 
   BRAZIL=$(egrep -i "$KEYWORDS_BRAZIL" newpages.txt)
 
   if [ "$BRAZIL" != "" ];
   then
-    printf "$BRAZIL" > Brazil.txt
+    printf "%s" "$BRAZIL" > Brazil.txt
     export CATFILE="Brazil.txt"
     export CATNAME="Brazil"
     $CATEGORIZE
@@ -23,9 +20,6 @@ then
     unset BRAZIL
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Brazil\n"
-  fi
+  debug_end "Brazil"
 
 fi

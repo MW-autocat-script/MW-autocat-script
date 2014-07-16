@@ -2,13 +2,23 @@
 
 KEYWORDS_ARIZONA="Arizona"
 
-ARIZONA=$(egrep -i "$KEYWORDS_ARIZONA" newpages.txt)
-
-if [ "$ARIZONA" != "" ];
+if [ "$1" == "" ];
 then
-  egrep -i "$KEYWORDS_ARIZONA" newpages.txt > Arizona.txt
-  export CATFILE="Arizona.txt"
-  export CATNAME="Arizona"
-  $CATEGORIZE
-  rm Arizona.txt
+
+  debug_start "Arizona"
+
+  ARIZONA=$(egrep -i "$KEYWORDS_ARIZONA" newpages.txt)
+
+  if [ "$ARIZONA" != "" ];
+  then
+    printf "%s" "$ARIZONA" > Arizona.txt
+    export CATFILE="Arizona.txt"
+    export CATNAME="Arizona"
+    $CATEGORIZE
+    rm Arizona.txt
+    unset ARIZONA
+  fi
+
+  debug_end "Arizona"
+
 fi

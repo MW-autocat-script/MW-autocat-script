@@ -5,16 +5,13 @@ KEYWORDS_XATU="Xatu"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Pokemon X scripts\n"
-  fi
+  debug_start "Pokemon X scripts"
 
   XATU=$(egrep -i "$KEYWORDS_XATU" newpages.txt)
 
   if [ "$XATU" != "" ];
   then
-    printf "$XATU" > Xatu.txt
+    printf "%s" "$XATU" > Xatu.txt
     export CATFILE="Xatu.txt"
     export CATNAME="Xatu"
     $CATEGORIZE
@@ -22,9 +19,6 @@ then
     unset XATU
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Pokemon X scripts\n"
-  fi
+  debug_end "Pokemon X scripts"
 
 fi

@@ -13,10 +13,7 @@ KEYWORDS_USMILITARY_ALL="$KEYWORDS_USMILITARY|$KEYWORDS_USMC|$KEYWORDS_USARMY|$K
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting US military\n"
-  fi
+  debug_start "US military"
 
   USMC=$(egrep -i "$KEYWORDS_USMC" newpages.txt)
   USARMY=$(egrep -i "$KEYWORDS_USARMY" newpages.txt)
@@ -27,7 +24,7 @@ then
 
   if [ "$USMC" != "" ];
   then
-    printf "$USMC" > USMC.txt
+    printf "%s" "$USMC" > USMC.txt
     export CATFILE="USMC.txt"
     export CATNAME="United States Marine Corps"
     $CATEGORIZE
@@ -37,7 +34,7 @@ then
 
   if [ "$USARMY" != "" ];
   then
-    printf "$USARMY" > USArmy.txt
+    printf "%s" "$USARMY" > USArmy.txt
     export CATFILE="USArmy.txt"
     export CATNAME="United States Army"
     $CATEGORIZE
@@ -47,7 +44,7 @@ then
 
   if [ "$USAF" != "" ];
   then
-    printf "$USAF" > USAF.txt
+    printf "%s" "$USAF" > USAF.txt
     export CATFILE="USAF.txt"
     export CATNAME="United States Air Force"
     $CATEGORIZE
@@ -57,7 +54,7 @@ then
 
   if [ "$USNAVY" != "" ];
   then
-    printf "$USNAVY" > USNavy.txt
+    printf "%s" "$USNAVY" > USNavy.txt
     export CATFILE="USNavy.txt"
     export CATNAME="United States Navy"
     $CATEGORIZE
@@ -67,7 +64,7 @@ then
 
   if [ "$USCG" != "" ];
   then
-    printf "$USCG" > USCG.txt
+    printf "%s" "$USCG" > USCG.txt
     export CATFILE="USCG.txt"
     export CATNAME="United States Coast Guard"
     $CATEGORIZE
@@ -77,7 +74,7 @@ then
 
   if [ "$USMILITARY" != "" ];
   then
-    printf "$USMILITARY" > USMilitary.txt
+    printf "%s" "$USMILITARY" > USMilitary.txt
     export CATFILE="USMilitary.txt"
     export CATNAME="US military"
     $CATEGORIZE
@@ -85,9 +82,6 @@ then
     unset USMILITARY
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing US military\n"
-  fi
+  debug_end "US military"
 
 fi

@@ -5,10 +5,7 @@ KEYWORDS_PORTUGAL="Portugal"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Portugal\n"
-  fi
+  debug_start "Portugal"
 
   PORTUGAL="$(egrep -i "$KEYWORDS_PORTUGAL" newpages.txt)"
 
@@ -22,9 +19,6 @@ then
     unset PORTUGAL
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Portugal\n"
-  fi
+  debug_end "Portugal"
 
 fi

@@ -7,16 +7,13 @@ KEYWORDS_SERBIA_ALL="$KEYWORDS_SERBIA"
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Serbia\n"
-  fi
+  debug_start "Serbia"
 
   SERBIA=$(egrep -i "$KEYWORDS_SERBIA" newpages.txt | egrep -iv "$KEYWORDS_SERBIA_EXCLUDE")
 
   if [ "$SERBIA" != "" ];
   then
-    printf "$SERBIA" > Serbia.txt
+    printf "%s" "$SERBIA" > Serbia.txt
     export CATFILE="Serbia.txt"
     export CATNAME="Serbia"
     $CATEGORIZE
@@ -24,9 +21,6 @@ then
     unset SERBIA
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Serbia\n"
-  fi
+  debug_end "Serbia"
 
 fi

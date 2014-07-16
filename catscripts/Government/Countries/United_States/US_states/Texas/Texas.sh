@@ -12,10 +12,7 @@ KEYWORDS_HOUSTON_EXCLUDE="(Sam|Whitney)(| )Houston"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Texas\n"
-  fi
+  debug_start "Texas"
 
   TEXAS=$(egrep -i "$KEYWORDS_TEXAS" newpages.txt | egrep -iv "$KEYWORDS_TEXAS_EXCLUDE")
   DALLAS=$(egrep -i "$KEYWORDS_DALLAS" newpages.txt | egrep -iv "$KEYWORDS_DALLAS_EXCLUDE")
@@ -24,7 +21,7 @@ then
 
   if [ "$TEXAS" != "" ];
   then
-    printf "$TEXAS" > Texas.txt
+    printf "%s" "$TEXAS" > Texas.txt
     export CATFILE="Texas.txt"
     export CATNAME="Texas"
     $CATEGORIZE
@@ -34,7 +31,7 @@ then
 
   if [ "$DALLAS" != "" ];
   then
-    printf "$DALLAS" > Dallas.txt
+    printf "%s" "$DALLAS" > Dallas.txt
     export CATFILE="Dallas.txt"
     export CATNAME="Dallas"
     $CATEGORIZE
@@ -44,7 +41,7 @@ then
 
   if [ "$HOUSTON" != "" ];
   then
-    printf "$HOUSTON" > Houston.txt
+    printf "%s" "$HOUSTON" > Houston.txt
     export CATFILE="Houston.txt"
     export CATNAME="Houston"
     $CATEGORIZE
@@ -54,7 +51,7 @@ then
 
   if [ "$SANANTONIO" != "" ];
   then
-    printf "$SANANTONIO" > SanAntonio.txt
+    printf "%s" "$SANANTONIO" > SanAntonio.txt
     export CATFILE="SanAntonio.txt"
     export CATNAME="San Antonio"
     $CATEGORIZE
@@ -62,9 +59,6 @@ then
     unset SANANTONIO
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Texas\n"
-  fi
+  debug_end "Texas"
 
 fi

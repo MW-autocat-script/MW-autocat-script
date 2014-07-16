@@ -6,10 +6,7 @@ KEYWORDS_VERMONT_ALL="$KEYWORDS_VERMONT"
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Vermont\n"
-  fi
+  debug_start "Vermont"
 
   VERMONT=$(egrep -i "$KEYWORDS_VERMONT" newpages.txt)
 
@@ -23,9 +20,6 @@ then
     unset VERMONT
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Vermont\n"
-  fi
+  debug_end "Vermont"
 
 fi

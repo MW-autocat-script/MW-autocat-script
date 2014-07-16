@@ -5,16 +5,13 @@ KEYWORDS_IOWA="\bIowa"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Iowa\n"
-  fi
+  debug_start "Iowa"
 
   IOWA=$(egrep -i "$KEYWORDS_IOWA" newpages.txt)
 
   if [ "$IOWA" != "" ];
   then
-    printf "$IOWA" > Iowa.txt
+    printf "%s" "$IOWA" > Iowa.txt
     export CATFILE="Iowa.txt"
     export CATNAME="Iowa"
     $CATEGORIZE
@@ -22,9 +19,6 @@ then
     unset IOWA
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Iowa\n"
-  fi
+  debug_end "Iowa"
 
 fi

@@ -7,10 +7,7 @@ export KEYWORDS_MOVIES_TOYSTORY3="Toy(| )Story(| )3"
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Toy Story movies\n"
-  fi
+  debug_start "Toy Story movies"
 
   TOYSTORY="$(egrep -i "$KEYWORDS_MOVIES_TOYSTORY" newpages.txt | egrep -iv "$KEYWORDS_MOVIES_TOYSTORY2|$KEYWORDS_MOVIES_TOYSTORY3")"
 
@@ -48,9 +45,6 @@ then
     unset TSTHREE
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Toy Story movies\n"
-  fi
+  debug_end "Toy Story movies"
 
 fi

@@ -5,16 +5,13 @@ KEYWORDS_LIBYA="Libya|Ghadafi"
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Libya\n"
-  fi
+  debug_start "Libya"
 
   LIBYA=$(egrep -i "$KEYWORDS_LIBYA" newpages.txt)
 
   if [ "$LIBYA" != "" ];
   then
-    printf "$LIBYA" > Libya.txt
+    printf "%s" "$LIBYA" > Libya.txt
     export CATFILE="Libya.txt"
     export CATNAME="Libya"
     $CATEGORIZE
@@ -22,9 +19,6 @@ then
     unset LIBYA
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Libya\n"
-  fi
+  debug_end "Libya"
 
 fi

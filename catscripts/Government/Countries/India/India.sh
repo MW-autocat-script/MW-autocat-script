@@ -12,10 +12,7 @@ KEYWORDS_INDIA_EXCLUDE="$KEYWORDS_NEWDELHI|$KEYWORDS_MUMBAI|$KEYWORDS_KOLKATA|$K
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting India\n"
-  fi
+  debug_start "India"
 
   INDIA=$(egrep -i "$KEYWORDS_INDIA" newpages.txt | egrep -iv "$KEYWORDS_INDIA_EXCLUDE")
   NEWDELHI=$(egrep -i "$KEYWORDS_NEWDELHI" newpages.txt)
@@ -27,7 +24,7 @@ then
 
   if [ "$INDIA" != "" ];
   then
-    printf "$INDIA" > India.txt
+    printf "%s" "$INDIA" > India.txt
     export CATFILE="India.txt"
     export CATNAME="India"
     $CATEGORIZE
@@ -37,7 +34,7 @@ then
 
   if [ "$NEWDELHI" != "" ];
   then
-    printf "$NEWDELHI" > NewDelhi.txt
+    printf "%s" "$NEWDELHI" > NewDelhi.txt
     export CATFILE="NewDelhi.txt"
     export CATNAME="New Delhi"
     $CATEGORIZE
@@ -47,7 +44,7 @@ then
 
   if [ "$MUMBAI" != "" ];
   then
-    printf "$MUMBAI" > Mumbai.txt
+    printf "%s" "$MUMBAI" > Mumbai.txt
     export CATFILE="Mumbai.txt"
     export CATNAME="Mumbai"
     $CATEGORIZE
@@ -57,7 +54,7 @@ then
 
   if [ "$KOLKATA" != "" ];
   then
-    printf "$KOLKATA" > Kolkata.txt
+    printf "%s" "$KOLKATA" > Kolkata.txt
     export CATFILE="Kolkata.txt"
     export CATNAME="Kolkata"
     $CATEGORIZE
@@ -67,7 +64,7 @@ then
 
   if [ "$CHENNAI" != "" ];
   then
-    printf "$CHENNAI" > Chennai.txt
+    printf "%s" "$CHENNAI" > Chennai.txt
     export CATFILE="Chennai.txt"
     export CATNAME="Chennai"
     $CATEGORIZE
@@ -77,7 +74,7 @@ then
 
   if [ "$BANGALORE" != "" ];
   then
-    printf "$BANGALORE" > Bangalore.txt
+    printf "%s" "$BANGALORE" > Bangalore.txt
     export CATFILE="Bangalore.txt"
     export CATNAME="Bangalore"
     $CATEGORIZE
@@ -87,7 +84,7 @@ then
 
   if [ "$PUNE" != "" ];
   then
-    printf "$PUNE" > Pune.txt
+    printf "%s" "$PUNE" > Pune.txt
     export CATFILE="Pune.txt"
     export CATNAME="Pune"
     $CATEGORIZE
@@ -95,9 +92,6 @@ then
     unset PUNE
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing India\n"
-  fi
+  debug_end "India"
 
 fi

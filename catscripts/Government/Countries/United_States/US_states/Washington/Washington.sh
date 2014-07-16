@@ -6,16 +6,13 @@ KEYWORDS_WASHINGTON_EXCLUDE="(George|General|President|Martha|King|Abraham)(| )W
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Washington\n"
-  fi
+  debug_start "Washington"
 
   WASHINGTON=$(egrep -i "$KEYWORDS_WASHINGTON" newpages.txt | egrep -iv "$KEYWORDS_WASHINGTON_EXCLUDE")
 
   if [ "$WASHINGTON" != "" ];
   then
-    printf "$WASHINGTON" > Washington.txt
+    printf "%s" "$WASHINGTON" > Washington.txt
     export CATFILE="Washington.txt"
     export CATNAME="Washington"
     $CATEGORIZE
@@ -23,9 +20,6 @@ then
     unset WASHINGTON
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Washington\n"
-  fi
+  debug_end "Washington"
 
 fi

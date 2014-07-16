@@ -12,11 +12,13 @@ KEYWORDS_MIAMI_EXCLUDE="CSI(:|| )Miami|Miami(| )Dolphins|Miami(| )Marlins|Miami(
 if [ "$1" == "" ]; #Normal operation
 then
 
-  FLORIDA="$(egrep -i "$KEYWORDS_FLORIDA" newpages.txt | egrep -iv "$KEYWORDS_FLORIDA_EXCLUDE")"
-  ORLANDO="$(egrep -i "$KEYWORDS_ORLANDO" newpages.txt | egrep -iv "$KEYWORDS_ORLANDO_EXCLUDE")"
-  MIAMI="$(egrep -i "$KEYWORDS_MIAMI" newpages.txt | egrep -iv "$KEYWORDS_MIAMI_EXCLUDE")"
-  TAMPA="$(egrep -i "$KEYWORDS_TAMPA" newpages.txt)"
-  EVERGLADES="$(egrep -i "$KEYWORDS_EVERGLADES" newpages.txt)"
+  debug_start "Florida"
+
+  FLORIDA=$(egrep -i "$KEYWORDS_FLORIDA" newpages.txt | egrep -iv "$KEYWORDS_FLORIDA_EXCLUDE")
+  ORLANDO=$(egrep -i "$KEYWORDS_ORLANDO" newpages.txt | egrep -iv "$KEYWORDS_ORLANDO_EXCLUDE")
+  MIAMI=$(egrep -i "$KEYWORDS_MIAMI" newpages.txt | egrep -iv "$KEYWORDS_MIAMI_EXCLUDE")
+  TAMPA=$(egrep -i "$KEYWORDS_TAMPA" newpages.txt)
+  EVERGLADES=$(egrep -i "$KEYWORDS_EVERGLADES" newpages.txt)
 
   if [ "$FLORIDA" != "" ];
   then
@@ -67,5 +69,7 @@ then
     rm Everglades.txt
     unset EVERGLADES
   fi
+
+  debug_end "Florida"
 
 fi

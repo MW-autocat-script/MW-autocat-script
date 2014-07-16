@@ -7,12 +7,14 @@ KEYWORDS_OKLAHOMA_EXCLUDE="$KEYWORDS_OKLAHOMACITY"
 if [ "$1"  == "" ]; #Normal operation
 then
 
+  debug_start "Oklahoma"
+
   OKLAHOMA=$(egrep -i "$KEYWORDS_OKLAHOMA" newpages.txt | egrep -iv "$KEYWORDS_OKLAHOMA_EXCLUDE")
   OKCITY=$(egrep -i "$KEYWORDS_OKLAHOMACITY" newpages.txt)
 
   if [ "$OKLAHOMA" != "" ];
   then
-    printf "$OKLAHOMA" > Oklahoma.txt
+    printf "%s" "$OKLAHOMA" > Oklahoma.txt
     export CATFILE="Oklahoma.txt"
     export CATNAME="Oklahoma"
     $CATEGORIZE
@@ -22,12 +24,14 @@ then
 
   if [ "$OKCITY" != "" ];
   then
-    printf "$OKCITY" > OKCity.txt
+    printf "%s" "$OKCITY" > OKCity.txt
     export CATFILE="OKCity.txt"
     export CATNAME="Oklahoma City"
     $CATEGORIZE
     rm OKCity.txt
     unset OKCITY
   fi
+
+  debug_end "Oklahoma"
 
 fi

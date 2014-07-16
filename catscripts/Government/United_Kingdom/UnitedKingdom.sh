@@ -3,7 +3,7 @@
 KEYWORDS_UNITEDKINGDOM="United(| )Kingdom|\bUK\b|\bU\.K\b"
 KEYWORDS_UNITEDKINGDOM_EXCLUDE="England|Scotland|Wales|Northern(| )Ireland"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #normal operation
 then
 
   debug_start "United Kingdom"

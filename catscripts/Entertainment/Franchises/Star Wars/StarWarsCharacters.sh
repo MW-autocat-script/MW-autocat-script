@@ -32,32 +32,32 @@ then
 
   debug_start "Star Wars characters"
 
-  CADBANE="$(egrep -i "$KEYWORDS_CADBANE" newpages.txt)"
-  CHEWBACCA="$(egrep -i "$KEYWORDS_CHEWBACCA" newpages.txt)"
-  BOBAFETT="$(egrep -i "$KEYWORDS_BOBAFETT" newpages.txt)"
-  JANGOFETT="$(egrep -i "$KEYWORDS_JANGOFETT" newpages.txt)"
-  FISTO="$(egrep -i "$KEYWORDS_KITFISTO" newpages.txt)"
-  JABBA="$(egrep -i "$KEYWORDS_JABBA" newpages.txt)"
-  KENOBI="$(egrep -i "$KEYWORDS_KENOBI" newpages.txt)"
-  MAUL="$(egrep -i "$KEYWORDS_DARTHMAUL" newpages.txt)"
-  STARKILLER="$(egrep -i "$KEYWORDS_STARKILLER" newpages.txt)"
-  SIDIOUS="$(egrep -i "$KEYWORDS_SIDIOUS" newpages.txt)"
-  DOOKU="$(egrep -i "$KEYWORDS_DOOKU" newpages.txt)"
-  KOON="$(egrep -i "$KEYWORDS_PLOKOON" newpages.txt)"
-  R2D2="$(egrep -i "$KEYWORDS_R2D2" newpages.txt)"
-  REVAN="$(egrep -i "$KEYWORDS_REVAN" newpages.txt)"
-  VADER="$(egrep -i "$KEYWORDS_DARTHVADER" newpages.txt)"
-  LUKE="$(egrep -i "$KEYWORDS_LUKESKYWALKER" newpages.txt)"
-  MARA="$(egrep -i "$KEYWORDS_MARAJADE" newpages.txt)"
-  ANAKINSOLO="$(egrep -i "$KEYWORDS_ANAKINSOLO" newpages.txt)"
-  HANSOLO="$(egrep -i "$KEYWORDS_HANSOLO" newpages.txt)"
-  JACEN="$(egrep -i "$KEYWORDS_CAEDUS" newpages.txt)"
-  LEIA="$(egrep -i "$KEYWORDS_LEIA" newpages.txt)"
-  AHSOKA="$(egrep -i "$KEYWORDS_AHSOKA" newpages.txt)"
-  THREEPIO="$(egrep -i "$KEYWORDS_THREEPIO" newpages.txt)"
-  WINDU="$(egrep -i "$KEYWORDS_WINDU" newpages.txt)"
-  YODA="$(egrep -i "$KEYWORDS_YODA" newpages.txt)"
-  VENTRESS="$(egrep -i "$KEYWORDS_VENTRESS" newpages.txt)"
+  CADBANE=$(egrep -i "$KEYWORDS_CADBANE" newpages.txt)
+  CHEWBACCA=$(egrep -i "$KEYWORDS_CHEWBACCA" newpages.txt)
+  BOBAFETT=$(egrep -i "$KEYWORDS_BOBAFETT" newpages.txt)
+  JANGOFETT=$(egrep -i "$KEYWORDS_JANGOFETT" newpages.txt)
+  FISTO=$(egrep -i "$KEYWORDS_KITFISTO" newpages.txt)
+  JABBA=$(egrep -i "$KEYWORDS_JABBA" newpages.txt)
+  KENOBI=$(egrep -i "$KEYWORDS_KENOBI" newpages.txt)
+  MAUL=$(egrep -i "$KEYWORDS_DARTHMAUL" newpages.txt)
+  STARKILLER=$(egrep -i "$KEYWORDS_STARKILLER" newpages.txt)
+  SIDIOUS=$(egrep -i "$KEYWORDS_SIDIOUS" newpages.txt)
+  DOOKU=$(egrep -i "$KEYWORDS_DOOKU" newpages.txt)
+  KOON=$(egrep -i "$KEYWORDS_PLOKOON" newpages.txt)
+  R2D2=$(egrep -i "$KEYWORDS_R2D2" newpages.txt)
+  REVAN=$(egrep -i "$KEYWORDS_REVAN" newpages.txt)
+  VADER=$(egrep -i "$KEYWORDS_DARTHVADER" newpages.txt)
+  LUKE=$(egrep -i "$KEYWORDS_LUKESKYWALKER" newpages.txt)
+  MARA=$(egrep -i "$KEYWORDS_MARAJADE" newpages.txt)
+  ANAKINSOLO=$(egrep -i "$KEYWORDS_ANAKINSOLO" newpages.txt)
+  HANSOLO=$(egrep -i "$KEYWORDS_HANSOLO" newpages.txt)
+  JACEN=$(egrep -i "$KEYWORDS_CAEDUS" newpages.txt)
+  LEIA=$(egrep -i "$KEYWORDS_LEIA" newpages.txt)
+  AHSOKA=$(egrep -i "$KEYWORDS_AHSOKA" newpages.txt)
+  THREEPIO=$(egrep -i "$KEYWORDS_THREEPIO" newpages.txt)
+  WINDU=$(egrep -i "$KEYWORDS_WINDU" newpages.txt)
+  YODA=$(egrep -i "$KEYWORDS_YODA" newpages.txt)
+  VENTRESS=$(egrep -i "$KEYWORDS_VENTRESS" newpages.txt)
 
   if [ "$CADBANE" != "" ];
   then
@@ -250,7 +250,7 @@ then
 
   if [ "$HANSOLO" != "" ];
   then
-    printf "$HANSOLO" > HanSolo.txt
+    printf "%s" "$HANSOLO" > HanSolo.txt
     export CATFILE="HanSolo.txt"
     export CATNAME="Han Solo"
     $CATEGORIZE

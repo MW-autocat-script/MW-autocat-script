@@ -5,10 +5,7 @@ KEYWORDS_MISSOURI="Missouri"
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Missouri\n"
-  fi
+  debug_start "Missouri"
 
   MISSOURI="$(egrep -i "$KEYWORDS_MISSOURI" newpages.txt)"
 
@@ -22,9 +19,6 @@ then
     unset MISSOURI
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Missouri\n"
-  fi
+  debug_end "Missouri"
 
 fi

@@ -6,25 +6,20 @@ KEYWORDS_TUNISIA_ALL="$KEYWORDS_TUNISIA"
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Tunisia\n"
-  fi
+  debug_start "Tunisia"
 
   TUNISIA=$(egrep -i "$KEYWORDS_TUNISIA" newpages.txt)
 
   if [ "$TUNISIA" != "" ];
   then
+    printf "%s" "$TUNISIA" > Tunisia.txt
     export CATFILE="Tunisia.txt"
     export CATNAME="Tunisia"
     $CATEGORIZE
     rm Tunisia.txt
+    unset TUNISIA
   fi
 
-
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Tunisia\n"
-  fi
+  debug_end "Tunisia"
 
 fi

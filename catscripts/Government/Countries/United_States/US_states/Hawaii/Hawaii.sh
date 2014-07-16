@@ -8,10 +8,7 @@ KEYWORDS_HAWAII_EXCLUDE="$KEYWORDS_HONOLULU|$KEYWORDS_PEARLHARBOR"
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Hawaii\n"
-  fi
+  debug_start "Hawaii"
 
   HAWAII=$(egrep -i "$KEYWORDS_HAWAII" newpages.txt | egrep -iv "$KEYWORDS_HAWAII_EXCLUDE")
   HONOLULU=$(egrep -i "$KEYWORDS_HONOLULU" newpages.txt)
@@ -19,7 +16,7 @@ then
 
   if [ "$HAWAII" != "" ];
   then
-    printf "$HAWAII" > Hawaii.txt
+    printf "%s" "$HAWAII" > Hawaii.txt
     export CATFILE="Hawaii.txt"
     export CATNAME="Hawaii"
     $CATEGORIZE
@@ -29,7 +26,7 @@ then
 
   if [ "$HONOLULU" != "" ];
   then
-    printf "$HONOLULU" > Honolulu.txt
+    printf "%s" "$HONOLULU" > Honolulu.txt
     export CATFILE="Honolulu.txt"
     export CATNAME="Honolulu"
     $CATEGORIZE
@@ -39,7 +36,7 @@ then
 
   if [ "$PEARLHARBOR" != "" ];
   then
-    printf "$PEARLHARBOR" > PearlHarbor.txt
+    printf "%s" "$PEARLHARBOR" > PearlHarbor.txt
     export CATFILE="PearlHarbor.txt"
     export CATNAME="Pearl Harbor"
     $CATEGORIZE
@@ -47,9 +44,6 @@ then
     unset PEARLHARBOR
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Hawaii\n"
-  fi
+  debug_end "Hawaii"
 
 fi

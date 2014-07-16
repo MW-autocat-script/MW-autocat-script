@@ -13,6 +13,8 @@ KEYWORDS_SOVIET_EXCLUDE="$KEYWORDS_STALIN"
 if [ "$1" == "" ]; #Normal operation
 then
 
+  debug_start "Russia"
+
   RUSSIA=$(egrep -i "$KEYWORDS_RUSSIA" newpages.txt | egrep -iv "$KEYWORDS_RUSSIA_EXCLUDE")
   MOSCOW=$(egrep -i "$KEYWORDS_MOSCOW" newpages.txt | egrep -iv "$KEYWORDS_MOSCOW_EXCLUDE")
   SOVIET=$(egrep -i "$KEYWORDS_SOVIET" newpages.txt | egrep -iv "$KEYWORDS_SOVIET_EXCLUDE")
@@ -21,7 +23,7 @@ then
 
   if [ "$RUSSIA" != "" ];
   then
-    printf "$RUSSIA" > Russia.txt
+    printf "%s" "$RUSSIA" > Russia.txt
     export CATFILE="Russia.txt"
     export CATNAME="Russia"
     $CATEGORIZE
@@ -31,7 +33,7 @@ then
 
   if [ "$MOSCOW" != "" ];
   then
-    printf "$MOSCOW" > Moscow.txt
+    printf "%s" "$MOSCOW" > Moscow.txt
     export CATFILE="Moscow.txt"
     export CATNAME="Moscow"
     $CATEGORIZE
@@ -41,7 +43,7 @@ then
 
   if [ "$SOVIET" != "" ];
   then
-    printf "$SOVIET" > SovietUnion.txt
+    printf "%s" "$SOVIET" > SovietUnion.txt
     export CATFILE="SovietUnion.txt"
     export CATNAME="Soviet Union"
     $CATEGORIZE
@@ -51,7 +53,7 @@ then
 
   if [ "$STALIN" != "" ];
   then
-    printf "$STALIN" > Stalin.txt
+    printf "%s" "$STALIN" > Stalin.txt
     export CATFILE="Stalin.txt"
     export CATNAME="Joseph Stalin"
     $CATEGORIZE
@@ -61,12 +63,14 @@ then
 
   if [ "$LENIN" != "" ];
   then
-    printf "$LENIN" > Lenin.txt
+    printf "%s" "$LENIN" > Lenin.txt
     export CATFILE="Lenin.txt"
     export CATNAME="Vladimir Lenin"
     $CATEGORIZE
     rm Lenin.txt
     unset LENIN
   fi
+
+  debug_end "Russia"
 
 fi

@@ -5,17 +5,13 @@ KEYWORDS_DOCTORWHO="Doctor(| )Who|Dr(|\.)(| )Who|[0-9]{1,2}(th|st|rd|nd)(| )doct
 if [ "$1" == "" ]; #Normal operation
 then
 
+  debug_start "Doctor Who"
+
   DOCTORWHO=$(egrep -i "$KEYWORDS_DOCTORWHO" newpages.txt)
-
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Doctor Who\n"
-  fi
-
 
   if [ "$DOCTORWHO" != "" ];
   then
-    printf "$DOCTORWHO" > DoctorWho.txt
+    printf "%s" "$DOCTORWHO" > DoctorWho.txt
     export CATFILE="DoctorWho.txt"
     export CATNAME="Doctor Who"
     $CATEGORIZE
@@ -23,9 +19,6 @@ then
     unset DOCTORWHO
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Doctor Who\n"
-  fi
+  debug_end "Doctor Who"
 
 fi

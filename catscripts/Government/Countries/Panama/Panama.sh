@@ -9,10 +9,7 @@ KEYWORDS_PANAMA_EXCLUDE="$KEYWORDS_PANAMACANAL|$KEYWORDS_PANAMACITY"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Panama\n"
-  fi
+  debug_start "Panama"
 
   PANAMA=$(egrep -i "$KEYWORDS_PANAMA" newpages.txt | egrep -iv "$KEYWORDS_PANAMA_EXCLUDE")
   PANAMACANAL=$(egrep -i "$KEYWORDS_PANAMACANAL" newpages.txt)
@@ -20,7 +17,7 @@ then
 
   if [ "$PANAMA" != "" ];
   then
-    printf "$PANAMA" > Panama.txt
+    printf "%s" "$PANAMA" > Panama.txt
     export CATFILE="Panama.txt"
     export CATNAME="Panama"
     $CATEGORIZE
@@ -30,7 +27,7 @@ then
 
   if [ "$PANAMACANAL" != "" ];
   then
-    printf "$PANAMACANAL" > PanamaCanal.txt
+    printf "%s" "$PANAMACANAL" > PanamaCanal.txt
     export CATFILE="PanamaCanal.txt"
     export CATNAME="Panama Canal"
     $CATEGORIZE
@@ -40,7 +37,7 @@ then
 
   if [ "$PANAMACITY" != "" ];
   then
-    printf "$PANAMACANAL" > PanamaCity.txt
+    printf "%s" "$PANAMACANAL" > PanamaCity.txt
     export CATFILE="PanamaCity.txt"
     export CATNAME="Panama City, Panama"
     $CATEGORIZE
@@ -48,9 +45,6 @@ then
     unset PANAMACITY
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Panama\n"
-  fi
+  debug_end "Panama"
 
 fi

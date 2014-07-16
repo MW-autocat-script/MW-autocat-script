@@ -15,7 +15,7 @@ then
 
   if [ "$SONIC" != "" ];
   then
-    printf "$SONIC" > Sonic.txt
+    printf "%s" "$SONIC" > Sonic.txt
     export CATFILE="Sonic.txt"
     export CATNAME="Sonic the Hedgehog franchise"
     $CATEGORIZE

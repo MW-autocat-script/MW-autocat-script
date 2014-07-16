@@ -5,16 +5,13 @@ KEYWORDS_PUERTORICO="Puerto(| )Rico|Puerto(| )Rican"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Puerto Rico\n"
-  fi
+  debug_start "Puerto Rico"
 
   PUERTORICO=$(egrep -i "$KEYWORDS_PUERTORICO" newpages.txt)
 
   if [ "$PUERTORICO" != "" ];
   then
-    printf "$PUERTORICO" > PuertoRico.txt
+    printf "%s" "$PUERTORICO" > PuertoRico.txt
     export CATFILE="PuertoRico.txt"
     export CATNAME="Puerto Rico"
     $CATEGORIZE
@@ -22,9 +19,6 @@ then
     unset PUERTORICO
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Puerto Rico\n"
-  fi
+  debug_end "Puerto Rico"
 
 fi

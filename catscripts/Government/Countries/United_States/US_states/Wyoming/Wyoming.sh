@@ -6,10 +6,7 @@ KEYWORDS_WYOMING_ALL="$KEYWORDS_WYOMING"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Wyoming\n"
-  fi
+  debug_start "Wyoming"
 
   WYOMING="$(egrep -i "$KEYWORDS_WYOMING" newpages.txt)"
 
@@ -23,9 +20,6 @@ then
     unset WYOMING
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Wyoming\n"
-  fi
+  debug_end "Wyoming"
 
 fi

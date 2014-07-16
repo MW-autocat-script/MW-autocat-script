@@ -10,13 +10,15 @@ KEYWORDS_CHICAGO_EXCLUDE="Chicago(| )Bulls"
 if [ "$1" == "" ]; #Normal operation
 then
 
+  debug_start "Illinois"
+
   ILLINOIS=$(egrep -i "$KEYWORDS_ILLINOIS" newpages.txt | egrep -iv "$KEYWORDS_ILLINOIS_EXCLUDE")
   SPRINGFIELD=$(egrep -i "$KEYWORDS_SPRINGFIELD" newpages.txt)
   CHICAGO=$(egrep -i "$KEYWORDS_CHICAGO" newpages.txt | egrep -iv "$KEYWORDS_CHICAGO_EXCLUDE")
 
   if [ "$ILLINOIS" != "" ];
   then
-    printf "$ILLINOIS" > Illinois.txt
+    printf "%s" "$ILLINOIS" > Illinois.txt
     export CATFILE="Illinois.txt"
     export CATNAME="Illinois"
     $CATEGORIZE
@@ -26,7 +28,7 @@ then
 
   if [ "$SPRINGFIELD" != "" ];
   then
-    printf "$SPRINGFIELD" > Springfield.txt
+    printf "%s" "$SPRINGFIELD" > Springfield.txt
     export CATFILE="Springfield.txt"
     export CATNAME="Springfield, Illinois"
     $CATEGORIZE
@@ -36,12 +38,14 @@ then
 
   if [ "$CHICAGO" != "" ];
   then
-    printf "$CHICAGO" > Chicago.txt
+    printf "%s" "$CHICAGO" > Chicago.txt
     export CATFILE="Chicago.txt"
     export CATNAME="Chicago"
     $CATEGORIZE
     rm Chicago.txt
     unset CHICAGO
   fi
+
+  debug_end "Illinois"
 
 fi

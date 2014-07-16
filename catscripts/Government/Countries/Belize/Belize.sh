@@ -6,10 +6,7 @@ KEYWORDS_BELIZE_ALL="$KEYWORDS_BELIZE"
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Belize\n"
-  fi
+  debug_start "Belize"
 
   BELIZE="$(egrep -i "$KEYWORDS_BELIZE" newpages.txt)"
 
@@ -23,9 +20,6 @@ then
     unset BELIZE
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Belize\n"
-  fi
+  debug_end "Belize"
 
 fi

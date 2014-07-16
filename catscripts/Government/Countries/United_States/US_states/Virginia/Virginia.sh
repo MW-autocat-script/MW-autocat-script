@@ -9,10 +9,7 @@ KEYWORDS_VIRGINIA_ALL="$KEYWORDS_VIRGINIA|$KEYWORDS_ARLINGTON|$KEYWORDS_JAMESTOW
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Virginia\n"
-  fi
+  debug_start "Virginia"
 
   VIRGINIA="$(egrep -i "$KEYWORDS_VIRGINIA" newpages.txt | egrep -iv "$KEYWORDS_VIRGINIA_EXCLUDE")"
   ARLINGTON="$(egrep -i "$KEYWORDS_ARLINGTON" newpages.txt)"
@@ -48,9 +45,6 @@ then
     unset JAMESTOWN
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Virginia\n"
-  fi
+  debug_end "Virginia"
 
 fi

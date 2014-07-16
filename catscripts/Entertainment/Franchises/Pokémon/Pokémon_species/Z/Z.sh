@@ -14,10 +14,7 @@ KEYWORDS_POKEMONSPECIES_Z="$KEYWORDS_ZANGOOSE|$KEYWORDS_ZAPDOS|$KEYWORDS_ZEBSTRI
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Pokemon Z script\n"
-  fi
+  debug_start "Pokemon Z script"
 
   ZANGOOSE="$(egrep -i "$KEYWORDS_ZANGOOSE" newpages.txt)"
   ZAPDOS="$(egrep -i "$KEYWORDS_ZAPDOS" newpages.txt)"
@@ -119,9 +116,6 @@ then
     unset ZUBAT
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Pokemon Z script\n"
-  fi
+  debug_end "Pokemon Z script"
 
 fi

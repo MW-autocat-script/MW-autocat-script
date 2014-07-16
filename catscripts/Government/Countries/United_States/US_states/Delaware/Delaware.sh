@@ -2,14 +2,23 @@
 
 KEYWORDS_DELAWARE="Delaware"
 
-DELAWARE=$(egrep -i "$KEYWORDS_DELAWARE" newpages.txt)
-
-if [ "$DELAWARE" != "" ];
+if [ "$1" == "" ];
 then
-  egrep -i "$KEYWORDS_DELAWARE" newpages.txt >> Delaware.txt
-  export CATFILE="Delaware.txt"
-  export CATNAME="Delaware"
-  $CATEGORIZE
-  rm Delaware.txt
-  unset DELAWARE
+
+  debug_start "Delaware"
+
+  DELAWARE=$(egrep -i "$KEYWORDS_DELAWARE" newpages.txt)
+
+  if [ "$DELAWARE" != "" ];
+  then
+    printf "%s" "$DELAWARE" > Delaware.txt
+    export CATFILE="Delaware.txt"
+    export CATNAME="Delaware"
+    $CATEGORIZE
+    rm Delaware.txt
+    unset DELAWARE
+  fi
+
+  debug_end "Delaware"
+
 fi

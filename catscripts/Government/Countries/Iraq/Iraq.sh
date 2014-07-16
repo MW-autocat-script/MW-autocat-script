@@ -8,10 +8,7 @@ KEYWORDS_IRAQ_ALL="$KEYWORDS_IRAQ|$KEYWORDS_BAGHDAD"
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Iraq\n"
-  fi
+  debug_start "Iraq"
 
   IRAQ="$(egrep -i "$KEYWORDS_IRAQ" newpages.txt | egrep -iv "$KEYWORDS_IRAQ_EXCLUDE")"
   BAGHDAD="$(egrep -i "$KEYWORDS_BAGHDAD" newpages.txt)"
@@ -36,9 +33,6 @@ then
     unset BAGHDAD
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Iraq\n"
-  fi
+  debug_end "Iraq"
 
 fi

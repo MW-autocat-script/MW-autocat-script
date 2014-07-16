@@ -1,9 +1,11 @@
 #!/bin/bash
 
-KEYWORDS_NEWJERSEY="New(| )Jersey"
+KEYWORDS_NEWJERSEY="New(| )Jersey|,(| )NJ\b"
 
 if [ "$1" == "" ];
 then
+
+  debug_start "New Jersey"
 
   NEWJERSEY=$(egrep -i "$KEYWORDS_NEWJERSEY" newpages.txt)
 

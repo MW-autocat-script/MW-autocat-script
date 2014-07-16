@@ -16,10 +16,7 @@ KEYWORDS_ITALY_EXCLUDE="$KEYWORDS_ROME|$KEYWORDS_ROME_EXCLUDE|$KEYWORDS_PISA|$KE
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Italy\n"
-  fi
+  debug_start "Italy"
 
   ITALY=$(egrep -i "$KEYWORDS_ITALY" newpages.txt | egrep -iv "$KEYWORDS_ITALY_EXCLUDE")
   ROME=$(egrep -i "$KEYWORDS_ROME" newpages.txt | egrep -iv "$KEYWORDS_ROME_EXCLUDE")
@@ -32,7 +29,7 @@ then
 
   if [ "$ITALY" != "" ];
   then
-    printf "$ITALY" > Italy.txt
+    printf "%s" "$ITALY" > Italy.txt
     export CATFILE="Italy.txt"
     export CATNAME="Italy"
     $CATEGORIZE
@@ -42,7 +39,7 @@ then
 
   if [ "$ROME" != "" ];
   then
-    printf "$ROME" > Rome.txt
+    printf "%s" "$ROME" > Rome.txt
     export CATFILE="Rome.txt"
     export CATNAME="Rome"
     $CATEGORIZE
@@ -52,7 +49,7 @@ then
 
   if [ "$ANCIENTROME" != "" ];
   then
-    printf "$ANCIENTROME" > AncientRome.txt
+    printf "%s" "$ANCIENTROME" > AncientRome.txt
     export CATFILE="AncientRome.txt"
     export CATNAME="Ancient Rome"
     $CATEGORIZE
@@ -62,7 +59,7 @@ then
 
   if [ "$PISA" != "" ];
   then
-    printf "$PISA" > Pisa.txt
+    printf "%s" "$PISA" > Pisa.txt
     export CATFILE="Pisa.txt"
     export CATNAME="Pisa, Italy"
     $CATEGORIZE
@@ -72,7 +69,7 @@ then
 
   if [ "$POMPEII" != "" ];
   then
-    printf "$POMPEII" > Pompeii.txt
+    printf "%s" "$POMPEII" > Pompeii.txt
     export CATFILE="Pompeii.txt"
     export CATNAME="Pompeii"
     $CATEGORIZE
@@ -82,7 +79,7 @@ then
 
   if [ "$JCAESAR" != "" ];
   then
-    printf "$JCAESAR" > JuliusCaesar.txt
+    printf "%s" "$JCAESAR" > JuliusCaesar.txt
     export CATFILE="JuliusCaesar.txt"
     export CATNAME="Julius Caesar"
     $CATEGORIZE
@@ -92,7 +89,7 @@ then
 
   if [ "$VENICE" != "" ];
   then
-    printf "$VENICE" > Venice.txt
+    printf "%s" "$VENICE" > Venice.txt
     export CATFILE="Venice.txt"
     export CATNAME="Venice"
     $CATEGORIZE
@@ -102,7 +99,7 @@ then
 
   if [ "$MILAN" != "" ];
   then
-    printf "$MILAN" > Milan.txt
+    printf "%s" "$MILAN" > Milan.txt
     export CATFILE="Milan.txt"
     export CATNAME="Milan"
     $CATEGORIZE
@@ -110,9 +107,6 @@ then
     unset MILAN
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Italy\n"
-  fi
+  debug_end "Italy"
 
 fi

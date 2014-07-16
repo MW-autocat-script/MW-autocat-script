@@ -40,6 +40,8 @@ KEYWORDS_POKEMONSPECIES_B="$KEYWORDS_BAGON|$KEYWORDS_BALTOY|$KEYWORDS_BANETTE|$K
 if [ "$1" == "" ]; #Normal operation
 then
 
+  debug_start "Pokemon B script"
+
   BAGON=$(egrep -i "$KEYWORDS_BAGON" newpages.txt)
   BALTOY=$(egrep -i "$KEYWORDS_BALTOY" newpages.txt)
   BANETTE=$(egrep -i "$KEYWORDS_BANETTE" newpages.txt)
@@ -78,7 +80,7 @@ then
 
   if [ "$BAGON" != "" ];
   then
-    printf "$BAGON" > Bagon.txt
+    printf "%s" "$BAGON" > Bagon.txt
     export CATFILE="Bagon.txt"
     export CATNAME="Bagon"
     $CATEGORIZE
@@ -88,7 +90,7 @@ then
 
   if [ "$BALTOY" != "" ];
   then
-    printf "$BALTOY" > Baltoy.txt
+    printf "%s" "$BALTOY" > Baltoy.txt
     export CATFILE="Baltoy.txt"
     export CATNAME="Baltoy"
     $CATEGORIZE
@@ -98,7 +100,7 @@ then
 
   if [ "$BANETTE" != "" ];
   then
-    printf "$BANETTE" > Banette.txt
+    printf "%s" "$BANETTE" > Banette.txt
     export CATFILE="Banette.txt"
     export CATNAME="Banette"
     $CATEGORIZE
@@ -108,7 +110,7 @@ then
 
   if [ "$BARBOACH" != "" ];
   then
-    printf "$BARBOACH" > Barboach.txt
+    printf "%s" "$BARBOACH" > Barboach.txt
     export CATFILE="Barboach.txt"
     export CATNAME="Barboach"
     $CATEGORIZE
@@ -118,7 +120,7 @@ then
 
   if [ "$BASCULIN" != "" ];
   then
-    printf "$BASCULIN" > Basculin.txt
+    printf "%s" "$BASCULIN" > Basculin.txt
     export CATFILE="Basculin.txt"
     export CATNAME="Basculin"
     $CATEGORIZE
@@ -128,7 +130,7 @@ then
 
   if [ "$BASTIODON" != "" ];
   then
-    printf "$BASTIODON" > Bastiodon.txt
+    printf "%s" "$BASTIODON" > Bastiodon.txt
     export CATFILE="Bastiodon.txt"
     export CATNAME="Bastiodon"
     $CATEGORIZE
@@ -138,7 +140,7 @@ then
 
   if [ "$BAYLEEF" != "" ];
   then
-    printf "$BAYLEEF" > Bayleef.txt
+    printf "%s" "$BAYLEEF" > Bayleef.txt
     export CATFILE="Bayleef.txt"
     export CATNAME="Bayleef"
     $CATEGORIZE
@@ -148,7 +150,7 @@ then
 
   if [ "$BEARTIC" != "" ];
   then
-    printf "$BEARTIC" > Beartic.txt
+    printf "%s" "$BEARTIC" > Beartic.txt
     export CATFILE="Beartic.txt"
     export CATNAME="Beartic"
     $CATEGORIZE
@@ -158,7 +160,7 @@ then
 
   if [ "$BEAUTIFLY" != "" ];
   then
-    printf "$BEAUTIFLY" > Beautifly.txt
+    printf "%s" "$BEAUTIFLY" > Beautifly.txt
     export CATFILE="Beautifly.txt"
     export CATNAME="Beautifly"
     $CATEGORIZE
@@ -168,7 +170,7 @@ then
 
   if [ "$BEEDRILL" != "" ];
   then
-    printf "$BEEDRILL" > Beedrill.txt
+    printf "%s" "$BEEDRILL" > Beedrill.txt
     export CATFILE="Beedrill.txt"
     export CATNAME="Beedrill"
     $CATEGORIZE
@@ -178,7 +180,7 @@ then
 
   if [ "$BEHEEYEM" != "" ];
   then
-    printf "$BEHEEYEM" > Beheeyem.txt
+    printf "%s" "$BEHEEYEM" > Beheeyem.txt
     export CATFILE="Beheeyem.txt"
     export CATNAME="Beheeyem"
     $CATEGORIZE
@@ -188,7 +190,7 @@ then
 
   if [ "$BELDUM" != "" ];
   then
-    printf "$BELDUM" > Beldum.txt
+    printf "%s" "$BELDUM" > Beldum.txt
     export CATFILE="Beldum.txt"
     export CATNAME="Beldum"
     $CATEGORIZE
@@ -198,7 +200,7 @@ then
 
   if [ "$BELLOSSOM" != "" ];
   then
-    printf "$BELLOSSOM" > Bellossom.txt
+    printf "%s" "$BELLOSSOM" > Bellossom.txt
     export CATFILE="Bellossom.txt"
     export CATNAME="Bellossom"
     $CATEGORIZE
@@ -208,7 +210,7 @@ then
 
   if [ "$BELLSPROUT" != "" ];
   then
-    printf "$BELLSPROUT" > Bellsprout.txt
+    printf "%s" "$BELLSPROUT" > Bellsprout.txt
     export CATFILE="Bellsprout.txt"
     export CATNAME="Bellsprout"
     $CATEGORIZE
@@ -218,7 +220,7 @@ then
 
   if [ "$BIBAREL" != "" ];
   then
-    printf "$BIBAREL" > Bibarel.txt
+    printf "%s" "$BIBAREL" > Bibarel.txt
     export CATFILE="Bibarel.txt"
     export CATNAME="Bibarel"
     $CATEGORIZE
@@ -228,7 +230,7 @@ then
 
   if [ "$BIDOOF" != "" ];
   then
-    printf "$BIDOOF" > Bidoof.txt
+    printf "%s" "$BIDOOF" > Bidoof.txt
     export CATFILE="Bidoof.txt"
     export CATNAME="Bidoof"
     $CATEGORIZE
@@ -238,7 +240,7 @@ then
 
   if [ "$BISHARP" != "" ];
   then
-    printf "$BISHARP" > Bisharp.txt
+    printf "%s" "$BISHARP" > Bisharp.txt
     export CATFILE="Bisharp.txt"
     export CATNAME="Bisharp"
     $CATEGORIZE
@@ -248,7 +250,7 @@ then
 
   if [ "$BLASTOISE" != "" ];
   then
-    printf "$BLASTOISE" > Blastoise.txt
+    printf "%s" "$BLASTOISE" > Blastoise.txt
     export CATFILE="Blastoise.txt"
     export CATNAME="Blastoise"
     $CATEGORIZE
@@ -258,7 +260,7 @@ then
 
   if [ "$BLAZIKEN" != "" ];
   then
-    printf "$BLAZIKEN" > Blaziken.txt
+    printf "%s" "$BLAZIKEN" > Blaziken.txt
     export CATFILE="Blaziken.txt"
     export CATNAME="Blaziken"
     $CATEGORIZE
@@ -268,7 +270,7 @@ then
 
   if [ "$BLISSEY" != "" ];
   then
-    printf "$BLISSEY" > Blissey.txt
+    printf "%s" "$BLISSEY" > Blissey.txt
     export CATFILE="Blissey.txt"
     export CATNAME="Blissey"
     $CATEGORIZE
@@ -278,7 +280,7 @@ then
 
   if [ "$BLITZLE" != "" ];
   then
-    printf "$BLITZLE" > Blitzle.txt
+    printf "%s" "$BLITZLE" > Blitzle.txt
     export CATFILE="Blitzle.txt"
     export CATNAME="Blitzle"
     $CATEGORIZE
@@ -288,7 +290,7 @@ then
 
   if [ "$BOLDORE" != "" ];
   then
-    printf "$BOLDORE" > Boldore.txt
+    printf "%s" "$BOLDORE" > Boldore.txt
     export CATFILE="Boldore.txt"
     export CATNAME="Boldore"
     $CATEGORIZE
@@ -298,7 +300,7 @@ then
 
   if [ "$BONSLY" != "" ];
   then
-    printf "$BONSLY" > Bonsly.txt
+    printf "%s" "$BONSLY" > Bonsly.txt
     export CATFILE="Bonsly.txt"
     export CATNAME="Bonsly"
     $CATEGORIZE
@@ -308,7 +310,7 @@ then
 
   if [ "$BOUFFALANT" != "" ];
   then
-    printf "$BOUFFALANT" > Bouffalant.txt
+    printf "%s" "$BOUFFALANT" > Bouffalant.txt
     export CATFILE="Bouffalant.txt"
     export CATNAME="Bouffalant"
     $CATEGORIZE
@@ -318,7 +320,7 @@ then
 
   if [ "$BRAVIARY" != "" ];
   then
-    printf "$BRAVIARY" > Braviary.txt
+    printf "%s" "$BRAVIARY" > Braviary.txt
     export CATFILE="Braviary.txt"
     export CATNAME="Braviary"
     $CATEGORIZE
@@ -328,7 +330,7 @@ then
 
   if [ "$BRELOOM" != "" ];
   then
-    printf "$BRELOOM" > Breloom.txt
+    printf "%s" "$BRELOOM" > Breloom.txt
     export CATFILE="Breloom.txt"
     export CATNAME="Breloom"
     $CATEGORIZE
@@ -338,7 +340,7 @@ then
 
   if [ "$BRONZONG" != "" ];
   then
-    printf "$BRONZONG" > Bronzong.txt
+    printf "%s" "$BRONZONG" > Bronzong.txt
     export CATFILE="Bronzong.txt"
     export CATNAME=""
     $CATEGORIZE
@@ -348,7 +350,7 @@ then
 
   if [ "$BRONZOR" != "" ];
   then
-    printf "$BRONZOR" > Bronzor.txt
+    printf "%s" "$BRONZOR" > Bronzor.txt
     export CATFILE="Bronzor.txt"
     export CATNAME="Bronzor"
     $CATEGORIZE
@@ -358,7 +360,7 @@ then
 
   if [ "$BUDEW" != "" ];
   then
-    printf "$BUDEW" > Budew.txt
+    printf "%s" "$BUDEW" > Budew.txt
     export CATFILE="Budew.txt"
     export CATNAME="Budew"
     $CATEGORIZE
@@ -368,7 +370,7 @@ then
 
   if [ "$BUIZEL" != "" ];
   then
-    printf "$BUIZEL" > Buizel.txt
+    printf "%s" "$BUIZEL" > Buizel.txt
     export CATFILE="Buizel.txt"
     export CATNAME="Buizel"
     $CATEGORIZE
@@ -378,7 +380,7 @@ then
 
   if [ "$BULBASAUR" != "" ];
   then
-    printf "$BULBASAUR" > Bulbasaur.txt
+    printf "%s" "$BULBASAUR" > Bulbasaur.txt
     export CATFILE="Bulbasaur.txt"
     export CATNAME="Bulbasaur"
     $CATEGORIZE
@@ -388,7 +390,7 @@ then
 
   if [ "$BUNEARY" != "" ];
   then
-    printf "$BUNEARY" > Buneary.txt
+    printf "%s" "$BUNEARY" > Buneary.txt
     export CATFILE="Buneary.txt"
     export CATNAME="Buneary"
     $CATEGORIZE
@@ -398,7 +400,7 @@ then
 
   if [ "$BURMY" != "" ];
   then
-    printf "$BURMY" > Burmy.txt
+    printf "%s" "$BURMY" > Burmy.txt
     export CATFILE="Burmy.txt"
     export CATNAME="Burmy"
     $CATEGORIZE
@@ -408,12 +410,14 @@ then
 
   if [ "$BUTTERFREE" != "" ];
   then
-    printf "$BUTTERFREE" > Butterfree.txt
+    printf "%s" "$BUTTERFREE" > Butterfree.txt
     export CATFILE="Butterfree.txt"
     export CATNAME="Butterfree"
     $CATEGORIZE
     rm Butterfree.txt
     unset BUTTERFREE
   fi
+
+  debug_end "Pokemon B script"
 
 fi

@@ -20,4 +20,6 @@ then
     unset AUSTRIA
   fi
 
+  debug_end "Austria"
+
 fi

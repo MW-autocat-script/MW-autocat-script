@@ -1,20 +1,17 @@
 #!/bin/bash
 
-KEYWORDS_ARGENTINA="Argentina|Aregentina"
+KEYWORDS_ARGENTINA="Ar(|e)gentina"
 
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Argentina\n"
-  fi
+  debug_start "Argentina"
 
   ARGENTINA=$(egrep -i "$KEYWORDS_ARGENTINA" newpages.txt)
 
   if [ "$ARGENTINA" != "" ];
   then
-    printf "$ARGENTINA" > Argentina.txt
+    printf "%s" "$ARGENTINA" > Argentina.txt
     export CATFILE="Argentina.txt"
     export CATNAME="Argentina"
     $CATEGORIZE
@@ -22,10 +19,6 @@ then
     unset ARGENTINA
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Argentina\n"
-  fi
-
+  debug_end "Argentina"
 
 fi

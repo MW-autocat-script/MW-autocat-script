@@ -15,10 +15,7 @@ KEYWORDS_GERMANY_ALL="$KEYWORDS_GERMANY|$KEYWORDS_NAZIGERMANY|$KEYWORDS_HITLER|$
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Germany\n"
-  fi
+  debug_start "Germany"
 
   GERMANY=$(egrep -i "$KEYWORDS_GERMANY" newpages.txt | egrep -iv "$KEYWORDS_GERMANY_EXCLUDE")
   NAZI=$(egrep -i "$KEYWORDS_NAZIGERMANY" newpages.txt | egrep -iv "$KEYWORDS_NAZIGERMANY_EXCLUDE")
@@ -28,7 +25,7 @@ then
 
   if [ "$GERMANY" != "" ];
   then
-    printf "$GERMANY" > Germany.txt
+    printf "%s" "$GERMANY" > Germany.txt
     export CATFILE="Germany.txt"
     export CATNAME="Germany"
     $CATEGORIZE
@@ -38,8 +35,8 @@ then
 
   if [ "$NAZI" != "" ] || [ "$NAZISECONDARY" != "" ];
   then
-    printf "$NAZI" > NaziGermany.txt
-    printf "$NAZISECONDARY" >> NaziGermany.txt
+    printf "%s" "$NAZI" > NaziGermany.txt
+    printf "%s" "$NAZISECONDARY" >> NaziGermany.txt
     export CATFILE="NaziGermany.txt"
     export CATNAME="Nazi Germany"
     $CATEGORIZE
@@ -50,7 +47,7 @@ then
 
   if [ "$HITLER" != "" ];
   then
-    printf "$HITLER" > AdolfHitler.txt
+    printf "%s" "$HITLER" > AdolfHitler.txt
     export CATFILE="AdolfHitler.txt"
     export CATNAME="Adolf Hitler"
     $CATEGORIZE
@@ -60,7 +57,7 @@ then
 
   if [ "$BERLIN" != "" ];
   then
-    printf "$BERLIN" > Berlin.txt
+    printf "%s" "$BERLIN" > Berlin.txt
     export CATFILE="Berlin.txt"
     export CATNAME="Berlin"
     $CATEGORIZE
@@ -68,9 +65,6 @@ then
     unset BERLIN
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Germany\n"
-  fi
+  debug_end "Germany"
 
 fi

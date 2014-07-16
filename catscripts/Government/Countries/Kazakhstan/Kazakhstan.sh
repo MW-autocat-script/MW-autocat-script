@@ -5,16 +5,13 @@ KEYWORDS_KAZAKHSTAN="Kazakhstan"
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Kazakhstan\n"
-  fi
+  debug_start "Kazakhstan"
 
   KAZAKHSTAN=$(egrep -i "$KEYWORDS_KAZAKHSTAN" newpages.txt)
 
   if [ "$KAZAKHSTAN" != "" ];
   then
-    printf "$KAZAKHSTAN" > Kazakhstan.txt
+    printf "%s" "$KAZAKHSTAN" > Kazakhstan.txt
     export CATFILE="Kazakhstan.txt"
     export CATNAME="Kazakhstan"
     $CATEGORIZE
@@ -22,9 +19,6 @@ then
     unset KAZAKHSTAN
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Kazakhstan\n"
-  fi
+  debug_end "Kazakhstan"
 
 fi

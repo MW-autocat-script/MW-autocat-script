@@ -5,10 +5,7 @@ KEYWORDS_HARVESTMOON="Harvest(| )Moon"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Harvest Moon series\n"
-  fi
+  debug_start "Harvest Moon"
 
   HARVESTMOON="$(egrep -i "$KEYWORDS_HARVESTMOON" newpages.txt)"
 
@@ -22,9 +19,6 @@ then
     unset HARVESTMOON
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Harvest Moon series\n"
-  fi
+  debug_end "Harvest Moon"
 
 fi

@@ -7,10 +7,7 @@ KEYWORDS_YANMEGA="Yanmega"
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Pokemon Y script\n"
-  fi
+  debug_start "Pokemon Y script"
 
   YAMASK=$(egrep -i "$KEYWORDS_YAMASK" newpages.txt)
   YANMA=$(egrep -i "$KEYWORDS_YANMA" newpages.txt)
@@ -18,7 +15,7 @@ then
 
   if [ "$YAMASK" != "" ];
   then
-    printf "$YAMASK" > Yamask.txt
+    printf "%s" "$YAMASK" > Yamask.txt
     export CATFILE="Yamask.txt"
     export CATNAME="Yamask"
     $CATEGORIZE
@@ -28,7 +25,7 @@ then
 
   if [ "$YANMA" != "" ];
   then
-    printf "$YANMA" > Yanma.txt
+    printf "%s" "$YANMA" > Yanma.txt
     export CATFILE="Yanma.txt"
     export CATNAME="Yanma"
     $CATEGORIZE
@@ -38,7 +35,7 @@ then
 
   if [ "$YANMEGA" != "" ];
   then
-    printf "$YANMEGA" > Yanmega.txt
+    printf "%s" "$YANMEGA" > Yanmega.txt
     export CATFILE="Yanmega.txt"
     export CATNAME="Yanmega"
     $CATEGORIZE
@@ -46,10 +43,6 @@ then
     unset YANMEGA
   fi
 
-
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Pokemon Y script\n"
-  fi
+  debug_end "Pokemon Y script"
 
 fi

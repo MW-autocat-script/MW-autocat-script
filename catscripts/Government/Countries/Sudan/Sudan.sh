@@ -6,10 +6,7 @@ KEYWORDS_SUDAN_ALL="$KEYWORDS_SUDAN"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Sudan\n"
-  fi
+  debug_start "Sudan"
 
   SUDAN="$(egrep -i "$KEYWORDS_SUDAN" newpages.txt)"
 
@@ -23,9 +20,6 @@ then
     unset SUDAN
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Sudan\n"
-  fi
+  debug_end "Sudan"
 
 fi

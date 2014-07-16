@@ -6,16 +6,13 @@ KEYWORDS_FREECIV_ALL="$KEYWORDS_FREECIV"
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Freeciv\n"
-  fi
+  debug_start "Freeciv"
 
   FREECIV=$(egrep -i "$KEYWORDS_FREECIV" newpages.txt)
 
   if [ "$FREECIV" != "" ];
   then
-    printf "$FREECIV" > Freeciv.txt
+    printf "%s" "$FREECIV" > Freeciv.txt
     export CATFILE="Freeciv.txt"
     export CATNAME="Freeciv"
     $CATEGORIZE
@@ -23,9 +20,6 @@ then
     unset FREECIV
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Freeciv\n"
-  fi
+  debug_end "Freeciv"
 
 fi

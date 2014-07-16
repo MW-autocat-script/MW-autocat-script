@@ -6,16 +6,13 @@ KEYWORDS_CHILE_ALL="$KEYWORDS_CHILE"
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Chile\n"
-  fi
+  debug_start "Chile"
 
   CHILE=$(egrep -i "$KEYWORDS_CHILE" newpages.txt)
 
   if [ "$CHILE" != "" ];
   then
-    printf "$CHILE" > Chile.txt
+    printf "%s" "$CHILE" > Chile.txt
     export CATFILE="Chile.txt"
     export CATNAME="Chile"
     $CATEGORIZE
@@ -23,9 +20,6 @@ then
     unset CHILE
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Chile\n"
-  fi
+  debug_end "Chile"
 
 fi

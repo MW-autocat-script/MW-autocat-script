@@ -12,10 +12,7 @@ KEYWORDS_FRANCE_ALL="$KEYWORDS_FRANCE|$KEYWORDS_PARIS|$KEYWORDS_TAHITI|$KEYWORDS
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting France\n"
-  fi
+  debug_start "France"
 
   FRANCE=$(egrep -i "$KEYWORDS_FRANCE" newpages.txt | egrep -iv "$KEYWORDS_FRANCE_EXCLUDE")
   PARIS=$(egrep -i "$KEYWORDS_PARIS" newpages.txt | egrep -iv "$KEYWORDS_PARIS_EXCLUDE")
@@ -24,7 +21,7 @@ then
 
   if [ "$FRANCE" != "" ];
   then
-    printf "$FRANCE" > France.txt
+    printf "%s" "$FRANCE" > France.txt
     export CATFILE="France.txt"
     export CATNAME="France"
     $CATEGORIZE
@@ -34,7 +31,7 @@ then
 
   if [ "$PARIS" != "" ];
   then
-    printf "$PARIS" > Paris.txt
+    printf "%s" "$PARIS" > Paris.txt
     export CATFILE="Paris.txt"
     export CATNAME="Paris"
     $CATEGORIZE
@@ -44,7 +41,7 @@ then
 
   if [ "$TAHITI" != "" ];
   then
-    printf "$TAHITI" > Tahiti.txt
+    printf "%s" "$TAHITI" > Tahiti.txt
     export CATFILE="Tahiti.txt"
     export CATNAME="Tahiti"
     $CATEGORIZE
@@ -54,7 +51,7 @@ then
 
   if [ "$FRENCHREVOLUTION" != "" ];
   then
-    printf "$FRENCHREVOLUTION" > FrenchRevolution.txt
+    printf "%s" "$FRENCHREVOLUTION" > FrenchRevolution.txt
     export CATFILE="FrenchRevolution.txt"
     export CATNAME="French Revolution"
     $CATEGORIZE
@@ -62,9 +59,6 @@ then
     unset FRENCHREVOLUTION
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing France\n"
-  fi
+  debug_end "France"
 
 fi

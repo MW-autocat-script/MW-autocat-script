@@ -7,16 +7,13 @@ KEYWORDS_MONACO_ALL="$KEYWORDS_MONACO"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Monaco\n"
-  fi
+  debug_start "Monaco"
 
   MONACO=$(egrep -i "$KEYWORDS_MONACO" newpages.txt | egrep -iv "$KEYWORDS_MONACO_EXCLUDE")
 
   if [ "$MONACO" != "" ];
   then
-    printf "$MONACO" > Monaco.txt
+    printf "%s" "$MONACO" > Monaco.txt
     export CATFILE="Monaco.txt"
     export CATNAME="Monaco"
     $CATEGORIZE
@@ -24,9 +21,6 @@ then
     unset MONACO
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Monaco\n"
-  fi
+  debug_end "Monaco"
 
 fi

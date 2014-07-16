@@ -124,7 +124,7 @@ then
 
   if [ "$PRESIDENT" != "" ];
   then
-    printf "$PRESIDENT" > President.txt
+    printf "%s" "$PRESIDENT" > President.txt
     export CATFILE="President.txt"
     export CATNAME="US Presidents"
     $CATEGORIZE
@@ -134,7 +134,7 @@ then
 
   if [ "$WASHINGTON" != "" ];
   then
-    printf "$WASHINGTON" > GeorgeWashington.txt
+    printf "%s" "$WASHINGTON" > GeorgeWashington.txt
     export CATFILE="GeorgeWashington.txt"
     export CATNAME="George Washington"
     $CATEGORIZE
@@ -144,7 +144,7 @@ then
 
   if [ "$JOHNADAMS" != "" ];
   then
-    printf "$JOHNADAMS" > JohnAdams.txt
+    printf "%s" "$JOHNADAMS" > JohnAdams.txt
     export CATFILE="JohnAdams.txt"
     export CATNAME="John Adams"
     $CATEGORIZE
@@ -154,7 +154,7 @@ then
 
   if [ "$JEFFERSON" != "" ];
   then
-    printf "$JEFFERSON" > ThomasJefferson.txt
+    printf "%s" "$JEFFERSON" > ThomasJefferson.txt
     export CATFILE="ThomasJefferson.txt"
     export CATNAME="Thomas Jefferson"
     $CATEGORIZE
@@ -164,7 +164,7 @@ then
 
   if [ "$MADISON" != "" ];
   then
-    printf "$MADISON" > JamesMadison.txt
+    printf "%s" "$MADISON" > JamesMadison.txt
     export CATFILE="JamesMadison.txt"
     export CATNAME="James Madison"
     $CATEGORIZE
@@ -174,7 +174,7 @@ then
 
   if [ "$MONROE" != "" ];
   then
-    printf "$MONROE" > JamesMonroe.txt
+    printf "%s" "$MONROE" > JamesMonroe.txt
     export CATFILE="JamesMonroe.txt"
     export CATNAME="James Monroe"
     $CATEGORIZE
@@ -184,7 +184,7 @@ then
 
   if [ "$QUINCY" != "" ];
   then
-    printf "$QUINCY" > JohnQuincyAdams.txt
+    printf "%s" "$QUINCY" > JohnQuincyAdams.txt
     export CATFILE="JohnQuincyAdams.txt"
     export CATNAME="John Quincy Adams"
     $CATEGORIZE
@@ -194,7 +194,7 @@ then
 
   if [ "$JACKSON" != "" ];
   then
-    printf "$JACKSON" > AndrewJackson.txt
+    printf "%s" "$JACKSON" > AndrewJackson.txt
     export CATFILE="AndrewJackson.txt"
     export CATNAME="Andrew Jackson"
     $CATEGORIZE
@@ -204,7 +204,7 @@ then
 
   if [ "$BUREN" != "" ];
   then
-    printf "$BUREN" > MartinVanBuren.txt
+    printf "%s" "$BUREN" > MartinVanBuren.txt
     export CATFILE="MartinVanBuren.txt"
     export CATNAME="Martin Van Buren"
     $CATEGORIZE
@@ -214,7 +214,7 @@ then
 
   if [ "$WHARRISON" != "" ];
   then
-    printf "$WHARRISON" > WilliamHenryHarrison.txt
+    printf "%s" "$WHARRISON" > WilliamHenryHarrison.txt
     export CATFILE="WilliamHenryHarrison.txt"
     export CATNAME="William Henry Harrison"
     $CATEGORIZE
@@ -224,7 +224,7 @@ then
 
   if [ "$TYLER" != "" ];
   then
-    printf "$TYLER" > JohnTyler.txt
+    printf "%s" "$TYLER" > JohnTyler.txt
     export CATFILE="JohnTyler.txt"
     export CATNAME="John Tyler"
     $CATEGORIZE
@@ -234,7 +234,7 @@ then
 
   if [ "$POLK" != "" ];
   then
-    printf "$POLK" > JamesKPolk.txt
+    printf "%s" "$POLK" > JamesKPolk.txt
     export CATFILE="JamesKPolk.txt"
     export CATNAME="James K. Polk"
     $CATEGORIZE
@@ -244,7 +244,7 @@ then
 
   if [ "$TAYLOR" != "" ];
   then
-    printf "$TAYLOR" > ZacharyTaylor.txt
+    printf "%s" "$TAYLOR" > ZacharyTaylor.txt
     export CATFILE="ZacharyTaylor.txt"
     export CATNAME="Zachary Taylor"
     $CATEGORIZE
@@ -254,7 +254,7 @@ then
 
   if [ "$FILLMORE" != "" ];
   then
-    printf "$FILLMORE" > MillardFillmore.txt
+    printf "%s" "$FILLMORE" > MillardFillmore.txt
     export CATFILE="MillardFillmore.txt"
     export CATNAME="Millard Fillmore"
     $CATEGORIZE
@@ -264,7 +264,7 @@ then
 
   if [ "$PIERCE" != "" ];
   then
-    printf "$PIERCE" > FranklinPierce.txt
+    printf "%s" "$PIERCE" > FranklinPierce.txt
     export CATFILE="FranklinPierce.txt"
     export CATNAME="Franklin Pierce"
     $CATEGORIZE
@@ -274,7 +274,7 @@ then
 
   if [ "$BUCHANAN" != "" ];
   then
-    printf "$BUCHANAN" > JamesBuchanan.txt
+    printf "%s" "$BUCHANAN" > JamesBuchanan.txt
     export CATFILE="JamesBuchanan.txt"
     export CATNAME="James Buchanan"
     $CATEGORIZE
@@ -284,7 +284,7 @@ then
 
   if [ "$LINCOLN" != "" ];
   then
-    printf "$LINCOLN" > AbrahamLincoln.txt
+    printf "%s" "$LINCOLN" > AbrahamLincoln.txt
     export CATFILE="AbrahamLincoln.txt"
     export CATNAME="Abraham Lincoln"
     $CATEGORIZE
@@ -294,7 +294,7 @@ then
 
   if [ "$JOHNSON" != "" ];
   then
-    printf "$JOHNSON" > AndrewJohnson.txt
+    printf "%s" "$JOHNSON" > AndrewJohnson.txt
     export CATFILE="AndrewJohnson.txt"
     export CATNAME="Andrew Johnson"
     $CATEGORIZE
@@ -304,7 +304,7 @@ then
 
   if [ "$GRANT" != "" ];
   then
-    printf "$GRANT" > UlyssesSGrant.txt
+    printf "%s" "$GRANT" > UlyssesSGrant.txt
     export CATFILE="UlyssesSGrant.txt"
     export CATNAME="Ulysses S. Grant"
     $CATEGORIZE
@@ -314,7 +314,7 @@ then
 
   if [ "$HAYES" != "" ];
   then
-    printf "$HAYES" > RutherfordBHayes.txt
+    printf "%s" "$HAYES" > RutherfordBHayes.txt
     export CATFILE="RutherfordBHayes.txt"
     export CATNAME="Rutherford B. Hayes"
     $CATEGORIZE
@@ -324,7 +324,7 @@ then
 
   if [ "$GARFIELD" != "" ];
   then
-    printf "$GARFIELD" > JamesAGarfield.txt
+    printf "%s" "$GARFIELD" > JamesAGarfield.txt
     export CATFILE="JamesAGarfield.txt"
     export CATNAME="James A. Garfield"
     $CATEGORIZE
@@ -334,7 +334,7 @@ then
 
   if [ "$ARTHUR" != "" ];
   then
-    printf "$ARTHUR" > ChesterAArthur.txt
+    printf "%s" "$ARTHUR" > ChesterAArthur.txt
     export CATFILE="ChesterAArthur.txt"
     export CATNAME="Chester A. Arthur"
     $CATEGORIZE
@@ -344,7 +344,7 @@ then
 
   if [ "$CLEVELAND" != "" ];
   then
-    printf "$CLEVELAND" > GroverCleveland.txt
+    printf "%s" "$CLEVELAND" > GroverCleveland.txt
     export CATFILE="GroverCleveland.txt"
     export CATNAME="Grover Cleveland"
     $CATEGORIZE
@@ -354,7 +354,7 @@ then
 
   if [ "$HARRISON" != "" ];
   then
-    printf "$HARRISON" > BenjaminHarrison.txt
+    printf "%s" "$HARRISON" > BenjaminHarrison.txt
     export CATFILE="BenjaminHarrison.txt"
     export CATNAME="Benjamin Harrison"
     $CATEGORIZE
@@ -364,7 +364,7 @@ then
 
   if [ "$MCKINLEY" != "" ];
   then
-    printf "$MCKINLEY" > WilliamMcKinley.txt
+    printf "%s" "$MCKINLEY" > WilliamMcKinley.txt
     export CATFILE="WilliamMcKinley.txt"
     export CATNAME="William McKinley"
     $CATEGORIZE
@@ -374,7 +374,7 @@ then
 
   if [ "$THEODORE" != "" ];
   then
-    printf "$THEODORE" > TheodoreRoosevelt.txt
+    printf "%s" "$THEODORE" > TheodoreRoosevelt.txt
     export CATFILE="TheodoreRoosevelt.txt"
     export CATNAME="Theodore Roosevelt"
     $CATEGORIZE
@@ -384,7 +384,7 @@ then
 
   if [ "$TAFT" != "" ];
   then
-    printf "$TAFT" > WilliamHowardTaft.txt
+    printf "%s" "$TAFT" > WilliamHowardTaft.txt
     export CATFILE="WilliamHowardTaft.txt"
     export CATNAME="William Howard Taft"
     $CATEGORIZE
@@ -394,7 +394,7 @@ then
 
   if [ "$WILSON" != "" ];
   then
-    printf "$WILSON" > WoodrowWilson.txt
+    printf "%s" "$WILSON" > WoodrowWilson.txt
     export CATFILE="WoodrowWilson.txt"
     export CATNAME="Woodrow Wilson"
     $CATEGORIZE
@@ -404,7 +404,7 @@ then
 
   if [ "$HARDING" != "" ];
   then
-    printf "$HARDING" > WarrenGHarding.txt
+    printf "%s" "$HARDING" > WarrenGHarding.txt
     export CATFILE="WarrenGHarding.txt"
     export CATNAME="Warren G. Harding"
     $CATEGORIZE
@@ -414,7 +414,7 @@ then
 
   if [ "$COOLIDGE" != "" ];
   then
-    printf "$COOLIDGE" > CalvinCoolidge.txt
+    printf "%s" "$COOLIDGE" > CalvinCoolidge.txt
     export CATFILE="CalvinCoolidge.txt"
     export CATNAME="Calvin Coolidge"
     $CATEGORIZE
@@ -424,7 +424,7 @@ then
 
   if [ "$HOOVER" != "" ];
   then
-    printf "$HOOVER" > HerbertHoover.txt
+    printf "%s" "$HOOVER" > HerbertHoover.txt
     export CATFILE="HerbertHoover.txt"
     export CATNAME="Herbert Hoover"
     $CATEGORIZE
@@ -434,7 +434,7 @@ then
 
   if [ "$FDR" != "" ];
   then
-    printf "$FDR" > FranklinDelanoRoosevelt.txt
+    printf "%s" "$FDR" > FranklinDelanoRoosevelt.txt
     export CATFILE="FranklinDelanoRoosevelt.txt"
     export CATNAME="Franklin Delano Roosevelt"
     $CATEGORIZE
@@ -444,7 +444,7 @@ then
 
   if [ "$TRUMAN" != "" ];
   then
-    printf "$TRUMAN" > HarrySTruman.txt
+    printf "%s" "$TRUMAN" > HarrySTruman.txt
     export CATFILE="HarrySTruman.txt"
     export CATNAME="Harry S. Truman"
     $CATEGORIZE
@@ -454,7 +454,7 @@ then
 
   if [ "$EISENHOWER" != "" ];
   then
-    printf "$EISENHOWER" > DwightDEisenhower.txt
+    printf "%s" "$EISENHOWER" > DwightDEisenhower.txt
     export CATFILE="DwightDEisenhower.txt"
     export CATNAME="Dwight D. Eisenhower"
     $CATEGORIZE
@@ -464,7 +464,7 @@ then
 
   if [ "$KENNEDY" != "" ];
   then
-    printf "$KENNEDY" > JohnFKennedy.txt
+    printf "%s" "$KENNEDY" > JohnFKennedy.txt
     export CATFILE="JohnFKennedy.txt"
     export CATNAME="John F. Kennedy"
     $CATEGORIZE
@@ -474,7 +474,7 @@ then
 
   if [ "$LBJ" != "" ];
   then
-    printf "$LBJ" > LyndonBJohnson.txt
+    printf "%s" "$LBJ" > LyndonBJohnson.txt
     export CATFILE="LyndonBJohnson.txt"
     export CATNAME="Lyndon B. Johnson"
     $CATEGORIZE
@@ -484,7 +484,7 @@ then
 
   if [ "$NIXON" != "" ];
   then
-    printf "$NIXON" > RichardMNixon.txt
+    printf "%s" "$NIXON" > RichardMNixon.txt
     export CATFILE="RichardMNixon.txt"
     export CATNAME="Richard Nixon"
     $CATEGORIZE
@@ -494,7 +494,7 @@ then
 
   if [ "$FORD" != "" ];
   then
-    printf "$FORD" > GeraldFord.txt
+    printf "%s" "$FORD" > GeraldFord.txt
     export CATFILE="GeraldFord.txt"
     export CATNAME="Gerald Ford"
     $CATEGORIZE
@@ -504,7 +504,7 @@ then
 
   if [ "$CARTER" != "" ];
   then
-    printf "$CARTER" > JimmyCarter.txt
+    printf "%s" "$CARTER" > JimmyCarter.txt
     export CATFILE="JimmyCarter.txt"
     export CATNAME="James Earl Carter"
     $CATEGORIZE
@@ -514,7 +514,7 @@ then
 
   if [ "$REAGAN" != "" ];
   then
-    printf "$REAGAN" > RonaldReagan.txt
+    printf "%s" "$REAGAN" > RonaldReagan.txt
     export CATFILE="RonaldReagan.txt"
     export CATNAME="Ronald Reagan"
     $CATEGORIZE
@@ -524,7 +524,7 @@ then
 
   if [ "$GHWBUSH" != "" ];
   then
-    printf "$GHWBUSH" > GeorgeHWBush.txt
+    printf "%s" "$GHWBUSH" > GeorgeHWBush.txt
     export CATFILE="GeorgeHWBush.txt"
     export CATNAME="George Herbert Walker Bush"
     $CATEGORIZE
@@ -534,7 +534,7 @@ then
 
   if [ "$CLINTON" != "" ];
   then
-    printf "$CLINTON" > BillClinton.txt
+    printf "%s" "$CLINTON" > BillClinton.txt
     export CATFILE="BillClinton.txt"
     export CATNAME="Bill Clinton"
     $CATEGORIZE
@@ -544,7 +544,7 @@ then
 
   if [ "$GWBUSH" != "" ];
   then
-    printf "$GWBUSH" > GeorgeWBush.txt
+    printf "%s" "$GWBUSH" > GeorgeWBush.txt
     export CATFILE="GeorgeWBush.txt"
     export CATNAME="George W. Bush"
     $CATEGORIZE
@@ -554,7 +554,7 @@ then
 
   if [ "$OBAMA" != "" ];
   then
-    printf "$OBAMA" > BarackObama.txt
+    printf "%s" "$OBAMA" > BarackObama.txt
     export CATFILE="BarackObama.txt"
     export CATNAME="Barack Obama"
     $CATEGORIZE

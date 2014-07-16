@@ -5,16 +5,20 @@ KEYWORDS_PERU="Peru"
 if [ "$1" == "" ]; #Normal operation
 then
 
+  debug_start "Peru"
+
   PERU=$(egrep -i "$KEYWORDS_PERU" newpages.txt)
 
   if [ "$PERU" != "" ];
   then
-    egrep -i "$KEYWORDS_PERU" newpages.txt > Peru.txt
+    printf "%s" "$PERU" > Peru.txt
     export CATFILE="Peru.txt"
     export CATNAME="Peru"
     $CATEGORIZE
     rm Peru.txt
     unset PERU
   fi
+
+  debug_end "Peru"
 
 fi
