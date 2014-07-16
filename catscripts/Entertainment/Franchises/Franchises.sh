@@ -1,8 +1,12 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Entertainment/Franchises"
+debug_start "Entertainment franchises"
 
-$CURRENTDIR/Digimon/Digimon.sh
-$CURRENTDIR/Pokémon/Pokémon.sh
-$CURRENTDIR/Sonic_the_Hedgehog/Sonic.sh
-$CURRENTDIR/Star\ Wars/StarWars.sh
+FRANCHISEDIR="./catscripts/Entertainment/Franchises"
+
+$FRANCHISEDIR/Digimon/Digimon.sh
+$FRANCHISEDIR/Pokémon/Pokémon.sh
+$FRANCHISEDIR/Sonic_the_Hedgehog/Sonic.sh
+$FRANCHISEDIR/Star\ Wars/StarWars.sh
+
+debug_end "Entertainment franchises"

@@ -19,6 +19,6 @@ then
     unset ANARCHY
   fi
 
-  debug_start "Anarchy Online"
+  debug_end "Anarchy Online"
 
 fi

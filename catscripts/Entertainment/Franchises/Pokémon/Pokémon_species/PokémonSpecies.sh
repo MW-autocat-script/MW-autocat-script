@@ -5,6 +5,8 @@ POKEMONSPECIESDIR="./catscripts/Entertainment/Franchises/Pokémon/Pokémon_speci
 if [ "$1" == "" ];
 then
 
+  debug_start "Pokémon species"
+
   . $POKEMONSPECIESDIR/A/A.sh  #KEYWORDS_POKEMONSPECIES_A
   . $POKEMONSPECIESDIR/B/B.sh  #KEYWORDS_POKEMONSPECIES_B
   . $POKEMONSPECIESDIR/C/C.sh  #KEYWORDS_POKEMONSPECIES_C
@@ -31,6 +33,8 @@ then
   . $POKEMONSPECIESDIR/X/X.sh
   . $POKEMONSPECIESDIR/Y/Y.sh
   . $POKEMONSPECIESDIR/Z/Z.sh
+
+  debug_end "Pokémon species"
 
 else
 

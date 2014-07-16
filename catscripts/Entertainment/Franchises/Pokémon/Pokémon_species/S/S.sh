@@ -107,6 +107,8 @@ KEYWORDS_SWOOBAT="Swoobat"
 if [ "$1" == "" ]; #Normal operation
 then
 
+  debug_start "Pokémon 'S' script"
+
   SABLEYE=$(egrep -i "$KEYWORDS_SABLEYE" newpages.txt)
   SALAMENCE=$(egrep -i "$KEYWORDS_SALAMENCE" newpages.txt)
   SAMUROTT=$(egrep -i "$KEYWORDS_SAMUROTT" newpages.txt)
@@ -765,5 +767,7 @@ then
     printf "%s" "$SWOOBAT" > Swoobat.txt
     export_category SWOOBAT Swoobat
   fi
+
+  debug_end "Pokémon 'S' script"
 
 fi

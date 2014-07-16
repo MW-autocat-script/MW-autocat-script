@@ -5,6 +5,8 @@ KEYWORDS_POKEMONANIME="\bAsh.+(Misty|Brock|May|Dawn|Iris|Pikachu|Pokemon|Pokémo
 if [ "$1" == "" ];
 then
 
+  debug_start "Pokémon anime"
+
   ANIME="$(egrep -i "$KEYWORDS_POKEMONANIME" newpages.txt)"
 
   if [ "$ANIME"  != "" ];
@@ -16,5 +18,7 @@ then
     rm Anime.txt
     unset ANIME
   fi
+
+  debug_end "Pokémon anime"
 
 fi

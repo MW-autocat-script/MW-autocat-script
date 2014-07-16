@@ -19,4 +19,6 @@ then
     unset SHREK
   fi
 
+  debug_end "Shrek"
+
 fi

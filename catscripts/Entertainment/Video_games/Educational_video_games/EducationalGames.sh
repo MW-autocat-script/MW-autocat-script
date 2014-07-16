@@ -1,6 +1,10 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Entertainment/Video_games/Educational_video_games"
+debug_start "Educational video games"
 
-$CURRENTDIR/Studyladder.sh
-$CURRENTDIR/LiteracyPlanet.sh 
+EDUGAMESDIR="./catscripts/Entertainment/Video_games/Educational_video_games"
+
+$EDUGAMESDIR/Studyladder.sh
+$EDUGAMESDIR/LiteracyPlanet.sh 
+
+debug_end "Educational video games"

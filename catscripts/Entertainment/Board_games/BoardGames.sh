@@ -9,6 +9,8 @@ KEYWORDS_BOARDGAMES_EXCLUDE="$KEYWORDS_CHESS|$KEYWORDS_CHECKERS"
 if [ "$1" == "" ]; #Normal operation
 then
 
+  debug_start "Board games"
+
   BOARDGAMES=$(egrep -i "$KEYWORDS_BOARDGAMES" newpages.txt | egrep -iv "$KEYWORDS_BOARDGAMES_EXCLUDE")
   CHESS=$(egrep -i "$KEYWORDS_CHESS" newpages.txt | egrep -iv "$KEYWORDS_CHESS_EXCLUDE")
   CHECKERS=$(egrep -i "$KEYWORDS_CHECKERS" newpages.txt)
@@ -42,6 +44,8 @@ then
     rm Checkers.txt
     unset CHECKERS
   fi
+
+  debug_end "Board games"
 
 fi
   

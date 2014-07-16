@@ -19,6 +19,6 @@ then
     unset CLUBPENGUIN
   fi
 
-  debug_start "Club Penguin"
+  debug_end "Club Penguin"
 
 fi

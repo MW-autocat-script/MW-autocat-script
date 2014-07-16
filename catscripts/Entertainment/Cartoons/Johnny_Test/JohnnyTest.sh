@@ -5,7 +5,9 @@ KEYWORDS_JOHNNYTEST="Johnny(| )Test"
 if [ "$1" == "" ];
 then
 
-JOHNNYTEST="$(egrep -i "$KEYWORDS_JOHNNYTEST" newpages.txt)"
+  debug_start "Johnny Test"
+
+  JOHNNYTEST="$(egrep -i "$KEYWORDS_JOHNNYTEST" newpages.txt)"
 
   if [ "$JOHNNYTEST" != "" ];
   then
@@ -16,5 +18,7 @@ JOHNNYTEST="$(egrep -i "$KEYWORDS_JOHNNYTEST" newpages.txt)"
     rm JohnnyTest.txt
     unset JOHNNYTEST
   fi
+
+  debug_end "Johnny Test"
 
 fi

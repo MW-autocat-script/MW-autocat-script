@@ -11,6 +11,7 @@ then
 
   if [ "$WIIU" != "" ];
   then
+    printf "%s" "$WIIU" > NintendoWiiU.txt
     export CATFILE="NintendoWiiU.txt"
     export CATNAME="Nintendo Wii U"
     $CATEGORIZE

@@ -23,6 +23,8 @@ KEYWORDS_MUSICALINSTRUMENT_EXCLUDE="$KEYWORDS_CELLO|$KEYWORDS_CLARINET|$KEYWORDS
 if [ "$1" == "" ]; #Normal operation
 then
 
+  debug_start "Musical instruments"
+
   CELLO=$(egrep -i "$KEYWORDS_CELLO" newpages.txt)
   CLARINET=$(egrep -i "$KEYWORDS_CLARINET" newpages.txt)
   DRUMS=$(egrep -i "$KEYWORDS_DRUMS" newpages.txt | egrep -iv "$KEYWORDS_DRUMS_EXCLUDE")
@@ -166,5 +168,7 @@ then
     rm Instruments.txt
     unset INSTRUMENTS
   fi
+
+  debug_end "Musical instruments"
 
 fi
