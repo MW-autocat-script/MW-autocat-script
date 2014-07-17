@@ -1,5 +1,10 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Science/Biology"
+debug_start "Biology"
 
-$CURRENTDIR/Animals/Animals.sh
+BIOLOGYDIR="./catscripts/Science/Biology"
+
+$BIOLOGYDIR/Animals/Animals.sh
+$BIOLOGYDIR/Cytology/Cytology.sh
+
+debug_end "Biology"
