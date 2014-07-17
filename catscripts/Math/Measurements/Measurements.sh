@@ -3,7 +3,7 @@
 KEYWORDS_CUSTOMARY="inch|foot|feet|yard|mile|acre|fathom|ounce|quart|gallon|pound|ton|\bft\b|\byds\b|\bin\b"
 KEYWORDS_METRIC="gram|lit(re|er)|met(er|re)|\bml\b|nl\b"
 KEYWORDS_SIPREFIX="deci|centi|milli|micro|nano|femto|atto|zepto|yocto|deca|hecto|kilo|mega|giga|tera|peta|exa|zetta|yotta"
-KEYWORDS_MEASUREMENTCONVERSION="($KEYWORDS_SIPREFIX|cubic|)(| )($KEYWORDS_METRIC|$KEYWORDS_CUSTOMARY)(es|s|)(| )is(| )how(| )(many|much)(| )($KEYWORDS_SIPREFIX|cubic|)(| )($KEYWORDS_METRIC|$KEYWORDS_CUSTOMARY)|equals(| )how(| )many(| )$KEYWORDS_SIPREFIX|cubic|)(| )($KEYWORDS_METRIC|$KEYWORDS_CUSTOMARY)"
+KEYWORDS_MEASUREMENTCONVERSION="($KEYWORDS_SIPREFIX|cubic|)(| )($KEYWORDS_METRIC|$KEYWORDS_CUSTOMARY)(es|s|)(| )is(| )how(| )(many|much)(| )($KEYWORDS_SIPREFIX|cubic|)(| )($KEYWORDS_METRIC|$KEYWORDS_CUSTOMARY)|equals(| )how(| )many(| )($KEYWORDS_SIPREFIX|cubic|)(| )($KEYWORDS_METRIC|$KEYWORDS_CUSTOMARY)"
 
 if [ "$1" == "" ];
 then

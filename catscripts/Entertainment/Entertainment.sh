@@ -9,6 +9,7 @@ $ENTERTAINMENTDIR/Board_games/BoardGames.sh
 $ENTERTAINMENTDIR/Video_games/VideoGames.sh
 $ENTERTAINMENTDIR/Franchises/Franchises.sh
 $ENTERTAINMENTDIR/Cartoons/Cartoons.sh
+$ENTERTAINMENTDIR/Literature/Literature.sh
 $ENTERTAINMENTDIR/Music/Music.sh
 $ENTERTAINMENTDIR/Movies/Movies.sh
 $ENTERTAINMENTDIR/Puzzles/Puzzles.sh
