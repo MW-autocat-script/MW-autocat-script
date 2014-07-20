@@ -9,6 +9,7 @@ then
   
   . $LITERATUREDIR/Authors/Authors.sh
   . $LITERATUREDIR/Books/Books.sh
+  . $LITERATUREDIR/Fan_fiction/Fanfiction.sh
 
   debug_end "Literature"
 
