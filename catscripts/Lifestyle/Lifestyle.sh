@@ -1,8 +1,6 @@
 #!/bin/bash
-if [ "$DEBUG" == "yes" ];
-then
-  printf "Starting Lifestyle\n" 
-fi
+
+debug_start "Lifestyle"
 
 LIFESTYLEDIR="./catscripts/Lifestyle"
 
@@ -13,7 +11,4 @@ LIFESTYLEDIR="./catscripts/Lifestyle"
 . $LIFESTYLEDIR/Sports/Sports.sh
 . $LIFESTYLEDIR/Sexuality/Sexuality.sh
 
-if [ "$DEBUG" == "yes" ];
-then
-  printf "Finishing Lifestyle\n" 
-fi
+debug_end "Lifestyle"

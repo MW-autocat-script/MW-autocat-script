@@ -1,8 +1,12 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Lifestyle/Health/Diseases"
+debug_start "Diseases"
 
-$CURRENTDIR/Asthma/Asthma.sh
-$CURRENTDIR/Cancer/Cancer.sh
-$CURRENTDIR/Infectious_diseases/Infectiousdiseases.sh
-$CURRENTDIR/Heart_disease/HeartDisease.sh
+DISEASEDIR="./catscripts/Lifestyle/Health/Diseases"
+
+$DISEASEDIR/Asthma/Asthma.sh
+$DISEASEDIR/Cancer/Cancer.sh
+$DISEASEDIR/Infectious_diseases/Infectiousdiseases.sh
+$DISEASEDIR/Heart_disease/HeartDisease.sh
+
+debug_end "Diseases"

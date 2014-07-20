@@ -14,6 +14,8 @@ KEYWORDS_HOBBIES_EXCLUDE="$KEYWORDS_SEWING|$KEYWORDS_KNITTING|$KEYWORDS_PHOTOGRA
 if [ "$1" == "" ]; #Normal operation
 then
 
+  debug_start "Hobbies"
+
   HOBBIES=$(egrep -i "$KEYWORDS_HOBBIES" newpages.txt | egrep -iv "$KEYWORDS_HOBBIES_EXCLUDE")
   SEWING=$(egrep -i "$KEYWORDS_SEWING" newpages.txt | egrep -iv "$KEYWORDS_SEWING_EXCLUDE")
   KNITTING=$(egrep -i "$KEYWORDS_KNITTING" newpages.txt)
@@ -69,5 +71,7 @@ then
     rm Baseballcards.txt
     unset BASEBALLCARDS
   fi
+
+  debug_end "Hobbies"
 
 fi

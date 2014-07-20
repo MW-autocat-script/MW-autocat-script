@@ -54,6 +54,8 @@ KEYWORDS_HOCKEY_EXCLUDE="ield hockey|street hockey|indoor hockey|$KEYWORDS_NHL"
 if [ "$1" == "" ]; #Normal operation
 then
 
+  debug_start "Sports"
+
   SOCCER=$(egrep -i "$KEYWORDS_SOCCER" newpages.txt | egrep -iv "$KEYWORDS_SOCCER_EXCLUDE")
   CRONALDO=$(egrep -i "$KEYWORDS_CRONALDO" newpages.txt)
   LMESSI=$(egrep -i "$KEYWORDS_LMESSI" newpages.txt)
@@ -80,7 +82,7 @@ then
 
   if [ "$SOCCER" != "" ];
   then
-    printf "$SOCCER" > Soccer.txt
+    printf "%s" "$SOCCER" > Soccer.txt
     export CATFILE="Soccer.txt"
     export CATNAME="Soccer (association football)"
     $CATEGORIZE
@@ -110,7 +112,7 @@ then
 
   if [ "$TENNIS" != "" ];
   then
-    printf "$TENNIS" > Tennis.txt
+    printf "%s" "$TENNIS" > Tennis.txt
     export CATFILE="Tennis.txt"
     export CATNAME="Tennis"
     $CATEGORIZE
@@ -120,7 +122,7 @@ then
 
   if [ "$PINGPONG" != "" ];
   then
-    printf "$PINGPONG" > PingPong.txt
+    printf "%s" "$PINGPONG" > PingPong.txt
     export CATFILE="PingPong.txt"
     export CATNAME="Ping-pong"
     $CATEGORIZE
@@ -130,7 +132,7 @@ then
 
   if [ "$BADMINTON" != "" ];
   then
-    printf "$BADMINTON" > Badminton.txt
+    printf "%s" "$BADMINTON" > Badminton.txt
     export CATFILE="Badminton.txt"
     export CATNAME="Badminton"
     $CATEGORIZE
@@ -140,7 +142,7 @@ then
 
   if [ "$VOLLEYBALL" != "" ];
   then
-    printf "$VOLLEYBALL" > Volleyball.txt
+    printf "%s" "$VOLLEYBALL" > Volleyball.txt
     export CATFILE="Volleyball.txt"
     export CATNAME="Volleyball"
     $CATEGORIZE
@@ -150,7 +152,7 @@ then
 
   if [ "$SOFTBALL" != "" ];
   then
-    printf "$SOFTBALL" > Softball.txt
+    printf "%s" "$SOFTBALL" > Softball.txt
     export CATFILE="Softball.txt"
     export CATNAME="Softball"
     $CATEGORIZE
@@ -160,7 +162,7 @@ then
 
   if [ "$HOCKEY" != "" ];
   then
-    printf "$HOCKEY" > Hockey.txt
+    printf "%s" "$HOCKEY" > Hockey.txt
     export CATFILE="Hockey.txt"
     export CATNAME="Hockey"
     $CATEGORIZE
@@ -170,7 +172,7 @@ then
 
   if [ "$NHL" != "" ];
   then
-    printf "$NHL" > NHL.txt
+    printf "%s" "$NHL" > NHL.txt
     export CATFILE="NHL.txt"
     export CATNAME="NHL"
     $CATEGORIZE
@@ -180,7 +182,7 @@ then
 
   if [ "$BASKETBALL" != "" ];
   then
-    printf "$BASKETBALL" > Basketball.txt
+    printf "%s" "$BASKETBALL" > Basketball.txt
     export CATFILE="Basketball.txt"
     export CATNAME="Basketball"
     $CATEGORIZE
@@ -190,7 +192,7 @@ then
 
   if [ "$NBA" != "" ];
   then
-    printf "$NBA" > NBA.txt
+    printf "%s" "$NBA" > NBA.txt
     export CATFILE="NBA.txt"
     export CATNAME="NBA"
     $CATEGORIZE
@@ -200,7 +202,7 @@ then
 
   if [ "$CHICAGOBULLS" != "" ];
   then
-    printf "$CHICAGOBULLS" > ChicagoBulls.txt
+    printf "%s" "$CHICAGOBULLS" > ChicagoBulls.txt
     export CATFILE="ChicagoBulls.txt"
     export CATNAME="Chicago Bulls"
     $CATEGORIZE
@@ -210,7 +212,7 @@ then
 
   if [ "$MIAMIHEAT" != "" ];
   then
-    printf "$MIAMIHEAT" > MiamiHeat.txt
+    printf "%s" "$MIAMIHEAT" > MiamiHeat.txt
     export CATFILE="MiamiHeat.txt"
     export CATNAME="Miami Heat"
     $CATEGORIZE
@@ -220,7 +222,7 @@ then
 
   if [ "$MICHAELJORDAN" != "" ];
   then
-    printf "$MICHAELJORDAN" > MichaelJordan.txt
+    printf "%s" "$MICHAELJORDAN" > MichaelJordan.txt
     export CATFILE="MichaelJordan.txt"
     export CATNAME="Michael Jordan"
     $CATEGORIZE
@@ -230,7 +232,7 @@ then
 
   if [ "$SHAQUILLEONEAL" != "" ];
   then
-    printf "$SHAQUILLEONEAL" > ShaquilleONeal.txt
+    printf "%s" "$SHAQUILLEONEAL" > ShaquilleONeal.txt
     export CATFILE="ShaquilleONeal.txt"
     export CATNAME="Shaquille O'Neal"
     $CATEGORIZE
@@ -240,7 +242,7 @@ then
 
   if [ "$KOBEBRYANT" != "" ];
   then
-    printf "$KOBEBRYANT" > KobeBraynt.txt
+    printf "%s" "$KOBEBRYANT" > KobeBraynt.txt
     export CATFILE="KobeBraynt.txt"
     export CATNAME="Kobe Bryant"
     $CATEGORIZE
@@ -250,7 +252,7 @@ then
 
   if [ "$BASEBALL" != "" ];
   then
-    printf "$BASEBALL" > Baseball.txt
+    printf "%s" "$BASEBALL" > Baseball.txt
     export CATFILE="Baseball.txt"
     export CATNAME="Baseball"
     $CATEGORIZE
@@ -260,7 +262,7 @@ then
 
   if [ "$MLB" != "" ];
   then
-    printf "$MLB" > MLB.txt
+    printf "%s" "$MLB" > MLB.txt
     export CATFILE="MLB.txt"
     export CATNAME="Major League Baseball"
     $CATEGORIZE
@@ -270,7 +272,7 @@ then
 
   if [ "$BABERUTH" != "" ];
   then
-    printf "$BABERUTH" > BabeRuth.txt
+    printf "%s" "$BABERUTH" > BabeRuth.txt
     export CATFILE="BabeRuth.txt"
     export CATNAME="Babe Ruth"
     $CATEGORIZE
@@ -280,7 +282,7 @@ then
 
   if [ "$JACKIEROBINSON" != "" ];
   then
-    printf "$JACKIEROBINSON" > JackieRobinson.txt
+    printf "%s" "$JACKIEROBINSON" > JackieRobinson.txt
     export CATFILE="JackieRobinson.txt"
     export CATNAME="Jackie Robinson"
     $CATEGORIZE
@@ -290,7 +292,7 @@ then
 
   if [ "$ATLANTABRAVES" != "" ];
   then
-    printf "$ATLANTABRAVES" > AtlantaBraves.txt
+    printf "%s" "$ATLANTABRAVES" > AtlantaBraves.txt
     export CATFILE="AtlantaBraves.txt"
     export CATNAME="Atlanta Braves"
     $CATEGORIZE
@@ -300,12 +302,14 @@ then
 
   if [ "$MIAMIMARLINS" != "" ];
   then
-    printf "$MIAMIMARLINS" > MiamiMarlins.txt
+    printf "%s" "$MIAMIMARLINS" > MiamiMarlins.txt
     export CATFILE="MiamiMarlins.txt"
     export CATNAME="Miami Marlins"
     $CATEGORIZE
     rm MiamiMarlins.txt
     unset MIAMIMARLINS
   fi
+
+  debug_end "Sports"
 
 fi

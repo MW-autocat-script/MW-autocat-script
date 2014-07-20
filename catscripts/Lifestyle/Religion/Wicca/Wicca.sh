@@ -5,23 +5,20 @@ KEYWORDS_WICCA="Wicca"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Wicca\n"
-  fi
+  debug_start "Wicca"
 
   WICCA=$(egrep -i "$KEYWORDS_WICCA" newpages.txt)
 
   if [ "$WICCA" != "" ];
   then
+    printf "%s" "$WICCA" > Wicca.txt
     export CATFILE="Wicca.txt"
     export CATNAME="Wicca"
     $CATEGORIZE
+    rm Wicca.txt
+    unset WICCA
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Wicca\n"
-  fi
+  debug_end "Wicca"
 
 fi

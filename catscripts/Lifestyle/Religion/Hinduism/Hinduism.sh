@@ -5,10 +5,7 @@ KEYWORDS_HINDUISM="Hindu(|s)\b|Hinduism"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Hinduism\n"
-  fi
+  debug_start "Hinduism"
 
   HINDUISM="$(egrep -i "$KEYWORDS_HINDUISM" newpages.txt)"
 
@@ -22,9 +19,6 @@ then
     unset HINDUISM
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Hinduism\n"
-  fi
+  debug_end "Hinduism"
 
 fi

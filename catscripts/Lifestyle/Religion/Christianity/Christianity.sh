@@ -16,10 +16,7 @@ KEYWORDS_CHRISTIANITY_ALL="$KEYWORDS_CHRISTIANITY|$KEYWORDS_AMISH|$KEYWORDS_ANGL
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Christianity\n"
-  fi
+  debug_start "Christianity"
 
   CHRISTIANITY=$(egrep -i "$KEYWORDS_CHRISTIANITY" newpages.txt | egrep -iv "$KEYWORDS_CHRISTIANITY_EXCLUDE")
   ANGLICAN=$(egrep -i "$KEYWORDS_ANGLICAN" newpages.txt)
@@ -32,7 +29,7 @@ then
 
   if [ "$CHRISTIANITY" != "" ];
   then
-    printf "$CHRISTIANITY" > Christianity.txt
+    printf "%s" "$CHRISTIANITY" > Christianity.txt
     export CATFILE="Christianity.txt"
     export CATNAME="Christianity"
     $CATEGORIZE
@@ -42,7 +39,7 @@ then
 
   if [ "$ANGLICAN" != "" ];
   then
-    printf "$ANGLICAN" > Anglican.txt
+    printf "%s" "$ANGLICAN" > Anglican.txt
     export CATFILE="Anglican.txt"
     export CATNAME="Anglican"
     $CATEGORIZE
@@ -52,7 +49,7 @@ then
 
   if [ "$CATHOLICISM" != "" ];
   then
-    printf "$KEYWORDS_CATHOLICISM" > Catholicism.txt
+    printf "%s" "$KEYWORDS_CATHOLICISM" > Catholicism.txt
     export CATFILE="Catholicism.txt"
     export CATNAME="Catholicism"
     $CATEGORIZE
@@ -62,7 +59,7 @@ then
 
   if [ "$LUTHERANISM" != "" ];
   then
-    printf "$LUTHERANISM" > Lutheranism.txt
+    printf "%s" "$LUTHERANISM" > Lutheranism.txt
     export CATFILE="Lutheranism.txt"
     export CATNAME="Lutheranism"
     $CATEGORIZE
@@ -72,7 +69,7 @@ then
 
   if [ "$MORMONISM" != "" ];
   then
-    printf "$MORMONISM" > Mormonism.txt
+    printf "%s" "$MORMONISM" > Mormonism.txt
     export CATFILE="Mormonism.txt"
     export CATNAME="Mormonism"
     $CATEGORIZE
@@ -82,7 +79,7 @@ then
 
   if [ "$AMISH" != "" ];
   then
-    printf "$AMISH" > Amish.txt
+    printf "%s" "$AMISH" > Amish.txt
     export CATFILE="Amish.txt"
     export CATNAME="Amish and Mennonites"
     $CATEGORIZE
@@ -92,7 +89,7 @@ then
 
   if [ "$CHRISTMAS" != "" ];
   then
-    printf "$CHRISTMAS" > Christmas.txt
+    printf "%s" "$CHRISTMAS" > Christmas.txt
     export CATFILE="Christmas.txt"
     export CATNAME="Christmas"
     $CATEGORIZE
@@ -100,9 +97,6 @@ then
     unset CHRISTMAS
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Christianity\n"
-  fi
+  debug_end "Christianity"
 
 fi

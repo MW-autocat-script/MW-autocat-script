@@ -6,16 +6,13 @@ KEYWORDS_JUDAISM_ALL="$KEYWORDS_JUDAISM"
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Judaism\n"
-  fi
+  debug_start "Judaism"
 
   JUDAISM=$(egrep -i "$KEYWORDS_JUDAISM" newpages.txt)
 
   if [ "$JUDAISM" != "" ];
   then
-    printf "$JUDAISM" > Judaism.txt
+    printf "%s" "$JUDAISM" > Judaism.txt
     export CATFILE="Judaism.txt"
     export CATNAME="Judaism"
     $CATEGORIZE
@@ -23,10 +20,7 @@ then
     unset JUDAISM
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Judaism\n"
-  fi
+  debug_end "Judaism"
 
 fi
 

@@ -9,6 +9,8 @@ KEYWORDS_COPYRIGHT="copyright|copyleft|fair use|(movie|software)(| )piracy|intel
 if [ "$1" == "" ]; #Normal operation
 then
 
+  debug_start "Legal"
+
   LEGAL=$(egrep -i "$KEYWORDS_LEGAL" newpages.txt | egrep -iv "$KEYWORDS_DIVORCE|$KEYWORDS_CRIME|$KEYWORDS_LAWYERS|$KEYWORDS_COPYRIGHT")
   CRIME=$(egrep -i "$KEYWORDS_CRIME" newpages.txt)
   DIVORCE=$(egrep -i "$KEYWORDS_DIVORCE" newpages.txt)
@@ -64,5 +66,7 @@ then
     rm Copyright.txt
     unset COPYRIGHT
   fi
+
+  debug_end "Legal"
 
 fi

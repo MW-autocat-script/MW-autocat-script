@@ -5,16 +5,13 @@ KEYWORDS_POLIO="Polio"
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Polio\n"
-  fi
+  debug_start "Polio"
 
   POLIO=$(egrep -i "$KEYWORDS_POLIO" newpages.txt)
 
   if [ "$POLIO" != "" ];
   then
-    printf "$POLIO" > Polio.txt
+    printf "%s" "$POLIO" > Polio.txt
     export CATFILE="Polio.txt"
     export CATNAME="Polio"
     $CATEGORIZE
@@ -22,9 +19,6 @@ then
     unset POLIO
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Polio\n"
-  fi
+  debug_end "Polio"
 
 fi

@@ -5,10 +5,7 @@ KEYWORDS_JAINISM="Jain(|s|ism)\b"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Jainism\n"
-  fi
+  debug_start "Jainism"
 
   JAINISM="$(egrep -i "$KEYWORDS_JAINISM" newpages.txt)"
 
@@ -22,9 +19,6 @@ then
     unset JAINISM
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Jainism\n"
-  fi
+  debug_end "Jainism"
 
 fi

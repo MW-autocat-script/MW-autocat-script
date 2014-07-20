@@ -1,8 +1,12 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Lifestyle/Health/Diseases/Infectious_diseases"
+debug_start "Infectious diseases"
 
-$CURRENTDIR/Chicken_pox/Chickenpox.sh
-$CURRENTDIR/Flu/Flu.sh
-$CURRENTDIR/Polio/Polio.sh
-$CURRENTDIR/Smallpox/Smallpox.sh
+INFECTIOUSDIR="./catscripts/Lifestyle/Health/Diseases/Infectious_diseases"
+
+$INFECTIOUSDIR/Chicken_pox/Chickenpox.sh
+$INFECTIOUSDIR/Flu/Flu.sh
+$INFECTIOUSDIR/Polio/Polio.sh
+$INFECTIOUSDIR/Smallpox/Smallpox.sh
+
+debug_end "Infectious diseases"
