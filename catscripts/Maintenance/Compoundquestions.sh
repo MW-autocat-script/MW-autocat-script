@@ -11,16 +11,13 @@ KEYWORDS_COMPOUNDQUESTION="\.(| )(Who|What|When|Where|Why|How|Do(|es)|Can|Each|T
 if [ "$1" == "" ]; #Normal operation
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Compound questions\n"
-  fi
+  debug_start "Compound questions"
 
   COMPOUNDQUESTION=$(egrep -i "$KEYWORDS_COMPOUNDQUESTION" newpages.txt)
 
   if [ "$COMPOUNDQUESTION" != "" ];
   then
-    printf "$COMPOUNDQUESTION" > Compoundquestions.txt
+    printf "%s" "$COMPOUNDQUESTION" > Compoundquestions.txt
     export CATFILE="Compoundquestions.txt"
     export CATNAME="Compound questions"
     $CATEGORIZE
@@ -28,9 +25,6 @@ then
     unset COMPOUNDQUESTION
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Compound questions\n"
-  fi
+  debug_end "Compound questions"
 
 fi

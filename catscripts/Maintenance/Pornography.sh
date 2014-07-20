@@ -11,7 +11,7 @@ then
 
   if [ "$PORN" != "" ];
   then
-    printf "$PORN" > Pornography.txt
+    printf "%s" "$PORN" > Pornography.txt
     export CATFILE="Pornography.txt"
     export CATNAME="Pornography"
     $CATEGORIZE

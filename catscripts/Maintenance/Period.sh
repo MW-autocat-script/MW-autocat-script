@@ -6,10 +6,7 @@ KEYWORDS_PERIOD_EXCLUDE="\b(j|s)r\.$|\bD\.C\.$"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Page titles ending in a period\n"
-  fi
+  debug_start "Page titles ending in a period"
 
   PERIOD="$(egrep -i "$KEYWORDS_PERIOD" newpages.txt | egrep -iv "$KEYWORDS_PERIOD_EXCLUDE")"
 
@@ -23,9 +20,6 @@ then
     unset PERIOD
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Page titles ending in a period\n"
-  fi
+  debug_end "Page titles ending in a period"
 
 fi

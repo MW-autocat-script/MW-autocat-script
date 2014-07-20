@@ -5,10 +5,7 @@ KEYWORDS_LONG="^(.){150,}$"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Long page titles\n"
-  fi
+  debug_start "Long page titles"
 
   LONG="$(egrep -i "$KEYWORDS_LONG" newpages.txt)"
 
@@ -22,9 +19,6 @@ then
     unset LONG
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Long page titles\n"
-  fi
+  debug_end "Long page titles"
 
 fi
