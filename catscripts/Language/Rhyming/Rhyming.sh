@@ -6,16 +6,13 @@ KEYWORDS_RHYMING_EXCLUDE="nursery(| )rhyme"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Rhyming\n"
-  fi
+  debug_start "Rhyming"
 
   RHYMES=$(egrep -i "$KEYWORDS_RHYMING" newpages.txt | egrep -iv "$KEYWORDS_RHYMING_EXCLUDE")
 
   if [ "$RHYMES" != "" ];
   then
-    printf "$RHYMES" > Rhyming.txt
+    printf "%s" "$RHYMES" > Rhyming.txt
     export CATFILE="Rhymes.txt"
     export CATNAME="Rhyming"
     $CATEGORIZE
@@ -23,9 +20,6 @@ then
     unset RHYMES
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Rhyming\n"
-  fi
+  debug_end "Rhyming"
 
 fi

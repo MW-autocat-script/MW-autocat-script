@@ -1,26 +1,20 @@
 #!/bin/bash
 
-if [ "$DEBUG" == "yes" ];
-then
-  printf "Starting Language\n" 
-fi
+debug_start "Language"
 
-CURRENTDIR="./catscripts/Language"
+LANGUAGEDIR="./catscripts/Language"
 
-$CURRENTDIR/Non-English_languages/NonEnglish.sh 
-$CURRENTDIR/Definitions/Definitions.sh
-$CURRENTDIR/Synonyms/Synonyms.sh
-$CURRENTDIR/Antonyms/Antonyms.sh
-$CURRENTDIR/Ditloids/Ditloids.sh
-$CURRENTDIR/Etymology/Etymology.sh
-$CURRENTDIR/Acronyms/Acronyms.sh
-$CURRENTDIR/Parts_of_speech/PartsOfSpeech.sh
-$CURRENTDIR/Pronunciation/Pronunciation.sh
-$CURRENTDIR/Rhyming/Rhyming.sh
-$CURRENTDIR/Sign_language/Signlanguage.sh
-$CURRENTDIR/Spelling/Spelling.sh
+$LANGUAGEDIR/Non-English_languages/NonEnglish.sh 
+$LANGUAGEDIR/Definitions/Definitions.sh
+$LANGUAGEDIR/Synonyms/Synonyms.sh
+$LANGUAGEDIR/Antonyms/Antonyms.sh
+$LANGUAGEDIR/Ditloids/Ditloids.sh
+$LANGUAGEDIR/Etymology/Etymology.sh
+$LANGUAGEDIR/Acronyms/Acronyms.sh
+$LANGUAGEDIR/Parts_of_speech/PartsOfSpeech.sh
+$LANGUAGEDIR/Pronunciation/Pronunciation.sh
+$LANGUAGEDIR/Rhyming/Rhyming.sh
+$LANGUAGEDIR/Sign_language/Signlanguage.sh
+$LANGUAGEDIR/Spelling/Spelling.sh
 
-if [ "$DEBUG" == "yes" ];
-then
-  printf "Finishing Language\n" 
-fi
+debug_end "Language"

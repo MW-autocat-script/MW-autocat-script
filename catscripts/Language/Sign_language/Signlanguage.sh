@@ -5,16 +5,13 @@ KEYWORDS_SIGNLANGUAGE="Sign(| )language"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Sign language\n"
-  fi
+  debug_start "Sign language"
 
   SIGN=$(egrep -i "$KEYWORDS_SIGNLANGUAGE" newpages.txt)
 
   if [ "$SIGN" != "" ];
   then
-    printf "$SIGN" > Signlanguage.txt
+    printf "%s" "$SIGN" > Signlanguage.txt
     export CATFILE="Signlanguage.txt"
     export CATNAME="Sign language"
     $CATEGORIZE
@@ -22,9 +19,6 @@ then
     unset SIGN
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Sign language\n"
-  fi
+  debug_end "Sign language"
 
 fi

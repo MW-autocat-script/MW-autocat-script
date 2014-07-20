@@ -6,17 +6,14 @@ KEYWORDS_NAMES="^What does the (sur|)name (|\"|')[a-z]{1,}(|\"|') mean"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Definitions\n" 
-  fi
+  debug_start "Definitions"
 
   DEFINITIONS=$(egrep -i "$KEYWORDS_DEFINITIONS" newpages.txt)
   NAMEMEANINGS=$(egrep -i "$KEYWORDS_NAMES" newpages.txt)
 
   if [ "$DEFINITIONS" != "" ];
   then
-    printf "$DEFINITIONS" > Definitions.txt
+    printf "%s" "$DEFINITIONS" > Definitions.txt
     export CATFILE="Definitions.txt"
     export CATNAME="Definitions"
     $CATEGORIZE
@@ -26,7 +23,7 @@ then
 
   if [ "$NAMEMEANINGS" != "" ];
   then
-    printf "$NAMEMEANINGS" > NameMeanings.txt
+    printf "%s" "$NAMEMEANINGS" > NameMeanings.txt
     export CATFILE="NameMeanings.txt"
     export CATNAME="Name meanings"
     $CATEGORIZE
@@ -34,10 +31,6 @@ then
     unset NAMEMEANINGS
   fi
 
-
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Definitions\n" 
-  fi
+  debug_end "Definitions"
 
 fi

@@ -1,13 +1,17 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Language/Non-English_languages"
+NONENGDIR="./catscripts/Language/Non-English_languages"
 
-$CURRENTDIR/English_to_Arabic/EnglishtoArabic.sh
-$CURRENTDIR/English_to_French/EnglishtoFrench.sh
-$CURRENTDIR/English_to_German/EnglishtoGerman.sh
-$CURRENTDIR/English_to_Greek/EnglishtoGreek.sh
-$CURRENTDIR/English_to_Italian/EnglishtoItalian.sh
-$CURRENTDIR/English_to_Korean/EnglishtoKorean.sh
-$CURRENTDIR/English_to_Latin/EnglishtoLatin.sh
-$CURRENTDIR/English_to_Navajo/EnglishtoNavajo.sh
-$CURRENTDIR/English_to_Spanish/EnglishtoSpanish.sh
+debug_start "Non-English languages"
+
+$NONENGDIR/English_to_Arabic/EnglishtoArabic.sh
+$NONENGDIR/English_to_French/EnglishtoFrench.sh
+$NONENGDIR/English_to_German/EnglishtoGerman.sh
+$NONENGDIR/English_to_Greek/EnglishtoGreek.sh
+$NONENGDIR/English_to_Italian/EnglishtoItalian.sh
+$NONENGDIR/English_to_Korean/EnglishtoKorean.sh
+$NONENGDIR/English_to_Latin/EnglishtoLatin.sh
+$NONENGDIR/English_to_Navajo/EnglishtoNavajo.sh
+$NONENGDIR/English_to_Spanish/EnglishtoSpanish.sh
+
+debug_end "Non-English languages"
