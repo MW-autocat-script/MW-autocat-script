@@ -30,6 +30,7 @@ KEYWORDS_CHINGLING="Chingling"
 KEYWORDS_CINCCINO="Cinccino"
 KEYWORDS_CLAMPERL="Clamperl"
 KEYWORDS_CLAUNCHER="Clauncher"
+KEYWORDS_CLAUNCHER_CASESENSITIVE_EXCLUDE="CLauncher"
 KEYWORDS_CLAYDOL="Claydol"
 KEYWORDS_CLEFABLE="Clefable"
 KEYWORDS_CLEFAIRY="Clefairy"
@@ -90,7 +91,7 @@ then
   CHINGLING=$(egrep -i "$KEYWORDS_CHINGLING" newpages.txt)
   CINCCINO=$(egrep -i "$KEYWORDS_CINCCINO" newpages.txt)
   CLAMPERL=$(egrep -i "$KEYWORDS_CLAMPERL" newpages.txt)
-  CLAUNCHER=$(egrep -i "$KEYWORDS_CLAUNCHER" newpages.txt) 
+  CLAUNCHER=$(egrep -i "$KEYWORDS_CLAUNCHER" newpages.txt| egrep -v "$KEYWORDS_CLAUNCHER_CASESENSITIVE_EXCLUDE") 
   CLAYDOL=$(egrep -i "$KEYWORDS_CLAYDOL" newpages.txt)
   CLEFABLE=$(egrep -i "$KEYWORDS_CLEFABLE" newpages.txt)
   CLEFAIRY=$(egrep -i "$KEYWORDS_CLEFAIRY" newpages.txt)
