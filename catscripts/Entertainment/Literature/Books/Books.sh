@@ -13,6 +13,7 @@ then
   . $BOOKSDIR/Redwall/Redwall.sh #KEYWORDS_REDWALL
   . $BOOKSDIR/The_39_Clues/The39Clues.sh #KEYWORDS_THE39CLUES
   . $BOOKSDIR/The_Giver/TheGiver.sh #KEYWORDS_THEGIVER
+  . $BOOKSDIR/The_Wizard_of_Oz/TheWizardofOz.sh #KEYWORDS_WIZARDOFOZ
   . $BOOKSDIR/To_Kill_a_Mockingbird/ToKillAMockingbird.sh #KEYWORDS_TOKILLAMOCKINGBIRD
 
   debug_end "Books"
