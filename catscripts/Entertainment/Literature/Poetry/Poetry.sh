@@ -1,9 +1,35 @@
 #!=/bin/bash
 
 POETRYDIR="./catscripts/Entertainment/Literature/Poetry"
+KEYWORDS_POETRY="Poem|poetry|haiku"
 
-debug_start "Poetry"
+if [ "$1" == "" ];
+then
 
-. $POETRYDIR/Beowulf/Beowulf.sh #KEYWORDS_BEOWULF
+  debug_start "Poetry"
 
-debug_end "Poetry"
+  . $POETRYDIR/Beowulf/Beowulf.sh #KEYWORDS_BEOWULF
+
+  KEYWORDS_POETRY_EXCLUDE="$KEYWORDS_BEOWULF"
+
+  POETRY=$(egrep -i "$KEYWORDS_POETRY" newpages.txt | egrep -iv "$KEYWORDS_POETRY_EXCLUDE")
+
+  if [ "$POETRY" != "" ];
+  then
+    printf "%s" "$POETRY" > Poetry.txt
+    export CATFILE="Poetry.txt"
+    export CATNAME="Poetry"
+    $CATEGORIZE
+    rm Poetry.txt
+    unset POETRY
+  fi
+
+  debug_end "Poetry"
+
+else
+
+  . $POETRYDIR/Beowulf/Beowulf.sh norun #KEYWORDS_BEOWULF
+
+  KEYWORDS_POETRY_EXCLUDE="$KEYWORDS_BEOWULF"
+
+fi
