@@ -25,7 +25,7 @@ then
   PHILLIPBROOKS="$(egrep -i "$KEYWORDS_PHILLIPBROOKS" newpages.txt)"
   MARKCALAWAY="$(egrep -i "$KEYWORDS_MARKCALAWAY" newpages.txt)"
   JOHNCENA="$(egrep -i "$KEYWORDS_JOHNCENA" newpages.txt)"
-  JEFFHARDY="$(egrep -i "$KEYWORDS_JOHNCENA" newpages.txt)"
+  JEFFHARDY="$(egrep -i "$KEYWORDS_JEFFHARDY" newpages.txt)"
   MATTHARDY="$(egrep -i "$KEYWORDS_MATTHARDY" newpages.txt)"
   CHRISTOPHERIRVINE="$(egrep -i "$KEYWORDS_CHRISTOPHERIRVINE" newpages.txt)"
 
