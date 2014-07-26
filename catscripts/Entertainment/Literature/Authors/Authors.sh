@@ -13,6 +13,7 @@ AUTHORSDIR="./catscripts/Entertainment/Literature/Authors"
   . $AUTHORSDIR/Mark_Twain/MarkTwain.sh #KEYWORDS_MARKTWAIN
   . $AUTHORSDIR/Maya_Angelou/MayaAngelou.sh #KEYWORDS_MAYAANGELOU
   . $AUTHORSDIR/William_Shakespeare/WilliamShakespeare.sh
+  . $AUTHORSDIR/Stephen_King/StephenKing.sh #KEYWORDS_STEPHENKING
   . $AUTHORSDIR/Stephenie_Meyer/StephenieMeyer.sh #KEYWORDS_STEPHENIEMEYER
   . $AUTHORSDIR/R_L_Stine/RLStine.sh #KEYWORDS_RLSTINE
   . $AUTHORSDIR/Roald_Dahl/RoaldDahl.sh #KEYWORDS_ROALDDAHL

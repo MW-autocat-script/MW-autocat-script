@@ -8,6 +8,7 @@ then
   debug_start "Books"
 
   . $BOOKSDIR/Artemis_Fowl/ArtemisFowl.sh #KEYWORDS_ARTEMISFOWL
+  . $BOOKSDIR/Black_Beauty/BlackBeauty.sh #KEYWORDS_BLACKBEAUTY
   . $BOOKSDIR/Lord_of_the_Flies/LordoftheFlies.sh #KEYWORDS_LORDOFTHEFLIES
   . $BOOKSDIR/Moby_Dick/MobyDick.sh #KEYWORDS_MOBYDICK
   . $BOOKSDIR/Redwall/Redwall.sh #KEYWORDS_REDWALL
