@@ -9,6 +9,7 @@ then
 
   . $BOOKSDIR/Artemis_Fowl/ArtemisFowl.sh #KEYWORDS_ARTEMISFOWL
   . $BOOKSDIR/Black_Beauty/BlackBeauty.sh #KEYWORDS_BLACKBEAUTY
+  . $BOOKSDIR/Fahrenheit_451/Fahrenheit451.sh #KEYWORDS_FAHRENHEIT451
   . $BOOKSDIR/Lord_of_the_Flies/LordoftheFlies.sh #KEYWORDS_LORDOFTHEFLIES
   . $BOOKSDIR/Moby_Dick/MobyDick.sh #KEYWORDS_MOBYDICK
   . $BOOKSDIR/Percy_Jackson/PercyJackson.sh #KEYWORDS_PERCYJACKSON
