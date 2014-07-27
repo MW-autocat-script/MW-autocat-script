@@ -11,6 +11,7 @@ then
   . $BOOKSDIR/Black_Beauty/BlackBeauty.sh #KEYWORDS_BLACKBEAUTY
   . $BOOKSDIR/Lord_of_the_Flies/LordoftheFlies.sh #KEYWORDS_LORDOFTHEFLIES
   . $BOOKSDIR/Moby_Dick/MobyDick.sh #KEYWORDS_MOBYDICK
+  . $BOOKSDIR/Percy_Jackson/PercyJackson.sh #KEYWORDS_PERCYJACKSON
   . $BOOKSDIR/Redwall/Redwall.sh #KEYWORDS_REDWALL
   . $BOOKSDIR/The_39_Clues/The39Clues.sh #KEYWORDS_THE39CLUES
   . $BOOKSDIR/The_Giver/TheGiver.sh #KEYWORDS_THEGIVER
