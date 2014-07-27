@@ -9,6 +9,7 @@ AUTHORSDIR="./catscripts/Entertainment/Literature/Authors"
   . $AUTHORSDIR/Edgar_Allan_Poe/Poe.sh #KEYWORDS_POE
   . $AUTHORSDIR/Emily_Dickinson/EmilyDickinson.sh #KEYWORDS_EMILYDICKINSON
   . $AUTHORSDIR/J_K_Rowling/JKRowling.sh #KEYWORDS_JKROWLING
+  . $AUTHORSDIR/John_Steinbeck/JohnSteinbeck.sh #KEYWORDS_JOHNSTEINBECK
   . $AUTHORSDIR/Lewis_Carroll/LewisCarroll.sh #KEYWORDS_LEWISCARROLL
   . $AUTHORSDIR/Mark_Twain/MarkTwain.sh #KEYWORDS_MARKTWAIN
   . $AUTHORSDIR/Maya_Angelou/MayaAngelou.sh #KEYWORDS_MAYAANGELOU
