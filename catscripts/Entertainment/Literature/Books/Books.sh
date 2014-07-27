@@ -12,6 +12,7 @@ then
   . $BOOKSDIR/Fahrenheit_451/Fahrenheit451.sh #KEYWORDS_FAHRENHEIT451
   . $BOOKSDIR/Lord_of_the_Flies/LordoftheFlies.sh #KEYWORDS_LORDOFTHEFLIES
   . $BOOKSDIR/Moby_Dick/MobyDick.sh #KEYWORDS_MOBYDICK
+  . $BOOKSDIR/Of_Mice_and_Men/OfMiceAndMen.sh #KEYWORDS_MICEANDMEN
   . $BOOKSDIR/Percy_Jackson/PercyJackson.sh #KEYWORDS_PERCYJACKSON
   . $BOOKSDIR/Redwall/Redwall.sh #KEYWORDS_REDWALL
   . $BOOKSDIR/The_39_Clues/The39Clues.sh #KEYWORDS_THE39CLUES
