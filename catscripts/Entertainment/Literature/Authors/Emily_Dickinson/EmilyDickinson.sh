@@ -13,7 +13,7 @@ then
   then
     printf "%s" "$DICKINSON" > EmilyDickinson.txt
     export CATFILE="EmilyDickinson.txt"
-    export CATNAME="Emily Dickinsom"
+    export CATNAME="Emily Dickinson"
     $CATEGORIZE
     rm EmilyDickinson.txt
     unset DICKINSON
