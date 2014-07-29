@@ -6,6 +6,7 @@ MOVIESDIR="./catscripts/Entertainment/Movies"
 
 . ./catscripts/Entertainment/Literature/Books/Diary_of_a_Wimpy_Kid/WimpyDiary.sh norun #KEYWORDS_WIMPYDIARY
 . ./catscripts/Entertainment/Literature/Books/Dracula/Dracula.sh norun #KEYWORDS_DRACULA
+. ./catscripts/Entertainment/Literature/Books/Dune/Dune.sh norun #KEYWORDS_DUNE_ALL
 $MOVIESDIR/Ghostbusters/Ghostbusters.sh
 $MOVIESDIR/Godzilla/Godzilla.sh
 $MOVIESDIR/Harry_Potter/HarryPotter.sh
