@@ -121,6 +121,7 @@ $COUNTRYDIR/Tunisia/Tunisia.sh
 $COUNTRYDIR/Turkey/Turkey.sh
 $COUNTRYDIR/Wales/Wales.sh
 $COUNTRYDIR/Uganda/Uganda.sh
+$COUNTRYDIR/Ukraine/Ukraine.sh #KEYWORDS_UKRAINE_ALL
 $COUNTRYDIR/United_Arab_Emirates/UAE.sh
 $COUNTRYDIR/United_States/UnitedStates.sh
 $COUNTRYDIR/Unrecognized_countries/Unrecognized.sh
