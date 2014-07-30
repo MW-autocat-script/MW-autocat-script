@@ -7,7 +7,8 @@ KEYWORDS_NAZIGERMANY_SECONDARY="Hitler(| )youth"
 KEYWORDS_HITLER_EXCLUDE="$KEYWORDS_NAZIGERMANY_SECONDARY"
 KEYWORDS_BERLIN="Berlin"
 KEYWORDS_AUSCHWITZ="Auschwitz|Oświęcim"
-KEYWORDS_NAZIGERMANY_EXCLUDE="$KEYWORDS_HITLER|$KEYWORDS_AUSCHWITZ"
+KEYWORDS_ANNEFRANK="(Anne|Otto)(| )Frank"
+KEYWORDS_NAZIGERMANY_EXCLUDE="$KEYWORDS_HITLER|$KEYWORDS_AUSCHWITZ|$KEYWORDS_ANNEFRANK"
 KEYWORDS_GERMANY_EXCLUDE="$KEYWORDS_NAZIGERMANY|$KEYWORDS_HITLER|$KEYWORDS_NAZIGERMANY_SECONDARY|$KEYWORDS_AUSCHWITZ|$KEYWORDS_BERLIN"
 
 KEYWORDS_GERMANY_ALL="$KEYWORDS_GERMANY|$KEYWORDS_NAZIGERMANY|$KEYWORDS_HITLER|$KEYWORDS_NAZIGERMANY_SECONDARY|$KEYWORDS_BERLIN|$KEYWORDS_AUSCHWITZ"
@@ -18,9 +19,9 @@ then
   debug_start "Germany"
 
   GERMANY=$(egrep -i "$KEYWORDS_GERMANY" newpages.txt | egrep -iv "$KEYWORDS_GERMANY_EXCLUDE")
-  NAZI=$(egrep -i "$KEYWORDS_NAZIGERMANY" newpages.txt | egrep -iv "$KEYWORDS_NAZIGERMANY_EXCLUDE")
-  NAZISECONDARY=$(egrep -i "$KEYWORDS_NAZIGERMANY_SECONDARY" newpages.txt)
+  NAZI=$(egrep -i "$KEYWORDS_NAZIGERMANY" newpages.txt | egrep -iv "$KEYWORDS_NAZIGERMANY_EXCLUDE" && egrep -i "$KEYWORDS_NAZIGERMANY_SECONDARY" newpages.txt)
   HITLER=$(egrep -i "$KEYWORDS_HITLER" newpages.txt | egrep -iv "$KEYWORDS_HITLER_EXCLUDE")
+  ANNEFRANK=$(egrep -i "$KEYWORDS_ANNEFRANK" newpages.txt)
   BERLIN=$(egrep -i "$KEYWORDS_BERLIN" newpages.txt)
 
   if [ "$GERMANY" != "" ];
@@ -33,7 +34,7 @@ then
     unset GERMANY
   fi
 
-  if [ "$NAZI" != "" ] || [ "$NAZISECONDARY" != "" ];
+  if [ "$NAZI" != "" ];
   then
     printf "%s" "$NAZI" > NaziGermany.txt
     printf "%s" "$NAZISECONDARY" >> NaziGermany.txt
@@ -53,6 +54,16 @@ then
     $CATEGORIZE
     rm AdolfHitler.txt
     unset HITLER
+  fi
+
+  if [ "$ANNEFRANK" != "" ];
+  then
+    printf "%s" "$ANNEFRANK" > AnneFrank.txt
+    export CATFILE="AnneFrank.txt"
+    export CATNAME="Anne Frank"
+    $CATEGORIZE
+    rm AnneFrank.txt
+    unset ANNEFRANK
   fi
 
   if [ "$BERLIN" != "" ];
