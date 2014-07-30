@@ -13,7 +13,7 @@ KEYWORDS_POLONIUM_EXCLUDE="Polonium \b.+(ate|ide|ite)"
 KEYWORDS_LIVERMORIUM="Livermorium"
 KEYWORDS_LIVERMORIUM_EXCLUDE="Livermorium \b.+(ate|ide|ite)"
 
-if [ "$1" != "" ];
+if [ "$1" == "" ];
 then
 
   debug_start "Group 16 elements"

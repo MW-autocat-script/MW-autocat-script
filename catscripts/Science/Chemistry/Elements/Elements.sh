@@ -1,24 +1,28 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Science/Chemistry/Elements"
+CHEMISTRYDIR="./catscripts/Science/Chemistry/Elements"
 
-$CURRENTDIR/Group1.sh
-$CURRENTDIR/Group2.sh
-$CURRENTDIR/Group3.sh
-$CURRENTDIR/Group4.sh
-$CURRENTDIR/Group5.sh
-$CURRENTDIR/Group6.sh
-$CURRENTDIR/Group7.sh
-$CURRENTDIR/Group8.sh
-$CURRENTDIR/Group9.sh
-$CURRENTDIR/Group10.sh
-$CURRENTDIR/Group11.sh
-$CURRENTDIR/Group12.sh
-$CURRENTDIR/Group13.sh
-$CURRENTDIR/Group14.sh
-$CURRENTDIR/Group15.sh
-$CURRENTDIR/Group16.sh
-$CURRENTDIR/Group17.sh
-$CURRENTDIR/Group18.sh
-$CURRENTDIR/Lanthanides.sh
-$CURRENTDIR/Actinides.sh
+debug_start "Elements"
+
+$CHEMISTRYDIR/Group1.sh
+$CHEMISTRYDIR/Group2.sh
+$CHEMISTRYDIR/Group3.sh
+$CHEMISTRYDIR/Group4.sh
+$CHEMISTRYDIR/Group5.sh
+$CHEMISTRYDIR/Group6.sh
+$CHEMISTRYDIR/Group7.sh
+$CHEMISTRYDIR/Group8.sh
+$CHEMISTRYDIR/Group9.sh
+$CHEMISTRYDIR/Group10.sh
+$CHEMISTRYDIR/Group11.sh
+$CHEMISTRYDIR/Group12.sh
+$CHEMISTRYDIR/Group13.sh
+$CHEMISTRYDIR/Group14.sh
+$CHEMISTRYDIR/Group15.sh
+$CHEMISTRYDIR/Group16.sh
+$CHEMISTRYDIR/Group17.sh
+$CHEMISTRYDIR/Group18.sh
+$CHEMISTRYDIR/Lanthanides.sh
+$CHEMISTRYDIR/Actinides.sh
+
+debug_end "Elements"
