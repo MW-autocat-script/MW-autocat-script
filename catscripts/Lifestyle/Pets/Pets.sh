@@ -25,6 +25,11 @@ KEYWORDS_GERBILS="Gerbil"
 
 KEYWORDS_GUINEA_PIGS="Guinea(| )pig"
 
+#Keywords Cats 
+
+KEYWORDS_CATS="\bCat(|s)\b|cat(| )(treat|food|toy)"
+KEYWORDS_CATS_EXCLUDE="Tiger|Lion|Cheetah|Leopard|Puma|lynx|bob(| )cat|ocelot"
+
 
 if [ "$1" == "" ]; #Normal operation
 then
@@ -37,7 +42,8 @@ then
   GOLDFISH=$(egrep -i "$KEYWORDS_GOLDFISH" newpages.txt | egrep -iv "$KEYWORDS_GOLDFISH_EXCLUDE") 
   HAMSTERS=$(egrep -i "$KEYWORDS_HAMSTERS" newpages.txt) 
   GERBILS=$(egrep -i "$KEYWORDS_GERBILS" newpages.txt) 
-  GUINEAPIGS=$(egrep -i "$KEYWORDS_GUINEA_PIGS" newpages.txt) 
+  GUINEAPIGS=$(egrep -i "$KEYWORDS_GUINEA_PIGS" newpages.txt)
+  CATS=$(egrep -i "$KEYWORDS_CATS" newpages.txt | egrep -iv "$KEYWORDS_CATS_EXCLUDE")
 
   #Categorize dogs
 
@@ -97,6 +103,16 @@ then
     $CATEGORIZE
     rm GuineaPigs.txt
     unset GUINEAPIGS
+  fi
+
+  if [ "$CATS" != "" ];
+  then
+    printf "%s" "$CATS" > Cats.txt
+    export CATFILE="Cats.txt"
+    export CATNAME="Cats"
+    $CATEGORIZE
+    rm Cats.txt
+    unset CATS
   fi
 
   debug_end "Pets"
