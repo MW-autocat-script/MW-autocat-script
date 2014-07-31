@@ -1,7 +1,8 @@
 #!/bin/bash
 
-KEYWORDS_BUDDHISM="Buddh(a|ist|ism)|Dalai(| )Lama|Bodhi"
+KEYWORDS_BUDDHISM="Budd(|h)(a|ist|ism)|Dalai(| )Lama|Bodhi"
 KEYWORDS_BUDDHISM_EXCLUDE="Bodhi(| )Linux"
+KEYWORDS_BUDDHISM_ALL="$KEYWORDS_BUDDHISM"
 
 if [ "$1" == "" ];
 then

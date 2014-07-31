@@ -1,6 +1,7 @@
 #!/bin/bash
 
 KEYWORDS_HINDUISM="Hindu(|s)\b|Hinduism"
+KEYWORDS_HINDUISM_ALL="$KEYWORDS_HINDUISM"
 
 if [ "$1" == "" ];
 then

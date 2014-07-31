@@ -3,6 +3,7 @@
 KEYWORDS_BIBLE="Bible|biblical|Adam(| )(&|and)(| )Eve|Book(| )of(| )Genesis|\bEden\b|Isaiah|Israelites|Goliath|Philistine|Tribe(|s)(| )of(| )Judah|Leviticus|Deuteronomy"
 KEYWORDS_BIBLE_CASESENSITIVE="\bJob\b"
 KEYWORDS_BIBLE_EXCLUDE="Goliath(| )(beetle|chronicle)"
+KEYWORDS_BIBLE_ALL="$KEYWORDS_BIBLE|$KEYWORDS_BIBLE_CASESENSITIVE"
 
 if [ "$1" == "" ];
 then
