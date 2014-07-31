@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_CHRISTIANITY="Christianity|Jesus|Greek Orthodox|Russian Orthodox|Jehovah(|')s Witness"
+KEYWORDS_CHRISTIANITY="Christianity|Jesus|(Greek|Russian)(| )Orthodox|Jehovah(|')s(| )Witness|Protestant"
 KEYWORDS_ANGLICAN="Anglican|Church(| )of(| )England"
 KEYWORDS_CATHOLICISM="Catholic|Vatican|\bpope(|s)\b|papal"
 KEYWORDS_CATHOLICISM_EXCLUDE="Alexander Pope"
