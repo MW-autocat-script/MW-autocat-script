@@ -64,6 +64,7 @@ $COUNTRYDIR/Japan/Japan.sh
 $COUNTRYDIR/Jordan/Jordan.sh
 $COUNTRYDIR/Kazakhstan/Kazakhstan.sh
 $COUNTRYDIR/Kenya/Kenya.sh
+$COUNTRYDIR/Kuwait/Kuwait.sh #KEYWORDS_KUWAIT_ALL
 $COUNTRYDIR/Kyrgyzstan/Kyrgyzstan.sh
 $COUNTRYDIR/Laos/Laos.sh
 $COUNTRYDIR/Latvia/Latvia.sh
