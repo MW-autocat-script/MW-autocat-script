@@ -25,6 +25,7 @@ then
   $CARTOONDIR/My_Little_Pony_Friendship_Is_Magic/MLP.sh
   $CARTOONDIR/Naruto/Naruto.sh
   $CARTOONDIR/One_Piece/OnePiece.sh #KEYWORDS_ONEPIECE
+  $CARTOONDIR/Phineas_and_Ferb/PhineasAndFerb.sh #KEYWORDS_PHINEASANDFERB
   $CARTOONDIR/Pokémon_anime/PokémonAnime.sh
   $CARTOONDIR/South_Park/SouthPark.sh
   $CARTOONDIR/Danny_Phantom/DannyPhantom.sh
