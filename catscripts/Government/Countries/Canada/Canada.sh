@@ -8,8 +8,8 @@ KEYWORDS_OTTAWA="Ottawa"
 KEYWORDS_ONTARIO_EXCLUDE="Lake(| )Ontario|$KEYWORDS_TORONTO|$KEYWORDS_OTTAWA"
 KEYWORDS_ONTARIO_ALL="$KEYWORDS_ONTARIO|$KEYWORDS_TORONTO|$KEYWORDS_OTTAWA"
 
-KEYWORDS_QUEBEC_PROVINCE="Quebec(| )province|Province(| )of(| )Quebec"
-KEYWORDS_QUEBEC_CITY="Quebec(|,)(| )Qubec|Quebec(| )City" #This is going to make my head hurt
+KEYWORDS_QUEBEC_PROVINCE="Quebec"
+KEYWORDS_QUEBEC_CITY="Quebec(|,)(| )Quebec|Quebec(| )City" #This is going to make my head hurt
 KEYWORDS_MONTREAL="Montreal"
 KEYWORDS_QUEBEC_PROVINCE_EXCLUDE="$KEYWORDS_MONTREAL|$KEYWORDS_QUEBEC_CITY"
 KEYWORDS_QUEBEC_PROVINCE_ALL="$KEYWORDS_QUEBEC_PROVINCE|$KEYWORDS_QUEBEC_CITY|$KEYWORDS_MONTREAL"
@@ -28,7 +28,7 @@ KEYWORDS_MANITOBA_EXCLUDE="$KEYWORDS_WINNIPEG"
 KEYWORDS_MANITOBA_ALL="$KEYWORDS_MANITOBA|$KEYWORDS_WINNIPEG"
 
 KEYWORDS_BRITISHCOLUMBIA="British(| )Columbia"
-KEYWORDS_VICTORIABC="Victoria(|,)(| )(B(|\.)C|British(| )Columbia)"
+KEYWORDS_VICTORIABC="Victoria(|,)(| )(B(|\.)C|British(| )Columbia)
 KEYWORDS_VANCOUVER="Vancouver"
 KEYWORDS_BRITISHCOLUMBIA_EXCLUDE="$KEYWORDS_VICTORIABC|$KEYWORDS_VANCOUVER"
 KEYWORDS_BRITISHCOLUMBIA_ALL="$KEYWORDS_BRITISHCOLUMBIA|$KEYWORDS_VICTORIABC|$KEYWORDS_VANCOUVER"
@@ -38,7 +38,7 @@ KEYWORDS_PRINCEEDWARDISLAND_ALL="$KEYWORDS_PRINCEEDWARDISLAND"
 
 KEYWORDS_SASKATCHEWAN="Saskatchewan"
 KEYWORDS_REGINA="Regina\b"
-KEYWORDS_REGINA_EXCLUDE="Regina(| )(Spekter|Lasko)"
+KEYWORDS_REGINA_EXCLUDE="Regina(| )(Spekter|Lasko)
 KEYWORDS_SASKATOON="Saskatoon"
 KEYWORDS_SASKATCHEWAN_EXCLUDE="$KEYWORDS_REGINA|$KEYWORDS_SASKATOON"
 KEYWORDS_SASKATCHEWAN_ALL="$KEYWORDS_SASKATCHEWAN|$KEYWORDS_REGINA|$KEYWORDS_SASKATOON"
@@ -75,7 +75,7 @@ then
   
   debug_start "Canada"
 
-  CANADA="$(egrep -i "$KEYWORDS_CANADA" newpages.txt | egrep -iv "$KEYWORDS_CANADA_EXCLUDE")"
+  CANADA=$(egrep -i "$KEYWORDS_CANADA" newpages.txt | egrep -iv "$KEYWORDS_CANADA_EXCLUDE")
 
   if [ "$CANADA" != "" ];
   then
@@ -87,7 +87,7 @@ then
     unset CANADA
   fi
 
-  ONTARIO="$(egrep -i "$KEYWORDS_ONTARIO" newpages.txt | egrep -iv "$KEYWORDS_ONTARIO_EXCLUDE")"
+  ONTARIO=$(egrep -i "$KEYWORDS_ONTARIO" newpages.txt | egrep -iv "$KEYWORDS_ONTARIO_EXCLUDE")
 
   if [ "$ONTARIO" != "" ];
   then
@@ -99,7 +99,7 @@ then
     unset ONTARIO
   fi
 
-  TORONTO="$(egrep -i "$KEYWORDS_TORONTO" newpages.txt)"
+  TORONTO=$(egrep -i "$KEYWORDS_TORONTO" newpages.txt)
 
   if [ "$TORONTO" != "" ];
   then
@@ -111,7 +111,7 @@ then
     unset TORONTO
   fi
 
-  OTTAWA="$(egrep -i "$KEYWORDS_OTTAWA" newpages.txt)"
+  OTTAWA=$(egrep -i "$KEYWORDS_OTTAWA" newpages.txt)
 
   if [ "$OTTAWA" != "" ];
   then
@@ -123,7 +123,7 @@ then
     unset OTTAWA
   fi
 
-  QUEBECPROVINCE="$(egrep -i "$KEYWORDS_QUEBEC_PROVINCE" newpages.txt | egrep -iv "$KEYWORDS_QUEBEC_PROVINCE_EXCLUDE")"
+  QUEBECPROVINCE=$(egrep -i "$KEYWORDS_QUEBEC_PROVINCE" newpages.txt | egrep -iv "$KEYWORDS_QUEBEC_PROVINCE_EXCLUDE")
 
   if [ "$QUEBECPROVINCE" != "" ];
   then
@@ -135,7 +135,7 @@ then
     unset QUEBECPROVINCE
   fi
 
-  QUEBECCITY="$(egrep -i "$KEYWORDS_QUEBEC_CITY" newpages.txt)"
+  QUEBECCITY=$(egrep -i "$KEYWORDS_QUEBEC_CITY" newpages.txt)
 
   if [ "$QUEBECCITY" != "" ];
   then
@@ -147,7 +147,7 @@ then
     unset QUEBECCITY
   fi
 
-  MONTREAL="$(egrep -i "$KEYWORDS_MONTREAL" newpages.txt)"
+  MONTREAL=$(egrep -i "$KEYWORDS_MONTREAL" newpages.txt)
 
   if [ "$MONTREAL" != "" ];
   then
@@ -159,7 +159,7 @@ then
     unset MONTREAL
   fi
 
-  NOVASCOTIA="$(egrep -i "$KEYWORDS_NOVASCOTIA" newpages.txt | egrep -iv "$KEYWORDS_NOVASCOTIA_EXCLUDE")"
+  NOVASCOTIA=$(egrep -i "$KEYWORDS_NOVASCOTIA" newpages.txt | egrep -iv "$KEYWORDS_NOVASCOTIA_EXCLUDE")
 
   if [ "$NOVASCOTIA" != "" ];
   then
@@ -171,7 +171,7 @@ then
     unset NOVASCOTIA
   fi
 
-  HALIFAX="$(egrep -i "$KEYWORDS_HALIFAX" newpages.txt)"
+  HALIFAX=$(egrep -i "$KEYWORDS_HALIFAX" newpages.txt)
 
   if [ "$HALIFAX" != "" ];
   then
@@ -183,7 +183,7 @@ then
     unset HALIFAX
   fi
 
-  NEWBRUNSWICK="$(egrep -i "$KEYWORDS_NEWBRUNSWICK" newpages.txt)"
+  NEWBRUNSWICK=$(egrep -i "$KEYWORDS_NEWBRUNSWICK" newpages.txt)
 
   if [ "$NEWBRUNSWICK" != "" ];
   then
@@ -195,7 +195,7 @@ then
     unset NEWBRUNSWICK
   fi
 
-  MANITOBA="$(egrep -i "$KEYWORDS_MANITOBA" newpages.txt | egrep -iv "$KEYWORDS_MANITOBA_EXCLUDE")"
+  MANITOBA=$(egrep -i "$KEYWORDS_MANITOBA" newpages.txt | egrep -iv "$KEYWORDS_MANITOBA_EXCLUDE")
 
   if [ "$MANITOBA" != "" ];
   then
@@ -207,7 +207,7 @@ then
     unset MANITOBA
   fi
 
-  WINNIPEG="$(egrep -i "$KEYWORDS_WINNIPEG" newpages.txt)"
+  WINNIPEG=$(egrep -i "$KEYWORDS_WINNIPEG" newpages.txt)
 
   if [ "$WINNIPEG" != "" ];
   then
@@ -219,7 +219,7 @@ then
     unset WINNIPEG
   fi
 
-  BRITISHCOLUMBIA="$(egrep -i "$KEYWORDS_BRITISHCOLUMBIA" newpages.txt | egrep -iv "$KEYWORDS_BRITISHCOLUMBIA_EXCLUDE")"
+  BRITISHCOLUMBIA=$(egrep -i "$KEYWORDS_BRITISHCOLUMBIA" newpages.txt | egrep -iv "$KEYWORDS_BRITISHCOLUMBIA_EXCLUDE")
 
   if [ "$BRITISHCOLUMBIA" != "" ];
   then
@@ -231,7 +231,7 @@ then
     unset BRITISHCOLUMBIA
   fi
 
-  VICTORIABC="$(egrep -i "$KEYWORDS_VICTORIABC" newpages.txt)"
+  VICTORIABC=$(egrep -i "$KEYWORDS_VICTORIABC" newpages.txt)
 
   if [ "$VICTORIABC" != "" ];
   then
@@ -243,7 +243,7 @@ then
     unset VICTORIABC
   fi
 
-  VANCOUVER="$(egrep -i "$KEYWORDS_VANCOUVER" newpages.txt)"
+  VANCOUVER=$(egrep -i "$KEYWORDS_VANCOUVER" newpages.txt)
 
   if [ "$VANCOUVER" != "" ];
   then
@@ -255,7 +255,7 @@ then
     unset VANCOUVER
   fi
 
-  PRINCEEDWARDISLAND="$(egrep -i "$KEYWORDS_PRINCEEDWARDISLAND" newpages.txt)"
+  PRINCEEDWARDISLAND=$(egrep -i "$KEYWORDS_PRINCEEDWARDISLAND" newpages.txt)
 
   if [ "$PRINCEEDWARDISLAND" != "" ];
   then
@@ -267,7 +267,7 @@ then
     unset PRINCEEDWARDISLAND
   fi
 
-  SASKATCHEWAN="$(egrep -i "$KEYWORDS_SASKATCHEWAN" newpages.txt | egrep -iv "$KEYWORDS_SASKATCHEWAN_EXCLUDE")"
+  SASKATCHEWAN=$(egrep -i "$KEYWORDS_SASKATCHEWAN" newpages.txt | egrep -iv "$KEYWORDS_SASKATCHEWAN_EXCLUDE")
 
   if [ "$SASKATCHEWAN" != "" ];
   then
@@ -279,7 +279,7 @@ then
     unset SASKATCHEWAN
   fi
 
-  REGINA="$(egrep -i "$KEYWORDS_REGINA" newpages.txt | egrep -iv "$KEYWORDS_REGINA_EXCLUDE")"
+  REGINA=$(egrep -i "$KEYWORDS_REGINA" newpages.txt | egrep -iv "$KEYWORDS_REGINA_EXCLUDE")
 
   if [ "$REGINA" != "" ];
   then
@@ -291,7 +291,7 @@ then
     unset REGINA
   fi
 
-  SASKATOON="$(egrep -i "$KEYWORDS_SASKATOON" newpages.txt)"
+  SASKATOON=$(egrep -i "$KEYWORDS_SASKATOON" newpages.txt)
 
   if [ "$SASKATOON" != "" ];
   then
@@ -303,7 +303,7 @@ then
     unset SASKATOON
   fi
 
-  ALBERTA="$(egrep -i "$KEYWORDS_ALBERTA" newpages.txt | egrep -iv "$KEYWORDS_ALBERTA_EXCLUDE")"
+  ALBERTA=$(egrep -i "$KEYWORDS_ALBERTA" newpages.txt | egrep -iv "$KEYWORDS_ALBERTA_EXCLUDE")
 
   if [ "$ALBERTA" != "" ];
   then
@@ -315,7 +315,7 @@ then
     unset ALBERTA
   fi
 
-  EDMONTON="$(egrep -i "$KEYWORDS_EDMONTON" newpages.txt)"
+  EDMONTON=$(egrep -i "$KEYWORDS_EDMONTON" newpages.txt)
 
   if [ "$EDMONTON" != "" ];
   then
@@ -327,7 +327,7 @@ then
     unset EDMONTON
   fi
 
-  CALGARY="$(egrep -i "$KEYWORDS_CALGARY" newpages.txt)"
+  CALGARY=$(egrep -i "$KEYWORDS_CALGARY" newpages.txt)
 
   if [ "$CALGARY" != "" ];
   then
@@ -339,7 +339,7 @@ then
     unset CALGARY
   fi
 
-  NEWFOUNDLANDANDLABRADOR="$(egrep -i "$KEYWORDS_NEWFOUNDLANDANDLABRADOR" newpages.txt | egrep -iv "$KEYWORDS_NEWFOUNDLANDANDLABRADOR_EXCLUDE")"
+  NEWFOUNDLANDANDLABRADOR=$(egrep -i "$KEYWORDS_NEWFOUNDLANDANDLABRADOR" newpages.txt | egrep -iv "$KEYWORDS_NEWFOUNDLANDANDLABRADOR_EXCLUDE")
 
   if [ "$NEWFOUNDLANDANDLABRADOR" != "" ];
   then
@@ -351,7 +351,7 @@ then
     unset NEWFOUNDLANDANDLABRADOR
   fi
 
-  NORTHWESTTERRITORIES="$(egrep -i "$KEYWORDS_NORTHWESTTERRITORIES" newpages.txt | egrep -iv "$KEYWORDS_NORTHWESTTERRITORIES_EXCLUDE")"
+  NORTHWESTTERRITORIES=$(egrep -i "$KEYWORDS_NORTHWESTTERRITORIES" newpages.txt | egrep -iv "$KEYWORDS_NORTHWESTTERRITORIES_EXCLUDE")
 
   if [ "$NORTHWESTTERRITORIES" != "" ];
   then
@@ -363,7 +363,7 @@ then
     unset NORTHWESTTERRITORIES
   fi
 
-  YELLOWKNIFE="$(egrep -i "$KEYWORDS_YELLOWKNIFE" newpages.txt)"
+  YELLOWKNIFE=$(egrep -i "$KEYWORDS_YELLOWKNIFE" newpages.txt)
 
   if [ "$YELLOWKNIFE" != "" ];
   then
@@ -375,7 +375,7 @@ then
     unset YELLOWKNIFE
   fi
 
-  YUKON="$(egrep -i "$KEYWORDS_YUKON" newpages.txt | egrep -iv "$KEYWORDS_YUKON_EXCLUDE")"
+  YUKON=$(egrep -i "$KEYWORDS_YUKON" newpages.txt | egrep -iv "$KEYWORDS_YUKON_EXCLUDE")
 
   if [ "$YUKON" != "" ];
   then
@@ -387,7 +387,7 @@ then
     unset YUKON
   fi
 
-  NUNAVUT="$(egrep -i "$KEYWORDS_NUNAVUT" newpages.txt)"
+  NUNAVUT=$(egrep -i "$KEYWORDS_NUNAVUT" newpages.txt)
 
   if [ "$NUNAVUT" != "" ];
   then
