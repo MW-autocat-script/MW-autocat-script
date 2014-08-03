@@ -1,12 +1,13 @@
 #!/bin/bash
 
 KEYWORDS_NEWYORK="New(| )York"
-KEYWORDS_NYC="New(| )York(| )City|\bNYC|New(| )York(|,)(| )New(| )York|Manhattan|Brooklyn|Queen(|,)(| )New(| )York"
+KEYWORDS_NYC="New(| )York(| )City|\bNYC|New(| )York(|,)(| )New(| )York|Manhattan|Brooklyn|Queens(|,)(| )New(| )York|Chrysler(| )Building|Bank(| )of(| )America(| )Tower|Big(| )Apple"
 KEYWORDS_ALBANY="Albany"
 KEYWORDS_ALBANY_EXCLUDE="Albany(|,)(| )(GA|Georgia)"
 KEYWORDS_EMPIRESTATE="Empire(| )State(| )Building"
 KEYWORDS_NYC_EXCLUDE="$KEYWORDS_EMPIRESTATE"
-KEYWORDS_NEWYORK_EXCLUDE="$KEYWORDS_NYC|$KEYWORDS_ALBANY"
+KEYWORDS_NYC_ALL="$KEYWORDS_NYC|$KEYWORDS_NYC_EXCLUDE"
+KEYWORDS_NEWYORK_EXCLUDE="$KEYWORDS_NYC_ALL|$KEYWORDS_ALBANY"
 
 if [ "$1" == "" ];
 then
