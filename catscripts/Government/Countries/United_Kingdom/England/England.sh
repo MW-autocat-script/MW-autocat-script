@@ -2,9 +2,12 @@
 
 KEYWORDS_ENGLAND="England|British" #Since most people don't know the difference between British and English
 KEYWORDS_LONDON="London"
-KEYWORDS_LONDON_EXCLUDE="Jack(| )London" #Jack London was an American author
+KEYWORDS_BUCKINGHAMPALACE="Buckingham(| )Palace"
+KEYWORDS_LONDON_EXCLUDE="Jack(| )London|$KEYWORDS_BUCKINGHAMPALACE" #Jack London was an American author
+KEYWORDS_LONDON_ALL="$KEYWORDS_LONDON|$KEYWORDS_BUCKINGHAMPALACE"
 KEYWORDS_STONEHENGE="Stonehenge"
-KEYWORDS_ENGLAND_EXCLUDE="$KEYWORDS_LONDON|$KEYWORDS_STONEHENGE|British(| )Columbia'|New(| )England|Church(| )of(| )England|British(| )Isles"
+KEYWORDS_ENGLAND_EXCLUDE="$KEYWORDS_LONDON_ALL|$KEYWORDS_STONEHENGE|British(| )Columbia'|New(| )England|Church(| )of(| )England|British(| )Isles"
+KEYWORDS_ENGLAND_ALL="$KEYWORDS_ENGLAND|$KEYWORDS_LONDON_ALL|$KEYWORDS_STONEHENGE"
 
 if [ "$1" == "" ];
 then
@@ -13,6 +16,7 @@ then
 
   ENGLAND=$(egrep -i "$KEYWORDS_ENGLAND" newpages.txt | egrep -iv "$KEYWORDS_ENGLAND_EXCLUDE")
   LONDON=$(egrep -i "$KEYWORDS_LONDON" newpages.txt | egrep -iv "$KEYWORDS_LONDON_EXCLUDE")
+  BUCKINGHAMPALACE=$(egrep -i "$KEYWORDS_BUCKINGHAMPALACE" newpages.txt)
   STONEHENGE=$(egrep -i "$KEYWORDS_STONEHENGE" newpages.txt)
 
   if [ "$ENGLAND" != "" ];
@@ -33,6 +37,16 @@ then
     $CATEGORIZE
     rm London.txt
     unset LONDON
+  fi
+
+  if [ "$BUCKINGHAMPALACE" != "" ];
+  then
+    printf "%s" "$BUCKINGHAMPALACE" > BuckinghamPalace.txt
+    export CATFILE="BuckinghamPalace.txt"
+    export CATNAME="Buckingham Palace"
+    $CATEGORIZE
+    rm BuckinghamPalace.txt
+    unset BUCKINGHAMPALACE
   fi
 
   if [ "$STONEHENGE" != "" ];

@@ -39,7 +39,6 @@ $COUNTRYDIR/Dominican_Republic/DominicanRepublic.sh
 $COUNTRYDIR/Ecuador/Ecuador.sh
 $COUNTRYDIR/Egypt/Egypt.sh
 $COUNTRYDIR/El_Salvador/ElSalvador.sh
-$COUNTRYDIR/England/England.sh
 $COUNTRYDIR/Ethiopia/Ethiopia.sh
 $COUNTRYDIR/Fiji/Fiji.sh
 $COUNTRYDIR/Finland/Finland.sh
@@ -90,7 +89,6 @@ $COUNTRYDIR/New_Zealand/NewZealand.sh
 $COUNTRYDIR/Nicaragua/Nicaragua.sh
 $COUNTRYDIR/Niger/Niger.sh #KEYWORDS_NIGER_ALL
 $COUNTRYDIR/Nigeria/Nigeria.sh
-$COUNTRYDIR/Northern_Ireland/NorthernIreland.sh
 $COUNTRYDIR/North_Korea/NorthKorea.sh
 $COUNTRYDIR/Norway/Norway.sh
 $COUNTRYDIR/Pakistan/Pakistan.sh
@@ -108,7 +106,6 @@ $COUNTRYDIR/Singapore/Singapore.sh
 $COUNTRYDIR/South_Africa/SouthAfrica.sh
 $COUNTRYDIR/Spain/Spain.sh
 $COUNTRYDIR/Saudi_Arabia/SaudiArabia.sh
-$COUNTRYDIR/Scotland/Scotland.sh
 $COUNTRYDIR/Serbia/Serbia.sh #KEYWORDS_SERBIA_ALL
 $COUNTRYDIR/Slovakia/Slovakia.sh #KEYWORDS_SLOVAKIA_ALL
 $COUNTRYDIR/Slovenia/Slovenia.sh #KEYWORDS_SLOVENIA_ALL
@@ -120,10 +117,10 @@ $COUNTRYDIR/Switzerland/Switzerland.sh
 $COUNTRYDIR/Tanzia/Tanzia.sh
 $COUNTRYDIR/Tunisia/Tunisia.sh
 $COUNTRYDIR/Turkey/Turkey.sh
-$COUNTRYDIR/Wales/Wales.sh
 $COUNTRYDIR/Uganda/Uganda.sh
 $COUNTRYDIR/Ukraine/Ukraine.sh #KEYWORDS_UKRAINE_ALL
 $COUNTRYDIR/United_Arab_Emirates/UAE.sh
+$COUNTRYDIR/United_Kingdom/UnitedKingdom.sh #KEYWORDS_UNITEDKINGDOM_ALL
 $COUNTRYDIR/United_States/UnitedStates.sh
 $COUNTRYDIR/Unrecognized_countries/Unrecognized.sh
 $COUNTRYDIR/Venezuela/Venezuela.sh

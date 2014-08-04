@@ -3,6 +3,7 @@
 KEYWORDS_WALES="Wales"
 KEYWORDS_CARDIFF="Cardiff"
 KEYWORDS_WALES_EXCLUDE="$KEYWORDS_CARDIFF|Jim(|bo|my)(| )Wales|New(| )South(| )Wales"
+KEYWORDS_WALES_ALL="$KEYWORDS_WALES|$KEYWORDS_CARDIFF"
 
 if [ "$1" == "" ];
 then

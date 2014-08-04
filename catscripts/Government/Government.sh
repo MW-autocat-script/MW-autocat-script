@@ -7,7 +7,6 @@ then
   debug_start "Government"
 
   . $GOVERNMENTDIR/Countries/Countries.sh
-  . $GOVERNMENTDIR/United_Kingdom/UnitedKingdom.sh
   . $GOVERNMENTDIR/United_Nations/UnitedNations.sh
 
   debug_end "Government"
