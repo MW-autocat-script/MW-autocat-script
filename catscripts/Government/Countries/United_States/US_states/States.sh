@@ -32,6 +32,7 @@ $USSTATESDIR/Missouri/Missouri.sh
 $USSTATESDIR/Montana/Montana.sh
 $USSTATESDIR/Nebraska/Nebraska.sh
 $USSTATESDIR/Nevada/Nevada.sh
+$USSTATESDIR/New_Hampshire/NewHampshire.sh #KEYWORDS_NEWHAMPSHIRE_ALL
 $USSTATESDIR/New_Jersey/NewJersey.sh
 $USSTATESDIR/New_Mexico/NewMexico.sh
 $USSTATESDIR/New_York/NewYork.sh
@@ -44,6 +45,7 @@ $USSTATESDIR/Pennsylvania/Pennsylvania.sh
 $USSTATESDIR/Rhode_Island/RhodeIsland.sh
 $USSTATESDIR/South_Carolina/SouthCarolina.sh
 $USSTATESDIR/South_Dakota/SouthDakota.sh
+$USSTATESDIR/Tennessee/Tennessee.sh #KEYWORDS_TENNESSEE_ALL
 $USSTATESDIR/Texas/Texas.sh
 $USSTATESDIR/Utah/Utah.sh
 $USSTATESDIR/Vermont/Vermont.sh
