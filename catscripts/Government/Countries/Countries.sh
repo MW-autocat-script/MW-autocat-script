@@ -88,6 +88,7 @@ $COUNTRYDIR/Moldova/Moldova.sh
 $COUNTRYDIR/Mongolia/Mongolia.sh
 $COUNTRYDIR/Monaco/Monaco.sh
 $COUNTRYDIR/Morocco/Morocco.sh
+$COUNTRYDIR/Mozambique/Mozambique.sh #KEYWORDS_MOZAMBIQUE_ALL
 $COUNTRYDIR/Namibia/Namibia.sh
 $COUNTRYDIR/Nepal/Nepal.sh
 $COUNTRYDIR/New_Zealand/NewZealand.sh
@@ -107,6 +108,7 @@ $COUNTRYDIR/Portugal/Portugal.sh
 $COUNTRYDIR/Romania/Romania.sh
 $COUNTRYDIR/Russia/Russia.sh
 $COUNTRYDIR/Rwanda/Rwanda.sh #KEYWORDS_RWANDA_ALL
+$COUNTRYDIR/Sao_Tome_and_Principe/SaoTome.sh #KEYWORDS_SAOTOME_ALL
 $COUNTRYDIR/Singapore/Singapore.sh
 $COUNTRYDIR/South_Africa/SouthAfrica.sh
 $COUNTRYDIR/Spain/Spain.sh
