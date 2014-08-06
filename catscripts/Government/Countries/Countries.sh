@@ -25,9 +25,11 @@ $COUNTRYDIR/Bolivia/Bolivia.sh
 $COUNTRYDIR/Brazil/Brazil.sh
 $COUNTRYDIR/Brunei/Brunei.sh
 $COUNTRYDIR/Bulgaria/Bulgaria.sh
+$COUNTRYDIR/Burundi/Burundi.sh #KEYWORDS_BURUNDI_ALL
 $COUNTRYDIR/Cambodia/Cambodia.sh
 $COUNTRYDIR/Cameroon/Cameroon.sh
 $COUNTRYDIR/Canada/Canada.sh
+$COUNTRYDIR/Cape_Verde/CapeVerde.sh #KEYWORDS_CAPEVERDE_ALL
 $COUNTRYDIR/Chile/Chile.sh
 $COUNTRYDIR/China/China.sh
 $COUNTRYDIR/Costa_Rica/CostaRica.sh
@@ -35,6 +37,7 @@ $COUNTRYDIR/Côte\ d\'Ivoire/Côte_d\'Ivoire.sh
 $COUNTRYDIR/Cuba/Cuba.sh
 $COUNTRYDIR/Cyprus/Cyprus.sh
 $COUNTRYDIR/Denmark/Denmark.sh
+$COUNTRYDIR/Djibouti/Djibouti.sh #KEYWORDS_DJIBOUTI_ALL
 $COUNTRYDIR/Dominican_Republic/DominicanRepublic.sh
 $COUNTRYDIR/Ecuador/Ecuador.sh
 $COUNTRYDIR/Egypt/Egypt.sh
@@ -48,6 +51,7 @@ $COUNTRYDIR/Germany/Germany.sh
 $COUNTRYDIR/Ghana/Ghana.sh
 $COUNTRYDIR/Greece/Greece.sh
 $COUNTRYDIR/Guatemala/Guatemala.sh
+$COUNTRYDIR/Guinea-Bissau/GuineaBissau.sh #KEYWORDS_GUINEABISSAU_ALL
 $COUNTRYDIR/Haiti/Haiti.sh
 $COUNTRYDIR/Honduras/Honduras.sh
 $COUNTRYDIR/Hungary/Hungary.sh

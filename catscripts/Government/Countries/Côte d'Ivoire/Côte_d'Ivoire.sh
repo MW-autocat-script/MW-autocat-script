@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_COTEDIVOIRE="C[oô]te(| )d(|')Ivoire|Ivory(| )Coast"
+KEYWORDS_COTEDIVOIRE="C(o|ô)te(| )d(|')Ivoire|Ivory(| )Coast"
 
 if [ "$1" == "" ]; #Normal operation
 then
