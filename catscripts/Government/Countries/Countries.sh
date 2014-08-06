@@ -43,6 +43,7 @@ $COUNTRYDIR/Ethiopia/Ethiopia.sh
 $COUNTRYDIR/Fiji/Fiji.sh
 $COUNTRYDIR/Finland/Finland.sh
 $COUNTRYDIR/France/France.sh
+$COUNTRYDIR/Gabon/Gabon.sh #KEYWORDS_GABON_ALL
 $COUNTRYDIR/Germany/Germany.sh
 $COUNTRYDIR/Ghana/Ghana.sh
 $COUNTRYDIR/Greece/Greece.sh
@@ -106,6 +107,7 @@ $COUNTRYDIR/Singapore/Singapore.sh
 $COUNTRYDIR/South_Africa/SouthAfrica.sh
 $COUNTRYDIR/Spain/Spain.sh
 $COUNTRYDIR/Saudi_Arabia/SaudiArabia.sh
+$COUNTRYDIR/Senegal/Senegal.sh #KEYWORDS_SENEGAL_ALL
 $COUNTRYDIR/Serbia/Serbia.sh #KEYWORDS_SERBIA_ALL
 $COUNTRYDIR/Slovakia/Slovakia.sh #KEYWORDS_SLOVAKIA_ALL
 $COUNTRYDIR/Slovenia/Slovenia.sh #KEYWORDS_SLOVENIA_ALL
