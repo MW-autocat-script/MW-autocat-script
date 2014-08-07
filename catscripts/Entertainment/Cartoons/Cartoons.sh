@@ -13,6 +13,7 @@ then
 
   $CARTOONDIR/American_Dad/AmericanDad.sh
   $CARTOONDIR/Avatar_The_Last_Airbender/Avatar.sh
+  $CARTOONDIR/Code_Geass/CodeGeass.sh #KEYWORDS_CODEGEASS
   $CARTOONDIR/Death_Note/DeathNote.sh #KEYWORDS_DEATHNOTE
   $CARTOONDIR/Dora_the_Explorer/Dora.sh
   $CARTOONDIR/Fairy_Tail/FairyTail.sh #KEYWORDS_FAIRYTAIL
