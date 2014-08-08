@@ -7,6 +7,7 @@ COUNTRYDIR="./catscripts/Government/Countries"
 $COUNTRYDIR/Afghanistan/Afghanistan.sh
 $COUNTRYDIR/Albania/Albania.sh
 $COUNTRYDIR/Algeria/Algeria.sh
+$COUNTRYDIR/Andorra/Andorra.sh #KEYWORDS_ANDORRA_ALL
 $COUNTRYDIR/Angola/Angola.sh
 $COUNTRYDIR/Argentina/Argentina.sh
 $COUNTRYDIR/Armenia/Armenia.sh
