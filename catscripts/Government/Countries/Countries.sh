@@ -138,6 +138,8 @@ $COUNTRYDIR/United_Kingdom/UnitedKingdom.sh #KEYWORDS_UNITEDKINGDOM_ALL
 $COUNTRYDIR/United_States/UnitedStates.sh
 $COUNTRYDIR/Unrecognized_countries/Unrecognized.sh
 $COUNTRYDIR/Venezuela/Venezuela.sh
+$COUNTRYDIR/Vietnam/Vietnam.sh #KEYWORDS_VIETNAM_ALL
+$COUNTRYDIR/Zambia/Zambia.sh #KEYWORDS_ZAMBIA_ALL
 $COUNTRYDIR/Zimbabwe/Zimbabwe.sh #KEYWORDS_ZIMBABWE_ALL
 
 debug_end "Countries"
