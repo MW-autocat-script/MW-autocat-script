@@ -23,6 +23,7 @@ $COUNTRYDIR/Belarus/Belarus.sh
 $COUNTRYDIR/Belgium/Belgium.sh
 $COUNTRYDIR/Belize/Belize.sh
 $COUNTRYDIR/Benin/Benin.sh
+$COUNTRYDIR/Bhutan/Bhutan.sh #KEYWORDS_BHUTAN_ALL
 $COUNTRYDIR/Bolivia/Bolivia.sh
 $COUNTRYDIR/Brazil/Brazil.sh
 $COUNTRYDIR/Brunei/Brunei.sh
