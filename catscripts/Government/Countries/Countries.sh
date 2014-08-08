@@ -9,6 +9,7 @@ $COUNTRYDIR/Albania/Albania.sh
 $COUNTRYDIR/Algeria/Algeria.sh
 $COUNTRYDIR/Andorra/Andorra.sh #KEYWORDS_ANDORRA_ALL
 $COUNTRYDIR/Angola/Angola.sh
+$COUNTRYDIR/Antigua_and_Barbuda/AntiguaAndBarbuda.sh #KEYWORDS_ANTIGUAANDBARBUDA_ALL
 $COUNTRYDIR/Argentina/Argentina.sh
 $COUNTRYDIR/Armenia/Armenia.sh
 $COUNTRYDIR/Australia/Australia.sh
