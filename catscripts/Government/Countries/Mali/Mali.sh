@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_MALI="Mali\b"
+KEYWORDS_MALI="\bMali(|s)\b"
 
 if [ "$1" == "" ]; #Normal operation
 then
