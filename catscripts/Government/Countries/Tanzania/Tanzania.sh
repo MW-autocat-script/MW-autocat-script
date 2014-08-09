@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_TANZANIA="Tanzia"
+KEYWORDS_TANZANIA="Tanzia|Tanzania"
 KEYWORDS_TANZANIA_ALL="$KEYWORDS_TANZANIA"
 
 if [ "$1" == "" ]; #Normal operation
