@@ -131,7 +131,7 @@ $COUNTRYDIR/Sri_Lanka/SriLanka.sh
 $COUNTRYDIR/Sudan/Sudan.sh #KEYWORDS_SUDAN_ALL
 $COUNTRYDIR/Sweden/Sweden.sh
 $COUNTRYDIR/Switzerland/Switzerland.sh
-$COUNTRYDIR/Tanzia/Tanzia.sh
+$COUNTRYDIR/Tanzania/Tanzania.sh #KEYWORDS_TANZANIA_ALL
 $COUNTRYDIR/Togo/Togo.sh #KEYWORDS_TOGO_ALL
 $COUNTRYDIR/Tunisia/Tunisia.sh
 $COUNTRYDIR/Turkey/Turkey.sh
