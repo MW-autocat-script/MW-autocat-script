@@ -98,6 +98,7 @@ $COUNTRYDIR/Mozambique/Mozambique.sh #KEYWORDS_MOZAMBIQUE_ALL
 $COUNTRYDIR/Myanmar/Myanmar.sh #KEYWORDS_MYANMAR_ALL
 $COUNTRYDIR/Namibia/Namibia.sh
 $COUNTRYDIR/Nepal/Nepal.sh
+$COUNTRYDIR/Netherlands/Netherlands.sh #KEYWORDS_NETHERLANDS_ALL
 $COUNTRYDIR/New_Zealand/NewZealand.sh
 $COUNTRYDIR/Nicaragua/Nicaragua.sh
 $COUNTRYDIR/Niger/Niger.sh #KEYWORDS_NIGER_ALL
