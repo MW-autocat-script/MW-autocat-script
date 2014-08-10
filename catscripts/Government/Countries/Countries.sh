@@ -50,6 +50,7 @@ $COUNTRYDIR/Dominican_Republic/DominicanRepublic.sh
 $COUNTRYDIR/Ecuador/Ecuador.sh
 $COUNTRYDIR/Egypt/Egypt.sh
 $COUNTRYDIR/El_Salvador/ElSalvador.sh
+$COUNTRYDIR/Estonia/Estonia.sh #KEYWORDS_ESTONIA_ALL
 $COUNTRYDIR/Ethiopia/Ethiopia.sh
 $COUNTRYDIR/Fiji/Fiji.sh
 $COUNTRYDIR/Finland/Finland.sh
