@@ -1,7 +1,8 @@
 #!/bin/bash
 
 KEYWORDS_MONTANA="Montana"
-KEYWORDS_MONTANA_EXCLUDE="Hanna(|h)(| )Montana"
+KEYWORDS_MONTANA_EXCLUDE="(French|Hanna(|h))(| )Montana"
+KEYWORDS_MONTANA_ALL="$KEYWORDS_MONTANA"
 
 if [ "$1" == "" ]; #Normal operation
 then
