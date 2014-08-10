@@ -100,6 +100,7 @@ $COUNTRYDIR/Mexico/Mexico.sh
 $COUNTRYDIR/Moldova/Moldova.sh
 $COUNTRYDIR/Mongolia/Mongolia.sh
 $COUNTRYDIR/Monaco/Monaco.sh
+$COUNTRYDIR/Montenegro/Montenegro.sh #KEYWORDS_MONTENEGRO_ALL
 $COUNTRYDIR/Morocco/Morocco.sh
 $COUNTRYDIR/Mozambique/Mozambique.sh #KEYWORDS_MOZAMBIQUE_ALL
 $COUNTRYDIR/Myanmar/Myanmar.sh #KEYWORDS_MYANMAR_ALL
