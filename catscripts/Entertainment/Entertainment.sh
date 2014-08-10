@@ -15,5 +15,6 @@ $ENTERTAINMENTDIR/Movies/Movies.sh
 $ENTERTAINMENTDIR/Puzzles/Puzzles.sh
 . $ENTERTAINMENTDIR/Professional_wrestling/ProfessionalWrestling.sh
 $ENTERTAINMENTDIR/Television_series/Televisionseries.sh
+$ENTERTAINMENTDIR/Toys/Toys.sh
 
 debug_end "Entertainment"
