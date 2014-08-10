@@ -56,6 +56,7 @@ $COUNTRYDIR/Fiji/Fiji.sh
 $COUNTRYDIR/Finland/Finland.sh
 $COUNTRYDIR/France/France.sh
 $COUNTRYDIR/Gabon/Gabon.sh #KEYWORDS_GABON_ALL
+$COUNTRYDIR/Georgia/Georgia.sh #KEYWORDS_GEORGIAREPUBLIC_ALL
 $COUNTRYDIR/Germany/Germany.sh
 $COUNTRYDIR/Ghana/Ghana.sh
 $COUNTRYDIR/Greece/Greece.sh

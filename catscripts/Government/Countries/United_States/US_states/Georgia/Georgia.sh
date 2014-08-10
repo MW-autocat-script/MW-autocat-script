@@ -3,7 +3,7 @@
 KEYWORDS_ATLANTA="Atlanta"
 KEYWORDS_ATLANTA_EXCLUDE="Atlanta(| )Braves"
 KEYWORDS_GEORGIA="Georgia|, GA\b"
-KEYWORDS_GEORGIA_EXCLUDE="Republic(| )of(| )Georgia|$KEYWORDS_ATLANTA"
+KEYWORDS_GEORGIA_EXCLUDE="(Country|Republic)(| )of(| )Georgia|$KEYWORDS_ATLANTA"
 
 if [ "$1" == "" ];
 then
