@@ -42,6 +42,7 @@ $COUNTRYDIR/Costa_Rica/CostaRica.sh
 $COUNTRYDIR/Côte\ d\'Ivoire/Côte_d\'Ivoire.sh
 $COUNTRYDIR/Cuba/Cuba.sh
 $COUNTRYDIR/Cyprus/Cyprus.sh
+$COUNTRYDIR/Czech_Republic/CzechRepublic.sh #KEYWORDS_CZECHREPUBLIC_ALL
 $COUNTRYDIR/Denmark/Denmark.sh
 $COUNTRYDIR/Djibouti/Djibouti.sh #KEYWORDS_DJIBOUTI_ALL
 $COUNTRYDIR/Dominican_Republic/DominicanRepublic.sh
