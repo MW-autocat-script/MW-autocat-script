@@ -78,6 +78,7 @@ $COUNTRYDIR/Japan/Japan.sh
 $COUNTRYDIR/Jordan/Jordan.sh
 $COUNTRYDIR/Kazakhstan/Kazakhstan.sh
 $COUNTRYDIR/Kenya/Kenya.sh
+$COUNTRYDIR/Kosovo/Kosovo.sh #KEYWORDS_KOSOVO_ALL
 $COUNTRYDIR/Kuwait/Kuwait.sh #KEYWORDS_KUWAIT_ALL
 $COUNTRYDIR/Kyrgyzstan/Kyrgyzstan.sh
 $COUNTRYDIR/Laos/Laos.sh
@@ -86,6 +87,7 @@ $COUNTRYDIR/Lebanon/Lebanon.sh
 $COUNTRYDIR/Lesotho/Lesotho.sh
 $COUNTRYDIR/Liberia/Liberia.sh #KEYWORDS_LIBERIA_ALL
 $COUNTRYDIR/Libya/Libya.sh
+$COUNTRYDIR/Liechtenstein/Liechtenstein.sh #KEYWORDS_LIECHTENSTEIN_ALL
 $COUNTRYDIR/Lithuania/Lithuania.sh
 $COUNTRYDIR/Luxembourg/Luxembourg.sh
 $COUNTRYDIR/Macedonia/Macedonia.sh
