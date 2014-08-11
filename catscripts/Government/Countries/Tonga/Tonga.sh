@@ -14,7 +14,7 @@ then
   then
     printf "%s" "$TONGA" > Tonga.txt
     export CATFILE="Tonga.txt"
-    export CATNAME="Tonga.txt"
+    export CATNAME="Tonga"
     $CATEGORIZE
     rm Tonga.txt
     unset TONGA
