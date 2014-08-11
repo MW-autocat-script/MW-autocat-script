@@ -7,7 +7,8 @@ KEYWORDS_KOLKATA="Kolkata|Calcutta"
 KEYWORDS_CHENNAI="Chennai|Madras"
 KEYWORDS_BANGALORE="Bangalore|Bengaluru"
 KEYWORDS_PUNE="\bPune"
-KEYWORDS_INDIA_EXCLUDE="$KEYWORDS_NEWDELHI|$KEYWORDS_MUMBAI|$KEYWORDS_KOLKATA|$KEYWORDS_CHENNAI|$KEYWORDS_BANGALORE|$KEYWORDS_PUNE"
+KEYWORDS_HYDERABAD="Hyderabad"
+KEYWORDS_INDIA_EXCLUDE="$KEYWORDS_NEWDELHI|$KEYWORDS_MUMBAI|$KEYWORDS_KOLKATA|$KEYWORDS_CHENNAI|$KEYWORDS_BANGALORE|$KEYWORDS_PUNE|$KEYWORDS_HYDERABAD"
 
 if [ "$1" == "" ];
 then
@@ -18,6 +19,7 @@ then
   NEWDELHI=$(egrep -i "$KEYWORDS_NEWDELHI" newpages.txt)
   MUMBAI=$(egrep -i "$KEYWORDS_MUMBAI" newpages.txt)
   KOLKATA=$(egrep -i "$KEYWORDS_KOLKATA" newpages.txt)
+  HYDERABAD=$(egrep -i "$KEYWORDS_HYDERABAD" newpages.txt)
   CHENNAI=$(egrep -i "$KEYWORDS_CHENNAI" newpages.txt)
   BANGALORE=$(egrep -i "$KEYWORDS_BANGALORE" newpages.txt)
   PUNE=$(egrep -i "$KEYWORDS_PUNE" newpages.txt)
@@ -60,6 +62,16 @@ then
     $CATEGORIZE
     rm Kolkata.txt
     unset KOLKATA
+  fi
+
+  if [ "$HYDERABAD" != "" ];
+  then
+    printf "%s" "$HYDERABAD" > Hyderabad.txt
+    export CATFILE="Hyderabad.txt"
+    export CATNAME="Hyderabad"
+    $CATEGORIZE
+    rm Hyderabad.txt
+    unset HYDERABAD
   fi
 
   if [ "$CHENNAI" != "" ];
