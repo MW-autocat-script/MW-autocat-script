@@ -94,6 +94,7 @@ $COUNTRYDIR/Luxembourg/Luxembourg.sh
 $COUNTRYDIR/Macedonia/Macedonia.sh
 $COUNTRYDIR/Madagascar/Madagascar.sh
 $COUNTRYDIR/Malaysia/Malaysia.sh
+$COUNTRYDIR/Maldives/Maldives.sh #KEYWORDS_MALDIVES_ALL
 $COUNTRYDIR/Mali/Mali.sh
 $COUNTRYDIR/Malta/Malta.sh #KEYWORDS_MALTA_ALL
 $COUNTRYDIR/Mauritius/Mauritius.sh #$KEYWORDS_MAURITIUS
