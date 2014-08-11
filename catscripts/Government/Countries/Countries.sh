@@ -146,6 +146,7 @@ $COUNTRYDIR/Tanzania/Tanzania.sh #KEYWORDS_TANZANIA_ALL
 $COUNTRYDIR/Togo/Togo.sh #KEYWORDS_TOGO_ALL
 $COUNTRYDIR/Tunisia/Tunisia.sh
 $COUNTRYDIR/Turkey/Turkey.sh
+$COUNTRYDIR/Turkmenistan/Turkmenistan.sh #KEYWORDS_TURKMENISTAN_ALL
 $COUNTRYDIR/Uganda/Uganda.sh
 $COUNTRYDIR/Ukraine/Ukraine.sh #KEYWORDS_UKRAINE_ALL
 $COUNTRYDIR/United_Arab_Emirates/UAE.sh
