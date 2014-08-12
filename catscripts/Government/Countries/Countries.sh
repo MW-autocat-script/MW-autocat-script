@@ -124,6 +124,7 @@ $COUNTRYDIR/Peru/Peru.sh
 $COUNTRYDIR/Philippines/Philippines.sh
 $COUNTRYDIR/Poland/Poland.sh
 $COUNTRYDIR/Portugal/Portugal.sh
+$COUNTRYDIR/Qatar/Qatar.sh #KEYWORDS_QATAR_ALL
 $COUNTRYDIR/Romania/Romania.sh
 $COUNTRYDIR/Russia/Russia.sh
 $COUNTRYDIR/Rwanda/Rwanda.sh #KEYWORDS_RWANDA_ALL
