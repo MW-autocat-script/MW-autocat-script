@@ -12,7 +12,12 @@ then
 
   if [ "$TAMAGOTCHI" != "" ];
   then
-    categorize "$TAMAGOTCHI" "Tamagotchi"
+    printf "%s" "$TAMAGOTCHI" > Tamagotchi.txt
+    export CATFILE="Tamagotchi.txt"
+    export CATNAME="Tamagotchi"
+    $CATEGORIZE
+    rm Tamagotchi.txt
+    unset TAMAGOTCHI
   fi
 
   debug_end "Tamagotchi"

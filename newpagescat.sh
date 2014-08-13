@@ -37,15 +37,6 @@ debug_end(){
   fi
 }
 
-categorize(){
-    local listpages=$(eval echo \$$1)
-    printf "%s" "$listpages" > TEMPCATFILE.txt
-    export CATFILE="TEMPCATFILE.txt"
-    export CATNAME="$2"
-    ./util/Categorize.sh
-    rm TEMPCATFILE.txt
-}
-
 export -f debug_start
 export -f debug_end 
 export -f categorize  
