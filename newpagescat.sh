@@ -48,7 +48,8 @@ categorize(){
 }
 
 export -f debug_start
-export -f debug_end   
+export -f debug_end 
+export -f categorize  
 
 echo "Generating pages"
 
