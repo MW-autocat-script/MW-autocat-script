@@ -7,5 +7,6 @@ debug_start "Toys"
 $TOYDIR/Build-A-Bear/BuildABear.sh #KEYWORDS_BUILDABEAR
 $TOYDIR/Hot_Wheels/HotWheels.sh #KEYWORDS_HOTWHEELS_ALL
 $TOYDIR/Tamagotchi/Tamagotchi.sh #KEYWORDS_TAMAGOTCHI
+$TOYDIR/Webkinz/Webkinz.sh #KEYWORDS_WEBKINZ_ALL
 
 debug_end "Toys"
