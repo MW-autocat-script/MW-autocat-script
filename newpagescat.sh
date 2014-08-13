@@ -44,7 +44,6 @@ categorize(){
     export CATNAME="$2"
     ./util/Categorize.sh
     rm TEMPCATFILE.txt
-    unset ${1}
 }
 
 export -f debug_start
