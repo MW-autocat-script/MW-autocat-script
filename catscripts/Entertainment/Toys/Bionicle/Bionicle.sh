@@ -14,7 +14,7 @@ then
   then
     printf "%s" "$BIONICLE" > Bionicle.txt
     export CATFILE="Bionicle.txt"
-    export CATNAME="Bionicle"
+    export CATNAME="Lego Bionicle"
     $CATEGORIZE
     rm Bionicle.txt
     unset BIONICLE
