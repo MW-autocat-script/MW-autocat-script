@@ -4,14 +4,14 @@ USSTATESDIR="./catscripts/Government/Countries/United_States/US_states"
 
 debug_start "US states"
 
-$USSTATESDIR/Alabama/Alabama.sh
-$USSTATESDIR/Alaska/Alaska.sh
-$USSTATESDIR/Arizona/Arizona.sh
-$USSTATESDIR/Arkansas/Arkansas.sh
-$USSTATESDIR/California/California.sh
-$USSTATESDIR/Colorado/Colorado.sh
-$USSTATESDIR/Connecticut/Connecticut.sh
-$USSTATESDIR/Delaware/Delaware.sh
+$USSTATESDIR/Alabama/Alabama.sh #KEYWORDS_ALABAMA_ALL
+$USSTATESDIR/Alaska/Alaska.sh #KEYWORDS_ALASKA_ALL
+$USSTATESDIR/Arizona/Arizona.sh #KEYWORDS_ARIZONA_ALL
+$USSTATESDIR/Arkansas/Arkansas.sh #KEYWORDS_ARKANSAS_ALL
+$USSTATESDIR/California/California.sh #KEYWORDS_CALIFORNIA_ALL
+$USSTATESDIR/Colorado/Colorado.sh #KEYWORDS_COLORADO_ALL
+$USSTATESDIR/Connecticut/Connecticut.sh #KEYWORDS_CONNECTICUT_ALL
+$USSTATESDIR/Delaware/Delaware.sh #KEYWORDS_DELAWARE_ALL
 $USSTATESDIR/Florida/Florida.sh
 $USSTATESDIR/Georgia/Georgia.sh
 $USSTATESDIR/Hawaii/Hawaii.sh

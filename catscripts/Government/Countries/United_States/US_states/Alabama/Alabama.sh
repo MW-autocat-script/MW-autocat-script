@@ -1,7 +1,8 @@
 #!/bin/bash
 
-KEYWORDS_ALABAMA="Alabama"
+KEYWORDS_ALABAMA="Alabama|,(| )AL( |$)"
 KEYWORDS_ALABAMA_EXCLUDE="Sweet(| )Home(| )Alabama"
+KEYWORDS_ALABAMA_ALL="$KEYWORDS_ALABAMA"
 
 if [ "$1" == "" ];
 then

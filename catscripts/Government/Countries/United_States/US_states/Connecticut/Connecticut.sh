@@ -1,6 +1,7 @@
 #!/bin/bash
 
-KEYWORDS_CONNECTICUT="Connecticut|Hartford|, CT\b"
+KEYWORDS_CONNECTICUT="Connecticut|Hartford|,(| )CT\b"
+KEYWORDS_CONNECTICUT_ALL="$KEYWORDS_CONNECTICUT"
 
 if [ "$1" == "" ];
 then

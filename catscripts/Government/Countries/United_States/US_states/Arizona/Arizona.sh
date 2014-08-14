@@ -1,6 +1,7 @@
 #!/bin/bash
 
-KEYWORDS_ARIZONA="Arizona"
+KEYWORDS_ARIZONA="Arizona|,(| )AZ( |$)"
+KEYWORDS_ARIZONA_ALL="$KEYWORDS_ARIZONA"
 
 if [ "$1" == "" ];
 then

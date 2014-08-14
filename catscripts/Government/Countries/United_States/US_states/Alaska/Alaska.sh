@@ -1,6 +1,7 @@
 #!/bin/bash
 
-KEYWORDS_ALASKA="Alaska|Seward's(| )icebox"
+KEYWORDS_ALASKA="Alaska|Seward's(| )icebox|,(| )AK( |$)"
+KEYWORDS_ALASKA_ALL="$KEYWORDS_ALASKA"
 
 if [ "$1" == "" ];
 then

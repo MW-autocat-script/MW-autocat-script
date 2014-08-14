@@ -1,9 +1,10 @@
 #!/bin/bash
 
-KEYWORDS_COLORADO="Colorado"
+KEYWORDS_COLORADO="Colorado|,(| )CO( |$)"
 KEYWORDS_DENVER="Denver"
 KEYWORDS_COLORADO_EXCLUDE="$KEYWORDS_DENVER"
 KEYWORDS_DENVER_EXCLUDE="Denver(| )Broncos|Denver(| )Nuggets|John(| )Denver"
+KEYWORDS_COLORADO_ALL="$KEYWORDS_COLORADO|$KEYWORDS_DENVER"
 
 if [ "$1" == "" ];
 then

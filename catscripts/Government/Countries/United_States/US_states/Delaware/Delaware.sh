@@ -1,6 +1,7 @@
 #!/bin/bash
 
-KEYWORDS_DELAWARE="Delaware"
+KEYWORDS_DELAWARE="Delaware|,(| )DE( |$)"
+KEYWORDS_DELAWARE_ALL="$KEYWORDS_DELAWARE"
 
 if [ "$1" == "" ];
 then
