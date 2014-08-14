@@ -4,6 +4,7 @@ TOYDIR="./catscripts/Entertainment/Toys"
 
 debug_start "Toys"
 
+$TOYDIR/American_Girl_Dolls/AmericanGirlDolls.sh #KEYWORDS_AMERICANGIRLDOLLS_ALL
 $TOYDIR/Bionicle/Bionicle.sh #KEYWORDS_BIONICLE_ALL
 $TOYDIR/Build-A-Bear/BuildABear.sh #KEYWORDS_BUILDABEAR
 $TOYDIR/Hello_Kitty/HelloKitty.sh #KEYWORDS_HELLOKITTY_ALL
