@@ -6,6 +6,7 @@ export SPORTSDIR="./catscripts/Lifestyle/Sports"
 . $SPORTSDIR/Iceskating.sh
 . $SPORTSDIR/LugeAndBobsledding.sh
 . $SPORTSDIR/Olympics.sh
+. $SPORTSDIR/Skateboarding.sh #KEYWORDS_SKATEBOARDING_ALL
 . $SPORTSDIR/Skiing.sh
 . $SPORTSDIR/Snowboarding.sh
 
