@@ -129,6 +129,7 @@ $COUNTRYDIR/Qatar/Qatar.sh #KEYWORDS_QATAR_ALL
 $COUNTRYDIR/Romania/Romania.sh
 $COUNTRYDIR/Russia/Russia.sh
 $COUNTRYDIR/Rwanda/Rwanda.sh #KEYWORDS_RWANDA_ALL
+$COUNTRYDIR/Saint_Lucia/SaintLucia.sh #KEYWORDS_SAINTLUCIA_ALL
 $COUNTRYDIR/Sao_Tome_and_Principe/SaoTome.sh #KEYWORDS_SAOTOME_ALL
 $COUNTRYDIR/Singapore/Singapore.sh
 $COUNTRYDIR/South_Africa/SouthAfrica.sh
