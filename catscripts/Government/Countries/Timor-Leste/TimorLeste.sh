@@ -14,7 +14,7 @@ then
   then
     printf "%s" "$TIMORLESTE" > TimorLeste.txt
     export CATFILE="TimorLeste.txt"
-    export CATNAME="Timor-Leste.txt"
+    export CATNAME="Timor-Leste"
     $CATEGORIZE
     rm TimorLeste.txt
     unset TIMORLESTE
