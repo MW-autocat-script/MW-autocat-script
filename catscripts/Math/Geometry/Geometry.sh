@@ -18,7 +18,7 @@ then
     export CATFILE="Geometry.txt"
     export CATNAME="Geometry"
     $CATEGORIZE
-    rm Geometry
+    rm Geometry.txt
     unset GEOMETRY
   fi
 
