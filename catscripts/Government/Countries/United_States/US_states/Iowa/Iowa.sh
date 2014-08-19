@@ -1,6 +1,7 @@
 #!/bin/bash
 
 KEYWORDS_IOWA="\bIowa"
+KEYWORDS_IOWA_ALL="$KEYWORDS_IOWA"
 
 if [ "$1" == "" ]; #Normal operation
 then

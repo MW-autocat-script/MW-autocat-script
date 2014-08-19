@@ -1,6 +1,7 @@
 #!/bin/bash
 
 KEYWORDS_IDAHO="idaho|\bin ID\b|, ID\b"
+KEYWORDS_IDAHO_ALL="$KEYWORDS_IDAHO"
 
 if [ "$1" == "" ]; #Normal operation
 then

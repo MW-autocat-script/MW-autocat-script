@@ -2,6 +2,7 @@
 
 KEYWORDS_INDIANA="Indiana"
 KEYWORDS_INDIANA_EXCLUDE="Indiana(| )County|Indiana(| )University|Indiana(| )Jones"
+KEYWORDS_INDIANA_ALL="$KEYWORDS_INDIANA"
 
 if [ "$1" == "" ];
 then
