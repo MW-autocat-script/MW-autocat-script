@@ -11,6 +11,8 @@ KEYWORDS_WEBBROWSER_ALL="$KEYWORDS_WEBBROWSER|$KEYWORDS_WEBBROWSER_EXCLUDE|$KEYW
 if [ "$1" == "" ]; #Normal operation
 then
 
+  debug_start "Web browsers"
+
   IEXPLORER=$(egrep -i "$KEYWORDS_INTERNETEXPLORER" newpages.txt)
   FIREFOX=$(egrep -i "$KEYWORDS_FIREFOX" newpages.txt)
   CHROME=$(egrep -i "$KEYWORDS_GOOGLECHROME" newpages.txt)
@@ -55,5 +57,7 @@ then
     rm Webbrowsers.txt
     unset BROWSERS
   fi
+
+  debug_end "Web browsers"
 
 fi

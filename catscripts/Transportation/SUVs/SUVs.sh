@@ -1,5 +1,9 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Transportation/SUVs"
+SUVDIR="./catscripts/Transportation/SUVs"
 
-$CURRENTDIR/Chevrolet/Chevrolet.sh
+debug_start "SUVs"
+
+. $SUVDIR/Chevrolet/Chevrolet.sh
+
+debug_end "SUVs"

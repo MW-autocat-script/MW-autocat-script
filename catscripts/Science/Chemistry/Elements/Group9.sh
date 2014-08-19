@@ -9,6 +9,8 @@ KEYWORDS_MEITNERIUM="Meitnerium"
 if [ "$1" == "" ]; #Normal operation
 then
 
+  debug_start "Group 9 elements"
+
   COBALT=$(egrep -i "$KEYWORDS_COBALT" newpages.txt | egrep -iv "$KEYWORDS_COBALT_EXCLUDE")
   RHODIUM=$(egrep -i "$KEYWORDS_RHODIUM" newpages.txt)
   IRIDIUM=$(egrep -i "$KEYWORDS_IRIDIUM" newpages.txt)
@@ -53,5 +55,7 @@ then
     rm Meitnerium.txt
     unset MEITNERIUM
   fi
+
+  debug_end "Group 9 elements"
 
 fi

@@ -1,10 +1,14 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Technology"
+TECHNOLOGYDIR="./catscripts/Technology"
 
-$CURRENTDIR/Inventions/Inventions.sh
-$CURRENTDIR/Inventors/Inventors.sh
-$CURRENTDIR/Cameras/Cameras.sh
-$CURRENTDIR/Computers/Computers.sh
-$CURRENTDIR/Telephones/Telephones.sh
-$CURRENTDIR/Portable_media_players/PMP.sh
+debug_start "Technology"
+
+. $TECHNOLOGYDIR/Inventions/Inventions.sh
+. $TECHNOLOGYDIR/Inventors/Inventors.sh
+. $TECHNOLOGYDIR/Cameras/Cameras.sh
+. $TECHNOLOGYDIR/Computers/Computers.sh
+. $TECHNOLOGYDIR/Telephones/Telephones.sh
+. $TECHNOLOGYDIR/Portable_media_players/PMP.sh
+
+debug_end "Technology"

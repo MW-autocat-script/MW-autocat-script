@@ -5,16 +5,13 @@ KEYWORDS_INVENTIONS="Who invented [a-z]{1,}$|Who invented the [a-z]{1,}|(When|Wh
 if [ "$1" == "" ];
 then
 
-  INVENTIONS=$(egrep -i "$KEYWORDS_INVENTIONS" newpages.txt)
+  debug_start "Inventions"
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Inventions\n"
-  fi
+  INVENTIONS=$(egrep -i "$KEYWORDS_INVENTIONS" newpages.txt)
 
   if [ "$INVENTIONS" != "" ];
   then
-    printf "$INVENTIONS" > Inventions.txt
+    printf "%s" "$INVENTIONS" > Inventions.txt
     export CATFILE="Inventions.txt"
     export CATNAME="Inventions"
     $CATEGORIZE
@@ -22,9 +19,6 @@ then
     unset INVENTIONS
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Inventions\n"
-  fi
+  debug_end "Inventions"
 
 fi

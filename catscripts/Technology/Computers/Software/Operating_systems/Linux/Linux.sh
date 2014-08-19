@@ -16,6 +16,8 @@ KEYWORDS_LINUX_ALL="$KEYWORDS_LINUX|$KEYWORDS_LINUX_OTHER|$KEYWORDS_LINUX_EXCLUD
 if [ "$1" == "" ]; #Nortmal operation
 then
 
+  debug_start "Linux"
+
   LINUX=$(egrep -i "$KEYWORDS_LINUX|$KEYWORDS_LINUX_OTHER" newpages.txt | egrep -iv "$KEYWORDS_LINUX_EXCLUDE")
   DEBIAN=$(egrep -i "$KEYWORDS_DEBIAN" newpages.txt)
   OPENSUSE=$(egrep -i "$KEYWORDS_OPENSUSE" newpages.txt)
@@ -104,5 +106,7 @@ then
     rm GoogleAndroid.txt
     unset ANDROID
   fi
+
+  debug_end "Android"
 
 fi

@@ -12,7 +12,7 @@ then
 
   if [ "$FLASHPLAYER" != "" ];
   then
-    printf "$FLASHPLAYER" > AdobeFlashPlayer.txt
+    printf "%s" "$FLASHPLAYER" > AdobeFlashPlayer.txt
     export CATFILE="AdobeFlashPlayer.txt"
     export CATNAME="Adobe Flash Player"
     $CATEGORIZE

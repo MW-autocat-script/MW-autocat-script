@@ -2,5 +2,9 @@
 
 INTERNETDIR="./catscripts/Technology/Computers/Internet"
 
-$INTERNETDIR/Websites/Websites.sh
-$INTERNETDIR/Email/Email.sh
+debug_start "Internet"
+
+. $INTERNETDIR/Websites/Websites.sh
+. $INTERNETDIR/Email/Email.sh
+
+debug_end "Internet"

@@ -5,6 +5,8 @@ COMPUTERDIR="./catscripts/Technology/Computers"
 if [ "$1" == "" ]; #Normal operation
 then
 
+  debug_start "Computers"
+
   . $COMPUTERDIR/Computer_programming/Computerprogramming.sh
   . $COMPUTERDIR/Computer_security/ComputerSecurity.sh
   . $COMPUTERDIR/Computer_hardware/Computerhardware.sh
@@ -13,10 +15,10 @@ then
   . $COMPUTERDIR/Internet/Internet.sh
   . $COMPUTERDIR/Software/Software.sh #KEYWORDS_SOFTWARE_ALL
   . $COMPUTERDIR/Tablets/Tablets.sh
-fi
 
-if [ "$1" == "norun" ]; #Export variables only
-then
+  debug_end "Computers"
+
+else #Export variables only
 
   . $COMPUTERDIR/Computer_programming/Computerprogramming.sh norun
   . $COMPUTERDIR/Computer_security/ComputerSecurity.sh norun

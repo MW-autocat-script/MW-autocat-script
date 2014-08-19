@@ -1,14 +1,18 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Math"
+MATHDIR="./catscripts/Math"
 
-$CURRENTDIR/Addition/Addition.sh
-$CURRENTDIR/Algebra/Algebra.sh
-$CURRENTDIR/Division/Division.sh
-$CURRENTDIR/Exponents/Exponents.sh
-$CURRENTDIR/Fractions/Fractions.sh 
-$CURRENTDIR/Geometry/Geometry.sh
-$CURRENTDIR/Measurements/Measurements.sh
-$CURRENTDIR/Multiplication/Multiplication.sh
-$CURRENTDIR/Percentages/Percentages.sh
-$CURRENTDIR/Roman_numerals/RomanNumerals.sh
+debug_start "Mathematics"
+
+. $MATHDIR/Addition/Addition.sh
+. $MATHDIR/Algebra/Algebra.sh
+. $MATHDIR/Division/Division.sh
+. $MATHDIR/Exponents/Exponents.sh
+. $MATHDIR/Fractions/Fractions.sh 
+. $MATHDIR/Geometry/Geometry.sh
+. $MATHDIR/Measurements/Measurements.sh
+. $MATHDIR/Multiplication/Multiplication.sh
+. $MATHDIR/Percentages/Percentages.sh
+. $MATHDIR/Roman_numerals/RomanNumerals.sh
+
+debug_end "Mathematics"

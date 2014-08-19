@@ -1,10 +1,14 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Science"
+SCIENCEDIR="./catscripts/Science"
 
-$CURRENTDIR/Astronomy/Astronomy.sh
-$CURRENTDIR/Biology/Biology.sh
-$CURRENTDIR/Chemistry/Chemistry.sh
-$CURRENTDIR/Geography_and_geology/Geography.sh
-$CURRENTDIR/Physics/Physics.sh
-$CURRENTDIR/Scientists/Scientists.sh
+debug_start "Science"
+
+$SCIENCEDIR/Astronomy/Astronomy.sh
+$SCIENCEDIR/Biology/Biology.sh
+$SCIENCEDIR/Chemistry/Chemistry.sh
+$SCIENCEDIR/Geography_and_geology/Geography.sh
+$SCIENCEDIR/Physics/Physics.sh
+$SCIENCEDIR/Scientists/Scientists.sh
+
+debug_end "Science"

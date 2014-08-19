@@ -5,6 +5,8 @@ MULTIMEDIADIR="./catscripts/Technology/Computers/Software/Multimedia_software"
 if [ "$1" == "" ]; #Normal operation
 then
 
+  debug_start "Multimedia software"
+
   . $MULTIMEDIADIR/Video_editing_software/Videoediting.sh #KEYWORDS_VIDEOEDITING_ALL
   . $MULTIMEDIADIR/WindowsMediaPlayer.sh #KEYWORDS_WINDOWSMEDIAPLAYER
   . $MULTIMEDIADIR/iTunes.sh #KEYWORDS_ITUNES
@@ -19,7 +21,7 @@ then
 
   if [ "$MULTIMEDIA" != "" ];
   then
-    printf "$MULTIMEDIA" > Multimedia.txt
+    printf "%s" "$MULTIMEDIA" > Multimedia.txt
     export CATFILE="Multimedia.txt"
     export CATNAME="Multimedia software"
     $CATEGORIZE
@@ -27,10 +29,9 @@ then
     unset MULTIMEDIA
   fi
 
-fi
+  debug_end "Multimedia software"
 
-if [ "$1" == "norun" ];
-then
+else
 
   . $MULTIMEDIADIR/Video_editing_software/Videoediting.sh norun #KEYWORDS_VIDEOEDITING_ALL
   . $MULTIMEDIADIR/WindowsMediaPlayer.sh norun #KEYWORDS_WINDOWSMEDIAPLAYER

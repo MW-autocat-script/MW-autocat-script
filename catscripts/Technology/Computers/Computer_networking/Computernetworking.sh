@@ -35,7 +35,7 @@ then
 
   if [ "$NETWORK" != "" ];
   then
-    printf "$NETWORK" > Computernetworking.txt
+    printf "%s" "$NETWORK" > Computernetworking.txt
     export CATFILE="Computernetworking.txt"
     export CATNAME="Computer networking"
     $CATEGORIZE
@@ -45,7 +45,7 @@ then
 
   if [ "$TELNET" != "" ];
   then
-    printf "$TELNET" > Telnet.txt
+    printf "%s" "$TELNET" > Telnet.txt
     export CATFILE="Telnet.txt"
     export CATNAME="Telnet"
     $CATEGORIZE
@@ -55,7 +55,7 @@ then
 
   if [ "$SSH" != "" ];
   then
-    printf "$SSH" > SSH.txt
+    printf "%s" "$SSH" > SSH.txt
     export CATFILE="SSH.txt"
     export CATNAME="SSH"
     $CATEGORIZE
@@ -65,7 +65,7 @@ then
 
   if [ "$FTP" != "" ];
   then
-    printf "$FTP" > FTP.txt
+    printf "%s" "$FTP" > FTP.txt
     export CATFILE="FTP.txt"
     export CATNAME="FTP"
     $CATEGORIZE
@@ -75,7 +75,7 @@ then
 
   if [ "$VOIP" != "" ];
   then
-    printf "$VOIP" > VoIP.txt
+    printf "%s" "$VOIP" > VoIP.txt
     export CATFILE="VoIP.txt"
     export CATNAME="VoIP"
     $CATEGORIZE
@@ -85,7 +85,7 @@ then
 
   if [ "$SKYPE" != "" ];
   then
-    printf "$SKYPE" > Skype.txt
+    printf "%s" "$SKYPE" > Skype.txt
     export CATFILE="Skype.txt"
     export CATNAME="Skype"
     $CATEGORIZE
@@ -95,7 +95,7 @@ then
 
   if [ "$BLUETOOTH" != "" ];
   then
-    printf "$BLUETOOTH" > Bluetooth.txt
+    printf "%s" "$BLUETOOTH" > Bluetooth.txt
     export CATFILE="Bluetooth.txt"
     export CATNAME="Bluetooth"
     $CATEGORIZE

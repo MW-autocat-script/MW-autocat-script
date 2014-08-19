@@ -6,6 +6,8 @@ OPERATINGSYSTEMDIR="./catscripts/Technology/Computers/Software/Operating_systems
 if [ "$1" == "" ]; #Normal operation
 then
 
+  debug_start "Operating systems"
+
   . $OPERATINGSYSTEMDIR/FreeBSD/FreeBSD.sh #KEYWORDS_FREEBSD
   . $OPERATINGSYSTEMDIR/Linux/Linux.sh #KEYWORDS_LINUX_ALL
   . $OPERATINGSYSTEMDIR/MS-DOS/MS-DOS.sh #KEYWORDS_MSDOS
@@ -23,7 +25,7 @@ then
 
   if [ "$OS" != "" ];
   then
-    egrep -i "$KEYWORDS_OPERATINGSYSTEMS|$KEYWORDS_OPERATINGSYSTEMS_OTHER" newpages.txt | egrep -iv "$KEYWORDS_OPERATINGSYSTEMS_EXCLUDE" > OperatingSystems.txt
+    printf "%s" "$OS" > OperatingSystems.txt
     export CATFILE="OperatingSystems.txt"
     export CATNAME="Operating systems"
     $CATEGORIZE
@@ -31,10 +33,10 @@ then
     unset OS
   fi
 
-fi
+  debug_end "Operating systems"
 
-if [ "$1" == "norun" ];
-then
+else
+
   . $OPERATINGSYSTEMDIR/FreeBSD/FreeBSD.sh norun
   . $OPERATINGSYSTEMDIR/Linux/Linux.sh norun
   . $OPERATINGSYSTEMDIR/MS-DOS/MS-DOS.sh norun

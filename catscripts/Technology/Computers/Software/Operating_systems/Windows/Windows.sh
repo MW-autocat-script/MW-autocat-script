@@ -20,10 +20,7 @@ KEYWORDS_WINDOWS_ALL="$KEYWORDS_WINDOWSCASESENSITIVE|$KEYWORDS_WINDOWS|$KEYWORDS
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Windows scripts\n"
-  fi
+  debug_start "Windows"
 
   ACTIVEDIRECTORY=$(egrep -i "$KEYWORDS_ACTIVEDIRECTORY" newpages.txt)
   WINDOWS98=$(egrep -i "$KEYWORDS_WINDOWS98" newpages.txt)
@@ -35,13 +32,12 @@ then
   WINDOWS2008=$(egrep -i "$KEYWORDS_WINDOWSSERVER2008" newpages.txt)
   WINDOWS8=$(egrep -i "$KEYWORDS_WINDOWS8" newpages.txt)
   WINDOWSNT=$(egrep -i "$KEYWORDS_WINDOWSNT" newpages.txt)
-  WINDOWS=$(egrep -i "$KEYWORDS_WINDOWS" newpages.txt | egrep -iv "$KEYWORDS_WINDOWS_EXCLUDE")
-  WINDOWSCASE=$(egrep "$KEYWORDS_WINDOWSCASESENSITIVE" newpages.txt | egrep -iv "$KEYWORDS_WINDOWS_EXCLUDE")
+  WINDOWS=$(egrep -i "$KEYWORDS_WINDOWS" newpages.txt | egrep -iv "$KEYWORDS_WINDOWS_EXCLUDE" && egrep "$KEYWORDS_WINDOWSCASESENSITIVE" newpages.txt | egrep -iv "$KEYWORDS_WINDOWS_EXCLUDE")
 
 
   if [ "$ACTIVEDIRECTORY" != "" ];
   then
-    printf "$ACTIVEDIRECTORY" > ActiveDirectory.txt
+    printf "%s" "$ACTIVEDIRECTORY" > ActiveDirectory.txt
     export CATFILE="ActiveDirectory.txt"
     export CATNAME="Active Directory"
     $CATEGORIZE
@@ -51,7 +47,7 @@ then
 
   if [ "$WINDOWSNT" != "" ];
   then
-    printf "$WINDOWSNT" > WindowsNT.txt
+    printf "%s" "$WINDOWSNT" > WindowsNT.txt
     export CATFILE="WindowsNT.txt"
     export CATNAME="Windows NT"
     rm WindowsNT.txt
@@ -60,7 +56,7 @@ then
 
   if [ "$WINDOWS98" != "" ];
   then
-    printf "$WINDOWS98" > Windows98.txt
+    printf "%s" "$WINDOWS98" > Windows98.txt
     export CATFILE="Windows98.txt"
     export CATNAME="Windows 98"
     $CATEGORIZE
@@ -70,7 +66,7 @@ then
 
   if [ "$WINDOWS2000" != "" ];
   then
-    printf "$WINDOWS2000" > Windows2000.txt
+    printf "%s" "$WINDOWS2000" > Windows2000.txt
     export CATFILE="Windows2000.txt"
     export CATNAME="Windows 2000"
     $CATEGORIZE
@@ -80,7 +76,7 @@ then
 
   if [ "$WINDOWSXP" != "" ];
   then
-    printf "$WINDOWSXP" > WindowsXP.txt
+    printf "%s" "$WINDOWSXP" > WindowsXP.txt
     export CATFILE="WindowsXP.txt"
     export CATNAME="Windows XP"
     $CATEGORIZE
@@ -90,7 +86,7 @@ then
 
   if [ "$WINDOWS2003" != "" ];
   then
-    printf "$WINDOWS2003" > WindowsServer2003.txt
+    printf "%s" "$WINDOWS2003" > WindowsServer2003.txt
     export CATFILE="WindowsServer2003.txt"
     export CATNAME="Windows Server 2003"
     $CATEGORIZE
@@ -100,7 +96,7 @@ then
 
   if [ "$WINDOWSVISTA" != "" ];
   then
-    printf "$WINDOWSVISTA" > WindowsVista.txt
+    printf "%s" "$WINDOWSVISTA" > WindowsVista.txt
     export CATFILE="WindowsVista.txt"
     export CATNAME="Windows Vista"
     $CATEGORIZE
@@ -110,7 +106,7 @@ then
 
   if [ "$WINDOWS7" != "" ];
   then
-    printf "$WINDOWS7" > Windows7.txt
+    printf "%s" "$WINDOWS7" > Windows7.txt
     export CATFILE="Windows7.txt"
     export CATNAME="Windows 7"
     $CATEGORIZE
@@ -120,7 +116,7 @@ then
 
   if [ "$WINDOWS2008" != "" ];
   then
-    printf "$WINDOWS2008" > WindowsServer2008.txt
+    printf "%s" "$WINDOWS2008" > WindowsServer2008.txt
     export CATFILE="WindowsServer2008.txt"
     export CATNAME="Windows Server 2008"
     $CATEGORIZE
@@ -130,7 +126,7 @@ then
 
   if [ "$WINDOWS8" != "" ];
   then
-    printf "$WINDOWS8" > Windows8.txt
+    printf "%s" "$WINDOWS8" > Windows8.txt
     export CATFILE="Windows8.txt"
     export CATNAME="Windows 8"
     $CATEGORIZE
@@ -138,21 +134,16 @@ then
     unset WINDOWS8
   fi
 
-  if [ "$WINDOWS" != "" ] || [ "$WINDOWSCASE" != "" ];
+  if [ "$WINDOWS" != "" ];
   then
-    printf "$WINDOWS\n" > Windows.txt
-    printf "$WINDOWSCASE\n" >> Windows.txt
+    printf "%s" "$WINDOWS" > Windows.txt
     export CATFILE="Windows.txt"
     export CATNAME="Windows"
     $CATEGORIZE
     rm Windows.txt
     unset WINDOWS
-    unset WINDOWSCASE
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Windows scripts\n"
-  fi
+  debug_end "Windows"
 
 fi

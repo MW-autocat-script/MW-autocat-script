@@ -5,10 +5,7 @@ KEYWORDS_EXPONENTS="exponent|[0-9]{1,}(| )to(| )the(| )(-|)[0-9]{1,}(|st|nd|rd|t
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Exponentns\n"
-  fi
+  debug_start "Exponents"
 
   EXPONENTS="$(egrep -i "$KEYWORDS_EXPONENTS" newpages.txt)"
 
@@ -22,9 +19,6 @@ then
     unset EXPONENTS
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Exponentns\n"
-  fi
+  debug_end "Exponents"
 
 fi

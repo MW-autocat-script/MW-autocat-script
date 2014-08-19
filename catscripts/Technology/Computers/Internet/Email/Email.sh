@@ -7,17 +7,14 @@ KEYWORDS_EMAIL_EXCLUDE="$KEYWORDS_GMAIL"
 if [ "$1" == "" ];
 then
   
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Email\n"
-  fi
+  debug_start "Email"
 
   EMAIL=$(egrep -i "$KEYWORDS_EMAIL" newpages.txt | egrep -iv "$KEYWORDS_GMAIL")
   GMAIL=$(egrep -i "$KEYWORDS_GMAIL" newpages.txt)
 
   if [ "$EMAIL" != "" ];
   then
-    printf "$EMAIL" > Email.txt
+    printf "%s" "$EMAIL" > Email.txt
     export CATFILE="Email.txt"
     export CATNAME="Email"
     $CATEGORIZE
@@ -27,7 +24,7 @@ then
 
   if [ "$GMAIL" != "" ];
   then
-    printf "$GMAIL" > Gmail.txt
+    printf "%s" "$GMAIL" > Gmail.txt
     export CATFILE="Gmail.txt"
     export CATNAME="Gmail"
     $CATEGORIZE
@@ -35,9 +32,6 @@ then
     unset GMAIL
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Email\n"
-  fi
+  debug_end "Email"
 
 fi

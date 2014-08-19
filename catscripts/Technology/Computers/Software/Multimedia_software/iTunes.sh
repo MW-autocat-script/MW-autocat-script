@@ -5,10 +5,7 @@ KEYWORDS_ITUNES="iTunes|\bi Tunes"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting iTunes\n"
-  fi
+  debug_start "iTunes"
 
   ITUNES="$(egrep -i "$KEYWORDS_ITUNES" newpages.txt)"
 
@@ -22,9 +19,6 @@ then
     unset ITUNES
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing iTunes\n"
-  fi
+  debug_end "iTunes"
 
 fi

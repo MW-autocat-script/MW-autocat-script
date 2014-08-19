@@ -67,29 +67,20 @@ KEYWORDS_EMULATION_ALL="$KEYWORDS_EMULATIONANDVIRTUALIZATION|$KEYWORDS_EMULATION
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Emulation and virtualization\n"
-  fi
+  debug_start "Emulation and virtualization"
 
-  EMULATION=$(egrep -i "$KEYWORDS_EMULATIONANDVIRTUALIZATION|$KEYWORDS_EMULATIONANDVIRTUALIZATION_OTHER" newpages.txt | egrep -iv "$KEYWORDS_EMULATIONANDVIRTUALIZATION_OTHER_EXCLUDE")
-  EMULATIONCASE=$(egrep "$KEYWORDS_IDEAS_CASESENSITIVE" newpages.txt)
+  EMULATION=$(egrep -i "$KEYWORDS_EMULATIONANDVIRTUALIZATION|$KEYWORDS_EMULATIONANDVIRTUALIZATION_OTHER" newpages.txt | egrep -iv "$KEYWORDS_EMULATIONANDVIRTUALIZATION_OTHER_EXCLUDE" && egrep "$KEYWORDS_IDEAS_CASESENSITIVE" newpages.txt)
 
-  if [ "$EMULATION" != "" ] || [ "$EMULATIONCASE" != "" ];
+  if [ "$EMULATION" != "" ];
   then
-    printf "$EMULATION" > Emulation.txt
-    printf "$EMULATIONCASE" >> Emulation.txt
+    printf "%s" "$EMULATION" > Emulation.txt
     export CATFILE="Emulation.txt"
     export CATNAME="Emulation and virtualization"
     $CATEGORIZE
     rm Emulation.txt
     unset EMULATION
-    unset EMULATIONCASE
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Emulation and virtualization\n"
-  fi
+  debug_end "Emulation and virtualization"
 
 fi

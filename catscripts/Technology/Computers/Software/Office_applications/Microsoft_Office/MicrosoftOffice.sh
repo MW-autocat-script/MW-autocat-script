@@ -12,11 +12,13 @@ KEYWORDS_MICROSOFTOFFICE_ALL="$KEYWORDS_MICROSOFTOFFICE|$KEYWORDS_MICROSOFTOFFIC
 if [ "$1" == "" ]; #Normal operation
 then
 
-  OFFICE="$(egrep -i "$KEYWORDS_MICROSOFTOFFICE" newpages.txt | egrep -iv "$KEYWORDS_MICROSOFTOFFICE_EXCLUDE")"
-  ACCESS="$(egrep -i "$KEYWORDS_MICROSOFTACCESS" newpages.txt)"
-  EXCEL="$(egrep -i "$KEYWORDS_MICROSOFTEXCEL" newpages.txt | egrep -iv "$KEYWORDS_MICROSOFTEXCEL_EXCLUDE")"
-  POWERPOINT="$(egrep -i "$KEYWORDS_MICROSOFTPOWERPOINT" newpages.txt)"
-  WORD="$(egrep -i "$KEYWORDS_MICROSOFTWORD" newpages.txt)"
+  debug_start "Microsoft Office"
+
+  OFFICE=$(egrep -i "$KEYWORDS_MICROSOFTOFFICE" newpages.txt | egrep -iv "$KEYWORDS_MICROSOFTOFFICE_EXCLUDE")
+  ACCESS=$(egrep -i "$KEYWORDS_MICROSOFTACCESS" newpages.txt)
+  EXCEL=$(egrep -i "$KEYWORDS_MICROSOFTEXCEL" newpages.txt | egrep -iv "$KEYWORDS_MICROSOFTEXCEL_EXCLUDE")
+  POWERPOINT=$(egrep -i "$KEYWORDS_MICROSOFTPOWERPOINT" newpages.txt)
+  WORD=$(egrep -i "$KEYWORDS_MICROSOFTWORD" newpages.txt)
 
   if [ "$OFFICE" != "" ];
   then
@@ -67,5 +69,7 @@ then
     rm MicrosoftWord.txt
     unset WORD
   fi
+
+  debug_end "Microsoft Office"
 
 fi

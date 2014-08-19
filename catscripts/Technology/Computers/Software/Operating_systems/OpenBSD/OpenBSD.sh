@@ -5,16 +5,13 @@ KEYWORDS_OPENBSD="Open(| )BSD"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting OpenBSD\n"
-  fi
+  debug_start "OpenBSD"
 
   OPENBSD=$(egrep -i "$KEYWORDS_OPENBSD" newpages.txt)
 
   if [ "$OPENBSD" != "" ];
   then
-    printf "$OPENBSD" > OpenBSD.txt
+    printf "%s" "$OPENBSD" > OpenBSD.txt
     export CATFILE="OpenBSD.txt"
     export CATNAME="OpenBSD"
     $CATEGORIZE
@@ -22,9 +19,6 @@ then
     unset OPENBSD
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing OpenBSD\n"
-  fi
+  debug_end "OpenBSD"
 
 fi

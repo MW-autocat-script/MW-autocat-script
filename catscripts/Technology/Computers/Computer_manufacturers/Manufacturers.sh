@@ -1,5 +1,9 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Technology/Computers/Computer_manufacturers"
+COMPMANDIR="./catscripts/Technology/Computers/Computer_manufacturers"
 
-$CURRENTDIR/Apple_Inc./Apple.sh
+debug_start "Computer manufacturers"
+
+. $COMPMANDIR/Apple_Inc./Apple.sh
+
+debug_end "Computer manufacturers"

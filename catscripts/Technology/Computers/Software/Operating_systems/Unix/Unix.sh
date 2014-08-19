@@ -9,29 +9,20 @@ KEYWORDS_UNIX_ALL="$KEYWORDS_UNIX|$KEYWORDS_UNIX_SPECIAL"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Unix\n"
-  fi
+  debug_start "Unix"
 
-  UNIX="$(egrep -i "$KEYWORDS_UNIX" newpages.txt | egrep -iv "$KEYWORDS_UNIX_EXCLUDE")"
-  UNIXSPECIAL="$(egrep -i "$KEYWORDS_UNIX_SPECIAL" newpages.txt | egrep -iv "$KEYWORDS_UNIX_EXCLUDE|Linux|BSD")"
+  UNIX=$(egrep -i "$KEYWORDS_UNIX" newpages.txt | egrep -iv "$KEYWORDS_UNIX_EXCLUDE" && egrep -i "$KEYWORDS_UNIX_SPECIAL" newpages.txt | egrep -iv "$KEYWORDS_UNIX_EXCLUDE|Linux|BSD")
 
-  if [ "$UNIX" != "" ] || [ "$UNIXSPECIAL" != "" ];
+  if [ "$UNIX" != "" ];
   then
     printf "%s" "$UNIX" > Unix.txt
-    printf "%s" "$UNIXSPECIAL" >> Unix.txt
     export CATFILE="Unix.txt"
     export CATNAME="Unix"
     $CATEGORIZE
     rm Unix.txt
     unset UNIX
-    unset UNIXSPECIAL
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Unix\n"
-  fi
+  debug_end "Unix"
 
 fi

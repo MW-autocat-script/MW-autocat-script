@@ -32,10 +32,7 @@ KEYWORDS_PLANET_EXCLUDE="$KEYWORDS_MERCURY|$KEYWORDS_VENUS|$KEYWORDS_EARTH|$KEYW
 if [ "$1" == "" ];
 then
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Starting Planets\n"
-  fi
+  debug_start "Planets"
 
   MERCURY="$(egrep -i "$KEYWORDS_MERCURY" newpages.txt | egrep -iv "$KEYWORDS_MERCURY_EXCLUDE")"
   VENUS="$(egrep -i "$KEYWORDS_VENUS" newpages.txt | egrep -iv "$KEYWORDS_VENUS_EXCLUDE")"
@@ -137,9 +134,6 @@ then
     unset PLANETS
   fi
 
-  if [ "$DEBUG" == "yes" ];
-  then
-    printf "Finishing Planets\n"
-  fi
+  debug_end "Planets"
 
 fi
