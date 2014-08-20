@@ -1,11 +1,10 @@
 #!/bin/bash
 
 date > lastrun
-#Export settings. Copy settings.conf.example to settings.conf as a starting point
 
-while read x; do
-  export $x
-done < settings.conf
+#Export settings. Copy settings.sh.example to settings.sh as a starting point
+
+. ./settings.sh
 
 PIDFILE="pidfile.lock"
 

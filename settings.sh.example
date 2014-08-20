@@ -1,0 +1,10 @@
+#!/bin/bash
+
+export GBT=3
+export NPL=500
+export PYWIKIPEDIADIR=..
+export BOTNAME="MYBOTNAME"
+export SITENAME="MySiteName"
+export PIDFILE="$SITENAME.lock"
+export TEMPDIR="/tmp/$SITENAME"
+export DEBUG=yes

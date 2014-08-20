@@ -2,7 +2,7 @@
 *.txt
 *.lock
 *.log
-settings.conf
+settings.sh
 lastrun
 new_text
 original_text

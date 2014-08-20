@@ -1,10 +1,8 @@
 #!/bin/bash
 
-#Export settings. Copy settings.conf.example to settings.conf as a starting point
+#Export settings. Copy settings.sh.example to settings.sh as a starting point
 
-while read x; do
-  export $x
-done < settings.conf
+. ./settings.sh
 
 if [ -e "$PIDFILE" ]; then
   PID="$(cat "$PIDFILE")"
