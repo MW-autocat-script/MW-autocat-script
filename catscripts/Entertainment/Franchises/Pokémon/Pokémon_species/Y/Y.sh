@@ -9,9 +9,9 @@ then
 
   debug_start "Pokemon Y script"
 
-  YAMASK=$(egrep -i "$KEYWORDS_YAMASK" newpages.txt)
-  YANMA=$(egrep -i "$KEYWORDS_YANMA" newpages.txt)
-  YANMEGA=$(egrep -i "$KEYWORDS_YANMEGA" newpages.txt)
+  YAMASK=$(egrep -i "$KEYWORDS_YAMASK" "$NEWPAGES")
+  YANMA=$(egrep -i "$KEYWORDS_YANMA" "$NEWPAGES")
+  YANMEGA=$(egrep -i "$KEYWORDS_YANMEGA" "$NEWPAGES")
 
   if [ "$YAMASK" != "" ];
   then

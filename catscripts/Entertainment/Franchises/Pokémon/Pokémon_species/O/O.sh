@@ -13,12 +13,12 @@ then
 
   debug_start "Pokemon 'O' scripts"
 
-  OCTILLERY="$(egrep -i "$KEYWORDS_OCTILLERY" newpages.txt)"
-  ODDISH="$(egrep -i "$KEYWORDS_ODDISH" newpages.txt)"
-  OMANYTE="$(egrep -i "$KEYWORDS_OMANYTE" newpages.txt)"
-  OMASTAR="$(egrep -i "$KEYWORDS_OMASTAR" newpages.txt)"
-  ONIX="$(egrep -i "$KEYWORDS_ONIX" newpages.txt)"
-  OSHAWOTT="$(egrep -i "$KEYWORDS_OSHAWOTT" newpages.txt)"
+  OCTILLERY="$(egrep -i "$KEYWORDS_OCTILLERY" "$NEWPAGES")"
+  ODDISH="$(egrep -i "$KEYWORDS_ODDISH" "$NEWPAGES")"
+  OMANYTE="$(egrep -i "$KEYWORDS_OMANYTE" "$NEWPAGES")"
+  OMASTAR="$(egrep -i "$KEYWORDS_OMASTAR" "$NEWPAGES")"
+  ONIX="$(egrep -i "$KEYWORDS_ONIX" "$NEWPAGES")"
+  OSHAWOTT="$(egrep -i "$KEYWORDS_OSHAWOTT" "$NEWPAGES")"
 
   if [ "$OCTILLERY" != "" ];
   then

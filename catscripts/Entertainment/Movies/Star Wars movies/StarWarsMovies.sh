@@ -12,12 +12,12 @@ then
 
   debug_start "Star Wars movies"
 
-  EPISODEI=$(egrep -i "$KEYWORDS_PHANTOMMENACE" newpages.txt)
-  EPISODEII=$(egrep -i "$KEYWORDS_ATTACKCLONES" newpages.txt)
-  EPISODEIII=$(egrep -i "$KEYWORDS_REVENGESITH" newpages.txt)
-  EPISODEIV=$(egrep -i "$KEYWORDS_NEWHOPE" newpages.txt)
-  EPISODEV=$(egrep -i "$KEYWORDS_EMPIRESTRIKES" newpages.txt)
-  EPISODEVI=$(egrep -i "$KEYWORDS_RETURNJEDI" newpages.txt)
+  EPISODEI=$(egrep -i "$KEYWORDS_PHANTOMMENACE" "$NEWPAGES")
+  EPISODEII=$(egrep -i "$KEYWORDS_ATTACKCLONES" "$NEWPAGES")
+  EPISODEIII=$(egrep -i "$KEYWORDS_REVENGESITH" "$NEWPAGES")
+  EPISODEIV=$(egrep -i "$KEYWORDS_NEWHOPE" "$NEWPAGES")
+  EPISODEV=$(egrep -i "$KEYWORDS_EMPIRESTRIKES" "$NEWPAGES")
+  EPISODEVI=$(egrep -i "$KEYWORDS_RETURNJEDI" "$NEWPAGES")
 
   if [ "$EPISODEI" != "" ];
   then

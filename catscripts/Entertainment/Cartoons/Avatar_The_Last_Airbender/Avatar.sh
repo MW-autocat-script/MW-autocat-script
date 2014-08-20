@@ -8,7 +8,7 @@ then
 
   debug_start "Avatar: The Last Airbender"
 
-  AVATAR=$(egrep -i "$KEYWORDS_AIRBENDER" newpages.txt | egrep -iv "$KEYWORDS_AIRBENDER_EXCLUDE")
+  AVATAR=$(egrep -i "$KEYWORDS_AIRBENDER" "$NEWPAGES" | egrep -iv "$KEYWORDS_AIRBENDER_EXCLUDE")
 
   if [ "$AVATAR" != "" ];
   then

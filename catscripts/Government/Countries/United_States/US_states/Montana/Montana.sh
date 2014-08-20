@@ -9,7 +9,7 @@ then
 
   debug_start "Montana"
 
-  MONTANA=$(egrep -i "$KEYWORDS_MONTANA" newpages.txt | egrep -iv "$KEYWORDS_MONTANA_EXCLUDE")
+  MONTANA=$(egrep -i "$KEYWORDS_MONTANA" "$NEWPAGES" | egrep -iv "$KEYWORDS_MONTANA_EXCLUDE")
 
   if [ "$MONTANA" != "" ];
   then

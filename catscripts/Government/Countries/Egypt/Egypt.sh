@@ -11,9 +11,9 @@ then
 
   debug_start "Egypt"
 
-  EGYPT=$(egrep -i "$KEYWORDS_EGYPT" newpages.txt | egrep -iv "$KEYWORDS_EGYPT_EXCLUDE")
-  ANCIENT=$(egrep -i "$KEYWORDS_ANCIENTEGYPYT" newpages.txt)
-  NILE=$(egrep -i "$KEYWORDS_NILERIVER" newpages.txt)
+  EGYPT=$(egrep -i "$KEYWORDS_EGYPT" "$NEWPAGES" | egrep -iv "$KEYWORDS_EGYPT_EXCLUDE")
+  ANCIENT=$(egrep -i "$KEYWORDS_ANCIENTEGYPYT" "$NEWPAGES")
+  NILE=$(egrep -i "$KEYWORDS_NILERIVER" "$NEWPAGES")
 
   if [ "$EGYPT" != "" ];
   then

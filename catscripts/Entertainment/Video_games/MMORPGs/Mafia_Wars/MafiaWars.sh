@@ -7,7 +7,7 @@ then
 
   debug_start "Mafia Wars"
 
-  MAFIA=$(egrep -i "$KEYWORDS_MMORPG_MAFIA" newpages.txt)
+  MAFIA=$(egrep -i "$KEYWORDS_MMORPG_MAFIA" "$NEWPAGES")
 
   if [ "$MAFIA" != "" ];
   then

@@ -7,7 +7,7 @@ then
 
   debug_start "Inventions"
 
-  INVENTIONS=$(egrep -i "$KEYWORDS_INVENTIONS" newpages.txt)
+  INVENTIONS=$(egrep -i "$KEYWORDS_INVENTIONS" "$NEWPAGES")
 
   if [ "$INVENTIONS" != "" ];
   then

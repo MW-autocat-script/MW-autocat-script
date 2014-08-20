@@ -20,12 +20,12 @@ then
 
   debug_start "Toyota"
 
-  AVALON=$(egrep -i "$KEYWORDS_TOYOTA_AVALON" newpages.txt)
-  CAMRY=$(egrep -i "$KEYWORDS_TOYOTA_CAMRY" newpages.txt)
-  COROLLA=$(egrep -i "$KEYWORDS_TOYOTA_COROLLA" newpages.txt)
-  PRIUS=$(egrep -i "$KEYWORDS_TOYOTA_PRIUS" newpages.txt)
-  LEXUS=$(egrep -i "$KEYWORDS_LEXUS" newpages.txt)
-  SCION=$(egrep -i "$KEYWORDS_SCION" newpages.txt)
+  AVALON=$(egrep -i "$KEYWORDS_TOYOTA_AVALON" "$NEWPAGES")
+  CAMRY=$(egrep -i "$KEYWORDS_TOYOTA_CAMRY" "$NEWPAGES")
+  COROLLA=$(egrep -i "$KEYWORDS_TOYOTA_COROLLA" "$NEWPAGES")
+  PRIUS=$(egrep -i "$KEYWORDS_TOYOTA_PRIUS" "$NEWPAGES")
+  LEXUS=$(egrep -i "$KEYWORDS_LEXUS" "$NEWPAGES")
+  SCION=$(egrep -i "$KEYWORDS_SCION" "$NEWPAGES")
 
   if [ "$AVALON" != "" ];
   then

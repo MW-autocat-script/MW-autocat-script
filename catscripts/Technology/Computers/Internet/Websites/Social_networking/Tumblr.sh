@@ -7,7 +7,7 @@ then
   
   debug_start "Tumblr"
 
-  TUMBLR="$(egrep -i "$KEYWORDS_TUMBLR" newpages.txt)"
+  TUMBLR="$(egrep -i "$KEYWORDS_TUMBLR" "$NEWPAGES")"
 
   if [ "$TUMBLR" != "" ];
   then

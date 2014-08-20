@@ -7,7 +7,7 @@ then
   
   debug_start "Zendaya"
 
-  ZENDAYA="$(egrep -i "$KEYWORDS_ZENDAYA" newpages.txt)"
+  ZENDAYA="$(egrep -i "$KEYWORDS_ZENDAYA" "$NEWPAGES")"
 
   if [ "$ZENDAYA" != "" ];
   then

@@ -12,9 +12,9 @@ then
   
   debug_start "The Netherlands"
 
-  NETHERLANDS=$(egrep -i "$KEYWORDS_NETHERLANDS" newpages.txt | egrep -iv "$KEYWORDS_NETHERLANDS_EXCLUDE")
-  HOLLAND=$(egrep -i "$KEYWORDS_HOLLAND" newpages.txt | egrep -iv "$KEYWORDS_HOLLAND_EXCLUDE")
-  ARUBA=$(egrep -i "$KEYWORDS_ARUBA" newpages.txt)
+  NETHERLANDS=$(egrep -i "$KEYWORDS_NETHERLANDS" "$NEWPAGES" | egrep -iv "$KEYWORDS_NETHERLANDS_EXCLUDE")
+  HOLLAND=$(egrep -i "$KEYWORDS_HOLLAND" "$NEWPAGES" | egrep -iv "$KEYWORDS_HOLLAND_EXCLUDE")
+  ARUBA=$(egrep -i "$KEYWORDS_ARUBA" "$NEWPAGES")
 
   if [ "$NETHERLANDS" != "" ];
   then

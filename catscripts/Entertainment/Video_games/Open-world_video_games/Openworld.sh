@@ -13,12 +13,12 @@ then
 
   debug_start "Open-world video games"
 
-  MINECRAFT=$(egrep -i "$KEYWORDS_MINECRAFT" newpages.txt)
-  TEKKIT=$(egrep -i "$KEYWORDS_TEKKIT" newpages.txt)
-  SAINTSROW=$(egrep -i "$KEYWORDS_SAINTSROW" newpages.txt | egrep -iv "$KEYWORDS_SAINTSROW_EXCLUDE")
-  ROW2=$(egrep -i "$KEYWORDS_SAINTSROW2" newpages.txt)
-  THETHIRD=$(egrep -i "$KEYWORDS_SAINTSROW3" newpages.txt )
-  ROW4=$(egrep -i "$KEYWORDS_SAINTSROW4" newpages.txt)
+  MINECRAFT=$(egrep -i "$KEYWORDS_MINECRAFT" "$NEWPAGES")
+  TEKKIT=$(egrep -i "$KEYWORDS_TEKKIT" "$NEWPAGES")
+  SAINTSROW=$(egrep -i "$KEYWORDS_SAINTSROW" "$NEWPAGES" | egrep -iv "$KEYWORDS_SAINTSROW_EXCLUDE")
+  ROW2=$(egrep -i "$KEYWORDS_SAINTSROW2" "$NEWPAGES")
+  THETHIRD=$(egrep -i "$KEYWORDS_SAINTSROW3" "$NEWPAGES" )
+  ROW4=$(egrep -i "$KEYWORDS_SAINTSROW4" "$NEWPAGES")
 
   if [ "$MINECRAFT" != "" ];
   then

@@ -13,7 +13,7 @@ then
   
   debug_start "Chemistry"
 
-  CHEMISTRY=$(egrep -i "$KEYWORDS_CHEMISTRY" newpages.txt | egrep -iv "$KEYWORDS_CHEMISTRY_EXCLUDE")
+  CHEMISTRY=$(egrep -i "$KEYWORDS_CHEMISTRY" "$NEWPAGES" | egrep -iv "$KEYWORDS_CHEMISTRY_EXCLUDE")
 
   if [ "$CHEMISTRY" != "" ];
   then

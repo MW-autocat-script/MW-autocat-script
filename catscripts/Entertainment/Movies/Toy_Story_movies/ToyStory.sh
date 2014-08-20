@@ -9,7 +9,7 @@ then
 
   debug_start "Toy Story movies"
 
-  TOYSTORY="$(egrep -i "$KEYWORDS_MOVIES_TOYSTORY" newpages.txt | egrep -iv "$KEYWORDS_MOVIES_TOYSTORY2|$KEYWORDS_MOVIES_TOYSTORY3")"
+  TOYSTORY="$(egrep -i "$KEYWORDS_MOVIES_TOYSTORY" "$NEWPAGES" | egrep -iv "$KEYWORDS_MOVIES_TOYSTORY2|$KEYWORDS_MOVIES_TOYSTORY3")"
 
   if [ "$TOYSTORY" != "" ];
   then
@@ -21,7 +21,7 @@ then
     unset TOYSTORY
   fi
 
-  TSTWO="$(egrep -i "$KEYWORDS_MOVIES_TOYSTORY2" newpages.txt)"
+  TSTWO="$(egrep -i "$KEYWORDS_MOVIES_TOYSTORY2" "$NEWPAGES")"
 
   if [ "$TSTWO" != "" ];
   then
@@ -33,7 +33,7 @@ then
     unset TSTWO
   fi
 
-  TSTHREE="$(egrep -i "$KEYWORDS_MOVIES_TOYSTORY3" newpages.txt)"
+  TSTHREE="$(egrep -i "$KEYWORDS_MOVIES_TOYSTORY3" "$NEWPAGES")"
 
   if [ "$TSTHREE" != "" ];
   then

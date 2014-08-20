@@ -10,9 +10,9 @@ then
 
   debug_start "Tablet computers"
 
-  KINDLE=$(egrep -i "$KEYWORDS_KINDLEFIRE" newpages.txt)
-  IPAD=$(egrep -i "$KEYWORDS_IPAD" newpages.txt)
-  TABLETS=$(egrep -i "$KEYWORDS_TABLETCOMPUTER" newpages.txt | egrep -iv "$KEYWORDS_TABLETCOMPUTER_EXCLUDE")
+  KINDLE=$(egrep -i "$KEYWORDS_KINDLEFIRE" "$NEWPAGES")
+  IPAD=$(egrep -i "$KEYWORDS_IPAD" "$NEWPAGES")
+  TABLETS=$(egrep -i "$KEYWORDS_TABLETCOMPUTER" "$NEWPAGES" | egrep -iv "$KEYWORDS_TABLETCOMPUTER_EXCLUDE")
 
   if [ "$KINDLE" != "" ];
   then

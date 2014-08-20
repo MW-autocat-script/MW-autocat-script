@@ -12,7 +12,7 @@ then
 
   KEYWORDS_MAMMALS_EXCLUDE="$KEYWORDS_DOLPHINS"
 
-  MAMMALS=$(egrep -i "$KEYWORDS_MAMMALS" newpages.txt | egrep -iv "$KEYWORDS_MAMMALS_EXCLUDE" )
+  MAMMALS=$(egrep -i "$KEYWORDS_MAMMALS" "$NEWPAGES" | egrep -iv "$KEYWORDS_MAMMALS_EXCLUDE" )
 
   if [ "$MAMMALS" != "" ];
   then

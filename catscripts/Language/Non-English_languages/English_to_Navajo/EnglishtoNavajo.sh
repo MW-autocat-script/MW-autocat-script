@@ -7,7 +7,7 @@ then
 
   debug_start "English to Navajo"
 
-  ENGLISHTONAVAJO=$(egrep -i "$KEYWORDS_ENGLISHTONAVAJO" newpages.txt)
+  ENGLISHTONAVAJO=$(egrep -i "$KEYWORDS_ENGLISHTONAVAJO" "$NEWPAGES")
 
   if [ "$ENGLISHTONAVAJO" != "" ];
   then

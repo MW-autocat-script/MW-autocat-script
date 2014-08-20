@@ -7,7 +7,7 @@ then
   
   debug_start "Stephen King"
 
-  STEPHENKING=$(egrep -i "$KEYWORDS_STEPHENKING" newpages.txt)
+  STEPHENKING=$(egrep -i "$KEYWORDS_STEPHENKING" "$NEWPAGES")
 
   if [ "$STEPHENKING" != "" ];
   then

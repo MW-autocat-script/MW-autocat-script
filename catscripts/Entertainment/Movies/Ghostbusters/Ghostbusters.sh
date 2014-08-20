@@ -7,7 +7,7 @@ then
 
   debug_start "Ghostbusters" #Who you gonna call? :)
 
-  GHOSTBUSTER=$(egrep -i "$KEYWORDS_MOVIES_GHOSTBUSTERS" newpages.txt)
+  GHOSTBUSTER=$(egrep -i "$KEYWORDS_MOVIES_GHOSTBUSTERS" "$NEWPAGES")
 
   if [ "$GHOSTBUSTER" != "" ];
   then

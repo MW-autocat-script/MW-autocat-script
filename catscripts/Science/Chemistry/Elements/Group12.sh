@@ -12,10 +12,10 @@ then
 
   debug_start "Group 12 elements"
 
-  MERCURY=$(egrep -i "$KEYWORDS_MERCURY" newpages.txt | egrep -i "$KEYWORDS_MERCURY_SECONDARY" | egrep -iv "$KEYWORDS_MERCURY_EXCLUDE")
-  ZINC=$(egrep -i "$KEYWORDS_ZINC" newpages.txt)
-  CADMIUM=$(egrep -i "$KEYWORDS_CADMIUM" newpages.txt)
-  COPERNICIUM=$(egrep -i "$KEYWORDS_COPERNICIUM" newpages.txt)
+  MERCURY=$(egrep -i "$KEYWORDS_MERCURY" "$NEWPAGES" | egrep -i "$KEYWORDS_MERCURY_SECONDARY" | egrep -iv "$KEYWORDS_MERCURY_EXCLUDE")
+  ZINC=$(egrep -i "$KEYWORDS_ZINC" "$NEWPAGES")
+  CADMIUM=$(egrep -i "$KEYWORDS_CADMIUM" "$NEWPAGES")
+  COPERNICIUM=$(egrep -i "$KEYWORDS_COPERNICIUM" "$NEWPAGES")
 
   if [ "$MERCURY" != "" ];
   then

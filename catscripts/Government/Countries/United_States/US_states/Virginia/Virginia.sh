@@ -11,9 +11,9 @@ then
   
   debug_start "Virginia"
 
-  VIRGINIA="$(egrep -i "$KEYWORDS_VIRGINIA" newpages.txt | egrep -iv "$KEYWORDS_VIRGINIA_EXCLUDE")"
-  ARLINGTON="$(egrep -i "$KEYWORDS_ARLINGTON" newpages.txt)"
-  JAMESTOWN="$(egrep -i "$KEYWORDS_JAMESTOWN" newpages.txt)"
+  VIRGINIA="$(egrep -i "$KEYWORDS_VIRGINIA" "$NEWPAGES" | egrep -iv "$KEYWORDS_VIRGINIA_EXCLUDE")"
+  ARLINGTON="$(egrep -i "$KEYWORDS_ARLINGTON" "$NEWPAGES")"
+  JAMESTOWN="$(egrep -i "$KEYWORDS_JAMESTOWN" "$NEWPAGES")"
 
   if [ "$VIRGINIA" != "" ];
   then

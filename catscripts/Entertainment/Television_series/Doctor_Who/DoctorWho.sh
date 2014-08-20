@@ -7,7 +7,7 @@ then
 
   debug_start "Doctor Who"
 
-  DOCTORWHO=$(egrep -i "$KEYWORDS_DOCTORWHO" newpages.txt)
+  DOCTORWHO=$(egrep -i "$KEYWORDS_DOCTORWHO" "$NEWPAGES")
 
   if [ "$DOCTORWHO" != "" ];
   then

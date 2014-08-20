@@ -7,7 +7,7 @@ then
 
   debug_start "Sailor Moon"
 
-  SAILORMOON=$(egrep -i "$KEYWORDS_SAILORMOON" newpages.txt)
+  SAILORMOON=$(egrep -i "$KEYWORDS_SAILORMOON" "$NEWPAGES")
 
   if [ "$SAILORMOON" != "" ];
   then

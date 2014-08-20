@@ -7,7 +7,7 @@ then
   
   debug_start "The Black Eyed Peas"
 
-  BLACKEYEDPEAS="$(egrep -i "$KEYWORDS_BLACKEYEDPEAS" newpages.txt)"
+  BLACKEYEDPEAS="$(egrep -i "$KEYWORDS_BLACKEYEDPEAS" "$NEWPAGES")"
 
   if [ "$BLACKEYEDPEAS" != "" ];
   then

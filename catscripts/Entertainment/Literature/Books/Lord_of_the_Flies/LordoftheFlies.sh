@@ -7,7 +7,7 @@ then
   
   debug_start "Lord of the Flies"
 
-  FLYLORD=$(egrep -i "$KEYWORDS_LORDOFTHEFLIES" newpages.txt)
+  FLYLORD=$(egrep -i "$KEYWORDS_LORDOFTHEFLIES" "$NEWPAGES")
 
   if [ "$FLYLORD" != "" ];
   then

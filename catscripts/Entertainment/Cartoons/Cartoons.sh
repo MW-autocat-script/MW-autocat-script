@@ -36,7 +36,7 @@ then
   $CARTOONDIR/The_Simpsons/TheSimpsons.sh
   $CARTOONDIR/Vampire_Knight/VampireKnight.sh #KEYWORDS_VAMPIREKNIGHT
 
-  CARTOONS="$(egrep -i "$KEYWORDS_CARTOONS_OTHER" newpages.txt)"
+  CARTOONS="$(egrep -i "$KEYWORDS_CARTOONS_OTHER" "$NEWPAGES")"
 
   if [ "$CARTOONS" != "" ];
   then

@@ -11,10 +11,10 @@ then
 
   debug_start "Group 7 elements"
 
-  MANGANESE="$(egrep -i "$KEYWORDS_MANGANESE" newpages.txt)"
-  TECHNETIUM="$(egrep -i "$KEYWORDS_TECHNETIUM" newpages.txt)"
-  RHENIUM="$(egrep -i "$KEYWORDS_RHENIUM" newpages.txt)"
-  BOHRIUM="$(egrep -i "$KEYWORDS_BOHRIUM" newpages.txt)"
+  MANGANESE="$(egrep -i "$KEYWORDS_MANGANESE" "$NEWPAGES")"
+  TECHNETIUM="$(egrep -i "$KEYWORDS_TECHNETIUM" "$NEWPAGES")"
+  RHENIUM="$(egrep -i "$KEYWORDS_RHENIUM" "$NEWPAGES")"
+  BOHRIUM="$(egrep -i "$KEYWORDS_BOHRIUM" "$NEWPAGES")"
 
   if [ "$MANGANESE" != "" ];
   then

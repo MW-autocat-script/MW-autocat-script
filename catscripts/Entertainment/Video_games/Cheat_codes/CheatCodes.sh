@@ -10,8 +10,8 @@ then
   debug_start "Cheat codes"
 
 
-  CHEATCODES="$(egrep -i "$KEYWORDS_CHEATCODES" newpages.txt | egrep -iv "$KEYWORDS_CHEATCODES_EXCLUDE")"
-  ACTIONREPLAY="$(egrep -i "$KEYWORDS_ACTIONREPLAY" newpages.txt)"
+  CHEATCODES="$(egrep -i "$KEYWORDS_CHEATCODES" "$NEWPAGES" | egrep -iv "$KEYWORDS_CHEATCODES_EXCLUDE")"
+  ACTIONREPLAY="$(egrep -i "$KEYWORDS_ACTIONREPLAY" "$NEWPAGES")"
 
 
   if [ "$CHEATCODES" != "" ];

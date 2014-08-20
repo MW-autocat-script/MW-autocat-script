@@ -8,7 +8,7 @@ then
 
   debug_start "Delaware"
 
-  DELAWARE=$(egrep -i "$KEYWORDS_DELAWARE" newpages.txt)
+  DELAWARE=$(egrep -i "$KEYWORDS_DELAWARE" "$NEWPAGES")
 
   if [ "$DELAWARE" != "" ];
   then

@@ -8,7 +8,7 @@ then
 
   debug_start "Mac OS X"
 
-  MACOS=$(egrep -i "$KEYWORDS_MACOS" newpages.txt)
+  MACOS=$(egrep -i "$KEYWORDS_MACOS" "$NEWPAGES")
 
   if [ "$MACOS" != "" ];
   then

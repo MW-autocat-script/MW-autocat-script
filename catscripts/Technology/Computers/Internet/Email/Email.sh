@@ -9,8 +9,8 @@ then
   
   debug_start "Email"
 
-  EMAIL=$(egrep -i "$KEYWORDS_EMAIL" newpages.txt | egrep -iv "$KEYWORDS_GMAIL")
-  GMAIL=$(egrep -i "$KEYWORDS_GMAIL" newpages.txt)
+  EMAIL=$(egrep -i "$KEYWORDS_EMAIL" "$NEWPAGES" | egrep -iv "$KEYWORDS_GMAIL")
+  GMAIL=$(egrep -i "$KEYWORDS_GMAIL" "$NEWPAGES")
 
   if [ "$EMAIL" != "" ];
   then

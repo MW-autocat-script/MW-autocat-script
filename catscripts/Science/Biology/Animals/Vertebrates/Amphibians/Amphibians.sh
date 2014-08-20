@@ -11,9 +11,9 @@ then
   
   debug_start "Amphibians"
 
-  AMPHIBIANS="$(egrep -i "$KEYWORDS_AMPHIBIANS" newpages.txt | egrep -iv "$KEYWORDS_AMPHIBIANS_EXCLUDE")"
-  FROGSANDTOADS="$(egrep -i "$KEYWORDS_FROGSANDTOADS" newpages.txt)"
-  SALAMANDERS="$(egrep -i "$KEYWORDS_SALAMANDERS" newpages.txt)"
+  AMPHIBIANS="$(egrep -i "$KEYWORDS_AMPHIBIANS" "$NEWPAGES" | egrep -iv "$KEYWORDS_AMPHIBIANS_EXCLUDE")"
+  FROGSANDTOADS="$(egrep -i "$KEYWORDS_FROGSANDTOADS" "$NEWPAGES")"
+  SALAMANDERS="$(egrep -i "$KEYWORDS_SALAMANDERS" "$NEWPAGES")"
 
   if [ "$AMPHIBIANS" != "" ];
   then

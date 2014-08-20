@@ -8,7 +8,7 @@ then
   
   debug_start "Hello Kitty"
 
-  HELLOKITTY=$(egrep -i "$KEYWORDS_HELLOKITTY" newpages.txt)
+  HELLOKITTY=$(egrep -i "$KEYWORDS_HELLOKITTY" "$NEWPAGES")
 
   if [ "$HELLOKITTY" != "" ];
   then

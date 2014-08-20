@@ -7,7 +7,7 @@ then
   
   debug_start "Dr. Seuss"
 
-  SEUSS=$(egrep -i "$KEYWORDS_DRSEUSS" newpages.txt)
+  SEUSS=$(egrep -i "$KEYWORDS_DRSEUSS" "$NEWPAGES")
 
   if [ "$SEUSS" != "" ];
   then

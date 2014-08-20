@@ -10,9 +10,9 @@ then
 
   debug_start "The Elder Scrolls series"
 
-  SCROLLS=$(egrep -i "$KEYWORDS_THEELDERSCROLLS" newpages.txt | egrep -iv "$KEYWORDS_THEELDERSCROLLS_EXCLUDE")
-  SKYRIM=$(egrep -i "$KEYWORDS_SKYRIM" newpages.txt)
-  OBLIVION=$(egrep -i "$KEYWORDS_OBLIVION" newpages.txt)
+  SCROLLS=$(egrep -i "$KEYWORDS_THEELDERSCROLLS" "$NEWPAGES" | egrep -iv "$KEYWORDS_THEELDERSCROLLS_EXCLUDE")
+  SKYRIM=$(egrep -i "$KEYWORDS_SKYRIM" "$NEWPAGES")
+  OBLIVION=$(egrep -i "$KEYWORDS_OBLIVION" "$NEWPAGES")
 
   if [ "$SCROLLS" != "" ];
   then

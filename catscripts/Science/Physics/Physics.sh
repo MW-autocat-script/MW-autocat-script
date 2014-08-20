@@ -7,7 +7,7 @@ then
 
   debug_start "Physics"
 
-  PHYSICS=$(egrep -i "$KEYWORDS_PHYSICS" newpages.txt)
+  PHYSICS=$(egrep -i "$KEYWORDS_PHYSICS" "$NEWPAGES")
 
   if [ "$PHYSICS" != "" ];
   then

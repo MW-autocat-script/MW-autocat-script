@@ -7,7 +7,7 @@ then
 
   debug_start "Moldova"
 
-  MOLDOVA=$(egrep -i "$KEYWORDS_MOLDOVA" newpages.txt)
+  MOLDOVA=$(egrep -i "$KEYWORDS_MOLDOVA" "$NEWPAGES")
 
   if [ "$MOLDOVA" != "" ];
   then

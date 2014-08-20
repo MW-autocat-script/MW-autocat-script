@@ -18,12 +18,12 @@ then
 
   debug_start "Group 17"
 
-  FLUORINE=$(egrep -i "$KEYWORDS_FLUORINE" newpages.txt | egrep -iv "$KEYWORDS_FLUORINE_EXCLUDE")
-  CHLORINE=$(egrep -i "$KEYWORDS_CHLORINE" newpages.txt | egrep -iv "$KEYWORDS_CHLORINE_EXCLUDE")
-  BROMINE=$(egrep -i "$KEYWORDS_BROMINE" newpages.txt | egrep -iv "$KEYWORDS_BROMINE_EXCLUDE")
-  IODINE=$(egrep -i "$KEYWORDS_IODINE" newpages.txt | egrep -iv "$KEYWORDS_IODINE_EXCLUDE")
-  ASTATINE=$(egrep -i "$KEYWORDS_ASTATINE" newpages.txt | egrep -iv "$KEYWORDS_ASTATINE_EXCLUDE")
-  UNUNSEPTIUM=$(egrep -i "$KEYWORDS_UNUNSEPTIUM" newpages.txt | egrep -iv "$KEYWORDS_UNUNSEPTIUM_EXCLUDE")
+  FLUORINE=$(egrep -i "$KEYWORDS_FLUORINE" "$NEWPAGES" | egrep -iv "$KEYWORDS_FLUORINE_EXCLUDE")
+  CHLORINE=$(egrep -i "$KEYWORDS_CHLORINE" "$NEWPAGES" | egrep -iv "$KEYWORDS_CHLORINE_EXCLUDE")
+  BROMINE=$(egrep -i "$KEYWORDS_BROMINE" "$NEWPAGES" | egrep -iv "$KEYWORDS_BROMINE_EXCLUDE")
+  IODINE=$(egrep -i "$KEYWORDS_IODINE" "$NEWPAGES" | egrep -iv "$KEYWORDS_IODINE_EXCLUDE")
+  ASTATINE=$(egrep -i "$KEYWORDS_ASTATINE" "$NEWPAGES" | egrep -iv "$KEYWORDS_ASTATINE_EXCLUDE")
+  UNUNSEPTIUM=$(egrep -i "$KEYWORDS_UNUNSEPTIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_UNUNSEPTIUM_EXCLUDE")
 
   if [ "$FLUORINE" != "" ];
   then

@@ -12,7 +12,7 @@ then
 
   debug_start "One Direction"
 
-  ONEDIRECTION="$(egrep -i "$KEYWORDS_ONEDIRECTION" newpages.txt)"
+  ONEDIRECTION="$(egrep -i "$KEYWORDS_ONEDIRECTION" "$NEWPAGES")"
 
   if [ "$ONEDIRECTION" != "" ];
   then

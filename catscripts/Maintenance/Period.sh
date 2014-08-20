@@ -8,7 +8,7 @@ then
   
   debug_start "Page titles ending in a period"
 
-  PERIOD="$(egrep -i "$KEYWORDS_PERIOD" newpages.txt | egrep -iv "$KEYWORDS_PERIOD_EXCLUDE")"
+  PERIOD="$(egrep -i "$KEYWORDS_PERIOD" "$NEWPAGES" | egrep -iv "$KEYWORDS_PERIOD_EXCLUDE")"
 
   if [ "$PERIOD" != "" ];
   then

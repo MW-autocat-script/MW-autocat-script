@@ -16,7 +16,7 @@ debug_start "PlayStation"
 
   KEYWORDS_PS1_EXCLUDE="$KEYWORDS_PS2|$KEYWORDS_PLAYSTATION3|$KEYWORDS_PS4|$KEYWORDS_PLAYSTATION_NETWORK|$KEYWORDS_PSP"
 
-  PS1=$(egrep -i "$KEYWORDS_PS1" newpages.txt | egrep -iv "$KEYWORDS_PS1_EXCLUDE")
+  PS1=$(egrep -i "$KEYWORDS_PS1" "$NEWPAGES" | egrep -iv "$KEYWORDS_PS1_EXCLUDE")
 
   if [ "$PS1" != "" ];
   then

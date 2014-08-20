@@ -10,8 +10,8 @@ then
   
   debug_start "Islam"
 
-  ISLAM=$(egrep -i "$KEYWORDS_ISLAM" newpages.txt | egrep -iv "$KEYWORDS_ISLAM_EXCLUDE")
-  RAMADAN=$(egrep -i "$KEYWORDS_RAMADAN" newpages.txt)
+  ISLAM=$(egrep -i "$KEYWORDS_ISLAM" "$NEWPAGES" | egrep -iv "$KEYWORDS_ISLAM_EXCLUDE")
+  RAMADAN=$(egrep -i "$KEYWORDS_RAMADAN" "$NEWPAGES")
 
   if [ "$ISLAM" != "" ];
   then

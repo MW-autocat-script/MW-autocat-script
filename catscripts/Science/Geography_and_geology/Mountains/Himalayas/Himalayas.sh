@@ -10,8 +10,8 @@ then
 
   debug_start "Himalayas"
 
-  HIMALAYAS=$(egrep -i "$KEYWORDS_HIMALAYAS" newpages.txt | egrep -iv "$KEYWORDS_HIMALAYAS_EXCLUDE")
-  EVEREST=$(egrep -i "$KEYWORDS_MOUNT_EVEREST" newpages.txt)
+  HIMALAYAS=$(egrep -i "$KEYWORDS_HIMALAYAS" "$NEWPAGES" | egrep -iv "$KEYWORDS_HIMALAYAS_EXCLUDE")
+  EVEREST=$(egrep -i "$KEYWORDS_MOUNT_EVEREST" "$NEWPAGES")
 
   if [ "$HIMALAYAS" != "" ];
   then

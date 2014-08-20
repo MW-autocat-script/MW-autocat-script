@@ -7,7 +7,7 @@ then
 
   debug_start "English to French"
 
-  ETOF=$(egrep -i "$KEYWORDS_ENGLISHTOFRENCH" newpages.txt)
+  ETOF=$(egrep -i "$KEYWORDS_ENGLISHTOFRENCH" "$NEWPAGES")
 
   if [ "$ETOF" != "" ];
   then

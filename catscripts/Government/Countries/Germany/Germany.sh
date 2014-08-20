@@ -18,11 +18,11 @@ then
   
   debug_start "Germany"
 
-  GERMANY=$(egrep -i "$KEYWORDS_GERMANY" newpages.txt | egrep -iv "$KEYWORDS_GERMANY_EXCLUDE")
-  NAZI=$(egrep -i "$KEYWORDS_NAZIGERMANY" newpages.txt | egrep -iv "$KEYWORDS_NAZIGERMANY_EXCLUDE" && egrep -i "$KEYWORDS_NAZIGERMANY_SECONDARY" newpages.txt)
-  HITLER=$(egrep -i "$KEYWORDS_HITLER" newpages.txt | egrep -iv "$KEYWORDS_HITLER_EXCLUDE")
-  ANNEFRANK=$(egrep -i "$KEYWORDS_ANNEFRANK" newpages.txt)
-  BERLIN=$(egrep -i "$KEYWORDS_BERLIN" newpages.txt)
+  GERMANY=$(egrep -i "$KEYWORDS_GERMANY" "$NEWPAGES" | egrep -iv "$KEYWORDS_GERMANY_EXCLUDE")
+  NAZI=$(egrep -i "$KEYWORDS_NAZIGERMANY" "$NEWPAGES" | egrep -iv "$KEYWORDS_NAZIGERMANY_EXCLUDE" && egrep -i "$KEYWORDS_NAZIGERMANY_SECONDARY" "$NEWPAGES")
+  HITLER=$(egrep -i "$KEYWORDS_HITLER" "$NEWPAGES" | egrep -iv "$KEYWORDS_HITLER_EXCLUDE")
+  ANNEFRANK=$(egrep -i "$KEYWORDS_ANNEFRANK" "$NEWPAGES")
+  BERLIN=$(egrep -i "$KEYWORDS_BERLIN" "$NEWPAGES")
 
   if [ "$GERMANY" != "" ];
   then
@@ -37,7 +37,6 @@ then
   if [ "$NAZI" != "" ];
   then
     printf "%s" "$NAZI" > NaziGermany.txt
-    printf "%s" "$NAZISECONDARY" >> NaziGermany.txt
     export CATFILE="NaziGermany.txt"
     export CATNAME="Nazi Germany"
     $CATEGORIZE

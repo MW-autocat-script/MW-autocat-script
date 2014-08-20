@@ -7,7 +7,7 @@ then
 
   debug_start "Digimon World"
 
-  WORLD=$(egrep -i "$KEYWORDS_DIGIMONWORLD" newpages.txt)
+  WORLD=$(egrep -i "$KEYWORDS_DIGIMONWORLD" "$NEWPAGES")
 
   if [ "$WORLD" != "" ];
   then

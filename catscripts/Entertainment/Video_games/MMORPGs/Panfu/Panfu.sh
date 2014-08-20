@@ -7,7 +7,7 @@ then
   
   debug_start "Panfu"
 
-  PANFU=$(egrep -i "$KEYWORDS_MMORPG_PANFU" newpages.txt)
+  PANFU=$(egrep -i "$KEYWORDS_MMORPG_PANFU" "$NEWPAGES")
 
   if [ "$PANFU" != "" ];
   then

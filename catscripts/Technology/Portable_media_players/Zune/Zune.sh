@@ -7,7 +7,7 @@ then
   
   debug_start "Zune"
 
-  ZUNE=$(egrep -i "$KEYWORDS_ZUNE" newpages.txt)
+  ZUNE=$(egrep -i "$KEYWORDS_ZUNE" "$NEWPAGES")
 
   if [ "$ZUNE" != "" ];
   then

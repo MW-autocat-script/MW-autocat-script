@@ -8,7 +8,7 @@ then
 
   debug_start "Bosnia and Herzegovina"
 
-  BOSNIA=$(egrep -i "$KEYWORDS_BOSNIAANDHERZEGOVINA" newpages.txt)
+  BOSNIA=$(egrep -i "$KEYWORDS_BOSNIAANDHERZEGOVINA" "$NEWPAGES")
 
   if [ "$BOSNIA" != "" ];
   then

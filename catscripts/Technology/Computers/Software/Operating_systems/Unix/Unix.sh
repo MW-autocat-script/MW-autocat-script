@@ -11,7 +11,7 @@ then
 
   debug_start "Unix"
 
-  UNIX=$(egrep -i "$KEYWORDS_UNIX" newpages.txt | egrep -iv "$KEYWORDS_UNIX_EXCLUDE" && egrep -i "$KEYWORDS_UNIX_SPECIAL" newpages.txt | egrep -iv "$KEYWORDS_UNIX_EXCLUDE|Linux|BSD")
+  UNIX=$(egrep -i "$KEYWORDS_UNIX" "$NEWPAGES" | egrep -iv "$KEYWORDS_UNIX_EXCLUDE" && egrep -i "$KEYWORDS_UNIX_SPECIAL" "$NEWPAGES" | egrep -iv "$KEYWORDS_UNIX_EXCLUDE|Linux|BSD")
 
   if [ "$UNIX" != "" ];
   then

@@ -7,7 +7,7 @@ then
   
   debug_start "The 39 Clues"
 
-  CLUES=$(egrep -i "$KEYWORDS_THE39CLUES" newpages.txt)
+  CLUES=$(egrep -i "$KEYWORDS_THE39CLUES" "$NEWPAGES")
 
   if [ "$CLUES" != "" ];
   then

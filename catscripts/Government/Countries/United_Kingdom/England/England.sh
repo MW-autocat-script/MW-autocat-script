@@ -15,11 +15,11 @@ then
 
   debug_start "England"
 
-  ENGLAND=$(egrep -i "$KEYWORDS_ENGLAND" newpages.txt | egrep -iv "$KEYWORDS_ENGLAND_EXCLUDE")
-  LONDON=$(egrep -i "$KEYWORDS_LONDON" newpages.txt | egrep -iv "$KEYWORDS_LONDON_EXCLUDE")
-  BUCKINGHAMPALACE=$(egrep -i "$KEYWORDS_BUCKINGHAMPALACE" newpages.txt)
-  ELIZABETHTOWER=$(egrep -i "$KEYWORDS_ELIZABETHTOWER" newpages.txt)
-  STONEHENGE=$(egrep -i "$KEYWORDS_STONEHENGE" newpages.txt)
+  ENGLAND=$(egrep -i "$KEYWORDS_ENGLAND" "$NEWPAGES" | egrep -iv "$KEYWORDS_ENGLAND_EXCLUDE")
+  LONDON=$(egrep -i "$KEYWORDS_LONDON" "$NEWPAGES" | egrep -iv "$KEYWORDS_LONDON_EXCLUDE")
+  BUCKINGHAMPALACE=$(egrep -i "$KEYWORDS_BUCKINGHAMPALACE" "$NEWPAGES")
+  ELIZABETHTOWER=$(egrep -i "$KEYWORDS_ELIZABETHTOWER" "$NEWPAGES")
+  STONEHENGE=$(egrep -i "$KEYWORDS_STONEHENGE" "$NEWPAGES")
 
   if [ "$ENGLAND" != "" ];
   then

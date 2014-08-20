@@ -7,7 +7,7 @@ then
   
   debug_start "Andes"
 
-  ANDES=$(egrep -i "$KEYWORDS_ANDES" newpages.txt)
+  ANDES=$(egrep -i "$KEYWORDS_ANDES" "$NEWPAGES")
 
   if [ "$ANDES" != "" ];
   then

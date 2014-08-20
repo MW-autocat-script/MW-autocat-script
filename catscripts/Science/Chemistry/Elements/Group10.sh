@@ -12,10 +12,10 @@ then
 
   debug_start "Group 10 elements"
 
-  NICKEL=$(egrep -i "$KEYWORDS_NICKEL" newpages.txt | egrep -iv "$KEYWORDS_NICKEL_EXCLUDE")
-  PALLADIUM=$(egrep -i "$KEYWORDS_PALLADIUM" newpages.txt)
-  PLATINUM=$(egrep -i "$KEYWORDS_PLATINUM" newpages.txt | egrep -iv "$KEYWORDS_PLATINUM_EXCLUDE")
-  DARMSTADTIUM=$(egrep -i "$KEYWORDS_DARMSTADTIUM" newpages.txt)
+  NICKEL=$(egrep -i "$KEYWORDS_NICKEL" "$NEWPAGES" | egrep -iv "$KEYWORDS_NICKEL_EXCLUDE")
+  PALLADIUM=$(egrep -i "$KEYWORDS_PALLADIUM" "$NEWPAGES")
+  PLATINUM=$(egrep -i "$KEYWORDS_PLATINUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_PLATINUM_EXCLUDE")
+  DARMSTADTIUM=$(egrep -i "$KEYWORDS_DARMSTADTIUM" "$NEWPAGES")
 
   if [ "$NICKEL" != "" ];
   then

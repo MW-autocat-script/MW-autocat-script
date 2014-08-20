@@ -18,14 +18,14 @@ then
 
   debug_start "Linux"
 
-  LINUX=$(egrep -i "$KEYWORDS_LINUX|$KEYWORDS_LINUX_OTHER" newpages.txt | egrep -iv "$KEYWORDS_LINUX_EXCLUDE")
-  DEBIAN=$(egrep -i "$KEYWORDS_DEBIAN" newpages.txt)
-  OPENSUSE=$(egrep -i "$KEYWORDS_OPENSUSE" newpages.txt)
-  UBUNTU=$(egrep -i "$KEYWORDS_UBUNTU" newpages.txt)
-  COLINUX=$( egrep -i "$KEYWORDS_COLINUX" newpages.txt)
-  FEDORA=$(egrep -i "$KEYWORDS_FEDORA" newpages.txt)
-  MINT=$(egrep -i "$KEYWORDS_LINUXMINT" newpages.txt)
-  ANDROID=$(egrep -i "$KEYWORDS_GOOGLEANDROID" newpages.txt & egrep "$KEYWORDS_GOOGLEANDROID_CASESENSITIVE" newpages.txt)
+  LINUX=$(egrep -i "$KEYWORDS_LINUX|$KEYWORDS_LINUX_OTHER" "$NEWPAGES" | egrep -iv "$KEYWORDS_LINUX_EXCLUDE")
+  DEBIAN=$(egrep -i "$KEYWORDS_DEBIAN" "$NEWPAGES")
+  OPENSUSE=$(egrep -i "$KEYWORDS_OPENSUSE" "$NEWPAGES")
+  UBUNTU=$(egrep -i "$KEYWORDS_UBUNTU" "$NEWPAGES")
+  COLINUX=$( egrep -i "$KEYWORDS_COLINUX" "$NEWPAGES")
+  FEDORA=$(egrep -i "$KEYWORDS_FEDORA" "$NEWPAGES")
+  MINT=$(egrep -i "$KEYWORDS_LINUXMINT" "$NEWPAGES")
+  ANDROID=$(egrep -i "$KEYWORDS_GOOGLEANDROID" "$NEWPAGES" & egrep "$KEYWORDS_GOOGLEANDROID_CASESENSITIVE" "$NEWPAGES")
 
   if [ "$LINUX" != "" ];
   then

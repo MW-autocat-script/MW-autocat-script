@@ -7,7 +7,7 @@ then
 
   debug_start "Naruto"
   
-  NARUTO=$(egrep -i "$KEYWORDS_NARUTO" newpages.txt)
+  NARUTO=$(egrep -i "$KEYWORDS_NARUTO" "$NEWPAGES")
 
   if [ "$NARUTO" != "" ];
   then

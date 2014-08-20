@@ -7,7 +7,7 @@ then
 
   debug_start "Tales of Pirates"
 
-  PIRATES=$(egrep -i "$KEYWORDS_MMORPG_PIRATES" newpages.txt)
+  PIRATES=$(egrep -i "$KEYWORDS_MMORPG_PIRATES" "$NEWPAGES")
 
   if [ "$PIRATES" != "" ];
   then

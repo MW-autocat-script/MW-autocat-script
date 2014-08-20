@@ -7,7 +7,7 @@ then
   
   debug_start "Smallville"
 
-  SMALLVILLE=$(egrep -i "$KEYWORDS_SMALLVILLE" newpages.txt)
+  SMALLVILLE=$(egrep -i "$KEYWORDS_SMALLVILLE" "$NEWPAGES")
 
   if [ "$SMALLVILLE" != "" ];
   then

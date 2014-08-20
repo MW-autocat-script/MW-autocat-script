@@ -10,9 +10,9 @@ then
   
   debug_start "Switzerland"
 
-  SWITZERLAND=$(egrep -i "$KEYWORDS_SWITZERLAND" newpages.txt | egrep -iv "$KEYWORDS_SWITZERLAND_EXCLUDE")
-  GENEVA=$(egrep -i "$KEYWORDS_GENEVA" newpages.txt)
-  ZURICH=$(egrep -i "$KEYWORDS_ZURICH" newpages.txt)
+  SWITZERLAND=$(egrep -i "$KEYWORDS_SWITZERLAND" "$NEWPAGES" | egrep -iv "$KEYWORDS_SWITZERLAND_EXCLUDE")
+  GENEVA=$(egrep -i "$KEYWORDS_GENEVA" "$NEWPAGES")
+  ZURICH=$(egrep -i "$KEYWORDS_ZURICH" "$NEWPAGES")
 
   if [ "$SWITZERLAND" != "" ];
   then

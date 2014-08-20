@@ -7,7 +7,7 @@ then
   
   debug_start "Build-A-Bear"
 
-  BUILDABEAR=$(egrep -i "$KEYWORDS_BUILDABEAR" newpages.txt)
+  BUILDABEAR=$(egrep -i "$KEYWORDS_BUILDABEAR" "$NEWPAGES")
 
   if [ "$BUILDABEAR" != "" ];
   then

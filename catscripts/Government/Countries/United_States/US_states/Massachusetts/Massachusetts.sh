@@ -10,8 +10,8 @@ then
 
   debug_start  "Massachusetts"
 
-  MASSACHUSETTS=$(egrep -i "$KEYWORDS_MASSACHUSETTS" newpages.txt | egrep -iv "$KEYWORDS_MASSACHUSETTS_EXCLUDE")
-  BOSTON=$(egrep -i "$KEYWORDS_BOSTON" newpages.txt | egrep -iv "$KEYWORDS_BOSTON_EXCLUDE")
+  MASSACHUSETTS=$(egrep -i "$KEYWORDS_MASSACHUSETTS" "$NEWPAGES" | egrep -iv "$KEYWORDS_MASSACHUSETTS_EXCLUDE")
+  BOSTON=$(egrep -i "$KEYWORDS_BOSTON" "$NEWPAGES" | egrep -iv "$KEYWORDS_BOSTON_EXCLUDE")
 
   if [ "$MASSACHUSETTS" != "" ];
   then

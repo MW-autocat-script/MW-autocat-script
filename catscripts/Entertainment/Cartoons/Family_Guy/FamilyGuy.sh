@@ -7,7 +7,7 @@ then
   
   debug_start "Family Guy"
 
-  FAMILYGUY=$(egrep -i "$KEYWORDS_FAMILYGUY" newpages.txt)
+  FAMILYGUY=$(egrep -i "$KEYWORDS_FAMILYGUY" "$NEWPAGES")
 
   if [ "$FAMILYGUY" != "" ];
   then

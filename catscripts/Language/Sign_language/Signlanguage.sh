@@ -7,7 +7,7 @@ then
 
   debug_start "Sign language"
 
-  SIGN=$(egrep -i "$KEYWORDS_SIGNLANGUAGE" newpages.txt)
+  SIGN=$(egrep -i "$KEYWORDS_SIGNLANGUAGE" "$NEWPAGES")
 
   if [ "$SIGN" != "" ];
   then

@@ -7,7 +7,7 @@ then
 
   debug_start "Looney Tunes"
 
-  LOONEY=$(egrep -i "$KEYWORDS_LOONEYTUNES" newpages.txt)
+  LOONEY=$(egrep -i "$KEYWORDS_LOONEYTUNES" "$NEWPAGES")
 
   if [ "$LOONEY" != "" ];
   then

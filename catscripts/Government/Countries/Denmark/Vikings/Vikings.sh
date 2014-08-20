@@ -8,7 +8,7 @@ then
 
   debug_start "Vikings"
 
-  VIKINGS=$(egrep -i "$KEYWORDS_VIKINGS" newpages.txt | egrep -iv "$KEYWORDS_VIKINGS_EXCLUDE")
+  VIKINGS=$(egrep -i "$KEYWORDS_VIKINGS" "$NEWPAGES" | egrep -iv "$KEYWORDS_VIKINGS_EXCLUDE")
 
   if [ "$VIKINGS" != "" ];
   then

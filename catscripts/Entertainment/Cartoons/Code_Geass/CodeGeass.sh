@@ -7,7 +7,7 @@ then
   
   debug_start "Code Geass"
 
-  GEASS=$(egrep -i "$KEYWORDS_CODEGEASS" newpages.txt)
+  GEASS=$(egrep -i "$KEYWORDS_CODEGEASS" "$NEWPAGES")
 
   if [ "$GEASS" != "" ];
   then

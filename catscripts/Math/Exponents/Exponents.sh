@@ -7,7 +7,7 @@ then
 
   debug_start "Exponents"
 
-  EXPONENTS="$(egrep -i "$KEYWORDS_EXPONENTS" newpages.txt)"
+  EXPONENTS="$(egrep -i "$KEYWORDS_EXPONENTS" "$NEWPAGES")"
 
   if [ "$EXPONENTS" != "" ];
   then

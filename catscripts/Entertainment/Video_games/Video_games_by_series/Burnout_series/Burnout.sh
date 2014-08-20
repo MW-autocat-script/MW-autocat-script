@@ -15,14 +15,14 @@ then
 
   debug_start "Burnout series"
 
-  BURNOUT=$(egrep "$KEYWORDS_BURNOUT_CASESENSITIVE" newpages.txt | egrep -iv "$KEYWORDS_BURNOUT_EXCLUDE")
-  TWO=$(egrep -i "$KEYWORDS_BURNOUTTWO" newpages.txt)
-  THREE=$(egrep -i "$KEYWORDS_BURNOUTTHREE" newpages.txt)
-  REVENGE=$(egrep -i "$KEYWORDS_BURNOUTREVENGE" newpages.txt)
-  LEGENDS=$(egrep -i "$KEYWORDS_BURNOUTLEGENDS" newpages.txt )
-  DOMINATOR=$(egrep -i "$KEYWORDS_BURNOUTDOMINATOR" newpages.txt)
-  PARADISE=$(egrep -i "$KEYWORDS_BURNOUTPARADISE" newpages.txt)
-  CRASH=$(egrep -i "$KEYWORDS_BURNOUTCRASH" newpages.txt)
+  BURNOUT=$(egrep "$KEYWORDS_BURNOUT_CASESENSITIVE" "$NEWPAGES" | egrep -iv "$KEYWORDS_BURNOUT_EXCLUDE")
+  TWO=$(egrep -i "$KEYWORDS_BURNOUTTWO" "$NEWPAGES")
+  THREE=$(egrep -i "$KEYWORDS_BURNOUTTHREE" "$NEWPAGES")
+  REVENGE=$(egrep -i "$KEYWORDS_BURNOUTREVENGE" "$NEWPAGES")
+  LEGENDS=$(egrep -i "$KEYWORDS_BURNOUTLEGENDS" "$NEWPAGES" )
+  DOMINATOR=$(egrep -i "$KEYWORDS_BURNOUTDOMINATOR" "$NEWPAGES")
+  PARADISE=$(egrep -i "$KEYWORDS_BURNOUTPARADISE" "$NEWPAGES")
+  CRASH=$(egrep -i "$KEYWORDS_BURNOUTCRASH" "$NEWPAGES")
 
   if [ "$BURNOUT" != "" ];
   then

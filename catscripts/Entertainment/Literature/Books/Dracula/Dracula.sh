@@ -7,7 +7,7 @@ then
   
   debug_start "Dracula"
 
-  DRACULA=$(egrep -i "$KEYWORDS_DRACULA" newpages.txt)
+  DRACULA=$(egrep -i "$KEYWORDS_DRACULA" "$NEWPAGES")
 
   if [ "$DRACULA" != "" ];
   then

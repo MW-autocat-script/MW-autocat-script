@@ -8,7 +8,7 @@ then
 
   debug_start "Dominica"
 
-  DOMINICA=$(egrep -i "$KEYWORDS_DOMINICA" newpages.txt)
+  DOMINICA=$(egrep -i "$KEYWORDS_DOMINICA" "$NEWPAGES")
 
   if [ "$DOMINICA" != "" ];
   then

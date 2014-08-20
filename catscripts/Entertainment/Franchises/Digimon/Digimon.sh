@@ -8,7 +8,7 @@ then
 
   debug_start "Digimon"
 
-  DIGIMON=$(egrep -i "$KEYWORDS_DIGIMON" newpages.txt | egrep -iv "$KEYWORDS_DIGIMON_EXCLUDE")
+  DIGIMON=$(egrep -i "$KEYWORDS_DIGIMON" "$NEWPAGES" | egrep -iv "$KEYWORDS_DIGIMON_EXCLUDE")
 
   if [ "$DIGIMON" != "" ];
   then

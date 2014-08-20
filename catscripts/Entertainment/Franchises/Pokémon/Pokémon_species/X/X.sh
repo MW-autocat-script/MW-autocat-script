@@ -7,7 +7,7 @@ then
 
   debug_start "Pokemon X scripts"
 
-  XATU=$(egrep -i "$KEYWORDS_XATU" newpages.txt)
+  XATU=$(egrep -i "$KEYWORDS_XATU" "$NEWPAGES")
 
   if [ "$XATU" != "" ];
   then

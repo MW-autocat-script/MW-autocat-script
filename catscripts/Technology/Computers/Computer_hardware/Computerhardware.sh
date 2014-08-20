@@ -22,17 +22,17 @@ then
 
   debug_start "Computer hardware"
 
-  MOTHERBOARDS="$(egrep -i "$KEYWORDS_MOTHERBOARD" newpages.txt)"
-  VIDEOCARDS="$(egrep -i "$KEYWORDS_VIDEO_CARDS" newpages.txt)"
-  SOUNDCARDS="$(egrep -i "$KEYWORDS_SOUND_CARDS" newpages.txt)"
-  PRINTERS="$(egrep -i "$KEYWORDS_PRINTER" newpages.txt)"
-  MICROPROCESSORS="$(egrep -i "$KEYWORDS_MICROPROCESSOR" newpages.txt)"
-  DATASTORAGE="$(egrep -i "$KEYWORDS_DATASTORAGE" newpages.txt | egrep -iv "$KEYWORDS_DATASTORAGE_EXCLUDE")"
-  HARDDRIVE="$(egrep -i "$KEYWORDS_HARD_DRIVE" newpages.txt)"
-  FLOPPY="$(egrep -i "$KEYWORDS_FLOPPY" newpages.txt)"
-  LAPTOPS="$(egrep -i "$KEYWORDS_LAPTOPS" newpages.txt | egrep -iv "$KEYWORDS_MACBOOKS")"
-  MACBOOKS="$(egrep -i "$KEYWORDS_MACBOOKS" newpages.txt)"
-  HARDWARE="$(egrep -i "$KEYWORDS_COMPUTER_HARDWARE" newpages.txt | egrep -iv "$KEYWORDS_COMPUTER_HARDWARE_EXCLUDE")"
+  MOTHERBOARDS="$(egrep -i "$KEYWORDS_MOTHERBOARD" "$NEWPAGES")"
+  VIDEOCARDS="$(egrep -i "$KEYWORDS_VIDEO_CARDS" "$NEWPAGES")"
+  SOUNDCARDS="$(egrep -i "$KEYWORDS_SOUND_CARDS" "$NEWPAGES")"
+  PRINTERS="$(egrep -i "$KEYWORDS_PRINTER" "$NEWPAGES")"
+  MICROPROCESSORS="$(egrep -i "$KEYWORDS_MICROPROCESSOR" "$NEWPAGES")"
+  DATASTORAGE="$(egrep -i "$KEYWORDS_DATASTORAGE" "$NEWPAGES" | egrep -iv "$KEYWORDS_DATASTORAGE_EXCLUDE")"
+  HARDDRIVE="$(egrep -i "$KEYWORDS_HARD_DRIVE" "$NEWPAGES")"
+  FLOPPY="$(egrep -i "$KEYWORDS_FLOPPY" "$NEWPAGES")"
+  LAPTOPS="$(egrep -i "$KEYWORDS_LAPTOPS" "$NEWPAGES" | egrep -iv "$KEYWORDS_MACBOOKS")"
+  MACBOOKS="$(egrep -i "$KEYWORDS_MACBOOKS" "$NEWPAGES")"
+  HARDWARE="$(egrep -i "$KEYWORDS_COMPUTER_HARDWARE" "$NEWPAGES" | egrep -iv "$KEYWORDS_COMPUTER_HARDWARE_EXCLUDE")"
 
   if [ "$MOTHERBOARDS" != "" ];
   then

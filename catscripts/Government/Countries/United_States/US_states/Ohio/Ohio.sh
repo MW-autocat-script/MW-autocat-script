@@ -12,9 +12,9 @@ then
 
   debug_start "Ohio"
 
-  OHIO=$(egrep -i "$KEYWORDS_OHIO" newpages.txt | egrep -iv "$KEYWORDS_OHIO_EXCLUDE")
-  CLEVELAND=$(egrep -i "$KEYWORDS_CLEVELAND" newpages.txt | egrep -iv "$KEYWORDS_CLEVELAND_EXCLUDE")
-  CINCINNATI=$(egrep -i "$KEYWORDS_CINCINNATI" newpages.txt | egrep -iv "$KEYWORDS_CINCINNATI_EXCLUDE")
+  OHIO=$(egrep -i "$KEYWORDS_OHIO" "$NEWPAGES" | egrep -iv "$KEYWORDS_OHIO_EXCLUDE")
+  CLEVELAND=$(egrep -i "$KEYWORDS_CLEVELAND" "$NEWPAGES" | egrep -iv "$KEYWORDS_CLEVELAND_EXCLUDE")
+  CINCINNATI=$(egrep -i "$KEYWORDS_CINCINNATI" "$NEWPAGES" | egrep -iv "$KEYWORDS_CINCINNATI_EXCLUDE")
 
   if [ "$OHIO" != "" ];
   then

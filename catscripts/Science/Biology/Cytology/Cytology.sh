@@ -7,7 +7,7 @@ then
 
   debug_start "Cytology"
 
-  CYTOLOGY=$(egrep -i "$KEYWORDS_CYTOLOGY" newpages.txt)
+  CYTOLOGY=$(egrep -i "$KEYWORDS_CYTOLOGY" "$NEWPAGES")
 
   if [ "$CYTOLOGY" != "" ];
   then

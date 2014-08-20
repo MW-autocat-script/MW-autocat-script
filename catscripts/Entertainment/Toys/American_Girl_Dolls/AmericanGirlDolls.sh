@@ -8,7 +8,7 @@ then
   
   debug_start "American Girl Dolls"
 
-  AMERICANGIRLDOLLS=$(egrep -i "$KEYWORDS_AMERICANGIRLDOLLS" newpages.txt)
+  AMERICANGIRLDOLLS=$(egrep -i "$KEYWORDS_AMERICANGIRLDOLLS" "$NEWPAGES")
 
   if [ "$AMERICANGIRLDOLLS" != "" ];
   then

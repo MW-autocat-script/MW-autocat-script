@@ -7,7 +7,7 @@ then
 
   debug_start "Lung cancer"
 
-  LUNGCANCER=$(egrep -i "$KEYWORDS_LUNGCANCER" newpages.txt)
+  LUNGCANCER=$(egrep -i "$KEYWORDS_LUNGCANCER" "$NEWPAGES")
 
   if [ "$LUNGCANCER" != "" ];
   then

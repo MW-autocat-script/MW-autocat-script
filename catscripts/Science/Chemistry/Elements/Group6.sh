@@ -17,10 +17,10 @@ then
 
   debug_start "Group 6 elements"
 
-  CHROMIUM="$(egrep -i "$KEYWORDS_CHROMIUM" newpages.txt | egrep -iv "$KEYWORDS_CHROMIUM_EXCLUDE")"
-  MOLYBDENUM="$(egrep -i "$KEYWORDS_MOLYBDENUM" newpages.txt)"
-  TUNGSTEN="$(egrep -i "$KEYWORDS_TUNGSTEN" newpages.txt | egrep -iv "$KEYWORDS_TUNGSTEN_EXCLUDE")"
-  SEABORGIUM="$(egrep -i "$KEYWORDS_SEABORGIUM" newpages.txt)"
+  CHROMIUM="$(egrep -i "$KEYWORDS_CHROMIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_CHROMIUM_EXCLUDE")"
+  MOLYBDENUM="$(egrep -i "$KEYWORDS_MOLYBDENUM" "$NEWPAGES")"
+  TUNGSTEN="$(egrep -i "$KEYWORDS_TUNGSTEN" "$NEWPAGES" | egrep -iv "$KEYWORDS_TUNGSTEN_EXCLUDE")"
+  SEABORGIUM="$(egrep -i "$KEYWORDS_SEABORGIUM" "$NEWPAGES")"
 
   if [ "$CHROMIUM" != "" ];
   then

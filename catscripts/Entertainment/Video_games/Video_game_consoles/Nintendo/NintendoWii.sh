@@ -8,7 +8,7 @@ then
 
   debug_start "Nintendo Wii"
 
-  WII=$(egrep -i "$KEYWORDS_NINTENDO_WII" newpages.txt | egrep -iv "$KEYWORDS_NINTENDO_WII_EXCLUDE")
+  WII=$(egrep -i "$KEYWORDS_NINTENDO_WII" "$NEWPAGES" | egrep -iv "$KEYWORDS_NINTENDO_WII_EXCLUDE")
 
   if [ "$WII" != "" ];
   then

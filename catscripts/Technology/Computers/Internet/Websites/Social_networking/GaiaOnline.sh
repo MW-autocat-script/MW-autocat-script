@@ -7,7 +7,7 @@ then
 
   debug_start "Gaia Online"
 
-  GAIAONLINE=$(egrep -i "$KEYWORDS_GAIAONLINE" newpages.txt)
+  GAIAONLINE=$(egrep -i "$KEYWORDS_GAIAONLINE" "$NEWPAGES")
 
   if [ "$GAIAONLINE" != "" ];
   then

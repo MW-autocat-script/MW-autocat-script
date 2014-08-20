@@ -7,7 +7,7 @@ then
 
   debug_start "Nickelback"
 
-  NICKELBACK=$(egrep -i "$KEYWORDS_NICKELBACK" newpages.txt)
+  NICKELBACK=$(egrep -i "$KEYWORDS_NICKELBACK" "$NEWPAGES")
 
   if [ "$NICKELBACK" != "" ];
   then

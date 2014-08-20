@@ -7,7 +7,7 @@ then
 
   debug_start "English to Greek"
 
-  GREEK=$(egrep -i "$KEYWORDS_ENGLISHTOGREEK" newpages.txt)
+  GREEK=$(egrep -i "$KEYWORDS_ENGLISHTOGREEK" "$NEWPAGES")
 
   if [ "$GREEK" != "" ];
   then

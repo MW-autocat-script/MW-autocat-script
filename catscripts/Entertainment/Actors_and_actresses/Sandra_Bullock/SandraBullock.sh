@@ -7,7 +7,7 @@ then
 
   debug_start "Sandra Bullock"
 
-  BULLOCK=$(egrep -i "$KEYWORDS_ACTRESS_SANDRABULLOCK" newpages.txt)
+  BULLOCK=$(egrep -i "$KEYWORDS_ACTRESS_SANDRABULLOCK" "$NEWPAGES")
 
   if [ "$BULLOCK" != "" ];
   then

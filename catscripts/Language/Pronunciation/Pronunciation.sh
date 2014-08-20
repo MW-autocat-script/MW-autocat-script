@@ -8,7 +8,7 @@ then
 
   debug_start "Pronunciation"
 
-  PRONUNCIATION=$(egrep -i "$KEYWORDS_PRONUNCIATION" newpages.txt)
+  PRONUNCIATION=$(egrep -i "$KEYWORDS_PRONUNCIATION" "$NEWPAGES")
 
   if [ "$PRONUNCIATION" != "" ];
   then

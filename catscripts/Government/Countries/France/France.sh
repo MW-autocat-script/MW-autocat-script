@@ -14,10 +14,10 @@ then
   
   debug_start "France"
 
-  FRANCE=$(egrep -i "$KEYWORDS_FRANCE" newpages.txt | egrep -iv "$KEYWORDS_FRANCE_EXCLUDE")
-  PARIS=$(egrep -i "$KEYWORDS_PARIS" newpages.txt | egrep -iv "$KEYWORDS_PARIS_EXCLUDE")
-  TAHITI=$(egrep -i "$KEYWORDS_TAHITI" newpages.txt)
-  FRENCHREVOLUTION=$(egrep -i "$KEYWORDS_FRENCH_REVOLUTION" newpages.txt)
+  FRANCE=$(egrep -i "$KEYWORDS_FRANCE" "$NEWPAGES" | egrep -iv "$KEYWORDS_FRANCE_EXCLUDE")
+  PARIS=$(egrep -i "$KEYWORDS_PARIS" "$NEWPAGES" | egrep -iv "$KEYWORDS_PARIS_EXCLUDE")
+  TAHITI=$(egrep -i "$KEYWORDS_TAHITI" "$NEWPAGES")
+  FRENCHREVOLUTION=$(egrep -i "$KEYWORDS_FRENCH_REVOLUTION" "$NEWPAGES")
 
   if [ "$FRANCE" != "" ];
   then

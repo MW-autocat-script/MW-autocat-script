@@ -7,7 +7,7 @@ then
 
   debug_start "Karos Online"
 
-  KAROS=$(egrep -i "$KEYWORDS_MMORPG_KAROS" newpages.txt)
+  KAROS=$(egrep -i "$KEYWORDS_MMORPG_KAROS" "$NEWPAGES")
 
   if [ "$KAROS" != "" ];
   then

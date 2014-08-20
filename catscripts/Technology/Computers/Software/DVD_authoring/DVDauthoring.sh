@@ -9,7 +9,7 @@ then
 
   debug_start "DVD authoring"
 
-  AUTHORING=$(egrep -i "$KEYWORDS_DVDAUTHORING_ALL" newpages.txt)
+  AUTHORING=$(egrep -i "$KEYWORDS_DVDAUTHORING_ALL" "$NEWPAGES")
 
   if [ "$AUTHORING" != "" ];
   then

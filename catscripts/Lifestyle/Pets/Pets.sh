@@ -38,12 +38,12 @@ then
 
   . ./catscripts/Science/Biology/Animals/Vertebrates/Reptiles/Reptiles.sh norun #Import variables from Reptiles
 
-  DOGS=$(egrep -i "$KEYWORDS_DOGS" newpages.txt | egrep -iv "$KEYWORDS_DOGS_EXCLUDE") 
-  GOLDFISH=$(egrep -i "$KEYWORDS_GOLDFISH" newpages.txt | egrep -iv "$KEYWORDS_GOLDFISH_EXCLUDE") 
-  HAMSTERS=$(egrep -i "$KEYWORDS_HAMSTERS" newpages.txt) 
-  GERBILS=$(egrep -i "$KEYWORDS_GERBILS" newpages.txt) 
-  GUINEAPIGS=$(egrep -i "$KEYWORDS_GUINEA_PIGS" newpages.txt)
-  CATS=$(egrep -i "$KEYWORDS_CATS" newpages.txt | egrep -iv "$KEYWORDS_CATS_EXCLUDE")
+  DOGS=$(egrep -i "$KEYWORDS_DOGS" "$NEWPAGES" | egrep -iv "$KEYWORDS_DOGS_EXCLUDE") 
+  GOLDFISH=$(egrep -i "$KEYWORDS_GOLDFISH" "$NEWPAGES" | egrep -iv "$KEYWORDS_GOLDFISH_EXCLUDE") 
+  HAMSTERS=$(egrep -i "$KEYWORDS_HAMSTERS" "$NEWPAGES") 
+  GERBILS=$(egrep -i "$KEYWORDS_GERBILS" "$NEWPAGES") 
+  GUINEAPIGS=$(egrep -i "$KEYWORDS_GUINEA_PIGS" "$NEWPAGES")
+  CATS=$(egrep -i "$KEYWORDS_CATS" "$NEWPAGES" | egrep -iv "$KEYWORDS_CATS_EXCLUDE")
 
   #Categorize dogs
 

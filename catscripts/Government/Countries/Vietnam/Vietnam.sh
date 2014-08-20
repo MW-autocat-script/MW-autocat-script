@@ -10,8 +10,8 @@ then
   
   debug_start "Vietnam"
 
-  VIETNAM=$(egrep -i "$KEYWORDS_VIETNAM" newpages.txt | egrep -iv "$KEYWORDS_VIETNAM_EXCLUDE")
-  VIETNAMWAR=$(egrep -i "$KEYWORDS_VIETNAMWAR" newpages.txt)
+  VIETNAM=$(egrep -i "$KEYWORDS_VIETNAM" "$NEWPAGES" | egrep -iv "$KEYWORDS_VIETNAM_EXCLUDE")
+  VIETNAMWAR=$(egrep -i "$KEYWORDS_VIETNAMWAR" "$NEWPAGES")
 
   if [ "$VIETNAM" != "" ];
   then

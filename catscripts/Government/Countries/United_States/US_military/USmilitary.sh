@@ -15,12 +15,12 @@ then
   
   debug_start "US military"
 
-  USMC=$(egrep -i "$KEYWORDS_USMC" newpages.txt)
-  USARMY=$(egrep -i "$KEYWORDS_USARMY" newpages.txt)
-  USAF=$(egrep -i "$KEYWORDS_USAIRFORCE" newpages.txt)
-  USNAVY=$(egrep -i "$KEYWORDS_USNAVY" newpages.txt)
-  USCG=$(egrep -i "$KEYWORDS_USCG" newpages.txt)
-  USMILITARY=$(egrep -i "$KEYWORDS_USMILITARY" newpages.txt | egrep -iv "$KEYWORDS_USMILITARY_EXCLUDE")
+  USMC=$(egrep -i "$KEYWORDS_USMC" "$NEWPAGES")
+  USARMY=$(egrep -i "$KEYWORDS_USARMY" "$NEWPAGES")
+  USAF=$(egrep -i "$KEYWORDS_USAIRFORCE" "$NEWPAGES")
+  USNAVY=$(egrep -i "$KEYWORDS_USNAVY" "$NEWPAGES")
+  USCG=$(egrep -i "$KEYWORDS_USCG" "$NEWPAGES")
+  USMILITARY=$(egrep -i "$KEYWORDS_USMILITARY" "$NEWPAGES" | egrep -iv "$KEYWORDS_USMILITARY_EXCLUDE")
 
   if [ "$USMC" != "" ];
   then

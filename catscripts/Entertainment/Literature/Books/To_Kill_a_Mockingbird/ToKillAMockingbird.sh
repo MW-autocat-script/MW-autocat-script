@@ -7,7 +7,7 @@ then
 
   debug_start "To Kill a Mockingbird"
 
-  MOCKINGBIRD=$(egrep -i "$KEYWORDS_TOKILLAMOCKINGBIRD" newpages.txt)
+  MOCKINGBIRD=$(egrep -i "$KEYWORDS_TOKILLAMOCKINGBIRD" "$NEWPAGES")
 
   if [ "$MOCKINGBIRD" != "" ];
   then

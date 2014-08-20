@@ -8,7 +8,7 @@ then
 
   debug_start "Star Wars: The Old Republic"
 
-  SWTOR=$(egrep -i "$KEYWORDS_MMORPG_SWTOR" newpages.txt | egrep -iv "$KEYWORDS_MMORPG_SWTOR_EXCLUDE")
+  SWTOR=$(egrep -i "$KEYWORDS_MMORPG_SWTOR" "$NEWPAGES" | egrep -iv "$KEYWORDS_MMORPG_SWTOR_EXCLUDE")
 
   if [ "$SWTOR" != "" ];
   then

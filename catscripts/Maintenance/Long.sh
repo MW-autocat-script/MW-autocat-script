@@ -7,7 +7,7 @@ then
   
   debug_start "Long page titles"
 
-  LONG="$(egrep -i "$KEYWORDS_LONG" newpages.txt)"
+  LONG="$(egrep -i "$KEYWORDS_LONG" "$NEWPAGES")"
 
   if [ "$LONG" != "" ];
   then

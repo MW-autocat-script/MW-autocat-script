@@ -11,8 +11,8 @@ then
 
   debug_start "Colorado"
 
-  COLORADO=$(egrep -i "$KEYWORDS_COLORADO" newpages.txt | egrep -iv "$KEYWORDS_COLORADO_EXCLUDE")
-  DENVER=$(egrep -i "$KEYWORDS_DENVER" newpages.txt | egrep -iv "$KEYWORDS_DENVER_EXCLUDE")
+  COLORADO=$(egrep -i "$KEYWORDS_COLORADO" "$NEWPAGES" | egrep -iv "$KEYWORDS_COLORADO_EXCLUDE")
+  DENVER=$(egrep -i "$KEYWORDS_DENVER" "$NEWPAGES" | egrep -iv "$KEYWORDS_DENVER_EXCLUDE")
 
   if [ "$COLORADO" != "" ];
   then

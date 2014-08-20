@@ -7,7 +7,7 @@ then
 
   debug_start "iCarly"
 
-  ICARLY=$(egrep -i "$KEYWORDS_TELEVISIONSERIES_ICARLY" newpages.txt)
+  ICARLY=$(egrep -i "$KEYWORDS_TELEVISIONSERIES_ICARLY" "$NEWPAGES")
 
   if [ "$ICARLY" != "" ];
   then

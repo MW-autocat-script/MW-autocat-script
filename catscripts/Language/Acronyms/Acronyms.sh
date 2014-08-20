@@ -7,7 +7,7 @@ then
 
   debug_start "Acronyms"
 
-  ACRONYMS=$(egrep -i "$KEYWORDS_ACRONYMS" newpages.txt)
+  ACRONYMS=$(egrep -i "$KEYWORDS_ACRONYMS" "$NEWPAGES")
 
   if [ "$ACRONYMS" != "" ];
   then

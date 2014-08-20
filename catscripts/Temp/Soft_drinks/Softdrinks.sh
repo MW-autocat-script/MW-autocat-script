@@ -10,9 +10,9 @@ then
 
   debug_start "Soft drinks"
 
-  PEPSICO=$(egrep -i "$KEYWORDS_PEPSICO" newpages.txt)
-  COKE=$(egrep -i "$KEYWORDS_COCACOLA" newpages.txt)
-  SOFT=$(egrep -i "$KEYWORDS_SOFTDRINK" newpages.txt | egrep -iv "$KEYWORDS_SOFTDRINK_EXCLUDE")
+  PEPSICO=$(egrep -i "$KEYWORDS_PEPSICO" "$NEWPAGES")
+  COKE=$(egrep -i "$KEYWORDS_COCACOLA" "$NEWPAGES")
+  SOFT=$(egrep -i "$KEYWORDS_SOFTDRINK" "$NEWPAGES" | egrep -iv "$KEYWORDS_SOFTDRINK_EXCLUDE")
 
   if [ "$PEPSICO" != "" ];
   then

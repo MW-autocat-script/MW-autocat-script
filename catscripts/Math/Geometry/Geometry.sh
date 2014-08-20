@@ -10,7 +10,7 @@ then
   
   debug_start "Geometry"
 
-  GEOMETRY=$(egrep -i "$KEYWORDS_GEOMETRY" newpages.txt | egrep -iv "$KEYWORDS_GEOMETRY_EXCLUDE" | egrep -v "$KEYWORDS_GEOMETRY_EXCLUDE_CASESENSITIVE")
+  GEOMETRY=$(egrep -i "$KEYWORDS_GEOMETRY" "$NEWPAGES" | egrep -iv "$KEYWORDS_GEOMETRY_EXCLUDE" | egrep -v "$KEYWORDS_GEOMETRY_EXCLUDE_CASESENSITIVE")
 
   if [ "$GEOMETRY" != "" ];
   then

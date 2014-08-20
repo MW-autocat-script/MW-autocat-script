@@ -10,8 +10,8 @@ then
 
   debug_start "Compounds"
 
-  CO=$(egrep -i "$KEYWORDS_CARBONDIOXIDE" newpages.txt)
-  COTWO=$(egrep -i "$KEYWORDS_CARBONMONOXIDE" newpages.txt)
+  CO=$(egrep -i "$KEYWORDS_CARBONDIOXIDE" "$NEWPAGES")
+  COTWO=$(egrep -i "$KEYWORDS_CARBONMONOXIDE" "$NEWPAGES")
 
   if [ "$CO" != "" ];
   then

@@ -11,9 +11,9 @@ then
 
   debug_start "Panama"
 
-  PANAMA=$(egrep -i "$KEYWORDS_PANAMA" newpages.txt | egrep -iv "$KEYWORDS_PANAMA_EXCLUDE")
-  PANAMACANAL=$(egrep -i "$KEYWORDS_PANAMACANAL" newpages.txt)
-  PANAMACITY=$(egrep -i "$KEYWORDS_PANAMACITY" newpages.txt | egrep -iv "$KEYWORDS_PANAMACITY_EXCLUDE")
+  PANAMA=$(egrep -i "$KEYWORDS_PANAMA" "$NEWPAGES" | egrep -iv "$KEYWORDS_PANAMA_EXCLUDE")
+  PANAMACANAL=$(egrep -i "$KEYWORDS_PANAMACANAL" "$NEWPAGES")
+  PANAMACITY=$(egrep -i "$KEYWORDS_PANAMACITY" "$NEWPAGES" | egrep -iv "$KEYWORDS_PANAMACITY_EXCLUDE")
 
   if [ "$PANAMA" != "" ];
   then

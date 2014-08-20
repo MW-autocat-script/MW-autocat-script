@@ -8,7 +8,7 @@ then
   
   debug_start "Adobe Flash Player"
 
-  FLASHPLAYER=$(egrep -i "$KEYWORDS_ADOBEFLASHPLAYER" newpages.txt)
+  FLASHPLAYER=$(egrep -i "$KEYWORDS_ADOBEFLASHPLAYER" "$NEWPAGES")
 
   if [ "$FLASHPLAYER" != "" ];
   then

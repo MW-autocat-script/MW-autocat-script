@@ -18,12 +18,12 @@ then
 
   debug_start "Group 16 elements"
 
-  OXYGEN=$(egrep -i "$KEYWORDS_OXYGEN" newpages.txt | egrep -iv "$KEYWORDS_OXYGEN_EXCLUDE")
-  SULFUR=$(egrep -i "$KEYWORDS_SULFUR" newpages.txt | egrep -iv "$KEYWORDS_SULFUR_EXCLUDE")
-  SELENIUM=$(egrep -i "$KEYWORDS_SELENIUM" newpages.txt | egrep -iv "$KEYWORDS_SELENIUM_EXCLUDE")
-  TELLURIUM=$(egrep -i "$KEYWORDS_TELLURIUM" newpages.txt | egrep -iv "$KEYWORDS_TELLURIUM_EXCLUDE")
-  POLONIUM=$(egrep -i "$KEYWORDS_POLONIUM" newpages.txt | egrep -iv "$KEYWORDS_POLONIUM_EXCLUDE")
-  LIVERMORIUM=$(egrep -i "$KEYWORDS_LIVERMORIUM" newpages.txt | egrep -i "$KEYWORDS_LIVERMORIUM_EXCLUDE")
+  OXYGEN=$(egrep -i "$KEYWORDS_OXYGEN" "$NEWPAGES" | egrep -iv "$KEYWORDS_OXYGEN_EXCLUDE")
+  SULFUR=$(egrep -i "$KEYWORDS_SULFUR" "$NEWPAGES" | egrep -iv "$KEYWORDS_SULFUR_EXCLUDE")
+  SELENIUM=$(egrep -i "$KEYWORDS_SELENIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_SELENIUM_EXCLUDE")
+  TELLURIUM=$(egrep -i "$KEYWORDS_TELLURIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_TELLURIUM_EXCLUDE")
+  POLONIUM=$(egrep -i "$KEYWORDS_POLONIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_POLONIUM_EXCLUDE")
+  LIVERMORIUM=$(egrep -i "$KEYWORDS_LIVERMORIUM" "$NEWPAGES" | egrep -i "$KEYWORDS_LIVERMORIUM_EXCLUDE")
 
   if [ "$OXYGEN" != "" ];
   then

@@ -11,7 +11,7 @@ then
 
   debug_start "Sonic the Hedgehog franchise"
 
-  SONIC="$(egrep -i "$KEYWORDS_SONIC|$KEYWORDS_SONIC_SECONDARY" newpages.txt | egrep -iv "$KEYWORDS_SONIC_EXCLUDE")"
+  SONIC="$(egrep -i "$KEYWORDS_SONIC|$KEYWORDS_SONIC_SECONDARY" "$NEWPAGES" | egrep -iv "$KEYWORDS_SONIC_EXCLUDE")"
 
   if [ "$SONIC" != "" ];
   then

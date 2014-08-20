@@ -8,7 +8,7 @@ then
 
   debug_start "Connecticut"
 
-  CONNECTICUT=$(egrep -i "$KEYWORDS_CONNECTICUT" newpages.txt)
+  CONNECTICUT=$(egrep -i "$KEYWORDS_CONNECTICUT" "$NEWPAGES")
 
   if [ "$CONNECTICUT" != "" ];
   then

@@ -7,7 +7,7 @@ then
 
   debug_start "Pokémon anime"
 
-  ANIME="$(egrep -i "$KEYWORDS_POKEMONANIME" newpages.txt)"
+  ANIME="$(egrep -i "$KEYWORDS_POKEMONANIME" "$NEWPAGES")"
 
   if [ "$ANIME"  != "" ];
   then

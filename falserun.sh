@@ -5,17 +5,32 @@
 while read x; do
   export $x
 done < settings.conf
-#Fetch new pages
+
 if [ -e "$PIDFILE" ]; then
-PID="$(cat "$PIDFILE")"
-if kill -0 "$PID" > /dev/null 2>&1; then
-printf 'Already running\n'
-exit 1
-else
-rm "$PIDFILE"
+  PID="$(cat "$PIDFILE")"
+  if kill -0 "$PID" > /dev/null 2>&1; then
+    printf 'Already running\n'
+    exit 1
+  else
+    rm "$PIDFILE"
+  fi
 fi
-fi
+
 echo $$ > "$PIDFILE"
+
+#Set TEMPDIR to safe value if not specified in settings.conf
+
+if [ "$TEMPDIR" == "" ];
+then
+  export TEMPDIR="/tmp/$BOTNAME"
+fi
+
+if [ ! -d "$TEMPDIR" ];
+then
+  mkdir "$TEMPDIR"
+fi
+
+export NEWPAGES="$TEMPDIR/newpages.txt"
 
 export CATEGORIZE="./util/Categorize.sh"
 #GET http://cfaj.freeshell.org/ipaddr.cgi > address.txt
@@ -44,7 +59,7 @@ DEBUG="yes"
 
 echo "Creating empty test file"
 
-cat /dev/null > newpages.txt
+cat /dev/null > "$NEWPAGES"
 
 
 OLDSUM="A"

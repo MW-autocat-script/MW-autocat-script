@@ -9,7 +9,7 @@ then
 
   debug_start "Indiana"
 
-  INDIANA=$(egrep -i "$KEYWORDS_INDIANA" newpages.txt | egrep -iv "$KEYWORDS_INDIANA_EXCLUDE" )
+  INDIANA=$(egrep -i "$KEYWORDS_INDIANA" "$NEWPAGES" | egrep -iv "$KEYWORDS_INDIANA_EXCLUDE" )
 
   if [ "$INDIANA" != "" ];
   then

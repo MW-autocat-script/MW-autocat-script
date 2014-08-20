@@ -13,12 +13,12 @@ then
 
   debug_start "Scientists"
 
-  HAWKING=$(egrep -i "$KEYWORDS_STEPHENHAWKING" newpages.txt)
-  DARWIN=$(egrep -i "$KEYWORDS_CHARLESDARWIN" newpages.txt)
-  DAVINCI=$(egrep -i "$KEYWORDS_LEONARDODAVINCI" newpages.txt)
-  CURIE=$(egrep -i "$KEYWORDS_MARIECURIE" newpages.txt)
-  NEWTON=$(egrep -i "$KEYWORDS_ISAACNEWTON" newpages.txt)
-  MENDEL=$(egrep -i "$KEYWORDS_GREGORMENDEL" newpages.txt)
+  HAWKING=$(egrep -i "$KEYWORDS_STEPHENHAWKING" "$NEWPAGES")
+  DARWIN=$(egrep -i "$KEYWORDS_CHARLESDARWIN" "$NEWPAGES")
+  DAVINCI=$(egrep -i "$KEYWORDS_LEONARDODAVINCI" "$NEWPAGES")
+  CURIE=$(egrep -i "$KEYWORDS_MARIECURIE" "$NEWPAGES")
+  NEWTON=$(egrep -i "$KEYWORDS_ISAACNEWTON" "$NEWPAGES")
+  MENDEL=$(egrep -i "$KEYWORDS_GREGORMENDEL" "$NEWPAGES")
 
   if [ "$HAWKING" != "" ];
   then

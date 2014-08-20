@@ -18,10 +18,10 @@ then
   
   debug_start "Cameras"
 
-  CAMERAS="$(egrep -i "$KEYWORDS_CAMERAS" newpages.txt | egrep -iv "$KEYWORDS_CAMERAS_EXCLUDE")"
-  DIGITALCAMERAS="$(egrep -i "$KEYWORDS_DIGITALCAMERAS" newpages.txt | egrep -iv "$KEYWORDS_DIGITALCAMERAS_EXCLUDE")"
-  CHDK="$(egrep -i "$KEYWORDS_CHDK" newpages.txt)"
-  WEBCAMS="$(egrep -i "$KEYWORDS_WEBCAMS" newpages.txt)"
+  CAMERAS="$(egrep -i "$KEYWORDS_CAMERAS" "$NEWPAGES" | egrep -iv "$KEYWORDS_CAMERAS_EXCLUDE")"
+  DIGITALCAMERAS="$(egrep -i "$KEYWORDS_DIGITALCAMERAS" "$NEWPAGES" | egrep -iv "$KEYWORDS_DIGITALCAMERAS_EXCLUDE")"
+  CHDK="$(egrep -i "$KEYWORDS_CHDK" "$NEWPAGES")"
+  WEBCAMS="$(egrep -i "$KEYWORDS_WEBCAMS" "$NEWPAGES")"
 
   if [ "$CAMERAS" != "" ];
   then

@@ -8,7 +8,7 @@ then
 
   debug_start "Xbox"
 
-  XBOX="$(egrep -i "$KEYWORDS_XBOX" newpages.txt | egrep -iv "$KEYWORDS_XBOX_EXCLUDE")"
+  XBOX="$(egrep -i "$KEYWORDS_XBOX" "$NEWPAGES" | egrep -iv "$KEYWORDS_XBOX_EXCLUDE")"
 
   if [ "$XBOX" != "" ];
   then

@@ -8,7 +8,7 @@ then
 
   debug_start "Computer security"
 
-  SECURITY=$(egrep -i "$KEYWORDS_COMPUTER_SECURITY" newpages.txt | egrep -iv "$KEYWORDS_COMPUTER_SECURITY_EXCLUDE")
+  SECURITY=$(egrep -i "$KEYWORDS_COMPUTER_SECURITY" "$NEWPAGES" | egrep -iv "$KEYWORDS_COMPUTER_SECURITY_EXCLUDE")
 
   if [ "$SECURITY" != "" ];
   then

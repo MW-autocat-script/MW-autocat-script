@@ -7,7 +7,7 @@ then
   
   debug_start "Fan fiction"
 
-  FANFIC=$(egrep -i "$KEYWORDS_FANFICTION" newpages.txt)
+  FANFIC=$(egrep -i "$KEYWORDS_FANFICTION" "$NEWPAGES")
 
   if [ "$FANFIC" != "" ];
   then

@@ -7,7 +7,7 @@ then
   
   debug_start "Diary of a Wimpy Kid"
 
-  WIMPY=$(egrep -i "$KEYWORDS_WIMPYDIARY" newpages.txt)
+  WIMPY=$(egrep -i "$KEYWORDS_WIMPYDIARY" "$NEWPAGES")
 
   if [ "$WIMPY" != "" ];
   then

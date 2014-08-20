@@ -7,7 +7,7 @@ then
 
   debug_start "Anarchy Online"
 
-  ANARCHY=$(egrep -i "$KEYWORDS_MMORPG_ANARCHY" newpages.txt)
+  ANARCHY=$(egrep -i "$KEYWORDS_MMORPG_ANARCHY" "$NEWPAGES")
 
   if [ "$ANARCHY" != "" ];
   then

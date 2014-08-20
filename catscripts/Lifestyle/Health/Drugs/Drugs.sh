@@ -14,11 +14,11 @@ then
 
   debug_start "Drugs"
 
-  DRUGS=$(egrep -i "$KEYWORDS_DRUGS" newpages.txt | egrep -iv "$KEYWORDS_DRUGS_EXCLUDE")
-  MEDICATION=$(egrep -i "$KEYWORDS_MEDICATION" newpages.txt)
-  ILLEGAL=$(egrep -i "$KEYWORDS_ILLEGALDRUGS" newpages.txt | egrep -iv "$KEYWORDS_ILLEGALDRUGS_EXCLUDE")
-  COCAINE=$(egrep -i "$KEYWORDS_COCAINE" newpages.txt)
-  MARIJUANA=$(egrep -i "$KEYWORDS_MARIJUANA" newpages.txt)
+  DRUGS=$(egrep -i "$KEYWORDS_DRUGS" "$NEWPAGES" | egrep -iv "$KEYWORDS_DRUGS_EXCLUDE")
+  MEDICATION=$(egrep -i "$KEYWORDS_MEDICATION" "$NEWPAGES")
+  ILLEGAL=$(egrep -i "$KEYWORDS_ILLEGALDRUGS" "$NEWPAGES" | egrep -iv "$KEYWORDS_ILLEGALDRUGS_EXCLUDE")
+  COCAINE=$(egrep -i "$KEYWORDS_COCAINE" "$NEWPAGES")
+  MARIJUANA=$(egrep -i "$KEYWORDS_MARIJUANA" "$NEWPAGES")
 
   if [ "$DRUGS" != "" ];
   then

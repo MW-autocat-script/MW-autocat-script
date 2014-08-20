@@ -26,21 +26,21 @@ then
 
   debug_start "Final Fantasy series"
 
-  FFSERIES=$(egrep -i "$KEYWORDS_FINALFANTASY" newpages.txt | egrep -iv "$KEYWORDS_FINALFANTASY_EXCLUDE")
-  FF2=$(egrep -i "$KEYWORDS_FINALFANTASY2" newpages.txt)
-  FF3=$(egrep -i "$KEYWORDS_FINALFANTASY3" newpages.txt)
-  FF4=$(egrep -i "$KEYWORDS_FINALFANTASY4" newpages.txt)
-  FF5=$(egrep -i "$KEYWORDS_FINALFANTASY5" newpages.txt)
-  FF6=$(egrep -i "$KEYWORDS_FINALFANTASY6" newpages.txt)
-  FF7=$(egrep -i "$KEYWORDS_FINALFANTASY7" newpages.txt | egrep -iv "$KEYWORDS_FINALFANTASY7_EXCLUDE")
-  FF8=$(egrep -i "$KEYWORDS_FINALFANTASY8" newpages.txt)
-  FF9=$(egrep -i "$KEYWORDS_FINALFANTASY9" newpages.txt)
-  FF10=$(egrep -i "$KEYWORDS_FINALFANTASYX" newpages.txt | egrep -iv "$KEYWORDS_FINALFANTASYX_EXCLUDE")
-  FFX2=$(egrep -i "$KEYWORDS_FINALFANTASYX2" newpages.txt)
-  FF11=$(egrep -i "$KEYWORDS_FINALFANTASY11" newpages.txt)
-  FF12=$(egrep -i "$KEYWORDS_FINALFANTASY12" newpages.txt)
-  FF13=$(egrep -i "$KEYWORDS_FINALFANTASY13" newpages.txt)
-  ADVENT=$(egrep -i "$KEYWORDS_ADVENTCHILDREN" newpages.txt)
+  FFSERIES=$(egrep -i "$KEYWORDS_FINALFANTASY" "$NEWPAGES" | egrep -iv "$KEYWORDS_FINALFANTASY_EXCLUDE")
+  FF2=$(egrep -i "$KEYWORDS_FINALFANTASY2" "$NEWPAGES")
+  FF3=$(egrep -i "$KEYWORDS_FINALFANTASY3" "$NEWPAGES")
+  FF4=$(egrep -i "$KEYWORDS_FINALFANTASY4" "$NEWPAGES")
+  FF5=$(egrep -i "$KEYWORDS_FINALFANTASY5" "$NEWPAGES")
+  FF6=$(egrep -i "$KEYWORDS_FINALFANTASY6" "$NEWPAGES")
+  FF7=$(egrep -i "$KEYWORDS_FINALFANTASY7" "$NEWPAGES" | egrep -iv "$KEYWORDS_FINALFANTASY7_EXCLUDE")
+  FF8=$(egrep -i "$KEYWORDS_FINALFANTASY8" "$NEWPAGES")
+  FF9=$(egrep -i "$KEYWORDS_FINALFANTASY9" "$NEWPAGES")
+  FF10=$(egrep -i "$KEYWORDS_FINALFANTASYX" "$NEWPAGES" | egrep -iv "$KEYWORDS_FINALFANTASYX_EXCLUDE")
+  FFX2=$(egrep -i "$KEYWORDS_FINALFANTASYX2" "$NEWPAGES")
+  FF11=$(egrep -i "$KEYWORDS_FINALFANTASY11" "$NEWPAGES")
+  FF12=$(egrep -i "$KEYWORDS_FINALFANTASY12" "$NEWPAGES")
+  FF13=$(egrep -i "$KEYWORDS_FINALFANTASY13" "$NEWPAGES")
+  ADVENT=$(egrep -i "$KEYWORDS_ADVENTCHILDREN" "$NEWPAGES")
 
 
   if [ "$FFSERIES" != "" ];

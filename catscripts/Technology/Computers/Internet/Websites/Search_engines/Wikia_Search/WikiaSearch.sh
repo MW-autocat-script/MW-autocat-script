@@ -7,7 +7,7 @@ then
 
   debug_start "Wikia Search"
 
-  WIKIASEARCH=$(egrep -i "$KEYWORDS_WIKIASEARCH" newpages.txt)
+  WIKIASEARCH=$(egrep -i "$KEYWORDS_WIKIASEARCH" "$NEWPAGES")
 
   if [ "$WIKIASEARCH" != "" ];
   then

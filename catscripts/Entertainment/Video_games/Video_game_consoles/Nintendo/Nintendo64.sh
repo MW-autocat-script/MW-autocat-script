@@ -7,7 +7,7 @@ then
   
   debug_start "Nintendo 64"
 
-  N64=$(egrep -i "$KEYWORDS_N64" newpages.txt)
+  N64=$(egrep -i "$KEYWORDS_N64" "$NEWPAGES")
 
   if [ "$N64" != "" ];
   then

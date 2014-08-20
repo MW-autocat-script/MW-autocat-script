@@ -11,11 +11,11 @@ then
 
   debug_start "Pokemon U scripts"
 
-  UMBREON="$(egrep -i "$KEYWORDS_UMBREON" newpages.txt)"
-  UNFEZANT="$(egrep -i "$KEYWORDS_UNFEZANT" newpages.txt)"
-  UNOWN="$(egrep -i "$KEYWORDS_UNOWN" newpages.txt)"
-  URSARING="$(egrep -i "$KEYWORDS_URSARING" newpages.txt)"
-  UXIE="$(egrep -i "$KEYWORDS_UXIE" newpages.txt)"
+  UMBREON="$(egrep -i "$KEYWORDS_UMBREON" "$NEWPAGES")"
+  UNFEZANT="$(egrep -i "$KEYWORDS_UNFEZANT" "$NEWPAGES")"
+  UNOWN="$(egrep -i "$KEYWORDS_UNOWN" "$NEWPAGES")"
+  URSARING="$(egrep -i "$KEYWORDS_URSARING" "$NEWPAGES")"
+  UXIE="$(egrep -i "$KEYWORDS_UXIE" "$NEWPAGES")"
 
   if [ "$UMBREON" != "" ];
   then

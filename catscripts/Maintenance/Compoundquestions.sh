@@ -13,7 +13,7 @@ then
   
   debug_start "Compound questions"
 
-  COMPOUNDQUESTION=$(egrep -i "$KEYWORDS_COMPOUNDQUESTION" newpages.txt)
+  COMPOUNDQUESTION=$(egrep -i "$KEYWORDS_COMPOUNDQUESTION" "$NEWPAGES")
 
   if [ "$COMPOUNDQUESTION" != "" ];
   then

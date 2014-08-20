@@ -7,7 +7,7 @@ then
 
   debug_start "PlayStation 3"
 
-  PS3=$(egrep -i "$KEYWORDS_PLAYSTATION3" newpages.txt)
+  PS3=$(egrep -i "$KEYWORDS_PLAYSTATION3" "$NEWPAGES")
 
   if [ "$PS3" != "" ];
   then

@@ -12,10 +12,10 @@ then
   
   debug_start "Saudi Arabia"
 
-  SAUDIARABIA=$(egrep -i "$KEYWORDS_SAUDIARABIA" newpages.txt | egrep -iv "$KEYWORDS_SAUDIARABIA_EXCLUDE")
-  MECCA=$(egrep -i "$KEYWORDS_MECCA" newpages.txt)
-  MEDINA=$(egrep -i "$KEYWORDS_MEDINA" newpages.txt)
-  RIYADH=$(egrep -i "$KEYWORDS_RIYADH" newpages.txt)
+  SAUDIARABIA=$(egrep -i "$KEYWORDS_SAUDIARABIA" "$NEWPAGES" | egrep -iv "$KEYWORDS_SAUDIARABIA_EXCLUDE")
+  MECCA=$(egrep -i "$KEYWORDS_MECCA" "$NEWPAGES")
+  MEDINA=$(egrep -i "$KEYWORDS_MEDINA" "$NEWPAGES")
+  RIYADH=$(egrep -i "$KEYWORDS_RIYADH" "$NEWPAGES")
 
   if [ "$SAUDIARABIA" != "" ];
   then

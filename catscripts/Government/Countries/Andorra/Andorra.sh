@@ -8,7 +8,7 @@ then
   
   debug_start "Andorra"
 
-  ANDORRA=$(egrep -i "$KEYWORDS_ANDORRA" newpages.txt)
+  ANDORRA=$(egrep -i "$KEYWORDS_ANDORRA" "$NEWPAGES")
 
   if [ "$ANDORRA" != "" ];
   then

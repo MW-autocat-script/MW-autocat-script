@@ -9,8 +9,8 @@ then
   
   debug_start "Group 3 elements"
 
-  SCANDIUM="$(egrep -i "$KEYWORDS_SCANDIUM" newpages.txt)"
-  YTTRIUM="$(egrep -i "$KEYWORDS_YTTRIUM" newpages.txt)"
+  SCANDIUM="$(egrep -i "$KEYWORDS_SCANDIUM" "$NEWPAGES")"
+  YTTRIUM="$(egrep -i "$KEYWORDS_YTTRIUM" "$NEWPAGES")"
 
   if [ "$SCANDIUM" != "" ];
   then

@@ -7,11 +7,11 @@ then
 
   debug_start "Tom Cruise"
 
-  TOMCRUISE=$(egrep -i "$KEYWORDS_ACTOR_TOMCRUISE" newpages.txt)
+  TOMCRUISE=$(egrep -i "$KEYWORDS_ACTOR_TOMCRUISE" "$NEWPAGES")
 
   if [ "$TOMCRUISE" != "" ];
   then
-    printf "%s" "$TOMCRUISE" newpages.txt > TomCruise.txt
+    printf "%s" "$TOMCRUISE" "$NEWPAGES" > TomCruise.txt
     export CATFILE="TomCruise.txt"
     export CATNAME="Tom Cruise"
     $CATEGORIZE

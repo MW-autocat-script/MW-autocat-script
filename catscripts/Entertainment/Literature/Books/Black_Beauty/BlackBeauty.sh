@@ -7,7 +7,7 @@ then
 
   debug_start "Black Beauty"
 
-  BLACKBEAUTY=$(egrep -i "$KEYWORDS_BLACKBEAUTY" newpages.txt)
+  BLACKBEAUTY=$(egrep -i "$KEYWORDS_BLACKBEAUTY" "$NEWPAGES")
 
   if [ "$BLACKBEAUTY" != "" ];
   then

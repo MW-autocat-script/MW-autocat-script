@@ -7,7 +7,7 @@ then
 
   debug_start "Côte d'Ivoire"
 
-  COTEDIVOIRE=$(egrep -i "$KEYWORDS_COTEDIVOIRE" newpages.txt)
+  COTEDIVOIRE=$(egrep -i "$KEYWORDS_COTEDIVOIRE" "$NEWPAGES")
 
   if [ "$COTEDIVOIRE" != "" ];
   then

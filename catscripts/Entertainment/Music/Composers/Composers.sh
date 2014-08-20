@@ -14,11 +14,11 @@ then
 
   debug_start "Composers"
 
-  BACH=$(egrep -i "$KEYWORDS_BACH" newpages.txt)
-  MOZART=$(egrep -i "$KEYWORDS_MOZART" newpages.txt | egrep -iv "$KEYWORDS_MOZART_EXCLUDE")
-  BEETHOVEN=$(egrep -i "$KEYWORDS_BEETHOVEN"  newpages.txt | egrep -iv "$KEYWORDS_BEETHOVEN_EXCLUDE")
-  COPLAND=$(egrep -i "$KEYWORDS_COPLAND" newpages.txt)
-  STRAVINSKY=$(egrep -i "$KEYWORDS_STRAVINSKY" newpages.txt)
+  BACH=$(egrep -i "$KEYWORDS_BACH" "$NEWPAGES")
+  MOZART=$(egrep -i "$KEYWORDS_MOZART" "$NEWPAGES" | egrep -iv "$KEYWORDS_MOZART_EXCLUDE")
+  BEETHOVEN=$(egrep -i "$KEYWORDS_BEETHOVEN"  "$NEWPAGES" | egrep -iv "$KEYWORDS_BEETHOVEN_EXCLUDE")
+  COPLAND=$(egrep -i "$KEYWORDS_COPLAND" "$NEWPAGES")
+  STRAVINSKY=$(egrep -i "$KEYWORDS_STRAVINSKY" "$NEWPAGES")
 
   if [ "$BACH" != "" ];
   then

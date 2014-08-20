@@ -11,7 +11,7 @@ then
 
   debug_start "RuneScape"
 
-  RUNESCAPE=$(egrep -i "$KEYWORDS_MMORPG_RUNESCAPE" newpages.txt)
+  RUNESCAPE=$(egrep -i "$KEYWORDS_MMORPG_RUNESCAPE" "$NEWPAGES")
 
   if [ "$RUNESCAPE" != "" ];
   then

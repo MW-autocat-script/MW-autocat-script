@@ -7,7 +7,7 @@ then
 
   debug_start "My Chemical Romance"
 
-  MCR=$(egrep -i "$KEYWORDS_MYCHEMICALROMANCE" newpages.txt)
+  MCR=$(egrep -i "$KEYWORDS_MYCHEMICALROMANCE" "$NEWPAGES")
 
   if [ "$MCR" != "" ];
   then

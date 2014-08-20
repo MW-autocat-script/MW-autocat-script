@@ -8,7 +8,7 @@ then
 
   debug_start "The Beatles"
 
-  BEATLES=$(egrep -i "$KEYWORDS_THEBEATLES" newpages.txt | egrep -iv "$KEYWORDS_THEBEATLES_EXCLUDE")
+  BEATLES=$(egrep -i "$KEYWORDS_THEBEATLES" "$NEWPAGES" | egrep -iv "$KEYWORDS_THEBEATLES_EXCLUDE")
 
   if [ "$BEATLES" != "" ];
   then

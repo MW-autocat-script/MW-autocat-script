@@ -9,7 +9,7 @@ then
   
   debug_start "Melbourne, Australia"
 
-  MELBOURNE=$(egrep -i "$KEYWORDS_MELBOURNE" newpages.txt | egrep -iv "$KEYWORDS_MELBOURNE_EXCLUDE")
+  MELBOURNE=$(egrep -i "$KEYWORDS_MELBOURNE" "$NEWPAGES" | egrep -iv "$KEYWORDS_MELBOURNE_EXCLUDE")
 
   if [ "$MELBOURNE" != "" ];
   then

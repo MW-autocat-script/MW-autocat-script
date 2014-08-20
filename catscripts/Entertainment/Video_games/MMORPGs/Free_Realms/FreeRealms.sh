@@ -7,7 +7,7 @@ then
 
   debug_start "Free Realms"
 
-  FREEREALMS=$(egrep -i "$KEYWORDS_MMORPG_FREEREALMS" newpages.txt)
+  FREEREALMS=$(egrep -i "$KEYWORDS_MMORPG_FREEREALMS" "$NEWPAGES")
 
   if [ "$FREEREALMS" != "" ];
   then

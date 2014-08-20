@@ -12,10 +12,10 @@ then
 
   debug_start "iPods"
 
-  IPODS=$(egrep -i "$KEYWORDS_IPODS" newpages.txt | egrep -iv "$KEYWORDS_IPODS_EXCLUDE")
-  TOUCH=$(egrep -i "$KEYWORDS_IPODTOUCH" newpages.txt)
-  NANO=$(egrep -i "$KEYWORDS_IPODNANO" newpages.txt)
-  SHUFFLE=$(egrep -i "$KEYWORDS_IPODSHUFFLE" newpages.txt)
+  IPODS=$(egrep -i "$KEYWORDS_IPODS" "$NEWPAGES" | egrep -iv "$KEYWORDS_IPODS_EXCLUDE")
+  TOUCH=$(egrep -i "$KEYWORDS_IPODTOUCH" "$NEWPAGES")
+  NANO=$(egrep -i "$KEYWORDS_IPODNANO" "$NEWPAGES")
+  SHUFFLE=$(egrep -i "$KEYWORDS_IPODSHUFFLE" "$NEWPAGES")
 
   if [ "$IPODS" != "" ];
   then

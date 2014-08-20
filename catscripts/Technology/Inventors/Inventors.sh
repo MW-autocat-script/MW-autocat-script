@@ -20,16 +20,16 @@ then
 
   debug_start "Inventors"
 
-  INVENTORS="$(egrep -i "$KEYWORDS_INVENTORS|$KEYWORDS_INVENTORS_OTHER" newpages.txt | egrep -iv "$KEYWORDS_INVENTORS_EXCLUDE")"
-  BABBAGE="$(egrep -i "$KEYWORDS_BABBAGE" newpages.txt)"
-  BELL="$(egrep -i "$KEYWORDS_ALEXANDERBELL" newpages.txt)"
-  BENZ="$(egrep -i "$KEYWORDS_BENZ" newpages.txt)"
-  FRANKLIN="$(egrep -i "$KEYWORDS_BENFRANKLIN" newpages.txt)"
-  CARVER="$(egrep -i "$KEYWORDS_GEORGEWASHINGTONCARVER" newpages.txt)"
-  DAVINCI="$(egrep -i "$KEYWORDS_DAVINCI" newpages.txt)"
-  EDISON="$(egrep -i "$KEYWORDS_EDISON" newpages.txt)"
-  TESLA="$(egrep -i "$KEYWORDS_TESLA" newpages.txt | egrep -iv "$KEYWORDS_TESLA_EXCLUDE")"
-  WHITNEY="$(egrep -i "$KEYWORDS_ELIWHITNEY" newpages.txt)"
+  INVENTORS="$(egrep -i "$KEYWORDS_INVENTORS|$KEYWORDS_INVENTORS_OTHER" "$NEWPAGES" | egrep -iv "$KEYWORDS_INVENTORS_EXCLUDE")"
+  BABBAGE="$(egrep -i "$KEYWORDS_BABBAGE" "$NEWPAGES")"
+  BELL="$(egrep -i "$KEYWORDS_ALEXANDERBELL" "$NEWPAGES")"
+  BENZ="$(egrep -i "$KEYWORDS_BENZ" "$NEWPAGES")"
+  FRANKLIN="$(egrep -i "$KEYWORDS_BENFRANKLIN" "$NEWPAGES")"
+  CARVER="$(egrep -i "$KEYWORDS_GEORGEWASHINGTONCARVER" "$NEWPAGES")"
+  DAVINCI="$(egrep -i "$KEYWORDS_DAVINCI" "$NEWPAGES")"
+  EDISON="$(egrep -i "$KEYWORDS_EDISON" "$NEWPAGES")"
+  TESLA="$(egrep -i "$KEYWORDS_TESLA" "$NEWPAGES" | egrep -iv "$KEYWORDS_TESLA_EXCLUDE")"
+  WHITNEY="$(egrep -i "$KEYWORDS_ELIWHITNEY" "$NEWPAGES")"
 
   if [ "$INVENTORS" != "" ];
   then

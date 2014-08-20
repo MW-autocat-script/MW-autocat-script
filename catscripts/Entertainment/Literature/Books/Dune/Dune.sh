@@ -9,7 +9,7 @@ then
 
   debug_start "Dune"
 
-  DUNE=$(egrep -i "$KEYWORDS_DUNE" newpages.txt && egrep "$KEYWORDS_DUNE_CASESENSITIVE" newpages.txt)
+  DUNE=$(egrep -i "$KEYWORDS_DUNE" "$NEWPAGES" && egrep "$KEYWORDS_DUNE_CASESENSITIVE" "$NEWPAGES")
 
   if [ "$DUNE" != "" ];
   then

@@ -8,7 +8,7 @@ then
   
   debug_start "Burundi"
 
-  BURUNDI=$(egrep -i "$KEYWORDS_BURUNDI" newpages.txt)
+  BURUNDI=$(egrep -i "$KEYWORDS_BURUNDI" "$NEWPAGES")
 
   if [ "$BURUNDI" != "" ];
   then

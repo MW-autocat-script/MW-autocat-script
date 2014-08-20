@@ -8,7 +8,7 @@ then
 
   debug_start "Scotland"
 
-  SCOTLAND=$(egrep -i "$KEYWORDS_SCOTLAND" newpages.txt)
+  SCOTLAND=$(egrep -i "$KEYWORDS_SCOTLAND" "$NEWPAGES")
 
   if [ "$SCOTLAND" != "" ];
   then

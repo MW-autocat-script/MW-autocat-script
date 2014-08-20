@@ -8,8 +8,8 @@ then
 
   debug_start "Definitions"
 
-  DEFINITIONS=$(egrep -i "$KEYWORDS_DEFINITIONS" newpages.txt)
-  NAMEMEANINGS=$(egrep -i "$KEYWORDS_NAMES" newpages.txt)
+  DEFINITIONS=$(egrep -i "$KEYWORDS_DEFINITIONS" "$NEWPAGES")
+  NAMEMEANINGS=$(egrep -i "$KEYWORDS_NAMES" "$NEWPAGES")
 
   if [ "$DEFINITIONS" != "" ];
   then

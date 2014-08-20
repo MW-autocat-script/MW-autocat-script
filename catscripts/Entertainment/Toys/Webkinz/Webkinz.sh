@@ -8,7 +8,7 @@ then
   
   debug_start "Webkinz"
 
-  WEBKINZ=$(egrep -i "$KEYWORDS_WEBKINZ" newpages.txt)
+  WEBKINZ=$(egrep -i "$KEYWORDS_WEBKINZ" "$NEWPAGES")
 
   if [ "$WEBKINZ" != "" ];
   then

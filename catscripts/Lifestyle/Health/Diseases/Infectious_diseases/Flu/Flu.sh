@@ -9,8 +9,8 @@ then
 
   debug_start "Flu"
 
-  FLU=$(egrep -i "$KEYWORDS_FLU" newpages.txt | egrep -iv "$KEYWORDS_FLU_EXCLUDE")
-  SWINE=$(egrep -i "$KEYWORDS_SWINEFLU" newpages.txt)
+  FLU=$(egrep -i "$KEYWORDS_FLU" "$NEWPAGES" | egrep -iv "$KEYWORDS_FLU_EXCLUDE")
+  SWINE=$(egrep -i "$KEYWORDS_SWINEFLU" "$NEWPAGES")
 
   if [ "$FLU" != "" ];
   then

@@ -8,7 +8,7 @@ then
 
   debug_start "Dolphins"
 
-  DOLPHIN=$(egrep -i "$KEYWORDS_DOLPHINS" newpages.txt | egrep -iv "$KEYWORDS_DOLPHINS_EXCLUDE")
+  DOLPHIN=$(egrep -i "$KEYWORDS_DOLPHINS" "$NEWPAGES" | egrep -iv "$KEYWORDS_DOLPHINS_EXCLUDE")
 
   if [ "$DOLPHIN" != "" ];
   then

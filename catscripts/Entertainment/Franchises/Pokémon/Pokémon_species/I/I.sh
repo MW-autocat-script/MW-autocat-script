@@ -11,10 +11,10 @@ then
   debug_start "Pokemon I script"
 
 
-  IGGLYBUFF=$(egrep -i "$KEYWORDS_IGGLYBUFF" newpages.txt)
-  ILLUMISE=$(egrep -i "$KEYWORDS_ILLUMISE" newpages.txt)
-  INFERNAPE=$(egrep -i "$KEYWORDS_INFERNAPE" newpages.txt)
-  IVYSAUR=$(egrep -i "$KEYWORDS_IVYSAUR" newpages.txt)
+  IGGLYBUFF=$(egrep -i "$KEYWORDS_IGGLYBUFF" "$NEWPAGES")
+  ILLUMISE=$(egrep -i "$KEYWORDS_ILLUMISE" "$NEWPAGES")
+  INFERNAPE=$(egrep -i "$KEYWORDS_INFERNAPE" "$NEWPAGES")
+  IVYSAUR=$(egrep -i "$KEYWORDS_IVYSAUR" "$NEWPAGES")
 
   if [ "$IGGLYBUFF" != "" ];
   then

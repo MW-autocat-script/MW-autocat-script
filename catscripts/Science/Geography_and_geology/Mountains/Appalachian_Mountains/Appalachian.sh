@@ -7,7 +7,7 @@ then
   
   debug_start "Appalachian Mountains"
 
-  APPALACHIAN=$(egrep -i "$KEYWORDS_APPALACHIAN" newpages.txt)
+  APPALACHIAN=$(egrep -i "$KEYWORDS_APPALACHIAN" "$NEWPAGES")
 
   if [ "$APPALACHIAN" != "" ];
   then

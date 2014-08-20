@@ -7,7 +7,7 @@ then
   
   debug_start "Shrek"
 
-  SHREK="$(egrep -i "$KEYWORDS_SHREK" newpages.txt)"
+  SHREK="$(egrep -i "$KEYWORDS_SHREK" "$NEWPAGES")"
 
   if [ "$SHREK" != "" ];
   then

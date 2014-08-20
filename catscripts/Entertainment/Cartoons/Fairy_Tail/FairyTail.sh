@@ -7,7 +7,7 @@ then
   
   debug_start "Fairy Tail"
 
-  FAIRYTAIL="$(egrep -i "$KEYWORDS_FAIRYTAIL" newpages.txt)"
+  FAIRYTAIL="$(egrep -i "$KEYWORDS_FAIRYTAIL" "$NEWPAGES")"
   
   if [ "$FAIRYTAIL" != "" ];
   then

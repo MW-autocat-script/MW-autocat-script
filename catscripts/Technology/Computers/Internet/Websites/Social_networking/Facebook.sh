@@ -7,7 +7,7 @@ then
 
   debug_start "Facebook"
 
-  FACEBOOK=$(egrep -i "$KEYWORDS_FACEBOOK" newpages.txt)
+  FACEBOOK=$(egrep -i "$KEYWORDS_FACEBOOK" "$NEWPAGES")
 
   if [ "$FACEBOOK" != "" ];
   then

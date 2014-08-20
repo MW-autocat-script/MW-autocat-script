@@ -18,12 +18,12 @@ then
 
   debug_start "Group 13 elements"
 
-  BORON=$(egrep -i "$KEYWORDS_BORON" newpages.txt | egrep -iv "$KEYWORDS_BORON_EXCLUDE")
-  ALUMINIUM=$(egrep -i "$KEYWORDS_ALUMINIUM" newpages.txt | egrep -iv "$KEYWORDS_ALUMINIUM_EXCLUDE")
-  GALLIUM=$(egrep -i "$KEYWORDS_GALLIUM" newpages.txt | egrep -iv "$KEYWORDS_GALLIUM_EXCLUDE")
-  INDIUM=$(egrep -i "$KEYWORDS_INDIUM" newpages.txt | egrep -iv "$KEYWORDS_INDIUM_EXCLUDE")
-  THALLIUM=$(egrep -i "$KEYWORDS_THALLIUM" newpages.txt | egrep -iv "$KEYWORDS_THALLIUM_EXLCUDE")
-  UNUNTRIUM=$(egrep -i "$KEYWORDS_UNUNUNTRIUM" newpages.txt)
+  BORON=$(egrep -i "$KEYWORDS_BORON" "$NEWPAGES" | egrep -iv "$KEYWORDS_BORON_EXCLUDE")
+  ALUMINIUM=$(egrep -i "$KEYWORDS_ALUMINIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_ALUMINIUM_EXCLUDE")
+  GALLIUM=$(egrep -i "$KEYWORDS_GALLIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_GALLIUM_EXCLUDE")
+  INDIUM=$(egrep -i "$KEYWORDS_INDIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_INDIUM_EXCLUDE")
+  THALLIUM=$(egrep -i "$KEYWORDS_THALLIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_THALLIUM_EXLCUDE")
+  UNUNTRIUM=$(egrep -i "$KEYWORDS_UNUNUNTRIUM" "$NEWPAGES")
 
   if [ "$BORON" != "" ];
   then

@@ -11,9 +11,9 @@ then
   
   debug_start "Firearms"
 
-  FIREARMS=$(egrep -i "$KEYWORDS_FIREARMS" newpages.txt| egrep -iv "$KEYWORDS_FIREARMS_EXCLUDE")
-  AK47=$(egrep -i "$KEYWORDS_AK47" newpages.txt)
-  M16=$(egrep -i "$KEYWORDS_M16" newpages.txt)
+  FIREARMS=$(egrep -i "$KEYWORDS_FIREARMS" "$NEWPAGES"| egrep -iv "$KEYWORDS_FIREARMS_EXCLUDE")
+  AK47=$(egrep -i "$KEYWORDS_AK47" "$NEWPAGES")
+  M16=$(egrep -i "$KEYWORDS_M16" "$NEWPAGES")
 
   if [ "$FIREARMS" != "" ];
   then

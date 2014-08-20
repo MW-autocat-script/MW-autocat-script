@@ -7,7 +7,7 @@ then
 
   debug_start "Studyladder"
 
-  STUDYLADDER="$(egrep -i "$KEYWORDS_STUDYLADDER" newpages.txt)"
+  STUDYLADDER="$(egrep -i "$KEYWORDS_STUDYLADDER" "$NEWPAGES")"
 
   if [ "$STUDYLADDER" != "" ];
   then

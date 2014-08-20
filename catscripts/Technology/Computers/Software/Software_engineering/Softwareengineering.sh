@@ -7,7 +7,7 @@ then
 
   debug_start "Software engineering"
   
-  SOFTWAREENG=$(egrep -i "$KEYWORDS_SOFTWAREENGINEERING" newpages.txt)
+  SOFTWAREENG=$(egrep -i "$KEYWORDS_SOFTWAREENGINEERING" "$NEWPAGES")
 
   if [ "$SOFTWAREENG" != "" ];
   then

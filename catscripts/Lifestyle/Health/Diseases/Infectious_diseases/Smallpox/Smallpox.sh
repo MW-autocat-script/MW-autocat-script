@@ -7,7 +7,7 @@ then
 
   debug_start "Smallpox"
 
-  SMALLPOX="$(egrep -i "$KEYWORDS_SMALLPOX" newpages.txt)"
+  SMALLPOX="$(egrep -i "$KEYWORDS_SMALLPOX" "$NEWPAGES")"
 
   if [ "$SMALLPOX" != "" ];
   then

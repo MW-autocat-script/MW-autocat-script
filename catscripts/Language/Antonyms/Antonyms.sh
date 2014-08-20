@@ -8,7 +8,7 @@ then
 
   debug_start "Antonyms"
 
-  ANTONYMS=$(egrep -i "$KEYWORDS_ANTONYMS" newpages.txt)
+  ANTONYMS=$(egrep -i "$KEYWORDS_ANTONYMS" "$NEWPAGES")
 
   if [ "$ANTONYMS" != "" ];
   then

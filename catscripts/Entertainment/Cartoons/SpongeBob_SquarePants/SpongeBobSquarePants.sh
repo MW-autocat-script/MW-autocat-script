@@ -8,7 +8,7 @@ then
 
   debug_start "SpongeBob SquarePants"
 
-  SPONGEBOB=$(egrep -i "$KEYWORDS_SPONGEBOB" newpages.txt)
+  SPONGEBOB=$(egrep -i "$KEYWORDS_SPONGEBOB" "$NEWPAGES")
 
   if [ "$SPONGEBOB" != "" ];
   then

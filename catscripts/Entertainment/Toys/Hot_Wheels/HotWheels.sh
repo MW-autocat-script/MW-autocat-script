@@ -8,7 +8,7 @@ then
   
   debug_start "Hot Wheels"
 
-  HOTWHEELS=$(egrep -i "$KEYWORDS_HOTWHEELS" newpages.txt)
+  HOTWHEELS=$(egrep -i "$KEYWORDS_HOTWHEELS" "$NEWPAGES")
 
   if [ "$HOTWHEELS" != "" ];
   then

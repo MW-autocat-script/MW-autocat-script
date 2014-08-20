@@ -7,7 +7,7 @@ then
 
   debug_start "The Giver"
 
-  GIVER=$(egrep -i "$KEYWORDS_THEGIVER" newpages.txt)
+  GIVER=$(egrep -i "$KEYWORDS_THEGIVER" "$NEWPAGES")
 
   if [ "$GIVER" != "" ];
   then

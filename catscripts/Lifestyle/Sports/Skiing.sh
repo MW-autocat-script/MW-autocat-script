@@ -7,7 +7,7 @@ then
   
   debug_start "Skiing"
 
-  SKIING="$(egrep -i "$KEYWORDS_SKIING" newpages.txt)"
+  SKIING="$(egrep -i "$KEYWORDS_SKIING" "$NEWPAGES")"
 
   if [ "$SKIING" != "" ];
   then

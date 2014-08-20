@@ -9,7 +9,7 @@ then
   
   debug_start "Computer aided design"
 
-  CAD=$(egrep -i "$KEYWORDS_CAD" newpages.txt | egrep -i "$KEYWORDS_CAD_EXCLUDE")
+  CAD=$(egrep -i "$KEYWORDS_CAD" "$NEWPAGES" | egrep -i "$KEYWORDS_CAD_EXCLUDE")
 
   if [ "$CAD" != "" ];
   then

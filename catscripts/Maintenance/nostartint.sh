@@ -9,7 +9,7 @@ then
 
   debug_start "Page titles not starting with an interrogative word"
 
-  INTSTART="$(egrep -iv "$KEYWORDS_INTSTART" newpages.txt)"
+  INTSTART="$(egrep -iv "$KEYWORDS_INTSTART" "$NEWPAGES")"
 
   if [ "$INTSTART" != "" ];
   then

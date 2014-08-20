@@ -7,7 +7,7 @@ then
 
   debug_start "Kim Possible"
 
-  KIMPOSSIBLE=$(egrep -i "$KEYWORDS_KIMPOSSIBLE" newpages.txt)
+  KIMPOSSIBLE=$(egrep -i "$KEYWORDS_KIMPOSSIBLE" "$NEWPAGES")
 
   if [ "$KIMPOSSIBLE" != "" ];
   then

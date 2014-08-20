@@ -8,7 +8,7 @@ then
 
   debug_start "Liechtenstein"
 
-  LIECHTENSTEIN=$(egrep -i "$KEYWORDS_LIECHTENSTEIN" newpages.txt)
+  LIECHTENSTEIN=$(egrep -i "$KEYWORDS_LIECHTENSTEIN" "$NEWPAGES")
 
   if [ "$LIECHTENSTEIN" != "" ];
   then

@@ -8,7 +8,7 @@ then
 
   debug_start "PlayStation 2"
 
-  PS2="$(egrep -i "$KEYWORDS_PS2" newpages.txt | egrep -iv "$KEYWORDS_PS2_EXCLUDE")"
+  PS2="$(egrep -i "$KEYWORDS_PS2" "$NEWPAGES" | egrep -iv "$KEYWORDS_PS2_EXCLUDE")"
 
   if [ "$PS2" != "" ];
   then

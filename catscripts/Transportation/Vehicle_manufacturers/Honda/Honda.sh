@@ -54,31 +54,31 @@ then
 
   #Search brands
 
-  HONDA=$(egrep -i "$KEYWORDS_HONDA" newpages.txt | egrep -iv "$KEYWORDS_HONDA_EXCLUDE")
-  ACURA=$(egrep -i "$KEYWORDS_ACURA" newpages.txt | egrep -iv "$KEYWORDS_ACURA_EXCLUDE")
+  HONDA=$(egrep -i "$KEYWORDS_HONDA" "$NEWPAGES" | egrep -iv "$KEYWORDS_HONDA_EXCLUDE")
+  ACURA=$(egrep -i "$KEYWORDS_ACURA" "$NEWPAGES" | egrep -iv "$KEYWORDS_ACURA_EXCLUDE")
 
   #Search ATVs
 
-  SPORTRAX=$(egrep -i "$KEYWORDS_HONDA_SPORTRAX" newpages.txt)
+  SPORTRAX=$(egrep -i "$KEYWORDS_HONDA_SPORTRAX" "$NEWPAGES")
 
   #Search cars
 
-  ACCORD=$(egrep -i "$KEYWORDS_HONDA_ACCORD" newpages.txt)
-  CIVIC=$(egrep -i "$KEYWORDS_HONDA_CIVIC" newpages.txt)
-  ELEMENT=$(egrep -i "$KEYWORDS_HONDA_ELEMENT" newpages.txt)
-  INTEGRA=$(egrep -i "$KEYWORDS_HONDA_INTEGRA" newpages.txt)
-  PASSPORT=$(egrep -i "$KEYWORDS_HONDA_PASSPORT" newpages.txt)
-  PRELUDE=$(egrep -i "$KEYWORDS_HONDA_PRELUDE" newpages.txt)
-  ACURATL=$(egrep -i "$KEYWORDS_ACURA_TL" newpages.txt)
+  ACCORD=$(egrep -i "$KEYWORDS_HONDA_ACCORD" "$NEWPAGES")
+  CIVIC=$(egrep -i "$KEYWORDS_HONDA_CIVIC" "$NEWPAGES")
+  ELEMENT=$(egrep -i "$KEYWORDS_HONDA_ELEMENT" "$NEWPAGES")
+  INTEGRA=$(egrep -i "$KEYWORDS_HONDA_INTEGRA" "$NEWPAGES")
+  PASSPORT=$(egrep -i "$KEYWORDS_HONDA_PASSPORT" "$NEWPAGES")
+  PRELUDE=$(egrep -i "$KEYWORDS_HONDA_PRELUDE" "$NEWPAGES")
+  ACURATL=$(egrep -i "$KEYWORDS_ACURA_TL" "$NEWPAGES")
 
   #Search SUVs
 
-  PILOT=$(egrep -i "$KEYWORDS_HONDA_PILOT" newpages.txt)
-  CRV=$(egrep -i "$KEYWORDS_HONDA_CRV" newpages.txt)
+  PILOT=$(egrep -i "$KEYWORDS_HONDA_PILOT" "$NEWPAGES")
+  CRV=$(egrep -i "$KEYWORDS_HONDA_CRV" "$NEWPAGES")
 
   #Search vans
 
-  ODYSSEY=$(egrep -i "$KEYWORDS_HONDA_ODYSSEY" newpages.txt)
+  ODYSSEY=$(egrep -i "$KEYWORDS_HONDA_ODYSSEY" "$NEWPAGES")
 
   #Categorize brands
 

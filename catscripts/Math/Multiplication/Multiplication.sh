@@ -7,7 +7,7 @@ then
 
   debug_start "Multiplication"
 
-  MULTIPLICATION=$(egrep -i "$KEYWORDS_MULTIPLICATION" newpages.txt)
+  MULTIPLICATION=$(egrep -i "$KEYWORDS_MULTIPLICATION" "$NEWPAGES")
 
   if [ "$MULTIPLICATION" != "" ];
   then

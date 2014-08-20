@@ -14,10 +14,10 @@ then
 
   debug_start "New York"
 
-  NEWYORK=$(egrep -i "$KEYWORDS_NEWYORK" newpages.txt | egrep -iv "$KEYWORDS_NEWYORK_EXCLUDE")
-  NYC=$(egrep -i "$KEYWORDS_NYC" newpages.txt | egrep -iv "$KEYWORDS_NYC_EXCLUDE")
-  ALBANY=$(egrep -i "$KEYWORDS_ALBANY" newpages.txt | egrep -iv "$KEYWORDS_ALBANY_EXCLUDE")
-  EMPIRESTATE=$(egrep -i "$KEYWORDS_EMPIRESTATE" newpages.txt)
+  NEWYORK=$(egrep -i "$KEYWORDS_NEWYORK" "$NEWPAGES" | egrep -iv "$KEYWORDS_NEWYORK_EXCLUDE")
+  NYC=$(egrep -i "$KEYWORDS_NYC" "$NEWPAGES" | egrep -iv "$KEYWORDS_NYC_EXCLUDE")
+  ALBANY=$(egrep -i "$KEYWORDS_ALBANY" "$NEWPAGES" | egrep -iv "$KEYWORDS_ALBANY_EXCLUDE")
+  EMPIRESTATE=$(egrep -i "$KEYWORDS_EMPIRESTATE" "$NEWPAGES")
 
   if [ "$NEWYORK" != "" ];
   then

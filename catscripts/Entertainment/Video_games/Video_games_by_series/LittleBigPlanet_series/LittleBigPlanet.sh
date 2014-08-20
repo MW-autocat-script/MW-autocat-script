@@ -7,7 +7,7 @@ then
 
   debug_start "LittleBigPlanet series"
 
-  PLANET=$(egrep -i "$KEYWORDS_LITTLEBIGPLANET" newpages.txt)
+  PLANET=$(egrep -i "$KEYWORDS_LITTLEBIGPLANET" "$NEWPAGES")
 
   if [ "$PLANET" != "" ];
   then

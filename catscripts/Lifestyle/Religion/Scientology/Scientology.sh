@@ -8,7 +8,7 @@ then
   
   debug_start "Scientology"
 
-  SCIENTOLOGY=$(egrep -i "$KEYWORDS_SCIENTOLOGY" newpages.txt)
+  SCIENTOLOGY=$(egrep -i "$KEYWORDS_SCIENTOLOGY" "$NEWPAGES")
 
   if [ "$SCIENTOLOGY" != "" ];
   then

@@ -10,8 +10,8 @@ then
 
   debug_start "Iraq"
 
-  IRAQ="$(egrep -i "$KEYWORDS_IRAQ" newpages.txt | egrep -iv "$KEYWORDS_IRAQ_EXCLUDE")"
-  BAGHDAD="$(egrep -i "$KEYWORDS_BAGHDAD" newpages.txt)"
+  IRAQ="$(egrep -i "$KEYWORDS_IRAQ" "$NEWPAGES" | egrep -iv "$KEYWORDS_IRAQ_EXCLUDE")"
+  BAGHDAD="$(egrep -i "$KEYWORDS_BAGHDAD" "$NEWPAGES")"
 
   if [ "$IRAQ" != "" ];
   then

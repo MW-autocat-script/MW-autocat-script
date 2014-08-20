@@ -7,7 +7,7 @@ then
 
   debug_start "Metallica"
 
-  METALLICA=$(egrep -i "$KEYWORDS_METALLICA" newpages.txt)
+  METALLICA=$(egrep -i "$KEYWORDS_METALLICA" "$NEWPAGES")
 
   if [ "$METALLICA" != "" ];
   then

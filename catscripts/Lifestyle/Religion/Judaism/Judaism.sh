@@ -8,7 +8,7 @@ then
   
   debug_start "Judaism"
 
-  JUDAISM=$(egrep -i "$KEYWORDS_JUDAISM" newpages.txt)
+  JUDAISM=$(egrep -i "$KEYWORDS_JUDAISM" "$NEWPAGES")
 
   if [ "$JUDAISM" != "" ];
   then

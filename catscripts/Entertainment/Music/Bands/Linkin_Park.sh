@@ -7,7 +7,7 @@ then
 
   debug_start "Linkin' Park"
 
-  LINKIN=$(egrep -i "$KEYWORDS_LINKINPARK" newpages.txt)
+  LINKIN=$(egrep -i "$KEYWORDS_LINKINPARK" "$NEWPAGES")
 
   if [ "$LINKIN" != "" ];
   then

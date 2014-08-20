@@ -8,7 +8,7 @@ then
   
   debug_start "Freeciv"
 
-  FREECIV=$(egrep -i "$KEYWORDS_FREECIV" newpages.txt)
+  FREECIV=$(egrep -i "$KEYWORDS_FREECIV" "$NEWPAGES")
 
   if [ "$FREECIV" != "" ];
   then

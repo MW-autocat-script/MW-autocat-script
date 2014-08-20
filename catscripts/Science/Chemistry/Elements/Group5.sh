@@ -10,10 +10,10 @@ then
 
   debug_start "Group 5 elements"
 
-  VANADIUM="$(egrep -i "$KEYWORDS_VANADIUM" newpages.txt)"
-  NIOBIUM="$(egrep -i "$KEYWORDS_NIOBIUM" newpages.txt)"
-  TANTALUM="$(egrep -i "$KEYWORDS_TANTALUM" newpages.txt)"
-  DUBNIUM="$(egrep -i "$KEYWORDS_DUBNIUM" newpages.txt)"
+  VANADIUM="$(egrep -i "$KEYWORDS_VANADIUM" "$NEWPAGES")"
+  NIOBIUM="$(egrep -i "$KEYWORDS_NIOBIUM" "$NEWPAGES")"
+  TANTALUM="$(egrep -i "$KEYWORDS_TANTALUM" "$NEWPAGES")"
+  DUBNIUM="$(egrep -i "$KEYWORDS_DUBNIUM" "$NEWPAGES")"
 
   if [ "$VANADIUM" != "" ];
   then

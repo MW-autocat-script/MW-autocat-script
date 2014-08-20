@@ -7,7 +7,7 @@ then
   
   debug_start "Mindless Behavior"
 
-  MINDLESS=$(egrep -i "$KEYWORDS_MINDLESSBEHAVIOR" newpages.txt)
+  MINDLESS=$(egrep -i "$KEYWORDS_MINDLESSBEHAVIOR" "$NEWPAGES")
 
   if [ "$MINDLESS" != "" ];
   then

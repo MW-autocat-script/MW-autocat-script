@@ -10,7 +10,7 @@ then
 
   debug_start "Measurements"
 
-  CONVERSIONS=$(egrep -i "$KEYWORDS_MEASUREMENTCONVERSION" newpages.txt)
+  CONVERSIONS=$(egrep -i "$KEYWORDS_MEASUREMENTCONVERSION" "$NEWPAGES")
 
   if [ "$CONVERSIONS" != "" ];
   then

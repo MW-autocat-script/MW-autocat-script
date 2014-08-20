@@ -7,7 +7,7 @@ then
 
   debug_start "OpenBSD"
 
-  OPENBSD=$(egrep -i "$KEYWORDS_OPENBSD" newpages.txt)
+  OPENBSD=$(egrep -i "$KEYWORDS_OPENBSD" "$NEWPAGES")
 
   if [ "$OPENBSD" != "" ];
   then

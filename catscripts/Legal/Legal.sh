@@ -11,11 +11,11 @@ then
 
   debug_start "Legal"
 
-  LEGAL=$(egrep -i "$KEYWORDS_LEGAL" newpages.txt | egrep -iv "$KEYWORDS_DIVORCE|$KEYWORDS_CRIME|$KEYWORDS_LAWYERS|$KEYWORDS_COPYRIGHT")
-  CRIME=$(egrep -i "$KEYWORDS_CRIME" newpages.txt)
-  DIVORCE=$(egrep -i "$KEYWORDS_DIVORCE" newpages.txt)
-  LAWYERS=$(egrep -i "$KEYWORDS_LAWYERS" newpages.txt)
-  COPYRIGHT=$(egrep -i "$KEYWORDS_COPYRIGHT" newpages.txt)
+  LEGAL=$(egrep -i "$KEYWORDS_LEGAL" "$NEWPAGES" | egrep -iv "$KEYWORDS_DIVORCE|$KEYWORDS_CRIME|$KEYWORDS_LAWYERS|$KEYWORDS_COPYRIGHT")
+  CRIME=$(egrep -i "$KEYWORDS_CRIME" "$NEWPAGES")
+  DIVORCE=$(egrep -i "$KEYWORDS_DIVORCE" "$NEWPAGES")
+  LAWYERS=$(egrep -i "$KEYWORDS_LAWYERS" "$NEWPAGES")
+  COPYRIGHT=$(egrep -i "$KEYWORDS_COPYRIGHT" "$NEWPAGES")
 
   if [ "$LEGAL" != "" ];
   then

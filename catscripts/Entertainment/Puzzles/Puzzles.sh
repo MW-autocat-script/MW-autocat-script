@@ -8,8 +8,8 @@ then
   
   debug_start "Puzzles"
 
-  SUDOKU="$(egrep -i "$KEYWORDS_SUDOKU" newpages.txt)"
-  CROSSWORD="$(egrep -i "$KEYWORDS_CROSSWORD" newpages.txt)"
+  SUDOKU="$(egrep -i "$KEYWORDS_SUDOKU" "$NEWPAGES")"
+  CROSSWORD="$(egrep -i "$KEYWORDS_CROSSWORD" "$NEWPAGES")"
 
   if [ "$SUDOKU" != "" ];
   then

@@ -11,9 +11,9 @@ then
   
   debug_start "Hawaii"
 
-  HAWAII=$(egrep -i "$KEYWORDS_HAWAII" newpages.txt | egrep -iv "$KEYWORDS_HAWAII_EXCLUDE")
-  HONOLULU=$(egrep -i "$KEYWORDS_HONOLULU" newpages.txt)
-  PEARLHARBOR=$(egrep -i "$KEYWORDS_PEARLHARBOR" newpages.txt)
+  HAWAII=$(egrep -i "$KEYWORDS_HAWAII" "$NEWPAGES" | egrep -iv "$KEYWORDS_HAWAII_EXCLUDE")
+  HONOLULU=$(egrep -i "$KEYWORDS_HONOLULU" "$NEWPAGES")
+  PEARLHARBOR=$(egrep -i "$KEYWORDS_PEARLHARBOR" "$NEWPAGES")
 
   if [ "$HAWAII" != "" ];
   then

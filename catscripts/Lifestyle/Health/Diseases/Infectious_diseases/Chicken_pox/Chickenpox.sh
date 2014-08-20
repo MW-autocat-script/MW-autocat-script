@@ -7,7 +7,7 @@ then
 
   debug_start "Chicken pox"
 
-  CHICKENPOX=$(egrep -i "$KEYWORDS_CHICKENPOX" newpages.txt)
+  CHICKENPOX=$(egrep -i "$KEYWORDS_CHICKENPOX" "$NEWPAGES")
 
   if [ "$CHICKENPOX" != "" ];
   then

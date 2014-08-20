@@ -10,7 +10,7 @@ then
   
   debug_start "South Korea"
 
-  SKOREA=$(egrep -i "$KEYWORDS_SOUTHKOREA" newpages.txt && egrep -i "$KEYWORDS_SOUTHKOREA_SECONDARY" newpages.txt | egrep -iv "$KEYWORDS_SOUTHKOREA_SECONDARY_EXCLUDE")
+  SKOREA=$(egrep -i "$KEYWORDS_SOUTHKOREA" "$NEWPAGES" && egrep -i "$KEYWORDS_SOUTHKOREA_SECONDARY" "$NEWPAGES" | egrep -iv "$KEYWORDS_SOUTHKOREA_SECONDARY_EXCLUDE")
 
   if [ "$SKOREA" != "" ];
   then

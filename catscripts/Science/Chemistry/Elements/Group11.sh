@@ -12,10 +12,10 @@ then
 
   debug_start "Group 11 elements"
 
-  SILVER=$(egrep -i "$KEYWORDS_SILVER" newpages.txt | egrep -iv "$KEYWORDS_SILVER_EXCLUDE")
-  COPPER=$(egrep -i "$KEYWORDS_COPPER" newpages.txt)
-  GOLD=$(egrep -i "$KEYWORDS_GOLD" newpages.txt | egrep -iv "$KEYWORDS_GOLD_EXCLUDE")
-  ROENTGENIUM=$(egrep -i "$KEYWORDS_ROENTGENIUM" newpages.txt)
+  SILVER=$(egrep -i "$KEYWORDS_SILVER" "$NEWPAGES" | egrep -iv "$KEYWORDS_SILVER_EXCLUDE")
+  COPPER=$(egrep -i "$KEYWORDS_COPPER" "$NEWPAGES")
+  GOLD=$(egrep -i "$KEYWORDS_GOLD" "$NEWPAGES" | egrep -iv "$KEYWORDS_GOLD_EXCLUDE")
+  ROENTGENIUM=$(egrep -i "$KEYWORDS_ROENTGENIUM" "$NEWPAGES")
 
   if [ "$SILVER" != "" ];
   then

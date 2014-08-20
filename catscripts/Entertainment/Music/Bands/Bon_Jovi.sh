@@ -7,7 +7,7 @@ then
 
   debug_start "Bon Jovi"
 
-  BONJOVI=$(egrep -i "$KEYWORDS_BANDS_BONJOVI" newpages.txt | egrep -iv "Jon(| )Bon(| )Jovi")
+  BONJOVI=$(egrep -i "$KEYWORDS_BANDS_BONJOVI" "$NEWPAGES" | egrep -iv "Jon(| )Bon(| )Jovi")
 
   if [ "$BONJOVI" != "" ];
   then

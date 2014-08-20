@@ -6,17 +6,32 @@ date > lastrun
 while read x; do
   export $x
 done < settings.conf
-#Fetch new pages
+
 if [ -e "$PIDFILE" ]; then
-PID="$(cat "$PIDFILE")"
-if kill -0 "$PID" > /dev/null 2>&1; then
-printf 'Already running\n'
-exit 1
-else
-rm "$PIDFILE"
+  PID="$(cat "$PIDFILE")"
+  if kill -0 "$PID" > /dev/null 2>&1; then
+    printf 'Already running\n'
+    exit 1
+  else
+  rm "$PIDFILE"
+  fi
 fi
-fi
+
 echo $$ > "$PIDFILE"
+
+#Set TEMPDIR to safe value if not specified in settings.conf
+
+if [ "$TEMPDIR" == "" ];
+then
+  export TEMPDIR="/tmp/$BOTNAME"
+fi
+
+if [ ! -d "$TEMPDIR" ];
+then
+  mkdir "$TEMPDIR"
+fi
+
+export NEWPAGES="$TEMPDIR/newpages.txt"
 
 export CATEGORIZE="./util/Categorize.sh"
 #GET http://cfaj.freeshell.org/ipaddr.cgi > address.txt
@@ -42,11 +57,11 @@ export -f debug_end
 
 echo "Generating pages"
 
-python "$PYWIKIPEDIADIR"/pagegenerators.py -new:"$NPL" > newpages.txt
-python "$PYWIKIPEDIADIR"/pagegenerators.py -usercontribs:"SpellBot;50" -pt:1 >> newpages.txt #catches pages that have been renamed by spelling bot
+python "$PYWIKIPEDIADIR"/pagegenerators.py -new:"$NPL" > "$NEWPAGES" #Fetch new pages
+python "$PYWIKIPEDIADIR"/pagegenerators.py -usercontribs:"SpellBot;50" -pt:1 >> "$NEWPAGES" #catches pages that have been renamed by spelling bot
 
 #This fetches pages that may be older but have been edited recently; a great way to play catchup
-python "$PYWIKIPEDIADIR"/pagegenerators.py -recentchanges -ns:0 >> newpages.txt
+python "$PYWIKIPEDIADIR"/pagegenerators.py -recentchanges -ns:0 >> "$NEWPAGES"
 
 
 #This checks to see if the list of new questions has changed since last run. If not, then do not running
@@ -54,7 +69,7 @@ python "$PYWIKIPEDIADIR"/pagegenerators.py -recentchanges -ns:0 >> newpages.txt
 touch MD5SUM #Just in case the file doesn't exist yet
 
 OLDSUM="$(cat MD5SUM)"
-NEWSUM="$(md5sum newpages.txt | cut -b-32)"
+NEWSUM="$(md5sum "$NEWPAGES" | cut -b-32)"
 
 if [ "$OLDSUM" != "$NEWSUM" ]; #Lists have changed
 then

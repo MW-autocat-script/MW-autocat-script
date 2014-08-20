@@ -8,7 +8,7 @@ then
   
   debug_start "Belize"
 
-  BELIZE="$(egrep -i "$KEYWORDS_BELIZE" newpages.txt)"
+  BELIZE="$(egrep -i "$KEYWORDS_BELIZE" "$NEWPAGES")"
 
   if [ "$BELIZE" != "" ];
   then

@@ -7,7 +7,7 @@ then
 
   debug_start "Sacred Seasons"
 
-  SACRED=$(egrep -i "$KEYWORD_MMORPG_SACRED" newpages.txt)
+  SACRED=$(egrep -i "$KEYWORD_MMORPG_SACRED" "$NEWPAGES")
 
   if [ "$SACRED" != "" ];
   then

@@ -6,18 +6,34 @@ date > lastrun
 while read x; do
   export $x
 done < settings.conf
-#Fetch new pages
+
 PIDFILE="pidfile.lock"
+
 if [ -e "$PIDFILE" ]; then
-PID=$(cat $PIDFILE)
-if kill -0 $PID > /dev/null 2>&1; then
-printf 'Already running\n'
-exit 1
-else
-rm $PIDFILE
+  PID=$(cat $PIDFILE)
+  if kill -0 "$PID" > /dev/null 2>&1; then
+    printf 'Already running\n'
+    exit 1
+  else
+    rm $PIDFILE
+  fi
 fi
-fi
+
 echo $$ > $PIDFILE
+
+#Set TEMPDIR to safe value if not specified in settings.conf
+
+if [ "$TEMPDIR" == "" ];
+then
+  export TEMPDIR="/tmp/$BOTNAME"
+fi
+
+if [ ! -d "$TEMPDIR" ];
+then
+  mkdir "$TEMPDIR"
+fi
+
+export NEWPAGES="$TEMPDIR/allpages.txt"
 
 export CATEGORIZE="./util/Categorize.sh"
 #GET http://cfaj.freeshell.org/ipaddr.cgi > address.txt
@@ -43,7 +59,7 @@ export -f debug_end
 
 printf "Fetching all pages from wiki. This may take a long time on larger wikis.\n"
 
-python $PYWIKIPEDIADIR/pagegenerators.py -start:. -pt:1 |sed s'|  [0-9][0-9][0-9][0-9][0-9][0-9]: ||'|sed s'|  [0-9][0-9][0-9][0-9][0-9]: ||'|sed s'|  [0-9][0-9][0-9][0-9]: ||'  | sed s'|  [0-9][0-9][0-9]: ||' | sed s'|  [0-9][0-9]: ||' | sed s'|  [0-9]: ||' > newpages.txt
+python "$PYWIKIPEDIADIR/pagegenerators.py" -start:. -pt:1 |sed s'|  [0-9][0-9][0-9][0-9][0-9][0-9]: ||'|sed s'|  [0-9][0-9][0-9][0-9][0-9]: ||'|sed s'|  [0-9][0-9][0-9][0-9]: ||'  | sed s'|  [0-9][0-9][0-9]: ||' | sed s'|  [0-9][0-9]: ||' | sed s'|  [0-9]: ||' > "$NEWPAGES"
 
 printf "List complete; beginning categorization\n"
  
@@ -60,5 +76,6 @@ printf "List complete; beginning categorization\n"
 ./catscripts/Transportation/Transportation.sh
 
 rm $PIDFILE
+rm "$NEWPAGES"
 
 printf "Script has completed\n"

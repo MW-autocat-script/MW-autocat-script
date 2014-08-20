@@ -9,8 +9,8 @@ then
 
   debug_start "Philippines"
 
-  PHILIPPINES=$(egrep -i "$KEYWORDS_PHILIPPINES" newpages.txt | egrep -iv "$KEYWORDS_PHILIPPINES_EXCLUDE" )
-  PNPA=$(egrep -i "$KEYWORDS_PNPA" newpages.txt)
+  PHILIPPINES=$(egrep -i "$KEYWORDS_PHILIPPINES" "$NEWPAGES" | egrep -iv "$KEYWORDS_PHILIPPINES_EXCLUDE" )
+  PNPA=$(egrep -i "$KEYWORDS_PNPA" "$NEWPAGES")
 
   if [ "$PHILIPPINES" != "" ];
   then

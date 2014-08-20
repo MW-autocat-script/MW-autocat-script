@@ -7,7 +7,7 @@ then
 
   debug_start "Dead Frontier"
 
-  FRONTIER=$(egrep -i "$KEYWORDS_MMORPG_FRONTIER" newpages.txt)
+  FRONTIER=$(egrep -i "$KEYWORDS_MMORPG_FRONTIER" "$NEWPAGES")
 
   if [ "$FRONTIER" != "" ];
   then

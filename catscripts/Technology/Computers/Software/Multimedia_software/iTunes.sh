@@ -7,7 +7,7 @@ then
 
   debug_start "iTunes"
 
-  ITUNES="$(egrep -i "$KEYWORDS_ITUNES" newpages.txt)"
+  ITUNES="$(egrep -i "$KEYWORDS_ITUNES" "$NEWPAGES")"
 
   if [ "$ITUNES" != "" ];
   then

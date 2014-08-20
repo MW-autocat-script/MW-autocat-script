@@ -7,7 +7,7 @@ then
 
   debug_start "Laos"
 
-  LAOS=$(egrep -i "$KEYWORDS_LAOS" newpages.txt)
+  LAOS=$(egrep -i "$KEYWORDS_LAOS" "$NEWPAGES")
 
   if [ "$LAOS" != "" ];
   then

@@ -7,7 +7,7 @@ then
   
   debug_start "Pornography maintenance script"
 
-  PORN=$(egrep -i "$KEYWORDS_PORNOGRAPHY" newpages.txt)
+  PORN=$(egrep -i "$KEYWORDS_PORNOGRAPHY" "$NEWPAGES")
 
   if [ "$PORN" != "" ];
   then

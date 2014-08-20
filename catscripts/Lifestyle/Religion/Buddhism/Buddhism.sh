@@ -9,7 +9,7 @@ then
   
   debug_start "Buddhism"
 
-  BUDDHISM=$(egrep -i "$KEYWORDS_BUDDHISM" newpages.txt | egrep -iv "$KEYWORDS_BUDDHISM_EXCLUDE")
+  BUDDHISM=$(egrep -i "$KEYWORDS_BUDDHISM" "$NEWPAGES" | egrep -iv "$KEYWORDS_BUDDHISM_EXCLUDE")
 
   if [ "$BUDDHISM" != "" ];
   then

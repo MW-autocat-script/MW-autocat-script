@@ -7,7 +7,7 @@ then
 
   debug_start "Gundam series"
 
-  GUNDAM=$(egrep -i "$KEYWORDS_GUNDAM" newpages.txt)
+  GUNDAM=$(egrep -i "$KEYWORDS_GUNDAM" "$NEWPAGES")
 
   if [ "$GUNDAM" != "" ];
   then

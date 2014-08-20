@@ -7,7 +7,7 @@ then
 
   debug_start "Godzilla"
 
-  GODZILLA=$(egrep -i "$KEYWORDS_MOVIES_GODZILLA" newpages.txt)
+  GODZILLA=$(egrep -i "$KEYWORDS_MOVIES_GODZILLA" "$NEWPAGES")
 
   if [ "$GODZILLA" != "" ];
   then

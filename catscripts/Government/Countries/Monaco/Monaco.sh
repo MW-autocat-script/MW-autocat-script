@@ -9,7 +9,7 @@ then
   
   debug_start "Monaco"
 
-  MONACO=$(egrep -i "$KEYWORDS_MONACO" newpages.txt | egrep -iv "$KEYWORDS_MONACO_EXCLUDE")
+  MONACO=$(egrep -i "$KEYWORDS_MONACO" "$NEWPAGES" | egrep -iv "$KEYWORDS_MONACO_EXCLUDE")
 
   if [ "$MONACO" != "" ];
   then

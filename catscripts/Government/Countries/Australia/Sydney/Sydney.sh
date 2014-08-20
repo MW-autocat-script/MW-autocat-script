@@ -10,8 +10,8 @@ then
 
   debug_start "Sydney, Australia"
 
-  SYDNEY=$(egrep -i "$KEYWORDS_SYDNEY" newpages.txt | egrep -iv "$KEYWORDS_SYDNEY_EXCLUDE")
-  OPERA=$(egrep -i "$KEYWORDS_OPERAHOUSE" newpages.txt)
+  SYDNEY=$(egrep -i "$KEYWORDS_SYDNEY" "$NEWPAGES" | egrep -iv "$KEYWORDS_SYDNEY_EXCLUDE")
+  OPERA=$(egrep -i "$KEYWORDS_OPERAHOUSE" "$NEWPAGES")
 
   if [ "$SYDNEY" != "" ];
   then

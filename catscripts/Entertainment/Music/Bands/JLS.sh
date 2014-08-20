@@ -7,7 +7,7 @@ then
 
   debug_start "JLS"
 
-  JLS=$(egrep -i "$KEYWORDS_JLS" newpages.txt)
+  JLS=$(egrep -i "$KEYWORDS_JLS" "$NEWPAGES")
 
   if [ "$JLS" != "" ];
   then

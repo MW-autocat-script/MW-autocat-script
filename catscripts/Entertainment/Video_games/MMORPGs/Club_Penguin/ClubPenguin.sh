@@ -7,7 +7,7 @@ then
 
   debug_start "Club Penguin"
 
-  CLUBPENGUIN=$(egrep -i "$KEYWORDS_MMORPG_CLUBPENGUIN" newpages.txt)
+  CLUBPENGUIN=$(egrep -i "$KEYWORDS_MMORPG_CLUBPENGUIN" "$NEWPAGES")
 
   if [ "$CLUBPENGUIN" != "" ];
   then

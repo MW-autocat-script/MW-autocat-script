@@ -11,8 +11,8 @@ then
 
   debug_start "Thailand"
 
-  THAILAND=$(egrep -i "$KEYWORDS_THAILAND" newpages.txt | egrep -iv "$KEYWORDS_THAILAND_EXCLUDE")
-  BANGKOK=$(egrep -i "$KEYWORDS_BANGKOK" newpages.txt | egrep -iv "$KEYWORDS_BANGKOK_EXCLUDE")
+  THAILAND=$(egrep -i "$KEYWORDS_THAILAND" "$NEWPAGES" | egrep -iv "$KEYWORDS_THAILAND_EXCLUDE")
+  BANGKOK=$(egrep -i "$KEYWORDS_BANGKOK" "$NEWPAGES" | egrep -iv "$KEYWORDS_BANGKOK_EXCLUDE")
 
   if [ "$THAILAND" != "" ];
   then

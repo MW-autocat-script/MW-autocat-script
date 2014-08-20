@@ -8,7 +8,7 @@ then
   
   debug_start "Kuwait"
 
-  KUWAIT=$(egrep -i "$KEYWORDS_KUWAIT" newpages.txt)
+  KUWAIT=$(egrep -i "$KEYWORDS_KUWAIT" "$NEWPAGES")
 
   if [ "$KUWAIT" != "" ];
   then

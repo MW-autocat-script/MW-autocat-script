@@ -7,7 +7,7 @@ then
   
   debug_start "Iran"
 
-  IRAN=$(egrep -i "$KEYWORDS_IRAN" newpages.txt)
+  IRAN=$(egrep -i "$KEYWORDS_IRAN" "$NEWPAGES")
 
   if [ "$IRAN" != "" ];
   then

@@ -8,7 +8,7 @@ then
 
   debug_start "Insects"
 
-  ANTS=$(egrep -i "$KEYWORDS_ANTS" newpages.txt)
+  ANTS=$(egrep -i "$KEYWORDS_ANTS" "$NEWPAGES")
 
   if [ "$ANTS" != "" ];
   then

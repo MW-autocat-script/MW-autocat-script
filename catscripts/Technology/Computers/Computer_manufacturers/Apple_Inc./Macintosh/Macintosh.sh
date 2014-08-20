@@ -10,7 +10,7 @@ then
 
   debug_start "Macintosh"
 
-  MACINTOSH="$(egrep -i "$KEYWORDS_MACINTOSH" newpages.txt | egrep -iv "$KEYWORDS_MACINTOSH_EXCLUDE")"
+  MACINTOSH="$(egrep -i "$KEYWORDS_MACINTOSH" "$NEWPAGES" | egrep -iv "$KEYWORDS_MACINTOSH_EXCLUDE")"
 
   if [ "$MACINTOSH" != "" ];
   then

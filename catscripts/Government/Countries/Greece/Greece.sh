@@ -17,10 +17,10 @@ then
   
   debug_start "Greece"
 
-  GREECE=$(egrep -i "$KEYWORDS_GREECE" newpages.txt | egrep -iv "$KEYWORDS_GREECE_EXCLUDE")
-  ANCIENT=$(egrep -i "$KEYWORDS_ANCIENTGREECE" newpages.txt | egrep -iv "$KEYWORDS_ANCIENTGREECE_EXCLUDE")
-  ATHENS=$(egrep -i "$KEYWORDS_ATHENS" newpages.txt | egrep -iv "$KEYWORDS_ATHENS_EXCLUDE")
-  SPARTA=$(egrep -i "$KEYWORDS_SPARTA" newpages.txt | egrep -iv "$KEYWORDS_SPARTA_EXCLUDE" | egrep -v "$KEYWORDS_SPARTA_EXCLUDE_CASESENSITVE")
+  GREECE=$(egrep -i "$KEYWORDS_GREECE" "$NEWPAGES" | egrep -iv "$KEYWORDS_GREECE_EXCLUDE")
+  ANCIENT=$(egrep -i "$KEYWORDS_ANCIENTGREECE" "$NEWPAGES" | egrep -iv "$KEYWORDS_ANCIENTGREECE_EXCLUDE")
+  ATHENS=$(egrep -i "$KEYWORDS_ATHENS" "$NEWPAGES" | egrep -iv "$KEYWORDS_ATHENS_EXCLUDE")
+  SPARTA=$(egrep -i "$KEYWORDS_SPARTA" "$NEWPAGES" | egrep -iv "$KEYWORDS_SPARTA_EXCLUDE" | egrep -v "$KEYWORDS_SPARTA_EXCLUDE_CASESENSITVE")
 
   if [ "$GREECE" != "" ];
   then

@@ -7,7 +7,7 @@ then
   
   debug_start "Moby Dick"
 
-  MOBYDICK=$(egrep -i "$KEYWORDS_MOBYDICK" newpages.txt)
+  MOBYDICK=$(egrep -i "$KEYWORDS_MOBYDICK" "$NEWPAGES")
 
   if [ "$MOBYDICK" != "" ];
   then

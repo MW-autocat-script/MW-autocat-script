@@ -7,7 +7,7 @@ then
 
   debug_start "English to German"
 
-  ENGLISHTOGERMAN=$(egrep -i "$KEYWORDS_ENGLISHTOGERMAN" newpages.txt)
+  ENGLISHTOGERMAN=$(egrep -i "$KEYWORDS_ENGLISHTOGERMAN" "$NEWPAGES")
 
   if [ "$ENGLISHTOGERMAN" != "" ];
   then

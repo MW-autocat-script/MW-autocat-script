@@ -8,7 +8,7 @@ then
 
   debug_start "Moon"
 
-  MOON=$(egrep -i "$KEYWORDS_MOON" newpages.txt | egrep -iv "$KEYWORDS_MOON_EXCLUDE")
+  MOON=$(egrep -i "$KEYWORDS_MOON" "$NEWPAGES" | egrep -iv "$KEYWORDS_MOON_EXCLUDE")
 
   if [ "$MOON" != "" ];
   then

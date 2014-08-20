@@ -8,7 +8,7 @@ then
   
   debug_start "Tonga" 
 
-  TONGA=$(egrep -i "$KEYWORDS_TONGA" newpages.txt)
+  TONGA=$(egrep -i "$KEYWORDS_TONGA" "$NEWPAGES")
 
   if [ "$TONGA" != "" ];
   then

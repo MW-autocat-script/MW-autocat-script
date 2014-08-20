@@ -8,7 +8,7 @@ then
   
   debug_start "Lyrics"
 
-  LYRICS=$(egrep -i "$KEYWORDS_LYRICS" newpages.txt)
+  LYRICS=$(egrep -i "$KEYWORDS_LYRICS" "$NEWPAGES")
 
   if [ "$LYRICS" != "" ];
   then

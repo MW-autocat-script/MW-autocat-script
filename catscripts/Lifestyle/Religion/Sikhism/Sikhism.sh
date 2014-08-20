@@ -8,7 +8,7 @@ then
   
   debug_start "Sikhism"
 
-  SIKHISM=$(egrep -i "$KEYWORDS_SIKHISM" newpages.txt)
+  SIKHISM=$(egrep -i "$KEYWORDS_SIKHISM" "$NEWPAGES")
 
   if [ "$SIKHISM" != "" ];
   then

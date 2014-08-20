@@ -7,7 +7,7 @@ then
   
   debug_start "Artemis Fowl"
 
-  ARTEMIS=$(egrep -i "$KEYWORDS_ARTEMISFOWL" newpages.txt)
+  ARTEMIS=$(egrep -i "$KEYWORDS_ARTEMISFOWL" "$NEWPAGES")
 
   if [ "$ARTEMIS" != "" ];
   then

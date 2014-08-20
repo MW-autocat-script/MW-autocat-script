@@ -7,7 +7,7 @@ then
 
   debug_start "The Lion King"
 
-  LIONKING=$(egrep -i "$KEYWORDS_MOVIES_THELIONKING" newpages.txt)
+  LIONKING=$(egrep -i "$KEYWORDS_MOVIES_THELIONKING" "$NEWPAGES")
 
   if [ "$LIONKING" != "" ];
   then

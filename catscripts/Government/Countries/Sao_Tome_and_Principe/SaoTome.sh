@@ -8,7 +8,7 @@ then
   
   debug_start "São Tomé and Príncipe"
 
-  SAOTOME=$(egrep -i "$KEYWORDS_SAOTOME" newpages.txt)
+  SAOTOME=$(egrep -i "$KEYWORDS_SAOTOME" "$NEWPAGES")
 
   if [ "$SAOTOME" != "" ];
   then

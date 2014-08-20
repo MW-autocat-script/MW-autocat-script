@@ -11,7 +11,7 @@ then
 
   debug_start "Norway"
 
-  NORWAY=$(egrep -i "$KEYWORDS_NORWAY" newpages.txt | egrep -iv "$KEYWORDS_NORWAY_EXCLUDE")
+  NORWAY=$(egrep -i "$KEYWORDS_NORWAY" "$NEWPAGES" | egrep -iv "$KEYWORDS_NORWAY_EXCLUDE")
 
   if [ "$NORWAY" != "" ];
   then

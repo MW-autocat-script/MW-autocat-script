@@ -7,7 +7,7 @@ then
 
   debug_start "Advantages and disadvantages"
 
-  ADVANTAGES=$(egrep -i "$KEYWORDS_ADVANTAGES" newpages.txt)
+  ADVANTAGES=$(egrep -i "$KEYWORDS_ADVANTAGES" "$NEWPAGES")
 
   if [ "$ADVANTAGES" != "" ];
   then

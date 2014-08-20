@@ -7,7 +7,7 @@ then
   
   debug_start "Harvest Moon"
 
-  HARVESTMOON="$(egrep -i "$KEYWORDS_HARVESTMOON" newpages.txt)"
+  HARVESTMOON="$(egrep -i "$KEYWORDS_HARVESTMOON" "$NEWPAGES")"
 
   if [ "$HARVESTMOON" != "" ];
   then

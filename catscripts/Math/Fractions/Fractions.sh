@@ -7,7 +7,7 @@ then
 
   debug_start "Fractions"
 
-  FRACTIONS="$(egrep -i "$KEYWORDS_FRACTIONS" newpages.txt)"
+  FRACTIONS="$(egrep -i "$KEYWORDS_FRACTIONS" "$NEWPAGES")"
 
   if [ "$FRACTIONS" != "" ];
   then

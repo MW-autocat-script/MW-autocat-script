@@ -7,7 +7,7 @@ then
 
   debug_start "Fire Emblem series"
 
-  EMBLEM=$(egrep -i "$KEYWORDS_FIREEMBLEM" newpages.txt)
+  EMBLEM=$(egrep -i "$KEYWORDS_FIREEMBLEM" "$NEWPAGES")
 
   if [ "$EMBLEM" != "" ];
   then

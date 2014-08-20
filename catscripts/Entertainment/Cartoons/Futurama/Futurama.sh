@@ -7,7 +7,7 @@ then
 
   debug_start "Futurama"
 
-  FUTURAMA=$(egrep -i "$KEYWORDS_FUTURAMA" newpages.txt)
+  FUTURAMA=$(egrep -i "$KEYWORDS_FUTURAMA" "$NEWPAGES")
 
   if [ "$FUTURAMA" != "" ];
   then

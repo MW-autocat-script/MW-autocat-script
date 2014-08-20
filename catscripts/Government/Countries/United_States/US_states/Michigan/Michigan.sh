@@ -10,8 +10,8 @@ then
 
   debug_start "Michigan"
 
-  MICHIGAN=$(egrep -i "$KEYWORDS_MICHIGAN" newpages.txt | egrep -iv "$KEYWORDS_MICHIGAN_EXCLUDE")
-  DETROIT=$(egrep -i "$KEYWORDS_DETROIT" newpages.txt | egrep -iv "$KEYWORDS_DETROIT_EXCLUDE")
+  MICHIGAN=$(egrep -i "$KEYWORDS_MICHIGAN" "$NEWPAGES" | egrep -iv "$KEYWORDS_MICHIGAN_EXCLUDE")
+  DETROIT=$(egrep -i "$KEYWORDS_DETROIT" "$NEWPAGES" | egrep -iv "$KEYWORDS_DETROIT_EXCLUDE")
 
   if [ "$MICHIGAN" != "" ];
   then

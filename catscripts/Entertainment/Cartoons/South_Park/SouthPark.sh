@@ -12,7 +12,7 @@ then
 
   debug_start "South Park"
 
-  SOUTHPARK=$(egrep -i "$KEYWORDS_SOUTHPARK_ALL" newpages.txt)
+  SOUTHPARK=$(egrep -i "$KEYWORDS_SOUTHPARK_ALL" "$NEWPAGES")
 
   if [ "$SOUTHPARK" != "" ];
   then

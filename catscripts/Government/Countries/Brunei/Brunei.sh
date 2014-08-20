@@ -7,7 +7,7 @@ then
   
   debug_start "Brunei"
 
-  BRUNEI=$(egrep -i "$KEYWORDS_BRUNEI" newpages.txt)
+  BRUNEI=$(egrep -i "$KEYWORDS_BRUNEI" "$NEWPAGES")
 
   if [ "$BRUNEI" != "" ];
   then

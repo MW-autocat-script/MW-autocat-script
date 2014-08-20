@@ -39,7 +39,7 @@ then
   
   debug_start "Non-interrogative question search"
 
-  NONINT=$(egrep -iv "$KEYWORDS_INTERROGATIVE" newpages.txt)
+  NONINT=$(egrep -iv "$KEYWORDS_INTERROGATIVE" "$NEWPAGES")
 
   if [ "$NONINT" != "" ];
   then

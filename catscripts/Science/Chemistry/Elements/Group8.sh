@@ -11,10 +11,10 @@ then
 
   debug_start "Group 8 elements"
 
-  IRON=$(egrep -i "$KEYWORDS_IRON" newpages.txt | egrep -iv "$KEYWORDS_IRON_EXCLUDE")
-  RUTHENIUM=$(egrep -i "$KEYWORDS_RUTHENIUM" newpages.txt)
-  OSMIUM=$(egrep -i "$KEYWORDS_OSMIUM" newpages.txt)
-  HASSIUM=$(egrep -i "$KEYWORDS_HASSIUM" newpages.txt)
+  IRON=$(egrep -i "$KEYWORDS_IRON" "$NEWPAGES" | egrep -iv "$KEYWORDS_IRON_EXCLUDE")
+  RUTHENIUM=$(egrep -i "$KEYWORDS_RUTHENIUM" "$NEWPAGES")
+  OSMIUM=$(egrep -i "$KEYWORDS_OSMIUM" "$NEWPAGES")
+  HASSIUM=$(egrep -i "$KEYWORDS_HASSIUM" "$NEWPAGES")
 
   if [ "$IRON" != "" ];
   then

@@ -10,8 +10,8 @@ then
 
   debug_start "Wales"
 
-  WALES=$(egrep -i "$KEYWORDS_WALES" newpages.txt | egrep -iv "$KEYWORDS_WALES_EXCLUDE")
-  CARDIFF=$(egrep -i "$KEYWORDS_CARDIFF" newpages.txt)
+  WALES=$(egrep -i "$KEYWORDS_WALES" "$NEWPAGES" | egrep -iv "$KEYWORDS_WALES_EXCLUDE")
+  CARDIFF=$(egrep -i "$KEYWORDS_CARDIFF" "$NEWPAGES")
 
   if [ "$WALES" != "" ];
   then

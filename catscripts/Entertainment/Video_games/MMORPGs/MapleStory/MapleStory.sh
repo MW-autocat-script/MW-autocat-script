@@ -7,7 +7,7 @@ then
   
   debug_start "MapleStory"
 
-  MAPLESTORY=$(egrep -i "$KEYWORDS_MMORPG_MAPLESTORY" newpages.txt)
+  MAPLESTORY=$(egrep -i "$KEYWORDS_MMORPG_MAPLESTORY" "$NEWPAGES")
 
   if [ "$MAPLESTORY" != "" ];
   then

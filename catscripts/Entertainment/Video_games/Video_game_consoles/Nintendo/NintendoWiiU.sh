@@ -7,7 +7,7 @@ then
 
   debug_start "Nintendo Wii U"
 
-  WIIU=$(egrep -i "$KEYWORDS_NINTENDOWIIU" newpages.txt)
+  WIIU=$(egrep -i "$KEYWORDS_NINTENDOWIIU" "$NEWPAGES")
 
   if [ "$WIIU" != "" ];
   then

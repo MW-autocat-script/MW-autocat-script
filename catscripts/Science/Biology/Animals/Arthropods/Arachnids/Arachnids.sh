@@ -13,10 +13,10 @@ then
   
   debug_start "Arachnids"
 
-  ARACHNIDS=$(egrep -i "$KEYWORDS_ARACHNIDS" newpages.txt | egrep -iv "$KEYWORDS_ARACHNIDS_EXCLUDE")
-  TICKS=$(egrep -i "$KEYWORDS_TICKS" newpages.txt)
-  SPIDERS=$(egrep -i "$KEYWORDS_SPIDERS" newpages.txt | egrep -iv "$KEYWORDS_SPIDERS_EXCLUDE")
-  SCORPIONS=$(egrep -i "$KEYWORDS_SCORPIONS" newpages.txt | egrep -iv "$KEYWORDS_SCORPIONS_EXCLUDE")
+  ARACHNIDS=$(egrep -i "$KEYWORDS_ARACHNIDS" "$NEWPAGES" | egrep -iv "$KEYWORDS_ARACHNIDS_EXCLUDE")
+  TICKS=$(egrep -i "$KEYWORDS_TICKS" "$NEWPAGES")
+  SPIDERS=$(egrep -i "$KEYWORDS_SPIDERS" "$NEWPAGES" | egrep -iv "$KEYWORDS_SPIDERS_EXCLUDE")
+  SCORPIONS=$(egrep -i "$KEYWORDS_SCORPIONS" "$NEWPAGES" | egrep -iv "$KEYWORDS_SCORPIONS_EXCLUDE")
 
   if [ "$ARACHNIDS" != "" ];
   then

@@ -7,7 +7,7 @@ then
 
   debug_start "Roman numerals"
 
-  NUMERALS=$(egrep -i "$KEYWORDS_ROMANNUMERALS" newpages.txt)
+  NUMERALS=$(egrep -i "$KEYWORDS_ROMANNUMERALS" "$NEWPAGES")
 
   if [ "$NUMERALS" != "" ];
   then

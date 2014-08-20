@@ -11,10 +11,10 @@ then
 
   debug_start "Group 9 elements"
 
-  COBALT=$(egrep -i "$KEYWORDS_COBALT" newpages.txt | egrep -iv "$KEYWORDS_COBALT_EXCLUDE")
-  RHODIUM=$(egrep -i "$KEYWORDS_RHODIUM" newpages.txt)
-  IRIDIUM=$(egrep -i "$KEYWORDS_IRIDIUM" newpages.txt)
-  MEITNERIUM=$(egrep -i "$KEYWORDS_MEITNERIUM" newpages.txt)
+  COBALT=$(egrep -i "$KEYWORDS_COBALT" "$NEWPAGES" | egrep -iv "$KEYWORDS_COBALT_EXCLUDE")
+  RHODIUM=$(egrep -i "$KEYWORDS_RHODIUM" "$NEWPAGES")
+  IRIDIUM=$(egrep -i "$KEYWORDS_IRIDIUM" "$NEWPAGES")
+  MEITNERIUM=$(egrep -i "$KEYWORDS_MEITNERIUM" "$NEWPAGES")
 
   if [ "$COBALT" != "" ];
   then

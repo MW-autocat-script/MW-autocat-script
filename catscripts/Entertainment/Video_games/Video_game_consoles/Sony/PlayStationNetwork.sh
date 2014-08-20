@@ -7,7 +7,7 @@ then
 
   debug_start "PlayStation Network"
 
-  PSN=$(egrep -i "$KEYWORDS_PLAYSTATION_NETWORK" newpages.txt)
+  PSN=$(egrep -i "$KEYWORDS_PLAYSTATION_NETWORK" "$NEWPAGES")
 
   if [ "$PSN" != "" ];
   then

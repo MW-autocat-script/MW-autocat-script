@@ -21,18 +21,18 @@ then
 
   debug_start "Grand Theft Auto series"
 
-  SERIES=$(egrep -i "$KEYWORDS_GTA_SERIES" newpages.txt | egrep -iv "$KEYWORDS_GTA_SERIES_EXCLUDE")
-  GTA2=$(egrep -i "$KEYWORDS_GTA2" newpages.txt)
-  GTA3=$(egrep -i "$KEYWORDS_GTA3" newpages.txt)
-  VICECITY=$(egrep -i "$KEYWORDS_GTAVC" newpages.txt | egrep -iv "$KEYWORDS_GTAVC_EXCLUDE")
-  ANDREAS=$(egrep -i "$KEYWORDS_GTASA" newpages.txt)
-  LIBSTORIES=$(egrep -i "$KEYWORDS_GTALCS" newpages.txt)
-  VICESTORIES=$(egrep -i "$KEYWORDS_GTAVCS" newpages.txt)
-  GTA4=$(egrep -i "$KEYWORDS_GTA4" newpages.txt)
-  GTA5=$(egrep -i "$KEYWORDS_GTA5" newpages.txt)
-  CHINATOWN=$(egrep -i "$KEYWORDS_GTACHINATOWN" newpages.txt)
-  DAMNED=$(egrep -i "$KEYWORDS_GTATLAD" newpages.txt)
-  TONY=$(egrep -i "$KEYWORDS_GTATBOGT" newpages.txt)
+  SERIES=$(egrep -i "$KEYWORDS_GTA_SERIES" "$NEWPAGES" | egrep -iv "$KEYWORDS_GTA_SERIES_EXCLUDE")
+  GTA2=$(egrep -i "$KEYWORDS_GTA2" "$NEWPAGES")
+  GTA3=$(egrep -i "$KEYWORDS_GTA3" "$NEWPAGES")
+  VICECITY=$(egrep -i "$KEYWORDS_GTAVC" "$NEWPAGES" | egrep -iv "$KEYWORDS_GTAVC_EXCLUDE")
+  ANDREAS=$(egrep -i "$KEYWORDS_GTASA" "$NEWPAGES")
+  LIBSTORIES=$(egrep -i "$KEYWORDS_GTALCS" "$NEWPAGES")
+  VICESTORIES=$(egrep -i "$KEYWORDS_GTAVCS" "$NEWPAGES")
+  GTA4=$(egrep -i "$KEYWORDS_GTA4" "$NEWPAGES")
+  GTA5=$(egrep -i "$KEYWORDS_GTA5" "$NEWPAGES")
+  CHINATOWN=$(egrep -i "$KEYWORDS_GTACHINATOWN" "$NEWPAGES")
+  DAMNED=$(egrep -i "$KEYWORDS_GTATLAD" "$NEWPAGES")
+  TONY=$(egrep -i "$KEYWORDS_GTATBOGT" "$NEWPAGES")
 
   if [ "$SERIES" != "" ];
   then

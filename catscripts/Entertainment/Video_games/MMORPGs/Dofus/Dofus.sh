@@ -7,7 +7,7 @@ then
 
   debug_start "Dofus"
 
-  DOFUS=$(egrep -i "$KEYWORDS_MMORPG_DOFUS" newpages.txt)
+  DOFUS=$(egrep -i "$KEYWORDS_MMORPG_DOFUS" "$NEWPAGES")
 
   if [ "$DOFUS" != "" ];
   then

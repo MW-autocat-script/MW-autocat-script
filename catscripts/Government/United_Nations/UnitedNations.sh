@@ -7,7 +7,7 @@ then
 
   debug_start "United Nations"
 
-  UNITED=$(egrep -i "$KEYWORDS_UNITEDNATIONS" newpages.txt)
+  UNITED=$(egrep -i "$KEYWORDS_UNITEDNATIONS" "$NEWPAGES")
 
   if [ "$UNITED" != "" ];
   then

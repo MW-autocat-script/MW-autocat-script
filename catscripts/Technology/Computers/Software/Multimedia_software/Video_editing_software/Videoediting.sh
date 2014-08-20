@@ -12,9 +12,9 @@ then
 
   debug_start "Video editing"
 
-  WMM=$(egrep -i "$KEYWORDS_WINDOWSMOVIEMAKER" newpages.txt)
-  PREMIERE=$(egrep -i "$KEYWORDS_ADOBEPREMIEREPRO" newpages.txt)
-  VIDEO=$(egrep -i "$KEYWORDS_VIDEOEDITING_OTHER" newpages.txt && egrep -i "$KEYWORDS_VIDEOEDITING" newpages.txt | egrep -iv "$KEYWORDS_VIDEOEDITING_EXCLUDE")
+  WMM=$(egrep -i "$KEYWORDS_WINDOWSMOVIEMAKER" "$NEWPAGES")
+  PREMIERE=$(egrep -i "$KEYWORDS_ADOBEPREMIEREPRO" "$NEWPAGES")
+  VIDEO=$(egrep -i "$KEYWORDS_VIDEOEDITING_OTHER" "$NEWPAGES" && egrep -i "$KEYWORDS_VIDEOEDITING" "$NEWPAGES" | egrep -iv "$KEYWORDS_VIDEOEDITING_EXCLUDE")
 
   if [ "$VIDEO" != "" ];
   then

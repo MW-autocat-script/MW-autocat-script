@@ -7,7 +7,7 @@ then
 
   debug_start "Twitter"
 
-  TWITTER=$(egrep -i "$KEYWORDS_TWITTER" newpages.txt)
+  TWITTER=$(egrep -i "$KEYWORDS_TWITTER" "$NEWPAGES")
 
   if [ "$TWITTER" != "" ];
   then

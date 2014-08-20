@@ -5,7 +5,7 @@ KEYWORDS_SYNONYMS="synonym|another word for"
 if [ "$1" == "" ]; #Normal operation
 then
 
-  SYNONYMS=$(egrep -i "$KEYWORDS_SYNONYMS" newpages.txt)
+  SYNONYMS=$(egrep -i "$KEYWORDS_SYNONYMS" "$NEWPAGES")
 
   debug_start "Synonyms"
 

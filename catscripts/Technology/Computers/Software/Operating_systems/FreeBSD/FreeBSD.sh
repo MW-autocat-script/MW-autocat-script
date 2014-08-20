@@ -7,7 +7,7 @@ then
 
   debug_start "FreeBSD"
 
-  FREEBSD=$(egrep -i "$KEYWORDS_FREEBSD" newpages.txt)
+  FREEBSD=$(egrep -i "$KEYWORDS_FREEBSD" "$NEWPAGES")
 
   if [ "$FREEBSD" != "" ];
   then

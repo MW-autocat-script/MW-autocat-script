@@ -15,11 +15,11 @@ then
 
   debug_start "Florida"
 
-  FLORIDA=$(egrep -i "$KEYWORDS_FLORIDA" newpages.txt | egrep -iv "$KEYWORDS_FLORIDA_EXCLUDE")
-  ORLANDO=$(egrep -i "$KEYWORDS_ORLANDO" newpages.txt | egrep -iv "$KEYWORDS_ORLANDO_EXCLUDE")
-  MIAMI=$(egrep -i "$KEYWORDS_MIAMI" newpages.txt | egrep -iv "$KEYWORDS_MIAMI_EXCLUDE")
-  TAMPA=$(egrep -i "$KEYWORDS_TAMPA" newpages.txt)
-  EVERGLADES=$(egrep -i "$KEYWORDS_EVERGLADES" newpages.txt)
+  FLORIDA=$(egrep -i "$KEYWORDS_FLORIDA" "$NEWPAGES" | egrep -iv "$KEYWORDS_FLORIDA_EXCLUDE")
+  ORLANDO=$(egrep -i "$KEYWORDS_ORLANDO" "$NEWPAGES" | egrep -iv "$KEYWORDS_ORLANDO_EXCLUDE")
+  MIAMI=$(egrep -i "$KEYWORDS_MIAMI" "$NEWPAGES" | egrep -iv "$KEYWORDS_MIAMI_EXCLUDE")
+  TAMPA=$(egrep -i "$KEYWORDS_TAMPA" "$NEWPAGES")
+  EVERGLADES=$(egrep -i "$KEYWORDS_EVERGLADES" "$NEWPAGES")
 
   if [ "$FLORIDA" != "" ];
   then

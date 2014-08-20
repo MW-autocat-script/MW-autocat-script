@@ -13,7 +13,7 @@ then
 
   KEYWORDS_ARTHROPODS_EXCLUDE="arachnid|\bant(|s)\b"
 
-  ARTHROPODS=$(egrep -i "$KEYWORDS_ARTHROPODS" newpages.txt | egrep -iv "$KEYWORDS_ARTHROPODS_EXCLUDE")
+  ARTHROPODS=$(egrep -i "$KEYWORDS_ARTHROPODS" "$NEWPAGES" | egrep -iv "$KEYWORDS_ARTHROPODS_EXCLUDE")
 
   if [ "$ARTHROPODS" != "" ];
   then

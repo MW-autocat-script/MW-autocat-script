@@ -7,7 +7,7 @@ then
 
   debug_start "Wicca"
 
-  WICCA=$(egrep -i "$KEYWORDS_WICCA" newpages.txt)
+  WICCA=$(egrep -i "$KEYWORDS_WICCA" "$NEWPAGES")
 
   if [ "$WICCA" != "" ];
   then

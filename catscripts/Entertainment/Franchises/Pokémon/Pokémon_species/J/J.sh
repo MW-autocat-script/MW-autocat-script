@@ -13,13 +13,13 @@ then
 
   debug_start "Pokemon 'J' script"
 
-  JELLICENT="$(egrep -i "$KEYWORDS_JELLICENT" newpages.txt)"
-  JIGGLYPUFF="$(egrep -i "$KEYWORDS_JIGGLYPUFF" newpages.txt)"
-  JIRACHI="$(egrep -i "$KEYWORDS_JIRACHI" newpages.txt)"
-  JOLTEON="$(egrep -i "$KEYWORDS_JOLTEON" newpages.txt)"
-  JOLTIK="$(egrep -i "$KEYWORDS_JOLTIK" newpages.txt)"
-  JUMPLUFF="$(egrep -i "$KEYWORDS_JUMPLUFF" newpages.txt)"
-  JYNX="$(egrep -i "$KEYWORDS_JYNX" newpages.txt)"
+  JELLICENT="$(egrep -i "$KEYWORDS_JELLICENT" "$NEWPAGES")"
+  JIGGLYPUFF="$(egrep -i "$KEYWORDS_JIGGLYPUFF" "$NEWPAGES")"
+  JIRACHI="$(egrep -i "$KEYWORDS_JIRACHI" "$NEWPAGES")"
+  JOLTEON="$(egrep -i "$KEYWORDS_JOLTEON" "$NEWPAGES")"
+  JOLTIK="$(egrep -i "$KEYWORDS_JOLTIK" "$NEWPAGES")"
+  JUMPLUFF="$(egrep -i "$KEYWORDS_JUMPLUFF" "$NEWPAGES")"
+  JYNX="$(egrep -i "$KEYWORDS_JYNX" "$NEWPAGES")"
 
   if [ "$JELLICENT" != "" ];
   then

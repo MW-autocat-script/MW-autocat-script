@@ -21,15 +21,15 @@ then
 
   debug_start "Telephones"
 
-  TELEPHONES="$(egrep -i "$KEYWORDS_TELEPHONES" newpages.txt | egrep -iv "$KEYWORDS_TELEPHONES_EXCLUDE")"
-  CELLPHONES="$(egrep -i "$KEYWORDS_CELLPHONES" newpages.txt | egrep -iv "$KEYWORDS_CELLPHONES_EXCLUDE")"
-  IPHONES="$(egrep -i "$KEYWORDS_IPHONE" newpages.txt)"
-  NOKIA="$(egrep -i "$KEYWORDS_NOKIA" newpages.txt)"
-  LGSCRIPT="$(egrep -i "$KEYWORDS_LGSCRIPT" newpages.txt)"
-  LGENVTOUCH="$(egrep -i "$KEYWORDS_LGENVTOUCH" newpages.txt)"
-  SMS="$(egrep -i "$KEYWORDS_SMS" newpages.txt)"
-  SNAPCHAT="$(egrep -i "$KEYWORDS_SNAPCHAT" newpages.txt)"
-  INSTAGRAM="$(egrep -i "$KEYWORDS_INSTAGRAM" newpages.txt)"
+  TELEPHONES="$(egrep -i "$KEYWORDS_TELEPHONES" "$NEWPAGES" | egrep -iv "$KEYWORDS_TELEPHONES_EXCLUDE")"
+  CELLPHONES="$(egrep -i "$KEYWORDS_CELLPHONES" "$NEWPAGES" | egrep -iv "$KEYWORDS_CELLPHONES_EXCLUDE")"
+  IPHONES="$(egrep -i "$KEYWORDS_IPHONE" "$NEWPAGES")"
+  NOKIA="$(egrep -i "$KEYWORDS_NOKIA" "$NEWPAGES")"
+  LGSCRIPT="$(egrep -i "$KEYWORDS_LGSCRIPT" "$NEWPAGES")"
+  LGENVTOUCH="$(egrep -i "$KEYWORDS_LGENVTOUCH" "$NEWPAGES")"
+  SMS="$(egrep -i "$KEYWORDS_SMS" "$NEWPAGES")"
+  SNAPCHAT="$(egrep -i "$KEYWORDS_SNAPCHAT" "$NEWPAGES")"
+  INSTAGRAM="$(egrep -i "$KEYWORDS_INSTAGRAM" "$NEWPAGES")"
 
   if [ "$TELEPHONES" != "" ];
   then

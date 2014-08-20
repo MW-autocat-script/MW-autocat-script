@@ -7,7 +7,7 @@ then
 
   debug_start "Harry Potter"
 
-  HARRYPOTTER=$(egrep -i "$KEYWORDS_HARRYPOTTER" newpages.txt )
+  HARRYPOTTER=$(egrep -i "$KEYWORDS_HARRYPOTTER" "$NEWPAGES" )
 
   if [ "$HARRYPOTTER" != "" ];
   then

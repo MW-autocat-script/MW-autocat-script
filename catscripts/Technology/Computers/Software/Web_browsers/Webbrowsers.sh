@@ -13,10 +13,10 @@ then
 
   debug_start "Web browsers"
 
-  IEXPLORER=$(egrep -i "$KEYWORDS_INTERNETEXPLORER" newpages.txt)
-  FIREFOX=$(egrep -i "$KEYWORDS_FIREFOX" newpages.txt)
-  CHROME=$(egrep -i "$KEYWORDS_GOOGLECHROME" newpages.txt)
-  BROWSERS=$(egrep -i "$KEYWORDS_WEBBROWSER|$KEYWORDS_WEBBROWSER_OTHER" newpages.txt | egrep -iv "$KEYWORDS_WEBBROWSER_EXCLUDE")
+  IEXPLORER=$(egrep -i "$KEYWORDS_INTERNETEXPLORER" "$NEWPAGES")
+  FIREFOX=$(egrep -i "$KEYWORDS_FIREFOX" "$NEWPAGES")
+  CHROME=$(egrep -i "$KEYWORDS_GOOGLECHROME" "$NEWPAGES")
+  BROWSERS=$(egrep -i "$KEYWORDS_WEBBROWSER|$KEYWORDS_WEBBROWSER_OTHER" "$NEWPAGES" | egrep -iv "$KEYWORDS_WEBBROWSER_EXCLUDE")
 
   if [ "$IEXPLORER" != "" ];
   then

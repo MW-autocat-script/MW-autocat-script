@@ -10,9 +10,9 @@ then
   
   debug_start "Poland"
 
-  POLAND=$(egrep -i "$KEYWORDS_POLAND" newpages.txt | egrep -iv "$KEYWORDS_POLAND_EXCLUDE")
-  WARSAW=$(egrep -i "$KEYWORDS_WARSAW" newpages.txt)
-  AUSCHWITZ=$(egrep -i "$KEYWORDS_AUSCHWITZ" newpages.txt)
+  POLAND=$(egrep -i "$KEYWORDS_POLAND" "$NEWPAGES" | egrep -iv "$KEYWORDS_POLAND_EXCLUDE")
+  WARSAW=$(egrep -i "$KEYWORDS_WARSAW" "$NEWPAGES")
+  AUSCHWITZ=$(egrep -i "$KEYWORDS_AUSCHWITZ" "$NEWPAGES")
 
   if [ "$POLAND" != "" ];
   then

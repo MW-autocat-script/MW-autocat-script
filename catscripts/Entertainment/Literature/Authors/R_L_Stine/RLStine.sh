@@ -7,7 +7,7 @@ then
   
   debug_start "R. L. Stine"
 
-  STINE=$(egrep -i "$KEYWORDS_RLSTINE" newpages.txt)
+  STINE=$(egrep -i "$KEYWORDS_RLSTINE" "$NEWPAGES")
 
   if [ "$STINE" != "" ];
   then

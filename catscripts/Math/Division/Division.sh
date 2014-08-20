@@ -7,7 +7,7 @@ then
 
   debug_start "Division"
 
-  DIVISION=$(egrep -i "$KEYWORDS_DIVISION" newpages.txt)
+  DIVISION=$(egrep -i "$KEYWORDS_DIVISION" "$NEWPAGES")
 
   if [ "$DIVISION" != "" ];
   then

@@ -8,7 +8,7 @@ then
 
   debug_start "Spelling"
 
-  SPELLING=$(egrep -i "$KEYWORDS_SPELLING" newpages.txt)
+  SPELLING=$(egrep -i "$KEYWORDS_SPELLING" "$NEWPAGES")
 
   if [ "$SPELLING" != "" ];
   then

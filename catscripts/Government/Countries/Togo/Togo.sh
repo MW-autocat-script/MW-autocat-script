@@ -9,7 +9,7 @@ then
   
   debug_start "Togo"
 
-  TOGO=$(egrep -i "$KEYWORDS_TOGO" newpages.txt | egrep -iv "$KEYWORDS_TOGO_EXCLUDE")
+  TOGO=$(egrep -i "$KEYWORDS_TOGO" "$NEWPAGES" | egrep -iv "$KEYWORDS_TOGO_EXCLUDE")
 
   if [ "$TOGO" != "" ];
   then

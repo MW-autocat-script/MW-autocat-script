@@ -8,7 +8,7 @@ then
   
   debug_start "Andy Griffith"
 
-  GRIFFITH=$(egrep -i "$KEYWORDS_ACTOR_ANDYGRIFFITH" newpages.txt | egrep -iv "$KEYWORDS_ACTOR_ANDYGRIFFITH_EXCLUDE")
+  GRIFFITH=$(egrep -i "$KEYWORDS_ACTOR_ANDYGRIFFITH" "$NEWPAGES" | egrep -iv "$KEYWORDS_ACTOR_ANDYGRIFFITH_EXCLUDE")
 
   if [ "$GRIFFITH" != "" ];
   then

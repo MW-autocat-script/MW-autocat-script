@@ -7,7 +7,7 @@ then
   
   debug_start "Polio"
 
-  POLIO=$(egrep -i "$KEYWORDS_POLIO" newpages.txt)
+  POLIO=$(egrep -i "$KEYWORDS_POLIO" "$NEWPAGES")
 
   if [ "$POLIO" != "" ];
   then

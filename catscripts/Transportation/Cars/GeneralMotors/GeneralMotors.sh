@@ -24,15 +24,15 @@ then
   
   debug_start "General Motors"
 
-  AGILE="$(egrep -i "$KEYWORDS_CHEVROLETAGILE" newpages.txt)"
-  AVEO="$(egrep -i "$KEYWORDS_CHEVROLETAVEO" newpages.txt )"
-  BERETTA="$(egrep -i "$KEYWORDS_CHEVROLETBERETTA" newpages.txt)"
-  CAMARO="$(egrep -i "$KEYWORDS_CHEVROLETCAMARO" newpages.txt)"
-  CAPRICE="$(egrep -i "$KEYWORDS_CHEVROLETCAPRICE" newpages.txt)"
-  CAVALIER="$(egrep -i "$KEYWORDS_CHEVROLETCAVALIER" newpages.txt)"
-  CELTA="$(egrep -i "$KEYWORDS_CHEVROLETCELTA" newpages.txt)"
-  COBALT="$(egrep -i "$KEYWORDS_CHEVROLETCOBALT" newpages.txt)"
-  CORVETTE="$(egrep -i "$KEYWORDS_CHEVROLETCORVETTE" newpages.txt)"
+  AGILE="$(egrep -i "$KEYWORDS_CHEVROLETAGILE" "$NEWPAGES")"
+  AVEO="$(egrep -i "$KEYWORDS_CHEVROLETAVEO" "$NEWPAGES" )"
+  BERETTA="$(egrep -i "$KEYWORDS_CHEVROLETBERETTA" "$NEWPAGES")"
+  CAMARO="$(egrep -i "$KEYWORDS_CHEVROLETCAMARO" "$NEWPAGES")"
+  CAPRICE="$(egrep -i "$KEYWORDS_CHEVROLETCAPRICE" "$NEWPAGES")"
+  CAVALIER="$(egrep -i "$KEYWORDS_CHEVROLETCAVALIER" "$NEWPAGES")"
+  CELTA="$(egrep -i "$KEYWORDS_CHEVROLETCELTA" "$NEWPAGES")"
+  COBALT="$(egrep -i "$KEYWORDS_CHEVROLETCOBALT" "$NEWPAGES")"
+  CORVETTE="$(egrep -i "$KEYWORDS_CHEVROLETCORVETTE" "$NEWPAGES")"
 
   if [ "$AGILE" != "" ];
   then
@@ -124,7 +124,7 @@ then
     unset CORVETTE
   fi
 
-  CADILLAC="$(egrep -i "$KEYWORDS_CADILLAC" newpages.txt)"
+  CADILLAC="$(egrep -i "$KEYWORDS_CADILLAC" "$NEWPAGES")"
 
   if [ "$CADILLAC" != "" ];
   then

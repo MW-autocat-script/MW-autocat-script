@@ -7,7 +7,7 @@ then
 
   debug_start "Dora the Explorer"
 
-  DORA="$(egrep -i "$KEYWORDS_DORA" newpages.txt)"
+  DORA="$(egrep -i "$KEYWORDS_DORA" "$NEWPAGES")"
 
   if [ "$DORA" != "" ];
   then

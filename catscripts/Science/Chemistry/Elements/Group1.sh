@@ -15,14 +15,14 @@ then
 
   debug_start "Group 1 elements"
 
-  HYDROGEN="$(egrep -i "$KEYWORDS_HYDROGEN" newpages.txt)"
-  LITHIUM="$(egrep -i "$KEYWORDS_LITHIUM" newpages.txt)"
-  SODIUM="$(egrep -i "$KEYWORDS_SODIUM" newpages.txt)"
-  POTASSIUM="$(egrep -i "$KEYWORDS_POTASSIUM" newpages.txt)"
-  RUBIDIUM="$(egrep -i "$KEYWORDS_RUBIDIUM" newpages.txt)"
-  CAESIUM="$(egrep -i "$KEYWORDS_CAESIUM" newpages.txt)"
-  FRANCIUM="$(egrep -i "$KEYWORDS_FRANCIUM" newpages.txt)"
-  UUE="$(egrep -i "$KEYWORDS_UNUNENNIUM" newpages.txt)"
+  HYDROGEN="$(egrep -i "$KEYWORDS_HYDROGEN" "$NEWPAGES")"
+  LITHIUM="$(egrep -i "$KEYWORDS_LITHIUM" "$NEWPAGES")"
+  SODIUM="$(egrep -i "$KEYWORDS_SODIUM" "$NEWPAGES")"
+  POTASSIUM="$(egrep -i "$KEYWORDS_POTASSIUM" "$NEWPAGES")"
+  RUBIDIUM="$(egrep -i "$KEYWORDS_RUBIDIUM" "$NEWPAGES")"
+  CAESIUM="$(egrep -i "$KEYWORDS_CAESIUM" "$NEWPAGES")"
+  FRANCIUM="$(egrep -i "$KEYWORDS_FRANCIUM" "$NEWPAGES")"
+  UUE="$(egrep -i "$KEYWORDS_UNUNENNIUM" "$NEWPAGES")"
 
   if [ "$HYDROGEN" != "" ];
   then

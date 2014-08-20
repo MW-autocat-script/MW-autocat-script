@@ -7,7 +7,7 @@ then
 
   debug_start "Wizard101"
 
-  WIZARD101=$(egrep -i "$KEYWORDS_MMORPG_WIZARD101" newpages.txt)
+  WIZARD101=$(egrep -i "$KEYWORDS_MMORPG_WIZARD101" "$NEWPAGES")
 
   if [ "$WIZARD101" != "" ];
   then

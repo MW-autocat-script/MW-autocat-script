@@ -7,7 +7,7 @@ then
 
   debug_start "American Dad"
 
-  AMERICANDAD=$(egrep -i "$KEYWORDS_AMERICANDAD" newpages.txt)
+  AMERICANDAD=$(egrep -i "$KEYWORDS_AMERICANDAD" "$NEWPAGES")
 
   if [ "$AMERICANDAD" != "" ];
   then

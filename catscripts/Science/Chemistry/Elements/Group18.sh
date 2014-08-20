@@ -16,13 +16,13 @@ then
 
   debug_start "Group 18 elements"
 
-  NEON=$(egrep -i "$KEYWORDS_NEON" newpages.txt | egrep -iv "$KEYWORDS_NEON_EXCLUDE")
-  HELIUM=$(egrep -i "$KEYWORDS_HELIUM" newpages.txt)
-  ARGON=$(egrep -i "$KEYWORDS_ARGON" newpages.txt)
-  KRYPTON=$(egrep -i "$KEYWORDS_KRYPTON" newpages.txt | egrep -iv "$KEYWORDS_KRYPTON_EXCLUDE")
-  XENON=$(egrep -i "$KEYWORDS_XENON" newpages.txt | egrep -iv "$KEYWORDS_XENON_EXCLUDE")
-  RADON=$(egrep -i "$KEYWORDS_RADON" newpages.txt)
-  UNUNOCTIUM=$(egrep -i "$KEYWORDS_UNUNOCTIUM" newpages.txt)
+  NEON=$(egrep -i "$KEYWORDS_NEON" "$NEWPAGES" | egrep -iv "$KEYWORDS_NEON_EXCLUDE")
+  HELIUM=$(egrep -i "$KEYWORDS_HELIUM" "$NEWPAGES")
+  ARGON=$(egrep -i "$KEYWORDS_ARGON" "$NEWPAGES")
+  KRYPTON=$(egrep -i "$KEYWORDS_KRYPTON" "$NEWPAGES" | egrep -iv "$KEYWORDS_KRYPTON_EXCLUDE")
+  XENON=$(egrep -i "$KEYWORDS_XENON" "$NEWPAGES" | egrep -iv "$KEYWORDS_XENON_EXCLUDE")
+  RADON=$(egrep -i "$KEYWORDS_RADON" "$NEWPAGES")
+  UNUNOCTIUM=$(egrep -i "$KEYWORDS_UNUNOCTIUM" "$NEWPAGES")
 
   if [ "$NEON" != "" ];
   then

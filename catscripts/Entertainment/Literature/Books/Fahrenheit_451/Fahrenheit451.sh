@@ -7,7 +7,7 @@ then
   
   debug_start "Fahrenheit 451"
 
-  FAHRENHEIT=$(egrep -i "$KEYWORDS_FAHRENHEIT451" newpages.txt)
+  FAHRENHEIT=$(egrep -i "$KEYWORDS_FAHRENHEIT451" "$NEWPAGES")
 
   if [ "$FAHRENHEIT" != "" ];
   then

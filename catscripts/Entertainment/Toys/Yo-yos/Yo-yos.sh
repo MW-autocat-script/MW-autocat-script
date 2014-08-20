@@ -8,7 +8,7 @@ then
   
   debug_start "Yo-yos"
 
-  YOYOS=$(egrep -i "$KEYWORDS_YOYOS" newpages.txt)
+  YOYOS=$(egrep -i "$KEYWORDS_YOYOS" "$NEWPAGES")
 
   if [ "$YOYOS" != "" ];
   then

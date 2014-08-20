@@ -7,7 +7,7 @@ then
 
   debug_start "Selena Gomez"
 
-  SELENAGOMEZ=$(egrep -i "$KEYWORDS_ACTRESS_SELENAGOMEZ" newpages.txt)
+  SELENAGOMEZ=$(egrep -i "$KEYWORDS_ACTRESS_SELENAGOMEZ" "$NEWPAGES")
 
   if [ "$SELENAGOMEZ" != "" ];
   then

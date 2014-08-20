@@ -15,14 +15,14 @@ then
 
   debug_start "India"
 
-  INDIA=$(egrep -i "$KEYWORDS_INDIA" newpages.txt | egrep -iv "$KEYWORDS_INDIA_EXCLUDE")
-  NEWDELHI=$(egrep -i "$KEYWORDS_NEWDELHI" newpages.txt)
-  MUMBAI=$(egrep -i "$KEYWORDS_MUMBAI" newpages.txt)
-  KOLKATA=$(egrep -i "$KEYWORDS_KOLKATA" newpages.txt)
-  HYDERABAD=$(egrep -i "$KEYWORDS_HYDERABAD" newpages.txt)
-  CHENNAI=$(egrep -i "$KEYWORDS_CHENNAI" newpages.txt)
-  BANGALORE=$(egrep -i "$KEYWORDS_BANGALORE" newpages.txt)
-  PUNE=$(egrep -i "$KEYWORDS_PUNE" newpages.txt)
+  INDIA=$(egrep -i "$KEYWORDS_INDIA" "$NEWPAGES" | egrep -iv "$KEYWORDS_INDIA_EXCLUDE")
+  NEWDELHI=$(egrep -i "$KEYWORDS_NEWDELHI" "$NEWPAGES")
+  MUMBAI=$(egrep -i "$KEYWORDS_MUMBAI" "$NEWPAGES")
+  KOLKATA=$(egrep -i "$KEYWORDS_KOLKATA" "$NEWPAGES")
+  HYDERABAD=$(egrep -i "$KEYWORDS_HYDERABAD" "$NEWPAGES")
+  CHENNAI=$(egrep -i "$KEYWORDS_CHENNAI" "$NEWPAGES")
+  BANGALORE=$(egrep -i "$KEYWORDS_BANGALORE" "$NEWPAGES")
+  PUNE=$(egrep -i "$KEYWORDS_PUNE" "$NEWPAGES")
 
   if [ "$INDIA" != "" ];
   then

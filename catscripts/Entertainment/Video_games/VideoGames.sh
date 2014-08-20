@@ -7,7 +7,7 @@ then
 
   debug_start "Video games"
 
-  MOSHIMONSTERS=$(egrep -i "$KEYWORDS_MOSHIMONSTERS" newpages.txt)
+  MOSHIMONSTERS=$(egrep -i "$KEYWORDS_MOSHIMONSTERS" "$NEWPAGES")
 
   if [ "$MOSHIMONSTERS" != "" ];
   then

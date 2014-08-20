@@ -7,7 +7,7 @@ then
 
   debug_start "Doom series"
 
-  DOOM=$(egrep -i "$KEYWORDS_DOOMSERIES" newpages.txt)
+  DOOM=$(egrep -i "$KEYWORDS_DOOMSERIES" "$NEWPAGES")
 
   if [ "$DOOM" != "" ];
   then

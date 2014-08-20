@@ -12,7 +12,7 @@ then
 
   KEYWORDS_POETRY_EXCLUDE="$KEYWORDS_BEOWULF"
 
-  POETRY=$(egrep -i "$KEYWORDS_POETRY" newpages.txt | egrep -iv "$KEYWORDS_POETRY_EXCLUDE")
+  POETRY=$(egrep -i "$KEYWORDS_POETRY" "$NEWPAGES" | egrep -iv "$KEYWORDS_POETRY_EXCLUDE")
 
   if [ "$POETRY" != "" ];
   then

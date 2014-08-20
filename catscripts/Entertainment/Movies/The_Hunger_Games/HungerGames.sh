@@ -7,7 +7,7 @@ then
 
   debug_start "The Hunger Games"
 
-  HUNGER=$(egrep -i "$KEYWORDS_HUNGERGAMES" newpages.txt)
+  HUNGER=$(egrep -i "$KEYWORDS_HUNGERGAMES" "$NEWPAGES")
 
   if [ "$HUNGER" != "" ];
   then

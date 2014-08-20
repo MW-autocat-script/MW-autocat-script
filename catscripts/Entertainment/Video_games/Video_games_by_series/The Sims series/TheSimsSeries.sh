@@ -11,10 +11,10 @@ then
 
   debug_start "The Sims series"
 
-  SIMS2=$(egrep -i "$KEYWORDS_THESIMSTWO" newpages.txt)
-  SIMS3=$(egrep -i "$KEYWORDS_THESIMSTHREE" newpages.txt)
-  MYSIMS=$(egrep -i "$KEYWORDS_MYSIMS" newpages.txt)
-  SERIES=$(egrep -i "$KEYWORDS_THESIMS" newpages.txt | egrep -iv "$KEYWORDS_THESIMS_EXCLUDE")
+  SIMS2=$(egrep -i "$KEYWORDS_THESIMSTWO" "$NEWPAGES")
+  SIMS3=$(egrep -i "$KEYWORDS_THESIMSTHREE" "$NEWPAGES")
+  MYSIMS=$(egrep -i "$KEYWORDS_MYSIMS" "$NEWPAGES")
+  SERIES=$(egrep -i "$KEYWORDS_THESIMS" "$NEWPAGES" | egrep -iv "$KEYWORDS_THESIMS_EXCLUDE")
 
   if [ "$SIMS2" != "" ];
   then

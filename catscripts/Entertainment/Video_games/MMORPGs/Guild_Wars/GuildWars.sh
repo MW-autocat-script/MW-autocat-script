@@ -7,7 +7,7 @@ then
   
   debug_start "Guild Wars"
 
-  GUILDWARS=$(egrep -i "$KEYWORDS_MMORPG_GUILDWARS" newpages.txt)
+  GUILDWARS=$(egrep -i "$KEYWORDS_MMORPG_GUILDWARS" "$NEWPAGES")
 
   if [ "$GUILDWARS" != "" ];
   then

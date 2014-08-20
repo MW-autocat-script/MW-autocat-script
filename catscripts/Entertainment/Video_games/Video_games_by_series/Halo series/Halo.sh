@@ -15,13 +15,13 @@ then
 
   debug_start "Halo series"
 
-  HALO1=$(egrep -i "$KEYWORDS_HALOONE" newpages.txt)
-  HALO2=$(egrep -i "$KEYWORDS_HALOTWO" newpages.txt)
-  HALO3=$(egrep -i "$KEYWORDS_HALOTHREE" newpages.txt | egrep -iv "$KEYWORDS_HALOTHREE_EXCLUDE")
-  ODST=$(egrep -i "$KEYWORDS_HALOODST" newpages.txt)
-  HALO4=$(egrep -i "$KEYWORDS_HALOFOUR" newpages.txt)
-  HALOWARS=$(egrep -i "$KEYWORDS_HALOWARS" newpages.txt)
-  SERIES=$(egrep -i "$KEYWORDS_HALOSERIES" newpages.txt | egrep -iv "$KEYWORDS_HALOSERIES_EXCLUDE")
+  HALO1=$(egrep -i "$KEYWORDS_HALOONE" "$NEWPAGES")
+  HALO2=$(egrep -i "$KEYWORDS_HALOTWO" "$NEWPAGES")
+  HALO3=$(egrep -i "$KEYWORDS_HALOTHREE" "$NEWPAGES" | egrep -iv "$KEYWORDS_HALOTHREE_EXCLUDE")
+  ODST=$(egrep -i "$KEYWORDS_HALOODST" "$NEWPAGES")
+  HALO4=$(egrep -i "$KEYWORDS_HALOFOUR" "$NEWPAGES")
+  HALOWARS=$(egrep -i "$KEYWORDS_HALOWARS" "$NEWPAGES")
+  SERIES=$(egrep -i "$KEYWORDS_HALOSERIES" "$NEWPAGES" | egrep -iv "$KEYWORDS_HALOSERIES_EXCLUDE")
 
   if [ "$SERIES" != "" ];
   then

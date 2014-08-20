@@ -25,19 +25,19 @@ then
 
   debug_start "Musical instruments"
 
-  CELLO=$(egrep -i "$KEYWORDS_CELLO" newpages.txt)
-  CLARINET=$(egrep -i "$KEYWORDS_CLARINET" newpages.txt)
-  DRUMS=$(egrep -i "$KEYWORDS_DRUMS" newpages.txt | egrep -iv "$KEYWORDS_DRUMS_EXCLUDE")
-  FLUTE=$(egrep -i "$KEYWORDS_FLUTE" newpages.txt | egrep -iv "$KEYWORDS_FLUTE_EXCLUDE")
-  GUITAR=$(egrep -i "$KEYWORDS_GUITAR" newpages.txt | egrep -iv "$KEYWORDS_GUITAR_EXCLUDE")
-  HARP=$(egrep -i "$KEYWORDS_HARP" newpages.txt | egrep -iv "$KEYWORDS_HARP_EXCLUDE")
-  PIANO=$(egrep -i "$KEYWORDS_PIANO" newpages.txt)
-  RECORDER=$(egrep -i "$KEYWORDS_RECORDER" newpages.txt)
-  SAXOPHONE=$(egrep -i "$KEYWORDS_SAXOPHONE" newpages.txt)
-  VIOLIN=$(egrep -i "$KEYWORDS_VIOLIN" newpages.txt)
-  VIOLA=$(egrep -i "$KEYWORDS_VIOLA" newpages.txt)
-  XYLOPHONE=$(egrep -i "$KEYWORDS_XYLOPHONE" newpages.txt)
-  INSTRUMENTS=$(egrep -i "$KEYWORDS_MUSICALINSTRUMENT" newpages.txt | egrep -iv "$KEYWORDS_MUSICALINSTRUMENT_EXCLUDE")
+  CELLO=$(egrep -i "$KEYWORDS_CELLO" "$NEWPAGES")
+  CLARINET=$(egrep -i "$KEYWORDS_CLARINET" "$NEWPAGES")
+  DRUMS=$(egrep -i "$KEYWORDS_DRUMS" "$NEWPAGES" | egrep -iv "$KEYWORDS_DRUMS_EXCLUDE")
+  FLUTE=$(egrep -i "$KEYWORDS_FLUTE" "$NEWPAGES" | egrep -iv "$KEYWORDS_FLUTE_EXCLUDE")
+  GUITAR=$(egrep -i "$KEYWORDS_GUITAR" "$NEWPAGES" | egrep -iv "$KEYWORDS_GUITAR_EXCLUDE")
+  HARP=$(egrep -i "$KEYWORDS_HARP" "$NEWPAGES" | egrep -iv "$KEYWORDS_HARP_EXCLUDE")
+  PIANO=$(egrep -i "$KEYWORDS_PIANO" "$NEWPAGES")
+  RECORDER=$(egrep -i "$KEYWORDS_RECORDER" "$NEWPAGES")
+  SAXOPHONE=$(egrep -i "$KEYWORDS_SAXOPHONE" "$NEWPAGES")
+  VIOLIN=$(egrep -i "$KEYWORDS_VIOLIN" "$NEWPAGES")
+  VIOLA=$(egrep -i "$KEYWORDS_VIOLA" "$NEWPAGES")
+  XYLOPHONE=$(egrep -i "$KEYWORDS_XYLOPHONE" "$NEWPAGES")
+  INSTRUMENTS=$(egrep -i "$KEYWORDS_MUSICALINSTRUMENT" "$NEWPAGES" | egrep -iv "$KEYWORDS_MUSICALINSTRUMENT_EXCLUDE")
 
   if [ "$CELLO" != "" ];
   then

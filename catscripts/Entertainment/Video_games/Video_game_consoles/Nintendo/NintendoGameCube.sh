@@ -7,7 +7,7 @@ then
 
   debug_start "Nintendo GameCube"
 
-  GAMECUBE=$(egrep -i "$KEYWORDS_NINTENDO_GAMECUBE" newpages.txt)
+  GAMECUBE=$(egrep -i "$KEYWORDS_NINTENDO_GAMECUBE" "$NEWPAGES")
 
   if [ "$GAMECUBE" != "" ];
   then

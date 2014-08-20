@@ -34,15 +34,15 @@ then
 
   debug_start "Planets"
 
-  MERCURY="$(egrep -i "$KEYWORDS_MERCURY" newpages.txt | egrep -iv "$KEYWORDS_MERCURY_EXCLUDE")"
-  VENUS="$(egrep -i "$KEYWORDS_VENUS" newpages.txt | egrep -iv "$KEYWORDS_VENUS_EXCLUDE")"
-  EARTH="$(egrep -i "$KEYWORDS_EARTH" newpages.txt | egrep -iv "$KEYWORDS_EARTH_EXCLUDE")"
-  MARS="$(egrep -i "$KEYWORDS_MARS" newpages.txt | egrep -iv "$KEYWORDS_MARS_EXCLUDE")"
-  JUPITER="$(egrep -i "$KEYWORDS_JUPITER" newpages.txt | egrep -iv "$KEYWORDS_JUPITER_EXCLUDE")"
-  SATURN="$(egrep -i "$KEYWORDS_SATURN" newpages.txt | egrep -iv "$KEYWORDS_SATURN_EXCLUDE")"
-  URANUS="$(egrep -i "$KEYWORDS_URANUS" newpages.txt | egrep -iv "$KEYWORDS_URANUS_EXCLUDE")"
-  NEPTUNE="$(egrep -i "$KEYWORDS_NEPTUNE" newpages.txt | egrep -iv "$KEYWORDS_NEPTUNE_EXCLUDE")"
-  PLANETS="$(egrep -i "$KEYWORDS_PLANET" newpages.txt | egrep -iv "$KEYWORDS_PLANET_EXCLUDE")"
+  MERCURY="$(egrep -i "$KEYWORDS_MERCURY" "$NEWPAGES" | egrep -iv "$KEYWORDS_MERCURY_EXCLUDE")"
+  VENUS="$(egrep -i "$KEYWORDS_VENUS" "$NEWPAGES" | egrep -iv "$KEYWORDS_VENUS_EXCLUDE")"
+  EARTH="$(egrep -i "$KEYWORDS_EARTH" "$NEWPAGES" | egrep -iv "$KEYWORDS_EARTH_EXCLUDE")"
+  MARS="$(egrep -i "$KEYWORDS_MARS" "$NEWPAGES" | egrep -iv "$KEYWORDS_MARS_EXCLUDE")"
+  JUPITER="$(egrep -i "$KEYWORDS_JUPITER" "$NEWPAGES" | egrep -iv "$KEYWORDS_JUPITER_EXCLUDE")"
+  SATURN="$(egrep -i "$KEYWORDS_SATURN" "$NEWPAGES" | egrep -iv "$KEYWORDS_SATURN_EXCLUDE")"
+  URANUS="$(egrep -i "$KEYWORDS_URANUS" "$NEWPAGES" | egrep -iv "$KEYWORDS_URANUS_EXCLUDE")"
+  NEPTUNE="$(egrep -i "$KEYWORDS_NEPTUNE" "$NEWPAGES" | egrep -iv "$KEYWORDS_NEPTUNE_EXCLUDE")"
+  PLANETS="$(egrep -i "$KEYWORDS_PLANET" "$NEWPAGES" | egrep -iv "$KEYWORDS_PLANET_EXCLUDE")"
 
   if [ "$MERCURY" != "" ];
   then

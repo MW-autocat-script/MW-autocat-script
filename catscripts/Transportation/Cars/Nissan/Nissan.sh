@@ -7,7 +7,7 @@ then
 
   debug_start "Nissan Altima"
 
-  ALTIMA=$(egrep -i "$KEYWORDS_NISSANALTIMA" newpages.txt)
+  ALTIMA=$(egrep -i "$KEYWORDS_NISSANALTIMA" "$NEWPAGES")
 
   if [ "$ALTIMA" != "" ];
   then

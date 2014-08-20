@@ -10,8 +10,8 @@ then
 
   debug_start "Northern Ireland"
 
-  NIRELAND=$(egrep -i "$KEYWORDS_NORTHERNIRELAND" newpages.txt | egrep -iv "$KEYWORDS_NORTHERNIRELAND_EXCLUDE")
-  BELFAST=$(egrep -i "$KEYWORDS_BELFAST" newpages.txt)
+  NIRELAND=$(egrep -i "$KEYWORDS_NORTHERNIRELAND" "$NEWPAGES" | egrep -iv "$KEYWORDS_NORTHERNIRELAND_EXCLUDE")
+  BELFAST=$(egrep -i "$KEYWORDS_BELFAST" "$NEWPAGES")
 
   if [ "$NIRELAND" != "" ];
   then

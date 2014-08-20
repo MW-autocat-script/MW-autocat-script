@@ -9,7 +9,7 @@ then
   
   debug_start "J. K. Rowling"
 
-  ROWLING=$(egrep -i "$KEYWORDS_JKROWLING" newpages.txt | egrep -iv "$KEYWORDS_JKROWLING_EXCLUDE")
+  ROWLING=$(egrep -i "$KEYWORDS_JKROWLING" "$NEWPAGES" | egrep -iv "$KEYWORDS_JKROWLING_EXCLUDE")
 
   if [ "$ROWLING" != "" ];
   then

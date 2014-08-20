@@ -12,10 +12,10 @@ then
 
   debug_start "Group 4 elements"
 
-  TITANIUM="$(egrep -i "$KEYWORDS_TITANIUM" newpages.txt | egrep -iv "$KEYWORDS_TITANIUM_EXCLUDE")"
-  ZIRCONIUM="$(egrep -i "$KEYWORDS_ZIRCONIUM" newpages.txt)"
-  HAFNIUM="$(egrep -i "$KEYWORDS_HAFNIUM" newpages.txt)"
-  RUTHERFORDIUM="$(egrep -i "$KEYWORDS_RUTHERFORDIUM" newpages.txt)"
+  TITANIUM="$(egrep -i "$KEYWORDS_TITANIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_TITANIUM_EXCLUDE")"
+  ZIRCONIUM="$(egrep -i "$KEYWORDS_ZIRCONIUM" "$NEWPAGES")"
+  HAFNIUM="$(egrep -i "$KEYWORDS_HAFNIUM" "$NEWPAGES")"
+  RUTHERFORDIUM="$(egrep -i "$KEYWORDS_RUTHERFORDIUM" "$NEWPAGES")"
 
   if [ "$TITANIUM" != "" ];
   then

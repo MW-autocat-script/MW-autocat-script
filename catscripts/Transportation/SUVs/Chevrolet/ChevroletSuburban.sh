@@ -7,7 +7,7 @@ then
 
   debug_start "Chevrolet Suburban"
 
-  SUBURBAN=$(egrep -i "$KEYWORDS_CHEVROLETSUBURBAN" newpages.txt)
+  SUBURBAN=$(egrep -i "$KEYWORDS_CHEVROLETSUBURBAN" "$NEWPAGES")
 
   if [ "$SUBURBAN" != "" ];
   then

@@ -10,7 +10,7 @@ then
   
   debug_start "The Bible"
 
-  BIBLE=$(egrep -i "$KEYWORDS_BIBLE" newpages.txt| egrep -iv "$KEYWORDS_BIBLE_EXCLUDE" && egrep "$KEYWORDS_BIBLE_CASESENSITIVE" newpages.txt | egrep -iv "$KEYWORDS_BIBLE_EXCLUDE")
+  BIBLE=$(egrep -i "$KEYWORDS_BIBLE" "$NEWPAGES"| egrep -iv "$KEYWORDS_BIBLE_EXCLUDE" && egrep "$KEYWORDS_BIBLE_CASESENSITIVE" "$NEWPAGES" | egrep -iv "$KEYWORDS_BIBLE_EXCLUDE")
 
   if [ "$BIBLE" != "" ];
   then

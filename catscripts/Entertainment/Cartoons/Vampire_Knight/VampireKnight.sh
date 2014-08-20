@@ -7,7 +7,7 @@ then
 
   debug_start "Vampire Knight"
 
-  VAMPIREKNIGHT=$(egrep -i "$KEYWORDS_VAMPIREKNIGHT" newpages.txt)
+  VAMPIREKNIGHT=$(egrep -i "$KEYWORDS_VAMPIREKNIGHT" "$NEWPAGES")
 
   if [ "$VAMPIREKNIGHT" != "" ];
   then

@@ -7,7 +7,7 @@ then
 
   debug_start "Woozworld"
 
-  WOOZWORLD=$(egrep -i "$KEYWORDS_WOOZWORLD" newpages.txt)
+  WOOZWORLD=$(egrep -i "$KEYWORDS_WOOZWORLD" "$NEWPAGES")
 
   if [ "$WOOZWORLD" != "" ];
   then

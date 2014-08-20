@@ -7,7 +7,7 @@ then
   
   debug_start "Of Mice and Men"
 
-  MICEMEN=$(egrep -i "$KEYWORDS_MICEANDMEN" newpages.txt)
+  MICEMEN=$(egrep -i "$KEYWORDS_MICEANDMEN" "$NEWPAGES")
 
   if [ "$MICEMEN" != "" ];
   then

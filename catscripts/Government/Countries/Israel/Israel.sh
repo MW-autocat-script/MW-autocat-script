@@ -13,10 +13,10 @@ then
   
   debug_start "Israel"
 
-  ISRAEL=$(egrep -i "$KEYWORDS_ISRAEL" newpages.txt | egrep -iv "$KEYWORDS_ISRAEL_EXCLUDE")
-  ISRAELITES=$(egrep -i "$KEYWORDS_ANCIENTISRAEL" newpages.txt)
-  JERUSALEM=$(egrep -i "$KEYWORDS_JERUSALEM" newpages.txt | egrep -iv "$KEYWORDS_JERUSALEM_EXCLUDE")
-  TELAVIV=$(egrep -i "$KEYWORDS_TELAVIV" newpages.txt)
+  ISRAEL=$(egrep -i "$KEYWORDS_ISRAEL" "$NEWPAGES" | egrep -iv "$KEYWORDS_ISRAEL_EXCLUDE")
+  ISRAELITES=$(egrep -i "$KEYWORDS_ANCIENTISRAEL" "$NEWPAGES")
+  JERUSALEM=$(egrep -i "$KEYWORDS_JERUSALEM" "$NEWPAGES" | egrep -iv "$KEYWORDS_JERUSALEM_EXCLUDE")
+  TELAVIV=$(egrep -i "$KEYWORDS_TELAVIV" "$NEWPAGES")
 
   if [ "$ISRAEL" != "" ];
   then

@@ -8,7 +8,7 @@ then
   
   debug_start "Guinea-Bissau"
 
-  GUINEABISSAU=$(egrep -i "$KEYWORDS_GUINEABISSAU" newpages.txt)
+  GUINEABISSAU=$(egrep -i "$KEYWORDS_GUINEABISSAU" "$NEWPAGES")
 
   if [ "$GUINEABISSAU" != "" ];
   then

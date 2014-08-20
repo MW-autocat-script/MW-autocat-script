@@ -7,7 +7,7 @@ then
 
   debug_start "Algebra"
 
-  ALGEBRA=$(egrep -i "$KEYWORDS_ALGEBRA" newpages.txt)
+  ALGEBRA=$(egrep -i "$KEYWORDS_ALGEBRA" "$NEWPAGES")
 
   if [ "$ALGEBRA" != "" ];
   then

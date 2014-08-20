@@ -7,7 +7,7 @@ then
 
   debug_start "Fiesta Online"
 
-  FIESTA=$(egrep -i "$KEYWORDS_MMORPG_FIESTA" newpages.txt)
+  FIESTA=$(egrep -i "$KEYWORDS_MMORPG_FIESTA" "$NEWPAGES")
 
   if [ "$FIESTA" != "" ];
   then

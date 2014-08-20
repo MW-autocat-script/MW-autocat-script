@@ -7,7 +7,7 @@ then
   
   debug_start "Fantage"
 
-  FANTAGE=$(egrep -i "$KEYWORDS_MMORPG_FANTAGE" newpages.txt)
+  FANTAGE=$(egrep -i "$KEYWORDS_MMORPG_FANTAGE" "$NEWPAGES")
 
   if [ "$FANTAGE" != "" ];
   then

@@ -8,7 +8,7 @@ then
   
   debug_start "Tamagotchi"
 
-  TAMAGOTCHI=$(egrep -i "$KEYWORDS_TAMAGOTCHI" newpages.txt)
+  TAMAGOTCHI=$(egrep -i "$KEYWORDS_TAMAGOTCHI" "$NEWPAGES")
 
   if [ "$TAMAGOTCHI" != "" ];
   then

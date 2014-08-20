@@ -7,7 +7,7 @@ then
 
   debug_start "Talisman Online"
 
-  TALISMAN=$(egrep -i "$KEYWORDS_MMORPG_TALISMAN" newpages.txt)
+  TALISMAN=$(egrep -i "$KEYWORDS_MMORPG_TALISMAN" "$NEWPAGES")
 
   if [ "$TALISMAN" != "" ];
   then

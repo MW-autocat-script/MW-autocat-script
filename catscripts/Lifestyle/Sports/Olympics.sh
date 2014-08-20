@@ -13,7 +13,7 @@ then
 
   debug_start "Olympics"
   
-  SOCHI2014="$(egrep -i "$KEYWORDS_SOCHI2014" newpages.txt)"
+  SOCHI2014="$(egrep -i "$KEYWORDS_SOCHI2014" "$NEWPAGES")"
 
   if [ "$SOCHI2014" != "" ];
   then
@@ -25,7 +25,7 @@ then
     rm Sochi2014.txt
   fi
 
-  LONDON2012="$(egrep -i "$KEYWORDS_LONDON2012" newpages.txt)"
+  LONDON2012="$(egrep -i "$KEYWORDS_LONDON2012" "$NEWPAGES")"
 
   if [ "$LONDON2012" != "" ];
   then
@@ -37,7 +37,7 @@ then
     rm London2012.txt
   fi
 
-  ANCIENTGREEKOLYMPICS="$(egrep -i "$KEYWORDS_ANCIENTGREEKOLYMPICS" newpages.txt)"
+  ANCIENTGREEKOLYMPICS="$(egrep -i "$KEYWORDS_ANCIENTGREEKOLYMPICS" "$NEWPAGES")"
 
   if [ "$ANCIENTGREEKOLYMPICS" != "" ];
   then
@@ -49,7 +49,7 @@ then
     rm AncientGreekOlympics.txt
   fi
 
-  OLYMPICS="$(egrep -i "$KEYWORDS_OLYMPICS" newpages.txt | egrep -iv "$KEYWORDS_OLYMPICS_EXCLUDE")"
+  OLYMPICS="$(egrep -i "$KEYWORDS_OLYMPICS" "$NEWPAGES" | egrep -iv "$KEYWORDS_OLYMPICS_EXCLUDE")"
 
   if [ "$OLYMPICS" != "" ];
   then

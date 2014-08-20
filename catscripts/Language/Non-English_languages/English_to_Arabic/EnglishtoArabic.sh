@@ -7,7 +7,7 @@ then
 
   debug_start "English to Arabic"
 
-  ARABIC=$(egrep -i "$KEYWORDS_ENGLISHTOARABIC" newpages.txt)
+  ARABIC=$(egrep -i "$KEYWORDS_ENGLISHTOARABIC" "$NEWPAGES")
 
   if [ "$ARABIC" != "" ];
   then

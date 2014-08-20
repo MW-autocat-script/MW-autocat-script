@@ -15,12 +15,12 @@ then
 
   debug_start "California"
 
-  CALIFORNIA=$(egrep -i "$KEYWORDS_CALIFORNIA" newpages.txt | egrep -iv "$KEYWORDS_CALIFORNIA_EXCLUDE")
-  LOSANGELES=$(egrep -i "$KEYWORDS_LOSANGELES" newpages.txt | egrep -iv "$KEYWORDS_LOSANGELES_EXCLUDE")
-  SACRAMENTO=$(egrep -i "$KEYWORDS_SACRAMENTO" newpages.txt)
-  SANDIEGO=$(egrep -i "$KEYWORDS_SANDIEGO" newpages.txt)
-  SANFRANCISCO=$(egrep -i "$KEYWORDS_SANFRANCISCO" newpages.txt)
-  UCLA=$(egrep -i "$KEYWORDS_UCLA" newpages.txt)
+  CALIFORNIA=$(egrep -i "$KEYWORDS_CALIFORNIA" "$NEWPAGES" | egrep -iv "$KEYWORDS_CALIFORNIA_EXCLUDE")
+  LOSANGELES=$(egrep -i "$KEYWORDS_LOSANGELES" "$NEWPAGES" | egrep -iv "$KEYWORDS_LOSANGELES_EXCLUDE")
+  SACRAMENTO=$(egrep -i "$KEYWORDS_SACRAMENTO" "$NEWPAGES")
+  SANDIEGO=$(egrep -i "$KEYWORDS_SANDIEGO" "$NEWPAGES")
+  SANFRANCISCO=$(egrep -i "$KEYWORDS_SANFRANCISCO" "$NEWPAGES")
+  UCLA=$(egrep -i "$KEYWORDS_UCLA" "$NEWPAGES")
 
   if [ "$CALIFORNIA" != "" ];
   then

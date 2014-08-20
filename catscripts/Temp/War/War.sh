@@ -8,8 +8,8 @@ then
 
   debug_start "War"
 
-  WWONE=$(egrep -i "$KEYWORDS_WORLDWARONE" newpages.txt)
-  WWTWO=$(egrep -i "$KEYWORDS_WORLDWARTWO" newpages.txt)
+  WWONE=$(egrep -i "$KEYWORDS_WORLDWARONE" "$NEWPAGES")
+  WWTWO=$(egrep -i "$KEYWORDS_WORLDWARTWO" "$NEWPAGES")
 
   if [ "$WWONE" != "" ];
   then

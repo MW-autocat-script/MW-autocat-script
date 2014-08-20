@@ -13,13 +13,13 @@ then
 
   debug_start "Ford"
 
-  FORD=$(egrep -i "$KEYWORDS_FORD" newpages.txt)
-  TAURUS=$(egrep -i "$KEYWORDS_TAURUS" newpages.txt)
-  ESCORT=$(egrep -i "$KEYWORDS_ESCORT" newpages.txt)
-  FOCUS=$(egrep -i "$KEYWORDS_FOCUS" newpages.txt)
-  MUSTANG=$(egrep -i "$KEYWORDS_MUSTANG" newpages.txt)
-  CONTOUR=$(egrep -i "$KEYWORDS_CONTOUR" newpages.txt)
-  #MONDEO=$(egrep -i "$KEYWORDS_MONDEO" newpages.txt) #No category exists and currently insufficient number of questions to create
+  FORD=$(egrep -i "$KEYWORDS_FORD" "$NEWPAGES")
+  TAURUS=$(egrep -i "$KEYWORDS_TAURUS" "$NEWPAGES")
+  ESCORT=$(egrep -i "$KEYWORDS_ESCORT" "$NEWPAGES")
+  FOCUS=$(egrep -i "$KEYWORDS_FOCUS" "$NEWPAGES")
+  MUSTANG=$(egrep -i "$KEYWORDS_MUSTANG" "$NEWPAGES")
+  CONTOUR=$(egrep -i "$KEYWORDS_CONTOUR" "$NEWPAGES")
+  #MONDEO=$(egrep -i "$KEYWORDS_MONDEO" "$NEWPAGES") #No category exists and currently insufficient number of questions to create
 
   if [ "$FORD" != "" ];
   then

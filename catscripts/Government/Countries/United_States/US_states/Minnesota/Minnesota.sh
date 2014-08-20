@@ -7,7 +7,7 @@ then
 
   debug_start "Minnesota"
 
-  MINNESOTA=$(egrep -i "$KEYWORDS_MINNESOTA" newpages.txt)
+  MINNESOTA=$(egrep -i "$KEYWORDS_MINNESOTA" "$NEWPAGES")
 
   if [ "$MINNESOTA" != "" ];
   then

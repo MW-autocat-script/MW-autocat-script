@@ -7,7 +7,7 @@ then
   
   debug_start "GhostX"
 
-  GHOSTX=$(egrep -i "$KEYWORDS_MMORPG_GHOSTX" newpages.txt)
+  GHOSTX=$(egrep -i "$KEYWORDS_MMORPG_GHOSTX" "$NEWPAGES")
 
   if [ "$GHOSTX" != "" ];
   then

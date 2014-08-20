@@ -7,7 +7,7 @@ then
 
   debug_start "AdventureQuest Worlds"
 
-  AQW=$(egrep -i "$KEYWORDS_MMORPG_AQW" newpages.txt)
+  AQW=$(egrep -i "$KEYWORDS_MMORPG_AQW" "$NEWPAGES")
 
   if [ "$AQW" != "" ];
   then

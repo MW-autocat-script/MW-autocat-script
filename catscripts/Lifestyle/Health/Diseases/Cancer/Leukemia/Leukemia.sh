@@ -7,7 +7,7 @@ then
   
   debug_start "Leukemia"
 
-  LEUKEMIA="$(egrep -i "$KEYWORDS_LEUKEMIA" newpages.txt)"
+  LEUKEMIA="$(egrep -i "$KEYWORDS_LEUKEMIA" "$NEWPAGES")"
 
   if [ "$LEUKEMIA" != "" ];
   then

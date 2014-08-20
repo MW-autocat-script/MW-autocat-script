@@ -7,7 +7,7 @@ then
   
   debug_start "Beowulf"
 
-  BEOWULF=$(egrep -i "$KEYWORDS_BEOWULF" newpages.txt)
+  BEOWULF=$(egrep -i "$KEYWORDS_BEOWULF" "$NEWPAGES")
 
   if [ "$BEOWULF" != "" ];
   then

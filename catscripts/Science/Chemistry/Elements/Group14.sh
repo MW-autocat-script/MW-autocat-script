@@ -17,12 +17,12 @@ then
 
   debug_start "Group 14 elements"
 
-  CARBON=$(egrep -i "$KEYWORDS_CARBON" newpages.txt | egrep -iv "$KEYWORDS_CARBON_EXCLUDE")
-  SILICON=$(egrep -i "$KEYWORDS_SILICON" newpages.txt | egrep -iv "$KEYWORDS_SILICON_EXCLUDE")
-  GERMANIUM=$(egrep -i "$KEYWORDS_GERMANIUM" newpages.txt | egrep -iv "$KEYWORDS_GERMANIUM_EXCLUDE")
-  TIN=$(egrep -i "$KEYWORDS_TIN" newpages.txt | egrep -iv "$KEYWORDS_TIN_EXCLUDE")
-  LEAD=$(egrep -i "$KEYWORDS_LEAD" newpages.txt)
-  FLEROVIUM=$(egrep -i "$KEYWORDS_FLEROVIUM" newpages.txt | egrep -iv "$KEYWORDS_FLEROVIUM_EXCLUDE")
+  CARBON=$(egrep -i "$KEYWORDS_CARBON" "$NEWPAGES" | egrep -iv "$KEYWORDS_CARBON_EXCLUDE")
+  SILICON=$(egrep -i "$KEYWORDS_SILICON" "$NEWPAGES" | egrep -iv "$KEYWORDS_SILICON_EXCLUDE")
+  GERMANIUM=$(egrep -i "$KEYWORDS_GERMANIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_GERMANIUM_EXCLUDE")
+  TIN=$(egrep -i "$KEYWORDS_TIN" "$NEWPAGES" | egrep -iv "$KEYWORDS_TIN_EXCLUDE")
+  LEAD=$(egrep -i "$KEYWORDS_LEAD" "$NEWPAGES")
+  FLEROVIUM=$(egrep -i "$KEYWORDS_FLEROVIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_FLEROVIUM_EXCLUDE")
 
   if [ "$CARBON" != "" ];
   then

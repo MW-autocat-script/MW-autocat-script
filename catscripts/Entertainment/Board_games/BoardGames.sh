@@ -11,9 +11,9 @@ then
 
   debug_start "Board games"
 
-  BOARDGAMES=$(egrep -i "$KEYWORDS_BOARDGAMES" newpages.txt | egrep -iv "$KEYWORDS_BOARDGAMES_EXCLUDE")
-  CHESS=$(egrep -i "$KEYWORDS_CHESS" newpages.txt | egrep -iv "$KEYWORDS_CHESS_EXCLUDE")
-  CHECKERS=$(egrep -i "$KEYWORDS_CHECKERS" newpages.txt)
+  BOARDGAMES=$(egrep -i "$KEYWORDS_BOARDGAMES" "$NEWPAGES" | egrep -iv "$KEYWORDS_BOARDGAMES_EXCLUDE")
+  CHESS=$(egrep -i "$KEYWORDS_CHESS" "$NEWPAGES" | egrep -iv "$KEYWORDS_CHESS_EXCLUDE")
+  CHECKERS=$(egrep -i "$KEYWORDS_CHECKERS" "$NEWPAGES")
 
   if [ "$BOARDGAMES" != "" ];
   then

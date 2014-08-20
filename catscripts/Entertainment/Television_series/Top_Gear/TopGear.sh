@@ -7,7 +7,7 @@ then
   
   debug_start "Top Gear"
 
-  TOPGEAR=$(egrep -i "$KEYWORDS_TOPGEAR" newpages.txt)
+  TOPGEAR=$(egrep -i "$KEYWORDS_TOPGEAR" "$NEWPAGES")
 
   if [ "$TOPGEAR" != "" ];
   then

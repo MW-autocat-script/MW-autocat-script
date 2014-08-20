@@ -13,7 +13,7 @@ then
   $ASTRONOMYDIR/Planets/Planets.sh
   $ASTRONOMYDIR/Moon/Moon.sh
 
-  ASTEROIDS=$(egrep -i "$KEYWORDS_ASTEROIDS" newpages.txt | egrep -iv "$KEYWORDS_ASTEROIDS_EXCLUDE")
+  ASTEROIDS=$(egrep -i "$KEYWORDS_ASTEROIDS" "$NEWPAGES" | egrep -iv "$KEYWORDS_ASTEROIDS_EXCLUDE")
 
   if [ "$ASTEROIDS" != "" ];
   then

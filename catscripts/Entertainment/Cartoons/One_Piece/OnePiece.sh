@@ -7,7 +7,7 @@ then
   
   debug_start "One Piece"
 
-  ONEPIECE="$(egrep "$KEYWORDS_ONEPIECE" newpages.txt)"
+  ONEPIECE="$(egrep "$KEYWORDS_ONEPIECE" "$NEWPAGES")"
   
   if [ "$ONEPIECE" != "" ];
   then

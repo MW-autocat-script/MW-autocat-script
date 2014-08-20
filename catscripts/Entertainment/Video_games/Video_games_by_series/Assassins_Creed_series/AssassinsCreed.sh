@@ -10,9 +10,9 @@ then
 
   debug_start "Assassin's Creed series"
 
-SERIES=$(egrep -i "$KEYWORDS_ASSASSINSCREED" newpages.txt | egrep -iv "$KEYWORDS_ASSASSINSCREED_EXCLUDE")
-TWO=$(egrep -i "$KEYWORDS_CREEDTWO" newpages.txt)
-THREE=$(egrep -i "$KEYWORDS_CREEDTHREE" newpages.txt)
+SERIES=$(egrep -i "$KEYWORDS_ASSASSINSCREED" "$NEWPAGES" | egrep -iv "$KEYWORDS_ASSASSINSCREED_EXCLUDE")
+TWO=$(egrep -i "$KEYWORDS_CREEDTWO" "$NEWPAGES")
+THREE=$(egrep -i "$KEYWORDS_CREEDTHREE" "$NEWPAGES")
 
   if [ "$SERIES" != "" ];
   then

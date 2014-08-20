@@ -7,7 +7,7 @@ then
   
   debug_start "The Last Remnant"
 
-  REMNANT=$(egrep -i "$KEYWORDS_THELASTREMNANT" newpages.txt)
+  REMNANT=$(egrep -i "$KEYWORDS_THELASTREMNANT" "$NEWPAGES")
 
   if [ "$REMNANT" != "" ];
   then

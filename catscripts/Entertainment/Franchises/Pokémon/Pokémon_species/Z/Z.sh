@@ -16,15 +16,15 @@ then
 
   debug_start "Pokemon Z script"
 
-  ZANGOOSE="$(egrep -i "$KEYWORDS_ZANGOOSE" newpages.txt)"
-  ZAPDOS="$(egrep -i "$KEYWORDS_ZAPDOS" newpages.txt)"
-  ZEBSTRIKA="$(egrep -i "$KEYWORDS_ZEBSTRIKA" newpages.txt)"
-  ZEKROM="$(egrep -i "$KEYWORDS_ZEKROM" newpages.txt)"
-  ZIGZAGOON="$(egrep -i "$KEYWORDS_ZIGZAGOON" newpages.txt)"
-  ZOROARK="$(egrep -i "$KEYWORDS_ZOROARK" newpages.txt)"
-  ZORUA="$(egrep -i "$KEYWORDS_ZORUA" newpages.txt)"
-  ZWEILOUS="$(egrep -i "$KEYWORDS_ZWEILOUS" newpages.txt)"
-  ZUBAT="$(egrep -i "$KEYWORDS_ZUBAT" newpages.txt)"
+  ZANGOOSE="$(egrep -i "$KEYWORDS_ZANGOOSE" "$NEWPAGES")"
+  ZAPDOS="$(egrep -i "$KEYWORDS_ZAPDOS" "$NEWPAGES")"
+  ZEBSTRIKA="$(egrep -i "$KEYWORDS_ZEBSTRIKA" "$NEWPAGES")"
+  ZEKROM="$(egrep -i "$KEYWORDS_ZEKROM" "$NEWPAGES")"
+  ZIGZAGOON="$(egrep -i "$KEYWORDS_ZIGZAGOON" "$NEWPAGES")"
+  ZOROARK="$(egrep -i "$KEYWORDS_ZOROARK" "$NEWPAGES")"
+  ZORUA="$(egrep -i "$KEYWORDS_ZORUA" "$NEWPAGES")"
+  ZWEILOUS="$(egrep -i "$KEYWORDS_ZWEILOUS" "$NEWPAGES")"
+  ZUBAT="$(egrep -i "$KEYWORDS_ZUBAT" "$NEWPAGES")"
 
   if [ "$ZANGOOSE" != "" ];
   then

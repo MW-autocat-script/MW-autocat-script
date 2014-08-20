@@ -8,7 +8,7 @@ then
 
   debug_start "Parts of speech"
 
-  SPEECH=$(egrep -i "$KEYWORDS_PARTSOFSPEECH" newpages.txt)
+  SPEECH=$(egrep -i "$KEYWORDS_PARTSOFSPEECH" "$NEWPAGES")
 
   if [ "$SPEECH" != "" ];
   then

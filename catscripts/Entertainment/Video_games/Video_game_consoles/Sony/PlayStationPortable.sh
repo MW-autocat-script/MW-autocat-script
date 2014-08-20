@@ -7,7 +7,7 @@ then
 
   debug_start "PlayStation Portable"
 
-  PSP=$(egrep -i "$KEYWORDS_PSP" newpages.txt)
+  PSP=$(egrep -i "$KEYWORDS_PSP" "$NEWPAGES")
 
   if [ "$PSP" != "" ];
   then

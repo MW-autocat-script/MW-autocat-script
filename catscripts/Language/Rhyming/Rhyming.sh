@@ -8,7 +8,7 @@ then
 
   debug_start "Rhyming"
 
-  RHYMES=$(egrep -i "$KEYWORDS_RHYMING" newpages.txt | egrep -iv "$KEYWORDS_RHYMING_EXCLUDE")
+  RHYMES=$(egrep -i "$KEYWORDS_RHYMING" "$NEWPAGES" | egrep -iv "$KEYWORDS_RHYMING_EXCLUDE")
 
   if [ "$RHYMES" != "" ];
   then

@@ -8,7 +8,7 @@ then
 
   debug_start "Star Wars: Knights of the Old Republic"
 
-  KOTOR=$(egrep -i "$KEYWORDS_KOTOR" newpages.txt | egrep -iv "$KEYWORDS_KOTOR_EXCLUDE")
+  KOTOR=$(egrep -i "$KEYWORDS_KOTOR" "$NEWPAGES" | egrep -iv "$KEYWORDS_KOTOR_EXCLUDE")
 
   if [ "$KOTOR" != "" ];
   then

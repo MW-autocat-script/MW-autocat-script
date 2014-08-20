@@ -25,13 +25,13 @@ then
   
   debug_start "Computer networking"
 
-  NETWORK="$(egrep -i "$KEYWORDS_NETWORK" newpages.txt | egrep -iv "$KEYWORDS_NETWORK_EXCLUDE")"
-  TELNET="$(egrep -i "$KEYWORDS_TELNET" newpages.txt)"
-  SSH="$(egrep -i "$KEYWORDS_SSH" newpages.txt)"
-  FTP="$(egrep -i "$KEYWORDS_FTP" newpages.txt)"
-  VOIP="$(egrep -i "$KEYWORDS_VOIP" newpages.txt | egrep -iv "$KEYWORDS_VOIP_EXCLUDE")"
-  SKYPE="$(egrep -i "$KEYWORDS_SKYPE" newpages.txt)"
-  BLUETOOTH="$(egrep -i "$KEYWORDS_BLUETOOTH" newpages.txt)"
+  NETWORK="$(egrep -i "$KEYWORDS_NETWORK" "$NEWPAGES" | egrep -iv "$KEYWORDS_NETWORK_EXCLUDE")"
+  TELNET="$(egrep -i "$KEYWORDS_TELNET" "$NEWPAGES")"
+  SSH="$(egrep -i "$KEYWORDS_SSH" "$NEWPAGES")"
+  FTP="$(egrep -i "$KEYWORDS_FTP" "$NEWPAGES")"
+  VOIP="$(egrep -i "$KEYWORDS_VOIP" "$NEWPAGES" | egrep -iv "$KEYWORDS_VOIP_EXCLUDE")"
+  SKYPE="$(egrep -i "$KEYWORDS_SKYPE" "$NEWPAGES")"
+  BLUETOOTH="$(egrep -i "$KEYWORDS_BLUETOOTH" "$NEWPAGES")"
 
   if [ "$NETWORK" != "" ];
   then

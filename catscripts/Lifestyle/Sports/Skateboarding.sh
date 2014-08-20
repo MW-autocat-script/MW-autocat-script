@@ -8,7 +8,7 @@ then
 
   debug_start "Skateboarding"
 
-  SKATEBOARDING=$(egrep -i "$KEYWORDS_SKATEBOARDING" newpages.txt)
+  SKATEBOARDING=$(egrep -i "$KEYWORDS_SKATEBOARDING" "$NEWPAGES")
 
   if [ "$SKATEBOARDING" != "" ];
   then

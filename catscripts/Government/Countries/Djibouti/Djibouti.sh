@@ -8,7 +8,7 @@ then
   
   debug_start "Djibouti"
 
-  DJIBOUTI=$(egrep -i "$KEYWORDS_DJIBOUTI" newpages.txt)
+  DJIBOUTI=$(egrep -i "$KEYWORDS_DJIBOUTI" "$NEWPAGES")
 
   if [ "$DJIBOUTI" != "" ];
   then

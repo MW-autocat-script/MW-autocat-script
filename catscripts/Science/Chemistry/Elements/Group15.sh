@@ -16,12 +16,12 @@ then
 
   debug_start "Group 15 elements"
 
-  NITROGEN=$(egrep -i "$KEYWORDS_NITROGEN" newpages.txt | egrep -iv "$KEYWORDS_NITROGEN_EXCLUDE")
-  PHOSPHORUS=$(egrep -i "$KEYWORDS_PHOSPHORUS" newpages.txt | egrep -iv "$KEYWORDS_PHOSPHORUS_EXCLUDE")
-  ARSENIC=$(egrep -i "$KEYWORDS_ARSENIC" newpages.txt | egrep -iv "$KEYWORDS_ARSENIC_EXCLUDE")
-  ANTIMONY=$(egrep -i "$KEYWORDS_ANTIMONY" newpages.txt | egrep -iv "$KEYWORDS_ANTIMONY_EXCLUDE")
-  BISMUTH=$(egrep -i "$KEYWORDS_BISMUTH" newpages.txt)
-  UNUNPENTIUM=$(egrep -i "$KEYWORDS_UNUNPENTIUM" newpages.txt)
+  NITROGEN=$(egrep -i "$KEYWORDS_NITROGEN" "$NEWPAGES" | egrep -iv "$KEYWORDS_NITROGEN_EXCLUDE")
+  PHOSPHORUS=$(egrep -i "$KEYWORDS_PHOSPHORUS" "$NEWPAGES" | egrep -iv "$KEYWORDS_PHOSPHORUS_EXCLUDE")
+  ARSENIC=$(egrep -i "$KEYWORDS_ARSENIC" "$NEWPAGES" | egrep -iv "$KEYWORDS_ARSENIC_EXCLUDE")
+  ANTIMONY=$(egrep -i "$KEYWORDS_ANTIMONY" "$NEWPAGES" | egrep -iv "$KEYWORDS_ANTIMONY_EXCLUDE")
+  BISMUTH=$(egrep -i "$KEYWORDS_BISMUTH" "$NEWPAGES")
+  UNUNPENTIUM=$(egrep -i "$KEYWORDS_UNUNPENTIUM" "$NEWPAGES")
 
   if [ "$NITROGEN" != "" ];
   then

@@ -7,7 +7,7 @@ then
 
   debug_start "Jurassic Park"
 
-  JURASSICPARK=$(egrep -i "$KEYWORDS_MOVIES_JURASSIC_PARK" newpages.txt)
+  JURASSICPARK=$(egrep -i "$KEYWORDS_MOVIES_JURASSIC_PARK" "$NEWPAGES")
 
   if [ "$JURASSICPARK" != "" ];
   then

@@ -10,8 +10,8 @@ then
   
   debug_start "United Arab Emirates"
 
-  UAE=$(egrep -i "$KEYWORDS_UAE" newpages.txt | egrep -iv "$KEYWORDS_UAE_EXCLUDE")
-  DUBAI=$(egrep -i "$KEYWORDS_DUBAI" newpages.txt)
+  UAE=$(egrep -i "$KEYWORDS_UAE" "$NEWPAGES" | egrep -iv "$KEYWORDS_UAE_EXCLUDE")
+  DUBAI=$(egrep -i "$KEYWORDS_DUBAI" "$NEWPAGES")
 
   if [ "$UAE" != "" ];
   then

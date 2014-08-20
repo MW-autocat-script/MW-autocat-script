@@ -8,8 +8,8 @@ then
 
   debug_start "Etymology"
 
-  ETYMOLOGY=$(egrep -i "$KEYWORDS_ETYMOLOGY" newpages.txt | egrep -iv "$KEYWORDS_NAMEORIGINS")
-  ORIGINS=$(egrep -i "$KEYWORDS_NAMEORIGINS" newpages.txt)
+  ETYMOLOGY=$(egrep -i "$KEYWORDS_ETYMOLOGY" "$NEWPAGES" | egrep -iv "$KEYWORDS_NAMEORIGINS")
+  ORIGINS=$(egrep -i "$KEYWORDS_NAMEORIGINS" "$NEWPAGES")
 
   if [ "$ETYMOLOGY" != "" ];
   then

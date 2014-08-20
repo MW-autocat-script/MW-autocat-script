@@ -7,7 +7,7 @@ then
   
   debug_start "Phineas and Ferb"
 
-  PHINEASANDFERB=$(egrep -i "$KEYWORDS_PHINEASANDFERB" newpages.txt)
+  PHINEASANDFERB=$(egrep -i "$KEYWORDS_PHINEASANDFERB" "$NEWPAGES")
 
   if [ "$PHINEASANDFERB" != "" ];
   then

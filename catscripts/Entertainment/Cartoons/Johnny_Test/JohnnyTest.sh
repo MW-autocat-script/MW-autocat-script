@@ -7,7 +7,7 @@ then
 
   debug_start "Johnny Test"
 
-  JOHNNYTEST="$(egrep -i "$KEYWORDS_JOHNNYTEST" newpages.txt)"
+  JOHNNYTEST="$(egrep -i "$KEYWORDS_JOHNNYTEST" "$NEWPAGES")"
 
   if [ "$JOHNNYTEST" != "" ];
   then

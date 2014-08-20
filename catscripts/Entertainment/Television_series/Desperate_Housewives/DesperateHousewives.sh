@@ -7,7 +7,7 @@ then
   
   debug_start "Desperate Housewives"
 
-  HOUSEWIVES=$(egrep -i "$KEYWORDS_DESPERATEHOUSEWIVES" newpages.txt)
+  HOUSEWIVES=$(egrep -i "$KEYWORDS_DESPERATEHOUSEWIVES" "$NEWPAGES")
 
   if [ "$HOUSEWIVES" != "" ];
   then

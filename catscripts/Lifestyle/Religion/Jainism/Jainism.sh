@@ -8,7 +8,7 @@ then
   
   debug_start "Jainism"
 
-  JAINISM="$(egrep -i "$KEYWORDS_JAINISM" newpages.txt)"
+  JAINISM="$(egrep -i "$KEYWORDS_JAINISM" "$NEWPAGES")"
 
   if [ "$JAINISM" != "" ];
   then

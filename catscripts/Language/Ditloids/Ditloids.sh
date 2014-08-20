@@ -7,7 +7,7 @@ then
 
   debug_start "Ditloids"
 
-  DITLOIDS=$(egrep -i "$KEYWORDS_DITLOIDS" newpages.txt)
+  DITLOIDS=$(egrep -i "$KEYWORDS_DITLOIDS" "$NEWPAGES")
 
   if [ "$DITLOIDS" != "" ];
   then

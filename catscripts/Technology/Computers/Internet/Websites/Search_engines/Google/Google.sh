@@ -12,10 +12,10 @@ then
   
   debug_start "Google"
   
-  GOOGLE=$(egrep -i "$KEYWORDS_GOOGLE" newpages.txt | egrep -iv "$KEYWORDS_GOOGLE_EXCLUDE")
-  YOUTUBE=$(egrep -i "$KEYWORDS_YOUTUBE" newpages.txt)
-  GOOGLEMAPS=$(egrep -i "$KEYWORDS_GOOGLEMAPS" newpages.txt)
-  GOOGLEEARTH=$(egrep -i "$KEYWORDS_GOOGLEEARTH" newpages.txt)
+  GOOGLE=$(egrep -i "$KEYWORDS_GOOGLE" "$NEWPAGES" | egrep -iv "$KEYWORDS_GOOGLE_EXCLUDE")
+  YOUTUBE=$(egrep -i "$KEYWORDS_YOUTUBE" "$NEWPAGES")
+  GOOGLEMAPS=$(egrep -i "$KEYWORDS_GOOGLEMAPS" "$NEWPAGES")
+  GOOGLEEARTH=$(egrep -i "$KEYWORDS_GOOGLEEARTH" "$NEWPAGES")
 
   if [ "$GOOGLE" != "" ];
   then

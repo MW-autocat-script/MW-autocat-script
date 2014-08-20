@@ -7,7 +7,7 @@ then
 
   debug_start "Porsche"
 
-  PORSCHE=$(egrep -i "$KEYWORDS_PORSCHE" newpages.txt)
+  PORSCHE=$(egrep -i "$KEYWORDS_PORSCHE" "$NEWPAGES")
 
   if [ "$PORSCHE" != "" ];
   then

@@ -7,7 +7,7 @@ then
 
   debug_start "Runes of Magic"
 
-  RUNESOFMAGIC=$(egrep -i "$KEYWORDS_MMORPG_RUNESOFMAGIC" newpages.txt)
+  RUNESOFMAGIC=$(egrep -i "$KEYWORDS_MMORPG_RUNESOFMAGIC" "$NEWPAGES")
 
   if [ "$RUNESOFMAGIC" != "" ];
   then

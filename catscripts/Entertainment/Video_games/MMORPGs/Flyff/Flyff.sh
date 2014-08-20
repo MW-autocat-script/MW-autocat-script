@@ -7,7 +7,7 @@ then
 
   debug_start "Flyff"
 
-  FLYFF=$(egrep -i "$KEYWORDS_MMORPG_FLYFF" newpages.txt)
+  FLYFF=$(egrep -i "$KEYWORDS_MMORPG_FLYFF" "$NEWPAGES")
 
   if [ "$FLYFF" != "" ];
   then

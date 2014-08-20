@@ -9,7 +9,7 @@ then
 
   debug_start "MS-DOS"
 
-  MSDOS=$(egrep -i "$KEYWORDS_MSDOS" newpages.txt | egrep -iv "$KEYWORDS_MSDOS_EXCLUDE" | egrep -v "$KEYWORDS_MSDOS_CASESENSITIVE_EXCLUDE")
+  MSDOS=$(egrep -i "$KEYWORDS_MSDOS" "$NEWPAGES" | egrep -iv "$KEYWORDS_MSDOS_EXCLUDE" | egrep -v "$KEYWORDS_MSDOS_CASESENSITIVE_EXCLUDE")
 
   if [ "$MSDOS" != "" ];
   then

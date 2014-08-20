@@ -7,7 +7,7 @@ then
 
   debug_start "Myspace"
 
-  MYSPACE=$(egrep -i "$KEYWORDS_MYSPACE" newpages.txt)
+  MYSPACE=$(egrep -i "$KEYWORDS_MYSPACE" "$NEWPAGES")
 
   if [ "$MYSPACE" != "" ];
   then

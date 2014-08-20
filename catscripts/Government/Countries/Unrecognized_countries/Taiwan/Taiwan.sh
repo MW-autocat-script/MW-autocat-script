@@ -8,7 +8,7 @@ then
 
   debug_start "Taiwan"
 
-  TAIWAN=$(egrep -i "$KEYWORDS_TAIWAN" newpages.txt | egrep -iv "$KEYWORDS_TAIWAN_EXCLUDE")
+  TAIWAN=$(egrep -i "$KEYWORDS_TAIWAN" "$NEWPAGES" | egrep -iv "$KEYWORDS_TAIWAN_EXCLUDE")
 
   if [ "$TAIWAN" != "" ];
   then

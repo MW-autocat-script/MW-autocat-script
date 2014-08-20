@@ -7,7 +7,7 @@ then
   
   debug_start "Redwall"
 
-  REDWALL=$(egrep -i "$KEYWORDS_REDWALL" newpages.txt)
+  REDWALL=$(egrep -i "$KEYWORDS_REDWALL" "$NEWPAGES")
 
   if [ "$REDWALL" != "" ];
   then

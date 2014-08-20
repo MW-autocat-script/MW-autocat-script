@@ -7,7 +7,7 @@ then
 
   debug_start "Star Wars: The Clone Wars"
 
-  CLONEWARS=$(egrep -i "$KEYWORDS_CLONEWARS" newpages.txt)
+  CLONEWARS=$(egrep -i "$KEYWORDS_CLONEWARS" "$NEWPAGES")
 
   if [ "$CLONEWARS" != "" ];
   then

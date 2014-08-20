@@ -14,11 +14,11 @@ then
   
   debug_start "China"
 
-  CHINA=$(egrep -i "$KEYWORDS_CHINA" newpages.txt)
-  CHINASECONDARY=$(egrep -i "$KEYWORDS_CHINA_SECONDARY" newpages.txt | egrep -iv "$KEYWORDS_CHINA_SECONDARY_EXCLUDE")
-  WALL=$(egrep -i "$KEYWORDS_GREATWALL" newpages.txt)
-  BEIJING=$(egrep -i "$KEYWORDS_BEIJING" newpages.txt)
-  HONGKONG=$(egrep -i "$KEYWORDS_HONGKONG" newpages.txt)
+  CHINA=$(egrep -i "$KEYWORDS_CHINA" "$NEWPAGES")
+  CHINASECONDARY=$(egrep -i "$KEYWORDS_CHINA_SECONDARY" "$NEWPAGES" | egrep -iv "$KEYWORDS_CHINA_SECONDARY_EXCLUDE")
+  WALL=$(egrep -i "$KEYWORDS_GREATWALL" "$NEWPAGES")
+  BEIJING=$(egrep -i "$KEYWORDS_BEIJING" "$NEWPAGES")
+  HONGKONG=$(egrep -i "$KEYWORDS_HONGKONG" "$NEWPAGES")
 
   if [ "$CHINA" != "" ];
   then

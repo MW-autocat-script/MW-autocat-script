@@ -7,7 +7,7 @@ then
   
   debug_start "Battlefield series"
 
-  BATTLEFIELD=$(egrep -i "$KEYWORDS_BATTLEFIELDSERIES" newpages.txt)
+  BATTLEFIELD=$(egrep -i "$KEYWORDS_BATTLEFIELDSERIES" "$NEWPAGES")
 
   if [ "$BATTLEFIELD" != "" ];
   then

@@ -9,8 +9,8 @@ then
 
   debug_start "Nevada"
 
-  NEVADA=$(egrep -i "$KEYWORDS_NEVADA" newpages.txt | egrep -iv "$KEYWORDS_NEVADA_EXCLUDE")
-  LASVEGAS=$(egrep -i "$KEYWORDS_LASVEGAS" newpages.txt)
+  NEVADA=$(egrep -i "$KEYWORDS_NEVADA" "$NEWPAGES" | egrep -iv "$KEYWORDS_NEVADA_EXCLUDE")
+  LASVEGAS=$(egrep -i "$KEYWORDS_LASVEGAS" "$NEWPAGES")
 
   if [ "$NEVADA" != "" ];
   then

@@ -8,7 +8,7 @@ then
   
   debug_start "GCSE"
 
-  GCSE=$(egrep -i "$KEYWORDS_GCSE" newpages.txt)
+  GCSE=$(egrep -i "$KEYWORDS_GCSE" "$NEWPAGES")
 
   if [ "$GCSE" != "" ];
   then

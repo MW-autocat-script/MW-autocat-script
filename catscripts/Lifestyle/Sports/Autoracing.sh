@@ -9,8 +9,8 @@ then
 
   debug_start "Auto racing"
 
-  AUTORACING=$(egrep -i "$KEYWORDS_AUTORACING" newpages.txt | egrep -iv "$KEYWORDS_AUTORACING_EXCLUDE")
-  NASCAR=$(egrep -i "$KEYWORDS_NASCAR" newpages.txt)
+  AUTORACING=$(egrep -i "$KEYWORDS_AUTORACING" "$NEWPAGES" | egrep -iv "$KEYWORDS_AUTORACING_EXCLUDE")
+  NASCAR=$(egrep -i "$KEYWORDS_NASCAR" "$NEWPAGES")
 
   if [ "$AUTORACING" != "" ];
   then

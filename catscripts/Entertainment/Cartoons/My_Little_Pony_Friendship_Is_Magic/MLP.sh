@@ -8,7 +8,7 @@ then
 
   debug_start "My Little Pony: Friendship is Magic"
 
-  MLP="$(egrep -i "$KEYWORDS_MLP" newpages.txt)"
+  MLP="$(egrep -i "$KEYWORDS_MLP" "$NEWPAGES")"
 
   if [ "$MLP" != "" ];
   then

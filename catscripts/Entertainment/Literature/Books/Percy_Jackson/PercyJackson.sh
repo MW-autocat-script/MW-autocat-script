@@ -7,7 +7,7 @@ then
   
   debug_start "Percy Jackson and the Olympians"
 
-  PERCY=$(egrep -i "$KEYWORDS_PERCYJACKSON" newpages.txt)
+  PERCY=$(egrep -i "$KEYWORDS_PERCYJACKSON" "$NEWPAGES")
 
   if [ "$PERCY" != "" ];
   then

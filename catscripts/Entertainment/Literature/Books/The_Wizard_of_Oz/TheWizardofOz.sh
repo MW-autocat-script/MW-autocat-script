@@ -7,7 +7,7 @@ then
   
   debug_start "The Wizard of Oz"
 
-  OZ=$(egrep -i "$KEYWORDS_WIZARDOFOZ" newpages.txt)
+  OZ=$(egrep -i "$KEYWORDS_WIZARDOFOZ" "$NEWPAGES")
 
   if [ "$OZ" != "" ];
   then

@@ -7,7 +7,7 @@ then
 
   debug_start "Addition"
 
-  ADDITION=$(egrep -i "$KEYWORDS_ADDITION" newpages.txt)
+  ADDITION=$(egrep -i "$KEYWORDS_ADDITION" "$NEWPAGES")
 
   if [ "$ADDITION" != "" ];
   then

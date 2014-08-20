@@ -7,7 +7,7 @@ then
 
   debug_start "Death Note"
 
-  DEATHNOTE=$(egrep -i "$KEYWORDS_DEATHNOTE" newpages.txt)
+  DEATHNOTE=$(egrep -i "$KEYWORDS_DEATHNOTE" "$NEWPAGES")
 
   if [ "$DEATHNOTE" != "" ];
   then

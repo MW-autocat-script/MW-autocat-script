@@ -7,7 +7,7 @@ then
   
   debug_start "Kirby series"
 
-  KIRBY=$(egrep -i "$KEYWORDS_KIRBY" newpages.txt)
+  KIRBY=$(egrep -i "$KEYWORDS_KIRBY" "$NEWPAGES")
 
   if [ "$KIRBY" != "" ];
   then

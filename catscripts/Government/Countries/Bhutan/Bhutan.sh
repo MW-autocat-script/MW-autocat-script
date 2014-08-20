@@ -8,7 +8,7 @@ then
   
   debug_start "Bhutan"
 
-  BHUTAN=$(egrep -i "$KEYWORDS_BHUTAN" newpages.txt)
+  BHUTAN=$(egrep -i "$KEYWORDS_BHUTAN" "$NEWPAGES")
 
   if [ "$BHUTAN" != "" ];
   then

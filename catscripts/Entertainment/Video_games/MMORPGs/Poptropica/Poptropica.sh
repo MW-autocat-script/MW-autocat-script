@@ -7,7 +7,7 @@ then
 
   debug_start "Poptropica"
 
-  POPTROPICA=$(egrep -i "$KEYWORDS_MMORPG_POPTROPICA" newpages.txt)
+  POPTROPICA=$(egrep -i "$KEYWORDS_MMORPG_POPTROPICA" "$NEWPAGES")
 
   if [ "$POPTROPICA" != "" ];
   then

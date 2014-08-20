@@ -7,7 +7,7 @@ then
 
   debug_start "Windows Media Player"
 
-  WMP=$(egrep -i "$KEYWORDS_WINDOWSMEDIAPLAYER" newpages.txt)
+  WMP=$(egrep -i "$KEYWORDS_WINDOWSMEDIAPLAYER" "$NEWPAGES")
 
   if [ "$WMP" != "" ];
   then

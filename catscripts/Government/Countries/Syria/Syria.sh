@@ -9,7 +9,7 @@ then
   
   debug_start "Syria"
 
-  SYRIA=$(egrep -i "$KEYWORDS_SYRIA" newpages.txt| egrep -i "$KEYWORDS_SYRIA_EXCLUDE")
+  SYRIA=$(egrep -i "$KEYWORDS_SYRIA" "$NEWPAGES"| egrep -i "$KEYWORDS_SYRIA_EXCLUDE")
 
   if [ "$SYRIA" != "" ];
   then

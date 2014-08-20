@@ -7,7 +7,7 @@ then
 
   debug_start "English to Latin"
 
-  LATIN=$(egrep -i "$KEYWORDS_ENGLISHTOLATIN" newpages.txt)
+  LATIN=$(egrep -i "$KEYWORDS_ENGLISHTOLATIN" "$NEWPAGES")
 
   if [ "$LATIN" != "" ];
   then

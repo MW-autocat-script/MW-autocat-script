@@ -5,7 +5,7 @@ KEYWORDS_ENGLISHTOKOREAN="How(| )(to|do(| )you)(| )(say|spell).+ in(| )Korean|Wh
 if [ "$1" == "" ]; #Normal operation
 then
 
-  KOREAN=$(egrep -i "$KEYWORDS_ENGLISHTOKOREAN" newpages.txt)
+  KOREAN=$(egrep -i "$KEYWORDS_ENGLISHTOKOREAN" "$NEWPAGES")
 
   debug_start "English to Korean"
 

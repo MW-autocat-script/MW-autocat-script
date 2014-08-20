@@ -7,7 +7,7 @@ then
 
   debug_start "Eve Online"
 
-  EVE=$(egrep -i "$KEYWORDS_MMORPG_EVE" newpages.txt)
+  EVE=$(egrep -i "$KEYWORDS_MMORPG_EVE" "$NEWPAGES")
 
   if [ "$EVE" != "" ];
   then

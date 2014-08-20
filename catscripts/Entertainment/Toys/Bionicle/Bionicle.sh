@@ -8,7 +8,7 @@ then
   
   debug_start "Bionicle"
 
-  BIONICLE=$(egrep -i "$KEYWORDS_BIONICLE" newpages.txt)
+  BIONICLE=$(egrep -i "$KEYWORDS_BIONICLE" "$NEWPAGES")
 
   if [ "$BIONICLE" != "" ];
   then

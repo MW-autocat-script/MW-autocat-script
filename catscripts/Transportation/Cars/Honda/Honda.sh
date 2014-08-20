@@ -10,10 +10,10 @@ then
 
   debug_start "Honda cars"
 
-  ACCORD=$(egrep -i "$KEYWORDS_HONDAACCORD" newpages.txt)
-  CIVIC=$(egrep -i "$KEYWORDS_HONDACIVIC" newpages.txt)
-  PASSPORT=$(egrep -i "$KEYWORDS_HONDAPASSPORT" newpages.txt)
-  ELEMENT=$(egrep -i "$KEYWORDS_HONDAELEMENT" newpages.txt)
+  ACCORD=$(egrep -i "$KEYWORDS_HONDAACCORD" "$NEWPAGES")
+  CIVIC=$(egrep -i "$KEYWORDS_HONDACIVIC" "$NEWPAGES")
+  PASSPORT=$(egrep -i "$KEYWORDS_HONDAPASSPORT" "$NEWPAGES")
+  ELEMENT=$(egrep -i "$KEYWORDS_HONDAELEMENT" "$NEWPAGES")
 
   if [ "$ACCORD" != "" ];
   then

@@ -19,14 +19,14 @@ then
 
   debug_start "Call of Duty series"
 
-  CALLOFDUTY=$(egrep -i "$KEYWORDS_CALLOFDUTYSERIES" newpages.txt | egrep -iv "$KEYWORDS_CALLOFDUTYSERIES_EXCLUDE" && egrep "$KEYWORDS_CALLOFDUTYSERIES_CASESENSITIVE" newpages.txt | egrep -v "$KEYWORDS_CALLOFDUTYSERIES_CASESENSITIVE_EXCLUDE")
-  MODERN=$(egrep -i "$KEYWORDS_COD4" newpages.txt | egrep -iv "$KEYWORDS_COD4_EXCLUDE")
-  WORLDATWAR=$(egrep -i "$KEYWORDS_CODWAW" newpages.txt)
-  MW2=$(egrep -i "$KEYWORDS_CODMW2" newpages.txt)
-  BLACKOPS=$(egrep -i "$KEYWORDS_CODBO" newpages.txt | egrep -iv "$KEYWORDS_CODBO_EXCLUDE")
-  MW3=$(egrep -i "$KEYWORDS_CODMW3" newpages.txt)
-  BO2=$(egrep -i "$KEYWORDS_CODBO2" newpages.txt)
-  GHOSTS=$(egrep -i "$KEYWORDS_CODGHOSTS" newpages.txt)
+  CALLOFDUTY=$(egrep -i "$KEYWORDS_CALLOFDUTYSERIES" "$NEWPAGES" | egrep -iv "$KEYWORDS_CALLOFDUTYSERIES_EXCLUDE" && egrep "$KEYWORDS_CALLOFDUTYSERIES_CASESENSITIVE" "$NEWPAGES" | egrep -v "$KEYWORDS_CALLOFDUTYSERIES_CASESENSITIVE_EXCLUDE")
+  MODERN=$(egrep -i "$KEYWORDS_COD4" "$NEWPAGES" | egrep -iv "$KEYWORDS_COD4_EXCLUDE")
+  WORLDATWAR=$(egrep -i "$KEYWORDS_CODWAW" "$NEWPAGES")
+  MW2=$(egrep -i "$KEYWORDS_CODMW2" "$NEWPAGES")
+  BLACKOPS=$(egrep -i "$KEYWORDS_CODBO" "$NEWPAGES" | egrep -iv "$KEYWORDS_CODBO_EXCLUDE")
+  MW3=$(egrep -i "$KEYWORDS_CODMW3" "$NEWPAGES")
+  BO2=$(egrep -i "$KEYWORDS_CODBO2" "$NEWPAGES")
+  GHOSTS=$(egrep -i "$KEYWORDS_CODGHOSTS" "$NEWPAGES")
 
   if [ "$CALLOFDUTY" != "" ];
   then

@@ -9,7 +9,7 @@ then
   
   debug_start "C++"
 
-  CPLUSPLUS=$(egrep -i "$KEYWORDS_CPLUSPLUS" newpages.txt)
+  CPLUSPLUS=$(egrep -i "$KEYWORDS_CPLUSPLUS" "$NEWPAGES")
 
   if [ "$CPLUSPLUS" != "" ];
   then

@@ -7,7 +7,7 @@ then
 
   debug_start "Percentages"
 
-  PERCENTAGES=$(egrep -i "$KEYWORDS_PERCENTAGES" newpages.txt)
+  PERCENTAGES=$(egrep -i "$KEYWORDS_PERCENTAGES" "$NEWPAGES")
 
   if [ "$PERCENTAGES" != "" ];
   then

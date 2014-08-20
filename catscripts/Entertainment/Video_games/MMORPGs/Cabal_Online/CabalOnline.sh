@@ -7,7 +7,7 @@ then
 
   debug_start "Cabal Online"
 
-  CABAL=$(egrep -i "$KEYWORDS_MMORPG_CABAL" newpages.txt)
+  CABAL=$(egrep -i "$KEYWORDS_MMORPG_CABAL" "$NEWPAGES")
 
   if [ "$CABAL" != "" ];
   then

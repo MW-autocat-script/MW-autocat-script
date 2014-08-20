@@ -11,9 +11,9 @@ then
 
   debug_start "Dwarf planets"
 
-  DWARF=$(egrep -i "$KEYWORDS_DWARFPLANET" newpages.txt | egrep -iv "$KEYWORDS_DWARFPLANET_EXCLUDE")
-  PLUTO=$(egrep -i "$KEYWORDS_PLUTO" newpages.txt | egrep -iv "$KEYWORDS_PLUTO_EXCLUDE")
-  ERIS=$(egrep -i "$KEYWORDS_ERIS" newpages.txt)
+  DWARF=$(egrep -i "$KEYWORDS_DWARFPLANET" "$NEWPAGES" | egrep -iv "$KEYWORDS_DWARFPLANET_EXCLUDE")
+  PLUTO=$(egrep -i "$KEYWORDS_PLUTO" "$NEWPAGES" | egrep -iv "$KEYWORDS_PLUTO_EXCLUDE")
+  ERIS=$(egrep -i "$KEYWORDS_ERIS" "$NEWPAGES")
 
   if [ "$DWARF" != "" ];
   then

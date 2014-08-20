@@ -7,7 +7,7 @@ then
   
   debug_start "Edgar Allan Poe"
 
-  POE=$(egrep -i "$KEYWORDS_POE" newpages.txt)
+  POE=$(egrep -i "$KEYWORDS_POE" "$NEWPAGES")
 
   if [ "$POE" != "" ];
   then

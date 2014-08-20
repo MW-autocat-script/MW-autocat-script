@@ -24,21 +24,21 @@ then
 
   debug_start "Actinide series"
 
-  ACTINIUM=$(egrep -i "$KEYWORDS_ACTINIUM" newpages.txt)
-  THORIUM=$(egrep -i "$KEYWORDS_THORIUM" newpages.txt | egrep -iv "$KEYWORDS_THORIUM_EXCLUDE")
-  PROTACTINIUM=$(egrep -i "$KEYWORDS_PROTACTINIUM" newpages.txt)
-  URANIUM=$(egrep -i "$KEYWORDS_URANIUM" newpages.txt)
-  NEPTUNIUM=$(egrep -i "$KEYWORDS_NEPTUNIUM" newpages.txt)
-  PLUTONIUM=$(egrep -i "$KEYWORDS_PLUTONIUM" newpages.txt | egrep -iv "$KEYWORDS_PLUTONIUM_EXCLUDE")
-  AMERCIUM=$(egrep -i "$KEYWORDS_AMERICIUM" newpages.txt)
-  CURIUM=$(egrep -i "$KEYWORDS_CURIUM" newpages.txt)
-  BERKELIUM=$(egrep -i "$KEYWORDS_BERKELIUM" newpages.txt)
-  CALIFORNIUM=$(egrep -i "$KEYWORDS_CALIFORNIUM" newpages.txt)
-  EINSTEINIUM=$(egrep -i "$KEYWORDS_EINSTEINIUM" newpages.txt)
-  FERMIUM=$(egrep -i "$KEYWORDS_FERMIUM" newpages.txt)
-  MENDELEVIUM=$(egrep -i "$KEYWORDS_MENDELEVIUM" newpages.txt)
-  NOBELIUM=$(egrep -i "$KEYWORDS_NOBELIUM" newpages.txt )
-  LAWRENCIUM=$(egrep -i "$KEYWORDS_LAWRENCIUM" newpages.txt)
+  ACTINIUM=$(egrep -i "$KEYWORDS_ACTINIUM" "$NEWPAGES")
+  THORIUM=$(egrep -i "$KEYWORDS_THORIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_THORIUM_EXCLUDE")
+  PROTACTINIUM=$(egrep -i "$KEYWORDS_PROTACTINIUM" "$NEWPAGES")
+  URANIUM=$(egrep -i "$KEYWORDS_URANIUM" "$NEWPAGES")
+  NEPTUNIUM=$(egrep -i "$KEYWORDS_NEPTUNIUM" "$NEWPAGES")
+  PLUTONIUM=$(egrep -i "$KEYWORDS_PLUTONIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_PLUTONIUM_EXCLUDE")
+  AMERCIUM=$(egrep -i "$KEYWORDS_AMERICIUM" "$NEWPAGES")
+  CURIUM=$(egrep -i "$KEYWORDS_CURIUM" "$NEWPAGES")
+  BERKELIUM=$(egrep -i "$KEYWORDS_BERKELIUM" "$NEWPAGES")
+  CALIFORNIUM=$(egrep -i "$KEYWORDS_CALIFORNIUM" "$NEWPAGES")
+  EINSTEINIUM=$(egrep -i "$KEYWORDS_EINSTEINIUM" "$NEWPAGES")
+  FERMIUM=$(egrep -i "$KEYWORDS_FERMIUM" "$NEWPAGES")
+  MENDELEVIUM=$(egrep -i "$KEYWORDS_MENDELEVIUM" "$NEWPAGES")
+  NOBELIUM=$(egrep -i "$KEYWORDS_NOBELIUM" "$NEWPAGES" )
+  LAWRENCIUM=$(egrep -i "$KEYWORDS_LAWRENCIUM" "$NEWPAGES")
 
   if [ "$ACTINIUM" != "" ] ;
   then

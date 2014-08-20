@@ -7,7 +7,7 @@ then
 
   debug_start "Rohan: Blood Feud"
 
-  ROHAN=$(egrep -i "$KEYWORDS_MMORPG_ROHAN" newpages.txt)
+  ROHAN=$(egrep -i "$KEYWORDS_MMORPG_ROHAN" "$NEWPAGES")
 
   if [ "$ROHAN" != "" ];
   then

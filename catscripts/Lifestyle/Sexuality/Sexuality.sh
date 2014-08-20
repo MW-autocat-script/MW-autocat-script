@@ -9,8 +9,8 @@ then
 
   debug_start "Sexuality"
 
-  SEXUALITY=$(egrep -i "$KEYWORDS_SEXUALITY" newpages.txt | egrep -iv "$KEYWORDS_SEXUALITY_EXCLUDE")
-  MASTURBATION=$(egrep -i "$KEYWORDS_MASTURBATION" newpages.txt)
+  SEXUALITY=$(egrep -i "$KEYWORDS_SEXUALITY" "$NEWPAGES" | egrep -iv "$KEYWORDS_SEXUALITY_EXCLUDE")
+  MASTURBATION=$(egrep -i "$KEYWORDS_MASTURBATION" "$NEWPAGES")
 
   if [ "$SEXUALITY" != "" ];
   then
