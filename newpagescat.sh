@@ -66,10 +66,11 @@ python "$PYWIKIPEDIADIR"/pagegenerators.py -recentchanges -ns:0 >> "$NEWPAGES"
 
 #This checks to see if the list of new questions has changed since last run. If not, then do not running
 
-touch MD5SUM #Just in case the file doesn't exist yet
 
-OLDSUM="$(cat MD5SUM)"
-NEWSUM="$(md5sum "$NEWPAGES" | cut -b-32)"
+SUMFILE="$TEMPDIR/MD5SUM"
+touch "$SUMFILE" #Just in case the file doesn't exist yet
+OLDSUM=$(cat "$SUMFILE")
+NEWSUM=$(md5sum "$NEWPAGES" | cut -b-32)
 
 if [ "$OLDSUM" != "$NEWSUM" ]; #Lists have changed
 then
@@ -88,7 +89,7 @@ then
   ./catscripts/Transportation/Transportation.sh
 
 
-  echo "$NEWSUM" > MD5SUM
+  echo "$NEWSUM" > "$SUMFILE"
 
 fi
 
