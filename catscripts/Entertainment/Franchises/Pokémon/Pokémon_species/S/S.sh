@@ -1,4 +1,6 @@
-#!/bin/bashKEYWORDS_SABLEYE="Sableye"
+#!/bin/bash
+
+KEYWORDS_SABLEYE="Sableye"
 KEYWORDS_SALAMENCE="Salamence"
 KEYWORDS_SAMUROTT="Samurott"
 KEYWORDS_SANDILE="Sandile"
