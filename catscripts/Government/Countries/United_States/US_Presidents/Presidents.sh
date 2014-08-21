@@ -122,445 +122,50 @@ then
   GWBUSH=$(egrep -i "$KEYWORDS_GEORGEWBUSH" "$NEWPAGES")
   OBAMA=$(egrep -i "$KEYWORDS_BARACKOBAMA" "$NEWPAGES" | egrep -iv "$KEYWORDS_BARACKOBAMA_EXCLUDE")
 
-  if [ "$PRESIDENT" != "" ];
-  then
-    printf "%s" "$PRESIDENT" > President.txt
-    export CATFILE="President.txt"
-    export CATNAME="US Presidents"
-    $CATEGORIZE
-    rm President.txt
-    unset PRESIDENT
-  fi
-
-  if [ "$WASHINGTON" != "" ];
-  then
-    printf "%s" "$WASHINGTON" > GeorgeWashington.txt
-    export CATFILE="GeorgeWashington.txt"
-    export CATNAME="George Washington"
-    $CATEGORIZE
-    rm GeorgeWashington.txt
-    unset WASHINGTON
-  fi
-
-  if [ "$JOHNADAMS" != "" ];
-  then
-    printf "%s" "$JOHNADAMS" > JohnAdams.txt
-    export CATFILE="JohnAdams.txt"
-    export CATNAME="John Adams"
-    $CATEGORIZE
-    rm JohnAdams.txt
-    unset JOHNADAMS
-  fi
-
-  if [ "$JEFFERSON" != "" ];
-  then
-    printf "%s" "$JEFFERSON" > ThomasJefferson.txt
-    export CATFILE="ThomasJefferson.txt"
-    export CATNAME="Thomas Jefferson"
-    $CATEGORIZE
-    rm ThomasJefferson.txt
-    unset JEFFERSON
-  fi
-
-  if [ "$MADISON" != "" ];
-  then
-    printf "%s" "$MADISON" > JamesMadison.txt
-    export CATFILE="JamesMadison.txt"
-    export CATNAME="James Madison"
-    $CATEGORIZE
-    rm JamesMadison.txt
-    unset MADISON
-  fi
-
-  if [ "$MONROE" != "" ];
-  then
-    printf "%s" "$MONROE" > JamesMonroe.txt
-    export CATFILE="JamesMonroe.txt"
-    export CATNAME="James Monroe"
-    $CATEGORIZE
-    rm JamesMonroe.txt
-    unset MONROE
-  fi
-
-  if [ "$QUINCY" != "" ];
-  then
-    printf "%s" "$QUINCY" > JohnQuincyAdams.txt
-    export CATFILE="JohnQuincyAdams.txt"
-    export CATNAME="John Quincy Adams"
-    $CATEGORIZE
-    rm JohnQuincyAdams.txt
-    unset QUINCY
-  fi
-
-  if [ "$JACKSON" != "" ];
-  then
-    printf "%s" "$JACKSON" > AndrewJackson.txt
-    export CATFILE="AndrewJackson.txt"
-    export CATNAME="Andrew Jackson"
-    $CATEGORIZE
-    rm AndrewJackson.txt
-    unset JACKSON
-  fi
-
-  if [ "$BUREN" != "" ];
-  then
-    printf "%s" "$BUREN" > MartinVanBuren.txt
-    export CATFILE="MartinVanBuren.txt"
-    export CATNAME="Martin Van Buren"
-    $CATEGORIZE
-    rm MartinVanBuren.txt
-    unset BUREN
-  fi
-
-  if [ "$WHARRISON" != "" ];
-  then
-    printf "%s" "$WHARRISON" > WilliamHenryHarrison.txt
-    export CATFILE="WilliamHenryHarrison.txt"
-    export CATNAME="William Henry Harrison"
-    $CATEGORIZE
-    rm WilliamHenryHarrison.txt
-    unset WHARRISON
-  fi
-
-  if [ "$TYLER" != "" ];
-  then
-    printf "%s" "$TYLER" > JohnTyler.txt
-    export CATFILE="JohnTyler.txt"
-    export CATNAME="John Tyler"
-    $CATEGORIZE
-    rm JohnTyler.txt
-    unset TYLER
-  fi
-
-  if [ "$POLK" != "" ];
-  then
-    printf "%s" "$POLK" > JamesKPolk.txt
-    export CATFILE="JamesKPolk.txt"
-    export CATNAME="James K. Polk"
-    $CATEGORIZE
-    rm JamesKPolk.txt
-    unset POLK
-  fi
-
-  if [ "$TAYLOR" != "" ];
-  then
-    printf "%s" "$TAYLOR" > ZacharyTaylor.txt
-    export CATFILE="ZacharyTaylor.txt"
-    export CATNAME="Zachary Taylor"
-    $CATEGORIZE
-    rm ZacharyTaylor.txt
-    unset TAYLOR
-  fi
-
-  if [ "$FILLMORE" != "" ];
-  then
-    printf "%s" "$FILLMORE" > MillardFillmore.txt
-    export CATFILE="MillardFillmore.txt"
-    export CATNAME="Millard Fillmore"
-    $CATEGORIZE
-    rm MillardFillmore.txt
-    unset FILLMORE
-  fi
-
-  if [ "$PIERCE" != "" ];
-  then
-    printf "%s" "$PIERCE" > FranklinPierce.txt
-    export CATFILE="FranklinPierce.txt"
-    export CATNAME="Franklin Pierce"
-    $CATEGORIZE
-    rm FranklinPierce.txt
-    unset PIERCE
-  fi
-
-  if [ "$BUCHANAN" != "" ];
-  then
-    printf "%s" "$BUCHANAN" > JamesBuchanan.txt
-    export CATFILE="JamesBuchanan.txt"
-    export CATNAME="James Buchanan"
-    $CATEGORIZE
-    rm JamesBuchanan.txt
-    unset BUCHANAN
-  fi
-
-  if [ "$LINCOLN" != "" ];
-  then
-    printf "%s" "$LINCOLN" > AbrahamLincoln.txt
-    export CATFILE="AbrahamLincoln.txt"
-    export CATNAME="Abraham Lincoln"
-    $CATEGORIZE
-    rm AbrahamLincoln.txt
-    unset LINCOLN
-  fi
-
-  if [ "$JOHNSON" != "" ];
-  then
-    printf "%s" "$JOHNSON" > AndrewJohnson.txt
-    export CATFILE="AndrewJohnson.txt"
-    export CATNAME="Andrew Johnson"
-    $CATEGORIZE
-    rm AndrewJohnson.txt
-    unset JOHNSON
-  fi
-
-  if [ "$GRANT" != "" ];
-  then
-    printf "%s" "$GRANT" > UlyssesSGrant.txt
-    export CATFILE="UlyssesSGrant.txt"
-    export CATNAME="Ulysses S. Grant"
-    $CATEGORIZE
-    rm UlyssesSGrant.txt
-    unset GRANT
-  fi
-
-  if [ "$HAYES" != "" ];
-  then
-    printf "%s" "$HAYES" > RutherfordBHayes.txt
-    export CATFILE="RutherfordBHayes.txt"
-    export CATNAME="Rutherford B. Hayes"
-    $CATEGORIZE
-    rm RutherfordBHayes.txt
-    unset HAYES
-  fi
-
-  if [ "$GARFIELD" != "" ];
-  then
-    printf "%s" "$GARFIELD" > JamesAGarfield.txt
-    export CATFILE="JamesAGarfield.txt"
-    export CATNAME="James A. Garfield"
-    $CATEGORIZE
-    rm JamesAGarfield.txt
-    unset GARFIELD
-  fi
-
-  if [ "$ARTHUR" != "" ];
-  then
-    printf "%s" "$ARTHUR" > ChesterAArthur.txt
-    export CATFILE="ChesterAArthur.txt"
-    export CATNAME="Chester A. Arthur"
-    $CATEGORIZE
-    rm ChesterAArthur.txt
-    unset ARTHUR
-  fi
-
-  if [ "$CLEVELAND" != "" ];
-  then
-    printf "%s" "$CLEVELAND" > GroverCleveland.txt
-    export CATFILE="GroverCleveland.txt"
-    export CATNAME="Grover Cleveland"
-    $CATEGORIZE
-    rm GroverCleveland.txt
-    unset CLEVELAND
-  fi
-
-  if [ "$HARRISON" != "" ];
-  then
-    printf "%s" "$HARRISON" > BenjaminHarrison.txt
-    export CATFILE="BenjaminHarrison.txt"
-    export CATNAME="Benjamin Harrison"
-    $CATEGORIZE
-    rm BenjaminHarrison.txt
-    unset HARRISON
-  fi
-
-  if [ "$MCKINLEY" != "" ];
-  then
-    printf "%s" "$MCKINLEY" > WilliamMcKinley.txt
-    export CATFILE="WilliamMcKinley.txt"
-    export CATNAME="William McKinley"
-    $CATEGORIZE
-    rm WilliamMcKinley.txt
-    unset MCKINLEY
-  fi
-
-  if [ "$THEODORE" != "" ];
-  then
-    printf "%s" "$THEODORE" > TheodoreRoosevelt.txt
-    export CATFILE="TheodoreRoosevelt.txt"
-    export CATNAME="Theodore Roosevelt"
-    $CATEGORIZE
-    rm TheodoreRoosevelt.txt
-    unset THEODORE
-  fi
-
-  if [ "$TAFT" != "" ];
-  then
-    printf "%s" "$TAFT" > WilliamHowardTaft.txt
-    export CATFILE="WilliamHowardTaft.txt"
-    export CATNAME="William Howard Taft"
-    $CATEGORIZE
-    rm WilliamHowardTaft.txt
-    unset TAFT
-  fi
-
-  if [ "$WILSON" != "" ];
-  then
-    printf "%s" "$WILSON" > WoodrowWilson.txt
-    export CATFILE="WoodrowWilson.txt"
-    export CATNAME="Woodrow Wilson"
-    $CATEGORIZE
-    rm WoodrowWilson.txt
-    unset WILSON
-  fi
-
-  if [ "$HARDING" != "" ];
-  then
-    printf "%s" "$HARDING" > WarrenGHarding.txt
-    export CATFILE="WarrenGHarding.txt"
-    export CATNAME="Warren G. Harding"
-    $CATEGORIZE
-    rm WarrenGHarding.txt
-    unset HARDING
-  fi
-
-  if [ "$COOLIDGE" != "" ];
-  then
-    printf "%s" "$COOLIDGE" > CalvinCoolidge.txt
-    export CATFILE="CalvinCoolidge.txt"
-    export CATNAME="Calvin Coolidge"
-    $CATEGORIZE
-    rm CalvinCoolidge.txt
-    unset COOLIDGE
-  fi
-
-  if [ "$HOOVER" != "" ];
-  then
-    printf "%s" "$HOOVER" > HerbertHoover.txt
-    export CATFILE="HerbertHoover.txt"
-    export CATNAME="Herbert Hoover"
-    $CATEGORIZE
-    rm HerbertHoover.txt
-    unset HOOVER
-  fi
-
-  if [ "$FDR" != "" ];
-  then
-    printf "%s" "$FDR" > FranklinDelanoRoosevelt.txt
-    export CATFILE="FranklinDelanoRoosevelt.txt"
-    export CATNAME="Franklin Delano Roosevelt"
-    $CATEGORIZE
-    rm FranklinDelanoRoosevelt.txt
-    unset FDR
-  fi
-
-  if [ "$TRUMAN" != "" ];
-  then
-    printf "%s" "$TRUMAN" > HarrySTruman.txt
-    export CATFILE="HarrySTruman.txt"
-    export CATNAME="Harry S. Truman"
-    $CATEGORIZE
-    rm HarrySTruman.txt
-    unset TRUMAN
-  fi
-
-  if [ "$EISENHOWER" != "" ];
-  then
-    printf "%s" "$EISENHOWER" > DwightDEisenhower.txt
-    export CATFILE="DwightDEisenhower.txt"
-    export CATNAME="Dwight D. Eisenhower"
-    $CATEGORIZE
-    rm DwightDEisenhower.txt
-    unset EISENHOWER
-  fi
-
-  if [ "$KENNEDY" != "" ];
-  then
-    printf "%s" "$KENNEDY" > JohnFKennedy.txt
-    export CATFILE="JohnFKennedy.txt"
-    export CATNAME="John F. Kennedy"
-    $CATEGORIZE
-    rm JohnFKennedy.txt
-    unset KENNEDY
-  fi
-
-  if [ "$LBJ" != "" ];
-  then
-    printf "%s" "$LBJ" > LyndonBJohnson.txt
-    export CATFILE="LyndonBJohnson.txt"
-    export CATNAME="Lyndon B. Johnson"
-    $CATEGORIZE
-    rm LyndonBJohnson.txt
-    unset LBJ
-  fi
-
-  if [ "$NIXON" != "" ];
-  then
-    printf "%s" "$NIXON" > RichardMNixon.txt
-    export CATFILE="RichardMNixon.txt"
-    export CATNAME="Richard Nixon"
-    $CATEGORIZE
-    rm RichardMNixon.txt
-    unset NIXON
-  fi
-
-  if [ "$FORD" != "" ];
-  then
-    printf "%s" "$FORD" > GeraldFord.txt
-    export CATFILE="GeraldFord.txt"
-    export CATNAME="Gerald Ford"
-    $CATEGORIZE
-    rm GeraldFord.txt
-    unset FORD
-  fi
-
-  if [ "$CARTER" != "" ];
-  then
-    printf "%s" "$CARTER" > JimmyCarter.txt
-    export CATFILE="JimmyCarter.txt"
-    export CATNAME="James Earl Carter"
-    $CATEGORIZE
-    rm JimmyCarter.txt
-    unset CARTER
-  fi
-
-  if [ "$REAGAN" != "" ];
-  then
-    printf "%s" "$REAGAN" > RonaldReagan.txt
-    export CATFILE="RonaldReagan.txt"
-    export CATNAME="Ronald Reagan"
-    $CATEGORIZE
-    rm RonaldReagan.txt
-    unset REAGAN
-  fi
-
-  if [ "$GHWBUSH" != "" ];
-  then
-    printf "%s" "$GHWBUSH" > GeorgeHWBush.txt
-    export CATFILE="GeorgeHWBush.txt"
-    export CATNAME="George Herbert Walker Bush"
-    $CATEGORIZE
-    rm GeorgeHWBush.txt
-    unset GHWBUSH
-  fi
-
-  if [ "$CLINTON" != "" ];
-  then
-    printf "%s" "$CLINTON" > BillClinton.txt
-    export CATFILE="BillClinton.txt"
-    export CATNAME="Bill Clinton"
-    $CATEGORIZE
-    rm BillClinton.txt
-    unset CLINTON
-  fi
-
-  if [ "$GWBUSH" != "" ];
-  then
-    printf "%s" "$GWBUSH" > GeorgeWBush.txt
-    export CATFILE="GeorgeWBush.txt"
-    export CATNAME="George W. Bush"
-    $CATEGORIZE
-    rm GeorgeWBush.txt
-    unset GWBUSH
-  fi
-
-  if [ "$OBAMA" != "" ];
-  then
-    printf "%s" "$OBAMA" > BarackObama.txt
-    export CATFILE="BarackObama.txt"
-    export CATNAME="Barack Obama"
-    $CATEGORIZE
-    rm BarackObama.txt
-    unset OBAMA
-  fi
+  categorize "PRESIDENT" "US Presidents"
+  categorize "WASHINGTON" "George Washinton"
+  categorize "JOHNADAMS" "John Adams"
+  categorize "JEFFERSON" "Thomas Jefferson"
+  categorize "MADISON" "James Madison"
+  categorize "MONROE" "James Monroe"
+  categorize "QUINCY" "John Quincy Adams"
+  categorize "JACKSON" "Andrew Jackson"
+  categorize "BUREN" "Martin Van Buren"
+  categorize "WHARRISON" "William Henry Harrison"
+  categorize "TYLER" "John Tyler"
+  categorize "POLK" "James K. Polk"
+  categorize "TAYLOR" "Zachary Taylor"
+  categorize "FILLMORE" "Millard Fillmore"
+  categorize "PIERCE" "Franklin Pierce"
+  categorize "BUCHANAN" "James Buchanan"
+  categorize "LINCOLN" "Abraham Lincoln"
+  categorize "JOHNSON" "Andrew Johnson"
+  categorize "GRANT" "Ulysses S. Grant"
+  categorize "HAYES" "Rutherford B. Hayes"
+  categorize "GARFIELD" "James A. Garfield"
+  categorize "ARTHUR" "Chester A. Arthur"
+  categorize "CLEVELAND" "Grover Cleveland"
+  categorize "HARRISON" "Benjamin Harrison"
+  categorize "MCKINLEY" "William McKinley"
+  categorize "THEODORE" "Theodore Roosevelt"
+  categorize "TAFT" "William Howard Taft"
+  categorize "WILSON" "Woodrow Wilson"
+  categorize "HARDING" "Warren G. Harding"
+  categorize "COOLIDGE" "Calvin Coolidge"
+  categorize "HOOVER" "Herbert Hoover"
+  categorize "FDR" "Franklin Delano Roosevelt"
+  categorize "TRUMAN" "Harry S. Truman"
+  categorize "EISENHOWER" "Dwight D. Eisenhower"
+  categorize "KENNEDY" "John F. Kennedy"
+  categorize "LBJ" "Lyndon B. Johnson"
+  categorize "NIXON" "Richard Nixon"
+  categorize "FORD" "Gerald Ford"
+  categorize "CARTER" "James Earl Carter"
+  categorize "REAGAN" "Ronald Reagan"
+  categorize "GHWBUSH" "George Herbert Walker Bush"
+  categorize "CLINTON" "Bill Clinton"
+  categorize "GWBUSH" "George W. Bush"
+  categorize "OBAMA" "Barack Obama"
 
   debug_end "US Presidents"
 
