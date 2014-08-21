@@ -49,8 +49,21 @@ debug_end(){
   fi
 }
 
+categorize(){
+  if [ "${!1}" != "" ];
+  then
+    printf "%s" "${!1}" > "$TEMPDIR/CATFILE.txt"
+    export CATFILE="$TEMPDIR/CATFILE.txt"
+    export CATNAME="$2"
+    ./util/Categorize.sh
+    rm "$CATFILE"
+    unset "$1"
+  fi
+}
+
 export -f debug_start
-export -f debug_end   
+export -f debug_end
+export -f categorize 
 
 #Force debug on
 DEBUG="yes"
