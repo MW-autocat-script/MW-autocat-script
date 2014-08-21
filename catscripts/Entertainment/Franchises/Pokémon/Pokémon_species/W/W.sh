@@ -49,215 +49,27 @@ then
   WURMPLE=$(egrep -i "$KEYWORDS_WURMPLE" "$NEWPAGES")
   WYNAUT=$(egrep -i "$KEYWORDS_WYNAUT" "$NEWPAGES")
 
-  if [ "$WAILMER" != "" ];
-  then
-    printf "%s" "$WAILMER" > Wailmer.txt
-    export CATFILE="Wailmer.txt"
-    export CATNAME="Wailmer"
-    $CATEGORIZE
-    rm Wailmer.txt
-    unset WAILMER
-  fi
-
-  if [ "$WAILORD" != "" ];
-  then
-    printf "%s" "$WAILORD" > Wailord.txt
-    export CATFILE="Wailord.txt"
-    export CATNAME="Wailord"
-    $CATEGORIZE
-    rm Wailord.txt
-    unset WAILORD
-  fi
-
-  if [ "$WALREIN" != "" ];
-  then
-    printf "%s" "$WALREIN" > Walrein.txt
-    export CATFILE="Walrein.txt"
-    export CATNAME="Walrein"
-    $CATEGORIZE
-    rm Walrein.txt
-    unset WALREIN
-  fi
-
-  if [ "$WARTORTLE" != "" ];
-  then
-    printf "%s" "$WARTORTLE" > Wartortle.txt
-    export CATFILE="Wartortle.txt"
-    export CATNAME="Wartortle"
-    $CATEGORIZE
-    rm Wartortle.txt
-    unset WARTORTLE
-  fi
-
-  if [ "$WATCHOG" != "" ];
-  then
-    printf "%s" "$WATCHOG" > Watchog.txt
-    export CATFILE="Watchog.txt"
-    export CATNAME="Watchog"
-    $CATEGORIZE
-    rm Watchog.txt
-    unset WATCHOG
-  fi
-
-  if [ "$WEAVILE" != "" ];
-  then
-    printf "%s" "$WEAVILE" > Weavile.txt
-    export CATFILE="Weavile.txt"
-    export CATNAME="Weavile"
-    $CATEGORIZE
-    rm Weavile.txt
-    unset WEAVILE
-  fi
-
-  if [ "$WEEDLE" != "" ];
-  then
-    printf "%s" "$WEEDLE" > Weedle.txt
-    export CATFILE="Weedle.txt"
-    export CATNAME="Weedle"
-    $CATEGORIZE
-    rm Weedle.txt
-    unset WEEDLE
-  fi
-
-  if [ "$WEEPINBELL" != "" ];
-  then
-    printf "%s" "$WEEPINBELL" > Weepinbell.txt
-    export CATFILE="Weepinbell.txt"
-    export CATNAME="Weepinbell"
-    $CATEGORIZE
-    rm Weepinbell.txt
-    unset WEEPINBELL
-  fi
-
-  if [ "$WEEZING" != "" ];
-  then
-    printf "%s" "$WEEZING" > Weezing.txt
-    export CATFILE="Weezing.txt"
-    export CATNAME="Weezing"
-    $CATEGORIZE
-    rm Weezing.txt
-    unset WEEZING
-  fi
-
-  if [ "$WHIMSICOTT" != "" ];
-  then
-    printf "%s" "$WHIMSICOTT" > Whimsicott.txt
-    export CATFILE="Whimsicott.txt"
-    export CATNAME="Whimsicott"
-    $CATEGORIZE
-    rm Whimsicott.txt
-    unset WHIMSICOTT
-  fi
-
-  if [ "$WHIRLIPEDE" != "" ];
-  then
-    printf "%s" "$WHIRLIPEDE" > Whirlipede.txt
-    export CATFILE="Whirlipede.txt"
-    export CATNAME="Whirlipede"
-    $CATEGORIZE
-    rm Whirlipede.txt
-    unset WHIRLIPEDE
-  fi
-
-  if [ "$WHISCASH" != "" ];
-  then
-    printf "%s" "$WHISCASH" > Whiscash.txt
-    export CATFILE="Whiscash.txt"
-    export CATNAME="Whiscash"
-    $CATEGORIZE
-    rm Whiscash.txt
-    unset WHISCASH
-  fi
-
-  if [ "$WHISMUR" != "" ];
-  then
-    printf "%s" "$WHISMUR" > Whismur.txt
-    export CATFILE="Whismur.txt"
-    export CATNAME="Whismur"
-    $CATEGORIZE
-    rm Whismur.txt
-    unset WHISMUR
-  fi
-
-  if [ "$WIGGLYTUFF" != "" ];
-  then
-    printf "%s" "$WIGGLYTUFF" > Wigglytuff.txt
-    export CATFILE="Wigglytuff.txt"
-    export CATNAME="Wigglytuff"
-    $CATEGORIZE
-    rm Wigglytuff.txt
-    unset WIGGLYTUFF
-  fi
-
-  if [ "$WINGULL" != "" ];
-  then
-    printf "%s" "$WINGULL" > Wingull.txt
-    export CATFILE="Wingull.txt"
-    export CATNAME="Wingull"
-    $CATEGORIZE
-    rm Wingull.txt
-    unset WINGULL
-  fi
-
-  if [ "$WOBUFFET" != "" ];
-  then
-    printf "%s" "$WOBUFFET" > Wobuffet.txt
-    export CATFILE="Wobbuffet.txt"
-    export CATNAME="Wobbuffet"
-    $CATEGORIZE
-    rm Wobuffet.txt
-    unset WOBBUFFET
-  fi
-
-  if [ "$WOOBAT" != "" ];
-  then
-    printf "%s" "$WOOBAT" > Woobat.txt
-    export CATFILE="Woobat.txt"
-    export CATNAME="Woobat"
-    $CATEGORIZE
-    rm Woobat.txt
-    unset WOOBAT
-  fi
-
-  if [ "$WOOPER" != "" ];
-  then
-    printf "%s" "$WOOPER" > Wooper.txt
-    export CATFILE="Wooper.txt"
-    export CATNAME="Wooper"
-    $CATEGORIZE
-    rm Wooper.txt
-    unset WOOPER
-  fi
-
-  if [ "$WORMADAM" != "" ];
-  then
-    printf "%s" "$WORMADAM" > Wormadam.txt
-    export CATFILE="Wormadam.txt"
-    export CATNAME="Wormadam"
-    $CATEGORIZE
-    rm Wormadam.txt
-    unset WORMADAM
-  fi
-
-  if [ "$WURMPLE" != "" ];
-  then
-    printf "%s" "$WURMPLE" > Wurmple.txt
-    export CATFILE="Wurmple.txt"
-    export CATNAME="Wurmple"
-    $CATEGORIZE
-    rm Wurmple.txt
-    unset WURMPLE
-  fi
-
-  if [ "$WYNAUT" != "" ];
-  then
-    printf "%s" "$WYNAUT" > Wynaut.txt
-    export CATFILE="Wynaut.txt"
-    export CATNAME="Wynaut"
-    $CATEGORIZE
-    rm Wynaut.txt
-    unset WYNAUT
-  fi
+  categorize "WAILMER" "Wailmer"
+  categorize "WAILORD" "Wailord"
+  categorize "WALREIN" "Walrein"
+  categorize "WARTORTLE" "Wartortle"
+  categorize "WATCHOG" "Watchog"
+  categorize "WEAVILE" "Weavile"
+  categorize "WEEDLE" "Weedle"
+  categorize "WEEPINBELL" "Weepinbell"
+  categorize "WEEZING" "Weezing"
+  categorize "WHIMSICOTT" "Whimsicott"
+  categorize "WHIRLIPEDE" "Whirlipede"
+  categorize "WHISCASH" "Whiscash"
+  categorize "WHISMUR" "Whismur"
+  categorize "WIGGLYTUFF" "Wigglytuff"
+  categorize "WINGULL" "Wingull"
+  categorize "WOBUFFET" "Wobbuffet"
+  categorize "WOOBAT" "Woobat"
+  categorize "WOOPER" "Wooper"
+  categorize "WORMADAM" "Wormadam"
+  categorize "WURMPLE" "Wurmple"
+  categorize "WYNAUT" "Wynaut"
 
   debug_end "Pokemon W species"
 

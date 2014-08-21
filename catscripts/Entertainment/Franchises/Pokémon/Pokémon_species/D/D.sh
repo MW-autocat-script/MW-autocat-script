@@ -81,355 +81,41 @@ then
   DWEBBLE="$(egrep -i "$KEYWORDS_DWEBBLE" "$NEWPAGES")"
 
 
-  if [ "$DARKRAI" != "" ];
-  then
-    printf "%s" "$DARKRAI" > Darkrai.txt
-    export CATFILE="Darkrai.txt"
-    export CATNAME="Darkrai"
-    $CATEGORIZE
-    rm Darkrai.txt
-    unset DARKRAI
-  fi
-
-  if [ "$DARMANITAN" != "" ];
-  then
-    printf "%s" "$DARMANITAN" > Darmanitan.txt
-    export CATFILE="Darmanitan.txt"
-    export CATNAME="Darmanitan"
-    $CATEGORIZE
-    rm Darmanitan.txt
-    unset DARMANITAN
-  fi
-
-  if [ "$DARUMAKA" != "" ];
-  then
-    printf "%s" "$DARUMAKA" > Darumaka.txt
-    export CATFILE="Darumaka.txt"
-    export CATNAME="Darumaka"
-    $CATEGORIZE
-    rm Darumaka.txt
-    unset DARUMAKA
-  fi
-
-  if [ "$DEERLING" != "" ];
-  then
-    printf "%s" "$DEERLING" > Deerling.txt
-    export CATFILE="Deerling.txt"
-    export CATNAME="Deerling"
-    $CATEGORIZE
-    rm Deerling.txt
-    unset DEERLING
-  fi
-
-  if [ "$DEINO" != "" ];
-  then
-    printf "%s" "$DEINO" > Deino.txt
-    export CATFILE="Deino.txt"
-    export CATNAME="Deino"
-    $CATEGORIZE
-    rm Deino.txt
-    unset DEINO
-  fi
-
-  if [ "$DELCATTY" != "" ];
-  then
-    printf "%s" "$DELCATTY" > Delcatty.txt
-    export CATFILE="Delcatty.txt"
-    export CATNAME="Delcatty"
-    $CATEGORIZE
-    rm Delcatty.txt
-    unset DELCATTY
-  fi
-
-  if [ "$DELIBIRD" != "" ];
-  then
-    printf "%s" "$DELIBIRD" > Delibird.txt
-    export CATFILE="Delibird.txt"
-    export CATNAME="Delibird"
-    $CATEGORIZE
-    rm Delibird.txt
-    unset DELIBIRD
-  fi
-
-  if [ "$DEOXYS" != "" ];
-  then
-    printf "%s" "$DEOXYS" > Deoxys.txt
-    export CATFILE="Deoxys.txt"
-    export CATNAME="Deoxys"
-    $CATEGORIZE
-    rm Deoxys.txt
-    unset DEOXYS
-  fi
-
-  if [ "$DEWGONG" != "" ];
-  then
-    printf "%s" "$DEWGONG" > Dewgong.txt
-    export CATFILE="Dewgong.txt"
-    export CATNAME="Dewgong"
-    $CATEGORIZE
-    rm Dewgong.txt
-    unset DEWGONG
-  fi
-
-  if [ "$DEWOTT" != "" ];
-  then
-    printf "%s" "$DEWOTT" > Dewott.txt
-    export CATFILE="Dewott.txt"
-    export CATNAME="Dewott"
-    $CATEGORIZE
-    rm Dewott.txt
-    unset DEWOTT
-  fi
-
-  if [ "$DIALGA" != "" ];
-  then
-    printf "%s" "$DIALGA" > Dialga.txt
-    export CATFILE="Dialga.txt"
-    export CATNAME="Dialga"
-    $CATEGORIZE
-    rm Dialga.txt
-    unset DIALGA
-  fi
-
-  if [ "$DIGLETT" != "" ];
-  then
-    printf "%s" "$DIGLETT" > Diglett.txt
-    export CATFILE="Diglett.txt"
-    export CATNAME="Diglett"
-    $CATEGORIZE
-    rm Diglett.txt
-    unset DIGLETT
-  fi
-
-  if [ "$DITTO" != "" ];
-  then
-    printf "%s" "$DITTO" > Ditto.txt
-    export CATFILE="Ditto.txt"
-    export CATNAME="Ditto (Pokémon)"
-    $CATEGORIZE
-    rm Ditto.txt
-    unset DITTO
-  fi
-
-  if [ "$DODRIO" != "" ];
-  then
-    printf "%s" "$DODRIO" > Dodrio.txt
-    export CATFILE="Dodrio.txt"
-    export CATNAME="Dodrio"
-    $CATEGORIZE
-    rm Dodrio.txt
-    unset DODRIO
-  fi
-
-  if [ "$DODUO" != "" ];
-  then
-    printf "%s" "$DODUO" > Doduo.txt
-    export CATFILE="Doduo.txt"
-    export CATNAME="Doduo"
-    $CATEGORIZE
-    rm Doduo.txt
-    unset DODUO
-  fi
-
-  if [ "$DONPHAN" != "" ];
-  then
-    printf "%s" "$DONPHAN" > Donphan.txt
-    export CATFILE="Donphan.txt"
-    export CATNAME="Donphan"
-    $CATEGORIZE
-    rm Donphan.txt
-    unset DONPHAN
-  fi
-
-  if [ "$DRAGONAIR" != "" ];
-  then
-    printf "%s" "$DRAGONAIR" > Dragonair.txt
-    export CATFILE="Dragonair.txt"
-    export CATNAME="Dragonair"
-    $CATEGORIZE
-    rm Dragonair.txt
-    unset DRAGONAIR
-  fi
-
-  if [ "$DRAGONITE" != "" ];
-  then
-    printf "%s" "$DRAGONITE" > Dragonite.txt
-    export CATFILE="Dragonite.txt"
-    export CATNAME="Dragonite"
-    $CATEGORIZE
-    rm Dragonite.txt
-    unset DRAGONITE
-  fi
-
-  if [ "$DRAPION" != "" ];
-  then
-    printf "%s" "$DRAPION" > Drapion.txt
-    export CATFILE="Drapion.txt"
-    export CATNAME="Drapion"
-    $CATEGORIZE
-    rm Drapion.txt
-    unset DRAPION
-  fi
-
-  if [ "$DRATINI" != "" ];
-  then
-    printf "%s" "$DRATINI" > Dratini.txt
-    export CATFILE="Dratini.txt"
-    export CATNAME="Dratini"
-    $CATEGORIZE
-    rm Dratini.txt
-    unset DRATINI
-  fi
-
-  if [ "$DRIFBLIM" != "" ];
-  then
-    printf "%s" "$DRIFBLIM" > Drifblim.txt
-    export CATFILE="Drifblim.txt"
-    export CATNAME="Drifblim"
-    $CATEGORIZE
-    rm Drifblim.txt
-    unset DRIFBLIM
-  fi
-
-  if [ "$DRIFLOON" != "" ];
-  then
-    printf "%s" "$DRIFLOON" > Drifloon.txt
-    export CATFILE="Drifloon.txt"
-    export CATNAME="Drifloon"
-    $CATEGORIZE
-    rm Drifloon.txt
-    unset DRIFLOON
-  fi
-
-  if [ "$DRILBUR" != "" ];
-  then
-    printf "%s" "$DRILBUR" > Drilbur.txt
-    export CATFILE="Drilbur.txt"
-    export CATNAME="Drilbur"
-    $CATEGORIZE
-    rm Drilbur.txt
-    unset DRILBUR
-  fi
-
-  if [ "$DROWZEE" != "" ];
-  then
-    printf "%s" "$DROWZEE" > Drowzee.txt
-    export CATFILE="Drowzee.txt"
-    export CATNAME="Drowzee"
-    $CATEGORIZE
-    rm Drowzee.txt
-    unset DROWZEE
-  fi
-
-  if [ "$DRUDDIGON" != "" ];
-  then
-    printf "%s" "$DRUDDIGON" > Druddigon.txt
-    export CATFILE="Druddigon.txt"
-    export CATNAME="Druddigon"
-    $CATEGORIZE
-    rm Druddigon.txt
-    unset DRUDDIGON
-  fi
-
-  if [ "$DUCKLETT" != "" ];
-  then
-    printf "%s" "$DUCKLETT" > Ducklett.txt 
-    export CATFILE="Ducklett.txt"
-    export CATNAME="Ducklett"
-    $CATEGORIZE
-    rm Ducklett.txt
-    unset DUCKLETT
-  fi
-
-  if [ "$DUGTRIO" != "" ];
-  then
-    printf "%s" "$DUGTRIO" > Dugtrio.txt
-    export CATFILE="Dugtrio.txt"
-    export CATNAME="Dugtrio"
-    $CATEGORIZE
-    rm Dugtrio.txt
-    unset DUGTRIO
-  fi
-
-  if [ "$DUNSPARCE" != "" ];
-  then
-    printf "%s" "$DUNSPARCE" > Dunsparce.txt
-    export CATFILE="Dunsparce.txt"
-    export CATNAME="Dunsparce"
-    $CATEGORIZE
-    rm Dunsparce.txt
-    unset DUNSPARCE
-  fi
-
-  if [ "$DUOSION" != "" ];
-  then
-    printf "%s" "$DUOSION" > Duosion.txt
-    export CATFILE="Duosion.txt"
-    export CATNAME="Duosion"
-    $CATEGORIZE
-    rm Duosion.txt
-    unset DUOSION
-  fi
-
-  if [ "$DURANT" != "" ];
-  then
-    printf "%s" "$DURANT" > Durant.txt
-    export CATFILE="Durant.txt"
-    export CATNAME="Durant"
-    $CATEGORIZE
-    rm Durant.txt
-    unset DURANT
-  fi
-
-  if [ "$DUSCLOPS" != "" ];
-  then
-    printf "%s" "$DUSCLOPS" > Dusclops.txt
-    export CATFILE="Dusclops.txt"
-    export CATNAME="Dusclops"
-    $CATEGORIZE
-    rm Dusclops.txt
-    unset DUSCLOPS
-  fi
-
-  if [ "$DUSKNOIR" != "" ];
-  then
-    printf "%s" "$DUSKNOIR" > Dusknoir.txt
-    export CATFILE="Dusknoir.txt"
-    export CATNAME="Dusknoir"
-    $CATEGORIZE
-    rm Dusknoir.txt
-    unset DUSKNOIR
-  fi
-
-  if [ "$DUSKULL" != "" ];
-  then
-    printf "%s" "$DUSKULL" > Duskull.txt
-    export CATFILE="Duskull.txt"
-    export CATNAME="Duskull"
-    $CATEGORIZE
-    rm Duskull.txt
-    unset DUSKULL
-  fi
-
-  if [ "$DUSTOX" != "" ];
-  then
-    printf "%s" "$DUSTOX" > Dustox.txt
-    export CATFILE="Dustox.txt"
-    export CATNAME="Dustox"
-    $CATEGORIZE
-    rm Dustox.txt
-    unset DUSTOX
-  fi
-
-  if [ "$DWEBBLE" != "" ];
-  then
-    printf "%s" "$DWEBBLE" > Dwebble.txt
-    export CATFILE="Dwebble.txt"
-    export CATNAME="Dwebble"
-    $CATEGORIZE
-    rm Dwebble.txt
-    unset DWEBBLE
-  fi
+  categorize "DARKRAI" "Darkrai"
+  categorize "DARMANITAN" "Darmanitan"
+  categorize "DARUMAKA" "Darumaka"
+  categorize "DEERLING" "Deerling"
+  categorize "DEINO" "Deino"
+  categorize "DELCATTY" "Delcatty"
+  categorize "DELIBIRD" "Delibird"
+  categorize "DEOXYS" "Deoxys"
+  categorize "DEWGONG" "Dewgong"
+  categorize "DEWOTT" "Dewott"
+  categorize "DIALGA" "Dialga"
+  categorize "DIGLETT" "Diglett"
+  categorize "DITTO" "Ditto (Pokémon)"
+  categorize "DODRIO" "Dodrio"
+  categorize "DODUO" "Doduo"
+  categorize "DONPHAN" "Donphan"
+  categorize "DRAGONAIR" "Dragonair"
+  categorize "DRAGONITE" "Dragonite"
+  categorize "DRAPION" "Drapion"
+  categorize "DRATINI" "Dratini"
+  categorize "DRIFBLIM" "Drifblim"
+  categorize "DRIFLOON" "Drifloon"
+  categorize "DRILBUR" "Drilbur"
+  categorize "DROWZEE" "Drowzee"
+  categorize "DRUDDIGON" "Druddigon"
+  categorize "DUCKLETT" "Ducklett"
+  categorize "DUGTRIO" "Dugtrio"
+  categorize "DUNSPARCE" "Dunsparce"
+  categorize "DUOSION" "Duosion"
+  categorize "DURANT" "Durant"
+  categorize "DUSCLOPS" "Dusclops"
+  categorize "DUSKNOIR" "Dusknoir"
+  categorize "DUSKULL" "Duskull"
+  categorize "DUSTOX" "Dustox"
+  categorize "DWEBBLE" "Dwebble"
 
   debug_end "Pokemon 'D' script"
 

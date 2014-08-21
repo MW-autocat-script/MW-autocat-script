@@ -9,17 +9,9 @@ then
 
   debug_start "Page titles not starting with an interrogative word"
 
-  INTSTART="$(egrep -iv "$KEYWORDS_INTSTART" "$NEWPAGES")"
+  INTSTART=$(egrep -iv "$KEYWORDS_INTSTART" "$NEWPAGES")
 
-  if [ "$INTSTART" != "" ];
-  then
-    printf "%s" "$INTSTART" > Intstart.txt
-    export CATFILE="Intstart.txt"
-    export CATNAME="Page titles not starting with an interrogative word"
-    $CATEGORIZE
-    rm Intstart.txt
-    unset INTSTART
-  fi
+  categorize "INTSTART" "Page titles not starting with an interrogative word"
 
   debug_end "Page titles not starting with an interrogative word"
 

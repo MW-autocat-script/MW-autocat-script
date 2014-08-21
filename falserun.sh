@@ -71,7 +71,7 @@ DEBUG="yes"
 
 echo "Creating empty test file"
 
-cat /dev/null > "$NEWPAGES"
+printf "%s" "Why is this question here" > "$NEWPAGES"
 
 
 OLDSUM="A"

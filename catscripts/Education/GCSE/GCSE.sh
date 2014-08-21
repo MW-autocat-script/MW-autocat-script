@@ -10,15 +10,7 @@ then
 
   GCSE=$(egrep -i "$KEYWORDS_GCSE" "$NEWPAGES")
 
-  if [ "$GCSE" != "" ];
-  then
-    printf "%s" "$GCSE" > GCSE.txt
-    export CATFILE="GCSE.txt"
-    export CATNAME="GCSE"
-    $CATEGORIZE
-    rm GCSE.txt
-    unset GCSE
-  fi
+  categorize "GCSE" "GCSE"
 
   debug_end "GCSE"
 

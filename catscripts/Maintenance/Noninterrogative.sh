@@ -41,15 +41,7 @@ then
 
   NONINT=$(egrep -iv "$KEYWORDS_INTERROGATIVE" "$NEWPAGES")
 
-  if [ "$NONINT" != "" ];
-  then
-    printf "%s" "$NONINT" > noninterrogative.txt
-    export CATFILE="noninterrogative.txt"
-    export CATNAME="Page titles lacking an interrogative word"
-    $CATEGORIZE
-    rm noninterrogative.txt
-    unset NONINT
-  fi
+  categorize "NONINT" "Page titles lacking an interrogative word"
 
   debug_end "Non-interrogative question search"
 
