@@ -56,12 +56,13 @@ debug_end(){
 categorize(){
   if [ "${!1}" != "" ];
   then
-    printf "%s" "${!1}" > "$TEMPDIR/CATFILE.txt"
-    export CATFILE="$TEMPDIR/CATFILE.txt"
+    printf "%s" "${!1}" > "$TEMPDIR/$1.txt"
+    export CATFILE="$TEMPDIR/$1.txt"
     export CATNAME="$2"
     ./util/Categorize.sh
     rm "$CATFILE"
     unset "$1"
+    unset CATNAME
   fi
 }
 
