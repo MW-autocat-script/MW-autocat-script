@@ -85,315 +85,37 @@ then
   GUARDIAN="$(egrep -i "$KEYWORDS_POKEMONGUARDIANSIGNS" "$NEWPAGES")"
   GALEOFDARKNESS="$(egrep -i "$KEYWORDS_POKEMONXD" "$NEWPAGES")"
 
-  if [ "$RED" != "" ];
-  then
-    printf "%s" "$RED" > PokémonRed.txt
-    export CATFILE="PokémonRed.txt"
-    export CATNAME="Pokémon Red"
-    $CATEGORIZE
-    rm PokémonRed.txt
-    unset RED
-  fi
-
-  if [ "$BLUE" != "" ];
-  then
-    printf "%s" "$BLUE" > PokémonBlue.txt
-    export CATFILE="PokémonBlue.txt"
-    export CATNAME="Pokémon Blue"
-    $CATEGORIZE
-    rm PokémonBlue.txt
-    unset BLUE
-  fi
-
-  if [ "$YELLOW" != "" ];
-  then
-    printf "%s" "$YELLOW" > PokémonYellow.txt
-    export CATFILE="PokémonYellow.txt"
-    export CATNAME="Pokémon Yellow"
-    $CATEGORIZE
-    rm PokémonYellow.txt
-    unset YELLOW
-  fi
-
-  if [ "$GOLD" != "" ];
-  then
-    printf "%s" "$GOLD" > PokémonGold.txt
-    export CATFILE="PokémonGold.txt"
-    export CATNAME="Pokémon Gold"
-    $CATEGORIZE
-    rm PokémonGold.txt
-    unset GOLD
-  fi
-
-  if [ "$SILVER" != "" ];
-  then
-    printf "%s" "$SILVER" > PokémonSilver.txt
-    export CATFILE="PokémonSilver.txt"
-    export CATNAME="Pokémon Silver"
-    $CATEGORIZE
-    rm PokémonSilver.txt
-    unset SILVER
-  fi
-
-  if [ "$CRYSTAL" != "" ];
-  then
-    printf "%s" "$CRYSTAL" > PokémonCrystal.txt
-    export CATFILE="PokémonCrystal.txt"
-    export CATNAME="Pokémon Crystal"
-    $CATEGORIZE
-    rm PokémonCrystal.txt
-    unset CRYSTAL
-  fi
-
-  if [ "$RUBY" != "" ];
-  then
-    printf "%s" "$RUBY" > PokémonRuby.txt
-    export CATFILE="PokémonRuby.txt"
-    export CATNAME="Pokémon Ruby"
-    $CATEGORIZE
-    rm PokémonRuby.txt
-    unset RUBY
-  fi
-
-  if [ "$SAPPHIRE" != "" ];
-  then
-    printf "%s" "$SAPPHIRE" > PokémonSapphire.txt
-    export CATFILE="PokémonSapphire.txt"
-    export CATNAME="Pokémon Sapphire"
-    $CATEGORIZE
-    rm PokémonSapphire.txt
-    unset SAPPHIRE
-  fi
-
-  if [ "$EMERALD" != "" ];
-  then
-    printf "%s" "$EMERALD" > PokémonEmerald.txt
-    export CATFILE="PokémonEmerald.txt"
-    export CATNAME="Pokémon Emerald"
-    $CATEGORIZE
-    rm PokémonEmerald.txt
-    unset EMERALD
-  fi
-
-  if [ "$FIRERED" != "" ];
-  then
-    printf "%s" "$FIRERED" > PokémonFireRed.txt
-    export CATFILE="PokémonFireRed.txt"
-    export CATNAME="Pokémon FireRed"
-    $CATEGORIZE
-    rm PokémonFireRed.txt
-    unset FIRERED
-  fi
-
-  if [ "$LEAFGREEN" != "" ];
-  then
-    printf "%s" "$LEAFGREEN" > PokémonLeafGreen.txt
-    export CATFILE="PokémonLeafGreen.txt"
-    export CATNAME="Pokémon LeafGreen"
-    $CATEGORIZE
-    rm PokémonLeafGreen.txt
-    unset LEAFGREEN
-  fi
-
-  if [ "$REDTEAM" != "" ];
-  then
-    printf "%s" "$REDTEAM" > RedRescueTeam.txt
-    export CATFILE="RedRescueTeam.txt"
-    export CATNAME="Pokémon Mystery Dungeon: Red Rescue Team"
-    $CATEGORIZE
-    rm RedRescueTeam.txt
-    unset REDTEAM
-  fi
-
-  if [ "$BLUETEAM" != "" ];
-  then
-    printf "%s" "$BLUETEAM" > BlueRescueTeam.txt
-    export CATFILE="BlueRescueTeam.txt"
-    export CATNAME="Pokémon Mystery Dungeon: Blue Rescue Team"
-    $CATEGORIZE
-    rm BlueRescueTeam.txt
-    unset BLUETEAM
-  fi
-
-  if [ "$BLACK" != "" ];
-  then
-    printf "%s" "$BLACK" > PokémonBlack.txt
-    export CATFILE="PokémonBlack.txt"
-    export CATNAME="Pokémon Black"
-    $CATEGORIZE
-    rm PokémonBlack.txt
-    unset BLACK
-  fi
-
-  if [ "$WHITE" != "" ];
-  then
-    printf "%s" "$WHITE" > PokémonWhite.txt
-    export CATFILE="PokémonWhite.txt"
-    export CATNAME="Pokémon White"
-    $CATEGORIZE
-    rm PokémonWhite.txt
-    unset WHITE
-  fi
-
-  if [ "$BLACK2" != "" ];
-  then
-    printf "%s" "$BLACK2" > PokémonBlack2.txt
-    export CATFILE="PokémonBlack2.txt"
-    export CATNAME="Pokémon Black 2"
-    $CATEGORIZE
-    rm PokémonBlack2.txt
-    unset BLACK2
-  fi
-
-  if [ "$WHITE2" != "" ];
-  then
-    printf "%s" "$WHITE2" > PokémonWhite2.txt
-    export CATFILE="PokémonWhite2.txt"
-    export CATNAME="Pokémon White 2"
-    $CATEGORIZE
-    rm PokémonWhite2.txt
-    unset WHITE2
-  fi
-
-  if [ "$DIAMOND" != "" ];
-  then
-    printf "%s" "$DIAMOND" > PokémonDiamond.txt
-    export CATFILE="PokémonDiamond.txt"
-    export CATNAME="Pokémon Diamond"
-    $CATEGORIZE
-    rm PokémonDiamond.txt
-    unset DIAMOND
-  fi
-
-  if [ "$PEARL" != "" ];
-  then
-    printf "%s" "$PEARL" > PokémonPearl.txt
-    export CATFILE="PokémonPearl.txt"
-    export CATNAME="Pokémon Pearl"
-    $CATEGORIZE
-    rm PokémonPearl.txt
-    unset PEARL
-  fi
-
-  if [ "$PLATINUM" != "" ];
-  then
-    printf "%s" "$PLATINUM" > PokémonPlatinum.txt
-    export CATFILE="PokémonPlatinum.txt"
-    export CATNAME="Pokémon Platinum"
-    $CATEGORIZE
-    rm PokémonPlatinum.txt
-    unset PLATINUM
-  fi
-
-  if [ "$HEARTGOLD" != "" ];
-  then
-    printf "%s" "$HEARTGOLD" > PokémonHeartGold.txt
-    export CATFILE="PokémonHeartGold.txt"
-    export CATNAME="Pokémon HeartGold"
-    $CATEGORIZE
-    rm PokémonHeartGold.txt
-    unset HEARTGOLD
-  fi
-
-  if [ "$SOULSILVER" != "" ];
-  then
-    printf "%s" "$SOULSILVER" > PokémonSoulSilver.txt
-    export CATFILE="PokémonSoulSilver.txt"
-    export CATNAME="Pokémon SoulSilver"
-    $CATEGORIZE
-    rm PokémonSoulSilver.txt
-    unset SOULSILVER
-  fi
-
-  if [ "$UNOVARPG" != "" ];
-  then
-    printf "%s" "$UNOVARPG" > UnovaRPG.txt
-    export CATFILE="UnovaRPG.txt"
-    export CATNAME="UnovaRPG"
-    $CATEGORIZE
-    rm UnovaRPG.txt
-    unset UNOVARPG
-  fi
-
-  if [ "$DELUGERPG" != "" ];
-  then
-    printf "%s" "$DELUGERPG" > DelugeRPG.txt
-    export CATFILE="DelugeRPG.txt"
-    export CATNAME="DelugeRPG"
-    $CATEGORIZE
-    rm DelugeRPG.txt
-    unset DELUGERPG
-  fi
-
-  if [ "$POKEMONX" != "" ];
-  then
-    printf "%s" "$POKEMONX" > PokémonX.txt
-    export CATFILE="PokémonX.txt"
-    export CATNAME="Pokémon X"
-    $CATEGORIZE
-    rm PokémonX.txt
-    unset POKEMONX
-  fi
-
-  if [ "$POKEMONY" != "" ];
-  then
-    printf "%s" "$POKEMONY" > PokémonY.txt
-    export CATFILE="PokémonY.txt"
-    export CATNAME="Pokémon Y"
-    $CATEGORIZE
-    rm PokémonY.txt
-    unset POKEMONY
-  fi
-
-  if [ "$RANGER" != "" ];
-  then
-    printf "%s" "$RANGER" > PokémonRanger.txt
-    export CATFILE="PokémonRanger.txt"
-    export CATNAME="Pokémon Ranger"
-    $CATEGORIZE
-    rm PokémonRanger.txt
-    unset RANGER
-  fi
-
-  if [ "$ALMIA" != "" ];
-  then
-    printf "%s" "$ALMIA" > ShadowsOfAlmia.txt
-    export CATFILE="ShadowsOfAlmia.txt"
-    export CATNAME="Pokémon Ranger: Shadows of Almia"
-    $CATEGORIZE
-    rm ShadowsOfAlmia.txt
-    unset ALMIA
-  fi
-
-  if [ "$GUARDIAN" != "" ];
-  then
-    printf "%s" "$GUARDIAN" > GuardianSigns.txt
-    export CATFILE="GuardianSigns.txt"
-    export CATNAME="Pokémon Ranger: Guardian Signs"
-    $CATEGORIZE
-    rm GuardianSigns.txt
-    unset GUARDIAN
-  fi
-
-  if [ "$GALEOFDARKNESS" != "" ];
-  then
-    printf "%s" "$GALEOFDARKNESS" > PokémonXD.txt
-    export CATFILE="PokémonXD.txt"
-    export CATNAME="Pokémon XD: Gale of Darkness"
-    $CATEGORIZE
-    rm PokémonXD.txt
-    unset GALEOFDARKNESS
-  fi
-
-  if [ "$VORTEX" != "" ];
-  then
-    printf "%s" "$VORTEX" > Vortex.txt
-    export CATFILE="Vortex.txt"
-    export CATNAME="Pokémon Vortex"
-    $CATEGORIZE
-    rm Vortex.txt
-    unset VORTEX
-  fi
+  categorize "RED" "Pokémon Red"
+  categorize "BLUE" "Pokémon Blue"
+  categorize "YELLOW" "Pokémon Yellow"
+  categorize "GOLD" "Pokémon Gold"
+  categorize "SILVER" "Pokémon Silver"
+  categorize "CRYSTAL" "Pokémon Crystal"
+  categorize "RUBY" "Pokémon Ruby"
+  categorize "SAPPHIRE" "Pokémon Sapphire"
+  categorize "EMERALD" "Pokémon Emerald"
+  categorize "FIRERED" "Pokémon FireRed"
+  categorize "LEAFGREEN" "Pokémon LeafGreen"
+  categorize "REDTEAM" "Pokémon Mystery Dungeon: Red Rescue Team"
+  categorize "BLUETEAM" "Pokémon Mystery Dungeon: Blue Rescue Team"
+  categorize "BLACK" "Pokémon Black"
+  categorize "WHITE" "Pokémon White"
+  categorize "BLACK2" "Pokémon Black 2"
+  categorize "WHITE2" "Pokémon White 2"
+  categorize "DIAMOND" "Pokémon Diamond"
+  categorize "PEARL" "Pokémon Pearl"
+  categorize "PLATINUM" "Pokémon Platinum"
+  categorize "HEARTGOLD" "Pokémon HeartGold"
+  categorize "SOULSILVER" "Pokémon SoulSilver"
+  categorize "UNOVARPG" "UnovaRPG"
+  categorize "DELUGERPG" "DelugeRPG"
+  categorize "POKEMONX" "Pokémon X"
+  categorize "POKEMONY" "Pokémon Y"
+  categorize "RANGER" "Pokémon Ranger"
+  categorize "ALMIA" "Pokémon Ranger: Shadows of Almia"
+  categorize "GUARDIAN" "Pokémon Ranger: Guardian Signs"
+  categorize "GALEOFDARKNESS" "Pokémon XD: Gale of Darkness"
+  categorize "VORTEX" "Pokémon Vortex"
 
   debug_end "Pokemon games"
 
