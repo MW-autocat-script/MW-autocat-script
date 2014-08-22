@@ -17,15 +17,7 @@ then
 
   POKEMON=$(egrep -i "$KEYWORDS_POKEMON" "$NEWPAGES" | egrep -iv "$KEYWORDS_POKEMON_EXCLUDE")
 
-  if [ "$POKEMON" != "" ];
-  then
-    printf "%s" "$POKEMON" > Pokemon.txt
-    export CATFILE="Pokemon.txt"
-    export CATNAME="Pokémon"
-    $CATEGORIZE
-    rm Pokemon.txt
-    unset POKEMON
-  fi
+  categorize "POKEMON" "Pokémon"
 
   debug_end "Pokémon"
 

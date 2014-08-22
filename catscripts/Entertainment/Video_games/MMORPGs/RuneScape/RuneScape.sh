@@ -13,15 +13,7 @@ then
 
   RUNESCAPE=$(egrep -i "$KEYWORDS_MMORPG_RUNESCAPE" "$NEWPAGES")
 
-  if [ "$RUNESCAPE" != "" ];
-  then
-    printf "%s" "$RUNESCAPE" > RuneScape.txt
-    export CATFILE="RuneScape.txt"
-    export CATNAME="RuneScape"
-    $CATEGORIZE
-    rm RuneScape.txt
-    unset RUNESCAPE
-  fi
+  categorize "RUNESCAPE" "RuneScape"
 
   debug_end "RuneScape"
 

@@ -9,15 +9,7 @@ then
 
   ZUNE=$(egrep -i "$KEYWORDS_ZUNE" "$NEWPAGES")
 
-  if [ "$ZUNE" != "" ];
-  then
-    printf "%s" "$ZUNE" > Zune.txt
-    export CATFILE="Zune.txt"
-    export CATNAME="Zune"
-    $CATEGORIZE
-    rm Zune.txt
-    unset ZUNE
-  fi
+  categorize "ZUNE" "Zune"
 
   debug_end "Zune"
 

@@ -9,14 +9,7 @@ then
 
   POE=$(egrep -i "$KEYWORDS_POE" "$NEWPAGES")
 
-  if [ "$POE" != "" ];
-  then
-    printf "%s" "$POE" > Poe.txt
-    export CATFILE="Poe.txt"
-    export CATNAME="Edgar Allan Poe"
-    $CATEGORIZE
-    rm Poe.txt
-  fi
+  categorize "POE" "Edgar Allan Poe"
 
   debug_end "Edgar Allan Poe"
 

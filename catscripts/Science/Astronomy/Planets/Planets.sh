@@ -34,105 +34,25 @@ then
 
   debug_start "Planets"
 
-  MERCURY="$(egrep -i "$KEYWORDS_MERCURY" "$NEWPAGES" | egrep -iv "$KEYWORDS_MERCURY_EXCLUDE")"
-  VENUS="$(egrep -i "$KEYWORDS_VENUS" "$NEWPAGES" | egrep -iv "$KEYWORDS_VENUS_EXCLUDE")"
-  EARTH="$(egrep -i "$KEYWORDS_EARTH" "$NEWPAGES" | egrep -iv "$KEYWORDS_EARTH_EXCLUDE")"
-  MARS="$(egrep -i "$KEYWORDS_MARS" "$NEWPAGES" | egrep -iv "$KEYWORDS_MARS_EXCLUDE")"
-  JUPITER="$(egrep -i "$KEYWORDS_JUPITER" "$NEWPAGES" | egrep -iv "$KEYWORDS_JUPITER_EXCLUDE")"
-  SATURN="$(egrep -i "$KEYWORDS_SATURN" "$NEWPAGES" | egrep -iv "$KEYWORDS_SATURN_EXCLUDE")"
-  URANUS="$(egrep -i "$KEYWORDS_URANUS" "$NEWPAGES" | egrep -iv "$KEYWORDS_URANUS_EXCLUDE")"
-  NEPTUNE="$(egrep -i "$KEYWORDS_NEPTUNE" "$NEWPAGES" | egrep -iv "$KEYWORDS_NEPTUNE_EXCLUDE")"
-  PLANETS="$(egrep -i "$KEYWORDS_PLANET" "$NEWPAGES" | egrep -iv "$KEYWORDS_PLANET_EXCLUDE")"
+  MERCURY=$(egrep -i "$KEYWORDS_MERCURY" "$NEWPAGES" | egrep -iv "$KEYWORDS_MERCURY_EXCLUDE")
+  VENUS=$(egrep -i "$KEYWORDS_VENUS" "$NEWPAGES" | egrep -iv "$KEYWORDS_VENUS_EXCLUDE")
+  EARTH=$(egrep -i "$KEYWORDS_EARTH" "$NEWPAGES" | egrep -iv "$KEYWORDS_EARTH_EXCLUDE")
+  MARS=$(egrep -i "$KEYWORDS_MARS" "$NEWPAGES" | egrep -iv "$KEYWORDS_MARS_EXCLUDE")
+  JUPITER=$(egrep -i "$KEYWORDS_JUPITER" "$NEWPAGES" | egrep -iv "$KEYWORDS_JUPITER_EXCLUDE")
+  SATURN=$(egrep -i "$KEYWORDS_SATURN" "$NEWPAGES" | egrep -iv "$KEYWORDS_SATURN_EXCLUDE")
+  URANUS=$(egrep -i "$KEYWORDS_URANUS" "$NEWPAGES" | egrep -iv "$KEYWORDS_URANUS_EXCLUDE")
+  NEPTUNE=$(egrep -i "$KEYWORDS_NEPTUNE" "$NEWPAGES" | egrep -iv "$KEYWORDS_NEPTUNE_EXCLUDE")
+  PLANETS=$(egrep -i "$KEYWORDS_PLANET" "$NEWPAGES" | egrep -iv "$KEYWORDS_PLANET_EXCLUDE")
 
-  if [ "$MERCURY" != "" ];
-  then
-    printf "%s" "$MERCURY" > Mercury.txt
-    export CATFILE="Mercury.txt"
-    export CATNAME="Mercury"
-    $CATEGORIZE
-    rm Mercury.txt
-    unset MERCURY
-  fi
-
-  if [ "$VENUS" != "" ];
-  then
-    printf "%s" "$VENUS" > Venus.txt
-    export CATFILE="Venus.txt"
-    export CATNAME="Venus"
-    $CATEGORIZE
-    rm Venus.txt
-    unset VENUS
-  fi
-
-  if [ "$EARTH" != "" ];
-  then
-    printf "%s" "$EARTH" > Earth.txt
-    export CATFILE="Earth.txt"
-    export CATNAME="Earth"
-    $CATEGORIZE
-    rm Earth.txt
-    unset EARTH
-  fi
-
-  if [ "$MARS" != "" ];
-  then
-    printf "%s" "$MARS" > Mars.txt
-    export CATFILE="Mars.txt"
-    export CATNAME="Mars"
-    $CATEGORIZE
-    rm Mars.txt
-    unset MARS
-  fi
-
-  if [ "$JUPITER" != "" ];
-  then
-    printf "%s" "$JUPITER" > Jupiter.txt
-    export CATFILE="Jupiter.txt"
-    export CATNAME="Jupiter"
-    $CATEGORIZE
-    rm Jupiter.txt
-    unset JUPITER
-  fi
-
-  if [ "$SATURN" != "" ];
-  then
-    printf "%s" "$SATURN" > Saturn.txt
-    export CATFILE="Saturn.txt"
-    export CATNAME="Saturn"
-    $CATEGORIZE
-    rm Saturn.txt
-    unset SATURN
-  fi
-
-  if [ "$URANUS" != "" ];
-  then
-    printf "%s" "$URANUS" > Uranus.txt
-    export CATFILE="Uranus.txt"
-    export CATNAME="Uranus"
-    $CATEGORIZE
-    rm Uranus.txt
-    unset URANUS
-  fi
-
-  if [ "$NEPTUNE" != "" ];
-  then
-    printf "%s" "$NEPTUNE" > Neptune.txt 
-    export CATFILE="Neptune.txt"
-    export CATNAME="Neptune"
-    $CATEGORIZE
-    rm Neptune.txt
-    unset NEPTUNE
-  fi
-
-  if [ "$PLANETS" != "" ];
-  then
-    printf "%s" "$PLANETS" > Planets.txt
-    export CATFILE="Planets.txt"
-    export CATNAME="Planets"
-    $CATEGORIZE
-    rm Planets.txt
-    unset PLANETS
-  fi
+  categorize "MERCURY" "Mercury"
+  categorize "VENUS" "Venus"
+  categorize "EARTH" "Earth"
+  categorize "MARS" "Mars"
+  categorize "JUPITER" "Jupiter"
+  categorize "SATURN" "Saturn"
+  categorize "URANUS" "Uranus"
+  categorize "NEPTUNE" "Neptune"
+  categorize "PLANETS" "Planets"
 
   debug_end "Planets"
 

@@ -82,143 +82,19 @@ then
 
   #Categorize brands
 
-  if [ "$HONDA" != "" ];
-  then
-    printf "%s" "$HONDA" > Honda.txt
-    export CATFILE="Honda.txt"
-    export CATNAME="Honda"
-    $CATEGORIZE
-    rm Honda.txt
-    unset HONDA
-  fi
-
-  if [ "$ACURA" != "" ];
-  then
-    printf "%s" "$ACURA" > Acura.txt
-    export CATFILE="Acura.txt"
-    export CATNAME="Acura"
-    $CATEGORIZE
-    rm Acura.txt
-    unset ACURA
-  fi
-
-  #Categorize ATVs
-
-  if [ "$SPORTRAX" != "" ];
-  then
-    printf "%s" "$SPORTRAX" > HondaSportrax.txt
-    export CATFILE="HondaSportrax.txt"
-    export CATNAME="Honda Sportrax"
-    $CATEGORIZE
-    rm HondaSportrax.txt
-    unset SPORTRAX
-  fi
-
-  #Categorize cars
-
-  if [ "$ACCORD" != "" ];
-  then
-    printf "%s" "$ACCORD" > HondaAccord.txt
-    export CATFILE="HondaAccord.txt"
-    export CATNAME="Honda Accord"
-    $CATEGORIZE
-    rm HondaAccord.txt
-    unset ACCORD
-  fi
-
-  if [ "$CIVIC" != "" ];
-  then
-    printf "%s" "$CIVIC" > HondaCivic.txt
-    export CATFILE="HondaCivic.txt"
-    export CATNAME="Honda Civic"
-    $CATEGORIZE
-    rm HondaCivic.txt
-    unset CIVIC
-  fi
-
-  if [ "$ELEMENT" != "" ];
-  then
-    printf "%s" "$ELEMENT" > HondaElement.txt
-    export CATFILE="HondaElement.txt"
-    export CATNAME="Honda Element"
-    $CATEGORIZE
-    rm HondaElement.txt
-    unset ELEMENT
-  fi
-
-  if [ "$INTEGRA" != "" ];
-  then
-    printf "%s" "$INTEGRA" > HondaIntegra.txt
-    export CATFILE="HondaIntegra.txt"
-    export CATNAME="Honda Integra"
-    $CATEGORIZE
-    rm HondaIntegra.txt
-    unset INTEGRA
-  fi
-
-  if [ "$PASSPORT" != "" ];
-  then
-    printf "%s" "$PASSPORT" > HondaPassport.txt
-    export CATFILE="HondaPassport.txt"
-    export CATNAME="Honda Passport"
-    $CATEGORIZE
-    rm HondaPassport.txt
-    unset PASSPORT
-  fi
-
-  if [ "$PRELUDE" != "" ];
-  then
-    printf "%s" "$PRELUDE" > HondaPrelude.txt
-    export CATFILE="HondaPrelude.txt"
-    export CATNAME="Honda Prelude"
-    $CATEGORIZE
-    rm HondaPrelude.txt
-    unset PRELUDE
-  fi
-
-  if [ "$ACURATL" != "" ];
-  then
-    printf "%s" "$ACURATL" > AcuraTL.txt
-    export CATFILE="AcuraTL.txt"
-    export CATNAME="Acura TL"
-    $CATEGORIZE
-    rm AcuraTL.txt
-    unset ACURATL
-  fi
-
-  #Categorize SUVs
-
-  if [ "$CRV" != "" ];
-  then
-    printf "%s" "$CRV" > HondaCRV.txt
-    export CATFILE="HondaCRV.txt"
-    export CATNAME="Honda CR-V"
-    $CATEGORIZE
-    rm HondaCRV.txt
-    unset CRV
-  fi
-
-  if [ "$PILOT" != "" ];
-  then
-    printf "%s" "$PILOT" > HondaPilot.txt
-    export CATFILE="HondaPilot.txt"
-    export CATNAME="Honda Pilot"
-    $CATEGORIZE
-    rm HondaPilot.txt
-    unset PILOT
-  fi
-
-  #Categorize vans
-
-  if [ "$ODYSSEY" != "" ];
-  then
-    printf "%s" "$ODYSSEY" > HondaOdyssey.txt
-    export CATFILE="HondaOdyssey.txt"
-    export CATNAME="Honda Odyssey"
-    $CATEGORIZE
-    rm HondaOdyssey.txt
-    unset ODYSSEY
-  fi
+  categorize "HONDA" "Honda"
+  categorize "ACURA" "Acura"
+  categorize "SPORTRAX" "Honda Sportrax"
+  categorize "ACCORD" "Honda Accord"
+  categorize "CIVIC" "Honda Civic"
+  categorize "ELEMENT" "Honda Element"
+  categorize "INTEGRA" "Honda Integra"
+  categorize "PASSPORT" "Honda Passport"
+  categorize "PRELUDE" "Honda Prelude"
+  categorize "ACURATL" "Acura TL"
+  categorize "CRV" "Honda CR-V"
+  categorize "PILOT" "Honda Pilot"
+  categorize "ODYSSEY" "Honda Odyssey"
 
   debug_end "Honda"
 

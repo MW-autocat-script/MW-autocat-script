@@ -9,15 +9,7 @@ then
 
   JLS=$(egrep -i "$KEYWORDS_JLS" "$NEWPAGES")
 
-  if [ "$JLS" != "" ];
-  then
-    printf "%s" "$JLS" > JLS.txt
-    export CATFILE="JLS.txt"
-    export CATNAME="JLS"
-    $CATEGORIZE
-    rm JLS.txt
-    unset JLS
-  fi
+  categorize "JLS" "JLS"
 
   debug_end "JLS"
 

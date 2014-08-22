@@ -45,75 +45,12 @@ then
   GUINEAPIGS=$(egrep -i "$KEYWORDS_GUINEA_PIGS" "$NEWPAGES")
   CATS=$(egrep -i "$KEYWORDS_CATS" "$NEWPAGES" | egrep -iv "$KEYWORDS_CATS_EXCLUDE")
 
-  #Categorize dogs
-
-  if [ "$DOGS" != "" ];
-  then
-    printf "%s" "$DOGS" > Dogs.txt
-    export CATFILE="Dogs.txt"
-    export CATNAME="Dogs"
-    $CATEGORIZE
-    rm Dogs.txt
-    unset DOGS
-  fi
-
-  #Categorize goldfish
-
-  if [ "$GOLDFISH" != "" ];
-  then
-    printf "%s" "$GOLDFISH" > Goldfish.txt
-    export CATFILE="Goldfish.txt"
-    export CATNAME="Goldfish"
-    $CATEGORIZE
-    rm Goldfish.txt
-    unset GOLDFISH
-  fi
-
-  #Categorize hamsters
-
-  if [ "$HAMSTERS" != "" ];
-  then
-    printf "%s" "$HAMSTERS" > Hamsters.txt
-    export CATFILE="Hamsters.txt"
-    export CATNAME="Hamsters"
-    $CATEGORIZE
-    rm Hamsters.txt
-    unset HAMSTERS
-  fi
-
-  #Categorize gerbils
-
-  if [ "$GERBILS" != "" ];
-  then
-    printf "%s" "$GERBILS" > Gerbils.txt
-    export CATFILE="Gerbils.txt"
-    export CATNAME="Gerbils"
-    $CATEGORIZE
-    rm Gerbils.txt
-    unset GERBILS
-  fi
-
-  #Categorize Guinea pigs
-
-  if [ "$GUINEAPIGS" != "" ];
-  then
-    printf "%s" "$GUINEAPIGS" > GuineaPigs.txt
-    export CATFILE="GuineaPigs.txt"
-    export CATNAME="Guinea pigs"
-    $CATEGORIZE
-    rm GuineaPigs.txt
-    unset GUINEAPIGS
-  fi
-
-  if [ "$CATS" != "" ];
-  then
-    printf "%s" "$CATS" > Cats.txt
-    export CATFILE="Cats.txt"
-    export CATNAME="Cats"
-    $CATEGORIZE
-    rm Cats.txt
-    unset CATS
-  fi
+  categorize "DOGS" "Dogs"
+  categorize "GOLDFISH" "Goldfish"
+  categorize "HAMSTERS" "Hamsters"
+  categorize "GERBILS" "Gerbils"
+  categorize "GUINEAPIGS" "Guinea pigs"
+  categorize "CATS" "Cats"
 
   debug_end "Pets"
 

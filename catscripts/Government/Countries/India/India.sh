@@ -24,86 +24,14 @@ then
   BANGALORE=$(egrep -i "$KEYWORDS_BANGALORE" "$NEWPAGES")
   PUNE=$(egrep -i "$KEYWORDS_PUNE" "$NEWPAGES")
 
-  if [ "$INDIA" != "" ];
-  then
-    printf "%s" "$INDIA" > India.txt
-    export CATFILE="India.txt"
-    export CATNAME="India"
-    $CATEGORIZE
-    rm India.txt
-    unset INDIA
-  fi
-
-  if [ "$NEWDELHI" != "" ];
-  then
-    printf "%s" "$NEWDELHI" > NewDelhi.txt
-    export CATFILE="NewDelhi.txt"
-    export CATNAME="New Delhi"
-    $CATEGORIZE
-    rm NewDelhi.txt
-    unset NEWDELHI
-  fi
-
-  if [ "$MUMBAI" != "" ];
-  then
-    printf "%s" "$MUMBAI" > Mumbai.txt
-    export CATFILE="Mumbai.txt"
-    export CATNAME="Mumbai"
-    $CATEGORIZE
-    rm Mumbai.txt
-    unset MUMBAI
-  fi
-
-  if [ "$KOLKATA" != "" ];
-  then
-    printf "%s" "$KOLKATA" > Kolkata.txt
-    export CATFILE="Kolkata.txt"
-    export CATNAME="Kolkata"
-    $CATEGORIZE
-    rm Kolkata.txt
-    unset KOLKATA
-  fi
-
-  if [ "$HYDERABAD" != "" ];
-  then
-    printf "%s" "$HYDERABAD" > Hyderabad.txt
-    export CATFILE="Hyderabad.txt"
-    export CATNAME="Hyderabad"
-    $CATEGORIZE
-    rm Hyderabad.txt
-    unset HYDERABAD
-  fi
-
-  if [ "$CHENNAI" != "" ];
-  then
-    printf "%s" "$CHENNAI" > Chennai.txt
-    export CATFILE="Chennai.txt"
-    export CATNAME="Chennai"
-    $CATEGORIZE
-    rm Chennai.txt
-    unset CHENNAI
-  fi
-
-  if [ "$BANGALORE" != "" ];
-  then
-    printf "%s" "$BANGALORE" > Bangalore.txt
-    export CATFILE="Bangalore.txt"
-    export CATNAME="Bangalore"
-    $CATEGORIZE
-    rm Bangalore.txt
-    unset BANGALORE
-  fi
-
-  if [ "$PUNE" != "" ];
-  then
-    printf "%s" "$PUNE" > Pune.txt
-    export CATFILE="Pune.txt"
-    export CATNAME="Pune"
-    $CATEGORIZE
-    rm Pune.txt
-    unset PUNE
-  fi
-
+  categorize "INDIA" "India"
+  categorize "NEWDELHI" "New Delhi"
+  categorize "MUMBAI" "Mumbai"
+  categorize "KOLKATA" "Kolkata"
+  categorize "HYDERABAD" "Hyderabad"
+  categorize "CHENNAI" "Chennai"
+  categorize "BANGALORE" "Bangalore"
+  categorize "PUNE" "Pune"
   debug_end "India"
 
 fi

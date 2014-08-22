@@ -9,15 +9,7 @@ then
 
   LONG="$(egrep -i "$KEYWORDS_LONG" "$NEWPAGES")"
 
-  if [ "$LONG" != "" ];
-  then
-    printf "%s" "$LONG" > Long.txt
-    export CATFILE="Long.txt"
-    export CATNAME="Long page titles"
-    $CATEGORIZE
-    rm Long.txt
-    unset LONG
-  fi
+  categorize "LONG" "Long page titles"
 
   debug_end "Long page titles"
 

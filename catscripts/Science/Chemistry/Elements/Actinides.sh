@@ -40,155 +40,21 @@ then
   NOBELIUM=$(egrep -i "$KEYWORDS_NOBELIUM" "$NEWPAGES" )
   LAWRENCIUM=$(egrep -i "$KEYWORDS_LAWRENCIUM" "$NEWPAGES")
 
-  if [ "$ACTINIUM" != "" ] ;
-  then
-    printf "%s" "$ACTINIUM" > Actinium.txt
-    export CATFILE="Actinium.txt"
-    export CATNAME="Actinium"
-    $CATEGORIZE
-    rm Actinium.txt
-    unset ACTINIUM
-  fi
-
-  if [ "$THORIUM" != "" ] ;
-  then
-    printf "%s" "$THORIUM" > Thorium.txt
-    export CATFILE="Thorium.txt"
-    export CATNAME="Thorium"
-    $CATEGORIZE
-    rm Thorium.txt
-    unset THORIUM
-  fi
-
-  if [ "$PROTACTINIUM" != "" ] ;
-  then
-    print "$PROTACTINIUM" > Protactinium.txt
-    export CATFILE="Protactinium.txt"
-    export CATNAME="Protactinium"
-    $CATEGORIZE
-    rm Protactinium.txt
-    unset PROTACTINIUM
-  fi
-
-  if [ "$URANIUM" != "" ] ;
-  then
-    printf "%s" "$URANIUM" > Uranium.txt
-    export CATFILE="Uranium.txt"
-    export CATNAME="Uranium"
-    $CATEGORIZE
-    rm Uranium.txt
-    unset URANIUM
-  fi
-
-  if [ "$NEPTUNIUM" != "" ] ;
-  then
-    printf "%s" "$NEPTUNIUM" > Neptunium.txt
-    export CATFILE="Neptunium.txt"
-    export CATNAME="Neptunium"
-    $CATEGORIZE
-    rm Neptunium.txt
-    unset NEPTUNIUM
-  fi
-
-  if [ "$PLUTONIUM" != "" ] ;
-  then
-    printf "%s" "$PLUTONIUM" > Plutonium.txt
-    export CATFILE="Plutonium.txt"
-    export CATNAME="Plutonium"
-    $CATEGORIZE
-    rm Plutonium.txt
-    unset PLUTONIUM
-  fi
-
-  if [ "$AMERCIUM" != "" ] ;
-  then
-    printf "%s" "$AMERCIUM" > Americium.txt
-    export CATFILE="Americium.txt"
-    export CATNAME="Americium"
-    $CATEGORIZE
-    rm Americium.txt
-    unset AMERCIUM
-  fi
-
-  if [ "$CURIUM" != "" ] ;
-  then
-    printf "%s" "$CURIUM" > Curium.txt
-    export CATFILE="Curium.txt"
-    export CATNAME="Curium"
-    $CATEGORIZE
-    rm Curium.txt
-    unset CURIUM
-  fi
-
-  if [ "$BERKELIUM" != "" ] ;
-  then
-    printf "%s" "$BERKELIUM" > Berkelium.txt
-    export CATFILE="Berkelium.txt"
-    export CATNAME="Berkelium"
-    $CATEGORIZE
-    rm Berkelium.txt
-    unset BERKELIUM
-  fi
-
-  if [ "$CALIFORNIUM" != "" ] ;
-  then
-    printf "%s" "$CALIFORNIUM" > Californium.txt
-    export CATFILE="Californium.txt"
-    export CATNAME="Californium"
-    $CATEGORIZE
-    rm Californium.txt
-    unset CALIFORNIUM
-  fi
-
-  if [ "$EINSTEINIUM" != "" ] ;
-  then
-    printf "%s" "$EINSTEINIUM" > Einsteinium.txt
-    export CATFILE="Einsteinium.txt"
-    export CATNAME="Einsteinium"
-    $CATEGORIZE
-    rm Einsteinium.txt
-    unset EINSTEINIUM
-  fi
-
-  if [ "$FERMIUM" != "" ] ;
-  then
-    printf "%s" "$FERMIUM" > Fermium.txt
-    export CATFILE="Fermium.txt"
-    export CATNAME="Fermium"
-    $CATEGORIZE
-    rm Fermium.txt
-    unset FERMIUM
-  fi
-
-  if [ "$MENDELEVIUM" != "" ] ;
-  then
-    printf "%s" "$MENDELEVIUM" > Mendelevium.txt
-    export CATFILE="Mendelevium.txt"
-    export CATNAME="Mendelevium"
-    $CATEGORIZE
-    rm Mendelevium.txt
-    unset MENDELEVIUM
-  fi
-
-  if [ "$NOBELIUM" != "" ] ;
-  then
-    printf "%s" "$NOBELIUM" > Nobelium.txt
-    export CATFILE="Nobelium.txt"
-    export CATNAME="Nobelium"
-    $CATEGORIZE
-    rm Nobelium.txt
-    unset NOBELIUM
-  fi
-
-  if [ "$LAWRENCIUM" != "" ] ;
-  then
-    printf "%s" "$LAWRENCIUM" > Lawrencium.txt
-    export CATFILE="Lawrencium.txt"
-    export CATNAME="Lawrencium"
-    $CATEGORIZE
-    rm Lawrencium.txt
-    unset LAWRENCIUM
-  fi
+  categorize "ACTINIUM" "Actinium"
+  categorize "THORIUM" "Thorium"
+  categorize "PROTACTINIUM" "Protactinium"
+  categorize "URANIUM" "Uranium"
+  categorize "NEPTUNIUM" "Neptunium"
+  categorize "PLUTONIUM" "Plutonium"
+  categorize "AMERCIUM" "Americium"
+  categorize "CURIUM" "Curium"
+  categorize "BERKELIUM" "Berkelium"
+  categorize "CALIFORNIUM" "Californium"
+  categorize "EINSTEINIUM" "Einsteinium"
+  categorize "FERMIUM" "Fermium"
+  categorize "MENDELEVIUM" "Mendelevium"
+  categorize "NOBELIUM" "Nobelium"
+  categorize "LAWRENCIUM" "Lawrencium"
 
   debug_end "Actinide series"
 

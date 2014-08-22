@@ -10,15 +10,7 @@ then
 
   PERIOD="$(egrep -i "$KEYWORDS_PERIOD" "$NEWPAGES" | egrep -iv "$KEYWORDS_PERIOD_EXCLUDE")"
 
-  if [ "$PERIOD" != "" ];
-  then
-    printf "%s" "$PERIOD" > Period.txt
-    export CATFILE="Period.txt"
-    export CATNAME="Page titles ending in a period"
-    $CATEGORIZE
-    rm Period.txt
-    unset PERIOD
-  fi
+  categorize "PERIOD" "Page titles ending in a period"
 
   debug_end "Page titles ending in a period"
 

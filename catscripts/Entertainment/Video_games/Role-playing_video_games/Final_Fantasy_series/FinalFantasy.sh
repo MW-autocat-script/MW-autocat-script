@@ -42,156 +42,21 @@ then
   FF13=$(egrep -i "$KEYWORDS_FINALFANTASY13" "$NEWPAGES")
   ADVENT=$(egrep -i "$KEYWORDS_ADVENTCHILDREN" "$NEWPAGES")
 
-
-  if [ "$FFSERIES" != "" ];
-  then
-    printf "%s" "$FFSERIES" > FinalFantasyseries.txt
-    export CATFILE="FinalFantasyseries.txt"
-    export CATNAME="Final Fantasy series"
-    $CATEGORIZE
-    rm FinalFantasyseries.txt
-    unset FFSERIES
-  fi
-
-  if [ "$FF2" != "" ];
-  then
-    printf "%s" "$FF2" > FinalFantasy2.txt
-    export CATFILE="FinalFantasy2.txt"
-    export CATNAME="Final Fantasy II"
-    $CATEGORIZE
-    rm FinalFantasy2.txt
-    unset FF2
-  fi
-
-  if [ "$FF3" != "" ];
-  then
-    printf "%s" "$FF3" > FinalFantasy3.txt
-    export CATFILE="FinalFantasy3.txt"
-    export CATNAME="Final Fantasy III"
-    $CATEGORIZE
-    rm FinalFantasy3.txt
-    unset FF3
-  fi
-
-  if [ "$FF4" != "" ];
-  then
-    printf "%s" "$FF4" > FinalFantasy4.txt
-    export CATFILE="FinalFantasy4.txt"
-    export CATNAME="Final Fantasy IV"
-    $CATEGORIZE
-    rm FinalFantasy4.txt
-    unset FF4.txt
-  fi
-
-  if [ "$FF5" != "" ];
-  then
-    printf "%s" "$FF5" > FinalFantasy5.txt
-    export CATFILE="FinalFantasy5.txt"
-    export CATNAME="Final Fantasy V"
-    $CATEGORIZE
-    rm FinalFantasy5.txt
-    unset FF5
-  fi
-
-  if [ "$FF6" != "" ];
-  then
-    printf "%s" "$FF6" > FinalFantasy6.txt
-    export CATFILE="FinalFantasy6.txt"
-    export CATNAME="Final Fantasy VI"
-    $CATEGORIZE
-    rm FinalFantasy6.txt
-    unset FF6
-  fi
-
-  if [ "$FF7" != "" ];
-  then
-    printf "%s" "$FF7" > FinalFantasy7.txt
-    export CATFILE="FinalFantasy7.txt"
-    export CATNAME="Final Fantasy VII"
-    $CATEGORIZE
-    rm FinalFantasy7.txt
-    unset FF7
-  fi
-
-  if [ "$FF8" != "" ];
-  then
-    printf "%s" "$FF8" > FinalFantasy8.txt
-    export CATFILE="FinalFantasy8.txt"
-    export CATNAME="Final Fantasy VIII"
-    $CATEGORIZE
-    rm FinalFantasy8.txt
-    unset FF8
-  fi
-
-  if [ "$FF9" != "" ];
-  then
-    printf "%s" "$FF9" > FinalFantasy9.txt
-    export CATFILE="FinalFantasy9.txt"
-    export CATNAME="Final Fantasy IX"
-    $CATEGORIZE
-    rm FinalFantasy9.txt
-    unset FF9
-  fi
-
-  if [ "$FF10" != "" ];
-  then
-    printf "%s" "$FF10" > FinalFantasyX.txt
-    export CATFILE="FinalFantasy10.txt"
-    export CATNAME="Final Fantasy X"
-    $CATEGORIZE
-    rm FinalFantasyX.txt
-    unset FF10
-  fi
-
-  if [ "$FFX2" != "" ];
-  then
-    printf "%s" "$FFX2" > FinalFantasyX-2.txt
-    export CATFILE="FinalFantasyX-2.txt"
-    export CATNAME="Final Fantasy X-2"
-    $CATEGORIZE
-    rm FinalFantasyX-2.txt
-    unset FFX2
-  fi
-
-  if [ "$FF11" != "" ];
-  then
-    printf "%s" "$FF11" > FinalFantasy11.txt
-    export CATFILE="FinalFantasy11.txt"
-    export CATNAME="Final Fantasy XI"
-    $CATEGORIZE
-    rm FinalFantasy11.txt
-    unset FF11
-  fi
-
-  if [ "$FF12" != "" ];
-  then
-    printf "%s" "$FF12" > FinalFantasy12.txt
-    export CATFILE="FinalFantasy12.txt"
-    export CATNAME="Final Fantasy XII"
-    $CATEGORIZE
-    rm FinalFantasy12.txt
-    unset FF12
-  fi
-
-  if [ "$FF13" != "" ];
-  then
-    printf "%s" "$FF13" > FinalFantasy13.txt
-    export CATFILE="FinalFantasy13.txt"
-    export CATNAME="Final Fantasy XIII"
-    $CATEGORIZE
-    rm FinalFantasy13.txt
-    unset FF13
-  fi
-
-  if [ "$ADVENT" != "" ];
-  then
-    printf "%s" "$ADVENT" > AdventChildren.txt
-    export CATFILE="AdventChildren.txt"
-    export CATNAME="Final Fantasy VII: Advent Children"
-    $CATEGORIZE
-    rm AdventChildren.txt
-    unset ADVENT
-  fi
+  categorize "FFSERIES" "Final Fantasy series"
+  categorize "FF2" "Final Fantasy II"
+  categorize "FF3" "Final Fantasy III"
+  categorize "FF4" "Final Fantasy IV"
+  categorize "FF5" "Final Fantasy V"
+  categorize "FF6" "Final Fantasy VI"
+  categorize "FF7" "Final Fantasy VII"
+  categorize "FF8" "Final Fantasy VIII"
+  categorize "FF9" "Final Fantasy IX"
+  categorize "FF10" "Final Fantasy X"
+  categorize "FFX2" "Final Fantasy X-2"
+  categorize "FF11" "Final Fantasy XI"
+  categorize "FF12" "Final Fantasy XII"
+  categorize "FF13" "Final Fantasy XIII"
+  categorize "ADVENT" "Final Fantasy VII: Advent Children"
 
   debug_end "Final Fantasy series"
 

@@ -38,145 +38,20 @@ then
   TWELFTH=$(egrep -i "$KEYWORDS_TWELFTHNIGHT" "$NEWPAGES")
   TITUS=$(egrep -i "$KEYWORDS_TITUSANDRONICUS" "$NEWPAGES")
 
-  if [ "$SHAKESPEARE" != "" ];
-  then
-    printf "%s" "$SHAKESPEARE" > Shakespeare.txt
-    export CATFILE="Shakespeare.txt"
-    export CATNAME="William Shakespeare"
-    $CATEGORIZE
-    rm Shakespeare.txt
-    unset SHAKESPEARE
-  fi
-
-  if [ "$ROMEOANDJULIET" != "" ];
-  then
-    printf "%s" "$ROMEOANDJULIET" > RomeoandJuliet.txt
-    export CATFILE="RomeoandJuliet.txt"
-    export CATNAME="Romeo and Juliet"
-    $CATEGORIZE
-    rm RomeoandJuliet.txt
-    unset ROMEOANDJULIET
-  fi
-
-  if [ "$MACBETH" != "" ];
-  then
-    printf "%s" "$MACBETH" > Macbeth.txt
-    export CATFILE="Macbeth.txt"
-    export CATNAME="Macbeth"
-    $CATEGORIZE
-    rm Macbeth.txt
-    unset MACBETH
-  fi
-
-  if [ "$KINGLEAR" != "" ];
-  then
-    printf "%s" "$KINGLEAR" > KingLear.txt
-    export CATFILE="KingLear.txt"
-    export CATNAME="King Lear"
-    $CATEGORIZE
-    rm KingLear.txt
-    unset KINGLEAR
-  fi
-
-  if [ "$HAMLET" != "" ];
-  then
-    printf "%s" "$HAMLET" > Hamlet.txt
-    export CATFILE="Hamlet.txt"
-    export CATNAME="Hamlet"
-    $CATEGORIZE
-    rm Hamlet.txt
-    unset HAMLET
-  fi
-
-  if [ "$OTHELLO" != "" ];
-  then
-    printf "%s" "$OTHELLO" > Othello.txt
-    export CATFILE="Othello.txt"
-    export CATNAME="Othello"
-    $CATEGORIZE
-    rm Othello.txt
-    unset OTHELLO
-  fi
-
-  if [ "$MIDSUMMER" != "" ];
-  then
-    printf "%s" "$MIDSUMMER" > Midsummer.txt
-    export CATFILE="Midsummer.txt"
-    export CATNAME="A Midsummer Night's Dream"
-    $CATEGORIZE
-    rm Midsummer.txt
-    unset MIDSUMMER
-  fi
-
-  if [ "$TEMPEST" != "" ];
-  then
-    printf "%s" "$TEMPEST" > Tempest.txt
-    export CATFILE="Tempest.txt"
-    export CATNAME="The Tempest"
-    $CATEGORIZE
-    rm Tempest.txt
-    unset TEMPEST
-  fi
-
-  if [ "$ASYOULIKEIT" != "" ];
-  then
-    printf "%s" "$ASYOULIKEIT" > AsYouLikeIt.txt
-    export CATFILE="AsYouLikeIt.txt"
-    export CATNAME="As You Like It"
-    $CATEGORIZE
-    rm AsYouLikeIt.txt
-    unset ASYOULIKEIT
-  fi
-
-  if [ "$MUCHADO" != "" ];
-  then
-    printf "%s" "$MUCHADO" > MuchAdo.txt
-    export CATFILE="MuchAdo.txt"
-    export CATNAME="Much Ado About Nothing"
-    $CATEGORIZE
-    rm MuchAdo.txt
-    unset MUCHADO
-  fi
-
-  if [ "$MERCHANT" != "" ];
-  then
-    printf "%s" "$MERCHANT" > Merchant.txt
-    export CATFILE="Merchant.txt"
-    export CATNAME="The Merchant of Venice"
-    $CATEGORIZE
-    rm Merchant.txt
-    unset MERCHANT
-  fi
-  
-  if [ "$SHREW" != "" ];
-  then
-    printf "%s" "$SHREW" > Shrew.txt
-    export CATFILE="Shrew.txt"
-    export CATNAME="The Taming of the Shrew"
-    $CATEGORIZE
-    rm Shrew.txt
-    unset SHREW
-  fi
-
-  if [ "$TWELFTH" != "" ];
-  then
-    printf "%s" "$TWELFTH" > Twelfth.txt
-    export CATFILE="Twelfth.txt"
-    export CATNAME="Twelfth Night"
-    $CATEGORIZE
-    rm Twelfth.txt
-    unset TWELFTH
-  fi
-
-  if [ "$TITUS" != "" ];
-  then
-    printf "%s" "$TITUS" > Titus.txt
-    export CATFILE="Titus.txt"
-    export CATNAME="Titus Andronicus"
-    $CATEGORIZE
-    rm Titus.txt
-    unset TITUS
-  fi
+  categorize "SHAKESPEARE" "William Shakespeare"
+  categorize "ROMEOANDJULIET" "Romeo and Juliet"
+  categorize "MACBETH" "Macbeth"
+  categorize "KINGLEAR" "King Lear"
+  categorize "HAMLET" "Hamlet"
+  categorize "OTHELLO" "Othello"
+  categorize "MIDSUMMER" "A Midsummer Night's Dream"
+  categorize "TEMPEST" "The Tempest"
+  categorize "ASYOULIKEIT" "As You Like It"
+  categorize "MUCHADO" "Much Ado About Nothing"
+  categorize "MERCHANT" "The Merchant of Venice"
+  categorize "SHREW" "The Taming of the Shrew"
+  categorize "TWELFTH" "Twelfth Night"
+  categorize "TITUS" "Titus Andronicus"
 
   debug_end "William Shakespeare"
 

@@ -9,15 +9,7 @@ then
 
   ADVANTAGES=$(egrep -i "$KEYWORDS_ADVANTAGES" "$NEWPAGES")
 
-  if [ "$ADVANTAGES" != "" ];
-  then
-    printf "%s" "$ADVANTAGES" > Advantages.txt
-    export CATFILE="Advantages.txt"
-    export CATNAME="Advantages and disadvantages"
-    $CATEGORIZE
-    rm Advantages.txt
-    unset ADVANTAGES
-  fi
+  categorize "ADVANTAGES" "Advantages and disadvantages"
 
   debug_end "Advantages and disadvantages"
 

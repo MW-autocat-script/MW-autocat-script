@@ -9,15 +9,7 @@ then
 
   ACRONYMS=$(egrep -i "$KEYWORDS_ACRONYMS" "$NEWPAGES")
 
-  if [ "$ACRONYMS" != "" ];
-  then
-    printf "%s" "$ACRONYMS" > Acronyms.txt
-    export CATFILE="Acronyms.txt"
-    export CATNAME="Acronyms"
-    $CATEGORIZE
-    rm Acronyms.txt
-    unset ACRONYMS
-  fi
+  categorize "ACRONYMS" "Acronyms"
 
   debug_end "Acronyms"
 

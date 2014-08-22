@@ -81,235 +81,29 @@ then
   ATLANTABRAVES=$(egrep -i "$KEYWORDS_ATLANTA_BRAVES" "$NEWPAGES")
   MIAMIMARLINS=$(egrep -i "$KEYWORDS_MIAMI_MARLINS" "$NEWPAGES")
 
-  if [ "$SOCCER" != "" ];
-  then
-    printf "%s" "$SOCCER" > Soccer.txt
-    export CATFILE="Soccer.txt"
-    export CATNAME="Soccer (association football)"
-    $CATEGORIZE
-    rm Soccer.txt
-    unset SOCCER
-  fi
-
-  if [ "$CRONALDO" != "" ];
-  then
-    printf "%s" "$CRONALDO" > CRonaldo.txt
-    export CATFILE="CRonaldo.txt"
-    export CATNAME="Cristiano Ronaldo"
-    $CATEGORIZE
-    rm CRonaldo.txt
-    unset CRONALDO
-  fi
-
-  if [ "$LMESSI" != "" ];
-  then
-    printf "%s" "$LMESSI" > LionelMessi.txt
-    export CATFILE="LionelMessi.txt"
-    export CATNAME="Lionel Messi"
-    $CATEGORIZE
-    rm LionelMessi.txt
-    unset LMESSI
-  fi
-
-  if [ "$TENNIS" != "" ];
-  then
-    printf "%s" "$TENNIS" > Tennis.txt
-    export CATFILE="Tennis.txt"
-    export CATNAME="Tennis"
-    $CATEGORIZE
-    rm Tennis.txt
-    unset TENNIS
-  fi
-
-  if [ "$PINGPONG" != "" ];
-  then
-    printf "%s" "$PINGPONG" > PingPong.txt
-    export CATFILE="PingPong.txt"
-    export CATNAME="Ping-pong"
-    $CATEGORIZE
-    rm PingPong.txt
-    unset PINGPONG
-  fi
-
-  if [ "$BADMINTON" != "" ];
-  then
-    printf "%s" "$BADMINTON" > Badminton.txt
-    export CATFILE="Badminton.txt"
-    export CATNAME="Badminton"
-    $CATEGORIZE
-    rm Badminton.txt
-    unset BADMINTON
-  fi
-
-  if [ "$VOLLEYBALL" != "" ];
-  then
-    printf "%s" "$VOLLEYBALL" > Volleyball.txt
-    export CATFILE="Volleyball.txt"
-    export CATNAME="Volleyball"
-    $CATEGORIZE
-    rm Volleyball.txt
-    unset VOLLEYBALL
-  fi
-
-  if [ "$SOFTBALL" != "" ];
-  then
-    printf "%s" "$SOFTBALL" > Softball.txt
-    export CATFILE="Softball.txt"
-    export CATNAME="Softball"
-    $CATEGORIZE
-    rm Softball.txt
-    unset SOFTBALL
-  fi
-
-  if [ "$HOCKEY" != "" ];
-  then
-    printf "%s" "$HOCKEY" > Hockey.txt
-    export CATFILE="Hockey.txt"
-    export CATNAME="Hockey"
-    $CATEGORIZE
-    rm Hockey.txt
-    unset HOCKEY
-  fi
-
-  if [ "$NHL" != "" ];
-  then
-    printf "%s" "$NHL" > NHL.txt
-    export CATFILE="NHL.txt"
-    export CATNAME="NHL"
-    $CATEGORIZE
-    rm NHL.txt
-    unset NHL
-  fi
-
-  if [ "$BASKETBALL" != "" ];
-  then
-    printf "%s" "$BASKETBALL" > Basketball.txt
-    export CATFILE="Basketball.txt"
-    export CATNAME="Basketball"
-    $CATEGORIZE
-    rm Basketball.txt
-    unset BASKETBALL
-  fi
-
-  if [ "$NBA" != "" ];
-  then
-    printf "%s" "$NBA" > NBA.txt
-    export CATFILE="NBA.txt"
-    export CATNAME="NBA"
-    $CATEGORIZE
-    rm NBA.txt
-    unset NBA
-  fi
-
-  if [ "$CHICAGOBULLS" != "" ];
-  then
-    printf "%s" "$CHICAGOBULLS" > ChicagoBulls.txt
-    export CATFILE="ChicagoBulls.txt"
-    export CATNAME="Chicago Bulls"
-    $CATEGORIZE
-    rm ChicagoBulls.txt
-    unset CHICAGOBULLS
-  fi
-
-  if [ "$MIAMIHEAT" != "" ];
-  then
-    printf "%s" "$MIAMIHEAT" > MiamiHeat.txt
-    export CATFILE="MiamiHeat.txt"
-    export CATNAME="Miami Heat"
-    $CATEGORIZE
-    rm MiamiHeat.txt
-    unset MIAMIHEAT
-  fi
-
-  if [ "$MICHAELJORDAN" != "" ];
-  then
-    printf "%s" "$MICHAELJORDAN" > MichaelJordan.txt
-    export CATFILE="MichaelJordan.txt"
-    export CATNAME="Michael Jordan"
-    $CATEGORIZE
-    rm MichaelJordan.txt
-    unset MICHAELJORDAN
-  fi
-
-  if [ "$SHAQUILLEONEAL" != "" ];
-  then
-    printf "%s" "$SHAQUILLEONEAL" > ShaquilleONeal.txt
-    export CATFILE="ShaquilleONeal.txt"
-    export CATNAME="Shaquille O'Neal"
-    $CATEGORIZE
-    rm ShaquilleONeal.txt
-    unset SHAQUILLEONEAL
-  fi
-
-  if [ "$KOBEBRYANT" != "" ];
-  then
-    printf "%s" "$KOBEBRYANT" > KobeBraynt.txt
-    export CATFILE="KobeBraynt.txt"
-    export CATNAME="Kobe Bryant"
-    $CATEGORIZE
-    rm KobeBraynt.txt
-    unset KOBEBRYANT
-  fi
-
-  if [ "$BASEBALL" != "" ];
-  then
-    printf "%s" "$BASEBALL" > Baseball.txt
-    export CATFILE="Baseball.txt"
-    export CATNAME="Baseball"
-    $CATEGORIZE
-    rm Baseball.txt
-    unset BASEBALL
-  fi
-
-  if [ "$MLB" != "" ];
-  then
-    printf "%s" "$MLB" > MLB.txt
-    export CATFILE="MLB.txt"
-    export CATNAME="Major League Baseball"
-    $CATEGORIZE
-    rm MLB.txt
-    unset MLB
-  fi
-
-  if [ "$BABERUTH" != "" ];
-  then
-    printf "%s" "$BABERUTH" > BabeRuth.txt
-    export CATFILE="BabeRuth.txt"
-    export CATNAME="Babe Ruth"
-    $CATEGORIZE
-    rm BabeRuth.txt
-    unset BABERUTH
-  fi
-
-  if [ "$JACKIEROBINSON" != "" ];
-  then
-    printf "%s" "$JACKIEROBINSON" > JackieRobinson.txt
-    export CATFILE="JackieRobinson.txt"
-    export CATNAME="Jackie Robinson"
-    $CATEGORIZE
-    rm JackieRobinson.txt
-    unset JACKIEROBINSON
-  fi
-
-  if [ "$ATLANTABRAVES" != "" ];
-  then
-    printf "%s" "$ATLANTABRAVES" > AtlantaBraves.txt
-    export CATFILE="AtlantaBraves.txt"
-    export CATNAME="Atlanta Braves"
-    $CATEGORIZE
-    rm AtlantaBraves.txt
-    unset ATLANTABRAVES
-  fi
-
-  if [ "$MIAMIMARLINS" != "" ];
-  then
-    printf "%s" "$MIAMIMARLINS" > MiamiMarlins.txt
-    export CATFILE="MiamiMarlins.txt"
-    export CATNAME="Miami Marlins"
-    $CATEGORIZE
-    rm MiamiMarlins.txt
-    unset MIAMIMARLINS
-  fi
+  categorize "SOCCER" "Soccer (association football)"
+  categorize "CRONALDO" "Cristiano Ronaldo"
+  categorize "LMESSI" "Lionel Messi"
+  categorize "TENNIS" "Tennis"
+  categorize "PINGPONG" "Ping-pong"
+  categorize "BADMINTON" "Badminton"
+  categorize "VOLLEYBALL" "Volleyball"
+  categorize "SOFTBALL" "Softball"
+  categorize "HOCKEY" "Hockey"
+  categorize "NHL" "NHL"
+  categorize "BASKETBALL" "Basketball"
+  categorize "NBA" "NBA"
+  categorize "CHICAGOBULLS" "Chicago Bulls"
+  categorize "MIAMIHEAT" "Miami Heat"
+  categorize "MICHAELJORDAN" "Michael Jordan"
+  categorize "SHAQUILLEONEAL" "Shaquille O'Neal"
+  categorize "KOBEBRYANT" "Kobe Bryant"
+  categorize "BASEBALL" "Baseball"
+  categorize "MLB" "Major League Baseball"
+  categorize "BABERUTH" "Babe Ruth"
+  categorize "JACKIEROBINSON" "Jackie Robinson"
+  categorize "ATLANTABRAVES" "Atlanta Braves"
+  categorize "MIAMIMARLINS" "Miami Marlins"
 
   debug_end "Sports"
 

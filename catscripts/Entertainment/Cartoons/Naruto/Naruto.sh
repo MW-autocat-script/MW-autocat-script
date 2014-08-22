@@ -9,15 +9,7 @@ then
   
   NARUTO=$(egrep -i "$KEYWORDS_NARUTO" "$NEWPAGES")
 
-  if [ "$NARUTO" != "" ];
-  then
-    printf "%s" "$NARUTO" > Naruto.txt
-    export CATFILE="Naruto.txt"
-    export CATNAME="Naruto"
-    $CATEGORIZE
-    rm Naruto.txt
-    unset NARUTO
-  fi
+  categorize "NARUTO" "Naruto"
 
   debug_end "Naruto"
 

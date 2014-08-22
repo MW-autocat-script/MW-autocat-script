@@ -34,125 +34,18 @@ then
   DAMNED=$(egrep -i "$KEYWORDS_GTATLAD" "$NEWPAGES")
   TONY=$(egrep -i "$KEYWORDS_GTATBOGT" "$NEWPAGES")
 
-  if [ "$SERIES" != "" ];
-  then
-    printf "%s" "$SERIES" > GTA.txt
-    export CATFILE="GTA.txt"
-    export CATNAME="Grand Theft Auto series"
-    $CATEGORIZE
-    rm GTA.txt
-    unset SERIES
-  fi
-
-  if [ "$GTA2" != "" ];
-  then
-    printf "%s" "$GTA2" > GTA2.txt
-    export CATFILE="GTA2.txt"
-    export CATNAME="Grand Theft Auto 2"
-    $CATEGORIZE
-    rm GTA2.txt
-    unset GTA2
-  fi
-
-  if [ "$GTA3" != "" ];
-  then
-    printf "%s" "$GTA3" > GrandTheftAuto3.txt
-    export CATFILE="GrandTheftAuto3.txt"
-    export CATNAME="Grand Theft Auto III"
-    $CATEGORIZE
-    rm GrandTheftAuto3.txt
-    unset GTA3
-  fi
-
-  if [ "$VICECITY" != "" ];
-  then
-    printf "%s" "$VICECITY" > ViceCity.txt
-    export CATFILE="ViceCity.txt"
-    export CATNAME="Grand Theft Auto: Vice City"
-    $CATEGORIZE
-    rm ViceCity.txt
-    unset VICECITY
-  fi
-
-  if [ "$ANDREAS" != "" ];
-  then
-    printf "%s" "$ANDREAS" > SanAndreas.txt
-    export CATFILE="SanAndreas.txt"
-    export CATNAME="Grand Theft Auto: San Andreas"
-    $CATEGORIZE
-    rm SanAndreas.txt
-    unset ANDREAS
-  fi
-
-  if [ "$LIBSTORIES" != "" ];
-  then
-    printf "%s" "$LIBSTORIES" > LibertyCityStories.txt
-    export CATFILE="LibertyCityStories.txt"
-    export CATNAME="Grand Theft Auto: Liberty City Stories"
-    $CATEGORIZE
-    rm LibertyCityStories.txt
-    unset LIBSTORIES
-  fi
-
-  if [ "$VICESTORIES" != "" ];
-  then
-    printf "%s" "$VICESTORIES" > ViceCityStories.txt
-    export CATFILE="ViceCityStories.txt"
-    export CATNAME="Grand Theft Auto: Vice City Stories"
-    $CATEGORIZE
-    rm ViceCityStories.txt
-    unset VICESTORIES
-  fi
-
-  if [ "$GTA4" != "" ];
-  then
-    printf "%s" "$GTA4" > GrandTheftAuto4.txt
-    export CATFILE="GrandTheftAuto4.txt"
-    export CATNAME="Grand Theft Auto IV"
-    $CATEGORIZE
-    rm GrandTheftAuto4.txt
-    unset GTA4
-  fi
-
-  if [ "$GTA5" != "" ];
-  then
-    printf "%s" "$GTA5" > GrandTheftAuto5.txt
-    export CATFILE="GrandTheftAuto5.txt"
-    export CATNAME="Grand Theft Auto V"
-    $CATEGORIZE
-    rm GrandTheftAuto5.txt
-    unset GTA5
-  fi
-
-  if [ "$CHINATOWN" != "" ];
-  then
-    printf "%s" "$CHINATOWN" > ChinaTown.txt
-    export CATFILE="ChinaTown.txt"
-    export CATNAME="Grand Theft Auto: Chinatown Wars"
-    $CATEGORIZE
-    rm ChinaTown.txt
-    unset CHINATOWN
-  fi
-
-  if [ "$DAMNED" != "" ];
-  then
-    printf "%s" "$DAMNED" > Damned.txt
-    export CATFILE="Damned.txt"
-    export CATNAME="Grand Theft Auto: The Lost and Damned"
-    $CATEGORIZE
-    rm Damned.txt
-    unset DAMNED
-  fi
-
-  if [ "$TONY" != "" ];
-  then
-    printf "%s" "$TONY" > GayTony.txt
-    export CATFILE="GayTony.txt"
-    export CATNAME="Grand Theft Auto: The Ballad of Gay Tony"
-    $CATEGORIZE
-    rm GayTony.txt
-    unset TONY
-  fi
+  categorize "SERIES" "Grand Theft Auto series"
+  categorize "GTA2" "Grand Theft Auto 2"
+  categorize "GTA3" "Grand Theft Auto III"
+  categorize "VICECITY" "Grand Theft Auto: Vice City"
+  categorize "ANDREAS" "Grand Theft Auto: San Andreas"
+  categorize "LIBSTORIES" "Grand Theft Auto: Liberty City Stories"
+  categorize "VICESTORIES" "Grand Theft Auto: Vice City Stories"
+  categorize "GTA4" "Grand Theft Auto IV"
+  categorize "GTA5" "Grand Theft Auto V"
+  categorize "CHINATOWN" "Grand Theft Auto: Chinatown Wars"
+  categorize "DAMNED" "Grand Theft Auto: The Lost and Damned"
+  categorize "TONY" "Grand Theft Auto: The Ballad of Gay Tony"
 
   debug_end "Grand Theft Auto series"
 

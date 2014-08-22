@@ -9,15 +9,7 @@ then
 
   PORN=$(egrep -i "$KEYWORDS_PORNOGRAPHY" "$NEWPAGES")
 
-  if [ "$PORN" != "" ];
-  then
-    printf "%s" "$PORN" > Pornography.txt
-    export CATFILE="Pornography.txt"
-    export CATNAME="Pornography"
-    $CATEGORIZE
-    rm Pornography.txt
-    unset PORN
-  fi
+  categorize "PORN" "Pornography"
 
   debug_end "Pornography maintenance script"
 

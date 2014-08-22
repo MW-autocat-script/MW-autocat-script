@@ -9,15 +9,7 @@ then
 
   HARRYPOTTER=$(egrep -i "$KEYWORDS_HARRYPOTTER" "$NEWPAGES" )
 
-  if [ "$HARRYPOTTER" != "" ];
-  then
-    printf "%s" "$HARRYPOTTER" > HarryPotter.txt
-    export CATFILE="HarryPotter.txt"
-    export CATNAME="Harry Potter"
-    $CATEGORIZE
-    rm HarryPotter.txt
-    unset HARRYPOTTER
-  fi
+  categorize "HARRYPOTTER" "Harry Potter"
 
   debug_end "Harry Potter"
 

@@ -15,15 +15,7 @@ then
 
   COMPOUNDQUESTION=$(egrep -i "$KEYWORDS_COMPOUNDQUESTION" "$NEWPAGES")
 
-  if [ "$COMPOUNDQUESTION" != "" ];
-  then
-    printf "%s" "$COMPOUNDQUESTION" > Compoundquestions.txt
-    export CATFILE="Compoundquestions.txt"
-    export CATNAME="Compound questions"
-    $CATEGORIZE
-    rm Compoundquestions.txt
-    unset COMPOUNDQUESTION
-  fi
+  categorize "COMPOUNDQUESTION" "Compound questions"
 
   debug_end "Compound questions"
 

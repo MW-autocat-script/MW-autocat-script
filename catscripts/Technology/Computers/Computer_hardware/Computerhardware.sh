@@ -22,127 +22,29 @@ then
 
   debug_start "Computer hardware"
 
-  MOTHERBOARDS="$(egrep -i "$KEYWORDS_MOTHERBOARD" "$NEWPAGES")"
-  VIDEOCARDS="$(egrep -i "$KEYWORDS_VIDEO_CARDS" "$NEWPAGES")"
-  SOUNDCARDS="$(egrep -i "$KEYWORDS_SOUND_CARDS" "$NEWPAGES")"
-  PRINTERS="$(egrep -i "$KEYWORDS_PRINTER" "$NEWPAGES")"
-  MICROPROCESSORS="$(egrep -i "$KEYWORDS_MICROPROCESSOR" "$NEWPAGES")"
-  DATASTORAGE="$(egrep -i "$KEYWORDS_DATASTORAGE" "$NEWPAGES" | egrep -iv "$KEYWORDS_DATASTORAGE_EXCLUDE")"
-  HARDDRIVE="$(egrep -i "$KEYWORDS_HARD_DRIVE" "$NEWPAGES")"
-  FLOPPY="$(egrep -i "$KEYWORDS_FLOPPY" "$NEWPAGES")"
-  LAPTOPS="$(egrep -i "$KEYWORDS_LAPTOPS" "$NEWPAGES" | egrep -iv "$KEYWORDS_MACBOOKS")"
-  MACBOOKS="$(egrep -i "$KEYWORDS_MACBOOKS" "$NEWPAGES")"
-  HARDWARE="$(egrep -i "$KEYWORDS_COMPUTER_HARDWARE" "$NEWPAGES" | egrep -iv "$KEYWORDS_COMPUTER_HARDWARE_EXCLUDE")"
+  MOTHERBOARDS=$(egrep -i "$KEYWORDS_MOTHERBOARD" "$NEWPAGES")
+  VIDEOCARDS=$(egrep -i "$KEYWORDS_VIDEO_CARDS" "$NEWPAGES")
+  SOUNDCARDS=$(egrep -i "$KEYWORDS_SOUND_CARDS" "$NEWPAGES")
+  PRINTERS=$(egrep -i "$KEYWORDS_PRINTER" "$NEWPAGES")
+  MICROPROCESSORS=$(egrep -i "$KEYWORDS_MICROPROCESSOR" "$NEWPAGES")
+  DATASTORAGE=$(egrep -i "$KEYWORDS_DATASTORAGE" "$NEWPAGES" | egrep -iv "$KEYWORDS_DATASTORAGE_EXCLUDE")
+  HARDDRIVE=$(egrep -i "$KEYWORDS_HARD_DRIVE" "$NEWPAGES")
+  FLOPPY=$(egrep -i "$KEYWORDS_FLOPPY" "$NEWPAGES")
+  LAPTOPS=$(egrep -i "$KEYWORDS_LAPTOPS" "$NEWPAGES" | egrep -iv "$KEYWORDS_MACBOOKS")
+  MACBOOKS=$(egrep -i "$KEYWORDS_MACBOOKS" "$NEWPAGES")
+  HARDWARE=$(egrep -i "$KEYWORDS_COMPUTER_HARDWARE" "$NEWPAGES" | egrep -iv "$KEYWORDS_COMPUTER_HARDWARE_EXCLUDE")
 
-  if [ "$MOTHERBOARDS" != "" ];
-  then
-    printf "%s" "$MOTHERBOARDS" > Motherboards.txt
-    export CATFILE="Motherboards.txt"
-    export CATNAME="Motherboards"
-    $CATEGORIZE
-    rm Motherboards.txt
-    unset MOTHERBOARDS
-  fi
-
-  if [ "$VIDEOCARDS" != "" ];
-  then
-    printf "%s" "$VIDEOCARDS" > VideoCards.txt
-    export CATFILE="VideoCards.txt"
-    export CATNAME="Video cards"
-    $CATEGORIZE
-    rm VideoCards.txt
-    unset VIDEOCARDS
-  fi
-
-  if [ "$SOUNDCARDS" != "" ];
-  then
-    printf "%s" "$SOUNDCARDS" > SoundCards.txt
-    export CATFILE="SoundCards.txt"
-    export CATNAME="Sound cards"
-    $CATEGORIZE
-    rm SoundCards.txt
-    unset SOUNDCARDS
-  fi
-
-  if [ "$PRINTERS" != "" ];
-  then
-    printf "%s" "$PRINTERS" > Printers.txt
-    export CATFILE="Printers.txt"
-    export CATNAME="Printers"
-    $CATEGORIZE
-    rm Printers.txt
-    unset PRINTERS
-  fi
-
-  if [ "$MICROPROCESSORS" != "" ];
-  then
-    printf "%s" "$MICROPROCESSORS" > Microprocessors.txt
-    export CATFILE="Microprocessors.txt"
-    export CATNAME="Microprocessors"
-    $CATEGORIZE
-    rm Microprocessors.txt
-    unset MICROPROCESSORS
-  fi
-
-  if [ "$DATASTORAGE" != "" ];
-  then
-    printf "%s" "$DATASTORAGE" > Datastorage.txt
-    export CATFILE="Datastorage.txt"
-    export CATNAME="Data storage devices"
-    $CATEGORIZE
-    rm Datastorage.txt
-    unset DATASTORAGE
-  fi
-
-  if [ "$HARDDRIVE" != "" ];
-  then
-    printf "%s" "$HARDDRIVE" > Harddrive.txt
-    export CATFILE="Harddrive.txt"
-    export CATNAME="Hard drives"
-    $CATEGORIZE
-    rm Harddrive.txt
-    unset HARDDRIVE
-  fi
-
-  if [ "$FLOPPY" != "" ];
-  then
-    printf "%s" "$FLOPPY" > Floppy.txt
-    export CATFILE="Floppy.txt"
-    export CATNAME="Floppy drives"
-    $CATEGORIZE
-    rm Floppy.txt
-    unset FLOPPY
-  fi
-
-  if [ "$LAPTOPS" != "" ];
-  then
-    printf "%s" "$LAPTOPS" > Laptops.txt
-    export CATFILE="Laptops.txt"
-    export CATNAME="Laptops"
-    $CATEGORIZE
-    rm Laptops.txt
-    unset LAPTOPS
-  fi
-
-  if [ "$MACBOOKS" != "" ];
-  then
-    printf "%s" "$MACBOOKS" > Macbooks.txt
-    export CATFILE="Macbooks.txt"
-    export CATNAME="Macbooks"
-    $CATEGORIZE
-    rm Macbooks.txt
-    unset MACBOOKS
-  fi
-
-  if [ "$HARDWARE" != "" ];
-  then
-    printf "%s" "$HARDWARE" > ComputerHardware.txt
-    export CATFILE="ComputerHardware.txt"
-    export CATNAME="Computer hardware"
-    $CATEGORIZE
-    rm ComputerHardware.txt
-    unset HARDWARE
-  fi
+  categorize "MOTHERBOARDS" "Motherboards"
+  categorize "VIDEOCARDS" "Video cards"
+  categorize "SOUNDCARDS" "Sound cards"
+  categorize "PRINTERS" "Printers"
+  categorize "MICROPROCESSORS" "Microprocessors"
+  categorize "DATASTORAGE" "Data storage devices"
+  categorize "HARDDRIVE" "Hard drives"
+  categorize "FLOPPY" "Floppy drives"
+  categorize "LAPTOPS" "Laptops"
+  categorize "MACBOOKS" "Macbooks"
+  categorize "HARDWARE" "Computer hardware"
 
   debug_end "Computer hardware"
 
