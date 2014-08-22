@@ -9,15 +9,7 @@ then
 
   XATU=$(egrep -i "$KEYWORDS_XATU" "$NEWPAGES")
 
-  if [ "$XATU" != "" ];
-  then
-    printf "%s" "$XATU" > Xatu.txt
-    export CATFILE="Xatu.txt"
-    export CATNAME="Xatu"
-    $CATEGORIZE
-    rm Xatu.txt
-    unset XATU
-  fi
+  categorize "XATU" "Xatu"
 
   debug_end "Pokemon X scripts"
 

@@ -13,35 +13,9 @@ then
   QUILAVA=$(egrep -i "$KEYWORDS_QUILAVA" "$NEWPAGES")
   QWILFISH=$(egrep -i "$KEYWORDS_QWILFISH" "$NEWPAGES")
 
-  if [ "$QUAGSIRE" != "" ];
-  then
-    printf "%s" "$QUAGSIRE" > Quagsire.txt
-    export CATFILE="Quagsire.txt"
-    export CATNAME="Quagsire"
-    $CATEGORIZE
-    rm Quagsire.txt
-    unset QUAGSIRE
-  fi
-
-  if [ "$QUILAVA" != "" ];
-  then
-    printf "%s" "$QUILAVA" > Quilava.txt
-    export CATFILE="Quilava.txt"
-    export CATNAME="Quilava"
-    $CATEGORIZE
-    rm Quilava.txt
-    unset QUILAVA
-  fi
-
-  if [ "$QWILFISH" != "" ];
-  then
-    printf "%s" "$QWILFISH" > Qwilfish.txt
-    export CATFILE="Qwilfish.txt"
-    export CATNAME="Qwilfish"
-    $CATEGORIZE
-    rm Qwilfish.txt
-    unset QWILFISH
-  fi
+  categorize "QUAGSIRE" "Quagsire"
+  categorize "QUILAVA" "Quilava"
+  categorize "QWILFISH" "Qwilfish"
 
   debug_end "Pokemon Q scripts"
 

@@ -42,175 +42,23 @@ then
   FROSLASS=$(egrep -i "$KEYWORDS_FROSLASS" "$NEWPAGES")
   FURRET=$(egrep -i "$KEYWORDS_FURRET" "$NEWPAGES")
 
-  if [ "$FARFETCHD" != "" ];
-  then
-    printf "%s" "$FARFETCHD" > Farfetchd.txt
-    export CATFILE="Farfetchd.txt"
-    export CATNAME="Farfetch'd"
-    $CATEGORIZE
-    rm Farfetchd.txt
-    unset FARFETCHD
-  fi
-
-  if [ "$FEAROW" != "" ];
-  then
-    printf "%s" "$FEAROW" > Fearow.txt
-    export CATFILE="Fearow.txt"
-    export CATNAME="Fearow"
-    $CATEGORIZE
-    rm Fearow.txt
-    unset FEAROW
-  fi
-
-  if [ "$FEEBAS" != "" ];
-  then
-    printf "%s" "$FEEBAS" > Feebas.txt
-    export CATFILE="Feebas.txt"
-    export CATNAME="Feebas"
-    $CATEGORIZE
-    rm Feebas.txt
-    unset FEEBAS
-  fi
-
-  if [ "$FERALIGATR" != "" ];
-  then
-    printf "%s" "$FERALIGATR" > Feraligatr.txt
-    export CATFILE="Feraligatr.txt"
-    export CATNAME="Feraligatr"
-    $CATEGORIZE
-    rm Feraligatr.txt
-    unset FERALIGATR
-  fi
-
-  if [ "$FERROSEED" != "" ];
-  then
-    printf "%s" "$FERROSEED" > Ferroseed.txt
-    export CATFILE="Ferroseed.txt"
-    export CATNAME="Ferroseed"
-    $CATEGORIZE
-    rm Ferroseed.txt
-    unset FERROSEED
-  fi
-
-  if [ "$FERROTHORN" != "" ];
-  then
-    printf "%s" "$FERROTHORN" > Ferrothorn.txt
-    export CATFILE="Ferrothorn.txt"
-    export CATNAME="Ferrothorn"
-    $CATEGORIZE
-    rm Ferrothorn.txt
-    unset FERROTHORN
-  fi
-
-  if [ "$FINNEON" != "" ];
-  then
-    printf "%s" "$FINNEON" > Finneon.txt
-    export CATFILE="Finneon.txt"
-    export CATNAME="Finneon"
-    $CATEGORIZE
-    rm Finneon.txt
-    unset FINNEON
-  fi
-
-  if [ "$FLAAFFY" != "" ];
-  then
-    printf "%s" "$FLAAFFY" > Flaaffy.txt
-    export CATFILE="Flaaffy.txt"
-    export CATNAME="Flaaffy"
-    $CATEGORIZE
-    rm Flaaffy.txt
-    unset FLAAFFY
-  fi
-
-  if [ "$FLAREON" != "" ];
-  then
-    print "%s" "$FLAREON" > Flareon.txt
-    export CATFILE="Flareon.txt"
-    export CATNAME="Flareon"
-    $CATEGORIZE
-    rm Flareon.txt
-    unset FLAREON
-  fi
-
-  if [ "$FLOATZEL" != "" ];
-  then
-    printf "%s" "$FLOATZEL" > Floatzel.txt
-    export CATFILE="Floatzel.txt"
-    export CATNAME="Floatzel"
-    $CATEGORIZE
-    rm Floatzel.txt
-    unset FLOATZEL
-  fi
-
-  if [ "$FLYGON" != "" ];
-  then
-    printf "%s" "$FLYGON" > Flygon.txt
-    export CATFILE="Flygon.txt"
-    export CATNAME="Flygon"
-    $CATEGORIZE
-    rm Flygon.txt
-    unset FLYGON
-  fi
-
-  if [ "$FOONGUS" != "" ];
-  then
-    printf "%s" "$FOONGUS" > Foongus.txt
-    export CATFILE="Foongus.txt"
-    export CATNAME="Foongus"
-    $CATEGORIZE
-    rm Foongus.txt
-    unset FOONGUS
-  fi
-
-  if [ "$FORRETRESS" != "" ];
-  then
-    printf "%s" "$FORRETRESS" > Forretress.txt
-    export CATFILE="Forretress.txt"
-    export CATNAME="Forretress"
-    $CATEGORIZE
-    rm Forretress.txt
-    unset FORRETRESS
-  fi
-
-  if [ "$FRAXURE" != "" ];
-  then
-    printf "%s" "$FRAXURE" > Fraxure.txt
-    export CATFILE="Fraxure.txt"
-    export CATNAME="Fraxure"
-    $CATEGORIZE
-    rm Fraxure.txt
-    unset FRAXURE
-  fi
-
-  if [ "$FRILLISH" != "" ];
-  then
-    printf "%s" "$FRILLISH" > Frillish.txt
-    export CATFILE="Frillish.txt"
-    export CATNAME="Frillish"
-    $CATEGORIZE
-    rm Frillish.txt
-    unset FRILLISH
-  fi
-
-  if [ "$FROSLASS" != "" ];
-  then
-    printf "%s" "$FROSLASS" > Froslass.txt
-    export CATFILE="Froslass.txt"
-    export CATNAME="Froslass"
-    $CATEGORIZE
-    rm Froslass.txt
-    unset FROSLASS
-  fi
-
-  if [ "$FURRET" != "" ];
-  then
-    printf "%s" "$FURRET" > Furret.txt
-    export CATFILE="Furret.txt"
-    export CATNAME="Furret"
-    $CATEGORIZE
-    rm Furret.txt
-    unset FURRET
-  fi
+  categorize "FARFETCHD" "Farfetch'd"
+  categorize "FEAROW" "Fearow"
+  categorize "FEEBAS" "Feebas"
+  categorize "FERALIGATR" "Feraligatr"
+  categorize "FERROSEED" "Ferroseed"
+  categorize "FERROTHORN" "Ferrothorn"
+  categorize "FINNEON" "Finneon"
+  categorize "FLAAFFY" "Flaaffy"
+  categorize "FLAREON" "Flareon"
+  categorize "FLOATZEL" "Floatzel"
+  categorize "FLYGON" "Flygon"
+  categorize "FOONGUS" "Foongus"
+  categorize "FORRETRESS" "Forretress"
+  categorize "FRAXURE" "Fraxure"
+  categorize "FRILLISH" "Frillish"
+  categorize "FROSLASS" "Froslass"
+  categorize "FURRET" "Furret"
 
   debug_end "Pokemon F scripts"
 

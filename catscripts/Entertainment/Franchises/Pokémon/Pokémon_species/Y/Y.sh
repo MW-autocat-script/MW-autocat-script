@@ -13,35 +13,9 @@ then
   YANMA=$(egrep -i "$KEYWORDS_YANMA" "$NEWPAGES")
   YANMEGA=$(egrep -i "$KEYWORDS_YANMEGA" "$NEWPAGES")
 
-  if [ "$YAMASK" != "" ];
-  then
-    printf "%s" "$YAMASK" > Yamask.txt
-    export CATFILE="Yamask.txt"
-    export CATNAME="Yamask"
-    $CATEGORIZE
-    rm Yamask.txt
-    unset YAMASK
-  fi
-
-  if [ "$YANMA" != "" ];
-  then
-    printf "%s" "$YANMA" > Yanma.txt
-    export CATFILE="Yanma.txt"
-    export CATNAME="Yanma"
-    $CATEGORIZE
-    rm Yanma.txt
-    unset YANMA
-  fi
-
-  if [ "$YANMEGA" != "" ];
-  then
-    printf "%s" "$YANMEGA" > Yanmega.txt
-    export CATFILE="Yanmega.txt"
-    export CATNAME="Yanmega"
-    $CATEGORIZE
-    rm Yanmega.txt
-    unset YANMEGA
-  fi
+  categorize "YAMASK" "Yamask"
+  categorize "YANMA" "Yanma"
+  categorize "YANMEGA" "Yanmega"
 
   debug_end "Pokemon Y script"
 

@@ -10,52 +10,16 @@ then
 
   debug_start "Pokemon I script"
 
-
   IGGLYBUFF=$(egrep -i "$KEYWORDS_IGGLYBUFF" "$NEWPAGES")
   ILLUMISE=$(egrep -i "$KEYWORDS_ILLUMISE" "$NEWPAGES")
   INFERNAPE=$(egrep -i "$KEYWORDS_INFERNAPE" "$NEWPAGES")
   IVYSAUR=$(egrep -i "$KEYWORDS_IVYSAUR" "$NEWPAGES")
 
-  if [ "$IGGLYBUFF" != "" ];
-  then
-    printf "%s" "$IGGLYBUFF" > Igglybuff.txt
-    export CATFILE="Igglybuff.txt"
-    export CATNAME="Igglybuff"
-    $CATEGORIZE
-    rm Igglybuff.txt
-    unset IGGLYBUFF
-  fi
+  categorize "IGGLYBUFF" "Igglybuff"
+  categorize "ILLUMISE" "Illumise"
+  categorize "INFERNAPE" "Infernape"
+  categorize "IVYSAUR" "Ivysaur"
 
-  if [ "$ILLUMISE" != "" ];
-  then
-    printf "%s" "$ILLUMISE" > Illumise.txt
-    export CATFILE="Illumise.txt"
-    export CATNAME="Illumise"
-    $CATEGORIZE
-    rm Illumise.txt
-    unset ILLUMISE
-  fi
-
-  if [ "$INFERNAPE" != "" ];
-  then
-    printf "%s" "$INFERNAPE" > Infernape.txt
-    export CATFILE="Infernape.txt"
-    export CATNAME="Infernape"
-    $CATEGORIZE
-    rm Infernape.txt
-    unset INFERNAPE
-  fi
-
-  if [ "$IVYSAUR" != "" ];
-  then
-    printf "%s" "$IVYSAUR" > Ivysaur.txt
-    export CATFILE="Ivysaur.txt"
-    export CATNAME="Ivysaur"
-    $CATEGORIZE
-    rm Ivysaur.txt
-    unset IVYSAUR
-  fi
-
-    debug_end "Pokemon I script"
+  debug_end "Pokemon I script"
 
 fi

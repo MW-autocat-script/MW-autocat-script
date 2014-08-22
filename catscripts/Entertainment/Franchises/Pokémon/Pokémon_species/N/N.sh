@@ -22,173 +22,68 @@ then
 
   debug_start "Pokemon N script"
 
-  NATU="$(egrep -i "$KEYWORDS_NATU" "$NEWPAGES")"
-  NIDOKING="$(egrep -i "$KEYWORDS_NIDOKING" "$NEWPAGES")"
-  NIDOQUEEN="$(egrep -i "$KEYWORDS_NIDOQUEEN" "$NEWPAGES")"
-  NIDORANFEMALE="$(egrep -i "$KEYWORDS_NIDORANFEMALE" "$NEWPAGES")"
-  NIDORANMALE="$(egrep -i "$KEYWORDS_NIDORANMALE" "$NEWPAGES")"
-  NIDORANGENERIC="$(egrep -i "$KEYWORDS_NIDORAN_NONSPECIFIC" "$NEWPAGES" | egrep -iv "$KEYWORDS_NIDORAN_NONSPECIFIC_EXCLUDE")"
-  NIDORINA="$(egrep -i "$KEYWORDS_NIDORINA" "$NEWPAGES")"
-  NIDORINO="$(egrep -i "$KEYWORDS_NIDORINO" "$NEWPAGES")"
-  NINCADA="$(egrep -i "$KEYWORDS_NINCADA" "$NEWPAGES")"
-  NINETALES="$(egrep -i "$KEYWORDS_NINETALES" "$NEWPAGES")"
-  NINJASK="$(egrep -i "$KEYWORDS_NINJASK" "$NEWPAGES")"
-  NOCTOWL="$(egrep -i "$KEYWORDS_NOCTOWL" "$NEWPAGES")"
-  NOSEPASS="$(egrep -i "$KEYWORDS_NOSEPASS" "$NEWPAGES")"
-  NUMEL="$(egrep -i "$KEYWORDS_NUMEL" "$NEWPAGES")"
-  NUZLEAF="$(egrep -i "$KEYWORDS_NUZLEAF" "$NEWPAGES")"
+  NATU=$(egrep -i "$KEYWORDS_NATU" "$NEWPAGES")
 
-  if [ "$NATU" != "" ];
-  then
-    printf "%s" "$NATU" > Natu.txt
-    export CATFILE="Natu.txt"
-    export CATNAME="Natu"
-    $CATEGORIZE
-    rm Natu.txt
-    unset NATU
-  fi
+  categorize "NATU" "Natu"
 
-  if [ "$NIDOKING" != "" ];
-  then
-    printf "%s" "$NIDOKING" > Nidoking.txt
-    export CATFILE="Nidoking.txt"
-    export CATNAME="Nidoking"
-    $CATEGORIZE
-    rm Nidoking.txt
-    unset NIDOKING
-  fi
+  NIDOKING=$(egrep -i "$KEYWORDS_NIDOKING" "$NEWPAGES")
 
-  if [ "$NIDOQUEEN" != "" ];
-  then
-    printf "%s" "$NIDOQUEEN" > Nidoqueen.txt
-    export CATFILE="Nidoqueen.txt"
-    export CATNAME="Nidoqueen"
-    $CATEGORIZE
-    rm Nidoqueen.txt
-    unset NIDOQUEEN
-  fi
+  categorize "NIDOKING" "Nidoking"
 
-  if [ "$NIDORANFEMALE" != "" ];
-  then
-    printf "%s" "$NIDORANFEMALE" > Nidoran♀.txt
-    export CATFILE="Nidoran♀.txt"
-    export CATNAME="Nidoran (female)"
-    $CATEGORIZE
-    rm Nidoran♀.txt
-    unset NIDORANFEMALE
-  fi
+  NIDOQUEEN=$(egrep -i "$KEYWORDS_NIDOQUEEN" "$NEWPAGES")
 
-  if [ "$NIDORANMALE" != "" ];
-  then
-    printf "%s" "$NIDORANMALE" > Nidoran♂.txt
-    export CATFILE="Nidoran♂.txt"
-    export CATNAME="Nidoran (male)"
-    $CATEGORIZE
-    rm Nidoran♂.txt
-    unset NIDORANMALE
-  fi
+  categorize "NIDOQUEEN" "Nidoqueen"
 
-  if [ "$NIDORANGENERIC" != "" ];
-  then
-    printf "%s" "$NIDORANGENERIC" > NidoranGeneric.txt
-    export CATFILE="NidoranGeneric.txt"
-    export CATNAME="Nidoran (female)"
-    $CATEGORIZE
-    export CATFILE="NidoranGeneric.txt"
-    export CATNAME="Nidoran (male)"
-    rm NidoranGeneric.txt
-    unset NIDORANGENERIC
-  fi
+  NIDORANFEMALE=$(egrep -i "$KEYWORDS_NIDORANFEMALE" "$NEWPAGES")
 
-  if [ "$NIDORINA" != "" ];
-  then
-    printf "%s" "$NIDORINA" > Nidorina.txt
-    export CATFILE="Nidorina.txt"
-    export CATNAME="Nidorina"
-    $CATEGORIZE
-    rm Nidorina.txt
-    unset NIDORINA
-  fi
+  categorize "NIDORANFEMALE" "Nidoran (female)"
 
-  if [ "$NIDORINO" != "" ];
-  then
-    printf "%s" "$NIDORINO" > Nidorino.txt
-    export CATFILE="Nidorino.txt"
-    export CATNAME="Nidorino"
-    $CATEGORIZE
-    rm Nidorino.txt
-    unset NIDORINO
-  fi
+  NIDORANMALE=$(egrep -i "$KEYWORDS_NIDORANMALE" "$NEWPAGES")
 
-  if [ "$NINCADA" != "" ];
-  then
-    printf "%s" "$NINCADA" > Nincada.txt
-    export CATFILE="Nincada.txt"
-    export CATNAME="Nincada"
-    $CATEGORIZE
-    rm Nincada.txt
-    unset NINCADA
-  fi
+  categorize "NIDORANMALE" "Nidoran (male)"
 
-  if [ "$NINETALES" != "" ];
-  then
-    printf "%s" "$NINETALES" > Ninetales.txt
-    export CATFILE="Ninetales.txt"
-    export CATNAME="Ninetales"
-    $CATEGORIZE
-    rm Ninetales.txt
-    unset NINETALES
-  fi
+  NIDORANGENERIC=$(egrep -i "$KEYWORDS_NIDORAN_NONSPECIFIC" "$NEWPAGES" | egrep -iv "$KEYWORDS_NIDORAN_NONSPECIFIC_EXCLUDE")
+  NIDORANGENERIC2="$NIDORANGENERIC"
 
-  if [ "$NINJASK" != "" ];
-  then
-    printf "%s" "$NINJASK" > Ninjask.txt
-    export CATFILE="Ninjask.txt"
-    export CATNAME="Ninjask"
-    $CATEGORIZE
-    rm Ninjask.txt
-    unset NINJASK
-  fi
+  categorize "NIDORANGENERIC" "Nidoran (female)"
+  categorize "NIDORANGENERIC2" "Nidoran (male)"
 
-  if [ "$NOCTOWL" != "" ];
-  then
-    printf "%s" "$NOCTOWL" > Noctowl.txt
-    export CATFILE="Noctowl.txt"
-    export CATNAME="Noctowl"
-    $CATEGORIZE
-    rm Noctowl.txt
-    unset NOCTOWL
-  fi
+  NIDORINA=$(egrep -i "$KEYWORDS_NIDORINA" "$NEWPAGES")
 
-  if [ "$NOSEPASS" != "" ];
-  then
-    printf "%s" "$NOSEPASS" > Nosepass.txt
-    export CATFILE="Nosepass.txt"
-    export CATNAME="Nosepass"
-    $CATEGORIZE
-    rm Nosepass.txt
-    unset NOSEPASS
-  fi
+  categorize "NIDORINA" "Nidorina"
 
-  if [ "$NUMEL" != "" ];
-  then
-    printf "%s" "$NUMEL" > Numel.txt
-    export CATFILE="Numel.txt"
-    export CATNAME="Numel"
-    $CATEGORIZE
-    rm Numel.txt
-    unset NUMEL
-  fi
+  NIDORINO=$(egrep -i "$KEYWORDS_NIDORINO" "$NEWPAGES")
 
-  if [ "$NUZLEAF" != "" ];
-  then
-    printf "%s" "$NUZLEAF" > Nuzleaf.txt
-    export CATFILE="Nuzleaf.txt"
-    export CATNAME="Nuzleaf"
-    $CATEGORIZE
-    rm Nuzleaf.txt
-    unset NUZLEAF
-  fi
+  categorize "NIDORINO" "Nidorino"
+
+  NINCADA=$(egrep -i "$KEYWORDS_NINCADA" "$NEWPAGES")
+
+  categorize "NINCADA" "Nincada"
+
+  NINETALES=$(egrep -i "$KEYWORDS_NINETALES" "$NEWPAGES")
+
+  categorize "NINETALES" "Ninetales"
+
+  NINJASK=$(egrep -i "$KEYWORDS_NINJASK" "$NEWPAGES")
+
+  categorize "NINJASK" "Ninjask"
+
+  NOCTOWL=$(egrep -i "$KEYWORDS_NOCTOWL" "$NEWPAGES")
+
+  categorize "NOCTOWL" "Noctowl"
+
+  NOSEPASS=$(egrep -i "$KEYWORDS_NOSEPASS" "$NEWPAGES")
+
+  categorize "NOSEPASS" "Nosepass"
+
+  NUMEL=$(egrep -i "$KEYWORDS_NUMEL" "$NEWPAGES")
+
+  categorize "NUMEL" "Numel"
+
+  NUZLEAF=$(egrep -i "$KEYWORDS_NUZLEAF" "$NEWPAGES")
+
+  categorize "NUZLEAF" "Nuzleaf"
+
 
   debug_end "Pokemon N script"
 
