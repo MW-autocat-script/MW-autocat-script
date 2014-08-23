@@ -27,85 +27,14 @@ then
   VENICE=$(egrep -i "$KEYWORDS_VENICE" "$NEWPAGES")
   MILAN=$(egrep -i "$KEYWORDS_MILAN" "$NEWPAGES")
 
-  if [ "$ITALY" != "" ];
-  then
-    printf "%s" "$ITALY" > Italy.txt
-    export CATFILE="Italy.txt"
-    export CATNAME="Italy"
-    $CATEGORIZE
-    rm Italy.txt
-    unset ITALY
-  fi
-
-  if [ "$ROME" != "" ];
-  then
-    printf "%s" "$ROME" > Rome.txt
-    export CATFILE="Rome.txt"
-    export CATNAME="Rome"
-    $CATEGORIZE
-    rm Rome.txt
-    unset ROME
-  fi
-
-  if [ "$ANCIENTROME" != "" ];
-  then
-    printf "%s" "$ANCIENTROME" > AncientRome.txt
-    export CATFILE="AncientRome.txt"
-    export CATNAME="Ancient Rome"
-    $CATEGORIZE
-    rm AncientRome.txt
-    unset ANCIENTROME
-  fi
-
-  if [ "$PISA" != "" ];
-  then
-    printf "%s" "$PISA" > Pisa.txt
-    export CATFILE="Pisa.txt"
-    export CATNAME="Pisa, Italy"
-    $CATEGORIZE
-    rm Pisa.txt
-    unset PISA
-  fi
-
-  if [ "$POMPEII" != "" ];
-  then
-    printf "%s" "$POMPEII" > Pompeii.txt
-    export CATFILE="Pompeii.txt"
-    export CATNAME="Pompeii"
-    $CATEGORIZE
-    rm Pompeii.txt
-    unset POMPEII
-  fi
-
-  if [ "$JCAESAR" != "" ];
-  then
-    printf "%s" "$JCAESAR" > JuliusCaesar.txt
-    export CATFILE="JuliusCaesar.txt"
-    export CATNAME="Julius Caesar"
-    $CATEGORIZE
-    rm JuliusCaesar.txt
-    unset JCAESAR
-  fi
-
-  if [ "$VENICE" != "" ];
-  then
-    printf "%s" "$VENICE" > Venice.txt
-    export CATFILE="Venice.txt"
-    export CATNAME="Venice"
-    $CATEGORIZE
-    rm Venice.txt
-    unset VENICE
-  fi
-
-  if [ "$MILAN" != "" ];
-  then
-    printf "%s" "$MILAN" > Milan.txt
-    export CATFILE="Milan.txt"
-    export CATNAME="Milan"
-    $CATEGORIZE
-    rm Milan.txt
-    unset MILAN
-  fi
+  categorize "ITALY" "Italy"
+  categorize "ROME" "Rome"
+  categorize "ANCIENTROME" "Ancient Rome"
+  categorize "PISA" "Pisa, Italy"
+  categorize "POMPEII" "Pompeii"
+  categorize "JCAESAR" "Julius Caesar"
+  categorize "VENICE" "Venice"
+  categorize "MILAN" "Milan"
 
   debug_end "Italy"
 

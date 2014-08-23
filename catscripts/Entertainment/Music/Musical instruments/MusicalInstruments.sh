@@ -39,135 +39,19 @@ then
   XYLOPHONE=$(egrep -i "$KEYWORDS_XYLOPHONE" "$NEWPAGES")
   INSTRUMENTS=$(egrep -i "$KEYWORDS_MUSICALINSTRUMENT" "$NEWPAGES" | egrep -iv "$KEYWORDS_MUSICALINSTRUMENT_EXCLUDE")
 
-  if [ "$CELLO" != "" ];
-  then
-    printf "%s" "$CELLO" > Cello.txt
-    export CATFILE="Cello.txt"
-    export CATNAME="Cello"
-    $CATEGORIZE
-    rm Cello.txt
-    unset CELLO
-  fi
-
-  if [ "$CLARINET" != "" ];
-  then
-    printf "%s" "$CLARINET" > Clarinet.txt
-    export CATFILE="Clarinet.txt"
-    export CATNAME="Clarinet"
-    $CATEGORIZE
-    rm Clarinet.txt
-    unset CLARINET
-  fi
-
-  if [ "$DRUMS" != "" ];
-  then
-    printf "%s" "$DRUMS" > Drums.txt
-    export CATFILE="Drums.txt"
-    export CATNAME="Drums"
-    $CATEGORIZE
-    rm Drums.txt
-    unset DRUMS
-  fi
-
-  if [ "$FLUTE" != "" ];
-  then
-    printf "%s" "$FLUTE" > Flute.txt
-    export CATFILE="Flute.txt"
-    export CATNAME="Flute"
-    $CATEGORIZE
-    rm Flute.txt
-    unset FLUTE
-  fi
-
-  if [ "$GUITAR" != "" ];
-  then
-    printf "%s" "$GUITAR" > Guitar.txt
-    export CATFILE="Guitar.txt"
-    export CATNAME="Guitar"
-    $CATEGORIZE
-    rm Guitar.txt
-    unset GUITAR
-  fi
-
-  if [ "$HARP" != "" ];
-  then
-    printf "%s" "$HARP" > Harp.txt
-    export CATFILE="Harp.txt"
-    export CATNAME="Harp"
-    $CATEGORIZE
-    rm Harp.txt
-    unset HARP
-  fi
-
-  if [ "$PIANO" != "" ];
-  then
-    printf "%s" "$PIANO" > Piano.txt
-    export CATFILE="Piano.txt"
-    export CATNAME="Piano"
-    $CATEGORIZE
-    rm Piano.txt
-    unset PIANO
-  fi
-
-  if [ "$RECORDER" != "" ];
-  then
-    printf "%s" "$RECORDER" > Recorder.txt
-    export CATFILE="Recorder.txt"
-    export CATNAME="Recorder (musical instrument)"
-    $CATEGORIZE
-    rm Recorder.txt
-    unset RECORDER
-  fi
-
-  if [ "$SAXOPHONE" != "" ];
-  then
-    printf "%s" "$SAXOPHONE" > Saxophone.txt
-    export CATFILE="Saxophone.txt"
-    export CATNAME="Saxophone"
-    $CATEGORIZE
-    rm Saxophone.txt
-    unset SAXOPHONE
-  fi
-
-  if [ "$VIOLIN" != "" ];
-  then
-    printf "%s" "$VIOLIN" > Violin.txt
-    export CATFILE="Violin.txt"
-    export CATNAME="Violin"
-    $CATEGORIZE
-    rm Violin.txt
-    unset VIOLIN
-  fi
-
-  if [ "$VIOLA" != "" ];
-  then
-    printf "%s" "$VIOLA" > Viola.txt
-    export CATFILE="Viola.txt"
-    export CATNAME="Viola"
-    $CATEGORIZE
-    rm Viola.txt
-    unset VIOLA
-  fi
-
-  if [ "$XYLOPHONE" != "" ];
-  then
-    printf "%s" "$XYLOPHONE" > Xylophone.txt
-    export CATFILE="Xylophone.txt"
-    export CATNAME="Xylophone"
-    $CATEGORIZE
-    rm Xylophone.txt
-    unset XYLOPHONE
-  fi
-
-  if [ "$INSTRUMENTS" != "" ];
-  then
-    printf "%s" "$INSTRUMENTS" > Instruments.txt
-    export CATFILE="Instruments.txt"
-    export CATNAME="Musical instruments"
-    $CATEGORIZE
-    rm Instruments.txt
-    unset INSTRUMENTS
-  fi
+  categorize "CELLO" "Cello"
+  categorize "CLARINET" "Clarinet"
+  categorize "DRUMS" "Drums"
+  categorize "FLUTE" "Flute"
+  categorize "GUITAR" "Guitar"
+  categorize "HARP" "Harp"
+  categorize "PIANO" "Piano"
+  categorize "RECORDER" "Recorder (musical instrument)"
+  categorize "SAXOPHONE" "Saxophone"
+  categorize "VIOLIN" "Violin"
+  categorize "VIOLA" "Viola"
+  categorize "XYLOPHONE" "Xylophone"
+  categorize "INSTRUMENTS" "Musical instruments"
 
   debug_end "Musical instruments"
 

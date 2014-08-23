@@ -18,55 +18,11 @@ then
   CHAINOFMEMORIES=$(egrep -i "$KEYWORDS_CHAINOFMEMORIES" "$NEWPAGES")
   BIRTHBYSLEEP=$(egrep -i "$KEYWORDS_BIRTHBYSLEEP" "$NEWPAGES")
 
-  if [ "$KINGDOMHEARTSSERIES" != "" ];
-  then
-    printf "%s" "$KINGDOMHEARTSSERIES" > KingdomHeartsSeries.txt
-    export CATFILE="KingdomHeartsSeries.txt"
-    export CATNAME="Kingdom Hearts series"
-    $CATEGORIZE
-    rm KingdomHeartsSeries.txt
-    unset KINGDOMHEARTSSERIES
-  fi
-
-  if [ "$KINGDOMHEARTSII" != "" ];
-  then
-    printf "%s" "$KINGDOMHEARTSII" > KingdomHeartsII.txt
-    export CATFILE="KingdomHeartsII.txt"
-    export CATNAME="Kingdom Hearts II"
-    $CATEGORIZE
-    rm KingdomHeartsII.txt
-    unset KINGDOMHEARTSII
-  fi
-
-  if [ "$KINGDOMHEARTSIII" != "" ];
-  then
-    printf "%s" "$KINGDOMHEARTSIII" > KingdomHeartsIII.txt
-    export CATFILE="KingdomHeartsIII.txt"
-    export CATNAME="Kingdom Hearts III"
-    $CATEGORIZE
-    rm KingdomHeartsIII.txt
-    unset KINGDOMHEARTSIII
-  fi
-
-  if [ "$CHAINOFMEMORIES" != "" ];
-  then
-    printf "%s" "$CHAINOFMEMORIES" > ChainOfMemories.txt
-    export CATFILE="ChainOfMemories.txt"
-    export CATNAME="Kingdom Hearts: Chain of Memories"
-    $CATEGORIZE
-    rm ChainOfMemories.txt
-    unset CHAINOFMEMORIES
-  fi
-
-  if [ "$BIRTHBYSLEEP" != "" ];
-  then
-    printf "%s" "$BIRTHBYSLEEP" > BirthBySleep.txt
-    export CATFILE="BirthBySleep.txt"
-    export CATNAME="Kingdom Hearts Birth by Sleep"
-    $CATEGORIZE
-    rm BirthBySleep.txt
-    unset BIRTHBYSLEEP
-  fi
+  categorize "KINGDOMHEARTSSERIES" "Kingdom Hearts series"
+  categorize "KINGDOMHEARTSII" "Kingdom Hearts II"
+  categorize "KINGDOMHEARTSIII" "Kingdom Hearts III"
+  categorize "CHAINOFMEMORIES" "Kingdom Hearts: Chain of Memories"
+  categorize "BIRTHBYSLEEP" "Kingdom Hearts Birth by Sleep"
 
   debug_end "Kingdom Hearts series"
 

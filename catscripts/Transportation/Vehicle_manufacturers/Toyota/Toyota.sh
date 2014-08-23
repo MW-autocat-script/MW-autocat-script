@@ -27,65 +27,12 @@ then
   LEXUS=$(egrep -i "$KEYWORDS_LEXUS" "$NEWPAGES")
   SCION=$(egrep -i "$KEYWORDS_SCION" "$NEWPAGES")
 
-  if [ "$AVALON" != "" ];
-  then
-    printf "%s" "$AVALON" > ToyotaAvalon.txt
-    export CATFILE="ToyotaAvalon.txt"
-    export CATNAME="Toyota Avalon"
-    $CATEGORIZE
-    rm ToyotaAvalon.txt
-    unset AVALON
-  fi
-
-  if [ "$CAMRY" != "" ];
-  then
-    printf "%s" "$CAMRY" > ToyotaCamry.txt
-    export CATFILE="ToyotaCamry.txt"
-    export CATNAME="Toyota Camry"
-    $CATEGORIZE
-    rm ToyotaCamry.txt
-    unset CAMRY
-  fi
-
-  if [ "$COROLLA" != "" ];
-  then
-    printf "%s" "$COROLLA" > ToyotaCorolla.txt
-    export CATFILE="ToyotaCorolla.txt"
-    export CATNAME="Toyota Corolla"
-    $CATEGORIZE
-    rm ToyotaCorolla.txt
-    unset COROLLA
-  fi
-
-  if [ "$PRIUS" != "" ];
-  then
-    printf "%s" "$PRIUS" > ToyotaPrius.txt
-    export CATFILE="ToyotaPrius.txt"
-    export CATNAME="Toyota Prius"
-    $CATEGORIZE
-    rm ToyotaPrius.txt
-    unset PRIUS
-  fi
-
-  if [ "$LEXUS" != "" ];
-  then
-    printf "%s" "$LEXUS" > Lexus.txt
-    export CATFILE="Lexus.txt"
-    export CATNAME="Lexus"
-    $CATEGORIZE
-    rm Lexus.txt
-    unset LEXUS
-  fi
-
-  if [ "$SCION" != "" ];
-  then
-    printf "%s" "$SCION" > Scion.txt
-    export CATFILE="Scion.txt"
-    export CATNAME="Scion"
-    $CATEGORIZE
-    rm Scion.txt
-    unset SCION
-  fi
+  categorize "AVALON" "Toyota Avalon"
+  categorize "CAMRY" "Toyota Camry"
+  categorize "COROLLA" "Toyota Corolla"
+  categorize "PRIUS" "Toyota Prius"
+  categorize "LEXUS" "Lexus"
+  categorize "SCION" "Scion"
 
   debug_end "Toyota"
 

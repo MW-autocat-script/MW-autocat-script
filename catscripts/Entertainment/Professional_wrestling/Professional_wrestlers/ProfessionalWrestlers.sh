@@ -20,94 +20,23 @@ then
   
   debug_start "Professional wrestlers"
 
-  PROFESSIONALWRESTLERS="$(egrep -i "$KEYWORDS_PROFESSIONALWRESTLERS" "$NEWPAGES" | egrep -iv "$KEYWORDS_PROFESSIONALWRESTLERS_EXCLUDE")"
-  DAVEBAUTISTA="$(egrep -i "$KEYWORDS_DAVEBAUTISTA" "$NEWPAGES")"
-  PHILLIPBROOKS="$(egrep -i "$KEYWORDS_PHILLIPBROOKS" "$NEWPAGES")"
-  MARKCALAWAY="$(egrep -i "$KEYWORDS_MARKCALAWAY" "$NEWPAGES")"
-  JOHNCENA="$(egrep -i "$KEYWORDS_JOHNCENA" "$NEWPAGES")"
-  JEFFHARDY="$(egrep -i "$KEYWORDS_JEFFHARDY" "$NEWPAGES")"
-  MATTHARDY="$(egrep -i "$KEYWORDS_MATTHARDY" "$NEWPAGES")"
-  CHRISTOPHERIRVINE="$(egrep -i "$KEYWORDS_CHRISTOPHERIRVINE" "$NEWPAGES")"
+  PROFESSIONALWRESTLERS=$(egrep -i "$KEYWORDS_PROFESSIONALWRESTLERS" "$NEWPAGES" | egrep -iv "$KEYWORDS_PROFESSIONALWRESTLERS_EXCLUDE")
+  DAVEBAUTISTA=$(egrep -i "$KEYWORDS_DAVEBAUTISTA" "$NEWPAGES")
+  PHILLIPBROOKS=$(egrep -i "$KEYWORDS_PHILLIPBROOKS" "$NEWPAGES")
+  MARKCALAWAY=$(egrep -i "$KEYWORDS_MARKCALAWAY" "$NEWPAGES")
+  JOHNCENA=$(egrep -i "$KEYWORDS_JOHNCENA" "$NEWPAGES")
+  JEFFHARDY=$(egrep -i "$KEYWORDS_JEFFHARDY" "$NEWPAGES")
+  MATTHARDY=$(egrep -i "$KEYWORDS_MATTHARDY" "$NEWPAGES")
+  CHRISTOPHERIRVINE=$(egrep -i "$KEYWORDS_CHRISTOPHERIRVINE" "$NEWPAGES")
 
-  if [ "$PROFESSIONALWRESTLERS" != "" ];
-  then
-    printf "%s" "$PROFESSIONALWRESTLERS" > ProfessionalWrestlers.txt
-    export CATFILE="ProfessionalWrestlers.txt"
-    export CATNAME="Professional wrestlers"
-    $CATEGORIZE
-    rm ProfessionalWrestlers.txt
-    unset PROFESSIONALWRESTLERS
-  fi
-
-  if [ "$DAVEBAUTISTA" != "" ];
-  then
-    printf "%s" "$DAVEBAUTISTA" > DaveBautista.txt
-    export CATFILE="DaveBautista.txt"
-    export CATNAME="Dave Bautista"
-    $CATEGORIZE
-    rm DaveBautista.txt
-    unset DAVEBAUTISTA
-  fi
-
-  if [ "$PHILLIPBROOKS" != "" ];
-  then
-    printf "%s" "$PHILLIPBROOKS" > PhillipBrooks.txt
-    export CATFILE="PhillipBrooks.txt"
-    export CATNAME="Phillip Brooks"
-    $CATEGORIZE
-    rm PhillipBrooks.txt
-    unset PHILLIPBROOKS
-  fi
-
-  if [ "$MARKCALAWAY" != "" ];
-  then
-    printf "%s" "$MARKCALAWAY" > MarkCalaway.txt
-    export CATFILE="MarkCalaway.txt"
-    export CATNAME="Mark Calaway"
-    $CATEGORIZE
-    rm MarkCalaway.txt
-    unset MARKCALAWAY
-  fi
-
-  if [ "$JOHNCENA" != "" ];
-  then
-    printf "%s" "$JOHNCENA" > JohnCena.txt
-    export CATFILE="JohnCena.txt"
-    export CATNAME="John Cena"
-    $CATEGORIZE
-    rm JohnCena.txt
-    unset JOHNCENA
-  fi
-
-  if [ "$JEFFHARDY" != "" ];
-  then
-    printf "%s" "$JEFFHARDY" > JeffHardy.txt
-    export CATFILE="JeffHardy.txt"
-    export CATNAME="Jeff Hardy"
-    $CATEGORIZE
-    rm JeffHardy.txt
-    unset JEFFHARDY
-  fi
-
-  if [ "$MATTHARDY" != "" ];
-  then
-    printf "%s" "$MATTHARDY" > MattHardy.txt
-    export CATFILE="MattHardy.txt"
-    export CATNAME="Matt Hardy"
-    $CATEGORIZE
-    rm MattHardy.txt
-    unset MATTHARDY
-  fi
-
-  if [ "$CHRISTOPHERIRVINE" != "" ];
-  then
-    printf "%s" "$CHRISTOPHERIRVINE" > ChristopherIrvine.txt
-    export CATFILE="ChristopherIrvine.txt"
-    export CATNAME="Christopher Irvine"
-    $CATEGORIZE
-    rm ChristopherIrvine.txt
-    unset CHRISTOPHERIRVINE
-  fi
+  categorize "PROFESSIONALWRESTLERS" "Professional wrestlers"
+  categorize "DAVEBAUTISTA" "Dave Bautista"
+  categorize "PHILLIPBROOKS" "Phillip Brooks"
+  categorize "MARKCALAWAY" "Mark Calaway"
+  categorize "JOHNCENA" "John Cena"
+  categorize "JEFFHARDY" "Jeff Hardy"
+  categorize "MATTHARDY" "Matt Hardy"
+  categorize "CHRISTOPHERIRVINE" "Christopher Irvine"
 
   debug_end "Professional wrestlers"
 

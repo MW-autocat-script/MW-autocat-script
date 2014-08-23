@@ -25,55 +25,11 @@ then
   WIKIPEDIA=$(egrep -i "$KEYWORDS_WIKIPEDIA" "$NEWPAGES")
   EBAY=$(egrep -i "$KEYWORDS_EBAY" "$NEWPAGES")
 
-  if [ "$WEBSITES" != "" ];
-  then
-    printf "%s" "$WEBSITES" > Websites.txt
-    export CATFILE="Websites.txt"
-    export CATNAME="Websites"
-    $CATEGORIZE
-    rm Websites.txt
-    unset WEBSITES
-  fi
-
-  if [ "$WIKIA" != "" ];
-  then
-    printf "%s" "$WIKIA" > Wikia.txt
-    export CATFILE="Wikia.txt"
-    export CATNAME="Wikia"
-    $CATEGORIZE
-    rm Wikia.txt
-    unset WIKIA
-  fi
-
-  if [ "$WIKIANSWERS" != "" ];
-  then
-    printf "%s" "$WIKIANSWERS" > Wikianswers.txt
-    export CATFILE="Wikianswers.txt"
-    export CATNAME="Wikianswers"
-    $CATEGORIZE
-    rm Wikianswers.txt
-    unset WIKIANSWERS
-  fi
-
-  if [ "$WIKIPEDIA" != "" ];
-  then
-    printf "%s" "$WIKIPEDIA" > Wikipedia.txt
-    export CATFILE="Wikipedia.txt"
-    export CATNAME="Wikipedia"
-    $CATEGORIZE
-    rm Wikipedia.txt
-    unset WIKIPEDIA
-  fi
-
-  if [ "$EBAY" != "" ];
-  then
-    printf "%s" "$EBAY" > eBay.txt
-    export CATFILE="eBay.txt"
-    export CATNAME="eBay"
-    $CATEGORIZE
-    rm eBay.txt
-    unset EBAY
-  fi
+  categorize "WEBSITES" "Websites"
+  categorize "WIKIA" "Wikia"
+  categorize "WIKIANSWERS" "Wikianswers"
+  categorize "WIKIPEDIA" "Wikipedia"
+  categorize "EBAY" "eBay"
 
   debug_end "Websites"
 

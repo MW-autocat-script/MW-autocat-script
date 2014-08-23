@@ -9,15 +9,7 @@ then
 
   NEPAL=$(egrep -i "$KEYWORDS_NEPAL" "$NEWPAGES")
 
-  if [ "$NEPAL" != "" ];
-  then
-    printf "%s" "$NEPAL" > Nepal.txt
-    export CATFILE="Nepal.txt"
-    export CATNAME="Nepal"
-    $CATEGORIZE
-    rm Nepal.txt
-    unset NEPAL
-  fi
+  categorize "NEPAL" "Nepal"
 
   debug_end "Nepal"
 

@@ -9,15 +9,7 @@ then
 
   TWITTER=$(egrep -i "$KEYWORDS_TWITTER" "$NEWPAGES")
 
-  if [ "$TWITTER" != "" ];
-  then
-    printf "%s" "$TWITTER" > Twitter.txt
-    export CATFILE="Twitter.txt"
-    export CATNAME="Twitter"
-    $CATEGORIZE
-    rm Twitter.txt
-    unset TWITTER
-  fi
+  categorize "TWITTER" "Twitter"
 
   debug_end "Twitter"
 

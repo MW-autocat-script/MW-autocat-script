@@ -24,85 +24,14 @@ then
   PARADISE=$(egrep -i "$KEYWORDS_BURNOUTPARADISE" "$NEWPAGES")
   CRASH=$(egrep -i "$KEYWORDS_BURNOUTCRASH" "$NEWPAGES")
 
-  if [ "$BURNOUT" != "" ];
-  then
-    printf "%s" "$BURNOUT" > Burnout.txt
-    export CATFILE="Burnout.txt"
-    export CATNAME="Burnout series"
-    $CATEGORIZE
-    rm Burnout.txt
-    unset BURNOUT
-  fi
-
-  if [ "$TWO" != "" ];
-  then
-    printf "%s" "$TWO" > Burnout2.txt
-    export CATFILE="Burnout2.txt"
-    export CATNAME="Burnout series"
-    $CATEGORIZE
-    rm Burnout2.txt
-    unset TWO
-  fi
-
-  if [ "$THREE" != "" ];
-  then
-    printf "%s" "$THREE" > Burnout3.txt
-    export CATFILE="Burnout3.txt"
-    export CATNAME="Burnout series"
-    $CATEGORIZE
-    rm Burnout3.txt
-    unset THREE
-  fi
-
-  if [ "$REVENGE" != "" ];
-  then
-    printf "%s" "$REVENGE" > BurnoutRevenge.txt
-    export CATFILE="BurnoutRevenge.txt"
-    export CATNAME="Burnout series"
-    $CATEGORIZE
-    rm BurnoutRevenge.txt
-    unset REVENGE
-  fi
-
-  if [ "$LEGENDS" != "" ];
-  then
-    printf "%s" "$LEGENDS" > BurnoutLegends.txt
-    export CATFILE="BurnoutLegends.txt"
-    export CATNAME="Burnout series"
-    $CATEGORIZE
-    rm BurnoutLegends.txt
-    unset LEGENDS
-  fi
-
-  if [ "$DOMINATOR" != "" ];
-  then
-    printf "%s" "$DOMINATOR" > BurnoutDominator.txt
-    export CATFILE="BurnoutDominator.txt"
-    export CATNAME="Burnout series"
-    $CATEGORIZE
-    rm BurnoutDominator.txt
-    unset DOMINATOR
-  fi
-
-  if [ "$PARADISE" != "" ];
-  then
-    printf "%s" "$PARADISE" > BurnoutParadise.txt
-    export CATFILE="BurnoutParadise.txt"
-    export CATNAME="Burnout Paradise"
-    $CATEGORIZE
-    rm BurnoutParadise.txt
-    unset PARADISE
-  fi
-
-  if [ "$CRASH" != "" ];
-  then
-    printf "%s" "$CRASH" > BurnoutCrash.txt
-    export CATFILE="BurnoutCrash.txt"
-    export CATNAME="Burnout series"
-    $CATEGORIZE
-    rm BurnoutCrash.txt
-    unset CRASH
-  fi
+  categorize "BURNOUT" "Burnout series"
+  categorize "TWO" "Burnout series"
+  categorize "THREE" "Burnout series"
+  categorize "REVENGE" "Burnout series"
+  categorize "LEGENDS" "Burnout series"
+  categorize "DOMINATOR" "Burnout series"
+  categorize "PARADISE" "Burnout Paradise"
+  categorize "CRASH" "Burnout series"
 
   debug_end "Burnout series"
 

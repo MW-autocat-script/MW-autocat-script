@@ -25,65 +25,12 @@ then
   ASTATINE=$(egrep -i "$KEYWORDS_ASTATINE" "$NEWPAGES" | egrep -iv "$KEYWORDS_ASTATINE_EXCLUDE")
   UNUNSEPTIUM=$(egrep -i "$KEYWORDS_UNUNSEPTIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_UNUNSEPTIUM_EXCLUDE")
 
-  if [ "$FLUORINE" != "" ];
-  then
-    printf "%s" "$FLUORINE" > Fluorine.txt
-    export CATFILE="Fluorine.txt"
-    export CATNAME="Fluorine"
-    $CATEGORIZE
-    rm Fluorine.txt
-    unset FLUORINE
-  fi
-
-  if [ "$CHLORINE" != "" ];
-  then
-    printf "%s" "$CHLORINE" > Chlorine.txt
-    export CATFILE="Chlorine.txt"
-    export CATNAME="Chlorine"
-    $CATEGORIZE
-    rm Chlorine.txt
-    unset CHLORINE
-  fi
-
-  if [ "$BROMINE" != "" ];
-  then
-    printf "%s" "$BROMINE" > Bromine.txt
-    export CATFILE="Bromine.txt"
-    export CATNAME="Bromine"
-    $CATEGORIZE
-    rm Bromine.txt
-    unset BROMINE
-  fi
-
-  if [ "$IODINE" != "" ];
-  then
-    printf "%s" "$IODINE" > Iodine.txt
-    export CATFILE="Iodine.txt"
-    export CATNAME="Iodine"
-    $CATEGORIZE
-    rm Iodine.txt
-    unset IODINE
-  fi
-
-  if [ "$ASTATINE" != "" ];
-  then
-    printf "%s" "$ASTATINE" > Astatine.txt
-    export CATFILE="Astatine.txt"
-    export CATNAME="Astatine"
-    $CATEGORIZE
-    rm Astatine.txt
-    unset ASTATINE
-  fi
-
-  if [ "$UNUNSEPTIUM" != "" ];
-  then
-    printf "%s" "$UNUNSEPTIUM" > Ununseptium.txt
-    export CATFILE="Ununseptium.txt"
-    export CATNAME="Ununseptium"
-    $CATEGORIZE
-    rm Ununseptium.txt
-    unset UNUNSEPTIUM
-  fi
+  categorize "FLUORINE" "Fluorine"
+  categorize "CHLORINE" "Chlorine"
+  categorize "BROMINE" "Bromine"
+  categorize "IODINE" "Iodine"
+  categorize "ASTATINE" "Astatine"
+  categorize "UNUNSEPTIUM" "Ununseptium"
 
   debug_end "Group 17 elements"
 

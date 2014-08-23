@@ -25,65 +25,12 @@ then
   POLONIUM=$(egrep -i "$KEYWORDS_POLONIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_POLONIUM_EXCLUDE")
   LIVERMORIUM=$(egrep -i "$KEYWORDS_LIVERMORIUM" "$NEWPAGES" | egrep -i "$KEYWORDS_LIVERMORIUM_EXCLUDE")
 
-  if [ "$OXYGEN" != "" ];
-  then
-    printf "%s" "$OXYGEN" > Oxygen.txt
-    export CATFILE="Oxygen.txt"
-    export CATNAME="Oxygen"
-    $CATEGORIZE
-    rm Oxygen.txt
-    unset OXYGEN
-  fi
-
-  if [ "$SULFUR" != "" ];
-  then
-    printf "%s" "$SULFUR" > Sulfur.txt
-    export CATFILE="Sulfur.txt"
-    export CATNAME="Sulfur"
-    $CATEGORIZE
-    rm Sulfur.txt
-    unset SULFUR
-  fi
-
-  if [ "$SELENIUM" != "" ];
-  then
-    printf "%s" "$SELENIUM" > Selenium.txt
-    export CATFILE="Selenium.txt"
-    export CATNAME="Selenium"
-    $CATEGORIZE
-    rm Selenium.txt
-    unset SELENIUM
-  fi
-
-  if [ "$TELLURIUM" != "" ];
-  then
-    printf "%s" "$TELLURIUM" > Tellurium.txt
-    export CATFILE="Tellurium.txt"
-    export CATNAME="Tellurium"
-    $CATEGORIZE
-    rm Tellurium.txt
-    unset TELLURIUM
-  fi
-
-  if [ "$POLONIUM" != "" ];
-  then
-    printf "%s" "$POLONIUM" > Polonium.txt
-    export CATFILE="Polonium.txt"
-    export CATNAME="Polonium"
-    $CATEGORIZE
-    rm Polonium.txt
-    unset POLONIUM
-  fi
-
-  if [ "$LIVERMORIUM" != "" ];
-  then
-    printf "%s" "$LIVERMORIUM" > Livermorium.txt
-    export CATFILE="Livermorium.txt"
-    export CATNAME="Livermorium"
-    $CATEGORIZE
-    rm Livermorium.txt
-    unset LIVERMORIUM
-  fi
+  categorize "OXYGEN" "Oxygen"
+  categorize "SULFUR" "Sulfur"
+  categorize "SELENIUM" "Selenium"
+  categorize "TELLURIUM" "Tellurium"
+  categorize "POLONIUM" "Polonium"
+  categorize "LIVERMORIUM" "Livermorium"
 
   debug_end "Group 16 elements"
 

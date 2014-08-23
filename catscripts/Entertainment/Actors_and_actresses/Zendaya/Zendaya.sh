@@ -7,17 +7,9 @@ then
   
   debug_start "Zendaya"
 
-  ZENDAYA="$(egrep -i "$KEYWORDS_ZENDAYA" "$NEWPAGES")"
+  ZENDAYA=$(egrep -i "$KEYWORDS_ZENDAYA" "$NEWPAGES")
 
-  if [ "$ZENDAYA" != "" ];
-  then
-    printf "%s" "$ZENDAYA" > Zendaya.txt
-    export CATFILE="Zendaya.txt"
-    export CATNAME="Zendaya"
-    $CATEGORIZE
-    rm Zendaya.txt
-    unset ZENDAYA
-  fi
+  categorize "ZENDAYA" "Zendaya"
 
   debug_end "Zendaya"
 

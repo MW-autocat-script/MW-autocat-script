@@ -27,85 +27,14 @@ then
   MINT=$(egrep -i "$KEYWORDS_LINUXMINT" "$NEWPAGES")
   ANDROID=$(egrep -i "$KEYWORDS_GOOGLEANDROID" "$NEWPAGES" & egrep "$KEYWORDS_GOOGLEANDROID_CASESENSITIVE" "$NEWPAGES")
 
-  if [ "$LINUX" != "" ];
-  then
-    printf "%s" "$LINUX" > Linux.txt
-    export CATFILE="Linux.txt"
-    export CATNAME="Linux"
-    $CATEGORIZE
-    rm Linux.txt
-    unset LINUX
-  fi
-
-  if [ "$DEBIAN" != "" ];
-  then
-    printf "%s" "$DEBIAN" > Debian.txt 
-    export CATFILE="Debian.txt"
-    export CATNAME="Debian"
-    $CATEGORIZE
-    rm Debian.txt
-    unset DEBIAN
-  fi
-
-  if [ "$OPENSUSE" != "" ];
-  then
-    printf "%s" "$OPENSUSE" > OpenSUSE.txt
-    export CATFILE="OpenSUSE.txt"
-    export CATNAME="OpenSUSE"
-    $CATEGORIZE
-    rm OpenSUSE.txt
-    unset OPENSUSE
-  fi
-
-  if [ "$UBUNTU" != "" ];
-  then
-    printf "%s" "$UBUNTU" > Ubuntu.txt
-    export CATFILE="Ubuntu.txt"
-    export CATNAME="Ubuntu"
-    $CATEGORIZE
-    rm Ubuntu.txt
-    unset UBUNTU
-  fi
-
-  if [ "$COLINUX" != "" ];
-  then
-    printf "%s" "$COLINUX" > CoLinux.txt
-    export CATFILE="coLinux.txt"
-    export CATNAME="coLinux"
-    $CATEGORIZE
-    rm CoLinux.txt
-    unset COLINUX
-  fi
-
-  if [ "$FEDORA" != "" ];
-  then
-    printf "%s" "$FEDORA" > FedoraLinux.txt
-    export CATFILE="FedoraLinux.txt"
-    export CATNAME="Fedora Linux"
-    $CATEGORIZE
-    rm FedoraLinux.txt
-    unset FEDORA
-  fi
-
-  if [ "$MINT" != "" ];
-  then
-    printf "%s" "$MINT" > LinuxMint.txt
-    export CATFILE="LinuxMint.txt"
-    export CATNAME="Linux Mint"
-    $CATEGORIZE
-    rm LinuxMint.txt
-    unset MINT
-  fi
-
-  if [ "$ANDROID" != "" ];
-  then
-    printf "%s" "$ANDROID" > GoogleAndroid.txt
-    export CATFILE="GoogleAndroid.txt"
-    export CATNAME="Google Android"
-    $CATEGORIZE
-    rm GoogleAndroid.txt
-    unset ANDROID
-  fi
+  categorize "LINUX" "Linux"
+  categorize "DEBIAN" "Debian"
+  categorize "OPENSUSE" "OpenSUSE"
+  categorize "UBUNTU" "Ubuntu"
+  categorize "COLINUX" "coLinux"
+  categorize "FEDORA" "Fedora Linux"
+  categorize "MINT" "Linux Mint"
+  categorize "ANDROID" "Google Android"
 
   debug_end "Android"
 

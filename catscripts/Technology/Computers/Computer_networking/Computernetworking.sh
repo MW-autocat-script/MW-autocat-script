@@ -25,83 +25,21 @@ then
   
   debug_start "Computer networking"
 
-  NETWORK="$(egrep -i "$KEYWORDS_NETWORK" "$NEWPAGES" | egrep -iv "$KEYWORDS_NETWORK_EXCLUDE")"
-  TELNET="$(egrep -i "$KEYWORDS_TELNET" "$NEWPAGES")"
-  SSH="$(egrep -i "$KEYWORDS_SSH" "$NEWPAGES")"
-  FTP="$(egrep -i "$KEYWORDS_FTP" "$NEWPAGES")"
-  VOIP="$(egrep -i "$KEYWORDS_VOIP" "$NEWPAGES" | egrep -iv "$KEYWORDS_VOIP_EXCLUDE")"
-  SKYPE="$(egrep -i "$KEYWORDS_SKYPE" "$NEWPAGES")"
-  BLUETOOTH="$(egrep -i "$KEYWORDS_BLUETOOTH" "$NEWPAGES")"
+  NETWORK=$(egrep -i "$KEYWORDS_NETWORK" "$NEWPAGES" | egrep -iv "$KEYWORDS_NETWORK_EXCLUDE")
+  TELNET=$(egrep -i "$KEYWORDS_TELNET" "$NEWPAGES")
+  SSH=$(egrep -i "$KEYWORDS_SSH" "$NEWPAGES")
+  FTP=$(egrep -i "$KEYWORDS_FTP" "$NEWPAGES")
+  VOIP=$(egrep -i "$KEYWORDS_VOIP" "$NEWPAGES" | egrep -iv "$KEYWORDS_VOIP_EXCLUDE")
+  SKYPE=$(egrep -i "$KEYWORDS_SKYPE" "$NEWPAGES")
+  BLUETOOTH=$(egrep -i "$KEYWORDS_BLUETOOTH" "$NEWPAGES")
 
-  if [ "$NETWORK" != "" ];
-  then
-    printf "%s" "$NETWORK" > Computernetworking.txt
-    export CATFILE="Computernetworking.txt"
-    export CATNAME="Computer networking"
-    $CATEGORIZE
-    rm Computernetworking.txt
-    unset NETWORK
-  fi
-
-  if [ "$TELNET" != "" ];
-  then
-    printf "%s" "$TELNET" > Telnet.txt
-    export CATFILE="Telnet.txt"
-    export CATNAME="Telnet"
-    $CATEGORIZE
-    rm Telnet.txt
-    unset TELNET
-  fi
-
-  if [ "$SSH" != "" ];
-  then
-    printf "%s" "$SSH" > SSH.txt
-    export CATFILE="SSH.txt"
-    export CATNAME="SSH"
-    $CATEGORIZE
-    rm SSH.txt
-    unset SSH
-  fi
-
-  if [ "$FTP" != "" ];
-  then
-    printf "%s" "$FTP" > FTP.txt
-    export CATFILE="FTP.txt"
-    export CATNAME="FTP"
-    $CATEGORIZE
-    rm FTP.txt
-    unset FTP
-  fi
-
-  if [ "$VOIP" != "" ];
-  then
-    printf "%s" "$VOIP" > VoIP.txt
-    export CATFILE="VoIP.txt"
-    export CATNAME="VoIP"
-    $CATEGORIZE
-    rm VoIP.txt
-    unset VOIP
-  fi
-
-  if [ "$SKYPE" != "" ];
-  then
-    printf "%s" "$SKYPE" > Skype.txt
-    export CATFILE="Skype.txt"
-    export CATNAME="Skype"
-    $CATEGORIZE
-    rm Skype.txt
-    unset SKYPE
-  fi
-
-  if [ "$BLUETOOTH" != "" ];
-  then
-    printf "%s" "$BLUETOOTH" > Bluetooth.txt
-    export CATFILE="Bluetooth.txt"
-    export CATNAME="Bluetooth"
-    $CATEGORIZE
-    rm Bluetooth.txt
-    unset BLUETOOTH
-  fi
+  categorize "NETWORK" "Computer networking"
+  categorize "TELNET" "Telnet"
+  categorize "SSH" "SSH"
+  categorize "FTP" "FTP"
+  categorize "VOIP" "VoIP"
+  categorize "SKYPE" "Skype"
+  categorize "BLUETOOTH" "Bluetooth"
 
   debug_end "Computer networking"
 

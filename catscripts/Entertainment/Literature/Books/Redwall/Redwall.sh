@@ -9,15 +9,7 @@ then
 
   REDWALL=$(egrep -i "$KEYWORDS_REDWALL" "$NEWPAGES")
 
-  if [ "$REDWALL" != "" ];
-  then
-    printf "%s" "$REDWALL" > Redwall.txt
-    export CATFILE="Redwall.txt"
-    export CATNAME="Redwall"
-    $CATEGORIZE
-    rm Redwall.txt
-    unset REDWALL
-  fi
+  categorize "REDWALL" "Redwall"
 
   debug_end "Redwall"
 

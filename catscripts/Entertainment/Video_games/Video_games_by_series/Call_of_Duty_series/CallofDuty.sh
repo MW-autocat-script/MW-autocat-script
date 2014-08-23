@@ -28,85 +28,14 @@ then
   BO2=$(egrep -i "$KEYWORDS_CODBO2" "$NEWPAGES")
   GHOSTS=$(egrep -i "$KEYWORDS_CODGHOSTS" "$NEWPAGES")
 
-  if [ "$CALLOFDUTY" != "" ];
-  then
-    printf "%s" "$CALLOFDUTY" > CallofDuty.txt
-    export CATFILE="CallofDuty.txt"
-    export CATNAME="Call of Duty series"
-    $CATEGORIZE
-    rm CallofDuty.txt
-    unset CALLOFDUTY
-  fi
-
-  if [ "$MODERN" != "" ];
-  then
-    printf "%s" "$MODERN" > COD4.txt
-    export CATFILE="COD4.txt"
-    export CATNAME="Call of Duty 4: Modern Warfare"
-    $CATEGORIZE
-    rm COD4.txt
-    unset COD4.txt
-  fi
-
-  if [ "$WORLDATWAR" != "" ];
-  then
-    printf "%s" "$WORLDATWAR" > WorldAtWar.txt
-    export CATFILE="WorldAtWar.txt"
-    export CATNAME="Call of Duty: World at War"
-    $CATEGORIZE
-    rm WorldAtWar.txt
-    unset WORLDATWAR
-  fi
-
-  if [ "$MW2" != "" ];
-  then
-    printf "%s" "$MW2" > ModernWarfare2.txt
-    export CATFILE="ModernWarfare2.txt"
-    export CATNAME="Call of Duty: Modern Warfare 2"
-    $CATEGORIZE
-    rm ModernWarfare2.txt
-    unset MW2
-  fi
-
-  if [ "$BLACKOPS" != "" ];
-  then
-    printf "%s" "$BLACKOPS" > BlackOps.txt
-    export CATFILE="BlackOps.txt"
-    export CATNAME="Call of Duty: Black Ops"
-    $CATEGORIZE
-    rm BlackOps.txt
-    unset BLACKOPS
-  fi
-
-  if [ "$MW3" != "" ];
-  then
-    printf "%s" "$MW3" > ModernWarfare3.txt
-    export CATFILE="ModernWarfare3.txt"
-    export CATNAME="Call of Duty: Modern Warfare 3"
-    $CATEGORIZE
-    rm ModernWarfare3.txt
-    unset MW3
-  fi
-
-  if [ "$BO2" != "" ];
-  then
-    printf "%s" "$BO2" > BlackOps2.txt
-    export CATFILE="BlackOps2.txt"
-    export CATNAME="Call of Duty: Black Ops II"
-    $CATEGORIZE
-    rm BlackOps2.txt
-    unset BO2
-  fi
-
-  if [ "$GHOSTS" != "" ];
-  then
-    printf "%s" "$GHOSTS" > Ghosts.txt
-    export CATFILE="Ghosts.txt"
-    export CATNAME="Call of Duty: Ghosts"
-    $CATEGORIZE
-    rm Ghosts.txt
-    unset GHOSTS
-  fi
+  categorize "CALLOFDUTY" "Call of Duty series"
+  categorize "MODERN" "Call of Duty 4: Modern Warfare"
+  categorize "WORLDATWAR" "Call of Duty: World at War"
+  categorize "MW2" "Call of Duty: Modern Warfare 2"
+  categorize "BLACKOPS" "Call of Duty: Black Ops"
+  categorize "MW3" "Call of Duty: Modern Warfare 3"
+  categorize "BO2" "Call of Duty: Black Ops II"
+  categorize "GHOSTS" "Call of Duty: Ghosts"
 
   debug_end "Call of Duty series"
 

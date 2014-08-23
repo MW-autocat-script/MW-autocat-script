@@ -25,65 +25,12 @@ then
   THALLIUM=$(egrep -i "$KEYWORDS_THALLIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_THALLIUM_EXLCUDE")
   UNUNTRIUM=$(egrep -i "$KEYWORDS_UNUNUNTRIUM" "$NEWPAGES")
 
-  if [ "$BORON" != "" ];
-  then
-    printf "%s" "$BORON" > Boron.txt
-    export CATFILE="Boron.txt"
-    export CATNAME="Boron"
-    $CATEGORIZE
-    rm Boron.txt
-    unset BORON
-  fi
-
-  if [ "$ALUMINIUM" != "" ];
-  then
-    printf "%s" "$ALUMINIUM" > Aluminium.txt
-    export CATFILE="Aluminium.txt"
-    export CATNAME="Aluminium"
-    $CATEGORIZE
-    rm Aluminium.txt
-    unset ALUMINIUM
-  fi
-
-  if [ "$GALLIUM" != "" ];
-  then
-    printf "%s" "$GALLIUM" > Gallium.txt
-    export CATFILE="Gallium.txt"
-    export CATNAME="Gallium"
-    $CATEGORIZE
-    rm Gallium.txt
-    unset GALLIUM
-  fi
-
-  if [ "$INDIUM" != "" ];
-  then
-    printf "%s" "$INDIUM" > Indium.txt
-    export CATFILE="Indium.txt"
-    export CATNAME="Indium"
-    $CATEGORIZE
-    rm Indium.txt
-    unset INDIUM
-  fi
-
-  if [ "$THALLIUM" != "" ];
-  then
-    printf "%s" "$THALLIUM" > Thallium.txt
-    export CATFILE="Thallium.txt"
-    export CATNAME="Thallium"
-    $CATEGORIZE
-    rm Thallium.txt
-    unset THALLIUM
-  fi
-
-  if [ "$UNUNTRIUM" != "" ];
-  then
-    printf "%s" "$UNUNTRIUM" > Ununtrium.txt
-    export CATFILE="Ununtrium.txt"
-    export CATNAME="Ununtrium"
-    $CATEGORIZE
-    rm Ununtrium.txt
-    unset UNUNTRIUM
-  fi
+  categorize "BORON" "Boron"
+  categorize "ALUMINIUM" "Aluminium"
+  categorize "GALLIUM" "Gallium"
+  categorize "INDIUM" "Indium"
+  categorize "THALLIUM" "Thallium"
+  categorize "UNUNTRIUM" "Ununtrium"
 
   debug_end "Group 13 elements"
 

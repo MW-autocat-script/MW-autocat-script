@@ -24,55 +24,11 @@ then
   PHOTOGRAPHY=$(egrep -i "$KEYWORDS_PHOTOGRAPHY" "$NEWPAGES" | egrep -iv "$KEYWORDS_PHOTOGRAPHY_EXCLUDE")
   BASEBALLCARDS=$(egrep -i "$KEYWORDS_BASEBALLCARDS" "$NEWPAGES")
 
-  if [ "$HOBBIES" != "" ];
-  then
-    printf "%s" "$HOBBIES" > Hobbies.txt
-    export CATFILE="Hobbies.txt"
-    export CATNAME="Hobbies"
-    $CATEGORIZE
-    rm Hobbies.txt
-    unset HOBBIES
-  fi
-
-  if [ "$SEWING" != "" ];
-  then
-    printf "%s" "$SEWING" > Sewing.txt
-    export CATFILE="Sewing.txt"
-    export CATNAME="Sewing"
-    $CATEGORIZE
-    rm Sewing.txt
-    unset SEWING
-  fi
-
-  if [ "$KNITTING" != "" ];
-  then
-    printf "%s" "$KNITTING" > Knitting.txt
-    export CATFILE="Knitting.txt"
-    export CATNAME="Knitting"
-    $CATEGORIZE
-    rm Knitting.txt
-    unset KNITTING
-  fi
-
-  if [ "$PHOTOGRAPHY" != "" ];
-  then
-    printf "%s" "$PHOTOGRAPHY" > Photography.txt
-    export CATFILE="Photography.txt"
-    export CATNAME="Photography"
-    $CATEGORIZE
-    rm Photography.txt
-    unset PHOTOGRAPHY
-  fi
-
-  if [ "$BASEBALLCARDS" != "" ];
-  then
-    printf "%s" "$BASEBALLCARDS" > Baseballcards.txt
-    export CATFILE="Baseballcards.txt"
-    export CATNAME="Baseball cards"
-    $CATEGORIZE
-    rm Baseballcards.txt
-    unset BASEBALLCARDS
-  fi
+  categorize "HOBBIES" "Hobbies"
+  categorize "SEWING" "Sewing"
+  categorize "KNITTING" "Knitting"
+  categorize "PHOTOGRAPHY" "Photography"
+  categorize "BASEBALLCARDS" "Baseball cards"
 
   debug_end "Hobbies"
 

@@ -23,75 +23,13 @@ then
   FRONTIER=$(egrep -i "$KEYWORDS_MONSTERHUNTERFRONTIER" "$NEWPAGES")
   TRI=$(egrep -i "$KEYWORDS_MONSTERHUNTERTRI" "$NEWPAGES")
 
-  if [ "$SERIES" != "" ];
-  then
-    printf "%s" "$SERIES" > MonsterHunterSeries.txt
-    export CATFILE="MonsterHunterSeries.txt"
-    export CATNAME="Monster Hunter series"
-    $CATEGORIZE
-    rm MonsterHunterSeries.txt
-    unset SERIES
-  fi
-
-  if [ "$MH2" != "" ];
-  then
-    printf "%s" "$MH2" > MH2.txt
-    export CATFILE="MH2.txt"
-    export CATNAME="Monster Hunter 2"
-    $CATEGORIZE
-    rm MH2.txt
-    unset MH2
-  fi
-
-  if [ "$FREEDOM" != "" ];
-  then
-    printf "%s" "$FREEDOM" > MonsterHunterFreedom.txt
-    export CATFILE="MonsterHunterFreedom.txt"
-    export CATNAME="Monster Hunter Freedom"
-    $CATEGORIZE
-    rm MonsterHunterFreedom.txt
-    unset FREEDOM
-  fi
-
-  if [ "$MHFU" != "" ];
-  then
-    printf "%s" "$MHFU" > MonsterHunterFreedomUnite.txt
-    export CATFILE="MonsterHunterFreedomUnite.txt"
-    export CATNAME="Monster Hunter Freedom Unite"
-    $CATEGORIZE
-    rm MonsterHunterFreedomUnite.txt
-    unset MHFU
-  fi
-
-  if [ "$MHF2" != "" ];
-  then
-    printf "%s" "$MHF2" > MonsterHunterFreedom2.txt
-    export CATFILE="MonsterHunterFreedom2.txt"
-    export CATNAME="Monster Hunter Freedom 2"
-    $CATEGORIZE
-    rm MonsterHunterFreedom2.txt
-    unset MHF2
-  fi
-
-  if [ "$FRONTIER" != "" ];
-  then
-    printf "%s" "$FRONTIER" > MonsterHunterFrontier.txt
-    export CATFILE="MonsterHunterFrontier.txt"
-    export CATNAME="Monster Hunter Frontier"
-    $CATEGORIZE
-    rm MonsterHunterFrontier.txt
-    unset FRONTIER
-  fi
-
-  if [ "$TRI" != "" ];
-  then
-    printf "%s" "$TRI" > MonsterHunterTri.txt
-    export CATFILE="MonsterHunterTri.txt"
-    export CATNAME="Monster Hunter Tri"
-    $CATEGORIZE
-    rm MonsterHunterTri.txt
-    unset TRI
-  fi
+  categorize "SERIES" "Monster Hunter series"
+  categorize "MH2" "Monster Hunter 2"
+  categorize "FREEDOM" "Monster Hunter Freedom"
+  categorize "MHFU" "Monster Hunter Freedom Unite"
+  categorize "MHF2" "Monster Hunter Freedom 2"
+  categorize "FRONTIER" "Monster Hunter Frontier"
+  categorize "TRI" "Monster Hunter Tri"
 
   debug_end "Monster Hunter series"
 

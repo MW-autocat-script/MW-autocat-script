@@ -19,65 +19,12 @@ then
   EPISODEV=$(egrep -i "$KEYWORDS_EMPIRESTRIKES" "$NEWPAGES")
   EPISODEVI=$(egrep -i "$KEYWORDS_RETURNJEDI" "$NEWPAGES")
 
-  if [ "$EPISODEI" != "" ];
-  then
-    printf "%s" "$EPISODEI" > EpisodeI.txt
-    export CATFILE="EpisodeI.txt"
-    export CATNAME="Star Wars Episode I: The Phantom Menace"
-    $CATEGORIZE
-    rm EpisodeI.txt
-    unset EPISODEI
-  fi
-
-  if [ "$EPISODEII" != "" ];
-  then
-    printf "%s" "$EPISODEII" > EpisodeII.txt
-    export CATFILE="EpisodeII.txt"
-    export CATNAME="Star Wars Episode II: Attack of the Clones"
-    $CATEGORIZE
-    rm EpisodeII.txt
-    unset EPISODEII
-  fi
-
-  if [ "$EPISODEIII" != "" ];
-  then
-    printf "%s" "$EPISODEIII" > EpisodeIII.txt
-    export CATFILE="EpisodeIII.txt"
-    export CATNAME="Star Wars Episode III: Revenge of the Sith"
-    $CATEGORIZE
-    rm EpisodeIII.txt
-    unset EPISODEIII
-  fi
-
-  if [ "$EPISODEIV" != "" ];
-  then
-    printf "%s" "$EPISODEIV" > EpisodeIV.txt
-    export CATFILE="EpisodeIV.txt"
-    export CATNAME="Star Wars Episode IV: A New Hope"
-    $CATEGORIZE
-    rm EpisodeIV.txt
-    unset EPISODEIV
-  fi
-
-  if [ "$EPISODEV" != "" ];
-  then
-    printf "%s" "$EPISODEV" > EpisodeV.txt
-    export CATFILE="EpisodeV.txt"
-    export CATNAME="Star Wars Episode V: The Empire Strikes Back"
-    $CATEGORIZE
-    rm EpisodeV.txt
-    unset EPISODEV
-  fi
-
-  if [ "$EPISODEVI" != "" ];
-  then
-    printf "%s" "$EPISODEVI" > EpisodeVI.txt
-    export CATFILE="EpisodeVI.txt"
-    export CATNAME="Star Wars Episode VI: Return of the Jedi"
-    $CATEGORIZE
-    rm EpisodeVI.txt
-    unset EPISODEVI
-  fi
+  categorize "EPISODEI" "Star Wars Episode I: The Phantom Menace"
+  categorize "EPISODEII" "Star Wars Episode II: Attack of the Clones"
+  categorize "EPISODEIII" "Star Wars Episode III: Revenge of the Sith"
+  categorize "EPISODEIV" "Star Wars Episode IV: A New Hope"
+  categorize "EPISODEV" "Star Wars Episode V: The Empire Strikes Back"
+  categorize "EPISODEVI" "Star Wars Episode VI: Return of the Jedi"
 
   debug_end "Star Wars movies"
 

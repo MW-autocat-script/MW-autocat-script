@@ -9,15 +9,7 @@ then
 
   WICCA=$(egrep -i "$KEYWORDS_WICCA" "$NEWPAGES")
 
-  if [ "$WICCA" != "" ];
-  then
-    printf "%s" "$WICCA" > Wicca.txt
-    export CATFILE="Wicca.txt"
-    export CATNAME="Wicca"
-    $CATEGORIZE
-    rm Wicca.txt
-    unset WICCA
-  fi
+  categorize "WICCA" "Wicca"
 
   debug_end "Wicca"
 

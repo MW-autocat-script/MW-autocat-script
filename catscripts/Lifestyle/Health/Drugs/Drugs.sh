@@ -20,55 +20,11 @@ then
   COCAINE=$(egrep -i "$KEYWORDS_COCAINE" "$NEWPAGES")
   MARIJUANA=$(egrep -i "$KEYWORDS_MARIJUANA" "$NEWPAGES")
 
-  if [ "$DRUGS" != "" ];
-  then
-    printf "%s" "$DRUGS" > Drugs.txt
-    export CATFILE="Drugs.txt"
-    export CATNAME="Drugs"
-    $CATEGORIZE
-    rm Drugs.txt
-    unset DRUGS
-  fi
-
-  if [ "$MEDICATION" != "" ];
-  then
-    printf "%s" "$MEDICATION" > Medication.txt
-    export CATFILE="Medication.txt"
-    export CATNAME="Medication"
-    $CATEGORIZE
-    rm Medication.txt
-    unset MEDICATION
-  fi
-
-  if [ "$ILLEGAL" != "" ];
-  then
-    printf "%s" "$ILLEGAL" > IllegalDrugs.txt
-    export CATFILE="IllegalDrugs.txt"
-    export CATNAME="Illegal drugs"
-    $CATEGORIZE
-    rm IllegalDrugs.txt
-    unset ILLEGAL
-  fi
-
-  if [ "$COCAINE" != "" ];
-  then
-    printf "%s" "$COCAINE" > Cocaine.txt
-    export CATFILE="Cocaine.txt"
-    export CATNAME="Cocaine"
-    $CATEGORIZE
-    rm Cocaine.txt
-    unset COCAINE
-  fi
-
-  if [ "$MARIJUANA" != "" ];
-  then
-    printf "%s" "$MARIJUANA" > Marijuana.txt
-    export CATFILE="Marijuana.txt"
-    export CATNAME="Marijuana"
-    $CATEGORIZE
-    rm Marijuana.txt
-    unset MARIJUANA
-  fi
+  categorize "DRUGS" "Drugs"
+  categorize "MEDICATION" "Medication"
+  categorize "ILLEGAL" "Illegal drugs"
+  categorize "COCAINE" "Cocaine"
+  categorize "MARIJUANA" "Marijuana"
 
   debug_end "Drugs"
 

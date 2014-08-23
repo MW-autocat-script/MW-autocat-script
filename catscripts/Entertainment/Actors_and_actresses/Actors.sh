@@ -47,18 +47,9 @@ then
 
   KEYWORDS_ACTOR_INCLUDE="Jet(| )Li\b|Jason(| )Statham|Robin(| )Williams|Steve(| )McQueen"
 
-
   ACTORS=$(egrep -i "\bactor|actress|$KEYWORDS_ACTOR_INCLUDE" "$NEWPAGES" | egrep -iv "$KEYWORDS_ACTOR|$KEYWORDS_ACTRESS|$KEYWORDS_ACTRESS_EXEMPT")
 
-  if [ "$ACTORS" != "" ];
-  then
-    printf "%s" "$ACTORS" > Actors.txt
-    export CATFILE="Actors.txt"
-    export CATNAME="Actors and actresses"
-    $CATEGORIZE
-    rm Actors.txt
-    unset ACTORS
-  fi
+  categorize "ACTORS" "Actors and actresses"
 
   debug_end "Actors and actresses"
 

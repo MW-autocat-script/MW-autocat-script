@@ -22,65 +22,12 @@ then
   USCG=$(egrep -i "$KEYWORDS_USCG" "$NEWPAGES")
   USMILITARY=$(egrep -i "$KEYWORDS_USMILITARY" "$NEWPAGES" | egrep -iv "$KEYWORDS_USMILITARY_EXCLUDE")
 
-  if [ "$USMC" != "" ];
-  then
-    printf "%s" "$USMC" > USMC.txt
-    export CATFILE="USMC.txt"
-    export CATNAME="United States Marine Corps"
-    $CATEGORIZE
-    rm USMC.txt
-    unset USMC
-  fi
-
-  if [ "$USARMY" != "" ];
-  then
-    printf "%s" "$USARMY" > USArmy.txt
-    export CATFILE="USArmy.txt"
-    export CATNAME="United States Army"
-    $CATEGORIZE
-    rm USArmy.txt
-    unset USARMY
-  fi
-
-  if [ "$USAF" != "" ];
-  then
-    printf "%s" "$USAF" > USAF.txt
-    export CATFILE="USAF.txt"
-    export CATNAME="United States Air Force"
-    $CATEGORIZE
-    rm USAF.txt
-    unset USAF
-  fi
-
-  if [ "$USNAVY" != "" ];
-  then
-    printf "%s" "$USNAVY" > USNavy.txt
-    export CATFILE="USNavy.txt"
-    export CATNAME="United States Navy"
-    $CATEGORIZE
-    rm USNavy.txt
-    unset USNAVY
-  fi
-
-  if [ "$USCG" != "" ];
-  then
-    printf "%s" "$USCG" > USCG.txt
-    export CATFILE="USCG.txt"
-    export CATNAME="United States Coast Guard"
-    $CATEGORIZE
-    rm USCG.txt
-    unset USCG
-  fi
-
-  if [ "$USMILITARY" != "" ];
-  then
-    printf "%s" "$USMILITARY" > USMilitary.txt
-    export CATFILE="USMilitary.txt"
-    export CATNAME="US military"
-    $CATEGORIZE
-    rm USMilitary.txt
-    unset USMILITARY
-  fi
+  categorize "USMC" "United States Marine Corps"
+  categorize "USARMY" "United States Army"
+  categorize "USAF" "United States Air Force"
+  categorize "USNAVY" "United States Navy"
+  categorize "USCG" "United States Coast Guard"
+  categorize "USMILITARY" "US military"
 
   debug_end "US military"
 

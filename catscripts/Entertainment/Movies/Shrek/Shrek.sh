@@ -9,15 +9,7 @@ then
 
   SHREK="$(egrep -i "$KEYWORDS_SHREK" "$NEWPAGES")"
 
-  if [ "$SHREK" != "" ];
-  then
-    printf "%s" "$SHREK" > Shrek.txt
-    export CATFILE="Shrek.txt"
-    export CATNAME="Shrek"
-    $CATEGORIZE
-    rm Shrek.txt
-    unset SHREK
-  fi
+  categorize "SHREK" "Shrek"
 
   debug_end "Shrek"
 

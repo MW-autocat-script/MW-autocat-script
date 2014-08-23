@@ -9,15 +9,7 @@ then
 
   PANFU=$(egrep -i "$KEYWORDS_MMORPG_PANFU" "$NEWPAGES")
 
-  if [ "$PANFU" != "" ];
-  then
-    printf "%s" "$PANFU" > Panfu.txt
-    export CATFILE="Panfu.txt"
-    export CATNAME="Panfu"
-    $CATEGORIZE
-    rm Panfu.txt
-    unset PANFU
-  fi
+  categorize "PANFU" "Panfu"
 
   debug_end "Panfu"
 

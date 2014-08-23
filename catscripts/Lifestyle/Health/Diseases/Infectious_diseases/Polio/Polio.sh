@@ -9,15 +9,7 @@ then
 
   POLIO=$(egrep -i "$KEYWORDS_POLIO" "$NEWPAGES")
 
-  if [ "$POLIO" != "" ];
-  then
-    printf "%s" "$POLIO" > Polio.txt
-    export CATFILE="Polio.txt"
-    export CATNAME="Polio"
-    $CATEGORIZE
-    rm Polio.txt
-    unset POLIO
-  fi
+  categorize "POLIO" "Polio"
 
   debug_end "Polio"
 

@@ -71,15 +71,7 @@ then
 
   EMULATION=$(egrep -i "$KEYWORDS_EMULATIONANDVIRTUALIZATION|$KEYWORDS_EMULATIONANDVIRTUALIZATION_OTHER" "$NEWPAGES" | egrep -iv "$KEYWORDS_EMULATIONANDVIRTUALIZATION_OTHER_EXCLUDE" && egrep "$KEYWORDS_IDEAS_CASESENSITIVE" "$NEWPAGES")
 
-  if [ "$EMULATION" != "" ];
-  then
-    printf "%s" "$EMULATION" > Emulation.txt
-    export CATFILE="Emulation.txt"
-    export CATNAME="Emulation and virtualization"
-    $CATEGORIZE
-    rm Emulation.txt
-    unset EMULATION
-  fi
+  categorize "EMULATION" "Emulation and virtualization"
 
   debug_end "Emulation and virtualization"
 

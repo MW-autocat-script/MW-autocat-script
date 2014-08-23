@@ -43,15 +43,7 @@ then
 
   MMORPG=$(egrep -i "$KEYWORDS_MMORPG" "$NEWPAGES" | egrep -iv "$KEYWORDS_MMORPG_EXCLUDE")
 
-  if [ "$MMORPG" != "" ];
-  then
-    printf "%s" "$MMORPG" > MMORPG.txt
-    export CATFILE="MMORPG.txt"
-    export CATNAME="MMORPGs"
-    $CATEGORIZE
-    rm MMORPG.txt
-    unset MMORPG
-  fi
+  categorize "MMORPG" "MMORPGs"
 
   debug_end "MMORPGs"
 

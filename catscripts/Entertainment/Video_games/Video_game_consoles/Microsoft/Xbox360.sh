@@ -7,17 +7,9 @@ then
 
   debug_start "Xbox 360"
 
-  X360=$(egrep -i "$KEYWORDS_XBOX360" "$NEWPAGES")
+  XBOX360=$(egrep -i "$KEYWORDS_XBOX360" "$NEWPAGES")
 
-  if [ "$X360" != "" ];
-  then
-    printf "%s" "$X360" > Xbox360.txt
-    export CATFILE="Xbox360.txt"
-    export CATNAME="Xbox 360"
-    $CATEGORIZE
-    rm Xbox360.txt
-    unset X360
-  fi
+  categorize "XBOX360" "Xbox 360"
 
   debug_end "Xbox 360"
 

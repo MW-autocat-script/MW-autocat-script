@@ -22,65 +22,12 @@ then
   SANFRANCISCO=$(egrep -i "$KEYWORDS_SANFRANCISCO" "$NEWPAGES")
   UCLA=$(egrep -i "$KEYWORDS_UCLA" "$NEWPAGES")
 
-  if [ "$CALIFORNIA" != "" ];
-  then
-    printf "%s" "$CALIFORNIA" > California.txt
-    export CATFILE="California.txt"
-    export CATNAME="California"
-    $CATEGORIZE
-    rm California.txt
-    unset CALIFORNIA
-  fi
-
-  if [ "$LOSANGELES" != "" ];
-  then
-    printf "%s" "$LOSANGELES" > LosAngeles.txt
-    export CATFILE="LosAngeles.txt"
-    export CATNAME="Los Angeles"
-    $CATEGORIZE
-    rm LosAngeles.txt
-    unset LOSANGELES
-  fi
-
-  if [ "$SACRAMENTO" != "" ];
-  then
-    printf "%s" "$SACRAMENTO" > Sacramento.txt
-    export CATFILE="Sacramento.txt"
-    export CATNAME="Sacramento"
-    $CATEGORIZE
-    rm Sacramento.txt
-    unset SACRAMENTO
-  fi
-
-  if [ "$SANDIEGO" != "" ];
-  then
-    printf "%s" "$SANDIEGO" > SanDiego.txt
-    export CATFILE="SanDiego.txt"
-    export CATNAME="San Diego"
-    $CATEGORIZE
-    rm SanDiego.txt
-    unset SANDIEGO
-  fi
-
-  if [ "$SANFRANCISCO" != "" ];
-  then
-    printf "%s" "$SANFRANCISCO" > SanFrancisco.txt
-    export CATFILE="SanFrancisco.txt"
-    export CATNAME="San Francisco"
-    $CATEGORIZE
-    rm SanFrancisco.txt
-    unset SANFRANCISCO
-  fi
-
-  if [ "$UCLA" != "" ];
-  then
-    printf "%s" "$UCLA" > UCLA.txt
-    export CATFILE="UCLA.txt"
-    export CATNAME="UCLA"
-    $CATEGORIZE
-    rm UCLA.txt
-    unset ICLA
-  fi
+  categorize "CALIFORNIA" "California"
+  categorize "LOSANGELES" "Los Angeles"
+  categorize "SACRAMENTO" "Sacramento"
+  categorize "SANDIEGO" "San Diego"
+  categorize "SANFRANCISCO" "San Francisco"
+  categorize "UCLA" "UCLA"
 
   debug_end "California"
 

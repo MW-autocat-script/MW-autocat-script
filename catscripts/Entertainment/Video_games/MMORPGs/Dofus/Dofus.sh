@@ -9,15 +9,7 @@ then
 
   DOFUS=$(egrep -i "$KEYWORDS_MMORPG_DOFUS" "$NEWPAGES")
 
-  if [ "$DOFUS" != "" ];
-  then
-    printf "%s" "$DOFUS" > Dofus.txt
-    export CATFILE="Dofus.txt"
-    export CATNAME="Dofus"
-    $CATEGORIZE
-    rm Dofus.txt
-    unset DOFUS
-  fi
+  categorize "DOFUS" "Dofus"
 
   debug_end "Dofus"
 

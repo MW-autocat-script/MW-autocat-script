@@ -25,65 +25,12 @@ then
   BARIUM=$(egrep -i "$KEYWORDS_BARIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_BARIUM_EXCLUDE")
   RADIUM=$(egrep -i "$KEYWORDS_RADIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_RADIUM_EXCLUDE")
 
-  if [ "$BERYLLIUM" != "" ];
-  then
-    printf "%s" "$BERYLLIUM" > Beryllium.txt
-    export CATFILE="Beryllium.txt"
-    export CATNAME="Beryllium"
-    $CATEGORIZE
-    rm Beryllium.txt
-    unset BERYLLIUM
-  fi
-
-  if [ "$MAGNESIUM" != "" ];
-  then
-    printf "%s" "$MAGNESIUM" > Magnesium.txt
-    export CATFILE="Magnesium.txt"
-    export CATNAME="Magnesium"
-    $CATEGORIZE
-    rm Magnesium.txt
-    unset MAGNESIUM
-  fi
-
-  if [ "$CALCIUM" != "" ];
-  then
-    printf "%s" "$CALCIUM" > Calcium.txt
-    export CATFILE="Calcium.txt"
-    export CATNAME="Calcium"
-    $CATEGORIZE
-    rm Calcium.txt
-    unset CALCIUM
-  fi
-
-  if [ "$STRONTIUM" != "" ];
-  then
-    printf "%s" "$STRONTIUM" > Strontium.txt
-    export CATFILE="Strontium.txt"
-    export CATNAME="Strontium"
-    $CATEGORIZE
-    rm Strontium.txt
-    unset STRONTIUM
-  fi
-
-  if [ "$BARIUM" != "" ];
-  then
-    printf "%s" "$BARIUM" > Barium.txt
-    export CATFILE="Barium.txt"
-    export CATNAME="Barium"
-    $CATEGORIZE
-    rm Barium.txt
-    unset BARIUM
-  fi
-
-  if [ "$RADIUM" != "" ];
-  then
-    printf "%s" "$RADIUM" > Radium.txt
-    export CATFILE="Radium.txt"
-    export CATNAME="Radium"
-    $CATEGORIZE
-    rm Radium.txt
-    unset RADIUM
-  fi
+  categorize "BERYLLIUM" "Beryllium"
+  categorize "MAGNESIUM" "Magnesium"
+  categorize "CALCIUM" "Calcium"
+  categorize "STRONTIUM" "Strontium"
+  categorize "BARIUM" "Barium"
+  categorize "RADIUM" "Radium"
 
   debug_end "Group 2 elements"
 

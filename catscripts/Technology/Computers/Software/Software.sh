@@ -22,22 +22,11 @@ then
 
   SOFTWARE="$(egrep -i "$KEYWORDS_SOFTWARE" "$NEWPAGES"| egrep -iv "$KEYWORDS_SOFTWARE_EXCLUDE")"
 
-  if [ "$SOFTWARE" != "" ];
-  then
-    printf "%s" "$SOFTWARE" > Software.txt
-    export CATFILE="Software.txt"
-    export CATNAME="Software"
-    $CATEGORIZE
-    rm Software.txt
-    unset SOFTWARE
-  fi
+  categorize "SOFTWARE" "Software"
 
   debug_end "Software"
 
-fi
-
-if [ "$1" == "norun" ]; #Only export variables
-then
+else
 
   . $SOFTWAREDIR/Computer_aided_design/CAD.sh norun #KEYWORDS_CAD_ALL
   . $SOFTWAREDIR/DVD_authoring/DVDAuthoring.sh norun #KEYWORDS_DVDAUTHORING_ALL

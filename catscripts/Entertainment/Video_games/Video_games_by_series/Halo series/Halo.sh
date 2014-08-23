@@ -23,76 +23,13 @@ then
   HALOWARS=$(egrep -i "$KEYWORDS_HALOWARS" "$NEWPAGES")
   SERIES=$(egrep -i "$KEYWORDS_HALOSERIES" "$NEWPAGES" | egrep -iv "$KEYWORDS_HALOSERIES_EXCLUDE")
 
-  if [ "$SERIES" != "" ];
-  then
-    printf "%s" "$SERIES" > HaloSeries.txt
-    export CATFILE="HaloSeries.txt"
-    export CATNAME="Halo series"
-    $CATEGORIZE
-    rm HaloSeries.txt
-    unset SERIES
-  fi
-
-
-  if [ "$HALO1" != "" ];
-  then
-    printf "%s" "$HALO1" > Halo1.txt
-    export CATFILE="Halo1.txt"
-    export CATNAME="Halo: Combat Evolved"
-    $CATEGORIZE
-    rm Halo1.txt
-    unset HALO1
-  fi
-
-  if [ "$HALO2" != "" ];
-  then
-    printf "%s" "$HALO2" > Halo2.txt
-    export CATFILE="Halo2.txt"
-    export CATNAME="Halo 2"
-    $CATEGORIZE
-    rm Halo2.txt
-    unset HALO2
-  fi
-
-  if [ "$HALO3" != "" ];
-  then
-    printf "%s" "$HALO3" > Halo3.txt
-    export CATFILE="Halo3.txt"
-    export CATNAME="Halo 3"
-    $CATEGORIZE
-    rm Halo3.txt
-    unset HALO3
-  fi
-
-  if [ "$HALO4" != "" ];
-  then
-    printf "%s" "$HALO4" > Halo4.txt
-    export CATFILE="Halo4.txt"
-    export CATNAME="Halo 4"
-    $CATEGORIZE
-    rm Halo4.txt
-    unset HALO4
-  fi
-
-  if [ "$ODST" != "" ];
-  then
-    printf "%s" "$ODST" > ODST.txt
-    export CATFILE="ODST.txt"
-    export CATNAME="Halo 3: ODST"
-    $CATEGORIZE
-    rm ODST.txt
-    unset ODST
-  fi
-
-  if [ "$HALOWARS" != "" ];
-  then
-    printf "%s" "$HALOWARS" > HaloWars.txt
-    export CATFILE="HaloWars.txt"
-    export CATNAME="Halo Wars"
-    $CATEGORIZE
-    rm HaloWars.txt
-    unset HALOWARS
-  fi
+  categorize "SERIES" "Halo series"
+  categorize "HALO1" "Halo: Combat Evolved"
+  categorize "HALO2" "Halo 2"
+  categorize "HALO3" "Halo 3"
+  categorize "HALO4" "Halo 4"
+  categorize "ODST" "Halo 3: ODST"
+  categorize "HALOWARS" "Halo Wars"
 
   debug_end "Halo series"
 

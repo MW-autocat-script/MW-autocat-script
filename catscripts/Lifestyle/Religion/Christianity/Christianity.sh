@@ -26,76 +26,13 @@ then
   AMISH=$(egrep -i "$KEYWORDS_AMISH" "$NEWPAGES")
   CHRISTMAS=$(egrep -i "$KEYWORDS_CHRISTMAS" "$NEWPAGES")
 
-
-  if [ "$CHRISTIANITY" != "" ];
-  then
-    printf "%s" "$CHRISTIANITY" > Christianity.txt
-    export CATFILE="Christianity.txt"
-    export CATNAME="Christianity"
-    $CATEGORIZE
-    rm Christianity.txt
-    unset CHRISTIANITY
-  fi
-
-  if [ "$ANGLICAN" != "" ];
-  then
-    printf "%s" "$ANGLICAN" > Anglican.txt
-    export CATFILE="Anglican.txt"
-    export CATNAME="Anglican"
-    $CATEGORIZE
-    rm Anglican.txt
-    unset ANGLICAN
-  fi
-
-  if [ "$CATHOLICISM" != "" ];
-  then
-    printf "%s" "$KEYWORDS_CATHOLICISM" > Catholicism.txt
-    export CATFILE="Catholicism.txt"
-    export CATNAME="Catholicism"
-    $CATEGORIZE
-    rm Catholicism.txt
-    unset CATHOLICISM
-  fi
-
-  if [ "$LUTHERANISM" != "" ];
-  then
-    printf "%s" "$LUTHERANISM" > Lutheranism.txt
-    export CATFILE="Lutheranism.txt"
-    export CATNAME="Lutheranism"
-    $CATEGORIZE
-    rm Lutheranism.txt
-    unset LUTHERANISM
-  fi
-
-  if [ "$MORMONISM" != "" ];
-  then
-    printf "%s" "$MORMONISM" > Mormonism.txt
-    export CATFILE="Mormonism.txt"
-    export CATNAME="Mormonism"
-    $CATEGORIZE
-    rm Mormonism.txt
-    unset MORMONISM
-  fi
-
-  if [ "$AMISH" != "" ];
-  then
-    printf "%s" "$AMISH" > Amish.txt
-    export CATFILE="Amish.txt"
-    export CATNAME="Amish and Mennonites"
-    $CATEGORIZE
-    rm Amish.txt
-    unset AMISH
-  fi
-
-  if [ "$CHRISTMAS" != "" ];
-  then
-    printf "%s" "$CHRISTMAS" > Christmas.txt
-    export CATFILE="Christmas.txt"
-    export CATNAME="Christmas"
-    $CATEGORIZE
-    rm Christmas.txt
-    unset CHRISTMAS
-  fi
+  categorize "CHRISTIANITY" "Christianity"
+  categorize "ANGLICAN" "Anglican"
+  categorize "KEYWORDS_CATHOLICISM" "Catholicism"
+  categorize "LUTHERANISM" "Lutheranism"
+  categorize "MORMONISM" "Mormonism"
+  categorize "AMISH" "Amish and Mennonites"
+  categorize "CHRISTMAS" "Christmas"
 
   debug_end "Christianity"
 

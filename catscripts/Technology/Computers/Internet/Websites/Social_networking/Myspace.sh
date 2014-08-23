@@ -9,16 +9,8 @@ then
 
   MYSPACE=$(egrep -i "$KEYWORDS_MYSPACE" "$NEWPAGES")
 
-  if [ "$MYSPACE" != "" ];
-  then
-    printf "%s" "$MYSPACE" > Myspace.txt
-    export CATFILE="Myspace.txt"
-    export CATNAME="Myspace"
-    $CATEGORIZE
-    rm Myspace.txt
-    unset MYSPACE
-  fi
-  
+  categorize "MYSPACE" "Myspace"
+
   debug_end "Myspace"
 
 fi
