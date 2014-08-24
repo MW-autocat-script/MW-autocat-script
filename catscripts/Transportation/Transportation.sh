@@ -18,18 +18,10 @@ then
 
   debug_start "Transportation"
 
-  TRANSPORTATION="$(egrep -i "$KEYWORDS_TRANSPORTATION" "$NEWPAGES" | egrep -iv "$KEYWORDS_TRANSPORTATION_EXCLUDE")"
-  SCHOOLBUS="$(egrep -i "$KEYWORDS_SCHOOLBUS" "$NEWPAGES" | egrep -iv "$KEYWORDS_SCHOOLBUS_EXCLUDE")"
+  TRANSPORTATION=$(egrep -i "$KEYWORDS_TRANSPORTATION" "$NEWPAGES" | egrep -iv "$KEYWORDS_TRANSPORTATION_EXCLUDE")
+  SCHOOLBUS=$(egrep -i "$KEYWORDS_SCHOOLBUS" "$NEWPAGES" | egrep -iv "$KEYWORDS_SCHOOLBUS_EXCLUDE")
 
-  if [ "$TRANSPORTATION" != "" ];
-  then
-    printf "%s" "$TRANSPORTATION" > Transportation.txt
-    export CATFILE="Transportation.txt"
-    export CATNAME="Transportation"
-    $CATEGORIZE
-    rm Transportation.txt
-    unset TRANSPORTATION
-  fi
+  categorize "TRANSPORTATION" "Transportation"
 
   debug_end "Transportation"
 

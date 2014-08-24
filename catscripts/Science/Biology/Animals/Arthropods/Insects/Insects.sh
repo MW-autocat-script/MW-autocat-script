@@ -10,15 +10,7 @@ then
 
   ANTS=$(egrep -i "$KEYWORDS_ANTS" "$NEWPAGES")
 
-  if [ "$ANTS" != "" ];
-  then
-    printf "%s" "$ANTS" > Ants.txt
-    export CATFILE="Ants.txt"
-    export CATNAME="Ants"
-    $CATEGORIZE
-    rm Ants.txt
-    unset ANTS
-  fi
+  categorize "ANTS" "Ants"
 
   debug_end "Ants"
 

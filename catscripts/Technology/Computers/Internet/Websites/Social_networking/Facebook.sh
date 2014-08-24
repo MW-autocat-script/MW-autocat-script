@@ -9,15 +9,7 @@ then
 
   FACEBOOK=$(egrep -i "$KEYWORDS_FACEBOOK" "$NEWPAGES")
 
-  if [ "$FACEBOOK" != "" ];
-  then
-    printf "%s" "$FACEBOOK" > Facebook.txt
-    export CATFILE="Facebook.txt"
-    export CATNAME="Facebook"
-    $CATEGORIZE
-    rm Facebook.txt
-    unset FACEBOOK
-  fi
+  categorize "FACEBOOK" "Facebook"
 
   debug_end "Facebook"
 

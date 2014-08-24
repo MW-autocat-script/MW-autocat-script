@@ -9,15 +9,7 @@ then
 
   FANTAGE=$(egrep -i "$KEYWORDS_MMORPG_FANTAGE" "$NEWPAGES")
 
-  if [ "$FANTAGE" != "" ];
-  then
-    printf "%s" "$FANTAGE" > Fantage.txt
-    export CATFILE="Fantage.txt"
-    export CATNAME="Fantage"
-    $CATEGORIZE
-    rm Fantage.txt
-    unset FANTAGE
-  fi
+  categorize "FANTAGE" "Fantage"
 
   debug_end "Fantage"
 

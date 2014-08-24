@@ -7,17 +7,9 @@ then
 
   debug_start "Smallpox"
 
-  SMALLPOX="$(egrep -i "$KEYWORDS_SMALLPOX" "$NEWPAGES")"
+  SMALLPOX=$(egrep -i "$KEYWORDS_SMALLPOX" "$NEWPAGES")
 
-  if [ "$SMALLPOX" != "" ];
-  then
-    printf "%s" "$SMALLPOX" > Smallpox.txt
-    export CATFILE="Smallpox.txt"
-    export CATNAME="Smallpox"
-    $CATEGORIZE
-    rm Smallpox.txt
-    unset SMALLPOX
-  fi
+  categorize "SMALLPOX" "Smallpox"
 
   debug_end "Smallpox"
 

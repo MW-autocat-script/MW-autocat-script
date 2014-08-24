@@ -9,15 +9,7 @@ then
 
   ICARLY=$(egrep -i "$KEYWORDS_TELEVISIONSERIES_ICARLY" "$NEWPAGES")
 
-  if [ "$ICARLY" != "" ];
-  then
-    printf "%s" "$ICARLY" > iCarly.txt
-    export CATFILE="iCarly.txt"
-    export CATNAME="iCarly"
-    $CATEGORIZE
-    rm iCarly.txt
-    unset ICARLY
-  fi
+  categorize "ICARLY" "iCarly"
 
   debug_end "iCarly"
 

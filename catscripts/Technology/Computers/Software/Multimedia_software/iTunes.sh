@@ -7,17 +7,9 @@ then
 
   debug_start "iTunes"
 
-  ITUNES="$(egrep -i "$KEYWORDS_ITUNES" "$NEWPAGES")"
+  ITUNES=$(egrep -i "$KEYWORDS_ITUNES" "$NEWPAGES")
 
-  if [ "$ITUNES" != "" ];
-  then
-    printf "%s" "$ITUNES" > iTunes.txt
-    export CATFILE="iTunes.txt"
-    export CATNAME="iTunes"
-    $CATEGORIZE
-    rm iTunes.txt
-    unset ITUNES
-  fi
+  categorize "ITUNES" "iTunes"
 
   debug_end "iTunes"
 

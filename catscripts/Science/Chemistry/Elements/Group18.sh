@@ -24,75 +24,13 @@ then
   RADON=$(egrep -i "$KEYWORDS_RADON" "$NEWPAGES")
   UNUNOCTIUM=$(egrep -i "$KEYWORDS_UNUNOCTIUM" "$NEWPAGES")
 
-  if [ "$NEON" != "" ];
-  then
-    printf "%s" "$NEON" > Neon.txt
-    export CATFILE="Neon.txt"
-    export CATNAME="Neon"
-    $CATEGORIZE
-    rm Neon.txt
-    unset NEON
-  fi
-
-  if [ "$HELIUM" != "" ];
-  then
-    printf "%s" "$HELIUM" > Helium.txt
-    export CATFILE="Helium.txt"
-    export CATNAME="Helium"
-    $CATEGORIZE
-    rm Helium.txt
-    unset HELIUM
-  fi
-
-  if [ "$ARGON" != "" ];
-  then
-    printf "%s" "$ARGON" > Argon.txt
-    export CATFILE="Argon.txt"
-    export CATNAME="Argon"
-    $CATEGORIZE
-    rm Argon.txt
-    unset ARGON
-  fi
-
-  if [ "$KRYPTON" != "" ];
-  then
-    printf "%s" "$KRYPTON" > Krypton.txt
-    export CATFILE="Krypton.txt"
-    export CATNAME="Krypton"
-    $CATEGORIZE
-    rm Krypton.txt
-    unset KRYPTON
-  fi
-
-  if [ "$XENON" != "" ];
-  then
-    printf "%s" "$XENON" > Xenon.txt
-    export CATFILE="Xenon.txt"
-    export CATNAME="Xenon"
-    $CATEGORIZE
-    rm Xenon.txt
-    unset XENON
-  fi
-
-  if [ "$RADON" != "" ];
-  then
-    printf "%s" "$RADON" > Radon.txt
-    export CATFILE="Radon.txt"
-    export CATNAME="Radon"
-    $CATEGORIZE
-    rm Radon.txt
-    unset RADON
-  fi
-
-  if [ "$UNUNOCTIUM" != "" ];
-  then
-    printf "%s" "$UNUNOCTIUM" > Ununoctium.txt
-    export CATFILE="Ununoctium.txt"
-    export CATNAME="Ununoctium"
-    $CATEGORIZE
-    rm Ununoctium.txt
-    unset UNUNOCTIUM
-  fi
+  categorize "NEON" "Neon"
+  categorize "HELIUM" "Helium"
+  categorize "ARGON" "Argon"
+  categorize "KRYPTON" "Krypton"
+  categorize "XENON" "Xenon"
+  categorize "RADON" "Radon"
+  categorize "UNUNOCTIUM" "Ununoctium"
 
   debug_end "Group 18 elements"
 

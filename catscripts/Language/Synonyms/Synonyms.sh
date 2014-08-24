@@ -9,15 +9,7 @@ then
 
   debug_start "Synonyms"
 
-  if [ "$SYNONYMS" != "" ];
-  then
-    printf "%s" "$SYNONYMS" > Synonyms.txt
-    export CATFILE="Synonyms.txt"
-    export CATNAME="Synonyms"
-    $CATEGORIZE
-    rm Synonyms.txt
-    unset SYNONYMS
-  fi
+  categorize "SYNONYMS" "Synonyms"
 
   debug_end "Synonyms"
 

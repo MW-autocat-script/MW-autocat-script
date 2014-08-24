@@ -38,110 +38,114 @@ then
 
   debug_start "Non-interrogative removal script"
 
+  NOINTTXT="$TEMPDIR/nonint.txt"
+
   remove_cat_nonint () {
-    python "$PYWIKIPEDIADIR/replace.py" -file:"$1.txt" -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches $1)" -always
+    python "$PYWIKIPEDIADIR/replace.py" -file:"$TEMPDIR/$1.txt" -regex '\[\[[cC]ategory:Page titles lacking an interrogative word\]\]' '' -pt:1 -summary:"Bot - removing questions that have had an interrogative word added (matches $1)" -always
   }
 
-  python "$PYWIKIPEDIADIR/pagegenerators.py" -category:"Page titles lacking an interrogative word" > nonint.txt
+  python "$PYWIKIPEDIADIR/pagegenerators.py" -category:"Page titles lacking an interrogative word" > "$NOINTTXT"
 
-  NONINT="$(cat nonint.txt)"
+  NONINT=$(python "$PYWIKIPEDIADIR/pagegenerators.py" -category:"Page titles lacking an interrogative word")
 
   if [ "$NONINT" != "" ];
   then
 
-    WHO="$(egrep -i "$KEYWORDS_WHO" nonint.txt | egrep -iv "$KEYWORDS_WHO_EXCLUDE")"
-    WHAT="$(egrep -i "$KEYWORDS_WHAT" nonint.txt)"
-    WHERE="$(egrep -i "$KEYWORDS_WHERE" nonint.txt)"
-    WHEN="$(egrep -i "$KEYWORDS_WHEN" nonint.txt)"
-    WHY="$(egrep -i "$KEYWORDS_WHY" nonint.txt)"
-    HOW="$(egrep -i "$KEYWORDS_HOW" nonint.txt)"
-    DO="$(egrep -i "$KEYWORDS_DO" nonint.txt)"
-    DOES="$(egrep -i "$KEYWORDS_DOES" nonint.txt)"
-    DOESNT="$(egrep -i "$KEYWORDS_DOESNT" nonint.txt)"
-    DID="$(egrep -i "$KEYWORDS_DID" nonint.txt)"
-    DIDNT="$(egrep -i "$KEYWORDS_DIDNT" nonint.txt)"
-    WILL="$(egrep -i "$KEYWORDS_WILL" nonint.txt)"
-    IS="$(egrep -i "$KEYWORDS_IS" nonint.txt)"
-    ISNT="$(egrep -i "$KEYWORDS_ISNT" nonint.txt)"
-    ARE="$(egrep -i "$KEYWORDS_ARE" nonint.txt)"
-    ARENT="$(egrep -i "$KEYWORDS_ARENT" nonint.txt)"
-    WERE="$(egrep -i "$KEYWORDS_WERE" nonint.txt)"
-    WERENT="$(egrep -i "$KEYWORDS_WERENT" nonint.txt)"
-    WAS="$(egrep -i "$KEYWORDS_WAS" nonint.txt)"
-    WHICH="$(egrep -i "$KEYWORDS_WHICH" nonint.txt)"
-    COULD="$(egrep -i "$KEYWORDS_COULD" nonint.txt)"
-    COULDNT="$(egrep -i "$KEYWORDS_COULDNT" nonint.txt)"
-    SHOULD="$(egrep -i "$KEYWORDS_SHOULD" nonint.txt)"
-    SHOULDNT="$(egrep -i "$KEYWORDS_SHOULDNT" nonint.txt)"
-    WOULD="$(egrep -i "$KEYWORDS_WOULD" nonint.txt)"
-    WOULDNT="$(egrep -i "$KEYWORDS_WOULDNT" nonint.txt)"
-    CAN="$(egrep -i "$KEYWORDS_CAN" nonint.txt)"
-    CANT="$(egrep -i "$KEYWORDS_CANT" nonint.txt)"
-    HAS="$(egrep -i "$KEYWORDS_HAS" nonint.txt)"
-    HASNT="$(egrep -i "$KEYWORDS_HASNT" nonint.txt)"
-    AMI="$(egrep -i "$KEYWORDS_AMI" nonint.txt)"
+    printf "%s" "$NONINT" > "$NOINTTXT"
+
+    WHO=$(egrep -i "$KEYWORDS_WHO" "$NOINTTXT" | egrep -iv "$KEYWORDS_WHO_EXCLUDE")
+    WHAT=$(egrep -i "$KEYWORDS_WHAT" "$NOINTTXT")
+    WHERE=$(egrep -i "$KEYWORDS_WHERE" "$NOINTTXT")
+    WHEN=$(egrep -i "$KEYWORDS_WHEN" "$NOINTTXT")
+    WHY=$(egrep -i "$KEYWORDS_WHY" "$NOINTTXT")
+    HOW=$(egrep -i "$KEYWORDS_HOW" "$NOINTTXT")
+    DO=$(egrep -i "$KEYWORDS_DO" "$NOINTTXT")
+    DOES=$(egrep -i "$KEYWORDS_DOES" "$NOINTTXT")
+    DOESNT=$(egrep -i "$KEYWORDS_DOESNT" "$NOINTTXT")
+    DID=$(egrep -i "$KEYWORDS_DID" "$NOINTTXT")
+    DIDNT=$(egrep -i "$KEYWORDS_DIDNT" "$NOINTTXT")
+    WILL=$(egrep -i "$KEYWORDS_WILL" "$NOINTTXT")
+    IS=$(egrep -i "$KEYWORDS_IS" "$NOINTTXT")
+    ISNT=$(egrep -i "$KEYWORDS_ISNT" "$NOINTTXT")
+    ARE=$(egrep -i "$KEYWORDS_ARE" "$NOINTTXT")
+    ARENT=$(egrep -i "$KEYWORDS_ARENT" "$NOINTTXT")
+    WERE=$(egrep -i "$KEYWORDS_WERE" "$NOINTTXT")
+    WERENT=$(egrep -i "$KEYWORDS_WERENT" "$NOINTTXT")
+    WAS=$(egrep -i "$KEYWORDS_WAS" "$NOINTTXT")
+    WHICH=$(egrep -i "$KEYWORDS_WHICH" "$NOINTTXT")
+    COULD=$(egrep -i "$KEYWORDS_COULD" "$NOINTTXT")
+    COULDNT=$(egrep -i "$KEYWORDS_COULDNT" "$NOINTTXT")
+    SHOULD=$(egrep -i "$KEYWORDS_SHOULD" "$NOINTTXT")
+    SHOULDNT=$(egrep -i "$KEYWORDS_SHOULDNT" "$NOINTTXT")
+    WOULD=$(egrep -i "$KEYWORDS_WOULD" "$NOINTTXT")
+    WOULDNT=$(egrep -i "$KEYWORDS_WOULDNT" "$NOINTTXT")
+    CAN=$(egrep -i "$KEYWORDS_CAN" "$NOINTTXT")
+    CANT=$(egrep -i "$KEYWORDS_CANT" "$NOINTTXT")
+    HAS=$(egrep -i "$KEYWORDS_HAS" "$NOINTTXT")
+    HASNT=$(egrep -i "$KEYWORDS_HASNT" "$NOINTTXT")
+    AMI=$(egrep -i "$KEYWORDS_AMI" "$NOINTTXT")
 
     if [ "$WHO" != "" ];
     then
-      printf "%s" "$WHO" > Who.txt
+      printf "%s" "$WHO" > "$TEMPDIR/Who.txt"
       remove_cat_nonint "Who"
-      rm Who.txt
+      rm "$TEMPDIR/Who.txt"
       unset WHO
     fi
 
     if [ "$WHAT" != "" ];
     then
-      printf "%s" "$WHAT" > What.txt
+      printf "%s" "$WHAT" > "$TEMPDIR/What.txt"
       remove_cat_nonint "What"
-      rm What.txt
+      rm "$TEMPDIR/What.txt"
       unset WHAT
     fi
 
     if [ "$WHERE" != "" ];
     then
-      printf "%s" "$WHERE" > Where.txt
+      printf "%s" "$WHERE" > "$TEMPDIR/Where.txt"
       remove_cat_nonint "Where"
-      rm Where.txt
+      rm "$TEMPDIR/Where.txt"
       unset WHERE
     fi
 
     if [ "$WHEN" != "" ];
     then
-      printf "%s" "$WHEN" > When.txt
+      printf "%s" "$WHEN" > "$TEMPDIR/When.txt"
       remove_cat_nonint "When"
-      rm When.txt
+      rm "$TEMPDIR/When.txt"
       unset WHEN
     fi
 
     if [ "$WHY" != "" ];
     then
-      printf "%s" "$WHY" > Why.txt
+      printf "%s" "$WHY" > "$TEMPDIR/Why.txt"
       remove_cat_nonint "Why"
-      rm Why.txt
+      rm "$TEMPDIR/Why.txt"
       unset WHY
     fi
 
     if [ "$HOW" != "" ];
     then
-      printf "%s" "$HOW" > How.txt
+      printf "%s" "$HOW" > "$TEMPDIR/How.txt"
       remove_cat_nonint "How"
-      rm How.txt
+      rm "$TEMPDIR/How.txt"
       unset HOW
     fi
 
     if [ "$DO" != "" ];
     then
-      printf "%s" "$DO" > Do.txt
+      printf "%s" "$DO" > "$TEMPDIR/Do.txt"
       remove_cat_nonint "Do"
-      rm Do.txt
+      rm "$TEMPDIR/Do.txt"
       unset DO
     fi
 
     if [ "$DOES" != "" ];
     then
-      printf "%s" "$DOES" > Does.txt
+      printf "%s" "$DOES" > "$TEMPDIR/Does.txt"
       remove_cat_nonint "Does"
-      rm Does.txt
+      rm "$TEMPDIR/Does.txt"
       unset DOES
     fi
 
@@ -155,9 +159,9 @@ then
 
     if [ "$DID" != "" ];
     then
-      printf  "%s" "$DID" > Did.txt
+      printf  "%s" "$DID" > "$TEMPDIR/Did.txt"
       remove_cat_nonint "Did"
-      rm Did.txt
+      rm "$TEMPDIR/Did.txt"
       unset DID
     fi
 
@@ -171,17 +175,17 @@ then
 
     if [ "$WILL" != "" ];
     then
-      printf "%s" "$WILL" > Will.txt
+      printf "%s" "$WILL" > "$TEMPDIR/Will.txt"
       remove_cat_nonint "Will"
-      rm Will.txt
+      rm "$TEMPDIR/Will.txt"
       unset WILL
     fi
 
     if [ "$IS" != "" ];
     then
-      printf "%s" "$IS" > Is.txt
+      printf "%s" "$IS" > "$TEMPDIR/Is.txt"
       remove_cat_nonint "Is"
-      rm Is.txt
+      rm "$TEMPDIR/Is.txt"
       unset IS
     fi
 
@@ -195,9 +199,9 @@ then
 
     if [ "$ARE" != "" ];
     then
-      printf "%s" "$ARE" > Are.txt
+      printf "%s" "$ARE" > "$TEMPDIR/Are.txt"
       remove_cat_nonint "Are.txt"
-      rm Are.txt
+      rm "$TEMPDIR/Are.txt"
       unset ARE
     fi
 
@@ -211,9 +215,9 @@ then
 
     if [ "$WERE" != "" ];
     then
-      printf "%s" "$WERE" > Were.txt
+      printf "%s" "$WERE" > "$TEMPDIR/Were.txt"
       remove_cat_nonint "Were"
-      rm Were.txt
+      rm "$TEMPDIR/Were.txt"
       unset WERE
     fi
 
@@ -227,25 +231,25 @@ then
 
     if [ "$WAS" != "" ];
     then
-      printf "%s" "$WAS" > Was.txt
+      printf "%s" "$WAS" > "$TEMPDIR/Was.txt"
       remove_cat_nonint "Was"
-      rm Was.txt
+      rm "$TEMPDIR/Was.txt"
       unset WAS
     fi
 
     if [ "$WHICH" != "" ];
     then
-      printf "%s" "$WHICH" > Which.txt
+      printf "%s" "$WHICH" > "$TEMPDIR/Which.txt"
       remove_cat_nonint "Which"
-      rm Which.txt
+      rm "$TEMPDIR/Which.txt"
       unset WHICH
     fi
 
     if [ "$COULD" != "" ];
     then
-      printf "%s" "$COULD" > Could.txt
+      printf "%s" "$COULD" > "$TEMPDIR/Could.txt"
       remove_cat_nonint "Could"
-      rm Could.txt
+      rm "$TEMPDIR/Could.txt"
       unset COULD
     fi
 
@@ -259,9 +263,9 @@ then
 
     if [ "$SHOULD" != "" ];
     then
-      printf "%s" "$SHOULD" > Should.txt
+      printf "%s" "$SHOULD" > "$TEMPDIR/Should.txt"
       remove_cat_nonint "Should"
-      rm Should.txt
+      rm "$TEMPDIR/Should.txt"
       unset SHOULD
     fi
 
@@ -275,9 +279,9 @@ then
 
     if [ "$WOULD" != "" ];
     then
-      printf "%s" "$WOULD" > Would.txt
+      printf "%s" "$WOULD" > "$TEMPDIR/Would.txt"
       remove_cat_nonint "Would"
-      rm Would.txt
+      rm "$TEMPDIR/Would.txt"
       unset WOULD
     fi
 
@@ -291,9 +295,9 @@ then
 
     if [ "$CAN" != "" ];
     then
-      printf "%s" "$CAN" > Can.txt
+      printf "%s" "$CAN" > "$TEMPDIR/Can.txt"
       remove_cat_nonint "Can"
-      rm Can.txt
+      rm "$TEMPDIR/Can.txt"
       unset CAN
     fi
 
@@ -307,9 +311,9 @@ then
 
     if [ "$HAS" != "" ];
     then
-      printf "%s" "$HAS" > Has.txt
+      printf "%s" "$HAS" > "$TEMPDIR/Has.txt"
       remove_cat_nonint "Has"
-      rm Has.txt
+      rm "$TEMPDIR/Has.txt"
       unset HAS
     fi
 
@@ -323,13 +327,13 @@ then
 
     if [ "$AMI" != "" ];
     then
-      printf "%s" "$AMI" > "Am I.txt"
+      printf "%s" "$AMI" > "Am "$TEMPDIR/I.txt""
       remove_cat_nonint "Am I"
-      rm "Am I.txt"
+      rm "Am "$TEMPDIR/I.txt""
       unset AMI
     fi
 
-  rm nonint.txt
+  rm "$NOINTTXT"
 
   fi
 

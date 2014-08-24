@@ -10,15 +10,7 @@ then
 
   MACOS=$(egrep -i "$KEYWORDS_MACOS" "$NEWPAGES")
 
-  if [ "$MACOS" != "" ];
-  then
-    printf "%s" "$MACOS" > MacOSX.txt
-    export CATFILE="MacOSX.txt"
-    export CATNAME="Mac OS X"
-    $CATEGORIZE
-    rm MacOSX.txt
-    unset MACOS
-  fi
+  categorize "MACOS" "Mac OS X"
 
   debug_end "Mac OS X"
 

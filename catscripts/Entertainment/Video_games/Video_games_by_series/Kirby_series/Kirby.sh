@@ -9,15 +9,7 @@ then
 
   KIRBY=$(egrep -i "$KEYWORDS_KIRBY" "$NEWPAGES")
 
-  if [ "$KIRBY" != "" ];
-  then
-    printf "%s" "$KIRBY" > Kirby.txt
-    export CATFILE="Kirby.txt"
-    export CATNAME="Kirby series"
-    $CATEGORIZE
-    rm Kirby.txt
-    unset KIRBY
-  fi
+  categorize "KIRBY" "Kirby series"
 
   debug_end "Kirby series"
 

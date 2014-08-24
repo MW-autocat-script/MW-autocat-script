@@ -9,15 +9,7 @@ then
 
   FLYFF=$(egrep -i "$KEYWORDS_MMORPG_FLYFF" "$NEWPAGES")
 
-  if [ "$FLYFF" != "" ];
-  then
-    printf "%s" "$FLYFF" > Flyff.txt
-    export CATFILE="Flyff.txt"
-    export CATNAME="Flyff"
-    $CATEGORIZE
-    rm Flyff.txt
-    unset FLYFF
-  fi
+  categorize "FLYFF" "Flyff"
 
   debug_end "Flyff"
 

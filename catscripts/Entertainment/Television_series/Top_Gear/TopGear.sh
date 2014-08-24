@@ -9,15 +9,7 @@ then
 
   TOPGEAR=$(egrep -i "$KEYWORDS_TOPGEAR" "$NEWPAGES")
 
-  if [ "$TOPGEAR" != "" ];
-  then
-    printf "%s" "$TOPGEAR" > TopGear.txt
-    export CATFILE="TopGear.txt"
-    export CATNAME="Top Gear"
-    $CATEGORIZE
-    rm TopGear.txt
-    unset TOPGEAR
-  fi
+  categorize "TOPGEAR" "Top Gear"
 
   debug_end "Top Gear"
 

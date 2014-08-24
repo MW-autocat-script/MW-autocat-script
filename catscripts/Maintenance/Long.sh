@@ -7,7 +7,7 @@ then
   
   debug_start "Long page titles"
 
-  LONG="$(egrep -i "$KEYWORDS_LONG" "$NEWPAGES")"
+  LONG=$(egrep -i "$KEYWORDS_LONG" "$NEWPAGES")
 
   categorize "LONG" "Long page titles"
 

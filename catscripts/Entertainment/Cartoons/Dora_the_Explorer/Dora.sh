@@ -7,17 +7,9 @@ then
 
   debug_start "Dora the Explorer"
 
-  DORA="$(egrep -i "$KEYWORDS_DORA" "$NEWPAGES")"
+  DORA=$(egrep -i "$KEYWORDS_DORA" "$NEWPAGES")
 
-  if [ "$DORA" != "" ];
-  then
-    printf "%s" "$DORA" > Dora.txt
-    export CATFILE="Dora.txt"
-    export CATNAME="Dora the Explorer"
-    $CATEGORIZE
-    rm Dora.txt
-    unset DORA
-  fi
+  categorize "DORA" "Dora the Explorer"
 
   debug_end "Dora the Explorer"
 

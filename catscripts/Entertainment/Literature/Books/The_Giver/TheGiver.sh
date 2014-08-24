@@ -9,15 +9,7 @@ then
 
   GIVER=$(egrep -i "$KEYWORDS_THEGIVER" "$NEWPAGES")
 
-  if [ "$GIVER" != "" ];
-  then
-    printf "%s" "$GIVER" > TheGiver.txt
-    export CATFILE="TheGiver.txt"
-    export CATNAME="The Giver"
-    $CATEGORIZE
-    rm TheGiver.txt
-    unset GIVER
-  fi
+  categorize "GIVER" "The Giver"
 
   debug_end "The Giver"
 

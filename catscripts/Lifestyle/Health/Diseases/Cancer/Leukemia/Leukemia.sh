@@ -7,17 +7,9 @@ then
   
   debug_start "Leukemia"
 
-  LEUKEMIA="$(egrep -i "$KEYWORDS_LEUKEMIA" "$NEWPAGES")"
+  LEUKEMIA=$(egrep -i "$KEYWORDS_LEUKEMIA" "$NEWPAGES")
 
-  if [ "$LEUKEMIA" != "" ];
-  then
-    printf "%s" "$LEUKEMIA" > Leukemia.txt
-    export CATFILE="Leukemia.txt"
-    export CATNAME="Leukemia"
-    $CATEGORIZE
-    rm Leukemia.txt
-    unset LEUKEMIA
-  fi
+  categorize "LEUKEMIA" "Leukemia"
 
   debug_end "Leukemia"
 

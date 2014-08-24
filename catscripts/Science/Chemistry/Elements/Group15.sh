@@ -23,65 +23,12 @@ then
   BISMUTH=$(egrep -i "$KEYWORDS_BISMUTH" "$NEWPAGES")
   UNUNPENTIUM=$(egrep -i "$KEYWORDS_UNUNPENTIUM" "$NEWPAGES")
 
-  if [ "$NITROGEN" != "" ];
-  then
-    printf "%s" "$NITROGEN" > Nitrogen.txt
-    export CATFILE="Nitrogen.txt"
-    export CATNAME="Nitrogen"
-    $CATEGORIZE
-    rm Nitrogen.txt
-    unset NITROGEN
-  fi
-
-  if [ "$PHOSPHORUS" != "" ];
-  then
-    printf "%s" "$PHOSPHORUS" > Phosphorus.txt
-    export CATFILE="Phosphorus.txt"
-    export CATNAME="Phosphorus"
-    $CATEGORIZE
-    rm Phosphorus.txt
-    unset PHOSPHORUS
-  fi
-
-  if [ "$ARSENIC" != "" ];
-  then
-    printf "%s" "$ARSENIC" > Arsenic.txt
-    export CATFILE="Arsenic.txt"
-    export CATNAME="Arsenic"
-    $CATEGORIZE
-    rm Arsenic.txt
-    unset ARSENIC
-  fi
-
-  if [ "$ANTIMONY" != "" ];
-  then
-    printf "%s" "$ANTIMONY" > Antimony.txt
-    export CATFILE="Antimony.txt"
-    export CATNAME="Antimony"
-    $CATEGORIZE
-    rm Antimony.txt
-    unset ANTIMONY
-  fi
-
-  if [ "$BISMUTH" != "" ];
-  then
-    printf "%s" "$BISMUTH" > Bismuth.txt
-    export CATFILE="Bismuth.txt"
-    export CATNAME="Bismuth"
-    $CATEGORIZE
-    rm Bismuth.txt
-    unset BISMUTH
-  fi
-
-  if [ "$UNUNPENTIUM" != "" ];
-  then
-    printf "%s" "$UNUNPENTIUM" > Ununpentium.txt
-    export CATFILE="Ununpentium.txt"
-    export CATNAME="Ununpentium"
-    $CATEGORIZE
-    rm Ununpentium.txt
-    unset UNUNPENTIUM
-  fi
+  categorize "NITROGEN" "Nitrogen"
+  categorize "PHOSPHORUS" "Phosphorus"
+  categorize "ARSENIC" "Arsenic"
+  categorize "ANTIMONY" "Antimony"
+  categorize "BISMUTH" "Bismuth"
+  categorize "UNUNPENTIUM" "Ununpentium"
 
   debug_end "Group 15 elements"
 

@@ -9,15 +9,7 @@ then
 
   ALGEBRA=$(egrep -i "$KEYWORDS_ALGEBRA" "$NEWPAGES")
 
-  if [ "$ALGEBRA" != "" ];
-  then
-    printf "%s" "$ALGEBRA" > Algebra.txt
-    export CATFILE="Algebra.txt"
-    export CATNAME="Algebra"
-    $CATEGORIZE
-    rm Algebra.txt
-    unset ALGEBRA
-  fi
+  categorize "ALGEBRA" "Algebra"
 
   debug_end "Algebra"
 

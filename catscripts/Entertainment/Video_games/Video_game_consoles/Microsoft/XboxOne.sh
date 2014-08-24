@@ -9,15 +9,7 @@ then
 
   XBOXONE=$(egrep -i "$KEYWORDS_XBOXONE" "$NEWPAGES")
 
-  if [ "$XBOXONE" != "" ];
-  then
-    printf "%s" "$XBOXONE" > XboxOne.txt
-    export CATFILE="XboxOne.txt"
-    export CATNAME="Xbox One"
-    $CATEGORIZE
-    rm XboxOne.txt
-    unset XBOXONE
-  fi
+  categorize "XBOXONE" "Xbox One"
 
   debug_end "Xbox One"
 

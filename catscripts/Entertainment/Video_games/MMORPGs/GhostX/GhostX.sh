@@ -9,15 +9,7 @@ then
 
   GHOSTX=$(egrep -i "$KEYWORDS_MMORPG_GHOSTX" "$NEWPAGES")
 
-  if [ "$GHOSTX" != "" ];
-  then
-    printf "%s" "$GHOSTX" > GhostX.txt
-    export CATFILE="GhostX.txt"
-    export CATNAME="GhostX"
-    $CATEGORIZE
-    rm GhostX.txt
-    unset GHOSTX
-  fi
+  categorize "GHOSTX" "GhostX"
 
   debug_end "GhostX"
 

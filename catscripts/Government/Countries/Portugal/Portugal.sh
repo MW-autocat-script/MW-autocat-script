@@ -7,17 +7,9 @@ then
   
   debug_start "Portugal"
 
-  PORTUGAL="$(egrep -i "$KEYWORDS_PORTUGAL" "$NEWPAGES")"
+  PORTUGAL=$(egrep -i "$KEYWORDS_PORTUGAL" "$NEWPAGES")
 
-  if [ "$PORTUGAL" != "" ];
-  then
-    printf "%s" "$PORTUGAL" > Portugal.txt
-    export CATFILE="Portugal.txt"
-    export CATNAME="Portugal"
-    $CATEGORIZE
-    rm Portugal.txt
-    unset PORTUGAL
-  fi
+  categorize "PORTUGAL" "Portugal"
 
   debug_end "Portugal"
 

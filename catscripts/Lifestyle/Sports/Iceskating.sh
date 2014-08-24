@@ -7,17 +7,9 @@ then
   
   debug_start "Ice skating"
 
-  ICESKATING="$(egrep -i "$KEYWORDS_ICESKATING" "$NEWPAGES")"
+  ICESKATING=$(egrep -i "$KEYWORDS_ICESKATING" "$NEWPAGES")
 
-  if [ "$ICESKATING" != "" ];
-  then
-    printf "%s" "$ICESKATING" > IceSkating.txt
-    unset ICESKATING
-    export CATFILE="IceSkating.txt"
-    export CATNAME="Ice skating"
-    $CATEGORIZE
-    rm IceSkating.txt
-  fi
+  categorize "ICESKATING" "Ice skating"
 
   debug_end "Ice skating"
 
