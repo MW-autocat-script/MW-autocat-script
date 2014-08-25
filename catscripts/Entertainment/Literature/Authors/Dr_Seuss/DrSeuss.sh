@@ -9,15 +9,7 @@ then
 
   SEUSS=$(egrep -i "$KEYWORDS_DRSEUSS" "$NEWPAGES")
 
-  if [ "$SEUSS" != "" ];
-  then
-    printf "%s" "$SEUSS" > Seuss.txt
-    export CATFILE="Seuss.txt"
-    export CATNAME="Dr. Seuss"
-    $CATEGORIZE
-    rm Seuss.txt
-    unset SEUSS
-  fi
+  categorize "SEUSS" "Dr. Seuss"
 
   debug_end "Dr. Seuss"
 

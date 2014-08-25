@@ -10,15 +10,7 @@ then
 
   SPEECH=$(egrep -i "$KEYWORDS_PARTSOFSPEECH" "$NEWPAGES")
 
-  if [ "$SPEECH" != "" ];
-  then
-    printf "%s" "$SPEECH" > PartsOfSpeech.txt
-    export CATFILE="PartsOfSpeech.txt"
-    export CATNAME="Parts of speech"
-    $CATEGORIZE
-    rm PartsOfSpeech.txt
-    unset SPEECH
-  fi
+  categorize "SPEECH" "Parts of speech"
 
   debug_end "Parts of speech"
 

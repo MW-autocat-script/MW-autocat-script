@@ -7,17 +7,9 @@ then
   
   debug_start "One Piece"
 
-  ONEPIECE="$(egrep "$KEYWORDS_ONEPIECE" "$NEWPAGES")"
+  ONEPIECE=$(egrep "$KEYWORDS_ONEPIECE" "$NEWPAGES")
   
-  if [ "$ONEPIECE" != "" ];
-  then
-    printf "%s" "$ONEPIECE" > OnePiece.txt
-    export CATFILE="OnePiece.txt"
-    export CATNAME="One Piece"
-    $CATEGORIZE
-    rm OnePiece.txt
-    unset ONEPIECE
-  fi
+  categorize "ONEPIECE" "One Piece"
 
   debug_end "One Piece"
 

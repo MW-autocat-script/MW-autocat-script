@@ -9,15 +9,7 @@ then
 
   CLUES=$(egrep -i "$KEYWORDS_THE39CLUES" "$NEWPAGES")
 
-  if [ "$CLUES" != "" ];
-  then
-    printf "%s" "$CLUES" > The39Clues.txt
-    export CATFILE="The39Clues.txt"
-    export CATNAME="The 39 Clues"
-    $CATEGORIZE
-    rm The39Clues.txt
-    unset CLUES
-  fi
+  categorize "CLUES" "The 39 Clues"
 
   debug_end "The 39 Clues"
 

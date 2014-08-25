@@ -9,15 +9,7 @@ then
 
   DITLOIDS=$(egrep -i "$KEYWORDS_DITLOIDS" "$NEWPAGES")
 
-  if [ "$DITLOIDS" != "" ];
-  then
-    printf "%s" "$DITLOIDS" > Ditloids.txt
-    export CATFILE="Ditloids.txt"
-    export CATNAME="Ditloids"
-    $CATEGORIZE
-    rm Ditloids.txt
-    unset DITLOIDS
-  fi
+  categorize "DITLOIDS" "Ditloids"
 
   debug_end "Ditloids"
 

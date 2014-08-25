@@ -9,15 +9,7 @@ then
 
   LINKIN=$(egrep -i "$KEYWORDS_LINKINPARK" "$NEWPAGES")
 
-  if [ "$LINKIN" != "" ];
-  then
-    printf "%s" "$LINKIN" > LinkinPark.txt
-    export CATFILE="LinkinPark.txt"
-    export CATNAME="Linkin Park"
-    $CATEGORIZE
-    rm LinkinPark.txt
-    unset LINKIN
-  fi
+  categorize "LINKIN" "Linkin Park"
 
   debug_end "Linkin' Park"
 

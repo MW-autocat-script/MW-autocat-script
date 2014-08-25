@@ -10,15 +10,7 @@ then
 
   ANTONYMS=$(egrep -i "$KEYWORDS_ANTONYMS" "$NEWPAGES")
 
-  if [ "$ANTONYMS" != "" ];
-  then
-    printf "%s" "$ANTONYMS" > Antonyms.txt
-    export CATFILE="Antonyms.txt"
-    export CATNAME="Antonyms"
-    $CATEGORIZE
-    rm Antonyms.txt
-    unset ANTONYMS
-  fi
+  categorize "ANTONYMS" "Antonyms"
 
   debug_end "Antonyms"
 

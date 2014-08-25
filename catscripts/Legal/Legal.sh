@@ -17,55 +17,11 @@ then
   LAWYERS=$(egrep -i "$KEYWORDS_LAWYERS" "$NEWPAGES")
   COPYRIGHT=$(egrep -i "$KEYWORDS_COPYRIGHT" "$NEWPAGES")
 
-  if [ "$LEGAL" != "" ];
-  then
-    printf "%s" "$LEGAL" > Legal.txt
-    export CATFILE="Legal.txt"
-    export CATNAME="Legal"
-    $CATEGORIZE
-    rm Legal.txt
-    unset LEGAL
-  fi
-
-  if [ "$CRIME" != "" ];
-  then
-    printf "%s" "$CRIME" > Crime.txt
-    export CATFILE="Crime.txt"
-    export CATNAME="Crime"
-    $CATEGORIZE
-    rm Crime.txt
-    unset CRIME
-  fi
-
-  if [ "$DIVORCE" != "" ];
-  then
-    printf "%s" "$DIVORCE" > Divorce.txt
-    export CATFILE="Divorce.txt"
-    export CATNAME="Divorce"
-    $CATEGORIZE
-    rm Divorce.txt
-    unset DIVORCE
-  fi
-
-  if [ "$LAWYERS" != "" ];
-  then
-    printf "%s" "$LAWYERS" > Lawyers.txt
-    export CATFILE="Lawyers.txt"
-    export CATNAME="Lawyers"
-    $CATEGORIZE
-    rm Lawyers.txt
-    unset LAWYERS
-  fi
-
-  if [ "$COPYRIGHT" != "" ];
-  then
-    printf "%s" "$COPYRIGHT" > Copyright.txt
-    export CATFILE="Copyright.txt"
-    export CATNAME="Copyright law"
-    $CATEGORIZE
-    rm Copyright.txt
-    unset COPYRIGHT
-  fi
+  categorize "LEGAL" "Legal"
+  categorize "CRIME" "Crime"
+  categorize "DIVORCE" "Divorce"
+  categorize "LAWYERS" "Lawyers"
+  categorize "COPYRIGHT" "Copyright law"
 
   debug_end "Legal"
 

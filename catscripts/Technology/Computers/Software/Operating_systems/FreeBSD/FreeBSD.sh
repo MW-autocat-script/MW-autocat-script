@@ -9,15 +9,7 @@ then
 
   FREEBSD=$(egrep -i "$KEYWORDS_FREEBSD" "$NEWPAGES")
 
-  if [ "$FREEBSD" != "" ];
-  then
-    printf "%s" "$FREEBSD" > FreeBSD.txt
-    export CATFILE="FreeBSD.txt"
-    export CATNAME="FreeBSD"
-    $CATEGORIZE
-    rm FreeBSD.txt
-    unset FREEBSD
-  fi
+  categorize "FREEBSD" "FreeBSD"
 
   debug_end "FreeBSD"
 

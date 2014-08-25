@@ -10,15 +10,7 @@ then
 
   RHYMES=$(egrep -i "$KEYWORDS_RHYMING" "$NEWPAGES" | egrep -iv "$KEYWORDS_RHYMING_EXCLUDE")
 
-  if [ "$RHYMES" != "" ];
-  then
-    printf "%s" "$RHYMES" > Rhyming.txt
-    export CATFILE="Rhymes.txt"
-    export CATNAME="Rhyming"
-    $CATEGORIZE
-    rm Rhyming.txt
-    unset RHYMES
-  fi
+  categorize "RHYMES" "Rhyming"
 
   debug_end "Rhyming"
 

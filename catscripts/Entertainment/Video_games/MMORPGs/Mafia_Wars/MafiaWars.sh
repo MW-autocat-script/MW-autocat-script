@@ -9,15 +9,7 @@ then
 
   MAFIA=$(egrep -i "$KEYWORDS_MMORPG_MAFIA" "$NEWPAGES")
 
-  if [ "$MAFIA" != "" ];
-  then
-    printf "%s" "$MAFIA" > MafiaWars.txt
-    export CATFILE="MafiaWars.txt"
-    export CATNAME="Mafia Wars"
-    $CATEGORIZE
-    rm MafiaWars.txt
-    unset MAFIA
-  fi
+  categorize "MAFIA" "Mafia Wars"
 
   debug_end "Mafia Wars"
 

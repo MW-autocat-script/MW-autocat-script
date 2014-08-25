@@ -9,15 +9,7 @@ then
 
   WOOZWORLD=$(egrep -i "$KEYWORDS_WOOZWORLD" "$NEWPAGES")
 
-  if [ "$WOOZWORLD" != "" ];
-  then
-    printf "%s" "$WOOZWORLD" > Woozworld.txt
-    export CATFILE="Woozworld.txt"
-    export CATNAME="Woozworld"
-    $CATEGORIZE
-    rm Woozworld.txt
-    unset WOOZWORLD
-  fi
+  categorize "WOOZWORLD" "Woozworld"
 
   debug_end "Woozworld"
 

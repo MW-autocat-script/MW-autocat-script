@@ -20,55 +20,11 @@ then
   POWERPOINT=$(egrep -i "$KEYWORDS_MICROSOFTPOWERPOINT" "$NEWPAGES")
   WORD=$(egrep -i "$KEYWORDS_MICROSOFTWORD" "$NEWPAGES")
 
-  if [ "$OFFICE" != "" ];
-  then
-    printf "%s" "$OFFICE" > MicrosoftOffice.txt
-    export CATFILE="MicrosoftOffice.txt"
-    export CATNAME="Microsoft Office"
-    $CATEGORIZE
-    rm MicrosoftOffice.txt
-    unset OFFICE
-  fi
-
-  if [ "$ACCESS" != "" ];
-  then
-    printf "%s" "$ACCESS" > MicrosoftAccess.txt
-    export CATFILE="MicrosoftAccess.txt"
-    export CATNAME="Microsoft Access"
-    $CATEGORIZE
-    rm MicrosoftAccess.txt
-    unset ACCESS
-  fi
-
-  if [ "$EXCEL" != "" ];
-  then
-    printf "%s" "$EXCEL" > MicrosoftExcel.txt
-    export CATFILE="MicrosoftExcel.txt"
-    export CATNAME="Microsoft Excel"
-    $CATEGORIZE
-    rm MicrosoftExcel.txt
-    unset EXCEL
-  fi
-
-  if [ "$POWERPOINT" != "" ];
-  then
-    printf "%s" "$POWERPOINT" > MicrosoftPowerPoint.txt
-    export CATFILE="MicrosoftPowerPoint.txt"
-    export CATNAME="Microsoft PowerPoint"
-    $CATEGORIZE
-    rm MicrosoftPowerPoint.txt
-    unset POWERPOINT
-  fi
-
-  if [ "$WORD" != "" ];
-  then
-    printf "%s" "$WORD" > MicrosoftWord.txt
-    export CATFILE="MicrosoftWord.txt"
-    export CATNAME="Microsoft Word"
-    $CATEGORIZE
-    rm MicrosoftWord.txt
-    unset WORD
-  fi
+  categorize "OFFICE" "Microsoft Office"
+  categorize "ACCESS" "Microsoft Access"
+  categorize "EXCEL" "Microsoft Excel"
+  categorize "POWERPOINT" "Microsoft PowerPoint"
+  categorize "WORD" "Microsoft Word"
 
   debug_end "Microsoft Office"
 

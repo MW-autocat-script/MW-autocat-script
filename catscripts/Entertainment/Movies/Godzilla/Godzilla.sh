@@ -9,15 +9,7 @@ then
 
   GODZILLA=$(egrep -i "$KEYWORDS_MOVIES_GODZILLA" "$NEWPAGES")
 
-  if [ "$GODZILLA" != "" ];
-  then
-    printf "%s" "$GODZILLA" > Godzilla.txt
-    export CATFILE="Godzilla.txt"
-    export CATNAME="Godzilla"
-    $CATEGORIZE
-    rm Godzilla.txt
-    unset GODZILLA
-  fi
+  categorize "GODZILLA" "Godzilla"
 
   debug_end "Godzilla"
 

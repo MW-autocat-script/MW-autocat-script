@@ -9,15 +9,7 @@ then
 
   FANFIC=$(egrep -i "$KEYWORDS_FANFICTION" "$NEWPAGES")
 
-  if [ "$FANFIC" != "" ];
-  then
-    printf "%s" "$FANFIC" > Fanfiction.txt
-    export CATFILE="Fanfiction.txt"
-    export CATNAME="Fan fiction"
-    $CATEGORIZE
-    rm Fanfiction.txt
-    unset FANFIC
-  fi
+  categorize "FANFIC" "Fan fiction"
 
   debug_end "Fan fiction"
 

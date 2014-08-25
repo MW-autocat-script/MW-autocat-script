@@ -9,15 +9,7 @@ then
 
   SIGN=$(egrep -i "$KEYWORDS_SIGNLANGUAGE" "$NEWPAGES")
 
-  if [ "$SIGN" != "" ];
-  then
-    printf "%s" "$SIGN" > Signlanguage.txt
-    export CATFILE="Signlanguage.txt"
-    export CATNAME="Sign language"
-    $CATEGORIZE
-    rm Signlanguage.txt
-    unset SIGN
-  fi
+  categorize "SIGN" "Sign language"
 
   debug_end "Sign language"
 

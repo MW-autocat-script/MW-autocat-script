@@ -9,15 +9,7 @@ then
 
   ALTIMA=$(egrep -i "$KEYWORDS_NISSANALTIMA" "$NEWPAGES")
 
-  if [ "$ALTIMA" != "" ];
-  then
-    printf "%s" "$ALTIMA" > NissanAltima.txt
-    export CATFILE="NissanAltima"
-    export CATNAME="Nissan Altima"
-    $CATEGORIZE
-    rm NissanAltima.txt
-    unset ALTIMA
-  fi
+  categorize "ALTIMA" "Nissan Altima"
 
   debug_end "Nissan Altima"
 

@@ -9,15 +9,7 @@ then
 
   OPENBSD=$(egrep -i "$KEYWORDS_OPENBSD" "$NEWPAGES")
 
-  if [ "$OPENBSD" != "" ];
-  then
-    printf "%s" "$OPENBSD" > OpenBSD.txt
-    export CATFILE="OpenBSD.txt"
-    export CATNAME="OpenBSD"
-    $CATEGORIZE
-    rm OpenBSD.txt
-    unset OPENBSD
-  fi
+  categorize "OPENBSD" "OpenBSD"
 
   debug_end "OpenBSD"
 

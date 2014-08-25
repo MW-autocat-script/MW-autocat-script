@@ -21,55 +21,11 @@ then
   ELIZABETHTOWER=$(egrep -i "$KEYWORDS_ELIZABETHTOWER" "$NEWPAGES")
   STONEHENGE=$(egrep -i "$KEYWORDS_STONEHENGE" "$NEWPAGES")
 
-  if [ "$ENGLAND" != "" ];
-  then
-    printf "%s" "$ENGLAND" > England.txt
-    export CATFILE="England.txt"
-    export CATNAME="England"
-    $CATEGORIZE
-    rm England.txt
-    unset ENGLAND
-  fi
-
-  if [ "$LONDON" != "" ];
-  then
-    printf "%s" "$LONDON" > London.txt
-    export CATFILE="London.txt"
-    export CATNAME="London"
-    $CATEGORIZE
-    rm London.txt
-    unset LONDON
-  fi
-
-  if [ "$BUCKINGHAMPALACE" != "" ];
-  then
-    printf "%s" "$BUCKINGHAMPALACE" > BuckinghamPalace.txt
-    export CATFILE="BuckinghamPalace.txt"
-    export CATNAME="Buckingham Palace"
-    $CATEGORIZE
-    rm BuckinghamPalace.txt
-    unset BUCKINGHAMPALACE
-  fi
-
-  if [ "$ELIZABETHTOWER" != "" ];
-  then
-    printf "%s" "$ELIZABETHTOWER" > ElizabethTower.txt
-    export CATFILE="ElizabethTower.txt"
-    export CATNAME="Elizabeth Tower"
-    $CATEGORIZE
-    rm ElizabethTower.txt
-    unset ELIZABETHTOWER
-  fi
-
-  if [ "$STONEHENGE" != "" ];
-  then
-    printf "%s" "$STONEHENGE" > Stonehenge.txt
-    export CATFILE="Stonehenge.txt"
-    export CATNAME="Stonehenge"
-    $CATEGORIZE
-    rm Stonehenge.txt
-    unset STONEHENGE
-  fi
+  categorize "ENGLAND" "England"
+  categorize "LONDON" "London"
+  categorize "BUCKINGHAMPALACE" "Buckingham Palace"
+  categorize "ELIZABETHTOWER" "Elizabeth Tower"
+  categorize "STONEHENGE" "Stonehenge"
 
   debug_end "England"
 

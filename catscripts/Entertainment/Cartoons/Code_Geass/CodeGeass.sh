@@ -9,15 +9,7 @@ then
 
   GEASS=$(egrep -i "$KEYWORDS_CODEGEASS" "$NEWPAGES")
 
-  if [ "$GEASS" != "" ];
-  then
-    printf "%s" "$GEASS" > CodeGeass.txt
-    export CATFILE="CodeGeass.txt"
-    export CATNAME="Code Geass"
-    $CATEGORIZE
-    rm CodeGeass.txt
-    unset GEASS
-  fi
+  categorize "GEASS" "Code Geass"
 
   debug_end "Code Geass"
 

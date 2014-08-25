@@ -9,15 +9,7 @@ then
 
   N64=$(egrep -i "$KEYWORDS_N64" "$NEWPAGES")
 
-  if [ "$N64" != "" ];
-  then
-    printf "%s" "$N64" > Nintendo64.txt
-    export CATFILE="Nintendo64.txt"
-    export CATNAME="Nintendo 64"
-    $CATEGORIZE
-    rm Nintendo64.txt
-    unset N64
-  fi
+  categorize "N64" "Nintendo 64"
 
   debug_end "Nintendo 64"
 

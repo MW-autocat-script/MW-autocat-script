@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_SPELLING="How(| )(to|do you)(| )spell(| )(|\"|')[a-z]{1,}(|\"|')$"
+KEYWORDS_SPELLING="How(| )(to|do you)(| )spell(| )(|\"|')[a-z]{1,}(|\"|')$|correct(| )spelling"
 
 
 if [ "$1" == "" ]; #Normal operation
@@ -10,15 +10,7 @@ then
 
   SPELLING=$(egrep -i "$KEYWORDS_SPELLING" "$NEWPAGES")
 
-  if [ "$SPELLING" != "" ];
-  then
-    printf "%s" "$SPELLING" > Spelling.txt
-    export CATFILE="Spelling.txt"
-    export CATNAME="Spelling"
-    $CATEGORIZE
-    rm Spelling.txt
-    unset SPELLING
-  fi
+  categorize "SPELLING" "Spelling"
 
   debug_end "Spelling"
 

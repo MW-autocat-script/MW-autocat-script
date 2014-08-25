@@ -9,15 +9,7 @@ then
 
   KAROS=$(egrep -i "$KEYWORDS_MMORPG_KAROS" "$NEWPAGES")
 
-  if [ "$KAROS" != "" ];
-  then
-    printf "%s" "$KAROS" > KarosOnline.txt
-    export CATFILE="KarosOnline.txt"
-    export CATNAME="Karos Online"
-    $CATEGORIZE
-    rm KarosOnline.txt
-    unset KAROS
-  fi
+  categorize "KAROS" "Karos Online"
 
   debug_end "Karos Online"
 

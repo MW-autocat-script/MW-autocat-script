@@ -24,56 +24,11 @@ then
   ANNEFRANK=$(egrep -i "$KEYWORDS_ANNEFRANK" "$NEWPAGES")
   BERLIN=$(egrep -i "$KEYWORDS_BERLIN" "$NEWPAGES")
 
-  if [ "$GERMANY" != "" ];
-  then
-    printf "%s" "$GERMANY" > Germany.txt
-    export CATFILE="Germany.txt"
-    export CATNAME="Germany"
-    $CATEGORIZE
-    rm Germany.txt
-    unset GERMANY
-  fi
-
-  if [ "$NAZI" != "" ];
-  then
-    printf "%s" "$NAZI" > NaziGermany.txt
-    export CATFILE="NaziGermany.txt"
-    export CATNAME="Nazi Germany"
-    $CATEGORIZE
-    rm NaziGermany.txt
-    unset NAZI
-    unset NAZISECONDARY
-  fi
-
-  if [ "$HITLER" != "" ];
-  then
-    printf "%s" "$HITLER" > AdolfHitler.txt
-    export CATFILE="AdolfHitler.txt"
-    export CATNAME="Adolf Hitler"
-    $CATEGORIZE
-    rm AdolfHitler.txt
-    unset HITLER
-  fi
-
-  if [ "$ANNEFRANK" != "" ];
-  then
-    printf "%s" "$ANNEFRANK" > AnneFrank.txt
-    export CATFILE="AnneFrank.txt"
-    export CATNAME="Anne Frank"
-    $CATEGORIZE
-    rm AnneFrank.txt
-    unset ANNEFRANK
-  fi
-
-  if [ "$BERLIN" != "" ];
-  then
-    printf "%s" "$BERLIN" > Berlin.txt
-    export CATFILE="Berlin.txt"
-    export CATNAME="Berlin"
-    $CATEGORIZE
-    rm Berlin.txt
-    unset BERLIN
-  fi
+  categorize "GERMANY" "Germany"
+  categorize "NAZI" "Nazi Germany"
+  categorize "HITLER" "Adolf Hitler"
+  categorize "ANNEFRANK" "Anne Frank"
+  categorize "BERLIN" "Berlin"
 
   debug_end "Germany"
 

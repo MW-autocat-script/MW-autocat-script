@@ -9,15 +9,7 @@ then
 
   BEOWULF=$(egrep -i "$KEYWORDS_BEOWULF" "$NEWPAGES")
 
-  if [ "$BEOWULF" != "" ];
-  then
-    printf "%s" "$BEOWULF" > Beowulf.txt
-    export CATFILE="Beowulf.txt"
-    export CATNAME="Beowulf"
-    $CATEGORIZE
-    rm Beowulf.txt
-    unset BEOWULF
-  fi
+  categorize "BEOWULF" "Beowulf"
 
   debug_end "Beowulf"
 

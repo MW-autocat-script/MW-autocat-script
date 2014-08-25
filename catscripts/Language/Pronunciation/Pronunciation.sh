@@ -10,15 +10,7 @@ then
 
   PRONUNCIATION=$(egrep -i "$KEYWORDS_PRONUNCIATION" "$NEWPAGES")
 
-  if [ "$PRONUNCIATION" != "" ];
-  then
-    printf "%s" "$PRONUNCIATION" > Pronunciation.txt
-    export CATFILE="Pronunciation.txt"
-    export CATNAME="Pronunciation"
-    $CATEGORIZE
-    rm Pronunciation.txt
-    unset PRONUNCIATION
-  fi
+  categorize "PRONUNCIATION" "Pronunciation"
 
   debug_end "Pronunciation"
 

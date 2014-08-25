@@ -21,75 +21,13 @@ then
   CONTOUR=$(egrep -i "$KEYWORDS_CONTOUR" "$NEWPAGES")
   #MONDEO=$(egrep -i "$KEYWORDS_MONDEO" "$NEWPAGES") #No category exists and currently insufficient number of questions to create
 
-  if [ "$FORD" != "" ];
-  then
-    printf "%s" "$FORD" > Ford.txt
-    export CATFILE="Ford.txt"
-    export CATNAME="Ford"
-    $CATEGORIZE
-    rm Ford.txt
-    unset FORD
-  fi
-
-  if [ "$TAURUS" != "" ];
-  then
-    printf "%s" "$TAURUS" > FordTaurus.txt
-    export CATFILE="FordTaurus.txt"
-    export CATNAME="Ford Taurus"
-    $CATEGORIZE
-    rm FordTaurus.txt
-    unset TAURUS
-  fi
-
-  if [ "$ESCORT" != "" ];
-  then
-    printf "%s" "$ESCORT" > FordEscort.txt
-    export CATFILE="FordEscort.txt"
-    export CATNAME="Ford Escort"
-    $CATEGORIZE
-    rm FordEscort.txt
-    unset ESCORT
-  fi
-
-  if [ "$FOCUS" != "" ];
-  then
-    printf "%s" "$FOCUS" > FordFocus.txt
-    export CATFILE="FordFocus.txt"
-    export CATNAME="Ford Focus"
-    $CATEGORIZE
-    rm FordFocus.txt
-    unset FOCUS
-  fi
-
-  if [ "$MUSTANG" != "" ];
-  then
-    printf "%s" "$MUSTANG" > FordMustang.txt
-    export CATFILE="FordMustang.txt"
-    export CATNAME="Ford Mustang"
-    $CATEGORIZE
-    rm FordMustang.txt
-    unset MUSTANG
-  fi
-
-  if [ "$CONTOUR" != "" ];
-  then
-    printf "%s" "$CONTOUR" > FordContour.txt
-    export CATFILE="FordContour.txt"
-    export CATNAME="Ford Contour"
-    $CATEGORIZE
-    rm FordContour.txt
-    unset CONTOUR
-  fi
-
-  #if [ "$MONDEO" != "" ];
-  #then
-  #  printf "%s" "$MONDEO" > FordMondeo.txt
-  #  export CATFILE="FordMondeo.txt"
-  #  export CATNAME="Ford Mondeo"
-  #  $CATEGORIZE
-  #  rm FordMondeo.txt
-  #  unset MONDEO
-  #fi
+  categorize "FORD" "Ford"
+  categorize "TAURUS" "Ford Taurus"
+  categorize "ESCORT" "Ford Escort"
+  categorize "FOCUS" "Ford Focus"
+  categorize "MUSTANG" "Ford Mustang"
+  categorize "CONTOUR" "Ford Contour"
+#  categorize "MONDEO"  "Mondeo"
 
   debug_end "Ford"
 

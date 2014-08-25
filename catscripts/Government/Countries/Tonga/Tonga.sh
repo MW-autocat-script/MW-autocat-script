@@ -10,15 +10,7 @@ then
 
   TONGA=$(egrep -i "$KEYWORDS_TONGA" "$NEWPAGES")
 
-  if [ "$TONGA" != "" ];
-  then
-    printf "%s" "$TONGA" > Tonga.txt
-    export CATFILE="Tonga.txt"
-    export CATNAME="Tonga"
-    $CATEGORIZE
-    rm Tonga.txt
-    unset TONGA
-  fi
+  categorize "TONGA" "Tonga"
 
   debug_end "Tonga"
 

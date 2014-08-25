@@ -9,15 +9,7 @@ then
 
   MOBYDICK=$(egrep -i "$KEYWORDS_MOBYDICK" "$NEWPAGES")
 
-  if [ "$MOBYDICK" != "" ];
-  then
-    printf "%s" "$MOBYDICK" > MobyDick.txt
-    export CATFILE="MobyDick.txt"
-    export CATNAME="Moby Dick"
-    $CATEGORIZE
-    rm MobyDick.txt
-    unset MOBYDICK
-  fi
+  categorize "MOBYDICK" "Moby Dick"
 
   debug_end "Moby Dick"
 
