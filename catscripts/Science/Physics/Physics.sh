@@ -9,15 +9,7 @@ then
 
   PHYSICS=$(egrep -i "$KEYWORDS_PHYSICS" "$NEWPAGES")
 
-  if [ "$PHYSICS" != "" ];
-  then
-    printf "%s" "$PHYSICS" > Physics.txt
-    export CATFILE="Physics.txt"
-    export CATNAME="Physics"
-    $CATEGORIZE
-    rm Physics.txt
-    unset PHYSICS
-  fi
+  categorize "PHYSICS" "Physics"
 
   debug_end "Physics"
 

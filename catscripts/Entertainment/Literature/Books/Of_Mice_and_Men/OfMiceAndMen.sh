@@ -9,15 +9,7 @@ then
 
   MICEMEN=$(egrep -i "$KEYWORDS_MICEANDMEN" "$NEWPAGES")
 
-  if [ "$MICEMEN" != "" ];
-  then
-    printf "%s" "$MICEMEN" > MiceandMen.txt
-    export CATFILE="MiceandMen.txt"
-    export CATNAME="Of Mice and Men"
-    $CATEGORIZE
-    rm MiceandMen.txt
-    unset MICEMEN
-  fi
+  categorize "MICEMEN" "Of Mice and Men"
 
   debug_end "Of Mice and Men"
 

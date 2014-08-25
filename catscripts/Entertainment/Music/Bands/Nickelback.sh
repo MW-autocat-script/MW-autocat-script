@@ -9,15 +9,7 @@ then
 
   NICKELBACK=$(egrep -i "$KEYWORDS_NICKELBACK" "$NEWPAGES")
 
-  if [ "$NICKELBACK" != "" ];
-  then
-    printf "%s" "$NICKELBACK" > Nickelback.txt
-    export CATFILE="Nickelback.txt"
-    export CATNAME="Nickelback"
-    $CATEGORIZE
-    rm Nickelback.txt
-    unset NICKELBACK
-  fi
+  categorize "NICKELBACK" "Nickelback"
 
   debug_end "Nickelback"
 

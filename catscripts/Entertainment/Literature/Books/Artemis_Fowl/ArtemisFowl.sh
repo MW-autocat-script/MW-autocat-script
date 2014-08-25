@@ -9,15 +9,7 @@ then
 
   ARTEMIS=$(egrep -i "$KEYWORDS_ARTEMISFOWL" "$NEWPAGES")
 
-  if [ "$ARTEMIS" != "" ];
-  then
-    printf "%s" "$ARTEMIS" > ArtemisFowl.txt
-    export CATFILE="ArtemisFowl.txt"
-    export CATNAME="Artemis Fowl"
-    $CATEGORIZE
-    rm ArtemisFowl.txt
-    unset ARTEMIS
-  fi
+  categorize "ARTEMIS" "Artemis Fowl"
 
   debug_end "Artemis Fowl"
 

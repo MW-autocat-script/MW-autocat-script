@@ -10,15 +10,7 @@ then
 
   ANDORRA=$(egrep -i "$KEYWORDS_ANDORRA" "$NEWPAGES")
 
-  if [ "$ANDORRA" != "" ];
-  then
-    printf "%s" "$ANDORRA" > Andorra.txt
-    export CATFILE="Andorra.txt"
-    export CATNAME="Andorra"
-    $CATEGORIZE
-    rm Andorra.txt
-    unset ANDORRA
-  fi
+  categorize "ANDORRA" "Andorra"
 
   debug_end "Andorra"
 

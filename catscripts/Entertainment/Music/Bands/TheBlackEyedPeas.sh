@@ -7,17 +7,9 @@ then
   
   debug_start "The Black Eyed Peas"
 
-  BLACKEYEDPEAS="$(egrep -i "$KEYWORDS_BLACKEYEDPEAS" "$NEWPAGES")"
+  BLACKEYEDPEAS=$(egrep -i "$KEYWORDS_BLACKEYEDPEAS" "$NEWPAGES")
 
-  if [ "$BLACKEYEDPEAS" != "" ];
-  then
-    printf "%s" "$BLACKEYEDPEAS" > BlackEyedPeas.txt
-    export CATFILE="BlackEyedPeas.txt"
-    export CATNAME="The Black Eyed Peas"
-    $CATEGORIZE
-    rm BlackEyedPeas.txt
-    unset BLACKEYEDPEAS
-  fi
+  categorize "BLACKEYEDPEAS" "The Black Eyed Peas"
 
   debug_end "The Black Eyed Peas"
 

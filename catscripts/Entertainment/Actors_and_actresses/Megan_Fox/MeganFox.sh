@@ -9,15 +9,7 @@ then
 
   MEGANFOX=$(egrep -i "$KEYWORDS_ACTRESS_MEGANFOX" "$NEWPAGES")
 
-  if [ "$MEGANFOX" != "" ];
-  then
-    printf "%s" "$MEGANFOX" > MeganFox.txt
-    export CATFILE="MeganFox.txt"
-    export CATNAME="Megan Fox"
-    $CATEGORIZE
-    rm MeganFox.txt
-    unset MEGANFOX
-  fi
+  categorize "MEGANFOX" "Megan Fox"
 
   debug_end "Megan Fox"
 

@@ -9,15 +9,7 @@ then
 
   METALLICA=$(egrep -i "$KEYWORDS_METALLICA" "$NEWPAGES")
 
-  if [ "$METALLICA" != "" ];
-  then
-    printf "%s" "$METALLICA" > Metallica.txt
-    export CATFILE="Metallica.txt"
-    export CATNAME="Metallica"
-    $CATEGORIZE
-    rm Metallica.txt
-    unset METALLICA
-  fi
+  categorize "METALLICA" "Metallica"
 
   debug_end "Metallica"
 

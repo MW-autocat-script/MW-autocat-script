@@ -9,15 +9,7 @@ then
 
   RADCLIFFE=$(egrep -i "$KEYWORDS_ACTOR_DANIELRADCLIFFE" "$NEWPAGES")
 
-  if [ "$RADCLIFFE" != "" ];
-  then
-    printf "%s" "$RADCLIFFE" > DanielRadcliffe.txt
-    export CATFILE="DanielRadcliffe.txt"
-    export CATNAME="Daniel Radcliffe"
-    $CATEGORIZE
-    rm DanielRadcliffe.txt
-    unset RADCLIFFE
-  fi
+  categorize "RADCLIFFE" "Daniel Radcliffe"
 
   debug_end "Daniel Radcliffe"
 

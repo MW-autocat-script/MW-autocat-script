@@ -9,15 +9,7 @@ then
 
   MCR=$(egrep -i "$KEYWORDS_MYCHEMICALROMANCE" "$NEWPAGES")
 
-  if [ "$MCR" != "" ];
-  then
-    printf "%s" "$MCR" > MCR.txt
-    export CATFILE="MCR.txt"
-    export CATNAME="My Chemical Romance"
-    $CATEGORIZE
-    rm MCR.txt
-    unset MCR
-  fi
+  categorize "MCR" "My Chemical Romance"
 
   debug_end "My Chemical Romance"
 

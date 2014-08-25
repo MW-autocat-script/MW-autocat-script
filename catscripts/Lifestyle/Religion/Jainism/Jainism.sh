@@ -8,17 +8,9 @@ then
   
   debug_start "Jainism"
 
-  JAINISM="$(egrep -i "$KEYWORDS_JAINISM" "$NEWPAGES")"
+  JAINISM=$(egrep -i "$KEYWORDS_JAINISM" "$NEWPAGES")
 
-  if [ "$JAINISM" != "" ];
-  then
-    printf "%s" "$JAINISM" > Jainism.txt
-    export CATFILE="Jainism.txt"
-    export CATNAME="Jainism"
-    $CATEGORIZE
-    rm Jainism.txt
-    unset JAINISM
-  fi
+  categorize "JAINISM" "Jainism"
 
   debug_end "Jainism"
 

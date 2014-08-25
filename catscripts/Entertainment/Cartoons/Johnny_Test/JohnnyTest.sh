@@ -7,17 +7,9 @@ then
 
   debug_start "Johnny Test"
 
-  JOHNNYTEST="$(egrep -i "$KEYWORDS_JOHNNYTEST" "$NEWPAGES")"
+  JOHNNYTEST=$(egrep -i "$KEYWORDS_JOHNNYTEST" "$NEWPAGES")
 
-  if [ "$JOHNNYTEST" != "" ];
-  then
-    printf "%s" "$JOHNNYTEST" > JohnnyTest.txt
-    export CATFILE="JohnnyTest.txt"
-    export CATNAME="Johnny Test"
-    $CATEGORIZE
-    rm JohnnyTest.txt
-    unset JOHNNYTEST
-  fi
+  categorize "JOHNNYTEST" "Johnny Test"
 
   debug_end "Johnny Test"
 

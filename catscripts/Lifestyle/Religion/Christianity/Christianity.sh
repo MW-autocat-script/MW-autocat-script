@@ -28,7 +28,7 @@ then
 
   categorize "CHRISTIANITY" "Christianity"
   categorize "ANGLICAN" "Anglican"
-  categorize "KEYWORDS_CATHOLICISM" "Catholicism"
+  categorize "CATHOLICISM" "Catholicism"
   categorize "LUTHERANISM" "Lutheranism"
   categorize "MORMONISM" "Mormonism"
   categorize "AMISH" "Amish and Mennonites"

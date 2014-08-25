@@ -9,15 +9,7 @@ then
 
   SMALLVILLE=$(egrep -i "$KEYWORDS_SMALLVILLE" "$NEWPAGES")
 
-  if [ "$SMALLVILLE" != "" ];
-  then
-    printf "%s" "$SMALLVILLE" > Smallville.txt
-    export CATFILE="Smallville.txt"
-    export CATNAME="Smallville"
-    $CATEGORIZE
-    rm Smallville.txt
-    unset SMALLVILLE
-  fi
+  categorize "SMALLVILLE" "Smallville"
 
   debug_end "Smallville"
 

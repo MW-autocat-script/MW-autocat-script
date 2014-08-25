@@ -9,15 +9,7 @@ then
 
   MINDLESS=$(egrep -i "$KEYWORDS_MINDLESSBEHAVIOR" "$NEWPAGES")
 
-  if [ "$MINDLESS" != "" ];
-  then
-    printf "%s" "$MINDLESS" > MindlessBehavior.txt
-    export CATFILE="MindlessBehavior.txt"
-    export CATNAME="Mindless Behavior"
-    $CATEGORIZE
-    rm MindlessBehavior.txt
-    unset MINDLESS
-  fi
+  categorize "MINDLESS" "Mindless Behavior"
 
   debug_end "Mindless Behavior"
 

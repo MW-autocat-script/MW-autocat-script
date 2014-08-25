@@ -10,15 +10,7 @@ then
 
   BEATLES=$(egrep -i "$KEYWORDS_THEBEATLES" "$NEWPAGES" | egrep -iv "$KEYWORDS_THEBEATLES_EXCLUDE")
 
-  if [ "$BEATLES" != "" ];
-  then
-    printf "%s" "$BEATLES" > TheBeatles.txt
-    export CATFILE="TheBeatles.txt"
-    export CATNAME="The Beatles"
-    $CATEGORIZE
-    rm TheBeatles.txt
-    unset BEATLES
-  fi
+  categorize "BEATLES" "The Beatles"
 
   debug_end "The Beatles"
 

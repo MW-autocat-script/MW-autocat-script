@@ -12,17 +12,9 @@ then
 
   debug_start "One Direction"
 
-  ONEDIRECTION="$(egrep -i "$KEYWORDS_ONEDIRECTION" "$NEWPAGES")"
+  ONEDIRECTION=$(egrep -i "$KEYWORDS_ONEDIRECTION" "$NEWPAGES")
 
-  if [ "$ONEDIRECTION" != "" ];
-  then
-    printf "%s" "$ONEDIRECTION" > OneDirection.txt
-    export CATFILE="OneDirection.txt"
-    export CATNAME="One Direction"
-    $CATEGORIZE
-    rm OneDirection.txt
-    unset ONEDIRECTION
-  fi
+  categorize "ONEDIRECTION" "One Direction"
 
   debug_end "One Direction"
 

@@ -9,15 +9,7 @@ then
 
   GAIAONLINE=$(egrep -i "$KEYWORDS_GAIAONLINE" "$NEWPAGES")
 
-  if [ "$GAIAONLINE" != "" ];
-  then
-    printf "%s" "$GAIAONLINE" > GaiaOnline.txt
-    export CATFILE="GaiaOnline.txt"
-    export CATNAME="Gaia Online"
-    $CATEGORIZE
-    rm GaiaOnline.txt
-    unset GAIAONLINE
-  fi
+  categorize "GAIAONLINE" "Gaia Online"
 
   debug_end "Gaia Online"
 
