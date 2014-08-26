@@ -7,17 +7,9 @@ then
 
   debug_start "Pokémon anime"
 
-  ANIME="$(egrep -i "$KEYWORDS_POKEMONANIME" "$NEWPAGES")"
+  POKEMONANIME=$(egrep -i "$KEYWORDS_POKEMONANIME" "$NEWPAGES")
 
-  if [ "$ANIME"  != "" ];
-  then
-    printf "%s" "$ANIME"  > Anime.txt
-    export CATFILE="Anime.txt"
-    export CATNAME="Pokémon anime"
-    $CATEGORIZE
-    rm Anime.txt
-    unset ANIME
-  fi
+  categorize "POKEMONANIME" "Pokémon anime"
 
   debug_end "Pokémon anime"
 

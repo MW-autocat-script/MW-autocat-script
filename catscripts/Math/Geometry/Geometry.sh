@@ -12,15 +12,7 @@ then
 
   GEOMETRY=$(egrep -i "$KEYWORDS_GEOMETRY" "$NEWPAGES" | egrep -iv "$KEYWORDS_GEOMETRY_EXCLUDE" | egrep -v "$KEYWORDS_GEOMETRY_EXCLUDE_CASESENSITIVE")
 
-  if [ "$GEOMETRY" != "" ];
-  then
-    printf "%s" "$GEOMETRY" > Geometry.txt
-    export CATFILE="Geometry.txt"
-    export CATNAME="Geometry"
-    $CATEGORIZE
-    rm Geometry.txt
-    unset GEOMETRY
-  fi
+  categorize "GEOMETRY" "Geometry"
 
   debug_end "Geometry"
 

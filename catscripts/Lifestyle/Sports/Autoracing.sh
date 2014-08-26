@@ -12,25 +12,8 @@ then
   AUTORACING=$(egrep -i "$KEYWORDS_AUTORACING" "$NEWPAGES" | egrep -iv "$KEYWORDS_AUTORACING_EXCLUDE")
   NASCAR=$(egrep -i "$KEYWORDS_NASCAR" "$NEWPAGES")
 
-  if [ "$AUTORACING" != "" ];
-  then
-    printf "%s" "$AUTORACING" > AutoRacing.txt
-    export CATFILE="AutoRacing.txt"
-    export CATNAME="Auto racing"
-    $CATEGORIZE
-    rm AutoRacing.txt
-    unset AUTORACING
-  fi
-
-  if [ "$NASCAR" != "" ];
-  then
-    printf "%s" "$NASCAR" > NASCAR.txt
-    export CATFILE="NASCAR.txt"
-    export CATNAME="NASCAR"
-    $CATEGORIZE
-    rm NASCAR.txt
-    unset NASCAR
-  fi
+  categorize "AUTORACING" "Auto racing"
+  categorize "NASCAR" "NASCAR"
 
   debug_end "Auto racing"
 

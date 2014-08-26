@@ -13,25 +13,9 @@ then
   CO=$(egrep -i "$KEYWORDS_CARBONDIOXIDE" "$NEWPAGES")
   COTWO=$(egrep -i "$KEYWORDS_CARBONMONOXIDE" "$NEWPAGES")
 
-  if [ "$CO" != "" ];
-  then
-    printf "%s" "$CO" > CarbonMonoxide.txt
-    export CATFILE="CarbonMonoxide.txt"
-    export CATNAME="Carbon monoxide"
-    $CATEGORIZE
-    rm CarbonMonoxide.txt
-    unset CO
-  fi
+  categorize "CO" "Carbon monoxide"
 
-  if [ "$COTWO" != "" ];
-  then
-    printf "%s" "$COTWO" > CarbonDioxide.txt
-    export CATFILE="CarbonDioxide.txt"
-    export CATNAME="Carbon dioxide"
-    $CATEGORIZE
-    rm CarbonDioxide.txt
-    unset COTWO
-  fi
+  categorize "COTWO" "Carbon dioxide"
 
   debug_end "Compounds"
 

@@ -21,55 +21,11 @@ then
   STALIN=$(egrep -i "$KEYWORDS_STALIN" "$NEWPAGES")
   LENIN=$(egrep -i "$KEYWORDS_LENIN" "$NEWPAGES" | egrep -iv "$KEYWORDS_LENIN_EXCLUDE")
 
-  if [ "$RUSSIA" != "" ];
-  then
-    printf "%s" "$RUSSIA" > Russia.txt
-    export CATFILE="Russia.txt"
-    export CATNAME="Russia"
-    $CATEGORIZE
-    rm Russia.txt
-    unset RUSSIA
-  fi
-
-  if [ "$MOSCOW" != "" ];
-  then
-    printf "%s" "$MOSCOW" > Moscow.txt
-    export CATFILE="Moscow.txt"
-    export CATNAME="Moscow"
-    $CATEGORIZE
-    rm Moscow.txt
-    unset MOSCOW
-  fi
-
-  if [ "$SOVIET" != "" ];
-  then
-    printf "%s" "$SOVIET" > SovietUnion.txt
-    export CATFILE="SovietUnion.txt"
-    export CATNAME="Soviet Union"
-    $CATEGORIZE
-    rm SovietUnion.txt
-    unset SOVIET
-  fi
-
-  if [ "$STALIN" != "" ];
-  then
-    printf "%s" "$STALIN" > Stalin.txt
-    export CATFILE="Stalin.txt"
-    export CATNAME="Joseph Stalin"
-    $CATEGORIZE
-    rm Stalin.txt
-    unset STALIN
-  fi
-
-  if [ "$LENIN" != "" ];
-  then
-    printf "%s" "$LENIN" > Lenin.txt
-    export CATFILE="Lenin.txt"
-    export CATNAME="Vladimir Lenin"
-    $CATEGORIZE
-    rm Lenin.txt
-    unset LENIN
-  fi
+  categorize "RUSSIA" "Russia"
+  categorize "MOSCOW" "Moscow"
+  categorize "SOVIET" "Soviet Union"
+  categorize "STALIN" "Joseph Stalin"
+  categorize "LENIN" "Vladimir Lenin"
 
   debug_end "Russia"
 

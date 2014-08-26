@@ -17,45 +17,10 @@ then
   CADMIUM=$(egrep -i "$KEYWORDS_CADMIUM" "$NEWPAGES")
   COPERNICIUM=$(egrep -i "$KEYWORDS_COPERNICIUM" "$NEWPAGES")
 
-  if [ "$MERCURY" != "" ];
-  then
-    printf "%s" "$MERCURY" > MercuryElement.txt
-    export CATFILE="MercuryElement.txt"
-    export CATNAME="Mercury (element)"
-    $CATEGORIZE
-    rm MercuryElement.txt
-    unset MERCURY
-  fi
-
-  if [ "$ZINC" != "" ];
-  then
-    printf "%s" "$ZINC" > Zinc.txt
-    export CATFILE="Zinc.txt"
-    export CATNAME="Zinc"
-    $CATEGORIZE
-    rm Zinc.txt
-    unset ZINC
-  fi
-
-  if [ "$CADMIUM" != "" ];
-  then
-    printf "%s" "$CADMIUM" > Cadmium.txt
-    export CATFILE="Cadmium.txt"
-    export CATNAME="Cadmium"
-    $CATEGORIZE
-    rm Cadmium.txt
-    unset CADMIUM
-  fi
-
-  if [ "$COPERNICIUM" != "" ];
-  then
-    printf "%s" "$COPERNICIUM" > Copernicium.txt
-    export CATFILE="Copernicium.txt"
-    export CATNAME="Copernicium"
-    $CATEGORIZE
-    rm Copernicium.txt
-    unset COPERNICIUM
-  fi
+  categorize "MERCURY" "Mercury (element)"
+  categorize "ZINC" "Zinc"
+  categorize "CADMIUM" "Cadmium"
+  categorize "COPERNICIUM" "Copernicium"
 
   debug_end "Group 12 elements"
 

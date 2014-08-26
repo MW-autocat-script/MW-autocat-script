@@ -10,7 +10,7 @@ then
 
   SQL=$(egrep -i "$KEYWORDS_SQL" "$NEWPAGES" | egrep -iv "$KEYWORDS_SQL_EXCLUDE")
 
-  catrgorize "SQL" "SQL"
+  categorize "SQL" "SQL"
 
   debug_end "SQL"
 

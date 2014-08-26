@@ -15,45 +15,10 @@ then
   PASSPORT=$(egrep -i "$KEYWORDS_HONDAPASSPORT" "$NEWPAGES")
   ELEMENT=$(egrep -i "$KEYWORDS_HONDAELEMENT" "$NEWPAGES")
 
-  if [ "$ACCORD" != "" ];
-  then
-    printf "%s" "$ACCORD" > HondaAccord.txt
-    export CATFILE="HondaAccord.txt"
-    export CATNAME="Honda Accord"
-    $CATEGORIZE
-    rm HondaAccord.txt
-    unset ACCORD
-  fi
-
-  if [ "$CIVIC" != "" ];
-  then
-    printf "%s" "$CIVIC" > HondaCivic.txt
-    export CATFILE="HondaCivic.txt"
-    export CATNAME="Honda Civic"
-    $CATEGORIZE
-    rm HondaCivic.txt
-    unset CIVIC
-  fi
-
-  if [ "$PASSPORT" != "" ];
-  then
-    printf "%s" "$PASSPORT" > HondaPassport.txt
-    export CATFILE="HondaPassport.txt"
-    export CATNAME="Honda Passport"
-    $CATEGORIZE
-    rm HondaPassport.txt
-    unset PASSPORT
-  fi
-
-  if [ "$ELEMENT" != "" ];
-  then
-    printf "%s" "$ELEMENT" > HondaElement.txt
-    export CATFILE="HondaElement.txt"
-    export CATNAME="Honda Element"
-    $CATEGORIZE
-    rm HondaElement.txt
-    unset ELEMENT
-  fi
+  categorize "ACCORD" "Honda Accord"
+  categorize "CIVIC" "Honda Civic"
+  categorize "PASSPORT" "Honda Passport"
+  categorize "ELEMENT" "Honda Element"
 
   debug_end "Honda cars"
 

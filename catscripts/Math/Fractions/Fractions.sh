@@ -7,17 +7,9 @@ then
 
   debug_start "Fractions"
 
-  FRACTIONS="$(egrep -i "$KEYWORDS_FRACTIONS" "$NEWPAGES")"
+  FRACTIONS=$(egrep -i "$KEYWORDS_FRACTIONS" "$NEWPAGES")
 
-  if [ "$FRACTIONS" != "" ];
-  then
-    printf "%s" "$FRACTIONS" > Fractions.txt
-    export CATFILE="Fractions.txt"
-    export CATNAME="Fractions"
-    $CATEGORIZE
-    rm Fractions.txt
-    unset FRACTIONS
-  fi
+  categorize "FRACTIONS" "Fractions"
 
   debug_end "Fractions"
 

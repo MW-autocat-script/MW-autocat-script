@@ -9,15 +9,7 @@ then
 
   KIMPOSSIBLE=$(egrep -i "$KEYWORDS_KIMPOSSIBLE" "$NEWPAGES")
 
-  if [ "$KIMPOSSIBLE" != "" ];
-  then
-    printf "%s" "$KIMPOSSIBLE" > KimPossible.txt
-    export CATFILE="KimPossible.txt"
-    export CATNAME="Kim Possible"
-    $CATEGORIZE
-    rm KimPossible.txt
-    unset KIMPOSSIBLE
-  fi
+  categorize "KIMPOSSIBLE" "Kim Possible"
 
   debug_end "Kim Possible"
 

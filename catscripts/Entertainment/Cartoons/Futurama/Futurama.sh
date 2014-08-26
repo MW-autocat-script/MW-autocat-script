@@ -9,15 +9,7 @@ then
 
   FUTURAMA=$(egrep -i "$KEYWORDS_FUTURAMA" "$NEWPAGES")
 
-  if [ "$FUTURAMA" != "" ];
-  then
-    printf "%s" "$FUTURAMA" > Futurama.txt
-    export CATFILE="Futurama.txt"
-    export CATNAME="Futurama"
-    $CATEGORIZE
-    rm Futurama.txt
-    unset FUTURAMA
-  fi
+  categorize "FUTURAMA" "Futurama"
 
   debug_end "Futurama"
 

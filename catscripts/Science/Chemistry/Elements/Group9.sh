@@ -16,45 +16,10 @@ then
   IRIDIUM=$(egrep -i "$KEYWORDS_IRIDIUM" "$NEWPAGES")
   MEITNERIUM=$(egrep -i "$KEYWORDS_MEITNERIUM" "$NEWPAGES")
 
-  if [ "$COBALT" != "" ];
-  then
-    printf "%s" "$COBALT" > Cobalt.txt
-    export CATFILE="Cobalt.txt"
-    export CATNAME="Cobalt"
-    $CATEGORIZE
-    rm Cobalt.txt
-    unset COBALT
-  fi
-
-  if [ "$RHODIUM" != "" ];
-  then
-    printf "%s" "$RHODIUM" > Rhodium.txt
-    export CATFILE="Rhodium.txt"
-    export CATNAME="Rhodium"
-    $CATEGORIZE
-    rm Rhodium.txt
-    unset RHODIUM
-  fi
-
-  if [ "$IRIDIUM" != "" ];
-  then
-    printf "%s" "$IRIDIUM" > Iridium.txt
-    export CATFILE="Iridium.txt"
-    export CATNAME="Iridium"
-    $CATEGORIZE
-    rm Iridium.txt
-    unset IRIDIUM
-  fi
-
-  if [ "$MEITNERIUM" != "" ];
-  then
-    printf "%s" "$MEITNERIUM" > Meitnerium.txt
-    export CATFILE="Meitnerium.txt"
-    export CATNAME="Meitnerium"
-    $CATEGORIZE
-    rm Meitnerium.txt
-    unset MEITNERIUM
-  fi
+  categorize "COBALT" "Cobalt"
+  categorize "RHODIUM" "Rhodium"
+  categorize "IRIDIUM" "Iridium"
+  categorize "MEITNERIUM" "Meitnerium"
 
   debug_end "Group 9 elements"
 

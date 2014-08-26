@@ -8,17 +8,9 @@ then
 
   debug_start "My Little Pony: Friendship is Magic"
 
-  MLP="$(egrep -i "$KEYWORDS_MLP" "$NEWPAGES")"
+  MLP=$(egrep -i "$KEYWORDS_MLP" "$NEWPAGES")
 
-  if [ "$MLP" != "" ];
-  then
-    printf "%s" "$MLP" > MLPFIM.txt
-    export CATFILE="MLPFIM.txt"
-    export CATNAME="My Little Pony: Friendship is Magic"
-    $CATEGORIZE
-    rm MLPFIM.txt
-    unset MLP
-  fi
+  categorize "MLP" "My Little Pony: Friendship is Magic"
 
   debug_end "My Little Pony: Friendship is Magic"
 

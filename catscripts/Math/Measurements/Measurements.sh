@@ -12,15 +12,7 @@ then
 
   CONVERSIONS=$(egrep -i "$KEYWORDS_MEASUREMENTCONVERSION" "$NEWPAGES")
 
-  if [ "$CONVERSIONS" != "" ];
-  then
-    printf "%s" "$CONVERSIONS" > MeasurementConversions.txt
-    export CATFILE="MeasurementConversions.txt"
-    export CATNAME="Measurement conversions"
-    $CATEGORIZE
-    rm MeasurementConversions.txt
-    unset CONVERSIONS
-  fi
+  categorize "CONVERSIONS" "Measurement conversions"
 
   debug_end "Measurements"
 

@@ -9,15 +9,7 @@ then
 
   NUMERALS=$(egrep -i "$KEYWORDS_ROMANNUMERALS" "$NEWPAGES")
 
-  if [ "$NUMERALS" != "" ];
-  then
-    printf "%s" "$NUMERALS" > RomanNumerals.txt
-    export CATFILE="RomanNumerals.txt"
-    export CATNAME="Roman numerals"
-    $CATEGORIZE
-    rm RomanNumerals.txt
-    unset NUMERALS
-  fi
+  categorize "NUMERALS" "Roman numerals"
 
   debug_end "Roman numerals"
 

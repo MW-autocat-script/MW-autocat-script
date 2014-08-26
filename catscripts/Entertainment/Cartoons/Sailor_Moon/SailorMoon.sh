@@ -9,15 +9,7 @@ then
 
   SAILORMOON=$(egrep -i "$KEYWORDS_SAILORMOON" "$NEWPAGES")
 
-  if [ "$SAILORMOON" != "" ];
-  then
-    printf "%s" "$SAILORMOON" > SailorMoon.txt
-    export CATFILE="SailorMoon.txt"
-    export CATNAME="Sailor Moon"
-    $CATEGORIZE
-    rm SailorMoon.txt
-    unset SAILORMOON
-  fi
+  categorize "SAILORMOON" "Sailor Moon"
 
   debug_end "Sailor Moon"
 

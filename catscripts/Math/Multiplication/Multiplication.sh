@@ -9,15 +9,7 @@ then
 
   MULTIPLICATION=$(egrep -i "$KEYWORDS_MULTIPLICATION" "$NEWPAGES")
 
-  if [ "$MULTIPLICATION" != "" ];
-  then
-    printf "%s" "$MULTIPLICATION" > Multiplication.txt
-    export CATFILE="Multiplication.txt"
-    export CATNAME="Multiplication"
-    $CATEGORIZE
-    rm Multiplication.txt
-    unset MULTIPLICATION
-  fi
+  categorize "MULTIPLICATION" "Multiplication"
 
   debug_end "Multiplication"
 

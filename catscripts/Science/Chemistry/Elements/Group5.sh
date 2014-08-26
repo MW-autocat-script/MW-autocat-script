@@ -10,50 +10,15 @@ then
 
   debug_start "Group 5 elements"
 
-  VANADIUM="$(egrep -i "$KEYWORDS_VANADIUM" "$NEWPAGES")"
-  NIOBIUM="$(egrep -i "$KEYWORDS_NIOBIUM" "$NEWPAGES")"
-  TANTALUM="$(egrep -i "$KEYWORDS_TANTALUM" "$NEWPAGES")"
-  DUBNIUM="$(egrep -i "$KEYWORDS_DUBNIUM" "$NEWPAGES")"
+  VANADIUM=$(egrep -i "$KEYWORDS_VANADIUM" "$NEWPAGES")
+  NIOBIUM=$(egrep -i "$KEYWORDS_NIOBIUM" "$NEWPAGES")
+  TANTALUM=$(egrep -i "$KEYWORDS_TANTALUM" "$NEWPAGES")
+  DUBNIUM=$(egrep -i "$KEYWORDS_DUBNIUM" "$NEWPAGES")
 
-  if [ "$VANADIUM" != "" ];
-  then
-    printf "%s" "$VANADIUM" > Vanadium.txt
-    export CATFILE="Vanadium.txt"
-    export CATNAME="Vanadium"
-    $CATEGORIZE
-    rm Vanadium.txt
-    unset VANADIUM
-  fi
-
-  if [ "$NIOBIUM" != "" ];
-  then
-    printf "%s" "$NIOBIUM" > Niobium.txt
-    export CATFILE="Niobium.txt"
-    export CATNAME="Niobium"
-    $CATEGORIZE
-    rm Niobium.txt
-    unset NIOBIUM
-  fi
-
-  if [ "$TANTALUM" != "" ];
-  then
-    printf "%s" "$TANTALUM" > Tantalum.txt
-    export CATFILE="Tantalum.txt"
-    export CATNAME="Tantalum"
-    $CATEGORIZE
-    rm Tantalum.txt
-    unset TANTALUM
-  fi
-
-  if [ "$DUBNIUM" != "" ];
-  then
-    printf "%s" "$DUBNIUM" > Dubnium.txt
-    export CATFILE="Dubnium.txt"
-    export CATNAME="Dubnium"
-    $CATEGORIZE
-    rm Dubnium.txt
-    unset DUBNIUM
-  fi
+  categorize "VANADIUM" "Vanadium"
+  categorize "NIOBIUM" "Niobium"
+  categorize "TANTALUM" "Tantalum"
+  categorize "DUBNIUM" "Dubnium"
 
   debug_end "Group 5 elements"
 

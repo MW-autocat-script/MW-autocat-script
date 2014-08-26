@@ -9,15 +9,7 @@ then
 
   DIVISION=$(egrep -i "$KEYWORDS_DIVISION" "$NEWPAGES")
 
-  if [ "$DIVISION" != "" ];
-  then
-    printf "%s" "$DIVISION" > Division.txt
-    export CATFILE="Division.txt"
-    export CATNAME="Division"
-    $CATEGORIZE
-    rm Division.txt
-    unset DIVISION
-  fi
+  categorize "DIVISION" "Division"
 
   debug_end "Division"
 

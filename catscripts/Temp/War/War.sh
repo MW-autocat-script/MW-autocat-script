@@ -11,25 +11,8 @@ then
   WWONE=$(egrep -i "$KEYWORDS_WORLDWARONE" "$NEWPAGES")
   WWTWO=$(egrep -i "$KEYWORDS_WORLDWARTWO" "$NEWPAGES")
 
-  if [ "$WWONE" != "" ];
-  then
-    printf "%s" "$WWONE" > WorldWarI.txt
-    export CATFILE="WorldWarI.txt"
-    export CATNAME="World War I"
-    $CATEGORIZE
-    rm WorldWarI.txt
-    unset WWONE
-  fi
-
-  if [ "$WWTWO" != "" ];
-  then
-    printf "%s" "$WWTWO" > WorldWarII.txt
-    export CATFILE="WorldWarII.txt"
-    export CATNAME="World War II"
-    $CATEGORIZE
-    rm WorldWarII.txt
-    unset WWTWO
-  fi
+  categorize "WWONE" "World War I"
+  categorize "WWTWO" "World War II"
 
   debug_end "War"
 

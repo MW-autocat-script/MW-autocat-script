@@ -9,15 +9,7 @@ then
 
   CLONEWARS=$(egrep -i "$KEYWORDS_CLONEWARS" "$NEWPAGES")
 
-  if [ "$CLONEWARS" != "" ];
-  then
-    printf "%s" "$CLONEWARS" > TheCloneWars.txt
-    export CATFILE="TheCloneWars.txt"
-    export CATNAME="Star Wars: The Clone Wars"
-    $CATEGORIZE
-    rm TheCloneWars.txt
-    unset CLONEWARS
-  fi
+  categorize "CLONEWARS" "Star Wars: The Clone Wars"
 
   debug_end "Star Wars: The Clone Wars"
 

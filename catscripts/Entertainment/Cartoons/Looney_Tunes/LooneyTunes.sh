@@ -9,15 +9,7 @@ then
 
   LOONEY=$(egrep -i "$KEYWORDS_LOONEYTUNES" "$NEWPAGES")
 
-  if [ "$LOONEY" != "" ];
-  then
-    printf "%s" "$LOONEY" > LooneyTunes.txt
-    export CATFILE="LooneyTunes.txt"
-    export CATNAME="Looney Tunes"
-    $CATEGORIZE
-    rm LooneyTunes.txt
-    unset LOONEY
-  fi
+  categorize "LOONEY" "Looney Tunes"
 
   debug_end "Looney Tunes"
 

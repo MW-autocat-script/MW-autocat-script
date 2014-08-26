@@ -22,45 +22,10 @@ then
   ATHENS=$(egrep -i "$KEYWORDS_ATHENS" "$NEWPAGES" | egrep -iv "$KEYWORDS_ATHENS_EXCLUDE")
   SPARTA=$(egrep -i "$KEYWORDS_SPARTA" "$NEWPAGES" | egrep -iv "$KEYWORDS_SPARTA_EXCLUDE" | egrep -v "$KEYWORDS_SPARTA_EXCLUDE_CASESENSITVE")
 
-  if [ "$GREECE" != "" ];
-  then
-    printf "%s" "$GREECE" > Greece.txt
-    export CATFILE="Greece.txt"
-    export CATNAME="Greece"
-    $CATEGORIZE
-    rm Greece.txt
-    unset GREECE
-  fi
-
-  if [ "$ANCIENT" != "" ];
-  then
-    printf "%s" "$ANCIENT" > Ancient.txt
-    export CATFILE="Ancient.txt"
-    export CATNAME="Ancient Greece"
-    $CATEGORIZE
-    rm Ancient.txt
-    unset ANCIENT
-  fi
-
-  if [ "$ATHENS" != "" ];
-  then
-    printf "%s" "$ATHENS" > Athens.txt
-    export CATFILE="Athens.txt"
-    export CATNAME="Athens"
-    $CATEGORIZE
-    rm Athens.txt
-    unset ATHENS
-  fi
-
-  if [ "$SPARTA" != "" ];
-  then
-    printf "%s" "$SPARTA" > Sparta.txt
-    export CATFILE="Sparta.txt"
-    export CATNAME="Sparta"
-    $CATEGORIZE
-    rm Sparta.txt
-    unset SPARTA
-  fi
+  categorize "GREECE" "Greece"
+  categorize "ANCIENT" "Ancient Greece"
+  categorize "ATHENS" "Athens"
+  categorize "SPARTA" "Sparta"
 
   debug_end "Greece"
 

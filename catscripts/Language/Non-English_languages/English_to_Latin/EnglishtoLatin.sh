@@ -9,15 +9,7 @@ then
 
   LATIN=$(egrep -i "$KEYWORDS_ENGLISHTOLATIN" "$NEWPAGES")
 
-  if [ "$LATIN" != "" ];
-  then
-    printf "%s" "$LATIN" > EnglishtoLatin.txt
-    export CATFILE="EnglishtoLatin.txt"
-    export CATNAME="English to Latin"
-    $CATEGORIZE
-    rm EnglishtoLatin.txt
-    unset LATIN
-  fi
+  categorize "LATIN" "English to Latin"
 
   debug_end "English to Latin"
 

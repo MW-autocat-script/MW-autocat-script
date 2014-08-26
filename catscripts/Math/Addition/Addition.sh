@@ -9,15 +9,7 @@ then
 
   ADDITION=$(egrep -i "$KEYWORDS_ADDITION" "$NEWPAGES")
 
-  if [ "$ADDITION" != "" ];
-  then
-    printf "%s" "$ADDITION" > Addition.txt
-    export CATFILE="Addition.txt"
-    export CATNAME="Addition"
-    $CATEGORIZE
-    rm Addition.txt
-    unset ADDITION
-  fi
+  categorize "ADDITION" "Addition"
 
   debug_end "Addition"
 

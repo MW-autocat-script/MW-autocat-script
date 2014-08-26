@@ -9,28 +9,11 @@ then
   
   debug_start "Group 3 elements"
 
-  SCANDIUM="$(egrep -i "$KEYWORDS_SCANDIUM" "$NEWPAGES")"
-  YTTRIUM="$(egrep -i "$KEYWORDS_YTTRIUM" "$NEWPAGES")"
+  SCANDIUM=$(egrep -i "$KEYWORDS_SCANDIUM" "$NEWPAGES")
+  YTTRIUM=$(egrep -i "$KEYWORDS_YTTRIUM" "$NEWPAGES")
 
-  if [ "$SCANDIUM" != "" ];
-  then
-    printf "%s" "$SCANDIUM" > Scandium.txt
-    export CATFILE="Scandium.txt"
-    export CATNAME="Scandium"
-    $CATEGORIZE
-    rm Scandium.txt
-    unset SCANDIUM
-  fi
-
-  if [ "$YTTRIUM" != "" ];
-  then
-    printf "%s" "$YTTRIUM" > Yttrium.txt
-    export CATFILE="Yttrium.txt"
-    export CATNAME="Yttrium"
-    $CATEGORIZE
-    rm Yttrium.txt
-    unset YTTRIUM
-  fi
+  categorize "SCANDIUM" "Scandium"
+  categorize "YTTRIUM" "Yttrium"
 
   debug_end "Group 3 elements"
 

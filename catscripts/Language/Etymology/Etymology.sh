@@ -11,25 +11,8 @@ then
   ETYMOLOGY=$(egrep -i "$KEYWORDS_ETYMOLOGY" "$NEWPAGES" | egrep -iv "$KEYWORDS_NAMEORIGINS")
   ORIGINS=$(egrep -i "$KEYWORDS_NAMEORIGINS" "$NEWPAGES")
 
-  if [ "$ETYMOLOGY" != "" ];
-  then
-    printf "%s" "$ETYMOLOGY" > Etymology.txt
-    export CATFILE="Etymology.txt"
-    export CATNAME="Etymology"
-    $CATEGORIZE
-    rm Etymology.txt
-    unset ETYMOLOGY
-  fi
-
-  if [ "$ORIGINS" != "" ];
-  then
-    printf "%s" "$ORIGINS" > NameOrigins.txt
-    export CATFILE="NameOrigins.txt"
-    export CATNAME="Name origins"
-    $CATEGORIZE
-    rm NameOrigins.txt
-    unset ORIGINS
-  fi
+  categorize "ETYMOLOGY" "Etymology"
+  categorize "ORIGINS" "Name origins"
 
   debug_end "Etymology"
 

@@ -9,15 +9,7 @@ then
 
   GREEK=$(egrep -i "$KEYWORDS_ENGLISHTOGREEK" "$NEWPAGES")
 
-  if [ "$GREEK" != "" ];
-  then
-    printf "%s" "$GREEK" > EnglishtoGreek.txt
-    export CATFILE="EnglishtoGreek.txt"
-    export CATNAME="English to Greek"
-    $CATEGORIZE
-    rm EnglishtoGreek.txt
-    unset GREEK
-  fi
+  categorize "GREEK" "English to Greek"
 
   debug_end "English to Greek"
 

@@ -9,15 +9,7 @@ then
 
   ENGLISHTOSPANISH=$(egrep -i "$KEYWORDS_ENGLISHTOSPANISH" "$NEWPAGES")
 
-  if [ "$ENGLISHTOSPANISH" != "" ];
-  then
-    printf "%s" "$ENGLISHTOSPANISH" > EnglishtoSpanish.txt
-    export CATFILE="EnglishtoSpanish.txt"
-    export CATNAME="English to Spanish"
-    $CATEGORIZE
-    rm EnglishtoSpanish.txt
-    unset ENGLISHTOSPANISH
-  fi
+  categorize "ENGLISHTOSPANISH" "English to Spanish"
 
   debug_end "English to Spanish"
 

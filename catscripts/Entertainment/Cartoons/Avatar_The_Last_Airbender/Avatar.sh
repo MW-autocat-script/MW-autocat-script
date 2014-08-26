@@ -10,15 +10,7 @@ then
 
   AVATAR=$(egrep -i "$KEYWORDS_AIRBENDER" "$NEWPAGES" | egrep -iv "$KEYWORDS_AIRBENDER_EXCLUDE")
 
-  if [ "$AVATAR" != "" ];
-  then
-    printf "%s" "$AVATAR" > TheLastAirbender.txt
-    export CATFILE="TheLastAirbender.txt"
-    export CATNAME="Avatar: The Last Airbender"
-    $CATEGORIZE
-    rm TheLastAirbender.txt
-    unset AVATAR
-  fi
+  categorize "AVATAR" "Avatar: The Last Airbender"
 
   debug_end "Avatar: The Last Airbender"
 

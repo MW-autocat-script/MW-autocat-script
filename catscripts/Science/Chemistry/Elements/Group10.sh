@@ -17,45 +17,10 @@ then
   PLATINUM=$(egrep -i "$KEYWORDS_PLATINUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_PLATINUM_EXCLUDE")
   DARMSTADTIUM=$(egrep -i "$KEYWORDS_DARMSTADTIUM" "$NEWPAGES")
 
-  if [ "$NICKEL" != "" ];
-  then
-    printf "%s" "$NICKEL" > Nickel.txt
-    export CATFILE="Nickel.txt"
-    export CATNAME="Nickel"
-    $CATEGORIZE
-    rm Nickel.txt
-    unset NICKEL
-  fi
-
-  if [ "$PALLADIUM" != "" ];
-  then
-    printf "%s" "$PALLADIUM" > Palladium.txt
-    export CATFILE="Palladium.txt"
-    export CATNAME="Palladium"
-    $CATEGORIZE
-    rm Palladium.txt
-    unset PALLADIUM
-  fi
-
-  if [ "$PLATINUM" != "" ];
-  then
-    printf "%s" "$PLATINUM" > Platinum.txt
-    export CATFILE="Platinum.txt"
-    export CATNAME="Platinum"
-    $CATEGORIZE
-    rm Platinum.txt
-    unset PLATINUM
-  fi
-
-  if [ "$DARMSTADTIUM" != "" ];
-  then
-    printf "%s" "$DARMSTADTIUM" > Darmstadtium.txt
-    export CATFILE="Darmstadtium.txt"
-    export CATNAME="Darmstadtium"
-    $CATEGORIZE
-    rm Darmstadtium.txt
-    unset DARMSTADTIUM
-  fi
+  categorize "NICKEL" "Nickel"
+  categorize "PALLADIUM" "Palladium"
+  categorize "PLATINUM" "Platinum"
+  categorize "DARMSTADTIUM" "Darmstadtium"
 
   debug_end "Group 10 elements"
 

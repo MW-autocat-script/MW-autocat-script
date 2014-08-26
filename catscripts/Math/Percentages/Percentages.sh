@@ -9,15 +9,7 @@ then
 
   PERCENTAGES=$(egrep -i "$KEYWORDS_PERCENTAGES" "$NEWPAGES")
 
-  if [ "$PERCENTAGES" != "" ];
-  then
-    printf "%s" "$PERCENTAGES" > Percentages.txt
-    export CATFILE="Percentages.txt"
-    export CATNAME="Percentages"
-    $CATEGORIZE
-    rm Percentages.txt
-    unset PERCENTAGES
-  fi
+  categorize "PERCENTAGES" "Percentages"
 
   debug_end "Percentages"
 

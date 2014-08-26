@@ -9,15 +9,7 @@ then
 
   debug_start "English to Korean"
 
-  if [ "$KOREAN" != "" ];
-  then
-    printf "%s" "$KOREAN" > EnglishtoKorean.txt
-    export CATFILE="EnglishtoKorean.txt"
-    export CATNAME="English to Korean"
-    $CATEGORIZE
-    rm EnglishtoKorean.txt
-    unset KOREAN
-  fi
+  categorize "KOREAN" "English to Korean"
 
   debug_end "English to Korean"
 

@@ -9,15 +9,7 @@ then
 
   ETOF=$(egrep -i "$KEYWORDS_ENGLISHTOFRENCH" "$NEWPAGES")
 
-  if [ "$ETOF" != "" ];
-  then
-    printf "%s" "$ETOF" > EnglishtoFrench.txt
-    export CATFILE="EnglishtoFrench.txt"
-    export CATNAME="English to French"
-    $CATEGORIZE
-    rm EnglishtoFrench.txt
-    unset ETOF
-  fi
+  categorize "ETOF" "English to French"
 
   debug_end "English to French"
 

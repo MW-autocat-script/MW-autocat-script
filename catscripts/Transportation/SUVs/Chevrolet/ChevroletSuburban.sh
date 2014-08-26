@@ -9,15 +9,7 @@ then
 
   SUBURBAN=$(egrep -i "$KEYWORDS_CHEVROLETSUBURBAN" "$NEWPAGES")
 
-  if [ "$SUBURBAN" != "" ];
-  then
-    printf "%s" "$SUBURBAN" > Suburban.txt
-    export CATFILE="Suburban.txt"
-    export CATNAME="Chevrolet Suburban"
-    $CATEGORIZE
-    rm Suburban.txt
-    unset SUBURBAN
-  fi
+  categorize "SUBURBAN" "Chevrolet Suburban"
 
   debug_end "Chevrolet Suburban"
 

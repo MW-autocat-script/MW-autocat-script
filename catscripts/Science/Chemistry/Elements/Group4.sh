@@ -12,50 +12,15 @@ then
 
   debug_start "Group 4 elements"
 
-  TITANIUM="$(egrep -i "$KEYWORDS_TITANIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_TITANIUM_EXCLUDE")"
-  ZIRCONIUM="$(egrep -i "$KEYWORDS_ZIRCONIUM" "$NEWPAGES")"
-  HAFNIUM="$(egrep -i "$KEYWORDS_HAFNIUM" "$NEWPAGES")"
-  RUTHERFORDIUM="$(egrep -i "$KEYWORDS_RUTHERFORDIUM" "$NEWPAGES")"
+  TITANIUM=$(egrep -i "$KEYWORDS_TITANIUM" "$NEWPAGES" | egrep -iv "$KEYWORDS_TITANIUM_EXCLUDE")
+  ZIRCONIUM=$(egrep -i "$KEYWORDS_ZIRCONIUM" "$NEWPAGES")
+  HAFNIUM=$(egrep -i "$KEYWORDS_HAFNIUM" "$NEWPAGES")
+  RUTHERFORDIUM=$(egrep -i "$KEYWORDS_RUTHERFORDIUM" "$NEWPAGES")
 
-  if [ "$TITANIUM" != "" ];
-  then
-    printf "%s" "$TITANIUM" > Titanium.txt
-    export CATFILE="Titanium.txt"
-    export CATNAME="Titanium"
-    $CATEGORIZE
-    rm Titanium.txt
-    unset TITANIUM
-  fi
-
-  if [ "$ZIRCONIUM" != "" ];
-  then
-    printf "%s" "$ZIRCONIUM" > Zirconium.txt
-    export CATFILE="Zirconium.txt"
-    export CATNAME="Zirconium"
-    $CATEGORIZE
-    rm Zirconium.txt
-    unset ZIRCONIUM
-  fi
-
-  if [ "$HAFNIUM" != "" ];
-  then
-    printf "%s" "$HAFNIUM" > Hafnium.txt
-    export CATFILE="Hafnium.txt"
-    export CATNAME="Hafnium"
-    $CATEGORIZE
-    rm Hafnium.txt
-    unset HAFNIUM
-  fi
-
-  if [ "$RUTHERFORDIUM" != "" ];
-  then
-    printf "%s" "$RUTHERFORDIUM" > Rutherfordium.txt 
-    export CATFILE="Rutherfordium.txt"
-    export CATNAME="Rutherfordium"
-    $CATEGORIZE
-    rm Rutherfordium.txt
-    unset RUTHERFORDIUM
-  fi
+  categorize "TITANIUM" "Titanium"
+  categorize "ZIRCONIUM" "Zirconium"
+  categorize "HAFNIUM" "Hafnium"
+  categorize "RUTHERFORDIUM" "Rutherfordium"
 
   debug_end "Group 4 elements"
 

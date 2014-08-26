@@ -18,25 +18,8 @@ then
   CANCER=$(egrep -i "$KEYWORDS_CANCER" "$NEWPAGES" | egrep -iv "$KEYWORDS_CANCER_EXCLUDE")
   TERRYFOX=$(egrep -i "$KEYWORDS_TERRYFOX" "$NEWPAGES")
 
-  if [ "$CANCER" != "" ];
-  then
-    printf "%s" "$CANCER" > Cancer.txt
-    export CATFILE="Cancer.txt"
-    export CATNAME="Cancer"
-    $CATEGORIZE
-    rm Cancer.txt
-    unset CANCER
-  fi
-
-  if [ "$TERRYFOX" != "" ];
-  then
-    printf "%s" "$TERRYFOX" > TerryFox.txt
-    export CATFILE="TerryFox.txt"
-    export CATNAME="Terry Fox"
-    $CATEGORIZE
-    rm TerryFox.txt
-    unset TERRYFOX
-  fi
+  categorize "CANCER" "Cancer"
+  categorize "TERRYFOX" "Terry Fox"
 
   debug_end "Cancer"
 

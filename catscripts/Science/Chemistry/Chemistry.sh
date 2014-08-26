@@ -15,15 +15,7 @@ then
 
   CHEMISTRY=$(egrep -i "$KEYWORDS_CHEMISTRY" "$NEWPAGES" | egrep -iv "$KEYWORDS_CHEMISTRY_EXCLUDE")
 
-  if [ "$CHEMISTRY" != "" ];
-  then
-    printf "%s" "$CHEMISTRY" > Chemistry.txt
-    export CATFILE="Chemistry.txt"
-    export CATNAME="Chemistry"
-    $CATEGORIZE
-    rm Chemistry.txt
-    unset CHEMISTRY
-  fi
+  categorize "CHEMISTRY" "Chemistry"
 
   debug_end "Chemistry"
 

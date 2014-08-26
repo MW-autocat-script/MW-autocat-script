@@ -10,15 +10,7 @@ then
 
   SPONGEBOB=$(egrep -i "$KEYWORDS_SPONGEBOB" "$NEWPAGES")
 
-  if [ "$SPONGEBOB" != "" ];
-  then
-    printf "%s" "$SPONGEBOB" > SpongeBobSquarePants.txt
-    export CATFILE="SpongeBobSquarePants.txt"
-    export CATNAME="SpongeBob SquarePants"
-    $CATEGORIZE
-    rm SpongeBobSquarePants.txt
-    unset SPONGEBOB
-  fi
+  categorize "SPONGEBOB" "SpongeBob SquarePants"
 
   debug_end "SpongeBob SquarePants"
 

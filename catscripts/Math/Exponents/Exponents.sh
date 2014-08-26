@@ -7,17 +7,9 @@ then
 
   debug_start "Exponents"
 
-  EXPONENTS="$(egrep -i "$KEYWORDS_EXPONENTS" "$NEWPAGES")"
+  EXPONENTS=$(egrep -i "$KEYWORDS_EXPONENTS" "$NEWPAGES")
 
-  if [ "$EXPONENTS" != "" ];
-  then
-    printf "%s" "$EXPONENTS" > Exponents.txt
-    export CATFILE="Exponents.txt"
-    export CATNAME="Exponents"
-    $CATEGORIZE
-    rm Exponents.txt
-    unset EXPONENTS
-  fi
+  categorize "EXPONENTS" "Exponents"
 
   debug_end "Exponents"
 

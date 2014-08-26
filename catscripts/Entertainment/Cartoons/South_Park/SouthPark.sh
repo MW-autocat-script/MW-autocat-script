@@ -14,15 +14,7 @@ then
 
   SOUTHPARK=$(egrep -i "$KEYWORDS_SOUTHPARK_ALL" "$NEWPAGES")
 
-  if [ "$SOUTHPARK" != "" ];
-  then
-    printf "%s" "$SOUTHPARK" > SouthPark.txt
-    export CATFILE="SouthPark.txt"
-    export CATNAME="South Park"
-    $CATEGORIZE
-    rm SouthPark.txt
-    unset SOUTHPARK
-  fi
+  categorize "SOUTHPARK" "South Park"
 
   debug_end "South Park"
 

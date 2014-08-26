@@ -14,35 +14,9 @@ then
   COKE=$(egrep -i "$KEYWORDS_COCACOLA" "$NEWPAGES")
   SOFT=$(egrep -i "$KEYWORDS_SOFTDRINK" "$NEWPAGES" | egrep -iv "$KEYWORDS_SOFTDRINK_EXCLUDE")
 
-  if [ "$PEPSICO" != "" ];
-  then
-    printf "%s" "$PEPSICO" > PepsiCo.txt
-    export CATFILE="PepsiCo.txt"
-    export CATNAME="PepsiCo Inc."
-    $CATEGORIZE
-    rm PepsiCo.txt
-    unset PEPSICO
-  fi
-
-  if [ "$COKE" != "" ];
-  then
-    printf "%s" "$COKE" > CocaCola.txt
-    export CATFILE="CocaCola.txt"
-    export CATNAME="The Coca-Cola Company"
-    $CATEGORIZE
-    rm CocaCola.txt
-    unset COKE
-  fi
-
-  if [ "$SOFT" != "" ];
-  then
-    printf "%s" "$SOFT" > Softdrinks.txt
-    export CATFILE="Softdrinks.txt"
-    export CATNAME="Soft drinks"
-    $CATEGORIZE
-    rm Softdrinks.txt
-    unset SOFT
-  fi
+  categorize "PEPSICO" "PepsiCo Inc."
+  categorize "COKE" "The Coca-Cola Company"
+  categorize "SOFT" "Soft drinks"
 
   debug_end "Soft drinks"
 

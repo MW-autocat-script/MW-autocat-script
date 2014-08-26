@@ -16,45 +16,10 @@ then
   OSMIUM=$(egrep -i "$KEYWORDS_OSMIUM" "$NEWPAGES")
   HASSIUM=$(egrep -i "$KEYWORDS_HASSIUM" "$NEWPAGES")
 
-  if [ "$IRON" != "" ];
-  then
-    printf "%s" "$IRON" > Iron.txt
-    export CATFILE="Iron.txt"
-    export CATNAME="Iron"
-    $CATEGORIZE
-    rm Iron.txt
-    unset IRON
-  fi
-
-  if [ "$RUTHENIUM" != "" ];
-  then
-    printf "%s" "$RUTHENIUM" > Ruthenium.txt
-    export CATFILE="Ruthenium.txt"
-    export CATNAME="Ruthenium"
-    $CATEGORIZE
-    rm Ruthenium.txt
-    unset RUTHENIUM
-  fi
-
-  if [ "$OSMIUM" != "" ];
-  then
-    printf "%s" "$OSMIUM" > Osmium.txt
-    export CATFILE="Osmium.txt"
-    export CATNAME="Osmium"
-    $CATEGORIZE
-    rm Osmium.txt
-    unset OSMIUM
-  fi
-
-  if [ "$HASSIUM" != "" ];
-  then
-    printf "%s" "$HASSIUM" > Hassium.txt
-    export CATFILE="Hassium.txt"
-    export CATNAME="Hassium"
-    $CATEGORIZE
-    rm Hassium.txt
-    unset HASSIUM
-  fi
+  categorize "IRON" "Iron"
+  categorize "RUTHENIUM" "Ruthenium"
+  categorize "OSMIUM" "Osmium"
+  categorize "HASSIUM" "Hassium"
 
   debug_end "Group 8 elements"
 

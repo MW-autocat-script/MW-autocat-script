@@ -9,15 +9,7 @@ then
 
   DEATHNOTE=$(egrep -i "$KEYWORDS_DEATHNOTE" "$NEWPAGES")
 
-  if [ "$DEATHNOTE" != "" ];
-  then
-    printf "%s" "$DEATHNOTE" > DeathNote.txt
-    export CATFILE="DeathNote.txt"
-    export CATNAME="Death Note"
-    $CATEGORIZE
-    rm DeathNote.txt
-    unset DEATHNOTE
-  fi
+  categorize "DEATHNOTE" "Death Note"
 
   debug_end "Death Note"
 

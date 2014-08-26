@@ -13,53 +13,21 @@ then
 
   debug_start "Olympics"
   
-  SOCHI2014="$(egrep -i "$KEYWORDS_SOCHI2014" "$NEWPAGES")"
+  SOCHI2014=$(egrep -i "$KEYWORDS_SOCHI2014" "$NEWPAGES")
 
-  if [ "$SOCHI2014" != "" ];
-  then
-    printf "%s" "$SOCHI2014" > Sochi2014.txt
-    export CATFILE="Sochi2014.txt"
-    export CATNAME="2014 Winter Olympics"
-    unset SOCHI2014
-    $CATEGORIZE
-    rm Sochi2014.txt
-  fi
+  categorize "SOCHI2014" "2014 Winter Olympics"
 
-  LONDON2012="$(egrep -i "$KEYWORDS_LONDON2012" "$NEWPAGES")"
+  LONDON2012=$(egrep -i "$KEYWORDS_LONDON2012" "$NEWPAGES")
 
-  if [ "$LONDON2012" != "" ];
-  then
-    printf "%s" "$LONDON2012" > London2012.txt
-    export CATFILE="London2012.txt"
-    export CATNAME="2012 Summer Olympics"
-    unset LONDON2012
-    $CATEGORIZE
-    rm London2012.txt
-  fi
+  categorize "LONDON2012" "2012 Summer Olympics"
 
-  ANCIENTGREEKOLYMPICS="$(egrep -i "$KEYWORDS_ANCIENTGREEKOLYMPICS" "$NEWPAGES")"
+  ANCIENTGREEKOLYMPICS=$(egrep -i "$KEYWORDS_ANCIENTGREEKOLYMPICS" "$NEWPAGES")
 
-  if [ "$ANCIENTGREEKOLYMPICS" != "" ];
-  then
-    printf "%s" "$ANCIENTGREEKOLYMPICS" > AncientGreekOlympics.txt
-    export CATFILE="AncientGreekOlympics.txt"
-    export CATNAME="Ancient Greek Olympics"
-    unset ANCIENTGREEKOLYMPICS
-    $CATEGORIZE
-    rm AncientGreekOlympics.txt
-  fi
+  categorize "ANCIENTGREEKOLYMPICS" "Ancient Greek Olympics"
 
-  OLYMPICS="$(egrep -i "$KEYWORDS_OLYMPICS" "$NEWPAGES" | egrep -iv "$KEYWORDS_OLYMPICS_EXCLUDE")"
+  OLYMPICS=$(egrep -i "$KEYWORDS_OLYMPICS" "$NEWPAGES" | egrep -iv "$KEYWORDS_OLYMPICS_EXCLUDE")
 
-  if [ "$OLYMPICS" != "" ];
-  then
-    printf "%s" "$OLYMPICS" > Olympics.txt
-    export CATFILE="Olympics.txt"
-    export CATNAME="Olympics"
-    unset OLYMPICS
-    $CATEGORIZE
-    rm Olympics.txt
-  fi
+  categorize "OLYMPICS" "Olympics"
 
   debug_end "Olympics"
 

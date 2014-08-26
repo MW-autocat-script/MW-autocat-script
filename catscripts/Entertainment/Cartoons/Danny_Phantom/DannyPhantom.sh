@@ -10,15 +10,7 @@ then
 
   DANNYPHANTOM=$(egrep -i "$KEYWORDS_DANNYPHANTOM" "$NEWPAGES")
 
-  if [ "$DANNYPHANTOM" != "" ];
-  then
-    printf "%s" "$DANNYPHANTOM" > DannyPhantom.txt
-    export CATFILE="DannyPhantom.txt"
-    export CATNAME="Danny Phantom"
-    $CATEGORIZE
-    rm DannyPhantom.txt
-    unset DANNYPHANTOM
-  fi
+  categorize "DANNYPHANTOM" "Danny Phantom"
 
   debug_end "Danny Phantom"
 

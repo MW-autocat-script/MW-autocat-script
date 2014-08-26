@@ -7,17 +7,9 @@ then
   
   debug_start "Fairy Tail"
 
-  FAIRYTAIL="$(egrep -i "$KEYWORDS_FAIRYTAIL" "$NEWPAGES")"
+  FAIRYTAIL=$(egrep -i "$KEYWORDS_FAIRYTAIL" "$NEWPAGES")
   
-  if [ "$FAIRYTAIL" != "" ];
-  then
-    printf "%s" "$FAIRYTAIL" > FairyTail.txt
-    export CATFILE="FairyTail.txt"
-    export CATNAME="Fairy Tail"
-    $CATEGORIZE
-    rm FairyTail.txt
-    unset FAIRYTAIL
-  fi
+  categorize "FAIRYTAIL" "Fairy Tail"
 
   debug_end "Fairy Tail"
 
