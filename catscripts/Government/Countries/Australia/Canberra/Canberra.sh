@@ -8,17 +8,9 @@ then
 
   debug_start "Canberra"
 
-  CANBERRA="$(egrep -i "$KEYWORDS_CANBERRA" "$NEWPAGES")"
+  CANBERRA=$(egrep -i "$KEYWORDS_CANBERRA" "$NEWPAGES")
 
-  if [ "$CANBERRA" != "" ];
-  then
-    printf "%s" "$CANBERRA" > Canberra.txt
-    export CATFILE="Canberra.txt"
-    export CATNAME="Canberra"
-    $CATEGORIZE
-    rm Canberra.txt
-    unset CANBERRA
-  fi
+  categorize "CANBERRA" "Canberra"
 
   debug_end "Canberra"
 

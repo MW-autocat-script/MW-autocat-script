@@ -9,15 +9,7 @@ then
 
   FAHRENHEIT=$(egrep -i "$KEYWORDS_FAHRENHEIT451" "$NEWPAGES")
 
-  if [ "$FAHRENHEIT" != "" ];
-  then
-    printf "%s" "$FAHRENHEIT" > Fahrenheit451.txt
-    export CATFILE="Fahrenheit451.txt"
-    export CATNAME="Fahrenheit 451"
-    $CATEGORIZE
-    rm Fahrenheit451.txt
-    unset FAHRENHEIT
-  fi
+  categorize "FAHRENHEIT" "Fahrenheit 451"
 
   debug_end "Fahrenheit 451"
 

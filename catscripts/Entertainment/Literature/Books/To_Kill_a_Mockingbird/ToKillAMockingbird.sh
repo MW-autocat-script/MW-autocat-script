@@ -9,15 +9,7 @@ then
 
   MOCKINGBIRD=$(egrep -i "$KEYWORDS_TOKILLAMOCKINGBIRD" "$NEWPAGES")
 
-  if [ "$MOCKINGBIRD" != "" ];
-  then
-    printf "%s" "$MOCKINGBIRD" > Mockingbird.txt
-    export CATFILE="Mockingbird.txt"
-    export CATNAME="To Kill a Mockingbird"
-    $CATEGORIZE
-    rm Mockingbird.txt
-    unset MOCKINGBIRD
-  fi
+  categorize "MOCKINGBIRD" "To Kill a Mockingbird"
 
   debug_end "To Kill a Mockingbird"
 

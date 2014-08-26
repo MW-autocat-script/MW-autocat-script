@@ -16,15 +16,7 @@ then
 
   SEARCHENGINES=$(egrep -i "$KEYWORDS_SEARCHENGINES" "$NEWPAGES" | egrep -iv "$KEYWORDS_SEARCHENGINES_EXCLUDE")
 
-  if [ "$SEARCHENGINES" != "" ];
-  then
-    printf "%s" "$SEARCHENGINES" > Searchengines.txt
-    export CATFILE="Searchengines.txt"
-    export CATNAME="Search engines"
-    $CATEGORIZE
-    rm Searchengines.txt
-    unset SEARCHENGINES
-  fi
+  categorize "SEARCHENGINES" "Search engines"
 
   debug_end "Search engines"
 

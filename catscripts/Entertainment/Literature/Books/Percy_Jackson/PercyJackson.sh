@@ -9,15 +9,7 @@ then
 
   PERCY=$(egrep -i "$KEYWORDS_PERCYJACKSON" "$NEWPAGES")
 
-  if [ "$PERCY" != "" ];
-  then
-    printf "%s" "$PERCY" > PercyJackson.txt
-    export CATFILE="PercyJackson.txt"
-    export CATNAME="Percy Jackson and the Olympians"
-    $CATEGORIZE
-    rm PercyJackson.txt
-    unset PERCY
-  fi
+  categorize "PERCY" "Percy Jackson and the Olympians"
 
   debug_end "Percy Jackson and the Olympians"
 

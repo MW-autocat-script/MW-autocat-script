@@ -9,15 +9,7 @@ then
 
   BLACKBEAUTY=$(egrep -i "$KEYWORDS_BLACKBEAUTY" "$NEWPAGES")
 
-  if [ "$BLACKBEAUTY" != "" ];
-  then
-    printf "%s" "$BLACKBEAUTY" > BlackBeauty.txt
-    export CATFILE="BlackBeauty.txt"
-    export CATNAME="Black Beauty"
-    $CATEGORIZE
-    rm BlackBeauty.txt
-    unset BLACKBEAUTY
-  fi
+  categorize "BLACKBEAUTY" "Black Beauty"
 
   debug_end "Black Beauty"
 

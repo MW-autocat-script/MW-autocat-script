@@ -13,15 +13,7 @@ then
 
   UNIX=$(egrep -i "$KEYWORDS_UNIX" "$NEWPAGES" | egrep -iv "$KEYWORDS_UNIX_EXCLUDE" && egrep -i "$KEYWORDS_UNIX_SPECIAL" "$NEWPAGES" | egrep -iv "$KEYWORDS_UNIX_EXCLUDE|Linux|BSD")
 
-  if [ "$UNIX" != "" ];
-  then
-    printf "%s" "$UNIX" > Unix.txt
-    export CATFILE="Unix.txt"
-    export CATNAME="Unix"
-    $CATEGORIZE
-    rm Unix.txt
-    unset UNIX
-  fi
+  categorize "UNIX" "Unix"
 
   debug_end "Unix"
 

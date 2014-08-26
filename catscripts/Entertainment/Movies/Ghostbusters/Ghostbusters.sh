@@ -9,15 +9,7 @@ then
 
   GHOSTBUSTER=$(egrep -i "$KEYWORDS_MOVIES_GHOSTBUSTERS" "$NEWPAGES")
 
-  if [ "$GHOSTBUSTER" != "" ];
-  then
-    printf "%s" "$GHOSTBUSTER" > Ghostbusters.txt
-    export CATFILE="Ghostbusters.txt"
-    export CATNAME="Ghostbusters"
-    $CATEGORIZE
-    rm Ghostbusters.txt
-    unset GHOSTBUSTER
-  fi
+  categorize "GHOSTBUSTER" "Ghostbusters"
 
   debug_end "Ghostbusters"
 

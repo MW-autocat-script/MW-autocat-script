@@ -10,15 +10,7 @@ then
 
   LYRICS=$(egrep -i "$KEYWORDS_LYRICS" "$NEWPAGES")
 
-  if [ "$LYRICS" != "" ];
-  then
-    printf "%s" "$LYRICS" > Lyrics.txt
-    export CATFILE="Lyrics.txt"
-    export CATNAME="Lyrics"
-    $CATEGORIZE
-    rm Lyrics.txt
-    unset LYRICS
-  fi
+  categorize "LYRICS" "Lyrics"
 
   debug_end "Lyrics"
 

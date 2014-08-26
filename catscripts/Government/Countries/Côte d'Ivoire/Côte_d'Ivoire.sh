@@ -9,15 +9,7 @@ then
 
   COTEDIVOIRE=$(egrep -i "$KEYWORDS_COTEDIVOIRE" "$NEWPAGES")
 
-  if [ "$COTEDIVOIRE" != "" ];
-  then
-    printf "%s" "$COTEDIVOIRE" > CotedIvoire.txt
-    export CATFILE="CotedIvoire.txt"
-    export CATNAME="Côte d'Ivoire"
-    $CATEGORIZE
-    rm CotedIvoire.txt
-    unset COTEDIVOIRE
-  fi
+  categorize "COTEDIVOIRE" "Côte d'Ivoire"
 
   debug_end "Côte d'Ivoire"
 

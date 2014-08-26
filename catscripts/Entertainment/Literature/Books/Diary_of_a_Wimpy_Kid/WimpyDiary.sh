@@ -9,15 +9,7 @@ then
 
   WIMPY=$(egrep -i "$KEYWORDS_WIMPYDIARY" "$NEWPAGES")
 
-  if [ "$WIMPY" != "" ];
-  then
-    printf "%s" "$WIMPY" > WimpyKid.txt
-    export CATFILE="WimpyKid.txt"
-    export CATNAME="Diary of a Wimpy Kid"
-    $CATEGORIZE
-    rm WimpyKid.txt
-    unset WIMPY
-  fi
+  categorize "WIMPY" "Diary of a Wimpy Kid"
 
   debug_end "Diary of a Wimpy Kid"
 

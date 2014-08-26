@@ -23,15 +23,7 @@ then
 
   OS=$(egrep -i "$KEYWORDS_OPERATINGSYSTEMS|$KEYWORDS_OPERATINGSYSTEMS_OTHER" "$NEWPAGES" | egrep -iv "$KEYWORDS_OPERATINGSYSTEMS_EXCLUDE")
 
-  if [ "$OS" != "" ];
-  then
-    printf "%s" "$OS" > OperatingSystems.txt
-    export CATFILE="OperatingSystems.txt"
-    export CATNAME="Operating systems"
-    $CATEGORIZE
-    rm OperatingSystems.txt
-    unset OS
-  fi
+  categorize "OS" "Operating systems"
 
   debug_end "Operating systems"
 

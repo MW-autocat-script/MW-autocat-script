@@ -9,15 +9,7 @@ then
 
   INVENTIONS=$(egrep -i "$KEYWORDS_INVENTIONS" "$NEWPAGES")
 
-  if [ "$INVENTIONS" != "" ];
-  then
-    printf "%s" "$INVENTIONS" > Inventions.txt
-    export CATFILE="Inventions.txt"
-    export CATNAME="Inventions"
-    $CATEGORIZE
-    rm Inventions.txt
-    unset INVENTIONS
-  fi
+  categorize "INVENTIONS" "Inventions"
 
   debug_end "Inventions"
 

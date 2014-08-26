@@ -12,25 +12,8 @@ then
   EMAIL=$(egrep -i "$KEYWORDS_EMAIL" "$NEWPAGES" | egrep -iv "$KEYWORDS_GMAIL")
   GMAIL=$(egrep -i "$KEYWORDS_GMAIL" "$NEWPAGES")
 
-  if [ "$EMAIL" != "" ];
-  then
-    printf "%s" "$EMAIL" > Email.txt
-    export CATFILE="Email.txt"
-    export CATNAME="Email"
-    $CATEGORIZE
-    rm Email.txt
-    unset EMAIL
-  fi
-
-  if [ "$GMAIL" != "" ];
-  then
-    printf "%s" "$GMAIL" > Gmail.txt
-    export CATFILE="Gmail.txt"
-    export CATNAME="Gmail"
-    $CATEGORIZE
-    rm Gmail.txt
-    unset GMAIL
-  fi
+  categorize "EMAIL" "Email"
+  categorize "GMAIL" "Gmail"
 
   debug_end "Email"
 

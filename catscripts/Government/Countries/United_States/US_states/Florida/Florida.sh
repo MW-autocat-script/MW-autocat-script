@@ -21,55 +21,11 @@ then
   TAMPA=$(egrep -i "$KEYWORDS_TAMPA" "$NEWPAGES")
   EVERGLADES=$(egrep -i "$KEYWORDS_EVERGLADES" "$NEWPAGES")
 
-  if [ "$FLORIDA" != "" ];
-  then
-    printf "%s" "$FLORIDA" > Florida.txt
-    export CATFILE="Florida.txt"
-    export CATNAME="Florida"
-    $CATEGORIZE
-    rm Florida.txt
-    unset FLORIDA
-  fi
-
-  if [ "$MIAMI" != "" ];
-  then
-    printf "%s" "$MIAMI" > Miami.txt
-    export CATFILE="Miami.txt"
-    export CATNAME="Miami"
-    $CATEGORIZE
-    rm Miami.txt
-    unset MIAMI
-  fi
-
-  if [ "$ORLANDO" != "" ];
-  then
-    printf "%s" "$ORLANDO" > Orlando.txt
-    export CATFILE="Orlando.txt"
-    export CATNAME="Orlando"
-    $CATEGORIZE
-    rm Orlando.txt
-    unset ORLANDO
-  fi
-
-  if [ "$TAMPA" != "" ];
-  then
-    printf "%s" "$TAMPA" > Tampa.txt
-    export CATFILE="Tampa.txt"
-    export CATNAME="Tampa"
-    $CATEGORIZE
-    rm Tampa.txt
-    unset TAMPA
-  fi
-
-  if [ "$EVERGLADES" != "" ];
-  then
-    printf "%s" "$EVERGLADES" > Everglades.txt
-    export CATFILE="Everglades.txt"
-    export CATNAME="Everglades"
-    $CATEGORIZE
-    rm Everglades.txt
-    unset EVERGLADES
-  fi
+  categorize "FLORIDA" "Florida"
+  categorize "MIAMI" "Miami"
+  categorize "ORLANDO" "Orlando"
+  categorize "TAMPA" "Tampa"
+  categorize "EVERGLADES" "Everglades"
 
   debug_end "Florida"
 

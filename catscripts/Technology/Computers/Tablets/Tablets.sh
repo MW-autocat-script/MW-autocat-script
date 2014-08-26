@@ -14,35 +14,9 @@ then
   IPAD=$(egrep -i "$KEYWORDS_IPAD" "$NEWPAGES")
   TABLETS=$(egrep -i "$KEYWORDS_TABLETCOMPUTER" "$NEWPAGES" | egrep -iv "$KEYWORDS_TABLETCOMPUTER_EXCLUDE")
 
-  if [ "$KINDLE" != "" ];
-  then
-    printf "%s" "$KINDLE" > KindleFire.txt
-    export CATFILE="KindleFire.txt"
-    export CATNAME="Kindle Fire"
-    $CATEGORIZE
-    rm KindleFire.txt
-    unset KINDLE
-  fi
-
-  if [ "$IPAD" != "" ];
-  then
-    printf "%s" "$IPAD" > iPad.txt
-    export CATFILE="iPad.txt"
-    export CATNAME="iPad"
-    $CATEGORIZE
-    rm iPad.txt
-    unset IPAD
-  fi
-
-  if [ "$TABLETS" != "" ];
-  then
-    printf "%s" "$TABLETS" > Tabletcomputers.txt
-    export CATFILE="Tabletcomputers.txt"
-    export CATNAME="Tablet computers"
-    $CATEGORIZE
-    rm Tabletcomputers.txt
-    unset TABLETS
-  fi
+  categorize "KINDLE" "Kindle Fire"
+  categorize "IPAD" "iPad"
+  categorize "TABLETS" "Tablet computers"
 
   debug_end "Tablet computers"
 

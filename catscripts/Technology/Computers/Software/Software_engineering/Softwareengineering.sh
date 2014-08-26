@@ -9,15 +9,7 @@ then
   
   SOFTWAREENG=$(egrep -i "$KEYWORDS_SOFTWAREENGINEERING" "$NEWPAGES")
 
-  if [ "$SOFTWAREENG" != "" ];
-  then
-    printf "%s" "$SOFTWAREENG" > Softwareengineering.txt
-    export CATFILE="Softwareengineering.txt"
-    export CATNAME="Software engineering"
-    $CATEGORIZE
-    rm Softwareengineering.txt
-    unset SOFTWAREENG
-  fi
+  categorize "SOFTWAREENG" "Software engineering"
 
   debug_end "Software engineering"
 

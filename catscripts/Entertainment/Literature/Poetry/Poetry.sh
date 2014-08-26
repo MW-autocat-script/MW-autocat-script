@@ -14,15 +14,7 @@ then
 
   POETRY=$(egrep -i "$KEYWORDS_POETRY" "$NEWPAGES" | egrep -iv "$KEYWORDS_POETRY_EXCLUDE")
 
-  if [ "$POETRY" != "" ];
-  then
-    printf "%s" "$POETRY" > Poetry.txt
-    export CATFILE="Poetry.txt"
-    export CATNAME="Poetry"
-    $CATEGORIZE
-    rm Poetry.txt
-    unset POETRY
-  fi
+  categorize "POETRY" "Poetry"
 
   debug_end "Poetry"
 

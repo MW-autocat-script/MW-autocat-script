@@ -17,45 +17,10 @@ then
   GOLD=$(egrep -i "$KEYWORDS_GOLD" "$NEWPAGES" | egrep -iv "$KEYWORDS_GOLD_EXCLUDE")
   ROENTGENIUM=$(egrep -i "$KEYWORDS_ROENTGENIUM" "$NEWPAGES")
 
-  if [ "$SILVER" != "" ];
-  then
-    printf "%s" "$SILVER" > Silver.txt
-    export CATFILE="Silver.txt"
-    export CATNAME="Silver"
-    $CATEGORIZE
-    rm Silver.txt
-    unset SILVER
-  fi
-
-  if [ "$COPPER" != "" ];
-  then
-    printf "%s" "$COPPER" > Copper.txt
-    export CATFILE="Copper.txt"
-    export CATNAME="Copper"
-    $CATEGORIZE
-    rm Copper.txt
-    unset COPPER
-  fi
-
-  if [ "$GOLD" != "" ];
-  then
-    printf "%s" "$GOLD" > Gold.txt
-    export CATFILE="Gold.txt"
-    export CATNAME="Gold"
-    $CATEGORIZE
-    rm Gold.txt
-    unset GOLD
-  fi
-
-  if [ "$ROENTGENIUM" != "" ];
-  then
-    printf "%s" "$ROENTGENIUM" > Roentgenium.txt
-    export CATFILE="Roentgenium.txt"
-    export CATNAME="Roentgenium"
-    $CATEGORIZE
-    rm Roentgenium.txt
-    unset ROENTGENIUM
-  fi
+  categorize "SILVER" "Silver"
+  categorize "COPPER" "Copper"
+  categorize "GOLD" "Gold"
+  categorize "ROENTGENIUM" "Roentgenium"
 
   debug_end "Group 11 elements"
 

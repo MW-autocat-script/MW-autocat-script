@@ -15,15 +15,7 @@ then
 
   PROGRAMMING=$(egrep -i "$KEYWORDS_COMPUTERPROGRAMMING" "$NEWPAGES" | egrep -iv "$KEYWORDS_COMPUTERPROGRAMMING_EXCLUDE")
 
-  if [ "$PROGRAMMING" != "" ];
-  then
-    printf "%s" "$PROGRAMMING" > Computerprogramming.txt
-    export CATFILE="Computerprogramming.txt"
-    export CATNAME="Computer programming"
-    $CATEGORIZE
-    rm Computerprogramming.txt
-    unset PROGRAMMING
-  fi
+  categorize "PROGRAMMING" "Computer programming"
 
   debug_end "Computer programming"
 

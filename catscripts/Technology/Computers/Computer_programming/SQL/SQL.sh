@@ -8,17 +8,9 @@ then
 
   debug_start "SQL"
 
-  SQL="$(egrep -i "$KEYWORDS_SQL" "$NEWPAGES" | egrep -iv "$KEYWORDS_SQL_EXCLUDE")"
+  SQL=$(egrep -i "$KEYWORDS_SQL" "$NEWPAGES" | egrep -iv "$KEYWORDS_SQL_EXCLUDE")
 
-  if [ "$SQL" != "" ];
-  then
-    printf "%s" "$SQL" > SQL.txt
-    export CATFILE="SQL.txt"
-    export CATNAME="SQL"
-    $CATEGORIZE
-    rm SQL.txt
-    unset SQL
-  fi
+  catrgorize "SQL" "SQL"
 
   debug_end "SQL"
 

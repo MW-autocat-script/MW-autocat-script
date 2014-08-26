@@ -9,15 +9,7 @@ then
 
   LIONKING=$(egrep -i "$KEYWORDS_MOVIES_THELIONKING" "$NEWPAGES")
 
-  if [ "$LIONKING" != "" ];
-  then
-    printf "%s" "$LIONKING" > TheLionKing.txt
-    export CATFILE="TheLionKing.txt"
-    export CATNAME="The Lion King"
-    $CATEGORIZE
-    rm TheLionKing.txt
-    unset LIONKING
-  fi
+  categorize "LIONKING" "The Lion King"
 
   debug_end "The Lion King"
 

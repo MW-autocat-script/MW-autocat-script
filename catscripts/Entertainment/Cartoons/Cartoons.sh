@@ -36,17 +36,9 @@ then
   $CARTOONDIR/The_Simpsons/TheSimpsons.sh
   $CARTOONDIR/Vampire_Knight/VampireKnight.sh #KEYWORDS_VAMPIREKNIGHT
 
-  CARTOONS="$(egrep -i "$KEYWORDS_CARTOONS_OTHER" "$NEWPAGES")"
+  CARTOONS=$(egrep -i "$KEYWORDS_CARTOONS_OTHER" "$NEWPAGES")
 
-  if [ "$CARTOONS" != "" ];
-  then
-    printf "%s" "$CARTOONS" > Cartoons.txt
-    export CATFILE="Cartoons.txt"
-    export CATNAME="Cartoons and anime"
-    $CATEGORIZE
-    rm Cartoons.txt
-    unset CARTOONS
-  fi
+  categorize "CARTOONS" "Cartoons and anime"
   
   debug_end "Cartoons and anime"
 

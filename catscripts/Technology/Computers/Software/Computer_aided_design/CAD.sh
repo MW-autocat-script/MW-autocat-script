@@ -11,15 +11,7 @@ then
 
   CAD=$(egrep -i "$KEYWORDS_CAD" "$NEWPAGES" | egrep -i "$KEYWORDS_CAD_EXCLUDE")
 
-  if [ "$CAD" != "" ];
-  then
-    printf "%s" "$CAD" > CAD.txt
-    export CATFILE="CAD.txt"
-    export CATNAME="Computer aided design"
-    $CATEGORIZE
-    rm CAD.txt
-    unset CAD
-  fi
+  categorize "CAD" "Computer aided design"
 
   debug_end "Computer aided design"
 

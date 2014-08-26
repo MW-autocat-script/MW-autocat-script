@@ -11,15 +11,7 @@ then
 
   CPLUSPLUS=$(egrep -i "$KEYWORDS_CPLUSPLUS" "$NEWPAGES")
 
-  if [ "$CPLUSPLUS" != "" ];
-  then
-    printf "%s" "$CPLUSPLUS" > CPlusPlus.txt
-    export CATFILE="CPlusPlus.txt"
-    export CATNAME="C++ programming"
-    $CATEGORIZE
-    rm CPlusPlus.txt
-    unset CPLUSPLUS
-  fi
+  categorize "CPLUSPLUS" "C++ programming"
 
   debug_end "C++"
 

@@ -9,15 +9,7 @@ then
 
   HUNGER=$(egrep -i "$KEYWORDS_HUNGERGAMES" "$NEWPAGES")
 
-  if [ "$HUNGER" != "" ];
-  then
-    printf "%s" "$HUNGER" > TheHungerGames.txt
-    export CATFILE="TheHungerGames.txt"
-    export CATNAME="The Hunger Games"
-    $CATEGORIZE
-    rm TheHungerGames.txt
-    unset HUNGER
-  fi
+  categorize "HUNGER" "The Hunger Games"
 
   debug_end "The Hunger Games"
 

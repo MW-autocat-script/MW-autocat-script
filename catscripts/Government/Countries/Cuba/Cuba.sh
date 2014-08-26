@@ -9,17 +9,9 @@ then
 
   debug_start "Cuba"
 
-  CUBA="$(egrep -i "$KEYWORDS_CUBA" "$NEWPAGES" | egrep -iv "$KEYWORDS_CUBA_EXCLUDE")"
+  CUBA=$(egrep -i "$KEYWORDS_CUBA" "$NEWPAGES" | egrep -iv "$KEYWORDS_CUBA_EXCLUDE")
 
-  if [ "$CUBA" != "" ];
-  then
-    printf "%s" "$CUBA" > Cuba.txt
-    export CATFILE="Cuba.txt"
-    export CATNAME="Cuba"
-    $CATEGORIZE
-    rm Cuba.txt
-    unset CUBA
-  fi
+  categorize "CUBA" "Cuba"
 
   debug_end "Cuba"
 

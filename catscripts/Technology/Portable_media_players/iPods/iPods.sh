@@ -17,45 +17,10 @@ then
   NANO=$(egrep -i "$KEYWORDS_IPODNANO" "$NEWPAGES")
   SHUFFLE=$(egrep -i "$KEYWORDS_IPODSHUFFLE" "$NEWPAGES")
 
-  if [ "$IPODS" != "" ];
-  then
-    printf "%s" "$IPODS" > iPods.txt
-    export CATFILE="iPods.txt"
-    export CATNAME="iPods"
-    $CATEGORIZE
-    rm iPods.txt
-    unset IPODS
-  fi
-
-  if [ "$TOUCH" != "" ];
-  then
-    printf "%s" "$TOUCH" > iPodtouch.txt
-    export CATFILE="iPodtouch.txt"
-    export CATNAME="iPod touch"
-    $CATEGORIZE
-    rm iPodtouch.txt
-    unset TOUCH
-  fi
-
-  if [ "$NANO" != "" ];
-  then
-    printf "%s" "$NANO" > iPodnano.txt
-    export CATFILE="iPodnano.txt"
-    export CATNAME="iPod nano"
-    $CATEGORIZE
-    rm iPodnano.txt
-    unset NANO
-  fi
-
-  if [ "$SHUFFLE" != "" ];
-  then
-    printf "%s" "$SHUFFLE" > iPodshuffle.txt
-    export CATFILE="iPodshuffle.txt"
-    export CATNAME="iPod shuffle"
-    $CATEGORIZE
-    rm iPodshuffle.txt
-    unset SHUFFLE
-  fi
+  categorize "IPODS" "iPods"
+  categorize "TOUCH" "iPod touch"
+  categorize "NANO" "iPod nano"
+  categorize "SHUFFLE" "iPod shuffle"
 
   debug_end "iPods"
 

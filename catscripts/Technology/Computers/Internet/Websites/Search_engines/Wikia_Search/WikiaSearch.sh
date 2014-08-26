@@ -9,15 +9,7 @@ then
 
   WIKIASEARCH=$(egrep -i "$KEYWORDS_WIKIASEARCH" "$NEWPAGES")
 
-  if [ "$WIKIASEARCH" != "" ];
-  then
-    printf "%s" "$WIKIASEARCH" > WikiaSearch.txt
-    export CATFILE="WikiaSearch.txt"
-    export CATNAME="Wikia Search"
-    $CATEGORIZE
-    rm WikiaSearch.txt
-    unset WIKIASEARCH
-  fi
+  categorize "WIKIASEARCH" "Wikia Search"
 
   debug_end "Wikia Search"
 

@@ -9,15 +9,7 @@ then
 
   STINE=$(egrep -i "$KEYWORDS_RLSTINE" "$NEWPAGES")
 
-  if [ "$STINE" != "" ];
-  then
-    printf "%s" "$STINE" > RLStine.txt
-    export CATFILE="RLStine.txt"
-    export CATNAME="R. L. Stine"
-    $CATEGORIZE
-    rm RLStine.txt
-    unset STINE
-  fi
+  categorize "STINE" "R. L. Stine"
 
   debug_end "R. L. Stine"
 

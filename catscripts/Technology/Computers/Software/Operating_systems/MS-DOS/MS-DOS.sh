@@ -11,15 +11,7 @@ then
 
   MSDOS=$(egrep -i "$KEYWORDS_MSDOS" "$NEWPAGES" | egrep -iv "$KEYWORDS_MSDOS_EXCLUDE" | egrep -v "$KEYWORDS_MSDOS_CASESENSITIVE_EXCLUDE")
 
-  if [ "$MSDOS" != "" ];
-  then
-    printf "%s" "$MSDOS" > MS-DOS.txt
-    export CATFILE="MS-DOS.txt"
-    export CATNAME="MS-DOS"
-    $CATEGORIZE
-    rm MS-DOS.txt
-    unset MSDOS
-  fi
+  categorize "MSDOS" "MS-DOS"
 
   debug_end "MS-DOS"
 

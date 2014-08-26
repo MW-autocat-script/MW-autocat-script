@@ -3,7 +3,6 @@
 KEYWORDS_INDONESIA="Indonesia(|s)\b|Sulawesi"
 KEYWORDS_INDONESIA_ALL="$KEYWORDS_INDONESIA"
 
-
 if [ "$1" == "" ];
 then
   
@@ -11,15 +10,7 @@ then
 
   INDONESIA=$(egrep -i "$KEYWORDS_INDONESIA" "$NEWPAGES")
 
-  if [ "$INDONESIA" != "" ];
-  then
-    printf "%s" "$INDONESIA" > Indonesia.txt
-    export CATFILE="Indonesia.txt"
-    export CATNAME="Indonesia"
-    $CATEGORIZE
-    rm Indonesia.txt
-    unset INDONESIA
-  fi
+  categorize "INDONESIA" "Indonesia"
 
   debug_end "Indonesia"
 

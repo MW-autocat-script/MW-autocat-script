@@ -9,15 +9,7 @@ then
 
   FLYLORD=$(egrep -i "$KEYWORDS_LORDOFTHEFLIES" "$NEWPAGES")
 
-  if [ "$FLYLORD" != "" ];
-  then
-    printf "%s" "$FLYLORD" > FlyLord.txt
-    export CATFILE="FlyLord.txt"
-    export CATNAME="Lord of the Flies"
-    $CATEGORIZE
-    rm FlyLord.txt
-    unset FLYLORD
-  fi
+  categorize "FLYLORD" "Lord of the Flies"
 
   debug_end "Lord of the Flies"
 

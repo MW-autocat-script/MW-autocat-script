@@ -13,25 +13,8 @@ then
   SYDNEY=$(egrep -i "$KEYWORDS_SYDNEY" "$NEWPAGES" | egrep -iv "$KEYWORDS_SYDNEY_EXCLUDE")
   OPERA=$(egrep -i "$KEYWORDS_OPERAHOUSE" "$NEWPAGES")
 
-  if [ "$SYDNEY" != "" ];
-  then
-    printf "%s" "$SYDNEY" > Sydney.txt
-    export CATFILE="Sydney.txt"
-    export CATNAME="Sydney, Australia"
-    $CATEGORIZE
-    rm Sydney.txt
-    unset SYDNEY
-  fi
-
-  if [ "$OPERA" != "" ];
-  then
-    printf "%s" "$OPERA" > SydneyOperaHouse.txt
-    export CATFILE="SydneyOperaHouse.txt"
-    export CATNAME="Sydney Opera House"
-    $CATEGORIZE
-    rm SydneyOperaHouse.txt
-    unset OPERA
-  fi
+  categorize "SYDNEY" "Sydney, Australia"
+  categorize "OPERA" "Sydney Opera House"
 
   debug_end "Sydney, Australia"
 

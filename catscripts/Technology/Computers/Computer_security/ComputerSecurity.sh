@@ -10,15 +10,7 @@ then
 
   SECURITY=$(egrep -i "$KEYWORDS_COMPUTER_SECURITY" "$NEWPAGES" | egrep -iv "$KEYWORDS_COMPUTER_SECURITY_EXCLUDE")
 
-  if [ "$SECURITY" != "" ];
-  then
-    printf "%s" "$SECURITY" > ComputerSecurity.txt
-    export CATFILE="ComputerSecurity.txt"
-    export CATNAME="Computer security"
-    $CATEGORIZE
-    rm ComputerSecurity.txt
-    unset SECURITY
-  fi
+  categorize "SECURITY" "Computer security"
 
   debug_end "Computer security"
 

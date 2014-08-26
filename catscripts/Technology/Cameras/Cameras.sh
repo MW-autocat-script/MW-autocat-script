@@ -18,50 +18,15 @@ then
   
   debug_start "Cameras"
 
-  CAMERAS="$(egrep -i "$KEYWORDS_CAMERAS" "$NEWPAGES" | egrep -iv "$KEYWORDS_CAMERAS_EXCLUDE")"
-  DIGITALCAMERAS="$(egrep -i "$KEYWORDS_DIGITALCAMERAS" "$NEWPAGES" | egrep -iv "$KEYWORDS_DIGITALCAMERAS_EXCLUDE")"
-  CHDK="$(egrep -i "$KEYWORDS_CHDK" "$NEWPAGES")"
-  WEBCAMS="$(egrep -i "$KEYWORDS_WEBCAMS" "$NEWPAGES")"
+  CAMERAS=$(egrep -i "$KEYWORDS_CAMERAS" "$NEWPAGES" | egrep -iv "$KEYWORDS_CAMERAS_EXCLUDE")
+  DIGITALCAMERAS=$(egrep -i "$KEYWORDS_DIGITALCAMERAS" "$NEWPAGES" | egrep -iv "$KEYWORDS_DIGITALCAMERAS_EXCLUDE")
+  CHDK=$(egrep -i "$KEYWORDS_CHDK" "$NEWPAGES")
+  WEBCAMS=$(egrep -i "$KEYWORDS_WEBCAMS" "$NEWPAGES")
 
-  if [ "$CAMERAS" != "" ];
-  then
-    printf "%s" "$CAMERAS" > Cameras.txt
-    export CATFILE="Cameras.txt"
-    export CATNAME="Cameras"
-    $CATEGORIZE
-    rm Cameras.txt
-    unset CAMERAS
-  fi
-
-  if [ "$DIGITALCAMERAS" != "" ];
-  then
-    printf "%s" "$DIGITALCAMERAS" > DigitalCameras.txt
-    export CATFILE="DigitalCameras.txt"
-    export CATNAME="Digital cameras"
-    $CATEGORIZE
-    rm DigitalCameras.txt
-    unset DIGITALCAMERAS
-  fi
-
-  if [ "$CHDK" != "" ];
-  then
-    printf "%s" "$CHDK" > CHDK.txt
-    export CATFILE="CHDK.txt"
-    export CATNAME="CHDK" 
-    $CATEGORIZE
-    rm CHDK.txt
-    unset CHDK
-  fi
-
-  if [ "$WEBCAMS" != "" ];
-  then
-    printf "%s" "$WEBCAMS" > Webcams.txt
-    export CATFILE="Webcams.txt"
-    export CATNAME="Webcams"
-    $CATEGORIZE
-    rm Webcams.txt
-    unset WEBCAMS
-  fi
+  categorize "CAMERAS" "Cameras"
+  categorize "DIGITALCAMERAS" "Digital cameras"
+  categorize "CHDK" "CHDK" 
+  categorize "WEBCAMS" "Webcams"
 
   debug_end "Cameras"
 

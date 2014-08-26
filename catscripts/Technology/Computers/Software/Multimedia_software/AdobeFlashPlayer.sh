@@ -10,15 +10,7 @@ then
 
   FLASHPLAYER=$(egrep -i "$KEYWORDS_ADOBEFLASHPLAYER" "$NEWPAGES")
 
-  if [ "$FLASHPLAYER" != "" ];
-  then
-    printf "%s" "$FLASHPLAYER" > AdobeFlashPlayer.txt
-    export CATFILE="AdobeFlashPlayer.txt"
-    export CATNAME="Adobe Flash Player"
-    $CATEGORIZE
-    rm AdobeFlashPlayer.txt
-    unset FLASHPLAYER
-  fi
+  categorize "FLASHPLAYER" "Adobe Flash Player"
 
   debug_end "Adobe Flash Player"
 

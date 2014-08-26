@@ -15,15 +15,7 @@ then
 
   PMP=$(egrep -i "$KEYWORDS_PMP" "$NEWPAGES" | egrep -iv "$KEYWORDS_PMP_EXCLUDE")
 
-  if [ "$PMP" != "" ];
-  then
-    printf "%s" "$PMP" > PMP.txt
-    export CATFILE="PMP.txt"
-    export CATNAME="Portable media players"
-    $CATEGORIZE
-    rm PMP.txt
-    unset PMP
-  fi
+  categorize "PMP" "Portable media players"
 
   debug_end "Portable media players"
 

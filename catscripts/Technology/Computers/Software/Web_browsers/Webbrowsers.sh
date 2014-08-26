@@ -18,45 +18,10 @@ then
   CHROME=$(egrep -i "$KEYWORDS_GOOGLECHROME" "$NEWPAGES")
   BROWSERS=$(egrep -i "$KEYWORDS_WEBBROWSER|$KEYWORDS_WEBBROWSER_OTHER" "$NEWPAGES" | egrep -iv "$KEYWORDS_WEBBROWSER_EXCLUDE")
 
-  if [ "$IEXPLORER" != "" ];
-  then
-    printf "%s" "$IEXPLORER" > InternetExplorer.txt
-    export CATFILE="InternetExplorer.txt"
-    export CATNAME="Internet Explorer"
-    $CATEGORIZE
-    rm InternetExplorer.txt
-    unset IEXPLORER
-  fi
-
-  if [ "$FIREFOX" != "" ];
-  then
-    printf "%s" "$FIREFOX" > MozillaFirefox.txt
-    export CATFILE="MozillaFirefox.txt"
-    export CATNAME="Mozilla Firefox"
-    $CATEGORIZE
-    rm MozillaFirefox.txt
-    unset FIREFOX
-  fi
-
-  if [ "$CHROME" != "" ];
-  then
-    printf "%s" "$CHROME" > GoogleChrome.txt
-    export CATFILE="GoogleChrome.txt"
-    export CATNAME="Google Chrome"
-    $CATEGORIZE
-    rm GoogleChrome.txt
-    unset CHROME
-  fi
-
-  if [ "$BROWSERS" != "" ];
-  then
-    printf "%s" "$BROWSERS" > Webbrowsers.txt
-    export CATFILE="Webbrowsers.txt"
-    export CATNAME="Web browsers"
-    $CATEGORIZE
-    rm Webbrowsers.txt
-    unset BROWSERS
-  fi
+  categorize "IEXPLORER" "Internet Explorer"
+  categorize "FIREFOX" "Mozilla Firefox"
+  categorize "CHROME" "Google Chrome"
+  categorize "BROWSERS" "Web browsers"
 
   debug_end "Web browsers"
 

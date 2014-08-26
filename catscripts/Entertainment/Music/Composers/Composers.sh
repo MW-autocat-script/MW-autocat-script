@@ -20,55 +20,11 @@ then
   COPLAND=$(egrep -i "$KEYWORDS_COPLAND" "$NEWPAGES")
   STRAVINSKY=$(egrep -i "$KEYWORDS_STRAVINSKY" "$NEWPAGES")
 
-  if [ "$BACH" != "" ];
-  then
-    printf "%s" "$BACH" > Bach.txt
-    export CATFILE="Bach.txt"
-    export CATNAME="Johann Sebastian Bach"
-    $CATEGORIZE
-    rm Bach.txt
-    unset BACH
-  fi
-
-  if [ "$MOZART" != "" ];
-  then
-    printf "%s" "$MOZART" > WolfgangAmadeusMozart.txt
-    export CATFILE="WolfgangAmadeusMozart.txt"
-    export CATNAME="Wolfgang Amadeus Mozart"
-    $CATEGORIZE
-    rm WolfgangAmadeusMozart.txt
-    unset MOZART
-  fi
-
-  if [ "$BEETHOVEN" != "" ];
-  then
-    printf "%s" "$BEETHOVEN" > LudwigVanBeethoven.txt
-    export CATFILE="LudwigVanBeethoven.txt"
-    export CATNAME="Ludwig van Beethoven"
-    $CATEGORIZE
-    rm LudwigVanBeethoven.txt
-    unset BEETHOVEN
-  fi
-
-  if [ "$COPLAND" != "" ];
-  then
-    printf "%s" "$COPLAND" > AaronCopland.txt
-    export CATFILE="AaronCopland.txt"
-    export CATNAME="Aaron Copland"
-    $CATEGORIZE
-    rm AaronCopland.txt
-    unset COPLAND
-  fi
-
-  if [ "$STRAVINSKY" != "" ];
-  then
-    printf "%s" "$STRAVINSKY" > IgorStravinsky.txt
-    export CATFILE="IgorStravinsky.txt"
-    export CATNAME="Igor Stravinsky"
-    $CATEGORIZE
-    rm IgorStravinsky.txt
-    unset STRAVINSKY
-  fi
+  categorize "BACH" "Johann Sebastian Bach"
+  categorize "MOZART" "Wolfgang Amadeus Mozart"
+  categorize "BEETHOVEN" "Ludwig van Beethoven"
+  categorize "COPLAND" "Aaron Copland"
+  categorize "STRAVINSKY" "Igor Stravinsky"
 
   debug_end "Composers"
 

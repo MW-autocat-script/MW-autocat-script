@@ -16,35 +16,9 @@ then
   PREMIERE=$(egrep -i "$KEYWORDS_ADOBEPREMIEREPRO" "$NEWPAGES")
   VIDEO=$(egrep -i "$KEYWORDS_VIDEOEDITING_OTHER" "$NEWPAGES" && egrep -i "$KEYWORDS_VIDEOEDITING" "$NEWPAGES" | egrep -iv "$KEYWORDS_VIDEOEDITING_EXCLUDE")
 
-  if [ "$VIDEO" != "" ];
-  then
-    printf "%s" "$VIDEO" > Videoediting.txt
-    export CATFILE="Videoediting.txt"
-    export CATNAME="Video editing software"
-    $CATEGORIZE
-    rm Videoediting.txt
-    unset VIDEO
-  fi
-
-  if [ "$WMM" != "" ];
-  then
-    printf "%s" "$WMM" > WindowsMovieMaker.txt
-    export CATFILE="WindowsMovieMaker.txt"
-    export CATNAME="Windows Movie Maker"
-    $CATEGORIZE
-    rm WindowsMovieMaker.txt
-    unset WMM
-  fi
-
-  if [ "$PREMIERE" != "" ];
-  then
-    printf "%s" "$PREMIERE" > AdobePremierePro.txt
-    export CATFILE="AdobePremierePro.txt"
-    export CATNAME="Adobe Premiere Pro"
-    $CATEGORIZE
-    rm AdobePremierePro.txt
-    unset PREMIERE
-  fi
+  categorize "VIDEO" "Video editing software"
+  categorize "WMM" "Windows Movie Maker"
+  categorize "PREMIERE" "Adobe Premiere Pro"
 
   debug_end "Video editng"
 

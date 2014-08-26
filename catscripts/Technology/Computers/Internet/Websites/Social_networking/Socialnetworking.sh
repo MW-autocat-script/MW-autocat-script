@@ -21,15 +21,7 @@ then
 
   SOCIALNETWORK=$(egrep -i "$KEYWORDS_SOCIALNETWORKING" "$NEWPAGES" | egrep -iv "$KEYWORDS_SOCIALNETWORKING_EXCLUDE")
 
-  if [ "$SOCIALNETWORK" != "" ];
-  then
-    printf "%s" "$SOCIALNETWORK" > Socialnetworking.txt
-    export CATFILE="Socialnetworking.txt"
-    export CATNAME="Social networking websites"
-    $CATEGORIZE
-    rm Socialnetworking.txt
-    unset SOCIALNETWORK
-  fi
+  categorize "SOCIALNETWORK" "Social networking websites"
 
   debug_end "Social networking websites"
 

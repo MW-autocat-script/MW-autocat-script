@@ -9,15 +9,7 @@ then
 
   JURASSICPARK=$(egrep -i "$KEYWORDS_MOVIES_JURASSIC_PARK" "$NEWPAGES")
 
-  if [ "$JURASSICPARK" != "" ];
-  then
-    printf "%s" "$JURASSICPARK" > JurassicPark.txt
-    export CATFILE="JurassicPark.txt"
-    export CATNAME="Jurassic Park"
-    $CATEGORIZE
-    rm JurassicPark.txt
-    unset JURASSICPARK
-  fi
+  categorize "JURASSICPARK" "Jurassic Park"
 
   debug_end "Jurassic Park"
 

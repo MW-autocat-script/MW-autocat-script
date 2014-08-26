@@ -16,15 +16,7 @@ then
 
   APPS=$(egrep -i "$KEYWORDS_OFFICEAPPLICATIONS|$KEYWORDS_OFFICEAPPLICATIONS_OTHER" "$NEWPAGES" | egrep -iv "$KEYWORDS_OFFICEAPPLICATIONS_EXCLUDE")
 
-  if [ "$APPS" != "" ];
-  then
-    printf "%s" "$APPS" > Officeapps.txt
-    export CATFILE="Officeapps.txt"
-    export CATNAME="Office applications"
-    $CATEGORIZE
-    rm Officeapps.txt
-    unset APPS
-  fi
+  categorize "APPS" "Office applications"
 
   debug_end "Office applications"
 

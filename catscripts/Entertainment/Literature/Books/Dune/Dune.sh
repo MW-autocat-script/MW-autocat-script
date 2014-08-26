@@ -11,15 +11,7 @@ then
 
   DUNE=$(egrep -i "$KEYWORDS_DUNE" "$NEWPAGES" && egrep "$KEYWORDS_DUNE_CASESENSITIVE" "$NEWPAGES")
 
-  if [ "$DUNE" != "" ];
-  then
-    printf "%s" "$DUNE" > Dune.txt
-    export CATFILE="Dune.txt"
-    export CATNAME="Dune"
-    $CATEGORIZE
-    rm Dune.txt
-    unset DUNE
-  fi
+  categorize "DUNE" "Dune"
 
   debug_end "Dune"
 

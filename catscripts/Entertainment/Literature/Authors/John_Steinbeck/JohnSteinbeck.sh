@@ -13,15 +13,7 @@ then
 
   STEINBECK=$(egrep -i "$KEYWORDS_JOHNSTEINBECK" "$NEWPAGES" | egrep -iv "$KEYWORDS_JOHNSTEINBECK_EXCLUDE")
 
-  if [ "$STEINBECK" != "" ];
-  then
-    printf "%s" "$STEINBECK" > JohnSteinbeck.txt
-    export CATFILE="JohnSteinbeck.txt"
-    export CATNAME="John Steinbeck"
-    $CATEGORIZE
-    rm JohnSteinbeck.txt
-    unset STEINBECK
-  fi
+  categorize "STEINBECK" "John Steinbeck"
 
   debug_end "John Steinbeck"
 

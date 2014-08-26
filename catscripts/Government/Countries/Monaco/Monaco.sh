@@ -11,15 +11,7 @@ then
 
   MONACO=$(egrep -i "$KEYWORDS_MONACO" "$NEWPAGES" | egrep -iv "$KEYWORDS_MONACO_EXCLUDE")
 
-  if [ "$MONACO" != "" ];
-  then
-    printf "%s" "$MONACO" > Monaco.txt
-    export CATFILE="Monaco.txt"
-    export CATNAME="Monaco"
-    $CATEGORIZE
-    rm Monaco.txt
-    unset MONACO
-  fi
+  categorize "MONACO" "Monaco"
 
   debug_end "Monaco"
 

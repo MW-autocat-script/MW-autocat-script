@@ -11,15 +11,7 @@ then
 
   MELBOURNE=$(egrep -i "$KEYWORDS_MELBOURNE" "$NEWPAGES" | egrep -iv "$KEYWORDS_MELBOURNE_EXCLUDE")
 
-  if [ "$MELBOURNE" != "" ];
-  then
-    printf "%s" "$MELBOURNE" > Melbourne.txt
-    export CATFILE="Melbourne.txt"
-    export CATNAME="Melbourne, Australia"
-    $CATEGORIZE
-    rm Melbourne.txt
-    unset MELBOURNE
-  fi
+  categorize "MELBOURNE" "Melbourne, Australia"
 
   debug_end "Melbourne, Australia"
 

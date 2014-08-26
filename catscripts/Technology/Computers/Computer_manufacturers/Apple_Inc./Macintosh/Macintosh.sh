@@ -10,17 +10,9 @@ then
 
   debug_start "Macintosh"
 
-  MACINTOSH="$(egrep -i "$KEYWORDS_MACINTOSH" "$NEWPAGES" | egrep -iv "$KEYWORDS_MACINTOSH_EXCLUDE")"
+  MACINTOSH=$(egrep -i "$KEYWORDS_MACINTOSH" "$NEWPAGES" | egrep -iv "$KEYWORDS_MACINTOSH_EXCLUDE")
 
-  if [ "$MACINTOSH" != "" ];
-  then
-    printf "%s" "$MACINTOSH" > Macintosh.txt
-    export CATFILE="Macintosh.txt"
-    export CATNAME="Macintosh"
-    $CATEGORIZE
-    rm Macintosh.txt
-    unset MACINTOSH
-  fi
+  categorize "MACINTOSH" "Macintosh"
 
   debug_end "Macintosh"
 

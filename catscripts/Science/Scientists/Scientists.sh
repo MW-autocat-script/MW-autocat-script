@@ -20,65 +20,12 @@ then
   NEWTON=$(egrep -i "$KEYWORDS_ISAACNEWTON" "$NEWPAGES")
   MENDEL=$(egrep -i "$KEYWORDS_GREGORMENDEL" "$NEWPAGES")
 
-  if [ "$HAWKING" != "" ];
-  then
-    printf "%s" "$HAWKING" > StephenHawking.txt
-    export CATFILE="StephenHawking.txt"
-    export CATNAME="Stephen Hawking"
-    $CATEGORIZE
-    rm StephenHawking.txt
-    unset HAWKING
-  fi
-
-  if [ "$DARWIN" != "" ];
-  then
-    printf "%s" "$DARWIN" > CharlesDarwin.txt
-    export CATFILE="CharlesDarwin.txt"
-    export CATNAME="Charles Darwin"
-    $CATEGORIZE
-    rm CharlesDarwin.txt
-    unset DARWIN
-  fi
-
-  if [ "$DAVINCI" != "" ];
-  then
-    printf "%s" "$DAVINCI" > LeonardoDaVinci.txt
-    export CATFILE="LeonardoDaVinci.txt"
-    export CATNAME="Leonardo da Vinci"
-    $CATEGORIZE
-    rm LeonardoDaVinci.txt
-    unset DAVINCI
-  fi
-
-  if [ "$CURIE" != "" ];
-  then
-    printf "%s" "$CURIE" > MarieCurie.txt
-    export CATFILE="MarieCurie.txt"
-    export CATNAME="Marie Curie"
-    $CATEGORIZE
-    rm MarieCurie.txt
-    unset CURIE
-  fi
-
-  if [ "$MENDEL" != "" ];
-  then
-    printf "%s" "$MENDEL" > Mendel.txt
-    export CATFILE="Mendel.txt"
-    export CATNAME="Gregor Mendel"
-    $CATEGORIZE
-    rm Mendel.txt
-    unset MENDEL
-  fi
-
-  if [ "$NEWTON" != "" ];
-  then
-    printf "%s" "$NEWTON" > IsaacNewton.txt
-    export CATFILE="IsaacNewton.txt"
-    export CATNAME="Isaac Newton"
-    $CATEGORIZE
-    rm IsaacNewton.txt
-    unset NEWTON
-  fi
+  categorize "HAWKING" "Stephen Hawking"
+  categorize "DARWIN" "Charles Darwin"
+  categorize "DAVINCI" "Leonardo da Vinci"
+  categorize "CURIE" "Marie Curie"
+  categorize "MENDEL" "Gregor Mendel"
+  categorize "NEWTON" "Isaac Newton"
 
   debug_end "Scientists"
 

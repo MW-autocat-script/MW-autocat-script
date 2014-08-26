@@ -9,15 +9,7 @@ then
 
   OZ=$(egrep -i "$KEYWORDS_WIZARDOFOZ" "$NEWPAGES")
 
-  if [ "$OZ" != "" ];
-  then
-    printf "%s" "$OZ" > TheWizardofOz.txt
-    export CATFILE="TheWizardofOz.txt"
-    export CATNAME="The Wizard of Oz"
-    $CATEGORIZE
-    rm TheWizardofOz.txt
-    unset OZ
-  fi
+  categorize "OZ" "The Wizard of Oz"
 
   debug_end "The Wizard of Oz"
 

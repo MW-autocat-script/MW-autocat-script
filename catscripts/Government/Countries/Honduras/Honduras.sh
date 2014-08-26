@@ -8,17 +8,9 @@ then
 
   debug_start "Honduras"
 
-  HONDURAS="$(egrep -i "$KEYWORDS_HONDURAS" "$NEWPAGES")"
+  HONDURAS=$(egrep -i "$KEYWORDS_HONDURAS" "$NEWPAGES")
 
-  if [ "$HONDURAS" != "" ];
-  then
-    printf "%s" "$HONDURAS" > Honduras.txt
-    export CATFILE="Honduras.txt"
-    export CATNAME="Honduras"
-    $CATEGORIZE
-    rm Honduras.txt
-    unset HONDURAS
-  fi
+  categorize "HONDURAS" "Honduras"
 
   debug_end "Honduras"
 

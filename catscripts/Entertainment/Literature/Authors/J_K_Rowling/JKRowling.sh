@@ -11,15 +11,7 @@ then
 
   ROWLING=$(egrep -i "$KEYWORDS_JKROWLING" "$NEWPAGES" | egrep -iv "$KEYWORDS_JKROWLING_EXCLUDE")
 
-  if [ "$ROWLING" != "" ];
-  then
-    printf "%s" "$ROWLING" > Rowling.txt
-    export CATFILE="Rowling.txt"
-    export CATNAME="J. K. Rowling"
-    $CATEGORIZE
-    rm Rowling.txt
-    unset ROWLING
-  fi
+  categorize "ROWLING" "J. K. Rowling"
 
   debug_end "J. K. Rowling"
 

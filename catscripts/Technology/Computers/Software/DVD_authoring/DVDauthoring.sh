@@ -11,15 +11,7 @@ then
 
   AUTHORING=$(egrep -i "$KEYWORDS_DVDAUTHORING_ALL" "$NEWPAGES")
 
-  if [ "$AUTHORING" != "" ];
-  then
-    printf "%s" "$AUTHORING" > Authoring.txt
-    export CATFILE="Authoring.txt"
-    export CATNAME="CD and DVD authoring"
-    $CATEGORIZE
-    rm Authoring.txt
-    unset AUTHORING
-  fi
+  categorize "AUTHORING" "CD and DVD authoring"
 
   debug_end "DVD authoring"
 

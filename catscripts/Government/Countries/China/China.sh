@@ -14,61 +14,15 @@ then
   
   debug_start "China"
 
-  CHINA=$(egrep -i "$KEYWORDS_CHINA" "$NEWPAGES")
-  CHINASECONDARY=$(egrep -i "$KEYWORDS_CHINA_SECONDARY" "$NEWPAGES" | egrep -iv "$KEYWORDS_CHINA_SECONDARY_EXCLUDE")
+  CHINA=$(egrep -i "$KEYWORDS_CHINA" "$NEWPAGES" && egrep -i "$KEYWORDS_CHINA_SECONDARY" "$NEWPAGES" | egrep -iv "$KEYWORDS_CHINA_SECONDARY_EXCLUDE")
   WALL=$(egrep -i "$KEYWORDS_GREATWALL" "$NEWPAGES")
   BEIJING=$(egrep -i "$KEYWORDS_BEIJING" "$NEWPAGES")
   HONGKONG=$(egrep -i "$KEYWORDS_HONGKONG" "$NEWPAGES")
 
-  if [ "$CHINA" != "" ];
-  then
-    printf "%s" "$CHINA" > China.txt
-    export CATFILE="China.txt"
-    export CATNAME="China"
-    $CATEGORIZE
-    rm China.txt
-    unset CHINA
-  fi
-
-  if [ "$CHINASECONDARY" != "" ];
-  then
-    printf "%s" "$CHINASECONDARY" > China.txt
-    export CATFILE="China.txt"
-    export CATNAME="China"
-    $CATEGORIZE
-    rm China.txt
-    unset CHINASECONDARY
-  fi
-
-  if [ "$WALL" != "" ];
-  then
-    printf "%s" "$WALL" > GreatWall.txt
-    export CATFILE="GreatWall.txt"
-    export CATNAME="Great Wall of China"
-    $CATEGORIZE
-    rm GreatWall.txt
-    unset WALL
-  fi
-
-  if [ "$BEIJING" != "" ];
-  then
-    printf "%s" "$BEIJING" > Beijing.txt
-    export CATFILE="Beijing.txt"
-    export CATNAME="Beijing"
-    $CATEGORIZE
-    rm Beijing.txt
-    unset BEIJING
-  fi
-
-  if [ "$HONGKONG" != "" ];
-  then
-    printf "%s" "$HONGKONG" > HongKong.txt
-    export CATFILE="HongKong.txt"
-    export CATNAME="Hong Kong"
-    $CATEGORIZE
-    rm HongKong.txt
-    unset HONGKONG
-  fi
+  categorize "CHINA" "China"
+  categorize "WALL" "Great Wall of China"
+  categorize "BEIJING" "Beijing"
+  categorize "HONGKONG" "Hong Kong"
 
   debug_end "China"
 

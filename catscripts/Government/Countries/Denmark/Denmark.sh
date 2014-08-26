@@ -15,25 +15,8 @@ then
   DENMARK=$(egrep -i "$KEYWORDS_DENMARK" "$NEWPAGES" | egrep -iv "$KEYWORDS_DENMARK_EXCLUDE")
   GREENLAND=$(egrep -i "$KEYWORDS_GREENLAND" "$NEWPAGES")
 
-  if [ "$DENMARK" != "" ];
-  then
-    printf "%s" "$DENMARK" > Denmark.txt
-    export CATFILE="Denmark.txt"
-    export CATNAME="Denmark"
-    $CATEGORIZE
-    rm Denmark.txt
-    unset DENMARK
-  fi
-
-  if [ "$GREENLAND" != "" ];
-  then
-    printf "%s" "$GREENLAND" > Greenland.txt
-    export CATFILE="Greenland.txt"
-    export CATNAME="Greenland"
-    $CATEGORIZE
-    rm Greenland.txt
-    unset GREENLAND
-  fi
+  categorize "DENMARK" "Denmark"
+  categorize "GREENLAND" "Greenland"
 
   debug_end "Denmark"
 
