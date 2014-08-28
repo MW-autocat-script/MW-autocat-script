@@ -8,17 +8,9 @@ then
   
   debug_start "Hinduism"
 
-  HINDUISM="$(egrep -i "$KEYWORDS_HINDUISM" "$NEWPAGES")"
+  HINDUISM=$(egrep -i "$KEYWORDS_HINDUISM" "$NEWPAGES")
 
-  if [ "$HINDUISM" != "" ];
-  then
-    printf "%s" "$HINDUISM" > Hinduism.txt
-    export CATFILE="Hinduism.txt"
-    export CATNAME="Hinduism"
-    $CATEGORIZE
-    rm Hinduism.txt
-    unset HINDUISM
-  fi
+  categorize "HINDUISM" "Hinduism"
 
   debug_end "Hinduism"
 

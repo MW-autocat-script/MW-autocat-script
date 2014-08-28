@@ -9,15 +9,7 @@ then
 
   MOSHIMONSTERS=$(egrep -i "$KEYWORDS_MOSHIMONSTERS" "$NEWPAGES")
 
-  if [ "$MOSHIMONSTERS" != "" ];
-  then
-    printf "%s" "$MOSHIMONSTERS" > MoshiMonsters.txt
-    export CATFILE="MoshiMonsters.txt"
-    export CATNAME="Moshi Monsters"
-    $CATEGORIZE
-    rm MoshiMonsters.txt
-    unset MOSHIMONSTERS
-  fi
+  categorize "MOSHIMONSTERS" "Moshi Monsters"
 
   . $VIDEOGAMEDIR/Cheat_codes/CheatCodes.sh 
   . $VIDEOGAMEDIR/MMORPGs/MMORPGs.sh

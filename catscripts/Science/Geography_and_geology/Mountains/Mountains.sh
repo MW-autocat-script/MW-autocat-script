@@ -18,15 +18,7 @@ then
 
   MOUNTAINS=$(egrep -i "$KEYWORDS_MOUNTAINS" "$NEWPAGES" | egrep -iv "$KEYWORDS_MOUNTAINS_EXCLUDE")
 
-  if [ "$MOUNTAINS" != "" ];
-  then
-    printf "%s" "$MOUNTAINS" > Mountains.txt
-    export CATFILE="Mountains.txt"
-    export CATNAME="Mountains"
-    $CATEGORIZE
-    rm Mountains.txt
-    unset MOUNTAINS
-  fi
+  categorize "MOUNTAINS" "Mountains"
 
   debug_end "Mountains"
 

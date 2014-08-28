@@ -18,15 +18,7 @@ debug_start "PlayStation"
 
   PS1=$(egrep -i "$KEYWORDS_PS1" "$NEWPAGES" | egrep -iv "$KEYWORDS_PS1_EXCLUDE")
 
-  if [ "$PS1" != "" ];
-  then
-    printf "%s" "$PS1" > PlayStation.txt
-    export CATFILE="PlayStation.txt"
-    export CATNAME="PlayStation"
-    $CATEGORIZE
-    rm PlayStation.txt
-    unset PS1
-  fi
+  categorize "PS1" "PlayStation"
 
   debug_end "PlayStation"
 

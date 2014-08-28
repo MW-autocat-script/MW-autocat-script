@@ -25,15 +25,7 @@ then
 
   RELIGION=$(egrep -i "$KEYWORDS_RELIGION" "$NEWPAGES" | egrep -iv "$KEYWORDS_RELIGION_EXCLUDE")
 
-  if [ "$RELIGION" != "" ];
-  then
-    printf "%s" "$RELIGION" > Religion.txt
-    export CATFILE="Religion.txt"
-    export CATNAME="Religion"
-    $CATEGORIZE
-    rm Religion.txt
-    unset RELIGION
-  fi
+  categorize "RELIGION" "Religion"
 
   debug_end "Religion"
 

@@ -9,15 +9,7 @@ then
 
   HEARTDISEASE=$(egrep -i "$KEYWORDS_HEARTDISEASE" "$NEWPAGES")
 
-  if [ "$HEARTDISEASE" != "" ];
-  then
-    printf "%s" "$HEARTDISEASE" > HeartDisease.txt
-    export CATFILE="HeartDisease.txt"
-    export CATNAME="Heart disease"
-    $CATEGORIZE
-    rm HeartDisease.txt
-    unset HEARTDISEASE
-  fi
+  categorize "HEARTDISEASE" "Heart disease"
 
   debug_end "Heart disease"
 

@@ -10,15 +10,7 @@ then
 
   HELLOKITTY=$(egrep -i "$KEYWORDS_HELLOKITTY" "$NEWPAGES")
 
-  if [ "$HELLOKITTY" != "" ];
-  then
-    printf "%s" "$HELLOKITTY" > HelloKitty.txt
-    export CATFILE="HelloKitty.txt"
-    export CATNAME="Hello Kitty"
-    $CATEGORIZE
-    rm HelloKitty.txt
-    unset HELLOKITTY
-  fi
+  categorize "HELLOKITTY" "Hello Kitty"
 
   debug_end "Hello Kitty"
 

@@ -15,35 +15,9 @@ then
   PLUTO=$(egrep -i "$KEYWORDS_PLUTO" "$NEWPAGES" | egrep -iv "$KEYWORDS_PLUTO_EXCLUDE")
   ERIS=$(egrep -i "$KEYWORDS_ERIS" "$NEWPAGES")
 
-  if [ "$DWARF" != "" ];
-  then
-    printf "%s" "$DWARF" > Dwarf.txt
-    export CATFILE="Dwarf.txt"
-    export CATNAME="Dwarf planets"
-    $CATEGORIZE
-    rm Dwarf.txt
-    unset DWARF
-  fi
-
-  if [ "$PLUTO" != "" ];
-  then
-    printf "%s" "$PLUTO" > Pluto.txt
-    export CATFILE="Pluto.txt"
-    export CATNAME="Pluto"
-    $CATEGORIZE
-    rm Pluto.txt
-    unset PLUTO
-  fi
-
-  if [ "$ERIS" != "" ];
-  then
-    printf "%s" "$ERIS" > Eris.txt
-    export CATFILE="Eris.txt"
-    export CATNAME="Eris"
-    $CATEGORIZE
-    rm Eris.txt
-    unset ERIS
-  fi
+  categorize "DWARF" "Dwarf planets"
+  categorize "PLUTO" "Pluto"
+  categorize "ERIS" "Eris"
 
   debug_end "Dwarf planets"
 

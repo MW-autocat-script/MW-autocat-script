@@ -13,25 +13,8 @@ then
   HIMALAYAS=$(egrep -i "$KEYWORDS_HIMALAYAS" "$NEWPAGES" | egrep -iv "$KEYWORDS_HIMALAYAS_EXCLUDE")
   EVEREST=$(egrep -i "$KEYWORDS_MOUNT_EVEREST" "$NEWPAGES")
 
-  if [ "$HIMALAYAS" != "" ];
-  then
-    printf "%s" "$HIMALAYAS" > Himalayas.txt
-    export CATFILE="Himalayas.txt"
-    export CATNAME="Himalayas"
-    $CATEGORIZE
-    rm Himalayas.txt
-    unset HIMALAYAS
-  fi
-
-  if [ "$EVEREST" != "" ];
-  then
-    printf "%s" "$EVEREST" > MountEverest.txt
-    export CATFILE="MountEverest.txt"
-    export CATNAME="Mount Everest"
-    $CATEGORIZE
-    rm MountEverest.txt
-    unset EVEREST
-  fi
+  categorize "HIMALAYAS" "Himalayas"
+  categorize "EVEREST" "Mount Everest"
 
   debug_end "Himalayas"
 

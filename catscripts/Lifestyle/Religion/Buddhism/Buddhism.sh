@@ -11,15 +11,7 @@ then
 
   BUDDHISM=$(egrep -i "$KEYWORDS_BUDDHISM" "$NEWPAGES" | egrep -iv "$KEYWORDS_BUDDHISM_EXCLUDE")
 
-  if [ "$BUDDHISM" != "" ];
-  then
-    printf "%s" "$BUDDHISM" > Buddhism.txt
-    export CATFILE="Buddhism.txt"
-    export CATNAME="Buddhism"
-    $CATEGORIZE
-    rm Buddhism.txt
-    unset BUDDHISM
-  fi
+  categorize "BUDDHISM" "Buddhism"
 
   debug_end "Buddhism"
 

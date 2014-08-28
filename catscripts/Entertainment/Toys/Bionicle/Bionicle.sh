@@ -10,15 +10,7 @@ then
 
   BIONICLE=$(egrep -i "$KEYWORDS_BIONICLE" "$NEWPAGES")
 
-  if [ "$BIONICLE" != "" ];
-  then
-    printf "%s" "$BIONICLE" > Bionicle.txt
-    export CATFILE="Bionicle.txt"
-    export CATNAME="Lego Bionicle"
-    $CATEGORIZE
-    rm Bionicle.txt
-    unset BIONICLE
-  fi
+  categorize "BIONICLE" "Lego Bionicle"
 
   debug_end "Bionicle"
 

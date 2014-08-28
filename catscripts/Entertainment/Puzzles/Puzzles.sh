@@ -8,28 +8,11 @@ then
   
   debug_start "Puzzles"
 
-  SUDOKU="$(egrep -i "$KEYWORDS_SUDOKU" "$NEWPAGES")"
-  CROSSWORD="$(egrep -i "$KEYWORDS_CROSSWORD" "$NEWPAGES")"
+  SUDOKU=$(egrep -i "$KEYWORDS_SUDOKU" "$NEWPAGES")
+  CROSSWORD=$(egrep -i "$KEYWORDS_CROSSWORD" "$NEWPAGES")
 
-  if [ "$SUDOKU" != "" ];
-  then
-    printf "%s" "$SUDOKU" > Sudoku.txt
-    export CATFILE="Sudoku.txt"
-    export CATNAME="Sudoku"
-    $CATEGORIZE
-    rm Sudoku.txt
-    unset SUDOKU
-  fi
-
-  if [ "$CROSSWORD" != "" ];
-  then
-    printf "%s" "$CROSSWORD" > Crossword.txt
-    export CATFILE="Crossword.txt"
-    export CATNAME="Crossword puzzles"
-    $CATEGORIZE
-    rm Crossword.txt
-    unset CROSSWORD
-  fi
+  categorize "SUDOKU" "Sudoku"
+  categorize "CROSSWORD" "Crossword puzzles"
 
   debug_end "Puzzles"
 

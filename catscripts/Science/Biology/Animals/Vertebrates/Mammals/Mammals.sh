@@ -14,15 +14,7 @@ then
 
   MAMMALS=$(egrep -i "$KEYWORDS_MAMMALS" "$NEWPAGES" | egrep -iv "$KEYWORDS_MAMMALS_EXCLUDE" )
 
-  if [ "$MAMMALS" != "" ];
-  then
-    printf "%s" "$MAMMALS" > Mammals.txt
-    export CATFILE="Mammals.txt"
-    export CATNAME="Mammals"
-    $CATEGORIZE
-    rm Mammals.txt
-    unset MAMMALS
-  fi
+  categorize "MAMMALS" "Mammals"
 
   debug_end "Mammals"
 

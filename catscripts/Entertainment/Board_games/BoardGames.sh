@@ -15,35 +15,9 @@ then
   CHESS=$(egrep -i "$KEYWORDS_CHESS" "$NEWPAGES" | egrep -iv "$KEYWORDS_CHESS_EXCLUDE")
   CHECKERS=$(egrep -i "$KEYWORDS_CHECKERS" "$NEWPAGES")
 
-  if [ "$BOARDGAMES" != "" ];
-  then
-    printf "%s" "$BOARDGAMES" > Boardgames.txt
-    export CATFILE="Boardgames.txt"
-    export CATNAME="Board games"
-    $CATEGORIZE
-    rm Boardgames.txt
-    unset BOARDGAMES
-  fi
-
-  if [ "$CHESS" != "" ];
-  then
-    printf "%s" "$CHESS" > Chess.txt
-    export CATFILE="Chess.txt"
-    export CATNAME="Chess"
-    $CATEGORIZE
-    rm Chess.txt
-    unset CHESS
-  fi
-
-  if [ "$CHECKERS" != "" ];
-  then
-    printf "%s" "$CHECKERS" > Checkers.txt
-    export CATFILE="Checkers.txt"
-    export CATNAME="Checkers"
-    $CATEGORIZE
-    rm Checkers.txt
-    unset CHECKERS
-  fi
+  categorize "BOARDGAMES" "Board games"
+  categorize "CHESS" "Chess"
+  categorize "CHECKERS" "Checkers"
 
   debug_end "Board games"
 

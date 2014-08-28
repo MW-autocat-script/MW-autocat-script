@@ -15,15 +15,7 @@ then
 
   ASTEROIDS=$(egrep -i "$KEYWORDS_ASTEROIDS" "$NEWPAGES" | egrep -iv "$KEYWORDS_ASTEROIDS_EXCLUDE")
 
-  if [ "$ASTEROIDS" != "" ];
-  then
-    printf "%s" "$ASTEROIDS" > Asteroids.txt
-    export CATFILE="Asteroids.txt"
-    export CATNAME="Asteroids"
-    $CATEGORIZE
-    rm Asteroids.txt
-    unset ASTEROIDS
-  fi
+  categorize "ASTEROIDS" "Asteroids"
 
   debug_end "Astronomy"
 

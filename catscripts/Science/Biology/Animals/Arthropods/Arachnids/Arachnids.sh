@@ -18,45 +18,10 @@ then
   SPIDERS=$(egrep -i "$KEYWORDS_SPIDERS" "$NEWPAGES" | egrep -iv "$KEYWORDS_SPIDERS_EXCLUDE")
   SCORPIONS=$(egrep -i "$KEYWORDS_SCORPIONS" "$NEWPAGES" | egrep -iv "$KEYWORDS_SCORPIONS_EXCLUDE")
 
-  if [ "$ARACHNIDS" != "" ];
-  then
-    printf "%s" "$ARACHNIDS" > Arachnids.txt
-    export CATFILE="Arachnids.txt"
-    export CATNAME="Arachnids"
-    $CATEGORIZE
-    rm Arachnids.txt
-    unset ARACHNIDS
-  fi
-
-  if [ "$TICKS" != "" ];
-  then
-    printf "%s" "$TICKS" > Ticks.txt
-    export CATFILE="Ticks.txt"
-    export CATNAME="Ticks"
-    $CATEGORIZE
-    rm Ticks.txt
-    unset TICKS
-  fi
-
-  if [ "$SPIDERS" != "" ];
-  then
-    printf "%s" "$SPIDERS" > Spiders.txt
-    export CATFILE="Spiders.txt"
-    export CATNAME="Spiders"
-    $CATEGORIZE
-    rm Spiders.txt
-    unset SPIDERS
-  fi
-
-  if [ "$SCORPIONS" != "" ];
-  then
-    printf "%s" "$SCORPIONS" > Scorpions.txt
-    export CATFILE="Scorpions.txt"
-    export CATNAME="Scorpions"
-    $CATEGORIZE
-    rm Scorpions.txt
-    unset SCORPIONS
-  fi
+  categorize "ARACHNIDS" "Arachnids"
+  categorize "TICKS" "Ticks"
+  categorize "SPIDERS" "Spiders"
+  categorize "SCORPIONS" "Scorpions"
 
   debug_end "Arachnids"
 

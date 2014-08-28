@@ -11,17 +11,9 @@ then
 
   debug_start "Sonic the Hedgehog franchise"
 
-  SONIC="$(egrep -i "$KEYWORDS_SONIC|$KEYWORDS_SONIC_SECONDARY" "$NEWPAGES" | egrep -iv "$KEYWORDS_SONIC_EXCLUDE")"
+  SONIC=$(egrep -i "$KEYWORDS_SONIC|$KEYWORDS_SONIC_SECONDARY" "$NEWPAGES" | egrep -iv "$KEYWORDS_SONIC_EXCLUDE")
 
-  if [ "$SONIC" != "" ];
-  then
-    printf "%s" "$SONIC" > Sonic.txt
-    export CATFILE="Sonic.txt"
-    export CATNAME="Sonic the Hedgehog franchise"
-    $CATEGORIZE
-    rm Sonic.txt
-    unset SONIC
-  fi
+  categorize "SONIC" "Sonic the Hedgehog franchise"
 
   debug_end "Sonic the Hedgehog franchise"
 

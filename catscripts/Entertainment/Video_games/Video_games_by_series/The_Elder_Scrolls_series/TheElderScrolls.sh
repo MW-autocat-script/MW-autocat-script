@@ -14,35 +14,9 @@ then
   SKYRIM=$(egrep -i "$KEYWORDS_SKYRIM" "$NEWPAGES")
   OBLIVION=$(egrep -i "$KEYWORDS_OBLIVION" "$NEWPAGES")
 
-  if [ "$SCROLLS" != "" ];
-  then
-    printf "%s" "$SCROLLS" > Scrolls.txt
-    export CATFILE="Scrolls.txt"
-    export CATNAME="The Elder Scrolls series"
-    $CATEGORIZE
-    rm Scrolls.txt
-    unset SCROLLS
-  fi
-
-  if [ "$SKYRIM" != "" ];
-  then
-    printf "%s" "$SKYRIM" > Skyrim.txt
-    export CATFILE="Skyrim.txt"
-    export CATNAME="The Elder Scrolls V: Skyrim"
-    $CATEGORIZE
-    rm Skyrim.txt
-    unset SKYRIM
-  fi
-
-  if [ "$OBLIVION" != "" ];
-  then
-    printf "%s" "$OBLIVION" > Oblivion.txt
-    export CATFILE="Oblivion.txt"
-    export CATNAME="The Elder Scrolls IV: Oblivion"
-    $CATEGORIZE
-    rm Oblivion.txt
-    unset OBLIVION
-  fi
+  categorize "SCROLLS" "The Elder Scrolls series"
+  categorize "SKYRIM" "The Elder Scrolls V: Skyrim"
+  categorize "OBLIVION" "The Elder Scrolls IV: Oblivion"
 
   debug_end "The Elder Scrolls series"
 

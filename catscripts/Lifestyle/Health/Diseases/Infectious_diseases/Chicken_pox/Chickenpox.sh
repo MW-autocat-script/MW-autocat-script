@@ -9,15 +9,7 @@ then
 
   CHICKENPOX=$(egrep -i "$KEYWORDS_CHICKENPOX" "$NEWPAGES")
 
-  if [ "$CHICKENPOX" != "" ];
-  then
-    printf "%s" "$CHICKENPOX" > Chickenpox.txt
-    export CATFILE="Chickenpox.txt"
-    export CATNAME="Chicken pox"
-    $CATEGORIZE
-    rm Chickenpox.txt
-    unset CHICKENPOX
-  fi
+  categorize "CHICKENPOX" "Chicken pox"
 
   debug_end "Chicken pox"
 

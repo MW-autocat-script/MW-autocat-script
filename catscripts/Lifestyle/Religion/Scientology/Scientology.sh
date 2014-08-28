@@ -10,15 +10,7 @@ then
 
   SCIENTOLOGY=$(egrep -i "$KEYWORDS_SCIENTOLOGY" "$NEWPAGES")
 
-  if [ "$SCIENTOLOGY" != "" ];
-  then
-    printf "%s" "$SCIENTOLOGY" > Scientology.txt
-    export CATFILE="Scientology.txt"
-    export CATNAME="Scientology"
-    $CATEGORIZE
-    rm Scientology.txt
-    unset SCIENTOLOGY
-  fi
+  categorize "SCIENTOLOGY" "Scientology"
 
   debug_end "Scientology"
 

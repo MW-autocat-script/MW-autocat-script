@@ -7,17 +7,9 @@ then
 
   debug_start "Studyladder"
 
-  STUDYLADDER="$(egrep -i "$KEYWORDS_STUDYLADDER" "$NEWPAGES")"
+  STUDYLADDER=$(egrep -i "$KEYWORDS_STUDYLADDER" "$NEWPAGES")
 
-  if [ "$STUDYLADDER" != "" ];
-  then
-    printf "%s" "$STUDYLADDER" > Studyladder.txt
-    export CATFILE="Studyladder.txt"
-    export CATNAME="Studyladder"
-    $CATEGORIZE
-    rm Studyladder.txt
-    unset STUDYLADDER
-  fi
+  categorize "STUDYLADDER" "Studyladder"
 
   debug_end "Studyladder"
 

@@ -9,15 +9,7 @@ then
 
   CABAL=$(egrep -i "$KEYWORDS_MMORPG_CABAL" "$NEWPAGES")
 
-  if [ "$CABAL" != "" ];
-  then
-    printf "%s" "$CABAL" > CabalOnline.txt
-    export CATFILE="CabalOnline.txt"
-    export CATNAME="Cabal Online"
-    $CATEGORIZE
-    rm CabalOnline.txt
-    unset CABAL
-  fi
+  categorize "CABAL" "Cabal Online"
 
   debug_end "Cabal Online"
 

@@ -9,15 +9,7 @@ then
 
   ANARCHY=$(egrep -i "$KEYWORDS_MMORPG_ANARCHY" "$NEWPAGES")
 
-  if [ "$ANARCHY" != "" ];
-  then
-    printf "%s" "$ANARCHY" > AnarchyOnline.txt
-    export CATFILE="AnarchyOnline.txt"
-    export CATNAME="Anarchy Online"
-    $CATEGORIZE
-    rm AnarchyOnline.txt
-    unset ANARCHY
-  fi
+  categorize "ANARCHY" "Anarchy Online"
 
   debug_end "Anarchy Online"
 

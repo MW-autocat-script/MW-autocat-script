@@ -10,15 +10,7 @@ then
 
   DIGIMON=$(egrep -i "$KEYWORDS_DIGIMON" "$NEWPAGES" | egrep -iv "$KEYWORDS_DIGIMON_EXCLUDE")
 
-  if [ "$DIGIMON" != "" ];
-  then
-    printf "%s" "$DIGIMON" > Digimon.txt
-    export CATFILE="Digimon.txt"
-    export CATNAME="Digimon"
-    $CATEGORIZE
-    rm Digimon.txt
-    unset DIGIMON
-  fi
+  categorize "DIGIMON" "Digimon"
 
   debug_end "Digimon"
 

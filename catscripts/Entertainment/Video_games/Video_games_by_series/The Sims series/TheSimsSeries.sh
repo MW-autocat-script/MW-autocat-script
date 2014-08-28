@@ -16,45 +16,10 @@ then
   MYSIMS=$(egrep -i "$KEYWORDS_MYSIMS" "$NEWPAGES")
   SERIES=$(egrep -i "$KEYWORDS_THESIMS" "$NEWPAGES" | egrep -iv "$KEYWORDS_THESIMS_EXCLUDE")
 
-  if [ "$SIMS2" != "" ];
-  then
-    printf "%s" "$SIMS2" > TheSims2.txt
-    export CATFILE="TheSims2.txt"
-    export CATNAME="The Sims 2"
-    $CATEGORIZE
-    rm TheSims2.txt
-    unset SIMS2
-  fi
-
-  if [ "$SIMS3" != "" ];
-  then
-    printf "%s" "$SIMS3" > TheSims3.txt
-    export CATFILE="TheSims3.txt"
-    export CATNAME="The Sims 3"
-    $CATEGORIZE
-    rm TheSims3.txt
-    unset SIMS3
-  fi
-
-  if [ "$MYSIMS" != "" ];
-  then
-    printf "%s" "$MYSIMS" > MySims.txt
-    export CATFILE="MySims.txt"
-    export CATNAME="MySims"
-    $CATEGORIZE
-    rm MySims.txt
-    unset MYSIMS
-  fi
-
-  if [ "$SERIES" != "" ];
-  then
-    printf "%s" "$SERIES" > TheSimsSeries.txt
-    export CATFILE="TheSimsSeries.txt"
-    export CATNAME="The Sims series"
-    $CATEGORIZE
-    rm TheSimsSeries.txt
-    unset SERIES
-  fi
+  categorize "SIMS2" "The Sims 2"
+  categorize "SIMS3" "The Sims 3"
+  categorize "MYSIMS" "MySims"
+  categorize "SERIES" "The Sims series"
 
   debug_end "The Sims series"
 

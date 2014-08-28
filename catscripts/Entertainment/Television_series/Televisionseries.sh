@@ -17,15 +17,7 @@ then
   KEYWORDS_TELEVISIONSERIES_EXCLUDE="$KEYWORDS_DESPERATEHOUSEWIVES|$KEYWORDS_TELEVISIONSERIES_ICARLY|$KEYWORDS_DOCTORWHO|$KEYWORDS_SMALLVILLE"
   SERIES=$(egrep -i "$KEYWORDS_TELEVISIONSERIES"  "$NEWPAGES" | egrep -iv "$KEYWORDS_TELEVISIONSERIES_EXCLUDE")
 
-  if [ "$SERIES" != "" ];
-  then
-    printf "%s" "$SERIES" > Series.txt
-    export CATFILE="Series.txt"
-    export CATNAME="Television series"
-    $CATEGORIZE
-    rm Series.txt
-    unset SERIES
-  fi
+  categorize "SERIES" "Television series"
 
   debug_end "Television series"
 

@@ -9,15 +9,7 @@ then
 
   BATTLEFIELD=$(egrep -i "$KEYWORDS_BATTLEFIELDSERIES" "$NEWPAGES")
 
-  if [ "$BATTLEFIELD" != "" ];
-  then
-    printf "%s" "$BATTLEFIELD" > Battlefieldseries.txt
-    export CATFILE="Battlefieldseries.txt"
-    export CATNAME="Battlefield series"
-    $CATEGORIZE
-    rm Battlefieldseries.txt
-    unset BATTLEFIELD
-  fi
+  categorize "BATTLEFIELD" "Battlefield series"
 
   debug_end "Battlefield series"
 

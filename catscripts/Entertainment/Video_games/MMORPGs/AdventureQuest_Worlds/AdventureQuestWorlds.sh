@@ -9,15 +9,7 @@ then
 
   AQW=$(egrep -i "$KEYWORDS_MMORPG_AQW" "$NEWPAGES")
 
-  if [ "$AQW" != "" ];
-  then
-    printf "%s" "$AQW" > AdventureQuestWorlds.txt
-    export CATFILE="AdventureQuestWorlds.txt"
-    export CATNAME="AdventureQuest Worlds"
-    $CATEGORIZE
-    rm AdventureQuestWorlds.txt
-    unset AQW
-  fi
+  categorize "AQW" "AdventureQuest Worlds"
 
   debug_end "AdventureQuest Worlds"
 

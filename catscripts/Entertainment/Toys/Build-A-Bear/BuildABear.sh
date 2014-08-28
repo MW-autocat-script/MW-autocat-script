@@ -9,15 +9,7 @@ then
 
   BUILDABEAR=$(egrep -i "$KEYWORDS_BUILDABEAR" "$NEWPAGES")
 
-  if [ "$BUILDABEAR" != "" ];
-  then
-    printf "%s" "$BUILDABEAR" > BuildABear.txt
-    export CATFILE="BuildABear.txt"
-    export CATNAME="Build-A-Bear"
-    $CATEGORIZE
-    rm BuildABear.txt
-    unset BUILDABEAR
-  fi
+  categorize "BUILDABEAR" "Build-A-Bear"
 
   debug_end "Build-A-Bear"
 

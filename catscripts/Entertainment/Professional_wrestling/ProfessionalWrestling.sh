@@ -16,15 +16,7 @@ then
 
   PROFESSIONALWRESTLING="$(egrep -i "$KEYWORDS_PROFESSIONALWRESTLING" "$NEWPAGES" | egrep -iv "$KEYWORDS_PROFESSIONALWRESTLING_EXCLUDE" )"
 
-  if [ "$PROFESSIONALWRESTLING" != "" ];
-  then
-    printf "%s" "$PROFESSIONALWRESTLING" > ProfessionalWrestling.txt
-    export CATFILE="ProfessionalWrestling.txt"
-    export CATNAME="Professional wrestling"
-    $CATEGORIZE
-    rm ProfessionalWrestling.txt
-    unset PROFESSIONALWRESTLING
-  fi
+  categorize "PROFESSIONALWRESTLING" "Professional wrestling"
 
   debug_end "Professional wrestling"
 

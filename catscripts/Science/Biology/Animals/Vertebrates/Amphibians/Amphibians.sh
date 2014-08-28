@@ -11,39 +11,13 @@ then
   
   debug_start "Amphibians"
 
-  AMPHIBIANS="$(egrep -i "$KEYWORDS_AMPHIBIANS" "$NEWPAGES" | egrep -iv "$KEYWORDS_AMPHIBIANS_EXCLUDE")"
-  FROGSANDTOADS="$(egrep -i "$KEYWORDS_FROGSANDTOADS" "$NEWPAGES")"
-  SALAMANDERS="$(egrep -i "$KEYWORDS_SALAMANDERS" "$NEWPAGES")"
+  AMPHIBIANS=$(egrep -i "$KEYWORDS_AMPHIBIANS" "$NEWPAGES" | egrep -iv "$KEYWORDS_AMPHIBIANS_EXCLUDE")
+  FROGSANDTOADS=$(egrep -i "$KEYWORDS_FROGSANDTOADS" "$NEWPAGES")
+  SALAMANDERS=$(egrep -i "$KEYWORDS_SALAMANDERS" "$NEWPAGES")
 
-  if [ "$AMPHIBIANS" != "" ];
-  then
-    printf "%s" "$AMPHIBIANS" > Amphibians.txt
-    export CATFILE="Amphibians.txt"
-    export CATNAME="Amphibians"
-    $CATEGORIZE
-    rm Amphibians.txt
-    unset AMPHIBIANS
-  fi
-
-  if [ "$FROGSANDTOADS" != "" ];
-  then
-    printf "%s" "$FROGSANDTOADS" > FrogsAndToads.txt
-    export CATFILE="FrogsAndToads.txt"
-    export CATNAME="Frogs and toads"
-    $CATEGORIZE
-    rm FrogsAndToads.txt
-    unset FROGSANDTOADS
-  fi
-
-  if [ "$SALAMANDERS" != "" ];
-  then
-    printf "%s" "$SALAMANDERS" > Salamanders.txt
-    export CATFILE="Salamanders.txt"
-    export CATNAME="Salamanders"
-    $CATEGORIZE
-    rm Salamanders.txt
-    unset SALAMANDERS
-  fi
+  categorize "AMPHIBIANS" "Amphibians"
+  categorize "FROGSANDTOADS" "Frogs and toads"
+  categorize "SALAMANDERS" "Salamanders"
 
   debug_end "Amphibians"
 

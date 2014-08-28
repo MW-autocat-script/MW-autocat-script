@@ -10,15 +10,7 @@ then
 
   ROCKYMOUNTAINS=$(egrep -i "$KEYWORDS_ROCKYMOUNTAINS" "$NEWPAGES" | egrep -iv "$KEYWORDS_ROCKYMOUNTAINS_EXCLUDE")
 
-  if [ "$ROCKYMOUNTAINS" != "" ];
-  then
-    printf "%s" "$ROCKYMOUNTAINS" > RockyMountains.txt
-    export CATFILE="RockyMountains.txt"
-    export CATNAME="Rocky Mountains"
-    $CATEGORIZE
-    rm RockyMountains.txt
-    unset ROCKYMOUNTAINS
-  fi
+  categorize "ROCKYMOUNTAINS" "Rocky Mountains"
 
   debug_end "Rocky Mountains"
 

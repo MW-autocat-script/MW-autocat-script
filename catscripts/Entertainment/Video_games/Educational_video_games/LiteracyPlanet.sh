@@ -9,15 +9,7 @@ then
 
   LITERACYPLANET=$(egrep -i "$KEYWORDS_LITERACYPLANET" "$NEWPAGES") 
 
-  if [ "$LITERACYPLANET" != "" ];
-  then
-    printf "%s" "$LITERACYPLANET" > LiteracyPlanet.txt
-    export CATFILE="LiteracyPlanet.txt"
-    export CATNAME="Literacy Planet"
-    $CATEGORIZE
-    rm LiteracyPlanet.txt
-    unset LITERACYPLANET
-  fi
+  categorize "LITERACYPLANET" "Literacy Planet"
 
   debug_end "Literacy Planet"
 

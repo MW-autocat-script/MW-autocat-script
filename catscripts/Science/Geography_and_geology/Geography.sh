@@ -20,35 +20,9 @@ then
   VOLCANOES=$(egrep -i "$KEYWORDS_VOLCANO" "$NEWPAGES" | egrep -iv "$KEYWORDS_VOLCANO_EXCLUDE")
   EARTHQUAKES=$(egrep -i "$KEYWORDS_EARTHQUAKES" "$NEWPAGES")
 
-  if [ "$GEOLOGY" != "" ];
-  then
-    printf "%s" "$GEOLOGY" > Geology.txt
-    export CATFILE="Geology.txt"
-    export CATNAME="Geography and geology"
-    $CATEGORIZE
-    rm Geology.txt
-    unset GEOLOGY
-  fi
-
-  if [ "$EARTHQUAKES" != "" ];
-  then
-    printf "%s" "$EARTHQUAKES" > Earthquakes.txt
-    export CATFILE="Earthquakes.txt"
-    export CATNAME="Earthquakes"
-    $CATEGORIZE
-    rm Earthquakes.txt
-    unset EARTHQUAKES
-  fi
-
-  if [ "$VOLCANOES" != "" ];
-  then
-    printf "%s" "$VOLCANOES" > Volcanoes.txt
-    export CATFILE="Volcanoes.txt"
-    export CATNAME="Volcanoes"
-    $CATEGORIZE
-    rm Volcanoes.txt
-    unset VOLCANOES
-  fi
+  categorize "GEOLOGY" "Geography and geology"
+  categorize "EARTHQUAKES" "Earthquakes"
+  categorize "VOLCANOES" "Volcanoes"
 
   debug_end "Geography and geology"
 

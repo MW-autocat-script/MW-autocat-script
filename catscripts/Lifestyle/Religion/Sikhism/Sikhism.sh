@@ -10,15 +10,7 @@ then
 
   SIKHISM=$(egrep -i "$KEYWORDS_SIKHISM" "$NEWPAGES")
 
-  if [ "$SIKHISM" != "" ];
-  then
-    printf "%s" "$SIKHISM" > Sikhism.txt
-    export CATFILE="Sikhism.txt"
-    export CATNAME="Sikhism"
-    $CATEGORIZE
-    rm Sikhism.txt
-    unset SIKHISM
-  fi
+  categorize "SIKHISM" "Sikhism"
 
   debug_end "Sikhism"
 

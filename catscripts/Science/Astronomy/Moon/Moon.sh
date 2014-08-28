@@ -10,15 +10,7 @@ then
 
   MOON=$(egrep -i "$KEYWORDS_MOON" "$NEWPAGES" | egrep -iv "$KEYWORDS_MOON_EXCLUDE")
 
-  if [ "$MOON" != "" ];
-  then
-    printf "%s" "$MOON" > Moon.txt
-    export CATFILE="Moon.txt"
-    export CATNAME="Moon"
-    $CATEGORIZE
-    rm Moon.txt
-    unset MOON
-  fi
+  categorize "MOON" "Moon"
 
   debug_end "Moon"
 

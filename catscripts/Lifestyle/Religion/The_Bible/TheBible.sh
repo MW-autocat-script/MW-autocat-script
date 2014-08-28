@@ -12,15 +12,7 @@ then
 
   BIBLE=$(egrep -i "$KEYWORDS_BIBLE" "$NEWPAGES"| egrep -iv "$KEYWORDS_BIBLE_EXCLUDE" && egrep "$KEYWORDS_BIBLE_CASESENSITIVE" "$NEWPAGES" | egrep -iv "$KEYWORDS_BIBLE_EXCLUDE")
 
-  if [ "$BIBLE" != "" ];
-  then
-    printf "%s" "$BIBLE" > TheBible.txt
-    export CATFILE="TheBible.txt"
-    export CATNAME="The Bible"
-    $CATEGORIZE
-    rm TheBible.txt
-    unset BIBLE
-  fi
+  categorize "BIBLE" "The Bible"
 
   debug_end "The Bible"
 

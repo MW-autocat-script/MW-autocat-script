@@ -10,15 +10,7 @@ then
 
   JUDAISM=$(egrep -i "$KEYWORDS_JUDAISM" "$NEWPAGES")
 
-  if [ "$JUDAISM" != "" ];
-  then
-    printf "%s" "$JUDAISM" > Judaism.txt
-    export CATFILE="Judaism.txt"
-    export CATNAME="Judaism"
-    $CATEGORIZE
-    rm Judaism.txt
-    unset JUDAISM
-  fi
+  categorize "JUDAISM" "Judaism"
 
   debug_end "Judaism"
 

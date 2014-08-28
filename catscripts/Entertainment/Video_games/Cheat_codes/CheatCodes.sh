@@ -9,30 +9,11 @@ then
   
   debug_start "Cheat codes"
 
+  CHEATCODES=$(egrep -i "$KEYWORDS_CHEATCODES" "$NEWPAGES" | egrep -iv "$KEYWORDS_CHEATCODES_EXCLUDE")
+  ACTIONREPLAY=$(egrep -i "$KEYWORDS_ACTIONREPLAY" "$NEWPAGES")
 
-  CHEATCODES="$(egrep -i "$KEYWORDS_CHEATCODES" "$NEWPAGES" | egrep -iv "$KEYWORDS_CHEATCODES_EXCLUDE")"
-  ACTIONREPLAY="$(egrep -i "$KEYWORDS_ACTIONREPLAY" "$NEWPAGES")"
-
-
-  if [ "$CHEATCODES" != "" ];
-  then
-    printf "%s" "$CHEATCODES" > CheatCodes.txt
-    export CATFILE="CheatCodes.txt"
-    export CATNAME="Cheat codes"
-    $CATEGORIZE
-    rm CheatCodes.txt
-    unset CHEATCODES
-  fi
-
-  if [ "$ACTIONREPLAY" != "" ];
-  then
-    printf "%s" "$ACTIONREPLAY" > ActionReplay.txt
-    export CATFILE="ActionReplay.txt"
-    export CATNAME="Action Replay"
-    $CATEGORIZE
-    rm ActionReplay.txt
-    unset ACTIONREPLAY
-  fi
+  categorize "CHEATCODES" "Cheat codes"
+  categorize "ACTIONREPLAY" "Action Replay"
 
   debug_end "Cheat codes"
 

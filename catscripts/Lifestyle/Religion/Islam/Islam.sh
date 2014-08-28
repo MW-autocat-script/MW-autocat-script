@@ -13,25 +13,8 @@ then
   ISLAM=$(egrep -i "$KEYWORDS_ISLAM" "$NEWPAGES" | egrep -iv "$KEYWORDS_ISLAM_EXCLUDE")
   RAMADAN=$(egrep -i "$KEYWORDS_RAMADAN" "$NEWPAGES")
 
-  if [ "$ISLAM" != "" ];
-  then
-    printf "%s" "$ISLAM" > Islam.txt
-    export CATFILE="Islam.txt"
-    export CATNAME="Islam"
-    $CATEGORIZE
-    rm Islam.txt
-    unset ISLAM
-  fi
-
-  if [ "$RAMADAN" != "" ];
-  then
-    printf "%s" "$RAMADAN" > Ramadan.txt
-    export CATFILE="Ramadan.txt"
-    export CATNAME="Ramadan"
-    $CATEGORIZE
-    rm Ramadan.txt
-    unset RAMADAN
-  fi
+  categorize "ISLAM" "Islam"
+  categorize "RAMADAN" "Ramadan"
 
   debug_end "Islam"
 

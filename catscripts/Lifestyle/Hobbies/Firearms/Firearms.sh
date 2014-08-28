@@ -15,36 +15,9 @@ then
   AK47=$(egrep -i "$KEYWORDS_AK47" "$NEWPAGES")
   M16=$(egrep -i "$KEYWORDS_M16" "$NEWPAGES")
 
-  if [ "$FIREARMS" != "" ];
-  then
-    printf "%s" "$FIREARMS" > Firearms.txt
-    export CATFILE="Firearms.txt"
-    export CATNAME="Firearms"
-    $CATEGORIZE
-    rm Firearms.txt
-    unset FIREARMS
-  fi
-    
-
-  if [ "$AK47" != "" ];
-  then
-    printf "%s" "$AK47" > AK47.txt
-    export CATFILE="AK47.txt"
-    export CATNAME="AK-47"
-    $CATEGORIZE
-    rm AK47.txt
-    unset AK47
-  fi
-
-  if [ "$M16" != "" ];
-  then
-    printf "%s" "$M16" > M16.txt
-    export CATFILE="M16.txt"
-    export CATNAME="M16"
-    $CATEGORIZE
-    rm M16.txt
-    unset M16
-  fi
+  categorize "FIREARMS" "Firearms"
+  categorize "AK47" "AK-47"
+  categorize "M16" "M16"
 
   debug_end "Firearms"
 

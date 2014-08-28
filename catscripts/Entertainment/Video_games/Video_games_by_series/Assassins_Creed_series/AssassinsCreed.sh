@@ -14,35 +14,9 @@ SERIES=$(egrep -i "$KEYWORDS_ASSASSINSCREED" "$NEWPAGES" | egrep -iv "$KEYWORDS_
 TWO=$(egrep -i "$KEYWORDS_CREEDTWO" "$NEWPAGES")
 THREE=$(egrep -i "$KEYWORDS_CREEDTHREE" "$NEWPAGES")
 
-  if [ "$SERIES" != "" ];
-  then
-    printf "%s" "$SERIES" > Series.txt
-    export CATFILE="Series.txt"
-    export CATNAME="Assassin's Creed series"
-    $CATEGORIZE
-    rm Series.txt
-    unset SERIES
-  fi
-
-  if [ "$TWO" != "" ];
-  then
-    printf "%s" "$TWO" > Two.txt
-    export CATFILE="Two.txt"
-    export CATNAME="Assassin's Creed II"
-    $CATEGORIZE
-    rm Two.txt
-    unset TWO
-  fi
-
-  if [ "$THREE" != "" ];
-  then
-    printf "%s" "$THREE" > Three.txt
-    export CATFILE="Three.txt"
-    export CATNAME="Assassin's Creed III"
-    $CATEGORIZE
-    rm Three.txt
-    unset THREE
-  fi
+  categorize "SERIES" "Assassin's Creed series"
+  categorize "TWO" "Assassin's Creed II"
+  categorize "THREE" "Assassin's Creed III"
 
   debug_end "Assassin's Creed series"
 

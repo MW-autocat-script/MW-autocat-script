@@ -9,15 +9,7 @@ then
 
   CYTOLOGY=$(egrep -i "$KEYWORDS_CYTOLOGY" "$NEWPAGES")
 
-  if [ "$CYTOLOGY" != "" ];
-  then
-    printf "%s" "$CYTOLOGY" > Cytology.txt
-    export CATFILE="Cytology.txt"
-    export CATNAME="Cytology"
-    $CATEGORIZE
-    rm Cytology.txt
-    unset CYTOLOGY
-  fi
+  categorize "CYTOLOGY" "Cytology"
 
   debug_end "Cytology"
 
