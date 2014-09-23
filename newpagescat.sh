@@ -86,20 +86,13 @@ NEWSUM=$(md5sum "$NEWPAGES" | cut -b-32)
 
 if [ "$OLDSUM" != "$NEWSUM" ]; #Lists have changed
 then
- 
-  ./catscripts/Education/Education.sh
-  ./catscripts/Entertainment/Entertainment.sh
-  ./catscripts/Government/Government.sh
-  ./catscripts/Language/Language.sh
-  ./catscripts/Legal/Legal.sh
-  ./catscripts/Lifestyle/Lifestyle.sh
-  ./catscripts/Maintenance/Maintenance.sh
-  ./catscripts/Math/Math.sh
-  ./catscripts/Science/Science.sh
-  ./catscripts/Technology/Technology.sh
-  ./catscripts/Temp/Temp.sh
-  ./catscripts/Transportation/Transportation.sh
 
+categories=( "Education" "Entertainment" "Government" "Language" "Legal" "Lifestyle" "Maintenance" "Math" "Science" "Technology" "Temp" "Transportation" )
+
+for category in "${categories[@]}"
+do
+  ./catscripts/$category/$category.sh
+done
 
   echo "$NEWSUM" > "$SUMFILE"
 
