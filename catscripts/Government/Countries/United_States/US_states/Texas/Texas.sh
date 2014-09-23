@@ -19,45 +19,10 @@ then
   HOUSTON=$(egrep -i "$KEYWORDS_HOUSTON" "$NEWPAGES" | egrep -iv "$KEYWORDS_HOUSTON_EXCLUDE")
   SANANTONIO=$(egrep -i "$KEYWORDS_SANANTONIO" "$NEWPAGES")
 
-  if [ "$TEXAS" != "" ];
-  then
-    printf "%s" "$TEXAS" > Texas.txt
-    export CATFILE="Texas.txt"
-    export CATNAME="Texas"
-    $CATEGORIZE
-    rm Texas.txt
-    unset TEXAS
-  fi
-
-  if [ "$DALLAS" != "" ];
-  then
-    printf "%s" "$DALLAS" > Dallas.txt
-    export CATFILE="Dallas.txt"
-    export CATNAME="Dallas"
-    $CATEGORIZE
-    rm Dallas.txt
-    unset DALLAS
-  fi
-
-  if [ "$HOUSTON" != "" ];
-  then
-    printf "%s" "$HOUSTON" > Houston.txt
-    export CATFILE="Houston.txt"
-    export CATNAME="Houston"
-    $CATEGORIZE
-    rm Houston.txt
-    unset HOUSTON
-  fi
-
-  if [ "$SANANTONIO" != "" ];
-  then
-    printf "%s" "$SANANTONIO" > SanAntonio.txt
-    export CATFILE="SanAntonio.txt"
-    export CATNAME="San Antonio"
-    $CATEGORIZE
-    rm SanAntonio.txt
-    unset SANANTONIO
-  fi
+  categorize "TEXAS" "Texas"
+  categorize "DALLAS" "Dallas"
+  categorize "HOUSTON" "Houston"
+  categorize "SANANTONIO" "San Antonio"
 
   debug_end "Texas"
 

@@ -18,45 +18,10 @@ then
   JERUSALEM=$(egrep -i "$KEYWORDS_JERUSALEM" "$NEWPAGES" | egrep -iv "$KEYWORDS_JERUSALEM_EXCLUDE")
   TELAVIV=$(egrep -i "$KEYWORDS_TELAVIV" "$NEWPAGES")
 
-  if [ "$ISRAEL" != "" ];
-  then
-    printf "%s" "$ISRAEL" > Israel.txt
-    export CATFILE="Israel.txt"
-    export CATNAME="Israel"
-    $CATEGORIZE
-    rm Israel.txt
-    unset ISRAEL
-  fi
-
-  if [ "$ISRAELITES" != "" ];
-  then
-    printf "%s" "$ISRAELITES" > AncientIsrael.txt
-    export CATFILE="AncientIsrael.txt"
-    export CATNAME="Ancient Israel"
-    $CATEGORIZE
-    rm AncientIsrael.txt
-    unset ISRAELITES
-  fi
-
-  if [ "$JERUSALEM" != "" ];
-  then
-    printf "%s" "$JERUSALEM" > Jerusalem.txt
-    export CATFILE="Jerusalem.txt"
-    export CATNAME="Jerusalem"
-    $CATEGORIZE
-    rm Jerusalem.txt
-    unset JERUSALEM
-  fi
-
-  if [ "$TELAVIV" != "" ];
-  then
-    printf "%s" "$TELAVIV" > TelAviv.txt
-    export CATFILE="TelAviv.txt"
-    export CATNAME="Tel Aviv"
-    $CATEGORIZE
-    rm TelAviv.txt
-    unset TELAVIV
-  fi
+  categorize "ISRAEL" "Israel"
+  categorize "ISRAELITES" "Ancient Israel"
+  categorize "JERUSALEM" "Jerusalem"
+  categorize "TELAVIV" "Tel Aviv"
 
   debug_end "Israel"
 

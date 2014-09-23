@@ -19,45 +19,10 @@ then
   TAHITI=$(egrep -i "$KEYWORDS_TAHITI" "$NEWPAGES")
   FRENCHREVOLUTION=$(egrep -i "$KEYWORDS_FRENCH_REVOLUTION" "$NEWPAGES")
 
-  if [ "$FRANCE" != "" ];
-  then
-    printf "%s" "$FRANCE" > France.txt
-    export CATFILE="France.txt"
-    export CATNAME="France"
-    $CATEGORIZE
-    rm France.txt
-    unset FRANCE
-  fi
-
-  if [ "$PARIS" != "" ];
-  then
-    printf "%s" "$PARIS" > Paris.txt
-    export CATFILE="Paris.txt"
-    export CATNAME="Paris"
-    $CATEGORIZE
-    rm Paris.txt
-    unset PARIS
-  fi
-
-  if [ "$TAHITI" != "" ];
-  then
-    printf "%s" "$TAHITI" > Tahiti.txt
-    export CATFILE="Tahiti.txt"
-    export CATNAME="Tahiti"
-    $CATEGORIZE
-    rm Tahiti.txt
-    unset TAHITI
-  fi
-
-  if [ "$FRENCHREVOLUTION" != "" ];
-  then
-    printf "%s" "$FRENCHREVOLUTION" > FrenchRevolution.txt
-    export CATFILE="FrenchRevolution.txt"
-    export CATNAME="French Revolution"
-    $CATEGORIZE
-    rm FrenchRevolution.txt
-    unset FRENCHREVOLUTION
-  fi
+  categorize "FRANCE" "France"
+  categorize "PARIS" "Paris"
+  categorize "TAHITI" "Tahiti"
+  categorize "FRENCHREVOLUTION" "French Revolution"
 
   debug_end "France"
 

@@ -19,15 +19,7 @@ then
 
   UNITEDKINGDOM=$(egrep -i "$KEYWORDS_UNITEDKINGDOM" "$NEWPAGES" | egrep -iv "$KEYWORDS_UNITEDKINGDOM_EXCLUDE")
 
-  if [ "$UNITEDKINGDOM" != "" ];
-  then
-    printf "%s" "$UNITEDKINGDOM" > UnitedKingdom.txt
-    export CATFILE="UnitedKingdom.txt"
-    export CATNAME="United Kingdom"
-    $CATEGORIZE
-    rm UnitedKingdom.txt
-    unset UNITEDKINGDOM
-  fi
+  categorize "UNITEDKINGDOM" "United Kingdom"
 
   debug_end "United Kingdom"
 

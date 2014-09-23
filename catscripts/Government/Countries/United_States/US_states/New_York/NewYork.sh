@@ -19,45 +19,10 @@ then
   ALBANY=$(egrep -i "$KEYWORDS_ALBANY" "$NEWPAGES" | egrep -iv "$KEYWORDS_ALBANY_EXCLUDE")
   EMPIRESTATE=$(egrep -i "$KEYWORDS_EMPIRESTATE" "$NEWPAGES")
 
-  if [ "$NEWYORK" != "" ];
-  then
-    printf "%s" "$NEWYORK" > NewYork.txt
-    export CATFILE="NewYork.txt"
-    export CATNAME="New York"
-    $CATEGORIZE
-    rm NewYork.txt
-    unset NEWYORK
-  fi
-
-  if [ "$NYC" != "" ];
-  then
-    printf "%s" "$NYC" > NewYorkCity.txt
-    export CATFILE="NewYorkCity.txt"
-    export CATNAME="New York City"
-    $CATEGORIZE
-    rm NewYorkCity.txt
-    unset NYC
-  fi
-
-  if [ "$ALBANY" != "" ];
-  then
-    printf "%s" "$ALBANY" > Albany.txt
-    export CATFILE="Albany.txt"
-    export CATNAME="Albany, New York"
-    $CATEGORIZE
-    rm Albany.txt
-    unset ALBANY
-  fi
-
-  if [ "$EMPIRESTATE" != "" ];
-  then
-    printf "%s" "$EMPIRESTATE" > EmpireState.txt
-    export CATFILE="EmpireState.txt"
-    export CATNAME="Empire State Building"
-    $CATEGORIZE
-    rm EmpireState.txt
-    unset EMPIRESTATE
-  fi
+  categorize "NEWYORK" "New York"
+  categorize "NYC" "New York City"
+  categorize "ALBANY" "Albany, New York"
+  categorize "EMPIRESTATE" "Empire State Building"
 
   debug_end "New York"
 
