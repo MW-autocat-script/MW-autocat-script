@@ -10,15 +10,7 @@ then
 
   WOW=$(egrep -i "$KEYWORDS_MMORPG_WOW" "$NEWPAGES" && egrep "$KEYWORDS_MMORPG_WOW_CASESENSITIVE" "$NEWPAGES")
 
-  if [ "$WOW" != "" ];
-  then
-    printf "%s" "$WOW" > WorldOfWarcraft.txt
-    export CATFILE="WorldOfWarcraft.txt"
-    export CATNAME="World of Warcraft"
-    $CATEGORIZE
-    rm WorldOfWarcraft.txt
-    unset WOW
-  fi
+  categorize "WOW" "World of Warcraft"
 
   debug_end "World of Warcraft"
 

@@ -3,8 +3,9 @@
 KEYWORDS_NEVADA="Nevada"
 KEYWORDS_LASVEGAS="Las(| )Vegas"
 KEYWORDS_NEVADA_EXCLUDE="$KEYWORDS_LASVEGAS"
+KEYWORDS_NEVADA_ALL="$KEYWORDS_LASVEGAS|$KEYWORDS_NEVADA"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
 
   debug_start "Nevada"
@@ -12,25 +13,8 @@ then
   NEVADA=$(egrep -i "$KEYWORDS_NEVADA" "$NEWPAGES" | egrep -iv "$KEYWORDS_NEVADA_EXCLUDE")
   LASVEGAS=$(egrep -i "$KEYWORDS_LASVEGAS" "$NEWPAGES")
 
-  if [ "$NEVADA" != "" ];
-  then
-    printf "%s" "$NEVADA" > Nevada.txt
-    export CATFILE="Nevada.txt"
-    export CATNAME="Nevada"
-    $CATEGORIZE
-    rm Nevada.txt
-    unset NEVADA
-  fi
-  
-  if [ "$LASVEGAS" != "" ];
-  then
-    printf "%s" "$LASVEGAS" > LasVegas.txt
-    export CATFILE="LasVegas.txt"
-    export CATNAME="Las Vegas"
-    $CATEGORIZE
-    rm LasVegas.txt
-    unset LASVEGAS
-  fi
+  categorize "NEVADA" "Nevada"
+  categorize "LASVEGAS" "Las Vegas"
 
   debug_end "Nevada"
 

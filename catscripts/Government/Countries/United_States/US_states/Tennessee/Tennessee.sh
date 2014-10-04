@@ -16,35 +16,9 @@ then
   NASHVILLE=$(egrep -i "$KEYWORDS_NASHVILLE" "$NEWPAGES")
   MEMPHIS=$(egrep -i "$KEYWORDS_MEMPHIS" "$NEWPAGES"| egrep -iv "$KEYWORDS_MEMPHIS_EXCLUDE")
 
-  if [ "$TENNESSEE" != "" ];
-  then
-    printf "%s" "$TENNESSEE" > Tennessee.txt
-    export CATFILE="Tennessee.txt"
-    export CATNAME="Tennessee"
-    $CATEGORIZE
-    rm Tennessee.txt
-    unset TENNESSEE
-  fi
-
-  if [ "$NASHVILLE" != "" ];
-  then
-    printf "%s" "$NASHVILLE" > Nashville.txt
-    export CATFILE="Nashville.txt"
-    export CATNAME="Nashville"
-    $CATEGORIZE
-    rm Nashville.txt
-    unset NASHVILLE
-  fi
-
-  if [ "$MEMPHIS" != "" ];
-  then
-    printf "%s" "$MEMPHIS" > Memphis.txt
-    export CATFILE="Memphis.txt"
-    export CATNAME="Memphis, Tennessee"
-    $CATEGORIZE
-    rm Memphis.txt
-    unset MEMPHIS
-  fi
+  categorize "TENNESSEE" "Tennessee"
+  categorize "NASHVILLE" "Nashville"
+  categorize "MEMPHIS" "Memphis"
 
   debug_end "Tennessee"
 

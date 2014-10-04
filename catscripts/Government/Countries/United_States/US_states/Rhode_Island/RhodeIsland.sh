@@ -1,6 +1,7 @@
 #!/bin/bash
 
 KEYWORDS_RHODEISLAND="Rhode(| )Island"
+KEYWORDS_RHODEISLAND_ALL="$KEYWORDS_RHODEISLAND"
 
 if [ "$1" == "" ];
 then
@@ -9,15 +10,7 @@ then
 
   RHODEISLAND=$(egrep -i "$KEYWORDS_RHODEISLAND" "$NEWPAGES")
 
-  if [ "$RHODEISLAND" != "" ];
-  then
-    printf "%s" "$RHODEISLAND" > RhodeIsland.txt
-    export CATFILE="RhodeIsland.txt"
-    export CATNAME="Rhode Island"
-    $CATEGORIZE
-    rm RhodeIsland.txt
-    unset RHODEISLAND
-  fi
+  categorize "RHODEISLAND" "Rhode Island"
 
   debug_end "Rhode Island"
 

@@ -11,15 +11,7 @@ then
 
   INDIANA=$(egrep -i "$KEYWORDS_INDIANA" "$NEWPAGES" | egrep -iv "$KEYWORDS_INDIANA_EXCLUDE" )
 
-  if [ "$INDIANA" != "" ];
-  then
-    printf "%s" "$INDIANA" > Indiana.txt
-    export CATFILE="Indiana.txt"
-    export CATNAME="Indiana"
-    $CATEGORIZE
-    rm Indiana.txt
-    unset INDIANA
-  fi
+  categorize "INDIANA" "Indiana"
 
   debug_end "Indiana"
 

@@ -1,23 +1,16 @@
 #!/bin/bash
 
 KEYWORDS_NORTHDAKOTA="North(| )Dakota"
+KEYWORDS_NORTHDAKOTA_ALL="$KEYWORDS_NORTHDAKOTA"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
 
   debug_start "North Dakota"
 
   NORTHDAKOTA=$(egrep -i "$KEYWORDS_NORTHDAKOTA" "$NEWPAGES")
 
-  if [ "$NORTHDAKOTA" != "" ];
-  then
-    printf "%s" "$NORTHDAKOTA" > NorthDakota.txt
-    export CATFILE="NorthDakota.txt"
-    export CATNAME="North Dakota"
-    $CATEGORIZE
-    rm NorthDakota.txt
-    unset NORTHDAKOTA
-  fi
+  categorize "NORTHDAKOTA" "North Dakota"
 
   debug_end "North Dakota"
 

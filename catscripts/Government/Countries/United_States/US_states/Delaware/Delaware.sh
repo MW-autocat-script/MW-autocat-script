@@ -10,15 +10,7 @@ then
 
   DELAWARE=$(egrep -i "$KEYWORDS_DELAWARE" "$NEWPAGES")
 
-  if [ "$DELAWARE" != "" ];
-  then
-    printf "%s" "$DELAWARE" > Delaware.txt
-    export CATFILE="Delaware.txt"
-    export CATNAME="Delaware"
-    $CATEGORIZE
-    rm Delaware.txt
-    unset DELAWARE
-  fi
+  categorize "DELAWARE" "Delaware"
 
   debug_end "Delaware"
 

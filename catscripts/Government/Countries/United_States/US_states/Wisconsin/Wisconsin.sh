@@ -13,25 +13,8 @@ then
   WISCONSIN=$(egrep -i "$KEYWORDS_WISCONSIN" "$NEWPAGES" | egrep -iv "$KEYWORDS_WISCONSIN_EXCLUDE")
   MILWAUKEE=$(egrep -i "$KEYWORDS_MILWAUKEE" "$NEWPAGES")
 
-  if [ "$WISCONSIN" != "" ];
-  then
-    printf "%s" "$WISCONSIN" > Wisconsin.txt
-    export CATFILE="Wisconsin.txt"
-    export CATNAME="Wisconsin"
-    $CATEGORIZE
-    rm Wisconsin.txt
-    unset WISCONSIN
-  fi
-
-  if [ "$MILWAUKEE" != "" ];
-  then
-    printf "%s" "$MILWAUKEE" > Milwaukee.txt
-    export CATFILE="Milwaukee.txt"
-    export CATNAME="Milwaukee"
-    $CATEGORIZE
-    rm Milwaukee.txt
-    unset MILWAUKEE
-  fi
+  categorize "WISCONSIN" "Wisconsin"
+  categorize "MILWAUKEE" "Milwaukee"
 
   debug_end "Wisconsin"
 

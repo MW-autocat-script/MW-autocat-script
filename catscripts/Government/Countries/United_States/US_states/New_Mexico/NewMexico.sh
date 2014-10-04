@@ -1,6 +1,7 @@
 #!/bin/bash
 
 KEYWORDS_NEWMEXICO="New(| )Mexic(o|an)"
+KEYWORDS_NEWMEXICO_ALL="$KEYWORDS_NEWMEXICO"
 
 if [ "$1" == "" ]; #Normal operation
 then
@@ -9,15 +10,7 @@ then
 
   NEWMEXICO=$(egrep -i "$KEYWORDS_NEWMEXICO" "$NEWPAGES")
 
-  if [ "$NEWMEXICO" != "" ];
-  then
-    printf "%s" "$NEWMEXICO" > NewMexico.txt
-    export CATFILE="NewMexico.txt"
-    export CATNAME="New Mexico"
-    $CATEGORIZE
-    rm NewMexico.txt
-    unset NEWMEXICO
-  fi
+  categorize "NEWMEXICO" "New Mexico"
 
   debug_end "New Mexico"
 

@@ -1,23 +1,16 @@
 #!/bin/bash
 
 KEYWORDS_PLAYSTATION_NETWORK="Play(| )Station(| )(Network|Store)|\bPSN\b"
+KEYWORDS_PLAYSTATION_NETWORK_ALL="$KEYWORDS_PLAYSTATION_NETWORK"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
 
   debug_start "PlayStation Network"
 
   PSN=$(egrep -i "$KEYWORDS_PLAYSTATION_NETWORK" "$NEWPAGES")
 
-  if [ "$PSN" != "" ];
-  then
-    printf "%s" "$PSN" > PlayStationNetwork.txt
-    export CATFILE="PlayStationNetwork.txt"
-    export CATNAME="PlayStation Network"
-    $CATEGORIZE
-    rm PlayStationNetwork.txt
-    unset PSN
-  fi
+  categorize "PSN" "PlayStation Network"
 
   debug_end "PlayStation Network"
 

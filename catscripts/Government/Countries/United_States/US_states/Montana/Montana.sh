@@ -1,7 +1,7 @@
 #!/bin/bash
 
 KEYWORDS_MONTANA="Montana"
-KEYWORDS_MONTANA_EXCLUDE="(French|Hanna(|h))(| )Montana"
+KEYWORDS_MONTANA_EXCLUDE="(French|Hanna(|h)|Tony)(| )Montana"
 KEYWORDS_MONTANA_ALL="$KEYWORDS_MONTANA"
 
 if [ "$1" == "" ]; #Normal operation
@@ -11,15 +11,7 @@ then
 
   MONTANA=$(egrep -i "$KEYWORDS_MONTANA" "$NEWPAGES" | egrep -iv "$KEYWORDS_MONTANA_EXCLUDE")
 
-  if [ "$MONTANA" != "" ];
-  then
-    printf "%s" "$MONTANA" > Montana.txt
-    export CATFILE="Montana.txt"
-    export CATNAME="Montana"
-    $CATEGORIZE
-    rm Montana.txt
-    unset MONTANA
-  fi
+  categorize "MONTANA" "Montana"
 
   debug_end "Montana"
 

@@ -8,17 +8,9 @@ then
   
   debug_start "West Virginia"
 
-  WESTVIRGINIA="$(egrep -i "$KEYWORDS_WESTVIRGINIA" "$NEWPAGES")"
+  WESTVIRGINIA=$(egrep -i "$KEYWORDS_WESTVIRGINIA" "$NEWPAGES")
 
-  if [ "$WESTVIRGINIA" != "" ];
-  then
-    printf "%s" "$WESTVIRGINIA" > WestVirginia.txt
-    export CATFILE="WestVirginia.txt"
-    export CATNAME="West Virginia"
-    $CATEGORIZE
-    rm WestVirginia.txt
-    unset WESTVIRGINIA
-  fi
+  categorize "WESTVIRGINIA" "West Virginia"
 
   debug_end "West Virginia"
 

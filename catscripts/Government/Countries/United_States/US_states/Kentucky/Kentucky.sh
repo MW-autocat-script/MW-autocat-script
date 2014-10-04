@@ -2,23 +2,16 @@
 
 KEYWORDS_KENTUCKY="Kentucky"
 KEYWORDS_KENTUCKY_EXCLUDE="Kentucky(| )Fried(| )Chicken"
+KEYWORDS_KENTUCKY_ALL="$KEYWORDS_KENTUCKY"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
 
   debug_start "Kentucky"
 
   KENTUCKY=$(egrep -i "$KEYWORDS_KENTUCKY" "$NEWPAGES" | egrep -iv "$KEYWORDS_KENTUCKY_EXCLUDE")
 
-  if [ "$KENTUCKY" != "" ];
-  then
-    printf "%s" "$KENTUCKY" > Kentucky.txt
-    export CATFILE="Kentucky.txt"
-    export CATNAME="Kentucky"
-    $CATEGORIZE
-    rm Kentucky.txt
-    unset KENTUCKY
-  fi
+  categorize "KENTUCKY" "Kentucky"
 
   debug_end "Kentucky"
 

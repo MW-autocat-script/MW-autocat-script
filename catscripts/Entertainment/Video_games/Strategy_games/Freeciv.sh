@@ -10,15 +10,7 @@ then
 
   FREECIV=$(egrep -i "$KEYWORDS_FREECIV" "$NEWPAGES")
 
-  if [ "$FREECIV" != "" ];
-  then
-    printf "%s" "$FREECIV" > Freeciv.txt
-    export CATFILE="Freeciv.txt"
-    export CATNAME="Freeciv"
-    $CATEGORIZE
-    rm Freeciv.txt
-    unset FREECIV
-  fi
+  categorize "FREECIV" "Freeciv"
 
   debug_end "Freeciv"
 

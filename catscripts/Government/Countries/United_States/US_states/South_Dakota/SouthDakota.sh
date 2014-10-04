@@ -1,23 +1,16 @@
 #!/bin/bash
 
 KEYWORDS_SOUTHDAKOTA="South(| )Dakota"
+KEYWORDS_SOUTHDAKOTA_ALL="$KEYWORDS_SOUTHDAKOTA"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
 
   debug_start "South Dakota"
 
   SOUTHDAKOTA=$(egrep -i "$KEYWORDS_SOUTHDAKOTA" "$NEWPAGES")
 
-  if [ "$SOUTHDAKOTA" != "" ];
-  then
-    printf "%s" "$SOUTHDAKOTA" > SouthDakota.txt
-    export CATFILE="SouthDakota.txt"
-    export CATNAME="South Dakota"
-    $CATEGORIZE
-    rm SouthDakota.txt
-    unset SOUTHDAKOTA
-  fi
+  categorize "SOUTHDAKOTA" "South Dakota"
 
   debug_end "South Dakota"
 

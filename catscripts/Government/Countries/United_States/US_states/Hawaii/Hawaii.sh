@@ -15,35 +15,9 @@ then
   HONOLULU=$(egrep -i "$KEYWORDS_HONOLULU" "$NEWPAGES")
   PEARLHARBOR=$(egrep -i "$KEYWORDS_PEARLHARBOR" "$NEWPAGES")
 
-  if [ "$HAWAII" != "" ];
-  then
-    printf "%s" "$HAWAII" > Hawaii.txt
-    export CATFILE="Hawaii.txt"
-    export CATNAME="Hawaii"
-    $CATEGORIZE
-    rm Hawaii.txt
-    unset HAWAII
-  fi
-
-  if [ "$HONOLULU" != "" ];
-  then
-    printf "%s" "$HONOLULU" > Honolulu.txt
-    export CATFILE="Honolulu.txt"
-    export CATNAME="Honolulu"
-    $CATEGORIZE
-    rm Honolulu.txt
-    unset HONOLULU
-  fi
-
-  if [ "$PEARLHARBOR" != "" ];
-  then
-    printf "%s" "$PEARLHARBOR" > PearlHarbor.txt
-    export CATFILE="PearlHarbor.txt"
-    export CATNAME="Pearl Harbor"
-    $CATEGORIZE
-    rm PearlHarbor.txt
-    unset PEARLHARBOR
-  fi
+  categorize "HAWAII" "Hawaii"
+  categorize "HONOLULU" "Honolulu"
+  categorize "PEARLHARBOR" "Pearl Harbor"
 
   debug_end "Hawaii"
 

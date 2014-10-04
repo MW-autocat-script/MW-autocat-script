@@ -1,6 +1,7 @@
 #!/bin/bash
 
 KEYWORDS_SOUTHCAROLINA="South(| )Carolina|, S(|\.)C(|\.)\b"
+KEYWORDS_SOUTHCAROLINA_ALL="$KEYWORDS_SOUTHCAROLINA"
 
 if [ "$1" == "" ]; #Normal operation
 then
@@ -9,15 +10,7 @@ then
 
   SOUTHCAROLINA=$(egrep -i "$KEYWORDS_SOUTHCAROLINA" "$NEWPAGES")
 
-  if [ "$SOUTHCAROLINA" != "" ];
-  then
-    printf "%s" "$SOUTHCAROLINA" > SouthCarolina.txt
-    export CATFILE="SouthCarolina.txt"
-    export CATNAME="South Carolina"
-    $CATEGORIZE
-    rm SouthCarolina.txt
-    unset SOUTHCAROLINA
-  fi
+  categorize "SOUTHCAROLINA" "South Carolina"
 
   debug_end "South Carolina"
 

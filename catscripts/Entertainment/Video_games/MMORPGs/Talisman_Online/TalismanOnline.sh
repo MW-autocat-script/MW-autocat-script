@@ -2,22 +2,14 @@
 
 export KEYWORDS_MMORPG_TALISMAN="Talisman(| )Online"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
 
   debug_start "Talisman Online"
 
   TALISMAN=$(egrep -i "$KEYWORDS_MMORPG_TALISMAN" "$NEWPAGES")
 
-  if [ "$TALISMAN" != "" ];
-  then
-    printf "%s" "$TALISMAN" > TalismanOnline.txt
-    export CATFILE="TalismanOnline.txt"
-    export CATNAME="Talisman Online"
-    $CATEGORIZE
-    rm TalismanOnline
-    unset TALISMAN
-  fi
+  categorize "TALISMAN" "Talisman Online"
 
   debug_end "Talisman Online"
 
