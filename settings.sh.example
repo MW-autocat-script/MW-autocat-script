@@ -1,10 +1,15 @@
 #!/bin/bash
 
-export GBT=3
-export NPL=500
-export PYWIKIPEDIADIR=..
-export BOTNAME="MYBOTNAME"
-export SITENAME="MySiteName"
-export PIDFILE="$SITENAME.lock"
-export TEMPDIR="/tmp/$SITENAME"
-export DEBUG=yes
+export GBT=3 #Change this to increae or decrease the number of seconds between edits. A higher number means a longer delay, but lower site load. A lower number is faster
+export NPL=500 #Change this to reduce or increase the number of new pages that are fetched. A lower number is faster; a larger number allows you to run less often
+export PYWIKIPEDIADIR=".." #Only change this if the sript directory is not a subdirectory of where pywikipediabot / pywikibot is installed. May be an absolute or relative location
+export BOTNAME="MYBOTNAME" #Change this line to place the correct bot account name in edit summaries
+export SITENAME="MySiteName" #Change this line to change the directory temporary files are stored in
+export PIDFILE="$SITENAME.lock" #There should be no need to change this
+export TEMPDIR="/tmp/$SITENAME" #Only change this if temporary files should be placed somewhere other than in /tmp, such as a ramdisk
+export DEBUG="yes" #Change this if you don't want messages like "Starting x script" and "Finishing x script"
+
+if [ ! -d "$TEMPDIR" ];
+then
+  mkdir "$TEMPDIR"
+fi

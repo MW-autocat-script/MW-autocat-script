@@ -72,7 +72,7 @@ export -f categorize
 
 printf "Fetching all pages from wiki. This may take a long time on larger wikis.\n"
 
-python "$PYWIKIPEDIADIR/pagegenerators.py" -start:. -pt:1 |sed s'|  [0-9][0-9][0-9][0-9][0-9][0-9]: ||'|sed s'|  [0-9][0-9][0-9][0-9][0-9]: ||'|sed s'|  [0-9][0-9][0-9][0-9]: ||'  | sed s'|  [0-9][0-9][0-9]: ||' | sed s'|  [0-9][0-9]: ||' | sed s'|  [0-9]: ||' > "$NEWPAGES"
+python "$PYWIKIPEDIADIR/pagegenerators.py" -start:'.' -pt:1  > "$NEWPAGES"
 
 printf "List complete; beginning categorization\n"
  
