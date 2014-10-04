@@ -123,7 +123,7 @@ then
   OBAMA=$(egrep -i "$KEYWORDS_BARACKOBAMA" "$NEWPAGES" | egrep -iv "$KEYWORDS_BARACKOBAMA_EXCLUDE")
 
   categorize "PRESIDENT" "US Presidents"
-  categorize "WASHINGTON" "George Washinton"
+  categorize "WASHINGTON" "George Washington"
   categorize "JOHNADAMS" "John Adams"
   categorize "JEFFERSON" "Thomas Jefferson"
   categorize "MADISON" "James Madison"
