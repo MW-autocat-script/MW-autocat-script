@@ -10,15 +10,7 @@ then
 
   NKOREA=$(egrep -i "$KEYWORDS_NORTHKOREA" "$NEWPAGES")
 
-  if [ "$NKOREA" != "" ];
-  then
-    printf "%s" "$NKOREA" > NorthKorea.txt
-    export CATFILE="NorthKorea.txt"
-    export CATNAME="North Korea"
-    $CATEGORIZE
-    rm NorthKorea.txt
-    unset NKOREA
-  fi
+  categorize "NKOREA" "North Korea"
 
   debug_end "North Korea"
 

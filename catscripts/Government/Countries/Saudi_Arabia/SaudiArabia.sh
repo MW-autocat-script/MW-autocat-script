@@ -17,45 +17,10 @@ then
   MEDINA=$(egrep -i "$KEYWORDS_MEDINA" "$NEWPAGES")
   RIYADH=$(egrep -i "$KEYWORDS_RIYADH" "$NEWPAGES")
 
-  if [ "$SAUDIARABIA" != "" ];
-  then
-    printf "%s" "$SAUDIARABIA" > SaudiArabia.txt
-    export CATFILE="SaudiArabia.txt"
-    export CATNAME="Saudi Arabia"
-    $CATEGORIZE
-    rm SaudiArabia.txt
-    unset SAUDIARABIA
-  fi
-
-  if [ "$MECCA" != "" ];
-  then
-    printf "%s" "$MECCA" > Mecca.txt
-    export CATFILE="Mecca.txt"
-    export CATNAME="Mecca"
-    $CATEGORIZE
-    rm Mecca.txt
-    unset MECCA
-  fi
-
-  if [ "$MEDINA" != "" ];
-  then
-    printf "%s" "$MEDINA" > Medina.txt
-    export CATFILE="Medina.txt"
-    export CATNAME="Medina"
-    $CATEGORIZE
-    rm Medina.txt
-    unset MEDINA
-  fi
-
-  if [ "$RIYADH" != "" ];
-  then
-    printf "%s" "$RIYADH" > Riyadh.txt
-    export CATFILE="Riyadh.txt"
-    export CATNAME="Riyadh"
-    $CATEGORIZE
-    rm Riyadh.txt
-    unset RIYADH
-  fi
+  categorize "SAUDIARABIA" "Saudi Arabia"
+  categorize "MECCA" "Mecca"
+  categorize "MEDINA" "Medina"
+  categorize "RIYADH" "Riyadh"
 
   debug_end "Saudi Arabia"
 

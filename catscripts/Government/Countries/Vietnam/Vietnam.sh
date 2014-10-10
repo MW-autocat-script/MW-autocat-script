@@ -13,25 +13,8 @@ then
   VIETNAM=$(egrep -i "$KEYWORDS_VIETNAM" "$NEWPAGES" | egrep -iv "$KEYWORDS_VIETNAM_EXCLUDE")
   VIETNAMWAR=$(egrep -i "$KEYWORDS_VIETNAMWAR" "$NEWPAGES")
 
-  if [ "$VIETNAM" != "" ];
-  then
-    printf "%s" "$VIETNAM" > Vietnam.txt
-    export CATFILE="Vietnam.txt"
-    export CATNAME="Vietnam"
-    $CATEGORIZE
-    rm Vietnam.txt
-    unset VIETNAM
-  fi
-
-  if [ "$VIETNAMWAR" != "" ];
-  then
-    printf "%s" "$VIETNAM" > VietnamWar.txt
-    export CATFILE="VietnamWar.txt"
-    export CATNAME="Vietnam War"
-    $CATEGORIZE
-    rm VietnamWar.txt
-    unset VIETNAMWAR
-  fi
+  categorize "VIETNAM" "Vietnam"
+  categorize "VIETNAMWAR" "Vietnam War"
 
   debug_end "Vietnam"
 

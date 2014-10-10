@@ -10,15 +10,7 @@ then
 
   WII=$(egrep -i "$KEYWORDS_NINTENDO_WII" "$NEWPAGES" | egrep -iv "$KEYWORDS_NINTENDO_WII_EXCLUDE")
 
-  if [ "$WII" != "" ];
-  then
-    printf "%s" "$WII" > NintendoWii.txt
-    export CATFILE="NintendoWii.txt"
-    export CATNAME="Nintendo Wii"
-    $CATEGORIZE
-    rm NintendoWii.txt
-    unset WII
-  fi
+  categorize "WII" "Nintendo Wii"
 
   debug_end "Nintendo Wii"
 

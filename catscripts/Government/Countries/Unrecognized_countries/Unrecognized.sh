@@ -13,15 +13,7 @@ then
 
   UNRECOGNIZED=$(egrep -i "$KEYWORDS_UNRECOGNIZEDCOUNTRIES" "$NEWPAGES" | egrep -iv "$KEYWORDS_UNRECOGNIZEDCOUNTRIES_EXCLUDE")
 
-  if [ "$UNRECOGNIZED" != "" ];
-  then
-    printf "%s" "$UNRECOGNIZED" > Unrecognized.txt
-    export CATFILE="Unrecognized.txt"
-    export CATNAME="Unrecognized countries"
-    $CATEGORIZE
-    rm Unrecognized.txt
-    unset UNRECOGNIZED
-  fi
+  categorize "UNRECOGNIZED" "Unrecognized countries"
 
   debug_end "Unrecognized countries"
 

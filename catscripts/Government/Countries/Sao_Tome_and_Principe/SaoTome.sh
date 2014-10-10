@@ -10,15 +10,7 @@ then
 
   SAOTOME=$(egrep -i "$KEYWORDS_SAOTOME" "$NEWPAGES")
 
-  if [ "$SAOTOME" != "" ];
-  then
-    printf "%s" "$SAOTOME" > SaoTome.txt
-    export CATFILE="SaoTome.txt"
-    export CATNAME="São Tomé and Príncipe"
-    $CATEGORIZE
-    rm SaoTome.txt
-    unset SAOTOME
-  fi
+  categorize "SAOTOME" "São Tomé and Príncipe"
 
   debug_end "São Tomé and Príncipe"
 

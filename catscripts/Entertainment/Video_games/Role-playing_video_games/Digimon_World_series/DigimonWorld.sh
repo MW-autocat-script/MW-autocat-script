@@ -9,15 +9,7 @@ then
 
   WORLD=$(egrep -i "$KEYWORDS_DIGIMONWORLD" "$NEWPAGES")
 
-  if [ "$WORLD" != "" ];
-  then
-    printf "%s" "$WORLD" > DigimonWorld.txt
-    export CATFILE="DigimonWorld.txt"
-    export CATNAME="Digimon World series"
-    $CATEGORIZE
-    rm DigimonWorld.txt
-    unset WORLD
-  fi
+  categorize "WORLD" "Digimon World series"
 
   debug_end "Digimon World"
 

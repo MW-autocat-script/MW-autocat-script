@@ -13,25 +13,8 @@ then
   UAE=$(egrep -i "$KEYWORDS_UAE" "$NEWPAGES" | egrep -iv "$KEYWORDS_UAE_EXCLUDE")
   DUBAI=$(egrep -i "$KEYWORDS_DUBAI" "$NEWPAGES")
 
-  if [ "$UAE" != "" ];
-  then
-    printf "%s" "$UAE" > UAE.txt
-    export CATFILE="UAE.txt"
-    export CATNAME="United Arab Emirates"
-    $CATEGORIZE
-    rm UAE.txt
-    unset UAE
-  fi
-
-  if [ "$DUBAI" != "" ];
-  then
-    printf "%s" "$DUBAI" > Dubai.txt
-    export CATFILE="Dubai.txt"
-    export CATNAME="Dubai"
-    $CATEGORIZE
-    rm Dubai.txt
-    unset DUBAI
-  fi
+  categorize "UAE" "United Arab Emirates"
+  categorize "DUBAI" "Dubai"
 
   debug_end "United Arab Emirates"
 

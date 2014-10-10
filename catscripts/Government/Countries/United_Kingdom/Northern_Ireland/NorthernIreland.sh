@@ -13,25 +13,8 @@ then
   NIRELAND=$(egrep -i "$KEYWORDS_NORTHERNIRELAND" "$NEWPAGES" | egrep -iv "$KEYWORDS_NORTHERNIRELAND_EXCLUDE")
   BELFAST=$(egrep -i "$KEYWORDS_BELFAST" "$NEWPAGES")
 
-  if [ "$NIRELAND" != "" ];
-  then
-    printf "%s" "$NIRELAND" > NorthernIreland.txt
-    export CATFILE="NorthernIreland.txt"
-    export CATNAME="Northern Ireland"
-    $CATEGORIZE
-    rm NorthernIreland.txt
-    unset NIRELAND
-  fi
-
-  if [ "$BELFAST" != "" ];
-  then
-    printf "%s" "$BELFAST" > Belfast.txt
-    export CATFILE="Belfast.txt"
-    export CATNAME="Belfast"
-    $CATEGORIZE
-    rm Belfast.txt
-    unset BELFAST
-  fi
+  categorize "NIRELAND" "Northern Ireland"
+  categorize "BELFAST" "Belfast"
 
   debug_end "Northern Ireland"
 

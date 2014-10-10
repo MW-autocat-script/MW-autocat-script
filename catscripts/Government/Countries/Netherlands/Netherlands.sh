@@ -16,35 +16,9 @@ then
   HOLLAND=$(egrep -i "$KEYWORDS_HOLLAND" "$NEWPAGES" | egrep -iv "$KEYWORDS_HOLLAND_EXCLUDE")
   ARUBA=$(egrep -i "$KEYWORDS_ARUBA" "$NEWPAGES")
 
-  if [ "$NETHERLANDS" != "" ];
-  then
-    printf "%s" "$NETHERLANDS" > Netherlands.txt
-    export CATFILE="Netherlands.txt"
-    export CATNAME="The Netherlands"
-    $CATEGORIZE
-    rm Netherlands.txt
-    unset NETHERLANDS
-  fi
-
-  if [ "$HOLLAND" != "" ];
-  then
-    printf "%s" "$HOLLAND" > Holland.txt
-    export CATFILE="Holland.txt"
-    export CATNAME="Holland"
-    $CATEGORIZE
-    rm Holland.txt
-    unset HOLLAND
-  fi
-
-  if [ "$ARUBA" != "" ];
-  then
-    printf "%s" "$ARUBA" > Aruba.txt
-    export CATFILE="Aruba.txt"
-    export CATNAME="Aruba"
-    $CATEGORIZE
-    rm Aruba.txt
-    unset ARUBA
-  fi
+  categorize "NETHERLANDS" "The Netherlands"
+  categorize "HOLLAND" "Holland"
+  categorize "ARUBA" "Aruba"
 
   debug_end "The Netherlands"
 

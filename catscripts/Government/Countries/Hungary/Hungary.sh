@@ -11,15 +11,7 @@ then
 
   HUNGARY=$(egrep -i "$KEYWORDS_HUNGARY" "$NEWPAGES" | egrep -iv "$KEYWORDS_HUNGARY_EXCLUDE")
 
-  if [ "$HUNGARY" != "" ];
-  then
-    printf "%s" "$HUNGARY" > Hungary.txt
-    export CATFILE="Hungary.txt"
-    export CATNAME="Hungary"
-    $CATEGORIZE
-    rm Hungary.txt
-    unset HUNGARY
-  fi
+  categorize "HUNGARY" "Hungary"
 
   debug_end "Hungary"
 

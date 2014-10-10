@@ -12,25 +12,8 @@ then
   PHILIPPINES=$(egrep -i "$KEYWORDS_PHILIPPINES" "$NEWPAGES" | egrep -iv "$KEYWORDS_PHILIPPINES_EXCLUDE" )
   PNPA=$(egrep -i "$KEYWORDS_PNPA" "$NEWPAGES")
 
-  if [ "$PHILIPPINES" != "" ];
-  then
-    printf "%s" "$PHILIPPINES" > Philippines.txt
-    export CATFILE="Philippines.txt"
-    export CATNAME="Philippines"
-    $CATEGORIZE
-    rm Philippines.txt
-    unset PHILIPPINES
-  fi
-
-  if [ "$PNPA" != "" ];
-  then
-    printf "%s" "$PNPA" > PNPA.txt
-    export CATFILE="PNPA.txt"
-    export CATNAME="PNPA"
-    $CATEGORIZE
-    rm PNPA.txt
-    unset PNPA
-  fi
+  categorize "PHILIPPINES" "Philippines"
+  categorize "PNPA" "PNPA"
 
   debug_end "Philippines"
 

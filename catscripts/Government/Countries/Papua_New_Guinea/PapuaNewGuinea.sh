@@ -10,15 +10,7 @@ then
 
   PAPUANEWGUINEA=$(egrep -i "$KEYWORDS_PAPUANEWGUINEA" "$NEWPAGES")
 
-  if [ "$PAPUANEWGUINEA" != "" ];
-  then
-    printf "%s" "$PAPUANEWGUINEA" > PapuaNewGuinea.txt
-    export CATFILE="PapuaNewGuinea.txt"
-    export CATNAME="Papua New Guinea"
-    $CATEGORIZE
-    rm PapuaNewGuinea.txt
-    unset PAPUANEWGUINEA
-  fi
+  categorize "PAPUANEWGUINEA" "Papua New Guinea"
 
   debug_end "Papua New Guinea"
 

@@ -10,15 +10,7 @@ then
 
   SWTOR=$(egrep -i "$KEYWORDS_MMORPG_SWTOR" "$NEWPAGES" | egrep -iv "$KEYWORDS_MMORPG_SWTOR_EXCLUDE")
 
-  if [ "$SWTOR" != "" ];
-  then
-    printf "%s" "$SWTOR" > SWTOR.txt
-    export CATFILE="SWTOR.txt"
-    export CATNAME="Star Wars: The Old Republic"
-    $CATEGORIZE
-    rm SWTOR.txt
-    unset SWTOR
-  fi
+  categorize "SWTOR" "Star Wars: The Old Republic"
 
   debug_end "Star Wars: The Old Republic"
 

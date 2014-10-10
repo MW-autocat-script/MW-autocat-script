@@ -10,15 +10,7 @@ then
 
   KOTOR=$(egrep -i "$KEYWORDS_KOTOR" "$NEWPAGES" | egrep -iv "$KEYWORDS_KOTOR_EXCLUDE")
 
-  if [ "$KOTOR" != "" ];
-  then
-    printf "%s" "$KOTOR" > KOTOR.txt
-    export CATFILE="KOTOR.txt"
-    export CATNAME="Star Wars: Knights of the Old Republic"
-    $CATEGORIZE
-    rm KOTOR.txt
-    unset KOTOR
-  fi
+  categorize "KOTOR" "Star Wars: Knights of the Old Republic"
 
   debug_end "Star Wars: Knights of the Old Republic"
 

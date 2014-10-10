@@ -15,35 +15,9 @@ then
   PANAMACANAL=$(egrep -i "$KEYWORDS_PANAMACANAL" "$NEWPAGES")
   PANAMACITY=$(egrep -i "$KEYWORDS_PANAMACITY" "$NEWPAGES" | egrep -iv "$KEYWORDS_PANAMACITY_EXCLUDE")
 
-  if [ "$PANAMA" != "" ];
-  then
-    printf "%s" "$PANAMA" > Panama.txt
-    export CATFILE="Panama.txt"
-    export CATNAME="Panama"
-    $CATEGORIZE
-    rm Panama.txt
-    unset PANAMA
-  fi
-
-  if [ "$PANAMACANAL" != "" ];
-  then
-    printf "%s" "$PANAMACANAL" > PanamaCanal.txt
-    export CATFILE="PanamaCanal.txt"
-    export CATNAME="Panama Canal"
-    $CATEGORIZE
-    rm PanamaCanal.txt
-    unset PANAMACANAL
-  fi
-
-  if [ "$PANAMACITY" != "" ];
-  then
-    printf "%s" "$PANAMACANAL" > PanamaCity.txt
-    export CATFILE="PanamaCity.txt"
-    export CATNAME="Panama City, Panama"
-    $CATEGORIZE
-    rm PanamaCity.txt
-    unset PANAMACITY
-  fi
+  categorize "PANAMA" "Panama"
+  categorize "PANAMACANAL" "Panama Canal"
+  categorize "PANAMACITY" "Panama City, Panama"
 
   debug_end "Panama"
 

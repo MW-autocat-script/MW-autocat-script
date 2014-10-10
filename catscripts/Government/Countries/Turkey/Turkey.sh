@@ -10,28 +10,11 @@ then
   
   debug_start "Turkey"
 
-  TURKEY="$(egrep -i "$KEYWORDS_TURKEY" "$NEWPAGES" | egrep -iv "$KEYWORDS_TURKEY_EXCLUDE")"
-  ISTANBUL="$(egrep -i "$KEYWORDS_ISTANBUL" "$NEWPAGES")"
+  TURKEY=$(egrep -i "$KEYWORDS_TURKEY" "$NEWPAGES" | egrep -iv "$KEYWORDS_TURKEY_EXCLUDE")
+  ISTANBUL=$(egrep -i "$KEYWORDS_ISTANBUL" "$NEWPAGES")
 
-  if [ "$TURKEY" != "" ];
-  then
-    printf "%s" "$TURKEY" > Turkey.txt
-    export CATFILE="Turkey.txt"
-    export CATNAME="Turkey (country)"
-    $CATEGORIZE
-    rm Turkey.txt
-    unset TURKEY
-  fi
-
-  if [ "$ISTANBUL" != "" ];
-  then
-    printf "%s" "$ISTANBUL" > Istanbul.txt
-    export CATFILE="Istanbul.txt"
-    export CATNAME="Istanbul"
-    $CATEGORIZE
-    rm Istanbul.txt
-    unset ISTANBUL
-  fi
+  categorize "TURKEY" "Turkey (country)"
+  categorize "ISTANBUL" "Istanbul"
 
   debug_end "Turkey"
 

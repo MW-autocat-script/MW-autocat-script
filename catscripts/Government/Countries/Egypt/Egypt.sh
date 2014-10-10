@@ -15,35 +15,9 @@ then
   ANCIENT=$(egrep -i "$KEYWORDS_ANCIENTEGYPYT" "$NEWPAGES")
   NILE=$(egrep -i "$KEYWORDS_NILERIVER" "$NEWPAGES")
 
-  if [ "$EGYPT" != "" ];
-  then
-    printf "%s" "$EGYPT" > Egypt.txt
-    export CATFILE="Egypt.txt"
-    export CATNAME="Egypt"
-    $CATEGORIZE
-    rm Egypt.txt
-    unset EGYPT
-  fi
-
-  if [ "$ANCIENT" != "" ];
-  then
-    printf "%s" "$ANCIENT" > AncientEgypt.txt
-    export CATFILE="AncientEgypt.txt"
-    export CATNAME="Ancient Egypt"
-    $CATEGORIZE
-    rm AncientEgypt.txt
-    unset ANCIENT
-  fi
-
-  if [ "$NILE" != "" ];
-  then
-    printf "%s" "$NILE" > NileRiver.txt
-    export CATFILE="NileRiver.txt"
-    export CATNAME="Nile River"
-    $CATEGORIZE
-    rm NileRiver.txt
-    unset NILE
-  fi
+  categorize "EGYPT" "Egypt"
+  categorize "ANCIENT" "Ancient Egypt"
+  categorize "NILE" "Nile River"
 
   debug_end "Egypt"
 

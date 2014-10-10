@@ -14,35 +14,9 @@ then
   GENEVA=$(egrep -i "$KEYWORDS_GENEVA" "$NEWPAGES")
   ZURICH=$(egrep -i "$KEYWORDS_ZURICH" "$NEWPAGES")
 
-  if [ "$SWITZERLAND" != "" ];
-  then
-    printf "%s" "$SWITZERLAND" > Switzerland.txt
-    export CATFILE="Switzerland.txt"
-    export CATNAME="Switzerland"
-    $CATEGORIZE
-    rm Switzerland.txt
-    unset SWITZERLAND
-  fi
-
-  if [ "$GENEVA" != "" ];
-  then
-    printf "%s" "$GENEVA" > Geneva.txt
-    export CATFILE="Geneva.txt"
-    export CATNAME="Geneva"
-    $CATEGORIZE
-    rm Geneva.txt
-    unset GENEVA
-  fi
-
-  if [ "$ZURICH" != "" ];
-  then
-    printf "%s" "$ZURICH" > Zurich.txt
-    export CATFILE="Zurich.txt"
-    export CATNAME="Zurich"
-    $CATEGORIZE
-    rm Zurich.txt
-    unset ZURICH
-  fi
+  categorize "SWITZERLAND" "Switzerland"
+  categorize "GENEVA" "Geneva"
+  categorize "ZURICH" "Zurich"
 
   debug_end "Switzerland"
 

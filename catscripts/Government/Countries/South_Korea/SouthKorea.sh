@@ -12,15 +12,7 @@ then
 
   SKOREA=$(egrep -i "$KEYWORDS_SOUTHKOREA" "$NEWPAGES" && egrep -i "$KEYWORDS_SOUTHKOREA_SECONDARY" "$NEWPAGES" | egrep -iv "$KEYWORDS_SOUTHKOREA_SECONDARY_EXCLUDE")
 
-  if [ "$SKOREA" != "" ];
-  then
-    printf "%s" "$SKOREA" > SouthKorea.txt
-    export CATFILE="SouthKorea.txt"
-    export CATNAME="South Korea"
-    $CATEGORIZE
-    rm SouthKorea.txt
-    unset SKOREA
-  fi
+  categorize "SKOREA" "South Korea"
 
   debug_end "South Korea"
 
