@@ -7,7 +7,7 @@ then
   
   debug_start "Shrek"
 
-  SHREK="$(egrep -i "$KEYWORDS_SHREK" "$NEWPAGES")"
+  SHREK=$(egrep -i "$KEYWORDS_SHREK" "$NEWPAGES")
 
   categorize "SHREK" "Shrek"
 

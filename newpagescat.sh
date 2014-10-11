@@ -6,7 +6,7 @@ date > lastrun
 . ./settings.sh
 
 if [ -e "$PIDFILE" ]; then
-  PID="$(cat "$PIDFILE")"
+  PID=$(cat "$PIDFILE")
   if kill -0 "$PID" > /dev/null 2>&1; then
     printf 'Already running\n'
     exit 1
