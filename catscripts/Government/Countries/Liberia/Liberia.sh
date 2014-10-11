@@ -10,15 +10,7 @@ then
 
   LIBERIA=$(egrep -i "$KEYWORDS_LIBERIA" "$NEWPAGES")
 
-  if [ "$LIBERIA" != "" ];
-  then
-    printf "%s" "$LIBERIA" > Liberia.txt
-    export CATFILE="Liberia.txt"
-    export CATNAME="Liberia"
-    $CATEGORIZE
-    rm Liberia.txt
-    unset LIBERIA
-  fi
+  categorize "LIBERIA" "Liberia"
 
   debug_end "Liberia"
 

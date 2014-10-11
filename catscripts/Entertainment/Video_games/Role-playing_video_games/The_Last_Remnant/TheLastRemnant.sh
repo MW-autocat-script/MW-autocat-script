@@ -9,15 +9,7 @@ then
 
   REMNANT=$(egrep -i "$KEYWORDS_THELASTREMNANT" "$NEWPAGES")
 
-  if [ "$REMNANT" != "" ];
-  then
-    printf "%s" "$REMNANT" > TheLastRemant.txt
-    export CATFILE="TheLastRemant.txt"
-    export CATNAME="The Last Remnant"
-    $CATEGORIZE
-    rm TheLastRemant.txt
-    unset REMNANT
-  fi
+  categorize "REMNANT" "The Last Remnant"
 
   debug_end "The Last Remnant"
 

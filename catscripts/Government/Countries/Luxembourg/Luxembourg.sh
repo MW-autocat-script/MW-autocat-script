@@ -3,22 +3,14 @@
 KEYWORDS_LUXEMBOURG="Luxembourg"
 KEYWORDS_LUXEMBOURG_ALL="$KEYWORDS_LUXEMBOURG"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
 
   debug_start "Luxembourg"
 
   LUXEMBOURG=$(egrep -i "$KEYWORDS_LUXEMBOURG" "$NEWPAGES")
 
-  if [ "$LUXEMBOURG" != "" ];
-  then
-    printf "%s" "$LUXEMBOURG" > Luxembourg.txt
-    export CATFILE="Luxembourg.txt"
-    export CATNAME="Luxembourg"
-    $CATEGORIZE
-    rm Luxembourg.txt
-    unset LUXEMBOURG
-  fi
+  categorize "LUXEMBOURG" "Luxembourg"
 
   debug_end "Luxembourg"
 

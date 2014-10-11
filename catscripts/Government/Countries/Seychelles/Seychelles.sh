@@ -3,22 +3,14 @@
 KEYWORDS_SEYCHELLES="Seychelles"
 KEYWORDS_SEYCHELLES_ALL="$KEYWORDS_SEYCHELLES"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
   
   debug_start "Seychelles"
 
   SEYCHELLES=$(egrep -i "$KEYWORDS_SEYCHELLES" "$NEWPAGES")
 
-  if [ "$SEYCHELLES" != "" ];
-  then
-    printf "%s" "$SEYCHELLES" > Seychelles.txt
-    export CATFILE="Seychelles.txt"
-    export CATNAME="Seychelles"
-    $CATEGORIZE
-    rm Seychelles.txt
-    unset SEYCHELLES
-  fi
+  categorize "SEYCHELLES" "Seychelles"
 
   debug_end "Seychelles"
 

@@ -3,22 +3,14 @@
 KEYWORDS_SANMARINO="San(| )Marino"
 KEYWORDS_SANMARINO_ALL="$KEYWORDS_SANMARINO"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
   
   debug_start "San Marino"
 
   SANMARINO=$(egrep -i "$KEYWORDS_SANMARINO" "$NEWPAGES")
 
-  if [ "$SANMARINO" != "" ];
-  then
-    printf "%s" "$SANMARINO" > SanMarino.txt
-    export CATFILE="SanMarino.txt"
-    export CATNAME="San Marino"
-    $CATEGORIZE
-    rm SanMarino.txt
-    unset SANMARINO
-  fi
+  categorize "SANMARINO" "San Marino"
 
   debug_end "San Marino"
 

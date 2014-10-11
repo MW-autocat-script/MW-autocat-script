@@ -2,22 +2,14 @@
 
 export KEYWORDS_MMORPG_FRONTIER="Dead Frontier"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
 
   debug_start "Dead Frontier"
 
   FRONTIER=$(egrep -i "$KEYWORDS_MMORPG_FRONTIER" "$NEWPAGES")
 
-  if [ "$FRONTIER" != "" ];
-  then
-    printf "%s" "$FRONTIER" > DeadFrontier.txt
-    export CATFILE="DeadFrontier.txt"
-    export CATNAME="Dead Frontier"
-    $CATEGORIZE
-    rm DeadFrontier.txt
-    unset FRONTIER
-  fi
+  categorize "FRONTIER" "Dead Frontier"
 
   debug_end "Dead Frontier"
 

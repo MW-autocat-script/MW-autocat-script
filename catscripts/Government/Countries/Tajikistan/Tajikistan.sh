@@ -3,22 +3,14 @@
 KEYWORDS_TAJIKISTAN="Tajikistan"
 KEYWORDS_TAJIKISTAN_ALL="$KEYWORDS_TAJIKISTAN"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
   
   debug_start "Tajikistan"
 
   TAJIKISTAN=$(egrep -i "$KEYWORDS_TAJIKISTAN" "$NEWPAGES")
 
-  if [ "$TAJIKISTAN" != "" ];
-  then
-    printf "%s" "$TAJIKISTAN" > Tajikistan.txt
-    export CATFILE="Tajikistan.txt"
-    export CATNAME="Tajikistan"
-    $CATEGORIZE
-    rm Tajikistan.txt
-    unset TAJIKISTAN
-  fi
+  categorize "TAJIKISTAN" "Tajikistan"
 
   debug_end "Tajikistan"
 

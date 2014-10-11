@@ -30,7 +30,6 @@ fi
 
 export NEWPAGES="$TEMPDIR/newpages.txt"
 
-export CATEGORIZE="./util/Categorize.sh"
 #GET http://cfaj.freeshell.org/ipaddr.cgi > address.txt
 
 debug_start(){

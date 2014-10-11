@@ -9,15 +9,7 @@ then
 
   EMBLEM=$(egrep -i "$KEYWORDS_FIREEMBLEM" "$NEWPAGES")
 
-  if [ "$EMBLEM" != "" ];
-  then
-    printf "%s" "$EMBLEM" > FireEmblem.txt
-    export CATFILE="FireEmblem.txt"
-    export CATNAME="Fire Emblem series"
-    $CATEGORIZE
-    rm FireEmblem.txt
-    unset EMBLEM
-  fi
+  categorize "EMBLEM" "Fire Emblem series"
 
   debug_end "Fire Emblem series"
 

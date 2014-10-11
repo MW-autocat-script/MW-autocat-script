@@ -3,22 +3,14 @@
 KEYWORDS_TIMORLESTE="\bTimor|East(| )Timor"
 KEYWORDS_TIMORLESTE_ALL="$KEYWORDS_TIMORLESTE"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
   
   debug_start "Timor-Leste"
 
   TIMORLESTE=$(egrep -i "$KEYWORDS_TIMORLESTE" "$NEWPAGES")
 
-  if [ "$TIMORLESTE" != "" ];
-  then
-    printf "%s" "$TIMORLESTE" > TimorLeste.txt
-    export CATFILE="TimorLeste.txt"
-    export CATNAME="Timor-Leste"
-    $CATEGORIZE
-    rm TimorLeste.txt
-    unset TIMORLESTE
-  fi
+  categorize "TIMORLESTE" "Timor-Leste"
 
   debug_end "Timor-Leste"
 

@@ -3,22 +3,14 @@
 KEYWORDS_GUATEMALA="Guat(a|e)mala"
 KEYWORDS_GUATEMALA_ALL="$KEYWORDS_GUATEMALA"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
   
   debug_start "Guatemala"
 
   GUATEMALA=$(egrep -i "$KEYWORDS_GUATEMALA" "$NEWPAGES")
 
-  if [ "$GUATEMALA" != "" ];
-  then
-    printf "%s" "$GUATEMALA" > Guatemala.txt
-    export CATFILE="Guatemala.txt"
-    export CATNAME="Guatemala"
-    $CATEGORIZE
-    rm Guatemala.txt
-    unset GUATEMALA
-  fi
+  categorize "GUATEMALA" "Guatemala"
 
   debug_end "Guatemala"
 

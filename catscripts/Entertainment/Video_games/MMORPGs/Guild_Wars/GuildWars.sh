@@ -2,22 +2,14 @@
 
 export KEYWORDS_MMORPG_GUILDWARS="Guild(| )War|PVX"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
   
   debug_start "Guild Wars"
 
   GUILDWARS=$(egrep -i "$KEYWORDS_MMORPG_GUILDWARS" "$NEWPAGES")
 
-  if [ "$GUILDWARS" != "" ];
-  then
-    printf "%s" "$GUILDWARS" > GuildWars.txt
-    export CATFILE="GuildWars.txt"
-    export CATNAME="Guild Wars"
-    $CATEGORIZE
-    rm GuildWars.txt
-    unset GUILDWARS
-  fi
+  categorize "GUILDWARS" "Guild Wars"
 
   debug_end "Guild Wars"
 

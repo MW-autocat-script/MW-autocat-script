@@ -31,7 +31,6 @@ fi
 
 export NEWPAGES="$TEMPDIR/newpages.txt"
 
-export CATEGORIZE="./util/Categorize.sh"
 #GET http://cfaj.freeshell.org/ipaddr.cgi > address.txt
 
 debug_start(){
@@ -76,7 +75,7 @@ python "$PYWIKIPEDIADIR"/pagegenerators.py -usercontribs:"SpellBot;50" -pt:1 >> 
 python "$PYWIKIPEDIADIR"/pagegenerators.py -recentchanges -ns:0 >> "$NEWPAGES"
 
 
-#This checks to see if the list of new questions has changed since last run. If not, then do not running
+#This checks to see if the list of new questions has changed since last run. If not, then do not run
 
 
 SUMFILE="$TEMPDIR/MD5SUM"

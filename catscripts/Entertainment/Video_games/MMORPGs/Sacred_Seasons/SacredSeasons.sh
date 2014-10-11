@@ -2,22 +2,14 @@
 
 export KEYWORD_MMORPG_SACRED="Sacred(| )Season"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
 
   debug_start "Sacred Seasons"
 
   SACRED=$(egrep -i "$KEYWORD_MMORPG_SACRED" "$NEWPAGES")
 
-  if [ "$SACRED" != "" ];
-  then
-    printf "%s" "$SACRED" > SacredSeasons.txt
-    export CATFILE="SacredSeasons.txt"
-    export CATNAME="Sacred Seasons"
-    $CATEGORIZE
-    rm SacredSeasons.txt
-    unset SACRED
-  fi
+  categorize "SACRED" "Sacred Seasons"
 
   debug_end "Sacred Seasons"
 

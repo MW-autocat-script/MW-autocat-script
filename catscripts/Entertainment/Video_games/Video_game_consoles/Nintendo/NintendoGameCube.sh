@@ -2,22 +2,14 @@
 
 KEYWORDS_NINTENDO_GAMECUBE="Game(| )Cube"
 
-if [ "$1" == "" ];
+if [ "$1" == "" ]; #Normal operation
 then
 
   debug_start "Nintendo GameCube"
 
   GAMECUBE=$(egrep -i "$KEYWORDS_NINTENDO_GAMECUBE" "$NEWPAGES")
 
-  if [ "$GAMECUBE" != "" ];
-  then
-    printf "%s" "$GAMECUBE" > NintendoGameCube.txt
-    export CATFILE="NintendoGameCube.txt"
-    export CATNAME="Nintendo GameCube"
-    $CATEGORIZE
-    rm NintendoGameCube.txt
-    unset GAMECUBE
-  fi
+  categorize "GAMECUBE" "Nintendo GameCube"
 
   debug_end "Nintendo GameCube"
 
