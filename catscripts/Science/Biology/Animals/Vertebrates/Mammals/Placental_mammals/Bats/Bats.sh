@@ -9,7 +9,7 @@ then
   
   debug_start "Bats"
 
-  BATS=$(egrep -i "$KEYWORDS_BATS" "$NEWPAGES" | egrep iv "$KEYWORDS_BATS_EXCLUDE")
+  BATS=$(egrep -i "$KEYWORDS_BATS" "$NEWPAGES" | egrep -iv "$KEYWORDS_BATS_EXCLUDE")
 
   categorize "BATS" "Bats"
 
