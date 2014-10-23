@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_GENETICS="\bRNA|\bDNA|\bgenes\b|(which|what)(| )gene|genetic|chromosom(e|al)"
+KEYWORDS_GENETICS="\bRNA|\bDNA|\bgenes\b|(which|what)(| )gene(|s)\b|genetic|chromosom(e|al)"
 
 if [ "$1" == "" ]; #Normal operation
 then
