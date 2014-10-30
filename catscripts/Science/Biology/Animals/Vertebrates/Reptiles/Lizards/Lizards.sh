@@ -1,0 +1,30 @@
+#!/bin/bash
+
+KEYWORDS_LIZARDS="Lizard|komodo(| )dragon"
+KEYWORDS_IGUANAS="Iguana"
+KEYWORDS_BEARDEDDRAGONS="Bearded(| )dragon"
+KEYWORDS_GECKOS="Gecko"
+KEYWORDS_SKINKS="Skink"
+KEYWORDS_LIZARDS_EXCLUDE="$KEYWORDS_IGUANAS|$KEYWORDS_BEARDEDDRAGONS|$KEYWORDS_GECKOS|$KEYWORDS_SKINKS"
+KEYWORDS_LIZARDS_ALL="$KEYWORDS_LIZARDS|$KEYWORDS_IGUANAS|$KEYWORDS_BEARDEDDRAGONS|$KEYWORDS_GECKOS|$KEYWORDS_SKINKS"
+
+if [ "$1" == "" ]; #Normal operation
+then
+  
+  debug_start "Lizards"
+
+  LIZARDS=$(egrep -i "$KEYWORDS_LIZARDS" "$NEWPAGES" | egrep -iv "$KEYWORDS_LIZARDS_EXCLUDE")
+  IGUANAS=$(egrep -i "$KEYWORDS_IGUANAS" "$NEWPAGES")
+  BEARDEDDRAGON=$(egrep -i "$KEYWORDS_BEARDEDDRAGONS" "$NEWPAGES")
+  GECKOS=$(egrep -i "$KEYWORDS_GECKOS" "$NEWPAGES")
+  SKINKS=$(egrep -i "$KEYWORDS_SKINKS" "$NEWPAGES")
+
+  categorize "LIZARDS" "Lizards"
+  categorize "BEARDEDDRAGON" "Bearded dragons"
+  categorize "IGUANAS" "Iguanas"
+  categorize "GECKOS" "Geckos"
+  categorize "SKINKS" "Skinks"
+
+  debug_end "Lizards"
+
+fi
