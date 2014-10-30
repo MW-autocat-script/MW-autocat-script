@@ -19,7 +19,7 @@ then
   . $PLACENTALDIR/Elephants/Elephants.sh #KEYWORDS_ELEPHANTS_ALL
   . $PLACENTALDIR/Hares/Hares.sh #KEYWORDS_HARES_ALL
   . $PLACENTALDIR/Hedgehogs/Hedgehogs.sh #KEYWORDS_HEDGEHOGS_ALL
-  . $PLACENTALDIR/Hippoptamuses/Hippoptamuses.sh #KEYWORDS_HIPPOS_ALL
+  . $PLACENTALDIR/Hippopotamuses/Hippopotamuses.sh #KEYWORDS_HIPPOS_ALL
   . $PLACENTALDIR/Llamas/Llamas.sh #KEYWORDS_LLAMAS_ALL
   . $PLACENTALDIR/Manatees/Manatees.sh #KEYWORDS_MANATEES_ALL
   . $PLACENTALDIR/Peccaries/Peccaries.sh #KEYWORDS_PECCARIES_ALL
