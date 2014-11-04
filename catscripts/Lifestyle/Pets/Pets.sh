@@ -21,10 +21,6 @@ KEYWORDS_HAMSTERS="ham(|p)ster"
 
 KEYWORDS_GERBILS="Gerbil"
 
-#Keywords Guinea pigs
-
-KEYWORDS_GUINEA_PIGS="Guinea(| )pig"
-
 #Keywords Cats 
 
 KEYWORDS_CATS="\bCat(|s)\b|cat(| )(treat|food|toy)"
@@ -37,12 +33,12 @@ then
   debug_start "Pets"
 
   . ./catscripts/Science/Biology/Animals/Vertebrates/Reptiles/Reptiles.sh norun #Import variables from Reptiles
+  . ./catscripts/Science/Biology/Animals/Vertebrates/Mammals/Placental_mammals/Rodents/Guinea_pigs/GuineaPigs.sh norun #KEYWORDS_GUINEAPIGS_ALL
 
   DOGS=$(egrep -i "$KEYWORDS_DOGS" "$NEWPAGES" | egrep -iv "$KEYWORDS_DOGS_EXCLUDE") 
   GOLDFISH=$(egrep -i "$KEYWORDS_GOLDFISH" "$NEWPAGES" | egrep -iv "$KEYWORDS_GOLDFISH_EXCLUDE") 
   HAMSTERS=$(egrep -i "$KEYWORDS_HAMSTERS" "$NEWPAGES") 
   GERBILS=$(egrep -i "$KEYWORDS_GERBILS" "$NEWPAGES") 
-  GUINEAPIGS=$(egrep -i "$KEYWORDS_GUINEA_PIGS" "$NEWPAGES")
   CATS=$(egrep -i "$KEYWORDS_CATS" "$NEWPAGES" | egrep -iv "$KEYWORDS_CATS_EXCLUDE")
 
   categorize "DOGS" "Dogs"

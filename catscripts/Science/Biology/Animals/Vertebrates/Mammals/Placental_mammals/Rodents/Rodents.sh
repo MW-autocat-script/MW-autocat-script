@@ -1,0 +1,18 @@
+#!/bin/bash
+
+KEYWORDS_RODENTS="rodent"
+RODENTSDIR="$PLACENTALDIR/Rodents"
+
+if [ "$1" == "" ];
+then
+
+  debug_start "Rodents"
+
+  . $RODENTSDIR/Guinea_pigs/GuineaPigs.sh #KEYWORDS_GUINEAPIGS_ALL
+
+  KEYWORDS_RODENTS_EXCLUDE="$KEYWORDS_GUINEAPIGS_ALL"
+  KEYWORDS_RODENTS_ALL="$KEYWORDS_RODENTS|$KEYWORDS_GUINEAPIGS_ALL"
+
+  debug_end "Rodents"
+
+fi
