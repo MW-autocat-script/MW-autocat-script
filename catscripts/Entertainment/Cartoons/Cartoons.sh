@@ -9,7 +9,7 @@ then
 
   debug_start "Cartoons and anime"
 
-  KEYWORDS_CARTOONS_OTHER="Attack(| )on(| )Titan|Shingeki(| )no(| )Kyojin|kaze(| )no(| )stigma|\btrigun|Hetalia|Bubblegum(| )(Crisis|Crash)|A(|\.)D(|\.)(| )Police|Blood\+|knights(| )of(| )Sidonia|Sidonia(| )no(| )kishi|Psycho(|-| )Pass|Gungrave|Haruhi(| )Suzumiya|Ch(a|ä)oS;HEAd|Chobits|Chrome(| )Shelled(| )Regios|Cowboy(| )Bebop|\bFLCL\b|Full(| )Metal(| )Panic|Fumoffu|Ghost(| )in(| )the(| )Shell|Eden(| )of(| )the(| )East|Higashi(| )no(| )Eden|Evangelion|Steins;Gate|Summer(| )Wars|Lucky(| )Star|Ryner(| )Lute|Macross"
+  KEYWORDS_CARTOONS_OTHER="Attack(| )on(| )Titan|Shingeki(| )no(| )Kyojin|kaze(| )no(| )stigma|\btrigun|Hetalia|Bubblegum(| )(Crisis|Crash)|A(|\.)D(|\.)(| )Police|Blood\+|knights(| )of(| )Sidonia|Sidonia(| )no(| )kishi|Psycho(|-| )Pass|Gungrave|Haruhi(| )Suzumiya|Ch(a|ä)oS;HEAd|Chobits|Chrome(| )Shelled(| )Regios|Cowboy(| )Bebop|\bFLCL\b|Full(| )Metal(| )Panic|Fumoffu|Ghost(| )in(| )the(| )Shell|Eden(| )of(| )the(| )East|Higashi(| )no(| )Eden|Evangelion|Steins;Gate|Summer(| )Wars|Lucky(| )Star|Ryner(| )Lute|Macross|Robotics(|;| )Notes|Shakugan(| )no(| )Shana|Kotoura-san"
 
   $CARTOONDIR/American_Dad/AmericanDad.sh
   $CARTOONDIR/Avatar_The_Last_Airbender/Avatar.sh
