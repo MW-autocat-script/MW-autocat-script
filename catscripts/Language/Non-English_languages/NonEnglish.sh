@@ -12,6 +12,7 @@ $NONENGDIR/English_to_Italian/EnglishtoItalian.sh
 $NONENGDIR/English_to_Korean/EnglishtoKorean.sh
 $NONENGDIR/English_to_Latin/EnglishtoLatin.sh
 $NONENGDIR/English_to_Navajo/EnglishtoNavajo.sh
+$NONENGDIR/English_to_Polish/EnglishToPolish.sh #KEYWORDS_ENGLISHTOPOLISH_ALL
 $NONENGDIR/English_to_Spanish/EnglishtoSpanish.sh
 
 debug_end "Non-English languages"
