@@ -41,7 +41,7 @@ then
 
   #People whose category script is run elsewhere, but should still be exempt:
 
-  KEYWORDS_ACTRESS_EXEMPT="Demi(| )Lovato|Vanessa(| )Hudgens|Ashley(| )Tisdale"
+  KEYWORDS_ACTRESS_EXEMPT="Demi(| )Lovato|Vanessa(| )Hudgens|Ashley(| )Tisdale|Jessica(| )Simpson"
 
   #People who do not yet have their own category, so will be placed in the parent
 
