@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 KEYWORDS_NEON="(\bNeon\b|\bNeons\b)"
-KEYWORDS_NEON_EXCLUDE="(Dodge|Plymouth) Neon|[0-9]{2,} Neon"
+KEYWORDS_NEON_EXCLUDE="(Dodge|Plymouth) Neon|[0-9]{2,}(| )Neon|Neon(| )Genesis(| )Evangelion"
 KEYWORDS_HELIUM="\bHelium"
 KEYWORDS_ARGON="\bArgon\b|\bArgons\b"
 KEYWORDS_KRYPTON="Krypton"
