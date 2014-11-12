@@ -8,6 +8,9 @@ $NONENGDIR/English_to_Arabic/EnglishtoArabic.sh
 $NONENGDIR/English_to_Cambodian/EnglishToCambodian.sh #KEYWORDS_ENGLISHTOCAMBODIAN_ALL
 $NONENGDIR/English_to_Chinese/EnglishToChinese.sh #KEYWORDS_ENGLISHTOCHINESE_ALL
 $NONENGDIR/English_to_Czech/EnglishToCzech.sh #KEYWORDS_ENGLISHTOCZECH_ALL
+$NONENGDIR/English_to_Danish/EnglishToDanish.sh #KEYWORDS_ENGLISHTODANISH_ALL
+$NONENGDIR/English_to_Dutch/EnglishToDutch.sh #KEYWORDS_ENGLISHTODUTCH_ALL
+$NONENGDIR/English_to_Estonian/EnglishToEstonian.sh #KEYWORDS_ENGLISHTOESTONIAN_ALL
 $NONENGDIR/English_to_French/EnglishtoFrench.sh
 $NONENGDIR/English_to_German/EnglishtoGerman.sh
 $NONENGDIR/English_to_Greek/EnglishtoGreek.sh
