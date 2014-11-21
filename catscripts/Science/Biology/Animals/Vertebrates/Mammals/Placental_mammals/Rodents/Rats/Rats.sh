@@ -9,7 +9,7 @@ then
 
   debug_start "Rats"
 
-  RATS=$(egrep -i "$KEYWORDS_RATS" "$NEWPAGES")
+  RATS=$(egrep -i "$KEYWORDS_RATS" "$NEWPAGES" | egrep -iv "$KEYWORDS_RATS_EXCLUDE")
 
   categorize "RATS" "Rats"
 
