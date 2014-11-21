@@ -2,15 +2,18 @@
 
 debug_start "Bands"
 
-./catscripts/Entertainment/Music/Bands/Bon_Jovi.sh
-./catscripts/Entertainment/Music/Bands/JLS.sh
-./catscripts/Entertainment/Music/Bands/Linkin_Park.sh
-./catscripts/Entertainment/Music/Bands/Metallica.sh
-./catscripts/Entertainment/Music/Bands/MindlessBehavior.sh
-./catscripts/Entertainment/Music/Bands/My_Chemical_Romance.sh
-./catscripts/Entertainment/Music/Bands/Nickelback.sh
-./catscripts/Entertainment/Music/Bands/One_Direction.sh
-./catscripts/Entertainment/Music/Bands/The_Beatles.sh
-. ./catscripts/Entertainment/Music/Bands/TheBlackEyedPeas.sh
+BANDSDIR="./catscripts/Entertainment/Music/Bands"
+
+. $BANDSDIR/Alvin_and_the_Chipmunks/Alvin.sh #KEYWORDS_ALVINANDTHECHIPMUNKS_ALL
+. $BANDSDIR/Bon_Jovi/BonJovi.sh
+. $BANDSDIR/JLS/JLS.sh
+. $BANDSDIR/Linkin_Park/LinkinPark.sh
+. $BANDSDIR/Metallica/Metallica.sh
+. $BANDSDIR/Mindless_Behavior/MindlessBehavior.sh
+. $BANDSDIR/My_Chemical_Romance/MyChemicalRomance.sh
+. $BANDSDIR/Nickelback/Nickelback.sh
+. $BANDSDIR/One_Direction/OneDirection.sh
+. $BANDSDIR/The_Beatles/TheBeatles.sh
+. $BANDSDIR/The_Black_Eyed_Peas/TheBlackEyedPeas.sh
 
 debug_end "Bands"
