@@ -12,8 +12,9 @@ KEYWORDS_FLOPPY="Floppy(| )(disk|drive)|(o|i)n(| )a(| )floppy"
 KEYWORDS_HARD_DRIVE="Hard (disk|drive)|\bSSD|solid(| )state(| )drive"
 KEYWORDS_DATASTORAGE_EXCLUDE="$KEYWORDS_HARD_DRIVE|$KEYWORDS_FLOPPY"
 KEYWORDS_LAPTOPS="lap(| )top|net(| )book|note(| )book(| )(computer|PC)|Toshiba(| )Satellite"
+KEYWORDS_CHROMEBOOKS="Chrome(| )book"
 KEYWORDS_MACBOOKS="Mac(| )book"
-KEYWORDS_LAPTOPS_EXCLUDE="$KEYWORDS_MACBOOKS"
+KEYWORDS_LAPTOPS_EXCLUDE="$KEYWORDS_MACBOOKS|$KEYWORDS_CHROMEBOOKS"
 KEYWORDS_COMPUTER_HARDWARE="Device(| )driver|Computer(| )hardware|adapter(| )card|\bUSB|\bPCI\b|expansion(| )bus" #Stuff to put in the parent category
 KEYWORDS_COMPUTER_HARDWARE_EXCLUDE="$KEYWORDS_DATASTORAGE|$KEYWORDS_DATASTORAGE_EXCLUDE|$KEYWORDS_MICROPROCESSOR|$KEYWORDS_MOTHERBOARD|$KEYWORDS_PRINTER|$KEYWORDS_SOUND_CARDS|$KEYWORDS_VIDEO_CARDS|$KEYWORDS_LAPTOPS|$KEYWORDS_MACBOOKS|$KEYWORDS_CAMERAS_ALL"
 
@@ -30,8 +31,9 @@ then
   DATASTORAGE=$(egrep -i "$KEYWORDS_DATASTORAGE" "$NEWPAGES" | egrep -iv "$KEYWORDS_DATASTORAGE_EXCLUDE")
   HARDDRIVE=$(egrep -i "$KEYWORDS_HARD_DRIVE" "$NEWPAGES")
   FLOPPY=$(egrep -i "$KEYWORDS_FLOPPY" "$NEWPAGES")
-  LAPTOPS=$(egrep -i "$KEYWORDS_LAPTOPS" "$NEWPAGES" | egrep -iv "$KEYWORDS_MACBOOKS")
+  LAPTOPS=$(egrep -i "$KEYWORDS_LAPTOPS" "$NEWPAGES" | egrep -iv "$KEYWORDS_LAPTOPS_EXCLUDE")
   MACBOOKS=$(egrep -i "$KEYWORDS_MACBOOKS" "$NEWPAGES")
+  CHROMEBOOKS=$(egrep -i "$KEYWORDS_CHROMEBOOKS" "$NEWPAGES")
   HARDWARE=$(egrep -i "$KEYWORDS_COMPUTER_HARDWARE" "$NEWPAGES" | egrep -iv "$KEYWORDS_COMPUTER_HARDWARE_EXCLUDE")
 
   categorize "MOTHERBOARDS" "Motherboards"
@@ -44,6 +46,7 @@ then
   categorize "FLOPPY" "Floppy drives"
   categorize "LAPTOPS" "Laptops"
   categorize "MACBOOKS" "Macbooks"
+  categorize "CHROMEBOOKS" "Chromebooks"
   categorize "HARDWARE" "Computer hardware"
 
   debug_end "Computer hardware"
