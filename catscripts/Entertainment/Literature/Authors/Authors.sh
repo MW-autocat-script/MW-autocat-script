@@ -5,6 +5,7 @@ debug_start "Authors"
 AUTHORSDIR="./catscripts/Entertainment/Literature/Authors"
 
   . $AUTHORSDIR/Charles_Dickens/CharlesDickens.sh #KEYWORDS_CHARLESDICKENS
+  . $AUTHORSDIR/Dick_King-Smith/DickKingSmith.sh #KEYWORDS_DICKKINGSMITH_ALL
   . $AUTHORSDIR/Dr_Seuss/DrSeuss.sh #KEYWORDS_DRSEUSS
   . $AUTHORSDIR/Edgar_Allan_Poe/Poe.sh #KEYWORDS_POE
   . $AUTHORSDIR/Emily_Dickinson/EmilyDickinson.sh #KEYWORDS_EMILYDICKINSON
