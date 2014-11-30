@@ -9,7 +9,7 @@ then
 
   . $POKEMONDIR/Pokémon_species/PokémonSpecies.sh #KEYWORDS_POKEMONSPECIES_ALL
 
-  ./catscripts/Entertainment/Video_games/Video_games_by_series/Pokémon\ games/PokémonGames.sh norun #KEYWORDS_POKEMONGAMES_ALL
+  . ./catscripts/Entertainment/Video_games/Video_games_by_series/Pokémon_games/PokémonGames.sh norun #KEYWORDS_POKEMONGAMES_ALL
 
   KEYWORDS_POKEMON="(Pokémon|Pokemon|Poke'mon)"
   KEYWORDS_POKEMON_EXCLUDE="$KEYWORDS_POKEMONGAMES_ALL|$KEYWORDS_POKEMONSPECIES_ALL|anime|\bAsh\b|episode"

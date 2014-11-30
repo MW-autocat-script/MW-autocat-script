@@ -10,7 +10,7 @@ $VIDEOGAMESERIESDIR/Harvest_Moon_series/HarvestMoon.sh
 $VIDEOGAMESERIESDIR/Kingdom\ Hearts\ series/KingdomHearts.sh
 $VIDEOGAMESERIESDIR/Kirby_series/Kirby.sh
 $VIDEOGAMESERIESDIR/Monster\ Hunter\ series/MonsterHunterSeries.sh
-$VIDEOGAMESERIESDIR/Pokémon\ games/PokémonGames.sh
+$VIDEOGAMESERIESDIR/Pokémon_games/PokémonGames.sh #KEYWORDS_POKEMONGAMES_ALL
 $VIDEOGAMESERIESDIR/The_Elder_Scrolls_series/TheElderScrolls.sh
 $VIDEOGAMESERIESDIR/The\ Sims\ series/TheSimsSeries.sh
 $VIDEOGAMESERIESDIR/Halo\ series/Halo.sh
