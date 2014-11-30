@@ -14,7 +14,6 @@ then
   KEYWORDS_POKEMON="(Pokémon|Pokemon|Poke'mon)"
   KEYWORDS_POKEMON_EXCLUDE="$KEYWORDS_POKEMONGAMES_ALL|$KEYWORDS_POKEMONSPECIES_ALL|anime|\bAsh\b|episode"
 
-
   POKEMON=$(egrep -i "$KEYWORDS_POKEMON" "$NEWPAGES" | egrep -iv "$KEYWORDS_POKEMON_EXCLUDE")
 
   categorize "POKEMON" "Pokémon"
