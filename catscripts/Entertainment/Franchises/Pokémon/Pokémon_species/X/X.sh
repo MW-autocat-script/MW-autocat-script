@@ -1,6 +1,7 @@
 #!/bin/bash
 
 KEYWORDS_XATU="Xatu"
+KEYWORDS_POKEMONSPECIES_X="$KEYWORDS_XATU"
 
 if [ "$1" == "" ]; #Normal operation
 then
