@@ -11,7 +11,7 @@ then
 
   TOGO=$(egrep -i "$KEYWORDS_TOGO" "$NEWPAGES" | egrep -iv "$KEYWORDS_TOGO_EXCLUDE")
 
-  categorize "TOGO" "TOGO"
+  categorize "TOGO" "Togo"
 
   debug_end "Togo"
 
