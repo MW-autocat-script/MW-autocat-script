@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_CYTOLOGY="cytology|cell(| )(biology|membrane|nucleus)|mitochondria\b|ribosome|Nucleolus|golgi(| )(body|apparatus)|mitochondrion|cytoskelteon|vacuole|cytosol|lysosome|centrosome|mitosis|(ana|telo)phase"
+KEYWORDS_CYTOLOGY="cytology|cell(| )(biology|membrane|nucleus)|mitochondria\b|ribosome|Nucleolus|golgi(| )(body|apparatus)|mitochondrion|cytoskelteon|vacuole|cytosol|lysosome|centrosome|mitosis|(ana|telo)phase|endoplasmic(| )reticulum"
 
 if [ "$1" == "" ];
 then
