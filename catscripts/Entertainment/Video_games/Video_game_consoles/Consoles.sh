@@ -5,6 +5,7 @@ debug_start "Video game consoles"
 CONSOLEDIR="./catscripts/Entertainment/Video_games/Video_game_consoles"
 
 . $CONSOLEDIR/Nintendo/Nintendo64.sh
+. $CONSOLEDIR/Nintendo/NintendoDS.sh #KEYWORDS_DS_ALL
 . $CONSOLEDIR/Nintendo/NintendoGameBoy.sh #KEYWORDS_GAMEBOY_ALL
 . $CONSOLEDIR/Nintendo/NintendoGameCube.sh
 . $CONSOLEDIR/Nintendo/NintendoWii.sh
