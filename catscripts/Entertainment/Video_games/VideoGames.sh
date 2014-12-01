@@ -17,6 +17,7 @@ then
   . $VIDEOGAMEDIR/Video_games_by_series/VideoGameSeries.sh
   . $VIDEOGAMEDIR/Educational_video_games/EducationalGames.sh
   . $VIDEOGAMEDIR/Open-world_video_games/Openworld.sh
+  . $VIDEOGAMEDIR/Puzzle_video_games/PuzzleVideoGames.sh
   . $VIDEOGAMEDIR/Role-playing_video_games/RolePlayingVideoGames.sh
   . $VIDEOGAMEDIR/Strategy_games/Strategy.sh
 
@@ -30,6 +31,7 @@ else
   . $VIDEOGAMEDIR/Video_games_by_series/VideoGameSeries.sh norun
   . $VIDEOGAMEDIR/Educational_video_games/EducationalGames.sh norun
   . $VIDEOGAMEDIR/Open-world_video_games/Openworld.sh norun
+  . $VIDEOGAMEDIR/Puzzle_video_games/PuzzleVideoGames.sh norun
   . $VIDEOGAMEDIR/Role-playing_video_games/RolePlayingVideoGames.sh norun
   . $VIDEOGAMEDIR/Strategy_games/Strategy.sh norun
 
