@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_TELEPHONES="telephone|\bphone|caller(| )ID|call(| )waiting|busy(| )signal"
+KEYWORDS_TELEPHONES="telephone|\bphone(|s)\b|caller(| )ID|call(| )waiting|busy(| )signal"
 
 KEYWORDS_CELLPHONES="cell(|ular)(| )phone|mobile(| )(|tele)phone|SIM(| )card|(^| )(2|3|4)G\b|GPRS"
 KEYWORDS_IPHONE="\bi(| )phone"
