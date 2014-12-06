@@ -6,6 +6,7 @@ BANDSDIR="./catscripts/Entertainment/Music/Bands"
 
 . $BANDSDIR/Alvin_and_the_Chipmunks/Alvin.sh #KEYWORDS_ALVINANDTHECHIPMUNKS_ALL
 . $BANDSDIR/Bon_Jovi/BonJovi.sh
+. $BANDSDIR/Girls_Aloud/GirlsAloud.sh #KEYWORDS_GIRLSALOUD_ALL
 . $BANDSDIR/Green_Day/GreenDay.sh #KEYWORDS_GREENDAY_ALL
 . $BANDSDIR/JLS/JLS.sh
 . $BANDSDIR/Linkin_Park/LinkinPark.sh
