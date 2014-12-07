@@ -1,7 +1,7 @@
 #!/bin/bash
 
 KEYWORDS_DOLPHINS="Dolphin"
-KEYWORDS_ORCAS="Orca|killer(| )whale"
+KEYWORDS_ORCAS="\bOrca|killer(| )whale"
 KEYWORDS_DOLPHINS_EXCLUDE="$KEYWORDS_ORCAS|(| )Dolphin|emulator"
 
 if [ "$1" == "" ];
