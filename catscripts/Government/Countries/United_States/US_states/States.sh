@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USSTATESDIR="./catscripts/Government/Countries/United_States/US_states"
+USSTATESDIR="$UNITEDSTATESDIR/US_states"
 
 debug_start "US states"
 

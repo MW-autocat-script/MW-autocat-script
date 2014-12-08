@@ -4,10 +4,11 @@ debug_start "United States"
 
 UNITEDSTATESDIR="./catscripts/Government/Countries/United_States"
 
-$UNITEDSTATESDIR/US_constitution/USConstitution.sh #KEYWORDS_USCONSTITUTION_ALL
-$UNITEDSTATESDIR/US_military/USmilitary.sh #KEYWORDS_USMILITARY_ALL
-$UNITEDSTATESDIR/US_Presidents/Presidents.sh
-$UNITEDSTATESDIR/US_states/States.sh
-$UNITEDSTATESDIR/Puerto_Rico/PuertoRico.sh
+. $UNITEDSTATESDIR/FBI/FBI.sh #KEYWORDS_FBI_ALL
+. $UNITEDSTATESDIR/US_constitution/USConstitution.sh #KEYWORDS_USCONSTITUTION_ALL
+. $UNITEDSTATESDIR/US_military/USmilitary.sh #KEYWORDS_USMILITARY_ALL
+. $UNITEDSTATESDIR/US_Presidents/Presidents.sh
+. $UNITEDSTATESDIR/US_states/States.sh
+. $UNITEDSTATESDIR/Puerto_Rico/PuertoRico.sh
 
 debug_end "United States"
