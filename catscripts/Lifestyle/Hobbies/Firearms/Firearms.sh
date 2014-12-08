@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_FIREARMS="\bFire(| )arm"
+KEYWORDS_FIREARMS="\bFire(| )arm|hand(| )gun|open(-| )carry|Gold(| )Star(| )State"
 KEYWORDS_AK47="AK(| |-)47"
 KEYWORDS_M16="\bM16(|s)\b|(|X)M16(a|e)[1-5]|AR(|-)15"
 KEYWORDS_FIREARMS_EXCLUDE="$KEYWORDS_AK47|$KEYWORDS_M16"
