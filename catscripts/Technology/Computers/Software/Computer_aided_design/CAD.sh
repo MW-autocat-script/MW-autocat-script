@@ -9,7 +9,7 @@ then
   
   debug_start "Computer aided design"
 
-  CAD=$(egrep -i "$KEYWORDS_CAD" "$NEWPAGES" | egrep -i "$KEYWORDS_CAD_EXCLUDE")
+  CAD=$(egrep -i "$KEYWORDS_CAD" "$NEWPAGES" | egrep -iv "$KEYWORDS_CAD_EXCLUDE")
 
   categorize "CAD" "Computer aided design"
 
