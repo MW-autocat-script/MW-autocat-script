@@ -18,7 +18,7 @@ then
 
   categorize "TENNESSEE" "Tennessee"
   categorize "NASHVILLE" "Nashville"
-  categorize "MEMPHIS" "Memphis"
+  categorize "MEMPHIS" "Memphis, Tennessee"
 
   debug_end "Tennessee"
 
