@@ -14,6 +14,7 @@ KEYWORDS_OBOE="\bOboe"
 KEYWORDS_PIANO="Piano"
 KEYWORDS_RECORDER="on(| )(a|the)(| )recorder|for recorder$|notes.+recorder|recorder.+notes"
 KEYWORDS_SAXOPHONE="Saxophone|(alto|the|tenor|soprillo|soprano|melody|baritone|bass)(| )sax"
+KEYWORDS_TRUMPET="trumpet"
 KEYWORDS_VIOLA="\bViola(|s)\b|Violist"
 KEYWORDS_VIOLIN="Violin"
 KEYWORDS_XYLOPHONE="Xylophon(e|ist)"
@@ -36,6 +37,7 @@ then
   PIANO=$(egrep -i "$KEYWORDS_PIANO" "$NEWPAGES")
   RECORDER=$(egrep -i "$KEYWORDS_RECORDER" "$NEWPAGES")
   SAXOPHONE=$(egrep -i "$KEYWORDS_SAXOPHONE" "$NEWPAGES")
+  TRUMPET=$(egrep -i "$KEYWORDS_TRUMPET" "$NEWPAGES")
   VIOLIN=$(egrep -i "$KEYWORDS_VIOLIN" "$NEWPAGES")
   VIOLA=$(egrep -i "$KEYWORDS_VIOLA" "$NEWPAGES")
   XYLOPHONE=$(egrep -i "$KEYWORDS_XYLOPHONE" "$NEWPAGES")
@@ -51,6 +53,7 @@ then
   categorize "PIANO" "Piano"
   categorize "RECORDER" "Recorder (musical instrument)"
   categorize "SAXOPHONE" "Saxophone"
+  categorize "TRUMPET" "Trumpet"
   categorize "VIOLIN" "Violin"
   categorize "VIOLA" "Viola"
   categorize "XYLOPHONE" "Xylophone"
