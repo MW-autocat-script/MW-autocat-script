@@ -16,6 +16,7 @@ KEYWORDS_VIGOROTH="Vigoroth"
 KEYWORDS_VILEPLUME="Vileplume"
 KEYWORDS_VIRIZION="Virizion"
 KEYWORDS_VOLBEAT="Volbeat"
+KEYWORDS_VOLCANION="Volcanion"
 KEYWORDS_VOLCARONA="Volcarona"
 KEYWORDS_VOLTORB="Voltorb"
 KEYWORDS_VULLABY="Vullaby"
@@ -43,6 +44,7 @@ then
   VILEPLUME=$(egrep -i "$KEYWORDS_VILEPLUME" "$NEWPAGES")
   VIRIZION=$(egrep -i "$KEYWORDS_VIRIZION" "$NEWPAGES")
   VOLBEAT=$(egrep -i "$KEYWORDS_VOLBEAT" "$NEWPAGES")
+  VOLCANION=$(egrep -i "$KEYWORDS_VOLCANION" "$NEWPAGES")
   VOLCARONA=$(egrep -i "$KEYWORDS_VOLCARONA" "$NEWPAGES")
   VOLTORB=$(egrep -i "$KEYWORDS_VOLTORB" "$NEWPAGES")
   VULLABY=$(egrep -i "$KEYWORDS_VULLABY" "$NEWPAGES")
@@ -64,6 +66,7 @@ then
   categorize "VILEPLUME" "Vileplume"
   categorize "VIRIZION" "Virizion"
   categorize "VOLBEAT" "Volbeat"
+  categorize "VOLCANION" "Volcanion"
   categorize "VOLCARONA" "Volcarona"
   categorize "VOLTORB" "Voltorb"
   categorize "VULLABY" "Vullaby"
