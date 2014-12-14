@@ -3,7 +3,7 @@ GEOGRAPHYDIR="./catscripts/Science/Geography_and_geology"
 KEYWORDS_GEOGRAPHY="Geography"
 KEYWORDS_GEOLOGY="seismograph|seismology|geology|geological"
 KEYWORDS_VOLCANO="Volcano"
-KEYWORDS_VOLCANO_EXCLUDE="RuneScape"
+KEYWORDS_VOLCANO_EXCLUDE="RuneScape|pneumonoultramicroscopicsilicovolcanoconiosis"
 KEYWORDS_EARTHQUAKES="Earth(| )quake"
 
 
