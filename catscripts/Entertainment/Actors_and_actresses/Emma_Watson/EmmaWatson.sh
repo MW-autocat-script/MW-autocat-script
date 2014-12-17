@@ -10,7 +10,7 @@ then
 
   WATSON=$(egrep -i "$KEYWORDS_EMMAWATSON" "$NEWPAGES")
 
-  categorize "WATSON" "Watson"
+  categorize "WATSON" "Emma Watson"
 
   debug_end "Emma Watson"
 
