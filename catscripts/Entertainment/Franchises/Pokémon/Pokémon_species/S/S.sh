@@ -294,7 +294,7 @@ then
   categorize "SPRITZEE" "Spritzee"
   categorize "SQUIRTLE" "Squirtle"
   categorize "STANTLER" "Stantler"
-  categorize "STARAPTOR" "Starraptor"
+  categorize "STARAPTOR" "Staraptor"
   categorize "STARAVIA" "Staravia"
   categorize "STARLY" "Starly"
   categorize "STARMIE" "Starmie"
