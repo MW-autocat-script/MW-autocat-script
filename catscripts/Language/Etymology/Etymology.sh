@@ -1,7 +1,7 @@
 #!/bin/bash
 
 KEYWORDS_ETYMOLOGY="etymology|etymological|Where(| )(does|did)(| )the(| )(word|phrase|saying).+(originate|come from)|origin(| )of(| )the(| )word(| )[a-z]{1,}"
-KEYWORDS_NAMEORIGINS="Where(| )(does|did)(| )the(| )(sur|)name(| )[a-z]{1,}(| )(originate|come(| )from)|What(| )is(| )the(| )origin(| )of(| )the(| )name(| )[a-z]{1,}|(etymology|etymological(| )origin)(| )of(| )the(| )(|sur)name"
+KEYWORDS_NAMEORIGINS="Where(| )(does|did)(| )the(| )(sur|)name(| )[a-z]{1,}(| )(originate|come(| )from)|What(| )is(| )the(| )origin(| )of(| )the(| )(sur|)name(| )[a-z]{1,}|(etymology|etymological(| )origin)(| )of(| )the(| )(|sur)name"
 
 if [ "$1" == "" ];
 then
