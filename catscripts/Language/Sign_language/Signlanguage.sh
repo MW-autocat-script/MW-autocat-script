@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_SIGNLANGUAGE="Sign(| )language"
+KEYWORDS_SIGNLANGUAGE="Sign(| )language|\bASL\b"
 
 if [ "$1" == "" ]; #Normal operation
 then
