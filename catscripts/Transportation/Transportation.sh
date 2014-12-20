@@ -11,7 +11,7 @@ $TRANSPORTATIONDIR/Cars/Cars.sh
 $TRANSPORTATIONDIR/SUVs/SUVs.sh
 #$TRANSPORTATIONDIR/Trucks/Trucks.sh
 #$TRANSPORTATIONDIR/Vans/Vans.sh 
-$TRANSPORTATIONDIR/Vehicle_manufacturers/Manufacturers.sh
+. $TRANSPORTATIONDIR/Vehicle_manufacturers/Manufacturers.sh
 
 if [ "$1" == "" ];
 then

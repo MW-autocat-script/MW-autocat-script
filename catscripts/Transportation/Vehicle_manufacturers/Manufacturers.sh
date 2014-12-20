@@ -1,7 +1,8 @@
 #!/bin/bash
 
-CURRENTDIR="./catscripts/Transportation/Vehicle_manufacturers"
+MANUFACTURERDIR="$TRANSPORTATIONDIR/Vehicle_manufacturers"
 
 
-$CURRENTDIR/Honda/Honda.sh
-$CURRENTDIR/Toyota/Toyota.sh
+. $MANUFACTURERDIR/General_Motors/GeneralMotors.sh
+. $MANUFACTURERDIR/Honda/Honda.sh
+. $MANUFACTURERDIR/Toyota/Toyota.sh
