@@ -6,7 +6,8 @@ KEYWORDS_SCHOOLBUS_EXCLUDE="Magic(| )School(| )Bus"
 KEYWORDS_TRANSPORTATION_EXCLUDE="$KEYWORDS_SCHOOLBUS"
 
 TRANSPORTATIONDIR="./catscripts/Transportation"
-#$TRANSPORTATIONDIR/Airplanes/Airplanes.sh
+
+. $TRANSPORTATIONDIR/Aircraft/Aircraft.sh
 . $TRANSPORTATIONDIR/Vehicle_manufacturers/Manufacturers.sh
 
 if [ "$1" == "" ];
