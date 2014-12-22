@@ -7,9 +7,6 @@ KEYWORDS_TRANSPORTATION_EXCLUDE="$KEYWORDS_SCHOOLBUS"
 
 TRANSPORTATIONDIR="./catscripts/Transportation"
 #$TRANSPORTATIONDIR/Airplanes/Airplanes.sh
-$TRANSPORTATIONDIR/SUVs/SUVs.sh
-#$TRANSPORTATIONDIR/Trucks/Trucks.sh
-#$TRANSPORTATIONDIR/Vans/Vans.sh 
 . $TRANSPORTATIONDIR/Vehicle_manufacturers/Manufacturers.sh
 
 if [ "$1" == "" ];

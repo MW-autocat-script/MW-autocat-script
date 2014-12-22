@@ -26,6 +26,10 @@ KEYWORDS_CHEVROLET_SPARK="Chev(y|rolet)(| )Spark"
 KEYWORDS_CHEVROLET_SS="Chev(y|rolet)(| )SS|[0-9]{2,}(| )SS\b"
 KEYWORDS_CHEVROLET_VOLT="Chev(y|rolet)(| )Volt"
 
+###Chevrolet SUVs###
+
+KEYWORDS_CHEVROLET_SUBURBAN="Chev(y|rolet)(| )Suburban|[0-9]{2,}Suburban"
+
 
 if [ "$1" == "" ];
 then
@@ -56,6 +60,8 @@ then
   SS=$(egrep -i "$KEYWORDS_CHEVROLET_SS" "$NEWPAGES")
   VOLT=$(egrep -i "$KEYWORDS_CHEVROLET_VOLT" "$NEWPAGES")
 
+  SUBURBAN=$(egrep -i "$KEYWORDS_CHEVROLET_SUBURBAN" "$NEWPAGES")
+
   categorize "AGILE"    "Chevrolet Agile"
   categorize "AVEO"     "Chevrolet Aveo"
   categorize "BERETTA"  "Chevrolet Beretta"
@@ -79,6 +85,8 @@ then
   categorize "SPARK"    "Chevrolet Spark"
   categorize "SS"       "Chevrolet SS"
   categorize "VOLT"     "Chevrolet Volt"
+
+  categorize "SUBURBAN" "Chevrolet Suburban"
 
   debug_end "Chevrolet"
 
