@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_WIRELESS="wire(| )less(| )(router|network|card|Ethernet)|\bWLAN(|s)\b|DD(|-| )WRT|Open(| )WRT|wi(| |-)fi|wireless fidelity|802\.11|\bAOSS"
+KEYWORDS_WIRELESS="wire(| )less(| )(router|network|card|Ethernet)|\bWLAN(|s)\b|DD(|-| )WRT|Open(| )WRT|wi(| |-)fi|wireless fidelity|802\.11|\bAOSS|\bWPA(|2)\b"
 
 KEYWORDS_WIRED="Ethernet|Category(| )(3|4|5|6|7)(e|)(| )cable|RJ(| |-)45|network(| )cable"
 
