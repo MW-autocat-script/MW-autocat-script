@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_NARUTO="Naruto|Hokage"
+KEYWORDS_NARUTO="Naruto|Hokage|Mangeky(o|ō)(| )Sharingan"
 
 if [ "$1" == "" ]; #Normal operation
 then
