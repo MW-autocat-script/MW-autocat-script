@@ -28,7 +28,7 @@ KEYWORDS_CHEVROLET_VOLT="Chev(y|rolet)(| )Volt"
 
 ###Chevrolet SUVs###
 
-KEYWORDS_CHEVROLET_SUBURBAN="Chev(y|rolet)(| )Suburban|[0-9]{2,}Suburban"
+KEYWORDS_CHEVROLET_SUBURBAN="Chev(y|rolet)(| )Suburban|[0-9]{2,}(| )Suburban"
 
 
 if [ "$1" == "" ];
