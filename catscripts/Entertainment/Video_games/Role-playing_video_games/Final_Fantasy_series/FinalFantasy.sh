@@ -58,7 +58,7 @@ then
   categorize "FF11" "Final Fantasy XI"
   categorize "FF12" "Final Fantasy XII"
   categorize "FF13" "Final Fantasy XIII"
-  categorize "FF14" "Fina; Fantasy XIV"
+  categorize "FF14" "Final Fantasy XIV"
   categorize "ADVENT" "Final Fantasy VII: Advent Children"
 
   debug_end "Final Fantasy series"
