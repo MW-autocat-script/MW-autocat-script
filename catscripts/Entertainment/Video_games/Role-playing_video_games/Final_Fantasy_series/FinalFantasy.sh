@@ -14,6 +14,7 @@ KEYWORDS_FINALFANTASYX2="$KEYWORDS_FINALFANTASY(| )X-2|\bFF(| )X(|-| )2"
 KEYWORDS_FINALFANTASY11="$KEYWORDS_FINALFANTASY(| )(11|XI\b)|\bFF(| )(XI|11)\b"
 KEYWORDS_FINALFANTASY12="$KEYWORDS_FINALFANTASY(| )(12|XII\b)|\bFF(| )(XII|12)\b"
 KEYWORDS_FINALFANTASY13="$KEYWORDS_FINALFANTASY(| )(13|XIII\b)|\bFF(| )(XIII|13)\b"
+KEYWORDS_FINALFANTASY14="$KEYWORDS_FINALFANTASY(| )(14|XIV\b)|\bFF(| )(XIV|14)\b"
 KEYWORDS_ADVENTCHILDREN="Advent(| )Children"
 
 
@@ -40,6 +41,7 @@ then
   FF11=$(egrep -i "$KEYWORDS_FINALFANTASY11" "$NEWPAGES")
   FF12=$(egrep -i "$KEYWORDS_FINALFANTASY12" "$NEWPAGES")
   FF13=$(egrep -i "$KEYWORDS_FINALFANTASY13" "$NEWPAGES")
+  FF14=$(egrep -i "$KEYWORDS_FINALFANTASY14" "$NEWPAGES")
   ADVENT=$(egrep -i "$KEYWORDS_ADVENTCHILDREN" "$NEWPAGES")
 
   categorize "FFSERIES" "Final Fantasy series"
@@ -56,6 +58,7 @@ then
   categorize "FF11" "Final Fantasy XI"
   categorize "FF12" "Final Fantasy XII"
   categorize "FF13" "Final Fantasy XIII"
+  categorize "FF14" "Fina; Fantasy XIV"
   categorize "ADVENT" "Final Fantasy VII: Advent Children"
 
   debug_end "Final Fantasy series"
