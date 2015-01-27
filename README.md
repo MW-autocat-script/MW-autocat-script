@@ -57,7 +57,7 @@ increase, meaning it may take a long time after your connection is restored to
 resume running. Editing throttle.py and replacing throttle.ctrl with /dev/null 
 _should_ help alleviate this. Alternatively, you can try adding 
 
-_retry_on_fail = False_ 
+ _retry_on_fail = False_ 
 
-to your user-config.py file. This will make the bot stop trying to reconnect 
+ to your user-config.py file. This will make the bot stop trying to reconnect 
 until the next iteration.
