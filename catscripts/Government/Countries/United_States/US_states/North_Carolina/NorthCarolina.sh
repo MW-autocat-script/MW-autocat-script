@@ -1,6 +1,7 @@
 #!/bin/bash
 
 KEYWORDS_NORTHCAROLINA="North(| )Carolina|, N(|\.)C(|\.)\b"
+KEYWORDS_NORTHCAROLINA_ALL="$KEYWORDS_NORTHCAROLINA"
 
 if [ "$1" == "" ]; #Normal operation
 then

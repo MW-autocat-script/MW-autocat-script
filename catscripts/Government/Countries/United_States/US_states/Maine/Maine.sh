@@ -1,6 +1,7 @@
 #!/bin/bash
 
 KEYWORDS_MAINE="\bMaine"
+KEYWORDS_MAINE_ALL="$KEYWORDS_MAINE"
 
 if [ "$1" == "" ]; #Normal operation
 then

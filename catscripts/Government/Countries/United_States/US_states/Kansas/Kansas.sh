@@ -1,6 +1,7 @@
 #!/bin/bash
 
 KEYWORDS_KANSAS="\bKansas"
+KEYWORDS_KANSAS_ALL="$KEYWORDS_KANSAS"
 
 if [ "$1" == "" ];
 then
