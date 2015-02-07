@@ -1,7 +1,9 @@
 #!/bin/bash
+
 WEBSITEDIR="./catscripts/Technology/Computers/Internet/Websites"
+
 KEYWORDS_WEBSITE="web(| )site"
-KEYWORDS_WIKIA="\bWikia(|s)\b"
+KEYWORDS_WIKIA="\bWikia(|s)\b|Communcity(| )Central"
 KEYWORDS_WIKIASEARCH="Wikia(| )Search"
 KEYWORDS_WIKIANSWERS="Wiki(| )answers|Wikia(| )answers"
 KEYWORDS_WIKIA_EXCLUDE="$KEYWORDS_WIKIASEARCH|$KEYWORDS_WIKIANSWERS"
