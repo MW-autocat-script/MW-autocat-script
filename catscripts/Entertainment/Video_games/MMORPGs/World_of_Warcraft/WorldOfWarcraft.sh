@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export KEYWORDS_MMORPG_WOW="World(| )of(| )Warcraft|w\.o\.w|Ata'mal(| )Terrace"
+export KEYWORDS_MMORPG_WOW="World(| )of(| )Warcraft|w\.o\.w|Ata'mal(| )Terrace|Bloodsail(| )Buccaneers"
 KEYWORDS_MMORPG_WOW_CASESENSITIVE="WoW"
 
 if [ "$1" == "" ];
