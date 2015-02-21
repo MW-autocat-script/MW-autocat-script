@@ -4,9 +4,10 @@ KEYWORDS_LEGAL="\blegal|illegal|\blaw(s|)\b"
 KEYWORDS_LAWYERS="attorney|lawyer"
 KEYWORDS_DIVORCE="Divorce|alimony"
 KEYWORDS_CRIME="\bCrime(|s)\b|criminal"
+KEYWORDS_JACKTHERIPPER="Jack(| )the(| )Ripper"
 KEYWORDS_COPYRIGHT="copyright|copyleft|fair use|(movie|software)(| )piracy|intellectual(| )property"
 . ./catscripts/Government/Countries/United_States/US_constitution/USConstitution.sh norun #KEYWORDS_USCONSTITUTION_ALL
-KEYWORDS_LEGAL_EXCLUDE="$KEYWORDS_DIVORCE|$KEYWORDS_CRIME|$KEYWORDS_LAWYERS|$KEYWORDS_COPYRIGHT|$KEYWORDS_USCONSTITUTION_ALL"
+KEYWORDS_LEGAL_EXCLUDE="$KEYWORDS_DIVORCE|$KEYWORDS_CRIME|$KEYWORDS_LAWYERS|$KEYWORDS_COPYRIGHT|$KEYWORDS_USCONSTITUTION_ALL|$KEYWORDS_JACKTHERIPPER"
 
 if [ "$1" == "" ]; #Normal operation
 then
@@ -18,12 +19,14 @@ then
   DIVORCE=$(egrep -i "$KEYWORDS_DIVORCE" "$NEWPAGES")
   LAWYERS=$(egrep -i "$KEYWORDS_LAWYERS" "$NEWPAGES")
   COPYRIGHT=$(egrep -i "$KEYWORDS_COPYRIGHT" "$NEWPAGES")
+  JACKTHERIPPER=$(egrep -i "$KEYWORDS_JACKTHERIPPER" "$NEWPAGES")
 
   categorize "LEGAL" "Legal"
   categorize "CRIME" "Crime"
   categorize "DIVORCE" "Divorce"
   categorize "LAWYERS" "Lawyers"
   categorize "COPYRIGHT" "Copyright law"
+  categorize "JACKTHERIPPER" "Jack the Ripper"
 
   debug_end "Legal"
 
