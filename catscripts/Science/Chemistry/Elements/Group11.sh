@@ -1,10 +1,10 @@
 #!/bin/bash 
 
 KEYWORDS_SILVER="Silver\b|Silver's|Silvers\b"
-KEYWORDS_SILVER_EXCLUDE="Pokemon|Pokémon|Soul(| )Silver|Silver(| )Surfer|Silverado|Rune(| )Scape|Hedgehog|(Dragon Age|DragonAge)|MHFU|Monster Hunter|medal|membership|silverlight|Silverstone|(get|catch).+in silver$|penny|nickel|dime|quarter|dollar|gorilla|quick(| )silver|Silver(| )Sable|Long(| )John|hair|Ron(| )Silver|Silver(| )bell|Silver(| )fern|silver(| )certificate|free(| )silver|(Mt(|\.)|Mount)(| )Silver|Silver(| )Wing"
+KEYWORDS_SILVER_EXCLUDE="Pokemon|Pokémon|Soul(| )Silver|Silver(| )Surfer|Silverado|Rune(| )Scape|Hedgehog|(Dragon Age|DragonAge)|MHFU|Monster Hunter|medal|membership|silverlight|Silverstone|(get|catch).+in silver$|penny|nickel|dime|quarter|dollar|gorilla|quick(| )silver|Silver(| )Sable|Long(| )John|hair|Ron(| )Silver|Silver(| )bell|Silver(| )fern|silver(| )certificate|free(| )silver|(Mt(|\.)|Mount)(| )Silver|Silver(| )Win(d|g)"
 KEYWORDS_COPPER="Copper"
 KEYWORDS_GOLD="\bGold\b|\bGold's"
-KEYWORDS_GOLD_EXCLUDE="Pokemon|Pokémon|Heart(| )Gold|medal|Gold Rush|Gold Coast|chocobo|Rune(| )Scape|Yugioh|win gold|Warcraft|membership|\bDBZ|minecraft|Xbox|(Dragon Age|DragonAge)|Resident Evil|Last Remnant|Fallout|Monster Hunter|Call of Duty|MW2|Halo 3|Club Penguin|MHFU|penny|nickel|dime|quarter|dollar|hair|(get|catch).+in gold$|Olympi(c|an)|black gold|Gold.+Roger|Gold fish|ribbon|gold chest"
+KEYWORDS_GOLD_EXCLUDE="Pokemon|Pokémon|Heart(| )Gold|medal|Gold(| )Rush|Gold(| )Coast|chocobo|Rune(| )Scape|Yugioh|win(| )gold|Warcraft|membership|\bDBZ|minecraft|Xbox|Dragon(| )Age|Resident(| )Evil|Last(| )Remnant|Fallout|Monster(| )Hunter|Call(| )of(| )Duty|MW2|Halo 3|Club(| )Penguin|MHFU|penny|nickel|dime|quarter|dollar|hair|(get|catch).+in(| )gold$|Olympi(c|an)|black(| )gold|Gold.+Roger|Gold(| )fish|ribbon|gold(| )chest|Safari(| )Zone"
 KEYWORDS_ROENTGENIUM="Roentgenium"
 
 if [ "$1" == "" ]; #Normal operation
