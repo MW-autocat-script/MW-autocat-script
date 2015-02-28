@@ -8,7 +8,7 @@ then
 
   debug_start "SQL"
 
-  SQL=$(egrep -i "$KEYWORDS_SQL" "$NEWPAGES" | egrep -iv "$KEYWORDS_SQL_EXCLUDE")
+  SQL=$(egrep -i "$KEYWORDS_SQL" "$NEWPAGES")
 
   categorize "SQL" "SQL"
 
