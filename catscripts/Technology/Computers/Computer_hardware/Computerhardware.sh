@@ -45,7 +45,7 @@ then
   categorize "HARDDRIVE" "Hard drives"
   categorize "FLOPPY" "Floppy drives"
   categorize "LAPTOPS" "Laptops"
-  categorize "MACBOOKS" "Macbooks"
+  categorize "MACBOOKS" "MacBooks"
   categorize "CHROMEBOOKS" "Chromebooks"
   categorize "HARDWARE" "Computer hardware"
 
