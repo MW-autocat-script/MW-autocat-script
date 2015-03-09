@@ -3,7 +3,7 @@
 KEYWORDS_LEGAL="\blegal|illegal|\blaw(s|)\b"
 KEYWORDS_LAWYERS="attorney|lawyer"
 KEYWORDS_DIVORCE="Divorce|alimony"
-KEYWORDS_CRIME="\bCrime(|s)\b|criminal"
+KEYWORDS_CRIME="\bCrime(|s)\b|criminal|\bincest"
 KEYWORDS_JACKTHERIPPER="Jack(| )the(| )Ripper"
 KEYWORDS_COPYRIGHT="copyright|copyleft|fair use|(movie|software)(| )piracy|intellectual(| )property"
 . ./catscripts/Government/Countries/United_States/US_constitution/USConstitution.sh norun #KEYWORDS_USCONSTITUTION_ALL
