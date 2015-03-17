@@ -13,5 +13,6 @@ UNITEDSTATESDIR="./catscripts/Government/Countries/United_States"
 . $UNITEDSTATESDIR/US_Presidents/Presidents.sh
 . $UNITEDSTATESDIR/US_states/States.sh
 . $UNITEDSTATESDIR/Puerto_Rico/PuertoRico.sh
+. $UNITEDSTATESDIR/War_of_1812/1812.sh #KEYWORDS_1812
 
 debug_end "United States"
