@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_ISLAM="Islam|Muslim|\bSunni(|s)\b|Shiite|hajj|Prophet (Muhammed|Muhammad)|halal|koran|qu(|')ran"
+KEYWORDS_ISLAM="Islam|Muslim|\bSunni(|s)\b|Shiite|hajj|Prophet (Muhammed|Muhammad)|halal|koran|qu(|')ran|Hara(|a)m|Ḥarām"
 KEYWORDS_RAMADAN="Ramadan"
 KEYWORDS_ISLAM_EXCLUDE="$KEYWORDS_RAMADAN|Mecca|Medina"
 KEYWORDS_ISLAM_ALL="$KEYWORDS_ISLAM|$KEYWORDS_RAMADAN"
