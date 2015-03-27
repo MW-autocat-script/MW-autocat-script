@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_AMERICANREVOLUTION="American(| )Revolution"
+KEYWORDS_AMERICANREVOLUTION="American(| )Revolution|Betsy(| )Ross"
 KEYWORDS_AMERICANREVOLUTION_ALL="$KEYWORDS_AMERICANREVOLUTION"
 
 if [ "$1" == "" ];
