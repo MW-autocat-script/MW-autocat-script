@@ -4,6 +4,7 @@ debug_start "United States"
 
 UNITEDSTATESDIR="./catscripts/Government/Countries/United_States"
 
+. $UNITEDSTATESDIR/American_Civil_War/CivilWar.sh #KEYWORDS_USCIVILWAR_ALL
 . $UNITEDSTATESDIR/American_Revolution/AmericanRevolution.sh #KEYWORDS_AMERICANREVOLUTION_ALL
 . $UNITEDSTATESDIR/CIA/CIA.sh #KEYWORDS_CIA_ALL
 . $UNITEDSTATESDIR/FBI/FBI.sh #KEYWORDS_FBI_ALL
