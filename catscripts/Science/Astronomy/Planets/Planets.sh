@@ -12,7 +12,7 @@ KEYWORDS_EARTH="\bEarth(|s)\b"
 KEYWORDS_EARTH_EXCLUDE="earthquake|earth-shaking|earth-moving|earth-mover|earth-two|Fallen Earth|Earth( |-)(982|928|616)|X-Men|Kitty Pryde|Earth(| )altar|Earth(| )rune|Earth(| )talisman|Earth(| )tiara|Earth(| )staff|Rune(| )Scape|Adam Warlock|Enchantress|Protector(| )of(| )Earth|Google(| )Earth|Silverfall|Earth wire|Mass(| )Effect|Star(| )Wars|Star(| )Trek|Earth(| )rune"
 
 KEYWORDS_MARS="Mars\b"
-KEYWORDS_MARS_EXCLUDE="god|deity|rome|roman|olympus|greece|myth|story|Star(| )Wars|Star(| )Trek|Bruno(| )Mars|Veronica(| )Mars"
+KEYWORDS_MARS_EXCLUDE="god|deity|rome|roman|olympus|greece|myth|story|Star(| )Wars|Star(| )Trek|Bruno(| )Mars|Veronica(| )Mars|Mars(| )bar"
 
 KEYWORDS_JUPITER="Jupiter"
 KEYWORDS_JUPITER_EXCLUDE="god|deity|rome|roman|olympus|greece|myth|story|Star(| )Wars|Star(| )Trek"
