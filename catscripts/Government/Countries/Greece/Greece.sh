@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ./catscripts/Lifestyle/Sports/Olympics.sh norun
+. ./catscripts/Lifestyle/Sports/Olympics/Olympics.sh norun
 
 KEYWORDS_GREECE="Greece"
 KEYWORDS_ANCIENTGREECE="Ancient(| )Gree(k|ce)"

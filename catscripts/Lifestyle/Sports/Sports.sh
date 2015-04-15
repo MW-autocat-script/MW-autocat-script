@@ -2,13 +2,13 @@
 
 export SPORTSDIR="./catscripts/Lifestyle/Sports"
 
-. $SPORTSDIR/Autoracing.sh
-. $SPORTSDIR/Iceskating.sh
-. $SPORTSDIR/LugeAndBobsledding.sh
-. $SPORTSDIR/Olympics.sh
-. $SPORTSDIR/Skateboarding.sh #KEYWORDS_SKATEBOARDING_ALL
-. $SPORTSDIR/Skiing.sh
-. $SPORTSDIR/Snowboarding.sh
+. $SPORTSDIR/Auto_racing/AutoRacing.sh
+. $SPORTSDIR/Ice_skating/IceSkating.sh
+. $SPORTSDIR/Luge_and_bobsledding/LugeAndBobsledding.sh
+. $SPORTSDIR/Olympics/Olympics.sh
+. $SPORTSDIR/Skateboarding/Skateboarding.sh #KEYWORDS_SKATEBOARDING_ALL
+. $SPORTSDIR/Skiing/Skiing.sh
+. $SPORTSDIR/Snowboarding/Snowboarding.sh
 
 KEYWORDS_SOCCER="soccer|footballer"
 KEYWORDS_CRONALDO="Cristiano(| )Ronaldo|\bC(\.|-| )(| )ronaldo"
