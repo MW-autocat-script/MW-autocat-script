@@ -2,11 +2,6 @@
 
 export SPORTSDIR="./catscripts/Lifestyle/Sports"
 
-KEYWORDS_SOCCER="soccer|footballer"
-KEYWORDS_CRONALDO="Cristiano(| )Ronaldo|\bC(\.|-| )(| )ronaldo"
-KEYWORDS_LMESSI="\bMessi(|s)\b"
-KEYWORDS_SOCCER_EXCLUDE="$KEYWORDS_CRONALDO|$KEYWORDS_LMESSI"
-
 #"Net" sports"
 KEYWORDS_TENNIS="Tennis"
 KEYWORDS_PINGPONG="ping(|-| )pong|table(| )tennis"
@@ -36,11 +31,9 @@ then
   . $SPORTSDIR/Skateboarding/Skateboarding.sh #KEYWORDS_SKATEBOARDING_ALL
   . $SPORTSDIR/Skiing/Skiing.sh
   . $SPORTSDIR/Snowboarding/Snowboarding.sh
+  . $SPORTSDIR/Soccer/Soccer.sh
   . $SPORTSDIR/Softball/Softball.sh
 
-  SOCCER=$(egrep -i "$KEYWORDS_SOCCER" "$NEWPAGES" | egrep -iv "$KEYWORDS_SOCCER_EXCLUDE")
-  CRONALDO=$(egrep -i "$KEYWORDS_CRONALDO" "$NEWPAGES")
-  LMESSI=$(egrep -i "$KEYWORDS_LMESSI" "$NEWPAGES")
   TENNIS=$(egrep -i "$KEYWORDS_TENNIS" "$NEWPAGES"| egrep -iv "$KEYWORDS_TENNIS_EXCLUDE")
   PINGPONG=$(egrep -i "$KEYWORDS_PINGPONG" "$NEWPAGES")
   BADMINTON=$(egrep -i "$KEYWORDS_BADMINTON" "$NEWPAGES")
@@ -48,9 +41,6 @@ then
   HOCKEY=$(egrep -i "$KEYWORDS_HOCKEY" "$NEWPAGES" | egrep -iv "$KEYWORDS_NHL")
   NHL=$(egrep -i "$KEYWORDS_NHL" "$NEWPAGES")
 
-  categorize "SOCCER" "Soccer (association football)"
-  categorize "CRONALDO" "Cristiano Ronaldo"
-  categorize "LMESSI" "Lionel Messi"
   categorize "TENNIS" "Tennis"
   categorize "PINGPONG" "Ping-pong"
   categorize "BADMINTON" "Badminton"
