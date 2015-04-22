@@ -27,6 +27,7 @@ then
   . $SPORTSDIR/Basketball/Basketball.sh
   . $SPORTSDIR/Ice_skating/IceSkating.sh
   . $SPORTSDIR/Luge_and_bobsledding/LugeAndBobsledding.sh
+  . $SPORTSDIR/Martial_arts/MartialArts.sh
   . $SPORTSDIR/Olympics/Olympics.sh
   . $SPORTSDIR/Skateboarding/Skateboarding.sh #KEYWORDS_SKATEBOARDING_ALL
   . $SPORTSDIR/Skiing/Skiing.sh
