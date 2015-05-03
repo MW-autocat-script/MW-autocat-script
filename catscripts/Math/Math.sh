@@ -14,5 +14,6 @@ debug_start "Mathematics"
 . $MATHDIR/Multiplication/Multiplication.sh
 . $MATHDIR/Percentages/Percentages.sh
 . $MATHDIR/Roman_numerals/RomanNumerals.sh
+. $MATHDIR/Trigonometry/Trigonometry.sh #KEYWORDS_TRIGONOMETRY_ALL
 
 debug_end "Mathematics"
