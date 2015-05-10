@@ -151,7 +151,7 @@ then
 
     if [ "$DOESNT" != "" ];
     then
-      printf "%s" "$DOESNT" > "Doesn't.txt"
+      printf "%s" "$DOESNT" > "$TEMPDIR/Doesn't.txt"
       remove_cat_nonint "Doesn't"
       rm "Doesn't.txt"
       unset DOESNT
@@ -167,7 +167,7 @@ then
 
     if [ "$DIDNT" != "" ];
     then
-      printf "%s" "$DIDNT" > "Didn't.txt"
+      printf "%s" "$DIDNT" > "$TEMPDIR/Didn't.txt"
       remove_cat_nonint "Didn't"
       rm "Didn't.txt"
       unset DIDNT
@@ -191,8 +191,8 @@ then
 
     if [ "$ISNT" != "" ];
     then
-      printf "%s" "$ISNT" > "Isn't.txt"
-      remove_cat_nonint "Isn't.txt"
+      printf "%s" "$ISNT" > "$TEMPDIR/Isn't.txt"
+      remove_cat_nonint "Isn't"
       rm "Isn't.txt"
       unset ISNT
     fi
@@ -200,14 +200,14 @@ then
     if [ "$ARE" != "" ];
     then
       printf "%s" "$ARE" > "$TEMPDIR/Are.txt"
-      remove_cat_nonint "Are.txt"
+      remove_cat_nonint "Are"
       rm "$TEMPDIR/Are.txt"
       unset ARE
     fi
 
     if [ "$ARENT" != "" ];
     then
-      printf "%s" "$ARENT" > "Aren't.txt"
+      printf "%s" "$ARENT" > "$TEMPDIR/Aren't.txt"
       remove_cat_nonint "Aren't"
       rm "Aren't.txt"
       unset ARENT
@@ -223,7 +223,7 @@ then
 
     if [ "$WERENT" != "" ];
     then
-      printf "%s" "$WERENT" > "Weren't.txt"
+      printf "%s" "$WERENT" > "$TEMPDIR/Weren't.txt"
       remove_cat_nonint "Weren't"
       rm "Weren't.txt"
       unset WERENT
@@ -255,7 +255,7 @@ then
 
     if [ "$COULDNT" != "" ];
     then
-      printf "%s" "$COULDNT" > "Couldn't.txt"
+      printf "%s" "$COULDNT" > "$TEMPDIR/Couldn't.txt"
       remove_cat_nonint "Couldn't"
       rm "Couldn't.txt"
       unset COULDNT
@@ -271,7 +271,7 @@ then
 
     if [ "$SHOULDNT" != "" ];
     then
-      printf "%s" "$SHOULDNT" > "Shouldn't.txt"
+      printf "%s" "$SHOULDNT" > "$TEMPDIR/Shouldn't.txt"
       remove_cat_nonint "Shouldn't"
       rm "Shouldn't.txt"
       unset SHOULDNT
@@ -287,7 +287,7 @@ then
 
     if [ "$WOULDNT" != "" ];
     then
-      printf "%s" "$WOULDNT" > "Wouldn't.txt"
+      printf "%s" "$WOULDNT" > "$TEMPDIR/Wouldn't.txt"
       remove_cat_nonint "Wouldn't"
       rm "Wouldn't.txt"
       unset WOULDNT
@@ -303,7 +303,7 @@ then
 
     if [ "$CANT" != "" ];
     then
-      printf "%s" "$CANT" > "Can't.txt"
+      printf "%s" "$CANT" > "$TEMPDIR/Can't.txt"
       remove_cat_nonint "Can't"
       rm "Can't.txt"
       unset CANT
@@ -319,7 +319,7 @@ then
 
     if [ "$HASNT" != "" ];
     then
-      printf "%s" "$HASNT" > "Hasn't.txt"
+      printf "%s" "$HASNT" > "$TEMPDIR/Hasn't.txt"
       remove_cat_nonint "Hasn't"
       rm "Hasn't.txt"
       unset HASNT
