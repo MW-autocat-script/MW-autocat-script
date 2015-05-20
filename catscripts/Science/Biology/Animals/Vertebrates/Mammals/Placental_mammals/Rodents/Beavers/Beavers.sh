@@ -9,7 +9,7 @@ then
   
   debug_start "Beavers"
 
-  BEAVERS=$(egrep -i "$KEYWORDS_BEAVERS" "$NEWPAGES")
+  BEAVERS=$(egrep -i "$KEYWORDS_BEAVERS" "$NEWPAGES" | egrep -iv "$KEYWORDS_BEAVERS_EXCLUDE")
 
   categorize "BEAVERS" "Beavers"
 
