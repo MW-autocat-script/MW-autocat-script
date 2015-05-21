@@ -124,6 +124,7 @@ $COUNTRYDIR/North_Korea/NorthKorea.sh
 $COUNTRYDIR/Norway/Norway.sh
 $COUNTRYDIR/Oman/Oman.sh #KEYWORDS_OMAN_ALL
 $COUNTRYDIR/Pakistan/Pakistan.sh
+$COUNTRYDIR/Palau/Palau.sh #KEYWORDS_PALAU_ALL
 $COUNTRYDIR/Panama/Panama.sh
 $COUNTRYDIR/Papua_New_Guinea/PapuaNewGuinea.sh #KEYWORDS_PAPUANEWGUINEA_ALL
 $COUNTRYDIR/Paraguay/Paraguay.sh
