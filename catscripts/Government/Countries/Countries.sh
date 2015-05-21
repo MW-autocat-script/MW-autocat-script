@@ -100,6 +100,7 @@ $COUNTRYDIR/Malaysia/Malaysia.sh
 $COUNTRYDIR/Maldives/Maldives.sh #KEYWORDS_MALDIVES_ALL
 $COUNTRYDIR/Mali/Mali.sh
 $COUNTRYDIR/Malta/Malta.sh #KEYWORDS_MALTA_ALL
+$COUNTRYDIR/Marshall_Islands/MarshallIslands.sh #KEYWORDS_MARSHALLISLANDS_ALL
 $COUNTRYDIR/Mauritius/Mauritius.sh #$KEYWORDS_MAURITIUS
 $COUNTRYDIR/Mexico/Mexico.sh
 $COUNTRYDIR/Micronesia/Micronesia.sh #KEYWORDS_MICRONESIA_ALL
