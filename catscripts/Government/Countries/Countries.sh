@@ -142,6 +142,7 @@ $COUNTRYDIR/Singapore/Singapore.sh
 $COUNTRYDIR/South_Africa/SouthAfrica.sh
 $COUNTRYDIR/Spain/Spain.sh
 $COUNTRYDIR/Saint_Kitts_and_Nevis/SaintKitts.sh #KEYWORDS_SAINTKITTS_ALL
+$COUNTRYDIR/Samoa/Samoa.sh #KEYWORDS_SAMOA_ALL
 $COUNTRYDIR/San_Marino/SanMarino.sh #KEYWORDS_SANMARINO_ALL
 $COUNTRYDIR/Saudi_Arabia/SaudiArabia.sh
 $COUNTRYDIR/Senegal/Senegal.sh #KEYWORDS_SENEGAL_ALL
