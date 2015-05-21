@@ -115,6 +115,7 @@ $COUNTRYDIR/New_Zealand/NewZealand.sh
 $COUNTRYDIR/Nicaragua/Nicaragua.sh
 $COUNTRYDIR/Niger/Niger.sh #KEYWORDS_NIGER_ALL
 $COUNTRYDIR/Nigeria/Nigeria.sh
+$COUNTRYDIR/Niue/Niue.sh #KEYWORDS_NIUE_ALL
 $COUNTRYDIR/North_Korea/NorthKorea.sh
 $COUNTRYDIR/Norway/Norway.sh
 $COUNTRYDIR/Oman/Oman.sh #KEYWORDS_OMAN_ALL
