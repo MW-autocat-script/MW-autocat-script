@@ -1,7 +1,8 @@
 #!/bin/bash
 
 KEYWORDS_DRUGS="drug(|s)\b"
-KEYWORDS_MEDICATION="medication|prescription|ibuprofen|advil|tylenol|NSAID|asprin|Gynera\b|quinine|Abilify|aripiprazole|abiraterone|Zytiga|ablavar|gadofosveset|dysport|abobotulinumtoxin|Abraxane|Absorica|isotretinoin|Abstral|fentanyl|Campral|acamprosate|oxycontin|oxycodone|paclitaxel|Syndol|Adderall|Zyban\b|Wellbutrin|Voxra|Budeprion|Prexaton|Elontril|Aplenzin|Bupropion"
+KEYWORDS_NSAID="NSAID|ibuprofen|acetaminophen|advil|tylenol|asp(|i)rin"
+KEYWORDS_MEDICATION="medication|prescription|$KEYWORDS_NSAID|Gynera\b|quinine|Abilify|aripiprazole|abiraterone|Zytiga|ablavar|gadofosveset|dysport|abobotulinumtoxin|Abraxane|Absorica|isotretinoin|Abstral|fentanyl|Campral|acamprosate|oxycontin|oxycodone|paclitaxel|Syndol|Adderall|Zyban\b|Wellbutrin|Voxra|Budeprion|Prexaton|Elontril|Aplenzin|Bupropion"
 KEYWORDS_ILLEGALDRUGS="Illegal(| )drug|\bmeth\b|methamphetamine|\bLSD\b|methadone|heroin\b"
 KEYWORDS_COCAINE="Cocaine|smoke(| )crack|crack(| )pipe"
 KEYWORDS_MARIJUANA="marijuana|(buy|smoke|inhale).+(\bweed|pot\b|a joint)|cannabis|cannabinol"
