@@ -67,6 +67,7 @@ $COUNTRYDIR/Greece/Greece.sh
 $COUNTRYDIR/Grenada/Grenada.sh #KEYWORDS_GRENADA_ALL
 $COUNTRYDIR/Guatemala/Guatemala.sh
 $COUNTRYDIR/Guinea-Bissau/GuineaBissau.sh #KEYWORDS_GUINEABISSAU_ALL
+$COUNTRYDIR/Guyana/Guyana.sh #KEYWORDS_GUYANA_ALL
 $COUNTRYDIR/Haiti/Haiti.sh
 $COUNTRYDIR/Honduras/Honduras.sh
 $COUNTRYDIR/Hungary/Hungary.sh
