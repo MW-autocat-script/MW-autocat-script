@@ -38,6 +38,7 @@ $COUNTRYDIR/Canada/Canada.sh
 $COUNTRYDIR/Cape_Verde/CapeVerde.sh #KEYWORDS_CAPEVERDE_ALL
 $COUNTRYDIR/Chile/Chile.sh
 $COUNTRYDIR/China/China.sh
+$COUNTRYDIR/Colombia/Colombia.sh #KEYWORDS_COLOMBIA_ALL
 $COUNTRYDIR/Cook_Islands/CookIslands.sh #KEYWORDS_COOKISLANDS_ALL
 $COUNTRYDIR/Costa_Rica/CostaRica.sh
 $COUNTRYDIR/Côte\ d\'Ivoire/Côte_d\'Ivoire.sh
