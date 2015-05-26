@@ -157,6 +157,7 @@ $COUNTRYDIR/Somalia/Somalia.sh #KEYWORDS_SOMALIA_ALL
 $COUNTRYDIR/South_Korea/SouthKorea.sh
 $COUNTRYDIR/Sri_Lanka/SriLanka.sh
 $COUNTRYDIR/Sudan/Sudan.sh #KEYWORDS_SUDAN_ALL
+$COUNTRYDIR/Suriname/Suriname.sh #KEYWORDS_SURINAME_ALL
 $COUNTRYDIR/Sweden/Sweden.sh
 $COUNTRYDIR/Switzerland/Switzerland.sh
 $COUNTRYDIR/Syria/Syria.sh #KEYWORDS_SYRIA_ALL
