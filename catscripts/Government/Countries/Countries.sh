@@ -177,6 +177,7 @@ $COUNTRYDIR/United_Arab_Emirates/UAE.sh
 $COUNTRYDIR/United_Kingdom/UnitedKingdom.sh #KEYWORDS_UNITEDKINGDOM_ALL
 $COUNTRYDIR/United_States/UnitedStates.sh
 $COUNTRYDIR/Unrecognized_countries/Unrecognized.sh
+$COUNTRYDIR/Uruguay/Uruguay.sh #KEYWORDS_URUGUAY_ALL
 $COUNTRYDIR/Uzbekistan/Uzbekistan.sh #KEYWORDS_UZBEKISTAN_ALL
 $COUNTRYDIR/Vanuatu/Vanuatu.sh #KEYWORDS_VANUATU_ALL
 $COUNTRYDIR/Venezuela/Venezuela.sh
