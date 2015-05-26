@@ -36,6 +36,7 @@ $COUNTRYDIR/Cambodia/Cambodia.sh
 $COUNTRYDIR/Cameroon/Cameroon.sh
 $COUNTRYDIR/Canada/Canada.sh
 $COUNTRYDIR/Cape_Verde/CapeVerde.sh #KEYWORDS_CAPEVERDE_ALL
+$COUNTRYDIR/Central_African_Republic/CentralAfricanRepublic.sh #KEYWORDS_CENTRALAFRICANREPUBLIC_ALL
 $COUNTRYDIR/Chile/Chile.sh
 $COUNTRYDIR/China/China.sh
 $COUNTRYDIR/Colombia/Colombia.sh #KEYWORDS_COLOMBIA_ALL
