@@ -41,6 +41,7 @@ $COUNTRYDIR/Chile/Chile.sh
 $COUNTRYDIR/China/China.sh
 $COUNTRYDIR/Colombia/Colombia.sh #KEYWORDS_COLOMBIA_ALL
 $COUNTRYDIR/Democratic_Republic_of_the_Congo/DemocraticRepublicOfTheCongo.sh #KEYWORDS_DROTC_ALL
+$COUNTRYDIR/Republic_of_the_Congo/RepublicOfTheCongo.sh #KEYWORDS_CONGO_ALL
 $COUNTRYDIR/Cook_Islands/CookIslands.sh #KEYWORDS_COOKISLANDS_ALL
 $COUNTRYDIR/Costa_Rica/CostaRica.sh
 $COUNTRYDIR/Côte\ d\'Ivoire/Côte_d\'Ivoire.sh
