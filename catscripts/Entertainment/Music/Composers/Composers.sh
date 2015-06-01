@@ -2,6 +2,7 @@
 #Categorization script for composers of music
 
 KEYWORDS_BACH="\bBach\b"
+KEYWORDS_BACH_EXCLUDE="Richard(| )Bach"
 KEYWORDS_BEETHOVEN="Beethoven"
 KEYWORDS_BEETHOVEN_EXCLUDE="Bernard|breed|dog"
 KEYWORDS_MOZART="Wolfgang|Amadeus|Mozart"
@@ -14,7 +15,7 @@ then
 
   debug_start "Composers"
 
-  BACH=$(egrep -i "$KEYWORDS_BACH" "$NEWPAGES")
+  BACH=$(egrep -i "$KEYWORDS_BACH" "$NEWPAGES" | egrep -iv "$KEYWORDS_BACH_EXCLUDE")
   MOZART=$(egrep -i "$KEYWORDS_MOZART" "$NEWPAGES" | egrep -iv "$KEYWORDS_MOZART_EXCLUDE")
   BEETHOVEN=$(egrep -i "$KEYWORDS_BEETHOVEN"  "$NEWPAGES" | egrep -iv "$KEYWORDS_BEETHOVEN_EXCLUDE")
   COPLAND=$(egrep -i "$KEYWORDS_COPLAND" "$NEWPAGES")
