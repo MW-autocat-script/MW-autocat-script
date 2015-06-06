@@ -10,7 +10,7 @@ then
 
   EQUATORIALGUINEA=$(egrep -i "$KEYWORDS_EQUATORIALGUINEA" "$NEWPAGES")
 
-  categorize "EQUATORIALGUINEA" "$NEWPAGES"
+  categorize "EQUATORIALGUINEA" "Equatorial Guinea"
 
   debug_end "Equatorial Guinea"
 
