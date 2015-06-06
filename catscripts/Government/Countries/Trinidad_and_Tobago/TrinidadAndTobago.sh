@@ -10,7 +10,7 @@ then
 
   TRINIDAD=$(egrep -i "$KEYWORDS_TRINIDAD" "$NEWPAGES")
 
-  categorize "TRINIDAD" "Trinidad"
+  categorize "TRINIDAD" "Trinidad and Tobago"
 
   debug_end "Trinidad and Tobago"
 
