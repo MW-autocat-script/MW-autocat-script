@@ -74,18 +74,13 @@ printf "Fetching all pages from wiki. This may take a long time on larger wikis.
 python "$PYWIKIPEDIADIR/pagegenerators.py" -start:'.' -pt:1  > "$NEWPAGES"
 
 printf "List complete; beginning categorization\n"
- 
-./catscripts/Education/Education.sh
-./catscripts/Entertainment/Entertainment.sh
-./catscripts/Government/Government.sh
-./catscripts/Language/Language.sh
-./catscripts/Lifestyle/Lifestyle.sh
-./catscripts/Maintenance/Maintenance.sh
-./catscripts/Math/Math.sh
-./catscripts/Science/Science.sh
-./catscripts/Technology/Technology.sh
-./catscripts/Temp/Temp.sh
-./catscripts/Transportation/Transportation.sh
+
+topcats=( Education Entertainment Government Language Lifestyle Maintenance Math Science Technology Temp Transportation)
+
+for category in "${topcats[@]}"
+do
+	./catscripts/$category/$category.sh
+done 
 
 rm $PIDFILE
 rm "$NEWPAGES"
