@@ -1,6 +1,10 @@
 #!/bin/bash
 
-KEYWORDS_DEFINITIONS="^What is [a-z]{1,}(| )(|[a-z]{1,})$|^What is a [a-z]{1,}(| )(|[a-z]{1,})$|^What is an [a-z]{1,}(| )(|[a-z]{1,})$|^What(|')s a [a-z]{1,}(| )(|[a-z]{1,})$|^What(|'s) an [a-z]{1,}(| )(|[a-z]{1,})$|^What does [a-z]{1,}(| )(|[a-z]{1,})(| )mean$|^What does the word [a-z]{1,}(| )(|[a-z]{1,})(| )mean$|What is the meaning of (|'|\")[a-z]{1,}(|'|\")$"
+KEYWORDS_WHATIS="^What(| )('|i)s(| )a(|n) [a-z]{1,}$|^What(| )('|i)s(| )[a-z]{1,}$|^What(| )('|i)s(| )a(|n) [a-z]{1,} [a-z]{1,}$|^What(| )('|i)s(| )[a-z]{1,}(| )[a-z]{1,}$"
+KEYWORDS_WHATDOES="^What(| )does(| )(|the(| )word)(| )[a-z]{1,} mean$|^What(| )does(| )(|the(| )word)(| )[a-z]{1,} [a-z]{1,}(| )mean$"
+KEYWORDS_WHATARE="^What(| )are(| )[a-z]{1,}$|^What(| )are(| )[a-z]{1,} [a-z]{1,}$"
+KEYWORDS_MEANING="^What(| )is(| )the(| )meaning(| )of(| )(|the(| )word)(| )[a-z]{1,}$|^What(| )is(| )the(| )meaning(| )of(| )(|the(| )word)(| )[a-z]{1,} [a-z]{1,}$"
+KEYWORDS_DEFINITIONS="$KEYWORDS_WHATIS|$KEYWORDS_WHATDOES|$KEYWORDS_WHATARE|$KEYWORDS_MEANING"
 KEYWORDS_NAMES="^What does the (sur|)name (|\"|')[a-z]{1,}(|\"|') mean|What is the meaning of the (sur|)name (|'|\")[a-z]{1,}(|'|\")"
 
 if [ "$1" == "" ]; #Normal operation
