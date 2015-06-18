@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_LEBANON="Lebanon"
+KEYWORDS_LEBANON="Lebanon|Beirut"
 KEYWORDS_LEBANON_EXCLUDE="New Jersey|\bNJ\b|bologna|baloney"
 KEYWORDS_LEBANON_ALL="$KEYWORDS_LEBANON"
 
