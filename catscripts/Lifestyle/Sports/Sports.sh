@@ -14,7 +14,7 @@ KEYWORDS_VOLLEYBALL="Volley(| )ball"
 KEYWORDS_HOCKEY="hockey"
 KEYWORDS_FLORIDAPANTHERS="(NHL|hockey|sport|arena|\bwin|\bwon\b|Stanley|\brink).+Florida(| )Panther|Florida(| )Panther.+(NHL|hockey|sport|arena|\bwin|\bwon\b|Stanley|\brink)"
 KEYWORDS_NHL="NHL|National(| )Hockey(| )League|Stanley(| )Cup|Anaheim(| )Duck|Boston(| )Bruin|Buffalo(| )Sabre|Calgary(| )Flame|Carolina(| )Hurricane|Chicago(| )Blackhawk|Colorado(| )Avalanche|Columbus(| )Blue(| )Jacket|Dallas(| )Star|Detroit(| )Red(| )Wing|Edmonton(| )Oiler|Los(| )Angeles(| )King|Minnesota(| )Wild|Montreal(| )Canadien|Nashville(| )Predator|New(| )Jersey(| )Devil|New(| )York(| )Islander|New(| )York(| )Ranger|Philadelphia(| )Flyer|Phoenix(| )Coyote|Pittsburgh(| )Penguin|Ottawa(| )Sennator|San(| )Jose(| )Shark|St(\.|)(| )Louis(| )Blue|Tampa(| )Bay(| )Lightning|Toronto(| )Maple(| )Leaf|Vancouver(| )Canuck|Washington(| )Capital|Winnipeg(| )Jet|$KEYWORDS_FLORIDAPANTHERS"
-KEYWORDS_HOCKEY_EXCLUDE="ield hockey|street hockey|indoor hockey|$KEYWORDS_NHL"
+KEYWORDS_HOCKEY_EXCLUDE="(field|street|indoor)(| )hockey|$KEYWORDS_NHL"
 
 
 if [ "$1" == "" ]; #Normal operation
@@ -22,6 +22,7 @@ then
 
   debug_start "Sports"
 
+  . $SPORTSDIR/Archery/Archery.sh #KEYWORDS_ARCHERY_ALL
   . $SPORTSDIR/Auto_racing/AutoRacing.sh
   . $SPORTSDIR/Baseball/Baseball.sh
   . $SPORTSDIR/Basketball/Basketball.sh
