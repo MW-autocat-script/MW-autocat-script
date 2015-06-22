@@ -4,6 +4,8 @@ debug_start "Video game consoles"
 
 CONSOLEDIR="./catscripts/Entertainment/Video_games/Video_game_consoles"
 
+. $CONSOLEDIR/Atari/Atari2600.sh #KEYWORDS_ATARI2600_ALL
+
 . $CONSOLEDIR/Nintendo/Nintendo64.sh
 . $CONSOLEDIR/Nintendo/NintendoDS.sh #KEYWORDS_DS_ALL
 . $CONSOLEDIR/Nintendo/NintendoGameBoy.sh #KEYWORDS_GAMEBOY_ALL
