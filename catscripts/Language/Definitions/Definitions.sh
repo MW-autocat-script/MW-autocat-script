@@ -5,8 +5,8 @@ KEYWORDS_WHATDOES="^What(| )does(| )(|the(| )word)(| )[a-z]{1,} mean$|^What(| )d
 KEYWORDS_WHATARE="^What(| )are(| )[a-z]{1,}$|^What(| )are(| )[a-z]{1,} [a-z]{1,}$"
 KEYWORDS_MEANING="^What(| )is(| )the(| )meaning(| )of(| )(|the(| )word)(| )[a-z]{1,}$|^What(| )is(| )the(| )meaning(| )of(| )(|the(| )word)(| )[a-z]{1,} [a-z]{1,}$"
 KEYWORDS_DEFINITIONS="$KEYWORDS_WHATIS|$KEYWORDS_WHATDOES|$KEYWORDS_WHATARE|$KEYWORDS_MEANING"
-KEYWORDS_DEFINITIONS_EXCLUDE="^What(| )is(| )in(| )[a-z]{1,}$"
-KEYWORDS_NAMES="^What does the (sur|)name (|\"|')[a-z]{1,}(|\"|') mean|What is the meaning of the (sur|)name (|'|\")[a-z]{1,}(|'|\")"
+KEYWORDS_DEFINITIONS_EXCLUDE="^What(| )is(| )in [a-z]{1,}$"
+KEYWORDS_NAMES="^What((| )does|'s)(| )the(| )(sur|)name (|\"|')[a-z]{1,}(|\"|')(| )mean|What((| )is|'s)(| )the(| )meaning(| )of(| )the(| )(sur|)name (|'|\")[a-z]{1,}(|'|\")"
 
 if [ "$1" == "" ]; #Normal operation
 then
