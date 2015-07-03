@@ -1,17 +1,17 @@
 #!/bin/bash
 
-KEYWORDS_JAVASCRIPT="Java(| )script|node\.js"
+KEYWORDS_JAVASCRIPT="Java(| )Script|node\.js|asm\.js"
 KEYWORDS_JAVASCRIPT_ALL="$KEYWORDS_JAVASCRIPT"
 
 if [ "$1" == "" ]; #Normal operation
 then
   
-  debug_start "Javascript"
+  debug_start "JavaScript"
 
   JAVASCRIPT=$(egrep -i "$KEYWORDS_JAVASCRIPT" "$NEWPAGES")
 
-  categorize "JAVASCRIPT" "Javascript"
+  categorize "JAVASCRIPT" "JavaScript"
 
-  debug_end "Javascript"
+  debug_end "JavaScript"
 
 fi
