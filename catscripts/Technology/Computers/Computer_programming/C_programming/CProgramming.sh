@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_CPROGRAMMING="\bC program|\bin C|\bC language$"
+KEYWORDS_CPROGRAMMING="\bC program|\bin C\b|\bC language"
 KEYWORDS_CPROGRAMMING_ALL="$KEYWORDS_CPROGRAMMING"
 
 if [ "$1" == "" ];
