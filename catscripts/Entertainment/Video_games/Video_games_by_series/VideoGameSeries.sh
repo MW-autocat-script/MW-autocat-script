@@ -20,5 +20,6 @@ $VIDEOGAMESERIESDIR/LittleBigPlanet_series/LittleBigPlanet.sh
 $VIDEOGAMESERIESDIR/Burnout_series/Burnout.sh
 $VIDEOGAMESERIESDIR/Doom_series/Doom.sh
 $VIDEOGAMESERIESDIR/Assassins_Creed_series/AssassinsCreed.sh
+$VIDEOGAMESERIESDIR/Soul_series/Soul.sh #KEYWORDS_SOULSERIES_ALL
 
 debug_end "Video games by series"
