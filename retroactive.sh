@@ -75,7 +75,7 @@ python "$PYWIKIPEDIADIR/pagegenerators.py" -start:'.' -pt:1  > "$NEWPAGES"
 
 printf "List complete; beginning categorization\n"
 
-topcats=( Education Entertainment Government Language Lifestyle Maintenance Math Science Technology Temp Transportation)
+topcats=( Maintenance Education Entertainment Government Language Lifestyle Math Science Technology Temp Transportation)
 
 for category in "${topcats[@]}"
 do

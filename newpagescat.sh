@@ -86,7 +86,7 @@ NEWSUM=$(md5sum "$NEWPAGES" | cut -b-32)
 if [ "$OLDSUM" != "$NEWSUM" ]; #Lists have changed
 then
 
-categories=( "Education" "Entertainment" "Government" "Language" "Legal" "Lifestyle" "Maintenance" "Math" "Science" "Technology" "Temp" "Transportation" )
+categories=( "Maintenance" "Education" "Entertainment" "Government" "Language" "Legal" "Lifestyle" "Math" "Science" "Technology" "Temp" "Transportation" )
 
 for category in "${categories[@]}"
 do
