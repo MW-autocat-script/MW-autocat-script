@@ -3,6 +3,7 @@
 ASTRONOMYDIR="./catscripts/Science/Astronomy"
 KEYWORDS_ASTEROIDS="Asteroid"
 KEYWORDS_ASTEROIDS_EXCLUDE="download|game"
+KEYWORDS_HUBBLETELESCOPE="Hubble(| )(Space|)(| )Telescope"
 
 if [ "$1" == "" ];
 then
@@ -14,8 +15,10 @@ then
   $ASTRONOMYDIR/Moon/Moon.sh
 
   ASTEROIDS=$(egrep -i "$KEYWORDS_ASTEROIDS" "$NEWPAGES" | egrep -iv "$KEYWORDS_ASTEROIDS_EXCLUDE")
+  HTELESCOPE=$(egrep -i "$KEYWORDS_HUBBLETELESCOPE" "$NEWPAGES")
 
   categorize "ASTEROIDS" "Asteroids"
+  categorize "HTELESCOPE" "Hubble Space Telescope"
 
   debug_end "Astronomy"
 
