@@ -9,7 +9,7 @@ then
 
   debug_start "Dune"
 
-  DUNE=$(egrep -i "$KEYWORDS_DUNE" "$NEWPAGES" && egrep "$KEYWORDS_DUNE_CASESENSITIVE" "$NEWPAGES")
+  DUNE=$(egrep -i "$KEYWORDS_DUNE" "$NEWPAGES"; egrep "$KEYWORDS_DUNE_CASESENSITIVE" "$NEWPAGES")
 
   categorize "DUNE" "Dune"
 

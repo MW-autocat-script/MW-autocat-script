@@ -24,7 +24,7 @@ then
 
   categorize "GERMANY" "Germany"
 
-  NAZI=$(egrep -i "$KEYWORDS_NAZIGERMANY" "$NEWPAGES" | egrep -iv "$KEYWORDS_NAZIGERMANY_EXCLUDE" && egrep -i "$KEYWORDS_NAZIGERMANY_SECONDARY" "$NEWPAGES")
+  NAZI=$(egrep -i "$KEYWORDS_NAZIGERMANY" "$NEWPAGES" | egrep -iv "$KEYWORDS_NAZIGERMANY_EXCLUDE"; egrep -i "$KEYWORDS_NAZIGERMANY_SECONDARY" "$NEWPAGES")
 
   categorize "NAZI" "Nazi Germany"
 

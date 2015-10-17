@@ -8,7 +8,7 @@ then
 
   debug_start "World of Warcraft"
 
-  WOW=$(egrep -i "$KEYWORDS_MMORPG_WOW" "$NEWPAGES" && egrep "$KEYWORDS_MMORPG_WOW_CASESENSITIVE" "$NEWPAGES")
+  WOW=$(egrep -i "$KEYWORDS_MMORPG_WOW" "$NEWPAGES"; egrep "$KEYWORDS_MMORPG_WOW_CASESENSITIVE" "$NEWPAGES")
 
   categorize "WOW" "World of Warcraft"
 

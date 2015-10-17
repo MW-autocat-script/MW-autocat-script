@@ -9,7 +9,7 @@ then
   
   debug_start "One Piece"
 
-  ONEPIECE=$(egrep "$KEYWORDS_ONEPIECE" "$NEWPAGES" && egrep -i "$KEYWORDS_ONEPIECE" "$NEWPAGES")
+  ONEPIECE=$(egrep "$KEYWORDS_ONEPIECE" "$NEWPAGES"; egrep -i "$KEYWORDS_ONEPIECE" "$NEWPAGES")
   
   categorize "ONEPIECE" "One Piece"
 
