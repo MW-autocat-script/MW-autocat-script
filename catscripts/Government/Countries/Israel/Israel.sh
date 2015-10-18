@@ -2,7 +2,7 @@
 
 KEYWORDS_ISRAEL="Israel"
 KEYWORDS_ANCIENTISRAEL="Israelite|Ancient(| )Israel"
-KEYWORDS_JERUSALEM="Jeru(|-)salem"
+KEYWORDS_JERUSALEM="Jeru(|-)salem|wailing(| )wall"
 KEYWORDS_JERUSALEM_EXCLUDE="Jerusalem(| )artichoke" #Jerusalem artichoke is a tuber from a biannual sunflower, and has nothing to do with the city or Israel
 KEYWORDS_TELAVIV="Tel(| )Aviv"
 KEYWORDS_ISRAEL_EXCLUDE="$KEYWORDS_ANCIENTISRAEL|$KEYWORDS_JERUSALEM|$KEYWORDS_TELAVIV"
