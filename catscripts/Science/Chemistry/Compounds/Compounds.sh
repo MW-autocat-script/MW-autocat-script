@@ -10,8 +10,8 @@ then
 
   debug_start "Compounds"
 
-  CO=$(egrep -i "$KEYWORDS_CARBONDIOXIDE" "$NEWPAGES")
-  COTWO=$(egrep -i "$KEYWORDS_CARBONMONOXIDE" "$NEWPAGES")
+  CO=$(egrep -i "$KEYWORDS_CARBONMONOXIDE" "$NEWPAGES")
+  COTWO=$(egrep -i "$KEYWORDS_CARBONDIOXIDE" "$NEWPAGES")
 
   categorize "CO" "Carbon monoxide"
 
