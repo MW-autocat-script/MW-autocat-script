@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export KEYWORDS_MMORPG_POPTROPICA="poptropica|potropica|poptopica"
+export KEYWORDS_MMORPG_POPTROPICA="poptropica|potropica|poptopica|counterf(ie|ei)t(| )island"
 
 if [ "$1" == "" ]; #Normal operation
 then
