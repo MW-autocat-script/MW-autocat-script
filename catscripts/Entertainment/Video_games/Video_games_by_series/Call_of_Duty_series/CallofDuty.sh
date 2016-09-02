@@ -9,7 +9,7 @@ KEYWORDS_CODBO_EXCLUDE="Black(| )Ops(| )([2-9]{1,}|\bII\b|\bIII\b|\bIV\b|\bV\b)"
 KEYWORDS_CODMW3="\bCOD(| )8|\bMW3\b|Modern(| )Warfare(| )3|Call(| )of(| )Duty(| )8"
 KEYWORDS_CODBO2="\bCOD(| )9|Black Ops (2|II\b)|Call of Duty 9"
 KEYWORDS_CODGHOSTS="\bCOD(| )10|Call(| )Of(| )Duty(\:|)(| )Ghost"
-KEYWORDS_CODAW="\bCOD(| )11|Call(| )of(| )Duty(\:|)(| )(AW|(Advanced(| )Warfare))"
+KEYWORDS_CODAW="\bCOD(| )11|Call(| )of(| )Duty(\:|)(| )(AW|(Advanced(| )Warfare))|COD(|:)(| )AW\b"
 KEYWORDS_CODBO3="COD(| )12|Black(| )Ops(| )(3|III)|Call(| )of(| )Duty(| )12"
 KEYWORDS_CALLOFDUTYSERIES="Call(| )of(| )Duty|CoD(| )series"
 KEYWORDS_CALLOFDUTYSERIES_EXCLUDE="$KEYWORDS_COD4|$KEYWORDS_CODWAW|$KEYWORDS_CODBO|$KEYWORDS_CODMW3|$KEYWORDS_CODBO2|$KEYWORDS_CODGHOSTS|$KEYWORDS_CODAW"
@@ -29,7 +29,7 @@ then
   MW3=$(egrep -i "$KEYWORDS_CODMW3" "$NEWPAGES")
   BO2=$(egrep -i "$KEYWORDS_CODBO2" "$NEWPAGES")
   GHOSTS=$(egrep -i "$KEYWORDS_CODGHOSTS" "$NEWPAGES")
-  CODAW=$(egrep -i "$KEYWORDS_CODWAW" "$NEWPAGES")
+  CODAW=$(egrep -i "$KEYWORDS_CODAW" "$NEWPAGES")
   BO3=$(egrep -i "$KEYWORDS_CODBO3" "$NEWPAGES")
 
   categorize "CALLOFDUTY" "Call of Duty series"
