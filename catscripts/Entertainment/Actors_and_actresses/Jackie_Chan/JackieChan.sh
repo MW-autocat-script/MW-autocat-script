@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_ACTOR_JACKIECHAN="Jackie(| )Chan"
+readonly KEYWORDS_ACTOR_JACKIECHAN="Jackie(| )Chan"
 
 if [ "$1" == "" ]; #Normal operation
 then

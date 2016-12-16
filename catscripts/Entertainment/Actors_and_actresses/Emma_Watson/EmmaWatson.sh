@@ -1,7 +1,7 @@
 #!/bin/bash
 
-KEYWORDS_EMMAWATSON="Emma(| )Watson"
-KEYWORDS_EMMAWATSON_ALL="$KEYWORDS_EMMAWATSON"
+readonly KEYWORDS_EMMAWATSON="Emma(| )Watson"
+readonly KEYWORDS_EMMAWATSON_ALL="$KEYWORDS_EMMAWATSON"
 
 if [ "$1" == "" ];
 then

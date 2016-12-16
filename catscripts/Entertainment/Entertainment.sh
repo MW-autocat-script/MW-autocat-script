@@ -2,7 +2,7 @@
 
 debug_start "Entertainment"
 
-ENTERTAINMENTDIR="./catscripts/Entertainment"
+readonly ENTERTAINMENTDIR="./catscripts/Entertainment"
 
 $ENTERTAINMENTDIR/Actors_and_actresses/Actors.sh
 $ENTERTAINMENTDIR/Board_games/BoardGames.sh

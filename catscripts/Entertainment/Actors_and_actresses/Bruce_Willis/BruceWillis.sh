@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_ACTOR_BRUCEWILLIS="Bruce(| )Willis"
+readonly KEYWORDS_ACTOR_BRUCEWILLIS="Bruce(| )Willis"
 
 if [ "$1" == "" ]; #Normal operation
 then

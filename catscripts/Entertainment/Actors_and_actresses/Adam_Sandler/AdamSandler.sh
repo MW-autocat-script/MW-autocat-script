@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_ACTOR_ADAMSANDLER="Adam(| )Sandler"
+readonly KEYWORDS_ACTOR_ADAMSANDLER="Adam(| )Sandler"
 
 if [ "$1" == "" ]; #Normal operation
 then

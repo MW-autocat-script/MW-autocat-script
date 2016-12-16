@@ -1,7 +1,7 @@
 #!/bin/bash
 
-KEYWORDS_GED="\bGED(|s)\b|General(| )Educational(| )Development"
-KEYWORDS_GED_ALL="$KEYWORDS_GED"
+readonly KEYWORDS_GED="\bGED(|s)\b|General(| )Educational(| )Development"
+readonly KEYWORDS_GED_ALL="$KEYWORDS_GED"
 
 if [ "$1" == "" ];
 then

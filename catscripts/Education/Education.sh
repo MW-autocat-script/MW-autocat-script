@@ -1,6 +1,6 @@
 #!/bin/bash
 
-EDUCATIONDIR="./catscripts/Education"
+readonly EDUCATIONDIR="./catscripts/Education"
 
 if [ "$1" == "" ];
 then

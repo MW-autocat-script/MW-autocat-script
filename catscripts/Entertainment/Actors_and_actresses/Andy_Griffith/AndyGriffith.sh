@@ -1,7 +1,7 @@
 #!/bin/bash
 
-KEYWORDS_ACTOR_ANDYGRIFFITH="Andy(| )Griffith"
-KEYWORDS_ACTOR_ANDYGRIFFITH_EXCLUDE="The(| )Andy(| )Griffith(| )Show"
+readonly KEYWORDS_ACTOR_ANDYGRIFFITH="Andy(| )Griffith"
+readonly KEYWORDS_ACTOR_ANDYGRIFFITH_EXCLUDE="The(| )Andy(| )Griffith(| )Show"
 
 if [ "$1" == "" ];
 then

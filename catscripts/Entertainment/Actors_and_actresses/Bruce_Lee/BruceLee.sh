@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KEYWORDS_ACTOR_BRUCELEE="Bruce(| )Lee"
+readonly KEYWORDS_ACTOR_BRUCELEE="Bruce(| )Lee"
 
 if [ "$1" == "" ]; #Normal operation
 then

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-KEYWORDS_GCSE="GCSE|General Certificate of Secondary Education"
-KEYWORDS_GCSE_ALL="$KEYWORDS_GCSE"
+readonly KEYWORDS_GCSE="GCSE|General Certificate of Secondary Education"
+readonly KEYWORDS_GCSE_ALL="$KEYWORDS_GCSE"
 
 if [ "$1" == "" ];
 then
