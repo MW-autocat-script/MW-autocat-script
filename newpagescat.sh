@@ -5,17 +5,10 @@ date > lastrun
 
 . ./settings.sh
 
-if [ -e "$PIDFILE" ]; then
-  PID=$(cat "$PIDFILE")
-  if kill -0 "$PID" > /dev/null 2>&1; then
-    printf 'Already running\n'
-    exit 1
-  else
-    rm "$PIDFILE"
-  fi
-fi
-
-echo $$ > "$PIDFILE"
+exec 666> $PIDFILE
+flock -n 666 || exit 1 #Exits if already running
+PID=$$
+echo $PID 1>&666
 
 #Set TEMPDIR to safe value if not specified in settings.conf
 
@@ -102,4 +95,3 @@ fi
 ./util/noninterrogative.sh
 ./util/period.sh
 
-rm "$PIDFILE"
